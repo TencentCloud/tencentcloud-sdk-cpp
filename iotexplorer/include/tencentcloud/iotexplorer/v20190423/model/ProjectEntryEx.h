@@ -256,6 +256,28 @@ namespace TencentCloud
                      */
                     bool DeviceCountHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通物联使能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableOpenState 是否开通物联使能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableOpenState() const;
+
+                    /**
+                     * 设置是否开通物联使能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableOpenState 是否开通物联使能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableOpenState(const uint64_t& _enableOpenState);
+
+                    /**
+                     * 判断参数 EnableOpenState 是否已赋值
+                     * @return EnableOpenState 是否已赋值
+                     */
+                    bool EnableOpenStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -326,6 +348,13 @@ namespace TencentCloud
                      */
                     uint64_t m_deviceCount;
                     bool m_deviceCountHasBeenSet;
+
+                    /**
+                     * 是否开通物联使能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableOpenState;
+                    bool m_enableOpenStateHasBeenSet;
 
                 };
             }

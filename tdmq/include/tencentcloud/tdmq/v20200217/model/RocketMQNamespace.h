@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取未消费消息的保留时间，以毫秒单位，范围60秒到15天
-                     * @return Ttl 未消费消息的保留时间，以毫秒单位，范围60秒到15天
+                     * 获取已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天
+                     * @return Ttl 已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天
                      */
                     uint64_t GetTtl() const;
 
                     /**
-                     * 设置未消费消息的保留时间，以毫秒单位，范围60秒到15天
-                     * @param Ttl 未消费消息的保留时间，以毫秒单位，范围60秒到15天
+                     * 设置已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天
+                     * @param Ttl 已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天
                      */
                     void SetTtl(const uint64_t& _ttl);
 
@@ -166,6 +166,28 @@ namespace TencentCloud
                      */
                     bool VpcEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取内部接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalEndpoint 内部接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInternalEndpoint() const;
+
+                    /**
+                     * 设置内部接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalEndpoint 内部接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalEndpoint(const std::string& _internalEndpoint);
+
+                    /**
+                     * 判断参数 InternalEndpoint 是否已赋值
+                     * @return InternalEndpoint 是否已赋值
+                     */
+                    bool InternalEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,7 +197,7 @@ namespace TencentCloud
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 未消费消息的保留时间，以毫秒单位，范围60秒到15天
+                     * 已废弃，未消费消息的保留时间，以毫秒单位，范围60秒到15天
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;
@@ -206,6 +228,13 @@ namespace TencentCloud
                      */
                     std::string m_vpcEndpoint;
                     bool m_vpcEndpointHasBeenSet;
+
+                    /**
+                     * 内部接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internalEndpoint;
+                    bool m_internalEndpointHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gaap/v20180529/model/SupportFeature.h>
 
 
 namespace TencentCloud
@@ -198,6 +199,28 @@ namespace TencentCloud
                      */
                     bool FeatureBitmapHasBeenSet() const;
 
+                    /**
+                     * 获取接入区域支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportFeature 接入区域支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SupportFeature GetSupportFeature() const;
+
+                    /**
+                     * 设置接入区域支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportFeature 接入区域支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportFeature(const SupportFeature& _supportFeature);
+
+                    /**
+                     * 判断参数 SupportFeature 是否已赋值
+                     * @return SupportFeature 是否已赋值
+                     */
+                    bool SupportFeatureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +269,13 @@ namespace TencentCloud
                      */
                     uint64_t m_featureBitmap;
                     bool m_featureBitmapHasBeenSet;
+
+                    /**
+                     * 接入区域支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SupportFeature m_supportFeature;
+                    bool m_supportFeatureHasBeenSet;
 
                 };
             }

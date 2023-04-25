@@ -353,6 +353,50 @@ namespace TencentCloud
                      */
                     bool HttpVpcEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取TCP内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalEndpoint TCP内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInternalEndpoint() const;
+
+                    /**
+                     * 设置TCP内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalEndpoint TCP内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalEndpoint(const std::string& _internalEndpoint);
+
+                    /**
+                     * 判断参数 InternalEndpoint 是否已赋值
+                     * @return InternalEndpoint 是否已赋值
+                     */
+                    bool InternalEndpointHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP协议内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpInternalEndpoint HTTP协议内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHttpInternalEndpoint() const;
+
+                    /**
+                     * 设置HTTP协议内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpInternalEndpoint HTTP协议内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpInternalEndpoint(const std::string& _httpInternalEndpoint);
+
+                    /**
+                     * 判断参数 HttpInternalEndpoint 是否已赋值
+                     * @return HttpInternalEndpoint 是否已赋值
+                     */
+                    bool HttpInternalEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +497,20 @@ namespace TencentCloud
                      */
                     std::string m_httpVpcEndpoint;
                     bool m_httpVpcEndpointHasBeenSet;
+
+                    /**
+                     * TCP内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internalEndpoint;
+                    bool m_internalEndpointHasBeenSet;
+
+                    /**
+                     * HTTP协议内部接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_httpInternalEndpoint;
+                    bool m_httpInternalEndpointHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ ProjectEntryEx::ProjectEntryEx() :
     m_webAppCountHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_applicationCountHasBeenSet(false),
-    m_deviceCountHasBeenSet(false)
+    m_deviceCountHasBeenSet(false),
+    m_enableOpenStateHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
         m_deviceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableOpenState") && !value["EnableOpenState"].IsNull())
+    {
+        if (!value["EnableOpenState"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectEntryEx.EnableOpenState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableOpenState = value["EnableOpenState"].GetUint64();
+        m_enableOpenStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void ProjectEntryEx::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DeviceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceCount, allocator);
+    }
+
+    if (m_enableOpenStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableOpenState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableOpenState, allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void ProjectEntryEx::SetDeviceCount(const uint64_t& _deviceCount)
 bool ProjectEntryEx::DeviceCountHasBeenSet() const
 {
     return m_deviceCountHasBeenSet;
+}
+
+uint64_t ProjectEntryEx::GetEnableOpenState() const
+{
+    return m_enableOpenState;
+}
+
+void ProjectEntryEx::SetEnableOpenState(const uint64_t& _enableOpenState)
+{
+    m_enableOpenState = _enableOpenState;
+    m_enableOpenStateHasBeenSet = true;
+}
+
+bool ProjectEntryEx::EnableOpenStateHasBeenSet() const
+{
+    return m_enableOpenStateHasBeenSet;
 }
 

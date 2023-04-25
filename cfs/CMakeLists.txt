@@ -31,6 +31,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/FileSystemInfo.h
   include/tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyRequest.h
+  include/tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeMigrationTasksResponse.h
@@ -68,6 +69,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/PGroup.h
   include/tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyResponse.h
+  include/tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/AvailableType.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/UserQuota.h
@@ -138,6 +140,7 @@ set(cfs_src
   src/v20190719/model/CreateCfsFileSystemResponse.cpp
   src/v20190719/model/FileSystemInfo.cpp
   src/v20190719/model/BindAutoSnapshotPolicyRequest.cpp
+  src/v20190719/model/ModifyFileSystemAutoScaleUpRuleRequest.cpp
   src/v20190719/model/ScaleUpFileSystemRequest.cpp
   src/v20190719/model/CreateCfsPGroupRequest.cpp
   src/v20190719/model/DescribeMigrationTasksResponse.cpp
@@ -175,6 +178,7 @@ set(cfs_src
   src/v20190719/model/PGroup.cpp
   src/v20190719/model/SetUserQuotaRequest.cpp
   src/v20190719/model/CreateAutoSnapshotPolicyResponse.cpp
+  src/v20190719/model/ModifyFileSystemAutoScaleUpRuleResponse.cpp
   src/v20190719/model/AvailableType.cpp
   src/v20190719/model/CreateCfsSnapshotResponse.cpp
   src/v20190719/model/UserQuota.cpp

@@ -26,7 +26,8 @@ RegionDetail::RegionDetail() :
     m_regionAreaHasBeenSet(false),
     m_regionAreaNameHasBeenSet(false),
     m_iDCTypeHasBeenSet(false),
-    m_featureBitmapHasBeenSet(false)
+    m_featureBitmapHasBeenSet(false),
+    m_supportFeatureHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome RegionDetail::Deserialize(const rapidjson::Value &value)
         m_featureBitmapHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportFeature") && !value["SupportFeature"].IsNull())
+    {
+        if (!value["SupportFeature"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionDetail.SupportFeature` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_supportFeature.Deserialize(value["SupportFeature"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_supportFeatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void RegionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FeatureBitmap";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_featureBitmap, allocator);
+    }
+
+    if (m_supportFeatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportFeature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_supportFeature.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void RegionDetail::SetFeatureBitmap(const uint64_t& _featureBitmap)
 bool RegionDetail::FeatureBitmapHasBeenSet() const
 {
     return m_featureBitmapHasBeenSet;
+}
+
+SupportFeature RegionDetail::GetSupportFeature() const
+{
+    return m_supportFeature;
+}
+
+void RegionDetail::SetSupportFeature(const SupportFeature& _supportFeature)
+{
+    m_supportFeature = _supportFeature;
+    m_supportFeatureHasBeenSet = true;
+}
+
+bool RegionDetail::SupportFeatureHasBeenSet() const
+{
+    return m_supportFeatureHasBeenSet;
 }
 

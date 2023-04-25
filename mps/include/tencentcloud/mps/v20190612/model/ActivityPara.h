@@ -57,13 +57,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转码任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTask 视频转码任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TranscodeTaskInput GetTranscodeTask() const;
 
                     /**
                      * 设置视频转码任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param TranscodeTask 视频转码任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTranscodeTask(const TranscodeTaskInput& _transcodeTask);
 
@@ -75,13 +79,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频转动图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnimatedGraphicTask 视频转动图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AnimatedGraphicTaskInput GetAnimatedGraphicTask() const;
 
                     /**
                      * 设置视频转动图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AnimatedGraphicTask 视频转动图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAnimatedGraphicTask(const AnimatedGraphicTaskInput& _animatedGraphicTask);
 
@@ -93,13 +101,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频按时间点截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotByTimeOffsetTask 视频按时间点截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SnapshotByTimeOffsetTaskInput GetSnapshotByTimeOffsetTask() const;
 
                     /**
                      * 设置视频按时间点截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SnapshotByTimeOffsetTask 视频按时间点截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSnapshotByTimeOffsetTask(const SnapshotByTimeOffsetTaskInput& _snapshotByTimeOffsetTask);
 
@@ -111,13 +123,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频采样截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleSnapshotTask 视频采样截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SampleSnapshotTaskInput GetSampleSnapshotTask() const;
 
                     /**
                      * 设置视频采样截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SampleSnapshotTask 视频采样截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSampleSnapshotTask(const SampleSnapshotTaskInput& _sampleSnapshotTask);
 
@@ -129,13 +145,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频截雪碧图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSpriteTask 视频截雪碧图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageSpriteTaskInput GetImageSpriteTask() const;
 
                     /**
                      * 设置视频截雪碧图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ImageSpriteTask 视频截雪碧图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetImageSpriteTask(const ImageSpriteTaskInput& _imageSpriteTask);
 
@@ -147,13 +167,17 @@ namespace TencentCloud
 
                     /**
                      * 获取转自适应码流任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdaptiveDynamicStreamingTask 转自适应码流任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdaptiveDynamicStreamingTaskInput GetAdaptiveDynamicStreamingTask() const;
 
                     /**
                      * 设置转自适应码流任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AdaptiveDynamicStreamingTask 转自适应码流任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdaptiveDynamicStreamingTask(const AdaptiveDynamicStreamingTaskInput& _adaptiveDynamicStreamingTask);
 
@@ -165,13 +189,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容审核类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiContentReviewTask 视频内容审核类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
                      * 设置视频内容审核类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiContentReviewTask 视频内容审核类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
@@ -183,13 +211,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容分析类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiAnalysisTask 视频内容分析类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
                      * 设置视频内容分析类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiAnalysisTask 视频内容分析类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
 
@@ -201,13 +233,17 @@ namespace TencentCloud
 
                     /**
                      * 获取视频内容识别类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiRecognitionTask 视频内容识别类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
                      * 设置视频内容识别类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AiRecognitionTask 视频内容识别类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
@@ -221,54 +257,63 @@ namespace TencentCloud
 
                     /**
                      * 视频转码任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TranscodeTaskInput m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
                      * 视频转动图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AnimatedGraphicTaskInput m_animatedGraphicTask;
                     bool m_animatedGraphicTaskHasBeenSet;
 
                     /**
                      * 视频按时间点截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SnapshotByTimeOffsetTaskInput m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
 
                     /**
                      * 视频采样截图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SampleSnapshotTaskInput m_sampleSnapshotTask;
                     bool m_sampleSnapshotTaskHasBeenSet;
 
                     /**
                      * 视频截雪碧图任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageSpriteTaskInput m_imageSpriteTask;
                     bool m_imageSpriteTaskHasBeenSet;
 
                     /**
                      * 转自适应码流任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdaptiveDynamicStreamingTaskInput m_adaptiveDynamicStreamingTask;
                     bool m_adaptiveDynamicStreamingTaskHasBeenSet;
 
                     /**
                      * 视频内容审核类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
                      * 视频内容分析类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
                      * 视频内容识别类型任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;

@@ -215,17 +215,17 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取后付费资源组id
+                     * 获取包年包月服务的资源组id，按量计费的服务为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupId 后付费资源组id
+                     * @return ResourceGroupId 包年包月服务的资源组id，按量计费的服务为空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置后付费资源组id
+                     * 设置包年包月服务的资源组id，按量计费的服务为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupId 后付费资源组id
+                     * @param ResourceGroupId 包年包月服务的资源组id，按量计费的服务为空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -673,17 +673,17 @@ Waiting 就绪中
                     bool CreateFailedReasonHasBeenSet() const;
 
                     /**
-                     * 获取预付费服务对应的资源组名字
+                     * 获取包年包月服务对应的资源组名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupName 预付费服务对应的资源组名字
+                     * @return ResourceGroupName 包年包月服务对应的资源组名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
-                     * 设置预付费服务对应的资源组名字
+                     * 设置包年包月服务对应的资源组名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupName 预付费服务对应的资源组名字
+                     * @param ResourceGroupName 包年包月服务对应的资源组名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -772,7 +772,7 @@ Waiting 就绪中
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 后付费资源组id
+                     * 包年包月服务的资源组id，按量计费的服务为空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
@@ -915,7 +915,7 @@ Waiting 就绪中
                     bool m_createFailedReasonHasBeenSet;
 
                     /**
-                     * 预付费服务对应的资源组名字
+                     * 包年包月服务对应的资源组名字
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;

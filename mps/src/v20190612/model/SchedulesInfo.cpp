@@ -61,14 +61,11 @@ CoreInternalOutcome SchedulesInfo::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
-        if (!value["Status"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SchedulesInfo.Status` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Status"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Status"].IsString())
         {
-            m_status.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `SchedulesInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
     }
 
@@ -201,12 +198,7 @@ void SchedulesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_triggerHasBeenSet)
@@ -310,12 +302,12 @@ bool SchedulesInfo::ScheduleNameHasBeenSet() const
     return m_scheduleNameHasBeenSet;
 }
 
-vector<string> SchedulesInfo::GetStatus() const
+string SchedulesInfo::GetStatus() const
 {
     return m_status;
 }
 
-void SchedulesInfo::SetStatus(const vector<string>& _status)
+void SchedulesInfo::SetStatus(const string& _status)
 {
     m_status = _status;
     m_statusHasBeenSet = true;

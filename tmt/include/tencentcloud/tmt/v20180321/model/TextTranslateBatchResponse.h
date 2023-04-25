@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源语言，详见入参Target
-                     * @return Source 源语言，详见入参Target
+                     * 获取源语言，详见入参Source
+                     * @return Source 源语言，详见入参Source
                      */
                     std::string GetSource() const;
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源语言，详见入参Target
+                     * 源语言，详见入参Source
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;

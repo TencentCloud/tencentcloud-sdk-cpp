@@ -26,7 +26,8 @@ RocketMQNamespace::RocketMQNamespace() :
     m_retentionTimeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_publicEndpointHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false)
+    m_vpcEndpointHasBeenSet(false),
+    m_internalEndpointHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome RocketMQNamespace::Deserialize(const rapidjson::Value &value
         m_vpcEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalEndpoint") && !value["InternalEndpoint"].IsNull())
+    {
+        if (!value["InternalEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQNamespace.InternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalEndpoint = string(value["InternalEndpoint"].GetString());
+        m_internalEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void RocketMQNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "VpcEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void RocketMQNamespace::SetVpcEndpoint(const string& _vpcEndpoint)
 bool RocketMQNamespace::VpcEndpointHasBeenSet() const
 {
     return m_vpcEndpointHasBeenSet;
+}
+
+string RocketMQNamespace::GetInternalEndpoint() const
+{
+    return m_internalEndpoint;
+}
+
+void RocketMQNamespace::SetInternalEndpoint(const string& _internalEndpoint)
+{
+    m_internalEndpoint = _internalEndpoint;
+    m_internalEndpointHasBeenSet = true;
+}
+
+bool RocketMQNamespace::InternalEndpointHasBeenSet() const
+{
+    return m_internalEndpointHasBeenSet;
 }
 

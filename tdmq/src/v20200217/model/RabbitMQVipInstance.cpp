@@ -35,7 +35,8 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_payModeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_specNameHasBeenSet(false),
-    m_exceptionInformationHasBeenSet(false)
+    m_exceptionInformationHasBeenSet(false),
+    m_clusterStatusHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_exceptionInformationHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterStatus") && !value["ClusterStatus"].IsNull())
+    {
+        if (!value["ClusterStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.ClusterStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterStatus = value["ClusterStatus"].GetInt64();
+        m_clusterStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ExceptionInformation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_exceptionInformation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterStatus, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void RabbitMQVipInstance::SetExceptionInformation(const string& _exceptionInform
 bool RabbitMQVipInstance::ExceptionInformationHasBeenSet() const
 {
     return m_exceptionInformationHasBeenSet;
+}
+
+int64_t RabbitMQVipInstance::GetClusterStatus() const
+{
+    return m_clusterStatus;
+}
+
+void RabbitMQVipInstance::SetClusterStatus(const int64_t& _clusterStatus)
+{
+    m_clusterStatus = _clusterStatus;
+    m_clusterStatusHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::ClusterStatusHasBeenSet() const
+{
+    return m_clusterStatusHasBeenSet;
 }
 

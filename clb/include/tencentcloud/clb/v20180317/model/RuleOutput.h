@@ -403,17 +403,17 @@ namespace TencentCloud
                     bool WafDomainIdHasBeenSet() const;
 
                     /**
-                     * 获取TRPC被调服务器路由，ForwardType为TRPC时有效
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
-                     * 设置TRPC被调服务器路由，ForwardType为TRPC时有效
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
@@ -425,17 +425,17 @@ namespace TencentCloud
                     bool TrpcCalleeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC调用服务接口，ForwardType为TRPC时有效
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
-                     * 设置TRPC调用服务接口，ForwardType为TRPC时有效
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
@@ -630,14 +630,14 @@ namespace TencentCloud
                     bool m_wafDomainIdHasBeenSet;
 
                     /**
-                     * TRPC被调服务器路由，ForwardType为TRPC时有效
+                     * TRPC被调服务器路由，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trpcCallee;
                     bool m_trpcCalleeHasBeenSet;
 
                     /**
-                     * TRPC调用服务接口，ForwardType为TRPC时有效
+                     * TRPC调用服务接口，ForwardType为TRPC时有效。目前暂未对外开放。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trpcFunc;

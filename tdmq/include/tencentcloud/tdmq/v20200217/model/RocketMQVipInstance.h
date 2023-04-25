@@ -306,6 +306,72 @@ namespace TencentCloud
                      */
                     bool SpecNameHasBeenSet() const;
 
+                    /**
+                     * 获取最大可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxRetention 最大可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxRetention() const;
+
+                    /**
+                     * 设置最大可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxRetention 最大可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxRetention(const int64_t& _maxRetention);
+
+                    /**
+                     * 判断参数 MaxRetention 是否已赋值
+                     * @return MaxRetention 是否已赋值
+                     */
+                    bool MaxRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinRetention 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMinRetention() const;
+
+                    /**
+                     * 设置最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MinRetention 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMinRetention(const int64_t& _minRetention);
+
+                    /**
+                     * 判断参数 MinRetention 是否已赋值
+                     * @return MinRetention 是否已赋值
+                     */
+                    bool MinRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Retention 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRetention() const;
+
+                    /**
+                     * 设置实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Retention 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetention(const int64_t& _retention);
+
+                    /**
+                     * 判断参数 Retention 是否已赋值
+                     * @return Retention 是否已赋值
+                     */
+                    bool RetentionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +459,27 @@ namespace TencentCloud
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
+
+                    /**
+                     * 最大可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxRetention;
+                    bool m_maxRetentionHasBeenSet;
+
+                    /**
+                     * 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_minRetention;
+                    bool m_minRetentionHasBeenSet;
+
+                    /**
+                     * 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_retention;
+                    bool m_retentionHasBeenSet;
 
                 };
             }

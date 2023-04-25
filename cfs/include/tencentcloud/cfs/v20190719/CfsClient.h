@@ -81,6 +81,8 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleRequest.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h>
@@ -206,6 +208,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
                 typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFileSystemAutoScaleUpRuleResponse> ModifyFileSystemAutoScaleUpRuleOutcome;
+                typedef std::future<ModifyFileSystemAutoScaleUpRuleOutcome> ModifyFileSystemAutoScaleUpRuleOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::ModifyFileSystemAutoScaleUpRuleRequest&, ModifyFileSystemAutoScaleUpRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFileSystemAutoScaleUpRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScaleUpFileSystemResponse> ScaleUpFileSystemOutcome;
                 typedef std::future<ScaleUpFileSystemOutcome> ScaleUpFileSystemOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ScaleUpFileSystemRequest&, ScaleUpFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpFileSystemAsyncHandler;
@@ -509,6 +514,15 @@ namespace TencentCloud
                 DescribeUserQuotaOutcome DescribeUserQuota(const Model::DescribeUserQuotaRequest &request);
                 void DescribeUserQuotaAsync(const Model::DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
+
+                /**
+                 *用来设置文件系统扩容策略
+                 * @param req ModifyFileSystemAutoScaleUpRuleRequest
+                 * @return ModifyFileSystemAutoScaleUpRuleOutcome
+                 */
+                ModifyFileSystemAutoScaleUpRuleOutcome ModifyFileSystemAutoScaleUpRule(const Model::ModifyFileSystemAutoScaleUpRuleRequest &request);
+                void ModifyFileSystemAutoScaleUpRuleAsync(const Model::ModifyFileSystemAutoScaleUpRuleRequest& request, const ModifyFileSystemAutoScaleUpRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFileSystemAutoScaleUpRuleOutcomeCallable ModifyFileSystemAutoScaleUpRuleCallable(const Model::ModifyFileSystemAutoScaleUpRuleRequest& request);
 
                 /**
                  *该接口用于对turbo 文件系统扩容使用

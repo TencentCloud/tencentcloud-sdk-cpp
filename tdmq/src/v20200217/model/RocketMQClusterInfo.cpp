@@ -35,7 +35,9 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_statusHasBeenSet(false),
     m_isolateTimeHasBeenSet(false),
     m_httpPublicEndpointHasBeenSet(false),
-    m_httpVpcEndpointHasBeenSet(false)
+    m_httpVpcEndpointHasBeenSet(false),
+    m_internalEndpointHasBeenSet(false),
+    m_httpInternalEndpointHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,26 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_httpVpcEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalEndpoint") && !value["InternalEndpoint"].IsNull())
+    {
+        if (!value["InternalEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.InternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalEndpoint = string(value["InternalEndpoint"].GetString());
+        m_internalEndpointHasBeenSet = true;
+    }
+
+    if (value.HasMember("HttpInternalEndpoint") && !value["HttpInternalEndpoint"].IsNull())
+    {
+        if (!value["HttpInternalEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.HttpInternalEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpInternalEndpoint = string(value["HttpInternalEndpoint"].GetString());
+        m_httpInternalEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +358,22 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "HttpVpcEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_httpVpcEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpInternalEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpInternalEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpInternalEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +617,37 @@ void RocketMQClusterInfo::SetHttpVpcEndpoint(const string& _httpVpcEndpoint)
 bool RocketMQClusterInfo::HttpVpcEndpointHasBeenSet() const
 {
     return m_httpVpcEndpointHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetInternalEndpoint() const
+{
+    return m_internalEndpoint;
+}
+
+void RocketMQClusterInfo::SetInternalEndpoint(const string& _internalEndpoint)
+{
+    m_internalEndpoint = _internalEndpoint;
+    m_internalEndpointHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::InternalEndpointHasBeenSet() const
+{
+    return m_internalEndpointHasBeenSet;
+}
+
+string RocketMQClusterInfo::GetHttpInternalEndpoint() const
+{
+    return m_httpInternalEndpoint;
+}
+
+void RocketMQClusterInfo::SetHttpInternalEndpoint(const string& _httpInternalEndpoint)
+{
+    m_httpInternalEndpoint = _httpInternalEndpoint;
+    m_httpInternalEndpointHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::HttpInternalEndpointHasBeenSet() const
+{
+    return m_httpInternalEndpointHasBeenSet;
 }
 

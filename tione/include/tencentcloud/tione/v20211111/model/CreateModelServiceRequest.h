@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/ModelInfo.h>
+#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/EnvVar.h>
 #include <tencentcloud/tione/v20211111/model/ResourceInfo.h>
 #include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
@@ -52,24 +52,6 @@ namespace TencentCloud
                     ~CreateModelServiceRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取镜像信息，配置服务运行所需的镜像地址等信息
-                     * @return ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
-                     */
-                    ImageInfo GetImageInfo() const;
-
-                    /**
-                     * 设置镜像信息，配置服务运行所需的镜像地址等信息
-                     * @param ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
-                     */
-                    void SetImageInfo(const ImageInfo& _imageInfo);
-
-                    /**
-                     * 判断参数 ImageInfo 是否已赋值
-                     * @return ImageInfo 是否已赋值
-                     */
-                    bool ImageInfoHasBeenSet() const;
 
                     /**
                      * 获取新增版本时需要填写
@@ -126,14 +108,14 @@ namespace TencentCloud
                     bool ServiceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种
-                     * @return ChargeType 付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种
+                     * 获取付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
+                     * @return ChargeType 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种
-                     * @param ChargeType 付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种
+                     * 设置付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
+                     * @param ChargeType 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
                      */
                     void SetChargeType(const std::string& _chargeType);
 
@@ -180,6 +162,24 @@ namespace TencentCloud
                     bool ModelInfoHasBeenSet() const;
 
                     /**
+                     * 获取镜像信息，配置服务运行所需的镜像地址等信息
+                     * @return ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     */
+                    ImageInfo GetImageInfo() const;
+
+                    /**
+                     * 设置镜像信息，配置服务运行所需的镜像地址等信息
+                     * @param ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     */
+                    void SetImageInfo(const ImageInfo& _imageInfo);
+
+                    /**
+                     * 判断参数 ImageInfo 是否已赋值
+                     * @return ImageInfo 是否已赋值
+                     */
+                    bool ImageInfoHasBeenSet() const;
+
+                    /**
                      * 获取环境变量，可选参数，用于配置容器中的环境变量
                      * @return Env 环境变量，可选参数，用于配置容器中的环境变量
                      */
@@ -198,14 +198,14 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写
-                     * @return Resources 资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * 获取资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * @return Resources 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
                      */
                     ResourceInfo GetResources() const;
 
                     /**
-                     * 设置资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写
-                     * @param Resources 资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * 设置资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * @param Resources 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
                      */
                     void SetResources(const ResourceInfo& _resources);
 
@@ -634,12 +634,6 @@ HYBRID_PAID:
                 private:
 
                     /**
-                     * 镜像信息，配置服务运行所需的镜像地址等信息
-                     */
-                    ImageInfo m_imageInfo;
-                    bool m_imageInfoHasBeenSet;
-
-                    /**
                      * 新增版本时需要填写
                      */
                     std::string m_serviceGroupId;
@@ -658,7 +652,7 @@ HYBRID_PAID:
                     bool m_serviceDescriptionHasBeenSet;
 
                     /**
-                     * 付费模式,有 PREPAID 、 POSTPAID_BY_HOUR 和 HYBRID_PAID 三种
+                     * 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
@@ -676,13 +670,19 @@ HYBRID_PAID:
                     bool m_modelInfoHasBeenSet;
 
                     /**
+                     * 镜像信息，配置服务运行所需的镜像地址等信息
+                     */
+                    ImageInfo m_imageInfo;
+                    bool m_imageInfoHasBeenSet;
+
+                    /**
                      * 环境变量，可选参数，用于配置容器中的环境变量
                      */
                     std::vector<EnvVar> m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * 资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
                      */
                     ResourceInfo m_resources;
                     bool m_resourcesHasBeenSet;

@@ -1287,6 +1287,49 @@ CfsClient::DescribeUserQuotaOutcomeCallable CfsClient::DescribeUserQuotaCallable
     return task->get_future();
 }
 
+CfsClient::ModifyFileSystemAutoScaleUpRuleOutcome CfsClient::ModifyFileSystemAutoScaleUpRule(const ModifyFileSystemAutoScaleUpRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFileSystemAutoScaleUpRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFileSystemAutoScaleUpRuleResponse rsp = ModifyFileSystemAutoScaleUpRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFileSystemAutoScaleUpRuleOutcome(rsp);
+        else
+            return ModifyFileSystemAutoScaleUpRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFileSystemAutoScaleUpRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::ModifyFileSystemAutoScaleUpRuleAsync(const ModifyFileSystemAutoScaleUpRuleRequest& request, const ModifyFileSystemAutoScaleUpRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFileSystemAutoScaleUpRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::ModifyFileSystemAutoScaleUpRuleOutcomeCallable CfsClient::ModifyFileSystemAutoScaleUpRuleCallable(const ModifyFileSystemAutoScaleUpRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFileSystemAutoScaleUpRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFileSystemAutoScaleUpRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::ScaleUpFileSystemOutcome CfsClient::ScaleUpFileSystem(const ScaleUpFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "ScaleUpFileSystem");

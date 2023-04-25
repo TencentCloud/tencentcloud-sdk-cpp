@@ -192,14 +192,14 @@ namespace TencentCloud
                     bool ForwardTypeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填。
-                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。
+                     * 获取TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @return TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     std::string GetTrpcCallee() const;
 
                     /**
-                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填。
-                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。
+                     * 设置TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @param TrpcCallee TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     void SetTrpcCallee(const std::string& _trpcCallee);
 
@@ -210,14 +210,14 @@ namespace TencentCloud
                     bool TrpcCalleeHasBeenSet() const;
 
                     /**
-                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填。
-                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。
+                     * 获取TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @return TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     std::string GetTrpcFunc() const;
 
                     /**
-                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填。
-                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。
+                     * 设置TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
+                     * @param TrpcFunc TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     void SetTrpcFunc(const std::string& _trpcFunc);
 
@@ -279,13 +279,13 @@ namespace TencentCloud
                     bool m_forwardTypeHasBeenSet;
 
                     /**
-                     * TRPC被调服务器路由，ForwardType为TRPC时必填。
+                     * TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     std::string m_trpcCallee;
                     bool m_trpcCalleeHasBeenSet;
 
                     /**
-                     * TRPC调用服务接口，ForwardType为TRPC时必填。
+                     * TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放。
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;

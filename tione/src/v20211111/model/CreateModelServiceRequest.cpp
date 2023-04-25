@@ -23,13 +23,13 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 CreateModelServiceRequest::CreateModelServiceRequest() :
-    m_imageInfoHasBeenSet(false),
     m_serviceGroupIdHasBeenSet(false),
     m_serviceGroupNameHasBeenSet(false),
     m_serviceDescriptionHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_modelInfoHasBeenSet(false),
+    m_imageInfoHasBeenSet(false),
     m_envHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -59,15 +59,6 @@ string CreateModelServiceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_imageInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageInfo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_imageInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_serviceGroupIdHasBeenSet)
     {
@@ -116,6 +107,15 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modelInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_imageInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_envHasBeenSet)
@@ -313,22 +313,6 @@ string CreateModelServiceRequest::ToJsonString() const
 }
 
 
-ImageInfo CreateModelServiceRequest::GetImageInfo() const
-{
-    return m_imageInfo;
-}
-
-void CreateModelServiceRequest::SetImageInfo(const ImageInfo& _imageInfo)
-{
-    m_imageInfo = _imageInfo;
-    m_imageInfoHasBeenSet = true;
-}
-
-bool CreateModelServiceRequest::ImageInfoHasBeenSet() const
-{
-    return m_imageInfoHasBeenSet;
-}
-
 string CreateModelServiceRequest::GetServiceGroupId() const
 {
     return m_serviceGroupId;
@@ -423,6 +407,22 @@ void CreateModelServiceRequest::SetModelInfo(const ModelInfo& _modelInfo)
 bool CreateModelServiceRequest::ModelInfoHasBeenSet() const
 {
     return m_modelInfoHasBeenSet;
+}
+
+ImageInfo CreateModelServiceRequest::GetImageInfo() const
+{
+    return m_imageInfo;
+}
+
+void CreateModelServiceRequest::SetImageInfo(const ImageInfo& _imageInfo)
+{
+    m_imageInfo = _imageInfo;
+    m_imageInfoHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ImageInfoHasBeenSet() const
+{
+    return m_imageInfoHasBeenSet;
 }
 
 vector<EnvVar> CreateModelServiceRequest::GetEnv() const

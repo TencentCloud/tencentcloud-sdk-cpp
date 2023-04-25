@@ -34,7 +34,10 @@ RocketMQVipInstance::RocketMQVipInstance() :
     m_autoRenewFlagHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_specNameHasBeenSet(false)
+    m_specNameHasBeenSet(false),
+    m_maxRetentionHasBeenSet(false),
+    m_minRetentionHasBeenSet(false),
+    m_retentionHasBeenSet(false)
 {
 }
 
@@ -183,6 +186,36 @@ CoreInternalOutcome RocketMQVipInstance::Deserialize(const rapidjson::Value &val
         m_specNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxRetention") && !value["MaxRetention"].IsNull())
+    {
+        if (!value["MaxRetention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQVipInstance.MaxRetention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetention = value["MaxRetention"].GetInt64();
+        m_maxRetentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinRetention") && !value["MinRetention"].IsNull())
+    {
+        if (!value["MinRetention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQVipInstance.MinRetention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minRetention = value["MinRetention"].GetInt64();
+        m_minRetentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Retention") && !value["Retention"].IsNull())
+    {
+        if (!value["Retention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQVipInstance.Retention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retention = value["Retention"].GetInt64();
+        m_retentionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +333,30 @@ void RocketMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SpecName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRetention, allocator);
+    }
+
+    if (m_minRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinRetention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minRetention, allocator);
+    }
+
+    if (m_retentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Retention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retention, allocator);
     }
 
 }
@@ -527,5 +584,53 @@ void RocketMQVipInstance::SetSpecName(const string& _specName)
 bool RocketMQVipInstance::SpecNameHasBeenSet() const
 {
     return m_specNameHasBeenSet;
+}
+
+int64_t RocketMQVipInstance::GetMaxRetention() const
+{
+    return m_maxRetention;
+}
+
+void RocketMQVipInstance::SetMaxRetention(const int64_t& _maxRetention)
+{
+    m_maxRetention = _maxRetention;
+    m_maxRetentionHasBeenSet = true;
+}
+
+bool RocketMQVipInstance::MaxRetentionHasBeenSet() const
+{
+    return m_maxRetentionHasBeenSet;
+}
+
+int64_t RocketMQVipInstance::GetMinRetention() const
+{
+    return m_minRetention;
+}
+
+void RocketMQVipInstance::SetMinRetention(const int64_t& _minRetention)
+{
+    m_minRetention = _minRetention;
+    m_minRetentionHasBeenSet = true;
+}
+
+bool RocketMQVipInstance::MinRetentionHasBeenSet() const
+{
+    return m_minRetentionHasBeenSet;
+}
+
+int64_t RocketMQVipInstance::GetRetention() const
+{
+    return m_retention;
+}
+
+void RocketMQVipInstance::SetRetention(const int64_t& _retention)
+{
+    m_retention = _retention;
+    m_retentionHasBeenSet = true;
+}
+
+bool RocketMQVipInstance::RetentionHasBeenSet() const
+{
+    return m_retentionHasBeenSet;
 }
 

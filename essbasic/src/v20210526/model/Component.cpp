@@ -44,7 +44,8 @@ Component::Component() :
     m_keywordOrderHasBeenSet(false),
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
-    m_keywordIndexesHasBeenSet(false)
+    m_keywordIndexesHasBeenSet(false),
+    m_placeholderHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_keywordIndexesHasBeenSet = true;
     }
 
+    if (value.HasMember("Placeholder") && !value["Placeholder"].IsNull())
+    {
+        if (!value["Placeholder"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.Placeholder` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_placeholder = string(value["Placeholder"].GetString());
+        m_placeholderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +509,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_placeholderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Placeholder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_placeholder.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -885,5 +904,21 @@ void Component::SetKeywordIndexes(const vector<int64_t>& _keywordIndexes)
 bool Component::KeywordIndexesHasBeenSet() const
 {
     return m_keywordIndexesHasBeenSet;
+}
+
+string Component::GetPlaceholder() const
+{
+    return m_placeholder;
+}
+
+void Component::SetPlaceholder(const string& _placeholder)
+{
+    m_placeholder = _placeholder;
+    m_placeholderHasBeenSet = true;
+}
+
+bool Component::PlaceholderHasBeenSet() const
+{
+    return m_placeholderHasBeenSet;
 }
 

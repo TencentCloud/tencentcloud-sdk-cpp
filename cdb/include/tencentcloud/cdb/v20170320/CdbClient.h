@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowResponse.h>
+#include <tencentcloud/cdb/v20170320/model/AdjustCdbProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/AdjustCdbProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressRequest.h>
+#include <tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h>
@@ -33,6 +37,8 @@
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h>
@@ -45,6 +51,10 @@
 #include <tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateBackupResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCdbProxyRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCdbProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCdbProxyAddressRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateCdbProxyAddressResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateCloneInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateCloneInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h>
@@ -111,6 +121,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCDBProxyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCDBProxyResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
@@ -165,6 +177,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxySupportParamRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeProxySupportParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRemoteBackupConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRemoteBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h>
@@ -227,6 +241,12 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressDescRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressDescResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressVipAndVPortRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressVipAndVPortResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyParamRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyParamResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
@@ -318,6 +338,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTimeWindowResponse> AddTimeWindowOutcome;
                 typedef std::future<AddTimeWindowOutcome> AddTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AddTimeWindowRequest&, AddTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTimeWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::AdjustCdbProxyResponse> AdjustCdbProxyOutcome;
+                typedef std::future<AdjustCdbProxyOutcome> AdjustCdbProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::AdjustCdbProxyRequest&, AdjustCdbProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AdjustCdbProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::AdjustCdbProxyAddressResponse> AdjustCdbProxyAddressOutcome;
+                typedef std::future<AdjustCdbProxyAddressOutcome> AdjustCdbProxyAddressOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::AdjustCdbProxyAddressRequest&, AdjustCdbProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AdjustCdbProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::AnalyzeAuditLogsResponse> AnalyzeAuditLogsOutcome;
                 typedef std::future<AnalyzeAuditLogsOutcome> AnalyzeAuditLogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AnalyzeAuditLogsRequest&, AnalyzeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeAuditLogsAsyncHandler;
@@ -330,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseCDBProxyResponse> CloseCDBProxyOutcome;
                 typedef std::future<CloseCDBProxyOutcome> CloseCDBProxyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseCDBProxyRequest&, CloseCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseCdbProxyAddressResponse> CloseCdbProxyAddressOutcome;
+                typedef std::future<CloseCdbProxyAddressOutcome> CloseCdbProxyAddressOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CloseCdbProxyAddressRequest&, CloseCdbProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCdbProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWanServiceResponse> CloseWanServiceOutcome;
                 typedef std::future<CloseWanServiceOutcome> CloseWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseWanServiceRequest&, CloseWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanServiceAsyncHandler;
@@ -348,6 +377,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBackupResponse> CreateBackupOutcome;
                 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCdbProxyResponse> CreateCdbProxyOutcome;
+                typedef std::future<CreateCdbProxyOutcome> CreateCdbProxyOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateCdbProxyRequest&, CreateCdbProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdbProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCdbProxyAddressResponse> CreateCdbProxyAddressOutcome;
+                typedef std::future<CreateCdbProxyAddressOutcome> CreateCdbProxyAddressOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateCdbProxyAddressRequest&, CreateCdbProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdbProxyAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloneInstanceResponse> CreateCloneInstanceOutcome;
                 typedef std::future<CreateCloneInstanceOutcome> CreateCloneInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateCloneInstanceRequest&, CreateCloneInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloneInstanceAsyncHandler;
@@ -447,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCDBProxyResponse> DescribeCDBProxyOutcome;
                 typedef std::future<DescribeCDBProxyOutcome> DescribeCDBProxyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCDBProxyRequest&, DescribeCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDBProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCdbProxyInfoResponse> DescribeCdbProxyInfoOutcome;
+                typedef std::future<DescribeCdbProxyInfoOutcome> DescribeCdbProxyInfoOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCdbProxyInfoRequest&, DescribeCdbProxyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdbProxyInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdbZoneConfigResponse> DescribeCdbZoneConfigOutcome;
                 typedef std::future<DescribeCdbZoneConfigOutcome> DescribeCdbZoneConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCdbZoneConfigRequest&, DescribeCdbZoneConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdbZoneConfigAsyncHandler;
@@ -528,6 +566,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxyCustomConfResponse> DescribeProxyCustomConfOutcome;
                 typedef std::future<DescribeProxyCustomConfOutcome> DescribeProxyCustomConfOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeProxyCustomConfRequest&, DescribeProxyCustomConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyCustomConfAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxySupportParamResponse> DescribeProxySupportParamOutcome;
+                typedef std::future<DescribeProxySupportParamOutcome> DescribeProxySupportParamOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeProxySupportParamRequest&, DescribeProxySupportParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySupportParamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRemoteBackupConfigResponse> DescribeRemoteBackupConfigOutcome;
                 typedef std::future<DescribeRemoteBackupConfigOutcome> DescribeRemoteBackupConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRemoteBackupConfigRequest&, DescribeRemoteBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteBackupConfigAsyncHandler;
@@ -621,6 +662,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCDBProxyVipVPortResponse> ModifyCDBProxyVipVPortOutcome;
                 typedef std::future<ModifyCDBProxyVipVPortOutcome> ModifyCDBProxyVipVPortOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyVipVPortRequest&, ModifyCDBProxyVipVPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyVipVPortAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCdbProxyAddressDescResponse> ModifyCdbProxyAddressDescOutcome;
+                typedef std::future<ModifyCdbProxyAddressDescOutcome> ModifyCdbProxyAddressDescOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCdbProxyAddressDescRequest&, ModifyCdbProxyAddressDescOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdbProxyAddressDescAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCdbProxyAddressVipAndVPortResponse> ModifyCdbProxyAddressVipAndVPortOutcome;
+                typedef std::future<ModifyCdbProxyAddressVipAndVPortOutcome> ModifyCdbProxyAddressVipAndVPortOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCdbProxyAddressVipAndVPortRequest&, ModifyCdbProxyAddressVipAndVPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdbProxyAddressVipAndVPortAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCdbProxyParamResponse> ModifyCdbProxyParamOutcome;
+                typedef std::future<ModifyCdbProxyParamOutcome> ModifyCdbProxyParamOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyCdbProxyParamRequest&, ModifyCdbProxyParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdbProxyParamAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -745,6 +795,24 @@ namespace TencentCloud
                 AddTimeWindowOutcomeCallable AddTimeWindowCallable(const Model::AddTimeWindowRequest& request);
 
                 /**
+                 *调整数据库代理配置
+                 * @param req AdjustCdbProxyRequest
+                 * @return AdjustCdbProxyOutcome
+                 */
+                AdjustCdbProxyOutcome AdjustCdbProxy(const Model::AdjustCdbProxyRequest &request);
+                void AdjustCdbProxyAsync(const Model::AdjustCdbProxyRequest& request, const AdjustCdbProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AdjustCdbProxyOutcomeCallable AdjustCdbProxyCallable(const Model::AdjustCdbProxyRequest& request);
+
+                /**
+                 *调整数据库代理地址配置
+                 * @param req AdjustCdbProxyAddressRequest
+                 * @return AdjustCdbProxyAddressOutcome
+                 */
+                AdjustCdbProxyAddressOutcome AdjustCdbProxyAddress(const Model::AdjustCdbProxyAddressRequest &request);
+                void AdjustCdbProxyAddressAsync(const Model::AdjustCdbProxyAddressRequest& request, const AdjustCdbProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AdjustCdbProxyAddressOutcomeCallable AdjustCdbProxyAddressCallable(const Model::AdjustCdbProxyAddressRequest& request);
+
+                /**
                  *在不同过滤条件下的审计日志结果集中，选定特定的数据列进行聚合统计。
                  * @param req AnalyzeAuditLogsRequest
                  * @return AnalyzeAuditLogsOutcome
@@ -779,6 +847,15 @@ namespace TencentCloud
                 CloseCDBProxyOutcome CloseCDBProxy(const Model::CloseCDBProxyRequest &request);
                 void CloseCDBProxyAsync(const Model::CloseCDBProxyRequest& request, const CloseCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseCDBProxyOutcomeCallable CloseCDBProxyCallable(const Model::CloseCDBProxyRequest& request);
+
+                /**
+                 *请求关闭数据库代理地址
+                 * @param req CloseCdbProxyAddressRequest
+                 * @return CloseCdbProxyAddressOutcome
+                 */
+                CloseCdbProxyAddressOutcome CloseCdbProxyAddress(const Model::CloseCdbProxyAddressRequest &request);
+                void CloseCdbProxyAddressAsync(const Model::CloseCdbProxyAddressRequest& request, const CloseCdbProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseCdbProxyAddressOutcomeCallable CloseCdbProxyAddressCallable(const Model::CloseCdbProxyAddressRequest& request);
 
                 /**
                  *本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。
@@ -833,6 +910,24 @@ namespace TencentCloud
                 CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest &request);
                 void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
+
+                /**
+                 *主实例创建数据库代理
+                 * @param req CreateCdbProxyRequest
+                 * @return CreateCdbProxyOutcome
+                 */
+                CreateCdbProxyOutcome CreateCdbProxy(const Model::CreateCdbProxyRequest &request);
+                void CreateCdbProxyAsync(const Model::CreateCdbProxyRequest& request, const CreateCdbProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCdbProxyOutcomeCallable CreateCdbProxyCallable(const Model::CreateCdbProxyRequest& request);
+
+                /**
+                 *数据库代理增加代理地址
+                 * @param req CreateCdbProxyAddressRequest
+                 * @return CreateCdbProxyAddressOutcome
+                 */
+                CreateCdbProxyAddressOutcome CreateCdbProxyAddress(const Model::CreateCdbProxyAddressRequest &request);
+                void CreateCdbProxyAddressAsync(const Model::CreateCdbProxyAddressRequest& request, const CreateCdbProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCdbProxyAddressOutcomeCallable CreateCdbProxyAddressCallable(const Model::CreateCdbProxyAddressRequest& request);
 
                 /**
                  *本接口(CreateCloneInstance) 用于从目标源实例创建一个克隆实例，可以指定克隆实例回档到源实例的指定物理备份文件或者指定的回档时间点。
@@ -1157,6 +1252,15 @@ namespace TencentCloud
                 DescribeCDBProxyOutcomeCallable DescribeCDBProxyCallable(const Model::DescribeCDBProxyRequest& request);
 
                 /**
+                 *查询数据库代理详情信息
+                 * @param req DescribeCdbProxyInfoRequest
+                 * @return DescribeCdbProxyInfoOutcome
+                 */
+                DescribeCdbProxyInfoOutcome DescribeCdbProxyInfo(const Model::DescribeCdbProxyInfoRequest &request);
+                void DescribeCdbProxyInfoAsync(const Model::DescribeCdbProxyInfoRequest& request, const DescribeCdbProxyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCdbProxyInfoOutcomeCallable DescribeCdbProxyInfoCallable(const Model::DescribeCdbProxyInfoRequest& request);
+
+                /**
                  *本接口(DescribeCdbZoneConfig)用于查询云数据库各地域可售卖的规格配置。
                  * @param req DescribeCdbZoneConfigRequest
                  * @return DescribeCdbZoneConfigOutcome
@@ -1403,6 +1507,15 @@ namespace TencentCloud
                 DescribeProxyCustomConfOutcome DescribeProxyCustomConf(const Model::DescribeProxyCustomConfRequest &request);
                 void DescribeProxyCustomConfAsync(const Model::DescribeProxyCustomConfRequest& request, const DescribeProxyCustomConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxyCustomConfOutcomeCallable DescribeProxyCustomConfCallable(const Model::DescribeProxyCustomConfRequest& request);
+
+                /**
+                 *查询实例支持代理版本和参数
+                 * @param req DescribeProxySupportParamRequest
+                 * @return DescribeProxySupportParamOutcome
+                 */
+                DescribeProxySupportParamOutcome DescribeProxySupportParam(const Model::DescribeProxySupportParamRequest &request);
+                void DescribeProxySupportParamAsync(const Model::DescribeProxySupportParamRequest& request, const DescribeProxySupportParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxySupportParamOutcomeCallable DescribeProxySupportParamCallable(const Model::DescribeProxySupportParamRequest& request);
 
                 /**
                  *本接口(DescribeRemoteBackupConfig)用于查询数据库异地备份配置信息。
@@ -1694,6 +1807,33 @@ namespace TencentCloud
                 ModifyCDBProxyVipVPortOutcome ModifyCDBProxyVipVPort(const Model::ModifyCDBProxyVipVPortRequest &request);
                 void ModifyCDBProxyVipVPortAsync(const Model::ModifyCDBProxyVipVPortRequest& request, const ModifyCDBProxyVipVPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCDBProxyVipVPortOutcomeCallable ModifyCDBProxyVipVPortCallable(const Model::ModifyCDBProxyVipVPortRequest& request);
+
+                /**
+                 *修改代理地址描述信息
+                 * @param req ModifyCdbProxyAddressDescRequest
+                 * @return ModifyCdbProxyAddressDescOutcome
+                 */
+                ModifyCdbProxyAddressDescOutcome ModifyCdbProxyAddressDesc(const Model::ModifyCdbProxyAddressDescRequest &request);
+                void ModifyCdbProxyAddressDescAsync(const Model::ModifyCdbProxyAddressDescRequest& request, const ModifyCdbProxyAddressDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCdbProxyAddressDescOutcomeCallable ModifyCdbProxyAddressDescCallable(const Model::ModifyCdbProxyAddressDescRequest& request);
+
+                /**
+                 *修改数据库代理地址VPC信息
+                 * @param req ModifyCdbProxyAddressVipAndVPortRequest
+                 * @return ModifyCdbProxyAddressVipAndVPortOutcome
+                 */
+                ModifyCdbProxyAddressVipAndVPortOutcome ModifyCdbProxyAddressVipAndVPort(const Model::ModifyCdbProxyAddressVipAndVPortRequest &request);
+                void ModifyCdbProxyAddressVipAndVPortAsync(const Model::ModifyCdbProxyAddressVipAndVPortRequest& request, const ModifyCdbProxyAddressVipAndVPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCdbProxyAddressVipAndVPortOutcomeCallable ModifyCdbProxyAddressVipAndVPortCallable(const Model::ModifyCdbProxyAddressVipAndVPortRequest& request);
+
+                /**
+                 *配置数据库代理参数
+                 * @param req ModifyCdbProxyParamRequest
+                 * @return ModifyCdbProxyParamOutcome
+                 */
+                ModifyCdbProxyParamOutcome ModifyCdbProxyParam(const Model::ModifyCdbProxyParamRequest &request);
+                void ModifyCdbProxyParamAsync(const Model::ModifyCdbProxyParamRequest& request, const ModifyCdbProxyParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCdbProxyParamOutcomeCallable ModifyCdbProxyParamCallable(const Model::ModifyCdbProxyParamRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。

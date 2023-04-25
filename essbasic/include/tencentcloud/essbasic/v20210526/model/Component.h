@@ -1069,6 +1069,28 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                      */
                     bool KeywordIndexesHasBeenSet() const;
 
+                    /**
+                     * 获取填写提示的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Placeholder 填写提示的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPlaceholder() const;
+
+                    /**
+                     * 设置填写提示的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Placeholder 填写提示的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlaceholder(const std::string& _placeholder);
+
+                    /**
+                     * 判断参数 Placeholder 是否已赋值
+                     * @return Placeholder 是否已赋值
+                     */
+                    bool PlaceholderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1360,6 +1382,13 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                      */
                     std::vector<int64_t> m_keywordIndexes;
                     bool m_keywordIndexesHasBeenSet;
+
+                    /**
+                     * 填写提示的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_placeholder;
+                    bool m_placeholderHasBeenSet;
 
                 };
             }

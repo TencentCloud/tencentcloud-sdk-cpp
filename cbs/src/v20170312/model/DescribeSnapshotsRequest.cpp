@@ -25,10 +25,10 @@ using namespace std;
 DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
     m_snapshotIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_orderHasBeenSet(false),
-    m_orderFieldHasBeenSet(false)
+    m_orderFieldHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -67,14 +67,6 @@ string DescribeSnapshotsRequest::ToJsonString() const
         }
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -83,20 +75,28 @@ string DescribeSnapshotsRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_orderHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Order";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_orderFieldHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderField";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,22 +139,6 @@ bool DescribeSnapshotsRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-uint64_t DescribeSnapshotsRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeSnapshotsRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeSnapshotsRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 uint64_t DescribeSnapshotsRequest::GetLimit() const
 {
     return m_limit;
@@ -171,22 +155,6 @@ bool DescribeSnapshotsRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-string DescribeSnapshotsRequest::GetOrder() const
-{
-    return m_order;
-}
-
-void DescribeSnapshotsRequest::SetOrder(const string& _order)
-{
-    m_order = _order;
-    m_orderHasBeenSet = true;
-}
-
-bool DescribeSnapshotsRequest::OrderHasBeenSet() const
-{
-    return m_orderHasBeenSet;
-}
-
 string DescribeSnapshotsRequest::GetOrderField() const
 {
     return m_orderField;
@@ -201,6 +169,38 @@ void DescribeSnapshotsRequest::SetOrderField(const string& _orderField)
 bool DescribeSnapshotsRequest::OrderFieldHasBeenSet() const
 {
     return m_orderFieldHasBeenSet;
+}
+
+uint64_t DescribeSnapshotsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSnapshotsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSnapshotsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+string DescribeSnapshotsRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeSnapshotsRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeSnapshotsRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 

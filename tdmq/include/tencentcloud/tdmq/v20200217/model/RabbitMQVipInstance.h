@@ -328,6 +328,28 @@ namespace TencentCloud
                      */
                     bool ExceptionInformationHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+为了和计费区分开，额外开启一个状态位，用于显示。
+                     * @return ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+为了和计费区分开，额外开启一个状态位，用于显示。
+                     */
+                    int64_t GetClusterStatus() const;
+
+                    /**
+                     * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+为了和计费区分开，额外开启一个状态位，用于显示。
+                     * @param ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+为了和计费区分开，额外开启一个状态位，用于显示。
+                     */
+                    void SetClusterStatus(const int64_t& _clusterStatus);
+
+                    /**
+                     * 判断参数 ClusterStatus 是否已赋值
+                     * @return ClusterStatus 是否已赋值
+                     */
+                    bool ClusterStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +444,13 @@ namespace TencentCloud
                      */
                     std::string m_exceptionInformation;
                     bool m_exceptionInformationHasBeenSet;
+
+                    /**
+                     * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+为了和计费区分开，额外开启一个状态位，用于显示。
+                     */
+                    int64_t m_clusterStatus;
+                    bool m_clusterStatusHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/RegionDetail.h
   include/tencentcloud/gaap/v20180529/model/DestAddressInfo.h
   include/tencentcloud/gaap/v20180529/model/DescribeUDPListenersRequest.h
+  include/tencentcloud/gaap/v20180529/model/SupportFeature.h
   include/tencentcloud/gaap/v20180529/model/DescribeGlobalDomainsRequest.h
   include/tencentcloud/gaap/v20180529/model/DeleteProxyGroupRequest.h
   include/tencentcloud/gaap/v20180529/model/OpenSecurityPolicyResponse.h
@@ -280,6 +281,7 @@ set(gaap_src
   src/v20180529/model/RegionDetail.cpp
   src/v20180529/model/DestAddressInfo.cpp
   src/v20180529/model/DescribeUDPListenersRequest.cpp
+  src/v20180529/model/SupportFeature.cpp
   src/v20180529/model/DescribeGlobalDomainsRequest.cpp
   src/v20180529/model/DeleteProxyGroupRequest.cpp
   src/v20180529/model/OpenSecurityPolicyResponse.cpp

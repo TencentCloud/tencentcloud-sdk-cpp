@@ -100,7 +100,7 @@ Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> GetStatus() const;
+                    std::string GetStatus() const;
 
                     /**
                      * 设置编排状态，取值范围：
@@ -112,7 +112,7 @@ Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetStatus(const std::vector<std::string>& _status);
+                    void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
@@ -295,7 +295,7 @@ Enabled：已启用，
 Disabled：已禁用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> m_status;
+                    std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**

@@ -243,14 +243,14 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要翻译文件url
-                     * @return Url 需要翻译文件url
+                     * 获取需要翻译文件url，文件需小于100MB。
+                     * @return Url 需要翻译文件url，文件需小于100MB。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置需要翻译文件url
-                     * @param Url 需要翻译文件url
+                     * 设置需要翻译文件url，文件需小于100MB。
+                     * @param Url 需要翻译文件url，文件需小于100MB。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -279,14 +279,14 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool BasicDocumentTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调url
-                     * @return CallbackUrl 回调url
+                     * 获取回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
+                     * @return CallbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调url
-                     * @param CallbackUrl 回调url
+                     * 设置回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
+                     * @param CallbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
@@ -373,7 +373,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 需要翻译文件url
+                     * 需要翻译文件url，文件需小于100MB。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -385,7 +385,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_basicDocumentTypeHasBeenSet;
 
                     /**
-                     * 回调url
+                     * 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
