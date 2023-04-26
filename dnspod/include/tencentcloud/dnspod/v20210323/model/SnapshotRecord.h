@@ -176,6 +176,50 @@ namespace TencentCloud
                      */
                     bool MXHasBeenSet() const;
 
+                    /**
+                     * 获取权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWeight() const;
+
+                    /**
+                     * 设置权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeight(const std::string& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Reason 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Reason 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +264,20 @@ namespace TencentCloud
                      */
                     std::string m_mX;
                     bool m_mXHasBeenSet;
+
+                    /**
+                     * 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * 失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

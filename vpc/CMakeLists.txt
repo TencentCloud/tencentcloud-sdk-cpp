@@ -19,6 +19,7 @@ set(vpc_public_header
   )
 
 set(vpc_public_header_model
+  include/tencentcloud/vpc/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateNetworkAclResponse.h
   include/tencentcloud/vpc/v20170312/model/NetworkAcl.h
   include/tencentcloud/vpc/v20170312/model/ModifyAddressTemplateAttributeResponse.h
@@ -408,6 +409,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeAccountAttributesRequest.h
   include/tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeCcnRoutesRequest.h
+  include/tencentcloud/vpc/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyDhcpIpAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateAndAttachNetworkInterfaceRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteVpcEndPointResponse.h
@@ -749,6 +751,7 @@ set(vpc_public_header_model
 
 set(vpc_src
   src/v20170312/VpcClient.cpp
+  src/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpRequest.cpp
   src/v20170312/model/CreateNetworkAclResponse.cpp
   src/v20170312/model/NetworkAcl.cpp
   src/v20170312/model/ModifyAddressTemplateAttributeResponse.cpp
@@ -1138,6 +1141,7 @@ set(vpc_src
   src/v20170312/model/DescribeAccountAttributesRequest.cpp
   src/v20170312/model/RenewAddressesResponse.cpp
   src/v20170312/model/DescribeCcnRoutesRequest.cpp
+  src/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpResponse.cpp
   src/v20170312/model/ModifyDhcpIpAttributeResponse.cpp
   src/v20170312/model/CreateAndAttachNetworkInterfaceRequest.cpp
   src/v20170312/model/DeleteVpcEndPointResponse.cpp

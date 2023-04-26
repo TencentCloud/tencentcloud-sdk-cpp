@@ -73,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取MaxAge数值。单位为秒，最大值为1天。
+                     * 获取MaxAge 数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxAge MaxAge数值。单位为秒，最大值为1天。
+                     * @return MaxAge MaxAge 数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMaxAge() const;
 
                     /**
-                     * 设置MaxAge数值。单位为秒，最大值为1天。
+                     * 设置MaxAge 数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAge MaxAge数值。单位为秒，最大值为1天。
+                     * @param MaxAge MaxAge 数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxAge(const int64_t& _maxAge);
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * MaxAge数值。单位为秒，最大值为1天。
+                     * MaxAge 数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxAge;

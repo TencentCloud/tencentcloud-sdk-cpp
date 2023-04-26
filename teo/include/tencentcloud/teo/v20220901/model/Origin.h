@@ -125,11 +125,11 @@ namespace TencentCloud
                     bool OriginPullProtocolHasBeenSet() const;
 
                     /**
-                     * 获取源站为腾讯云COS时，是否为私有访问bucket，取值有：
+                     * 获取源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosPrivateAccess 源站为腾讯云COS时，是否为私有访问bucket，取值有：
+                     * @return CosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
@@ -137,11 +137,11 @@ namespace TencentCloud
                     std::string GetCosPrivateAccess() const;
 
                     /**
-                     * 设置源站为腾讯云COS时，是否为私有访问bucket，取值有：
+                     * 设置源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosPrivateAccess 源站为腾讯云COS时，是否为私有访问bucket，取值有：
+                     * @param CosPrivateAccess 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_originPullProtocolHasBeenSet;
 
                     /**
-                     * 源站为腾讯云COS时，是否为私有访问bucket，取值有：
+                     * 源站为腾讯云 COS 时，是否为私有访问 bucket，取值有：
 <li>on：私有访问；</li>
 <li>off：公共访问。</li>
 注意：此字段可能返回 null，表示取不到有效值。

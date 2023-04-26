@@ -22,7 +22,8 @@ using namespace std;
 
 DomainAliasInfo::DomainAliasInfo() :
     m_idHasBeenSet(false),
-    m_domainAliasHasBeenSet(false)
+    m_domainAliasHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome DomainAliasInfo::Deserialize(const rapidjson::Value &value)
         m_domainAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAliasInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void DomainAliasInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DomainAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domainAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void DomainAliasInfo::SetDomainAlias(const string& _domainAlias)
 bool DomainAliasInfo::DomainAliasHasBeenSet() const
 {
     return m_domainAliasHasBeenSet;
+}
+
+uint64_t DomainAliasInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void DomainAliasInfo::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DomainAliasInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

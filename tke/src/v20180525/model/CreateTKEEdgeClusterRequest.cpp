@@ -36,7 +36,8 @@ CreateTKEEdgeClusterRequest::CreateTKEEdgeClusterRequest() :
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_edgeVersionHasBeenSet(false),
-    m_registryPrefixHasBeenSet(false)
+    m_registryPrefixHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,15 @@ string CreateTKEEdgeClusterRequest::ToJsonString() const
         string key = "RegistryPrefix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_registryPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -391,6 +401,22 @@ void CreateTKEEdgeClusterRequest::SetRegistryPrefix(const string& _registryPrefi
 bool CreateTKEEdgeClusterRequest::RegistryPrefixHasBeenSet() const
 {
     return m_registryPrefixHasBeenSet;
+}
+
+TagSpecification CreateTKEEdgeClusterRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateTKEEdgeClusterRequest::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

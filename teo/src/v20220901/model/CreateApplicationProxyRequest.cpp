@@ -31,7 +31,8 @@ CreateApplicationProxyRequest::CreateApplicationProxyRequest() :
     m_proxyTypeHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
     m_ipv6HasBeenSet(false),
-    m_applicationProxyRulesHasBeenSet(false)
+    m_applicationProxyRulesHasBeenSet(false),
+    m_accelerateMainlandHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,15 @@ string CreateApplicationProxyRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_accelerateMainlandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccelerateMainland";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_accelerateMainland.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -272,6 +282,22 @@ void CreateApplicationProxyRequest::SetApplicationProxyRules(const vector<Applic
 bool CreateApplicationProxyRequest::ApplicationProxyRulesHasBeenSet() const
 {
     return m_applicationProxyRulesHasBeenSet;
+}
+
+AccelerateMainland CreateApplicationProxyRequest::GetAccelerateMainland() const
+{
+    return m_accelerateMainland;
+}
+
+void CreateApplicationProxyRequest::SetAccelerateMainland(const AccelerateMainland& _accelerateMainland)
+{
+    m_accelerateMainland = _accelerateMainland;
+    m_accelerateMainlandHasBeenSet = true;
+}
+
+bool CreateApplicationProxyRequest::AccelerateMainlandHasBeenSet() const
+{
+    return m_accelerateMainlandHasBeenSet;
 }
 
 

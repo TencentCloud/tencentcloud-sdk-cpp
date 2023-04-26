@@ -145,6 +145,18 @@ namespace TencentCloud
                      */
                     bool GridDaemonHasBeenSet() const;
 
+                    /**
+                     * 获取公网访问kins集群
+                     * @return UnitCluster 公网访问kins集群
+                     */
+                    std::string GetUnitCluster() const;
+
+                    /**
+                     * 判断参数 UnitCluster 是否已赋值
+                     * @return UnitCluster 是否已赋值
+                     */
+                    bool UnitClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,6 +207,12 @@ namespace TencentCloud
                      */
                     std::string m_gridDaemon;
                     bool m_gridDaemonHasBeenSet;
+
+                    /**
+                     * 公网访问kins集群
+                     */
+                    std::string m_unitCluster;
+                    bool m_unitClusterHasBeenSet;
 
                 };
             }

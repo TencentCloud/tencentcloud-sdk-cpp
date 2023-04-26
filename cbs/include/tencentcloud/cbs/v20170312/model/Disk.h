@@ -846,6 +846,28 @@ namespace TencentCloud
                      */
                     bool ErrorPromptHasBeenSet() const;
 
+                    /**
+                     * 获取云盘是否开启性能突发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BurstPerformance 云盘是否开启性能突发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetBurstPerformance() const;
+
+                    /**
+                     * 设置云盘是否开启性能突发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BurstPerformance 云盘是否开启性能突发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBurstPerformance(const bool& _burstPerformance);
+
+                    /**
+                     * 判断参数 BurstPerformance 是否已赋值
+                     * @return BurstPerformance 是否已赋值
+                     */
+                    bool BurstPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1108,6 +1130,13 @@ namespace TencentCloud
                      */
                     std::string m_errorPrompt;
                     bool m_errorPromptHasBeenSet;
+
+                    /**
+                     * 云盘是否开启性能突发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_burstPerformance;
+                    bool m_burstPerformanceHasBeenSet;
 
                 };
             }

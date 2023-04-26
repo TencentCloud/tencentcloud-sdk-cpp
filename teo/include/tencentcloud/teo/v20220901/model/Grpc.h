@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启Grpc配置，取值有：
+                     * 获取是否开启 Grpc 配置，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @return Switch 是否开启Grpc配置，取值有：
+                     * @return Switch 是否开启 Grpc 配置，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启Grpc配置，取值有：
+                     * 设置是否开启 Grpc 配置，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 是否开启Grpc配置，取值有：
+                     * @param Switch 是否开启 Grpc 配置，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启Grpc配置，取值有：
+                     * 是否开启 Grpc 配置，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */

@@ -39,6 +39,7 @@
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
+#include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
 
 
 namespace TencentCloud
@@ -61,14 +62,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待变更的站点ID。
-                     * @return ZoneId 待变更的站点ID。
+                     * 获取待变更的站点 ID。
+                     * @return ZoneId 待变更的站点 ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置待变更的站点ID。
-                     * @param ZoneId 待变更的站点ID。
+                     * 设置待变更的站点 ID。
+                     * @param ZoneId 待变更的站点 ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -167,17 +168,17 @@ namespace TencentCloud
                     bool OfflineCacheHasBeenSet() const;
 
                     /**
-                     * 获取Quic访问配置。
+                     * 获取Quic 访问配置。
 不填写表示保持原有配置。
-                     * @return Quic Quic访问配置。
+                     * @return Quic Quic 访问配置。
 不填写表示保持原有配置。
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置Quic访问配置。
+                     * 设置Quic 访问配置。
 不填写表示保持原有配置。
-                     * @param Quic Quic访问配置。
+                     * @param Quic Quic 访问配置。
 不填写表示保持原有配置。
                      */
                     void SetQuic(const Quic& _quic);
@@ -189,17 +190,17 @@ namespace TencentCloud
                     bool QuicHasBeenSet() const;
 
                     /**
-                     * 获取Post请求传输配置。
+                     * 获取Post 请求传输配置。
 不填写表示保持原有配置。
-                     * @return PostMaxSize Post请求传输配置。
+                     * @return PostMaxSize Post 请求传输配置。
 不填写表示保持原有配置。
                      */
                     PostMaxSize GetPostMaxSize() const;
 
                     /**
-                     * 设置Post请求传输配置。
+                     * 设置Post 请求传输配置。
 不填写表示保持原有配置。
-                     * @param PostMaxSize Post请求传输配置。
+                     * @param PostMaxSize Post 请求传输配置。
 不填写表示保持原有配置。
                      */
                     void SetPostMaxSize(const PostMaxSize& _postMaxSize);
@@ -233,17 +234,17 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取Http2回源配置。
+                     * 获取Http2 回源配置。
 不填写表示保持原有配置。
-                     * @return UpstreamHttp2 Http2回源配置。
+                     * @return UpstreamHttp2 Http2 回源配置。
 不填写表示保持原有配置。
                      */
                     UpstreamHttp2 GetUpstreamHttp2() const;
 
                     /**
-                     * 设置Http2回源配置。
+                     * 设置Http2 回源配置。
 不填写表示保持原有配置。
-                     * @param UpstreamHttp2 Http2回源配置。
+                     * @param UpstreamHttp2 Http2 回源配置。
 不填写表示保持原有配置。
                      */
                     void SetUpstreamHttp2(const UpstreamHttp2& _upstreamHttp2);
@@ -255,17 +256,17 @@ namespace TencentCloud
                     bool UpstreamHttp2HasBeenSet() const;
 
                     /**
-                     * 获取访问协议强制Https跳转配置。
+                     * 获取访问协议强制 Https 跳转配置。
 不填写表示保持原有配置。
-                     * @return ForceRedirect 访问协议强制Https跳转配置。
+                     * @return ForceRedirect 访问协议强制 Https 跳转配置。
 不填写表示保持原有配置。
                      */
                     ForceRedirect GetForceRedirect() const;
 
                     /**
-                     * 设置访问协议强制Https跳转配置。
+                     * 设置访问协议强制 Https 跳转配置。
 不填写表示保持原有配置。
-                     * @param ForceRedirect 访问协议强制Https跳转配置。
+                     * @param ForceRedirect 访问协议强制 Https 跳转配置。
 不填写表示保持原有配置。
                      */
                     void SetForceRedirect(const ForceRedirect& _forceRedirect);
@@ -277,17 +278,17 @@ namespace TencentCloud
                     bool ForceRedirectHasBeenSet() const;
 
                     /**
-                     * 获取Https加速配置。
+                     * 获取Https 加速配置。
 不填写表示保持原有配置。
-                     * @return Https Https加速配置。
+                     * @return Https Https 加速配置。
 不填写表示保持原有配置。
                      */
                     Https GetHttps() const;
 
                     /**
-                     * 设置Https加速配置。
+                     * 设置Https 加速配置。
 不填写表示保持原有配置。
-                     * @param Https Https加速配置。
+                     * @param Https Https 加速配置。
 不填写表示保持原有配置。
                      */
                     void SetHttps(const Https& _https);
@@ -343,17 +344,17 @@ namespace TencentCloud
                     bool SmartRoutingHasBeenSet() const;
 
                     /**
-                     * 获取WebSocket配置。
+                     * 获取WebSocket 配置。
 不填写表示保持原有配置。
-                     * @return WebSocket WebSocket配置。
+                     * @return WebSocket WebSocket 配置。
 不填写表示保持原有配置。
                      */
                     WebSocket GetWebSocket() const;
 
                     /**
-                     * 设置WebSocket配置。
+                     * 设置WebSocket 配置。
 不填写表示保持原有配置。
-                     * @param WebSocket WebSocket配置。
+                     * @param WebSocket WebSocket 配置。
 不填写表示保持原有配置。
                      */
                     void SetWebSocket(const WebSocket& _webSocket);
@@ -365,17 +366,17 @@ namespace TencentCloud
                     bool WebSocketHasBeenSet() const;
 
                     /**
-                     * 获取客户端IP回源请求头配置。
+                     * 获取客户端 IP 回源请求头配置。
 不填写表示保持原有配置。
-                     * @return ClientIpHeader 客户端IP回源请求头配置。
+                     * @return ClientIpHeader 客户端 IP 回源请求头配置。
 不填写表示保持原有配置。
                      */
                     ClientIpHeader GetClientIpHeader() const;
 
                     /**
-                     * 设置客户端IP回源请求头配置。
+                     * 设置客户端 IP 回源请求头配置。
 不填写表示保持原有配置。
-                     * @param ClientIpHeader 客户端IP回源请求头配置。
+                     * @param ClientIpHeader 客户端 IP 回源请求头配置。
 不填写表示保持原有配置。
                      */
                     void SetClientIpHeader(const ClientIpHeader& _clientIpHeader);
@@ -409,17 +410,17 @@ namespace TencentCloud
                     bool CachePrefreshHasBeenSet() const;
 
                     /**
-                     * 获取Ipv6访问配置。
+                     * 获取Ipv6 访问配置。
 不填写表示保持原有配置。
-                     * @return Ipv6 Ipv6访问配置。
+                     * @return Ipv6 Ipv6 访问配置。
 不填写表示保持原有配置。
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
-                     * 设置Ipv6访问配置。
+                     * 设置Ipv6 访问配置。
 不填写表示保持原有配置。
-                     * @param Ipv6 Ipv6访问配置。
+                     * @param Ipv6 Ipv6 访问配置。
 不填写表示保持原有配置。
                      */
                     void SetIpv6(const Ipv6& _ipv6);
@@ -431,17 +432,17 @@ namespace TencentCloud
                     bool Ipv6HasBeenSet() const;
 
                     /**
-                     * 获取回源时是否携带客户端IP所属地域信息的配置。
+                     * 获取回源时是否携带客户端 IP 所属地域信息的配置。
 不填写表示保持原有配置。
-                     * @return ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+                     * @return ClientIpCountry 回源时是否携带客户端 IP 所属地域信息的配置。
 不填写表示保持原有配置。
                      */
                     ClientIpCountry GetClientIpCountry() const;
 
                     /**
-                     * 设置回源时是否携带客户端IP所属地域信息的配置。
+                     * 设置回源时是否携带客户端 IP 所属地域信息的配置。
 不填写表示保持原有配置。
-                     * @param ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+                     * @param ClientIpCountry 回源时是否携带客户端 IP 所属地域信息的配置。
 不填写表示保持原有配置。
                      */
                     void SetClientIpCountry(const ClientIpCountry& _clientIpCountry);
@@ -453,17 +454,17 @@ namespace TencentCloud
                     bool ClientIpCountryHasBeenSet() const;
 
                     /**
-                     * 获取Grpc协议支持配置。
+                     * 获取Grpc 协议支持配置。
 不填写表示保持原有配置。
-                     * @return Grpc Grpc协议支持配置。
+                     * @return Grpc Grpc 协议支持配置。
 不填写表示保持原有配置。
                      */
                     Grpc GetGrpc() const;
 
                     /**
-                     * 设置Grpc协议支持配置。
+                     * 设置Grpc 协议支持配置。
 不填写表示保持原有配置。
-                     * @param Grpc Grpc协议支持配置。
+                     * @param Grpc Grpc 协议支持配置。
 不填写表示保持原有配置。
                      */
                     void SetGrpc(const Grpc& _grpc);
@@ -474,10 +475,32 @@ namespace TencentCloud
                      */
                     bool GrpcHasBeenSet() const;
 
+                    /**
+                     * 获取图片优化配置。
+不填写表示关闭。
+                     * @return ImageOptimize 图片优化配置。
+不填写表示关闭。
+                     */
+                    ImageOptimize GetImageOptimize() const;
+
+                    /**
+                     * 设置图片优化配置。
+不填写表示关闭。
+                     * @param ImageOptimize 图片优化配置。
+不填写表示关闭。
+                     */
+                    void SetImageOptimize(const ImageOptimize& _imageOptimize);
+
+                    /**
+                     * 判断参数 ImageOptimize 是否已赋值
+                     * @return ImageOptimize 是否已赋值
+                     */
+                    bool ImageOptimizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待变更的站点ID。
+                     * 待变更的站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -511,14 +534,14 @@ namespace TencentCloud
                     bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * Quic访问配置。
+                     * Quic 访问配置。
 不填写表示保持原有配置。
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
 
                     /**
-                     * Post请求传输配置。
+                     * Post 请求传输配置。
 不填写表示保持原有配置。
                      */
                     PostMaxSize m_postMaxSize;
@@ -532,21 +555,21 @@ namespace TencentCloud
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * Http2回源配置。
+                     * Http2 回源配置。
 不填写表示保持原有配置。
                      */
                     UpstreamHttp2 m_upstreamHttp2;
                     bool m_upstreamHttp2HasBeenSet;
 
                     /**
-                     * 访问协议强制Https跳转配置。
+                     * 访问协议强制 Https 跳转配置。
 不填写表示保持原有配置。
                      */
                     ForceRedirect m_forceRedirect;
                     bool m_forceRedirectHasBeenSet;
 
                     /**
-                     * Https加速配置。
+                     * Https 加速配置。
 不填写表示保持原有配置。
                      */
                     Https m_https;
@@ -567,14 +590,14 @@ namespace TencentCloud
                     bool m_smartRoutingHasBeenSet;
 
                     /**
-                     * WebSocket配置。
+                     * WebSocket 配置。
 不填写表示保持原有配置。
                      */
                     WebSocket m_webSocket;
                     bool m_webSocketHasBeenSet;
 
                     /**
-                     * 客户端IP回源请求头配置。
+                     * 客户端 IP 回源请求头配置。
 不填写表示保持原有配置。
                      */
                     ClientIpHeader m_clientIpHeader;
@@ -588,25 +611,32 @@ namespace TencentCloud
                     bool m_cachePrefreshHasBeenSet;
 
                     /**
-                     * Ipv6访问配置。
+                     * Ipv6 访问配置。
 不填写表示保持原有配置。
                      */
                     Ipv6 m_ipv6;
                     bool m_ipv6HasBeenSet;
 
                     /**
-                     * 回源时是否携带客户端IP所属地域信息的配置。
+                     * 回源时是否携带客户端 IP 所属地域信息的配置。
 不填写表示保持原有配置。
                      */
                     ClientIpCountry m_clientIpCountry;
                     bool m_clientIpCountryHasBeenSet;
 
                     /**
-                     * Grpc协议支持配置。
+                     * Grpc 协议支持配置。
 不填写表示保持原有配置。
                      */
                     Grpc m_grpc;
                     bool m_grpcHasBeenSet;
+
+                    /**
+                     * 图片优化配置。
+不填写表示关闭。
+                     */
+                    ImageOptimize m_imageOptimize;
+                    bool m_imageOptimizeHasBeenSet;
 
                 };
             }

@@ -1258,7 +1258,7 @@ namespace TencentCloud
                 RecognizePhilippinesDrivingLicenseOCROutcomeCallable RecognizePhilippinesDrivingLicenseOCRCallable(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request);
 
                 /**
-                 *菲律宾SSSID识别
+                 *菲律宾SSSID/UMID识别
                  * @param req RecognizePhilippinesSssIDOCRRequest
                  * @return RecognizePhilippinesSssIDOCROutcome
                  */

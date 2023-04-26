@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份ID。
-                     * @return BackupId 备份ID。
+                     * 获取备份任务ID。
+                     * @return BackupId 备份任务ID。
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置备份ID。
-                     * @param BackupId 备份ID。
+                     * 设置备份任务ID。
+                     * @param BackupId 备份任务ID。
                      */
                     void SetBackupId(const std::string& _backupId);
 
@@ -84,25 +84,21 @@ namespace TencentCloud
 
                     /**
                      * 获取备份类型。
-
-- 1：用户发起的手动备份。
-- 0：凌晨系统发起的备份。
+- 1：凌晨系统发起的备份。
+- 0：用户发起的手动备份。
                      * @return BackupType 备份类型。
-
-- 1：用户发起的手动备份。
-- 0：凌晨系统发起的备份。
+- 1：凌晨系统发起的备份。
+- 0：用户发起的手动备份。
                      */
                     std::string GetBackupType() const;
 
                     /**
                      * 设置备份类型。
-
-- 1：用户发起的手动备份。
-- 0：凌晨系统发起的备份。
+- 1：凌晨系统发起的备份。
+- 0：用户发起的手动备份。
                      * @param BackupType 备份类型。
-
-- 1：用户发起的手动备份。
-- 0：凌晨系统发起的备份。
+- 1：凌晨系统发起的备份。
+- 0：用户发起的手动备份。
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -114,14 +110,12 @@ namespace TencentCloud
 
                     /**
                      * 获取备份状态。 
-
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
 - 3：备份正在被导出。
 - 4：备份导出成功。
                      * @return Status 备份状态。 
-
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
@@ -132,14 +126,12 @@ namespace TencentCloud
 
                     /**
                      * 设置备份状态。 
-
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
 - 3：备份正在被导出。
 - 4：备份导出成功。
                      * @param Status 备份状态。 
-
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
@@ -174,11 +166,9 @@ namespace TencentCloud
 
                     /**
                      * 获取备份是否被锁定。
-
 - 0：未被锁定。
 - 1：已被锁定。
                      * @return Locked 备份是否被锁定。
-
 - 0：未被锁定。
 - 1：已被锁定。
                      */
@@ -186,11 +176,9 @@ namespace TencentCloud
 
                     /**
                      * 设置备份是否被锁定。
-
 - 0：未被锁定。
 - 1：已被锁定。
                      * @param Locked 备份是否被锁定。
-
 - 0：未被锁定。
 - 1：已被锁定。
                      */
@@ -385,23 +373,21 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 备份ID。
+                     * 备份任务ID。
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
                      * 备份类型。
-
-- 1：用户发起的手动备份。
-- 0：凌晨系统发起的备份。
+- 1：凌晨系统发起的备份。
+- 0：用户发起的手动备份。
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
                      * 备份状态。 
-
 - 1：备份被其它流程锁定。
 - 2：备份正常，没有被任何流程锁定。
 - -1：备份已过期。
@@ -419,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 备份是否被锁定。
-
 - 0：未被锁定。
 - 1：已被锁定。
                      */

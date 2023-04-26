@@ -109,13 +109,13 @@ namespace TencentCloud
                     bool OcspStaplingHasBeenSet() const;
 
                     /**
-                     * 获取Tls版本设置，取值有：
+                     * 获取Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TlsVersion Tls版本设置，取值有：
+                     * @return TlsVersion Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
@@ -125,13 +125,13 @@ namespace TencentCloud
                     std::vector<std::string> GetTlsVersion() const;
 
                     /**
-                     * 设置Tls版本设置，取值有：
+                     * 设置Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
 <li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TlsVersion Tls版本设置，取值有：
+                     * @param TlsVersion Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_ocspStaplingHasBeenSet;
 
                     /**
-                     * Tls版本设置，取值有：
+                     * Tls 版本设置，取值有：
 <li>TLSv1：TLSv1版本；</li>
 <li>TLSV1.1：TLSv1.1版本；</li>
 <li>TLSV1.2：TLSv1.2版本；</li>

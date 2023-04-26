@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取http2回源配置开关，取值有：
+                     * 获取http2 回源配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @return Switch http2回源配置开关，取值有：
+                     * @return Switch http2 回源配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置http2回源配置开关，取值有：
+                     * 设置http2 回源配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch http2回源配置开关，取值有：
+                     * @param Switch http2 回源配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * http2回源配置开关，取值有：
+                     * http2 回源配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
                      */

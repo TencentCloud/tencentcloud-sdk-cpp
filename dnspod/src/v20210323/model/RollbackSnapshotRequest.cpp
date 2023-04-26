@@ -25,7 +25,8 @@ using namespace std;
 RollbackSnapshotRequest::RollbackSnapshotRequest() :
     m_domainHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_recordListHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,21 @@ string RollbackSnapshotRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_domainId, allocator);
+    }
+
+    if (m_recordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recordList.begin(); itr != m_recordList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +130,22 @@ void RollbackSnapshotRequest::SetDomainId(const uint64_t& _domainId)
 bool RollbackSnapshotRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+vector<SnapshotRecord> RollbackSnapshotRequest::GetRecordList() const
+{
+    return m_recordList;
+}
+
+void RollbackSnapshotRequest::SetRecordList(const vector<SnapshotRecord>& _recordList)
+{
+    m_recordList = _recordList;
+    m_recordListHasBeenSet = true;
+}
+
+bool RollbackSnapshotRequest::RecordListHasBeenSet() const
+{
+    return m_recordListHasBeenSet;
 }
 
 

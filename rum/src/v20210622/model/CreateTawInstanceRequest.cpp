@@ -33,7 +33,8 @@ CreateTawInstanceRequest::CreateTawInstanceRequest() :
     m_periodRetainHasBeenSet(false),
     m_buyingChannelHasBeenSet(false),
     m_resourcePackageTypeHasBeenSet(false),
-    m_resourcePackageNumHasBeenSet(false)
+    m_resourcePackageNumHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string CreateTawInstanceRequest::ToJsonString() const
         string key = "ResourcePackageNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resourcePackageNum, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceType, allocator);
     }
 
 
@@ -321,6 +330,22 @@ void CreateTawInstanceRequest::SetResourcePackageNum(const uint64_t& _resourcePa
 bool CreateTawInstanceRequest::ResourcePackageNumHasBeenSet() const
 {
     return m_resourcePackageNumHasBeenSet;
+}
+
+int64_t CreateTawInstanceRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CreateTawInstanceRequest::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

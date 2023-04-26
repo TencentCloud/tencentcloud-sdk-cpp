@@ -449,6 +449,8 @@
 #include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpnGatewaySslClientCertRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpnGatewaySslClientCertResponse.h>
+#include <tencentcloud/vpc/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpRequest.h>
+#include <tencentcloud/vpc/v20170312/model/GenerateVpnConnectionDefaultHealthCheckIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipAssociateAddressIpRequest.h>
@@ -1280,6 +1282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableVpnGatewaySslClientCertResponse> EnableVpnGatewaySslClientCertOutcome;
                 typedef std::future<EnableVpnGatewaySslClientCertOutcome> EnableVpnGatewaySslClientCertOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableVpnGatewaySslClientCertRequest&, EnableVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpnGatewaySslClientCertAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateVpnConnectionDefaultHealthCheckIpResponse> GenerateVpnConnectionDefaultHealthCheckIpOutcome;
+                typedef std::future<GenerateVpnConnectionDefaultHealthCheckIpOutcome> GenerateVpnConnectionDefaultHealthCheckIpOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::GenerateVpnConnectionDefaultHealthCheckIpRequest&, GenerateVpnConnectionDefaultHealthCheckIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVpnConnectionDefaultHealthCheckIpAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCcnRegionBandwidthLimitsResponse> GetCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<GetCcnRegionBandwidthLimitsOutcome> GetCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::GetCcnRegionBandwidthLimitsRequest&, GetCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCcnRegionBandwidthLimitsAsyncHandler;
@@ -3670,6 +3675,15 @@ LimitTypes取值范围：
                 EnableVpnGatewaySslClientCertOutcome EnableVpnGatewaySslClientCert(const Model::EnableVpnGatewaySslClientCertRequest &request);
                 void EnableVpnGatewaySslClientCertAsync(const Model::EnableVpnGatewaySslClientCertRequest& request, const EnableVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableVpnGatewaySslClientCertOutcomeCallable EnableVpnGatewaySslClientCertCallable(const Model::EnableVpnGatewaySslClientCertRequest& request);
+
+                /**
+                 *本接口（GenerateVpnConnectionDefaultHealthCheckIp）用于获取一对VPN通道健康检查地址。
+                 * @param req GenerateVpnConnectionDefaultHealthCheckIpRequest
+                 * @return GenerateVpnConnectionDefaultHealthCheckIpOutcome
+                 */
+                GenerateVpnConnectionDefaultHealthCheckIpOutcome GenerateVpnConnectionDefaultHealthCheckIp(const Model::GenerateVpnConnectionDefaultHealthCheckIpRequest &request);
+                void GenerateVpnConnectionDefaultHealthCheckIpAsync(const Model::GenerateVpnConnectionDefaultHealthCheckIpRequest& request, const GenerateVpnConnectionDefaultHealthCheckIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateVpnConnectionDefaultHealthCheckIpOutcomeCallable GenerateVpnConnectionDefaultHealthCheckIpCallable(const Model::GenerateVpnConnectionDefaultHealthCheckIpRequest& request);
 
                 /**
                  *本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。

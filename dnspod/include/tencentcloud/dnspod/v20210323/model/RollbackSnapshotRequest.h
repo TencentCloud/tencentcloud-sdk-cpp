@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dnspod/v20210323/model/SnapshotRecord.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,24 @@ namespace TencentCloud
                      */
                     bool DomainIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定需要回滚的记录
+                     * @return RecordList 指定需要回滚的记录
+                     */
+                    std::vector<SnapshotRecord> GetRecordList() const;
+
+                    /**
+                     * 设置指定需要回滚的记录
+                     * @param RecordList 指定需要回滚的记录
+                     */
+                    void SetRecordList(const std::vector<SnapshotRecord>& _recordList);
+
+                    /**
+                     * 判断参数 RecordList 是否已赋值
+                     * @return RecordList 是否已赋值
+                     */
+                    bool RecordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +134,12 @@ namespace TencentCloud
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 指定需要回滚的记录
+                     */
+                    std::vector<SnapshotRecord> m_recordList;
+                    bool m_recordListHasBeenSet;
 
                 };
             }

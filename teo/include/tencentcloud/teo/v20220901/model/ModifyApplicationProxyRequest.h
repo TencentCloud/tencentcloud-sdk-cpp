@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
+#include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
 
 
 namespace TencentCloud
@@ -44,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param ZoneId 站点ID。
+                     * 设置站点 ID。
+                     * @param ZoneId 站点 ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -62,14 +63,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取代理ID。
-                     * @return ProxyId 代理ID。
+                     * 获取代理 ID。
+                     * @return ProxyId 代理 ID。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置代理ID。
-                     * @param ProxyId 代理ID。
+                     * 设置代理 ID。
+                     * @param ProxyId 代理 ID。
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -80,18 +81,18 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取当ProxyType=hostname时，表示域名或子域名；
-当ProxyType=instance时，表示代理名称。
-                     * @return ProxyName 当ProxyType=hostname时，表示域名或子域名；
-当ProxyType=instance时，表示代理名称。
+                     * 获取当 ProxyType=hostname 时，表示域名或子域名；
+当 ProxyType=instance 时，表示代理名称。
+                     * @return ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
+当 ProxyType=instance 时，表示代理名称。
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置当ProxyType=hostname时，表示域名或子域名；
-当ProxyType=instance时，表示代理名称。
-                     * @param ProxyName 当ProxyType=hostname时，表示域名或子域名；
-当ProxyType=instance时，表示代理名称。
+                     * 设置当 ProxyType=hostname 时，表示域名或子域名；
+当 ProxyType=instance 时，表示代理名称。
+                     * @param ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
+当 ProxyType=instance 时，表示代理名称。
                      */
                     void SetProxyName(const std::string& _proxyName);
 
@@ -150,14 +151,14 @@ namespace TencentCloud
                     bool ProxyTypeHasBeenSet() const;
 
                     /**
-                     * 获取Ipv6访问配置，不填写保持原有配置。
-                     * @return Ipv6 Ipv6访问配置，不填写保持原有配置。
+                     * 获取Ipv6 访问配置，不填写保持原有配置。
+                     * @return Ipv6 Ipv6 访问配置，不填写保持原有配置。
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
-                     * 设置Ipv6访问配置，不填写保持原有配置。
-                     * @param Ipv6 Ipv6访问配置，不填写保持原有配置。
+                     * 设置Ipv6 访问配置，不填写保持原有配置。
+                     * @param Ipv6 Ipv6 访问配置，不填写保持原有配置。
                      */
                     void SetIpv6(const Ipv6& _ipv6);
 
@@ -167,23 +168,41 @@ namespace TencentCloud
                      */
                     bool Ipv6HasBeenSet() const;
 
+                    /**
+                     * 获取中国大陆加速优化配置。 不填写表示保持原有配置。
+                     * @return AccelerateMainland 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     */
+                    AccelerateMainland GetAccelerateMainland() const;
+
+                    /**
+                     * 设置中国大陆加速优化配置。 不填写表示保持原有配置。
+                     * @param AccelerateMainland 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     */
+                    void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
+
+                    /**
+                     * 判断参数 AccelerateMainland 是否已赋值
+                     * @return AccelerateMainland 是否已赋值
+                     */
+                    bool AccelerateMainlandHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 代理ID。
+                     * 代理 ID。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 当ProxyType=hostname时，表示域名或子域名；
-当ProxyType=instance时，表示代理名称。
+                     * 当 ProxyType=hostname 时，表示域名或子域名；
+当 ProxyType=instance 时，表示代理名称。
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
@@ -204,10 +223,16 @@ namespace TencentCloud
                     bool m_proxyTypeHasBeenSet;
 
                     /**
-                     * Ipv6访问配置，不填写保持原有配置。
+                     * Ipv6 访问配置，不填写保持原有配置。
                      */
                     Ipv6 m_ipv6;
                     bool m_ipv6HasBeenSet;
+
+                    /**
+                     * 中国大陆加速优化配置。 不填写表示保持原有配置。
+                     */
+                    AccelerateMainland m_accelerateMainland;
+                    bool m_accelerateMainlandHasBeenSet;
 
                 };
             }

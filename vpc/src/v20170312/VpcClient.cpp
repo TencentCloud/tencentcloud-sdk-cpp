@@ -9199,6 +9199,49 @@ VpcClient::EnableVpnGatewaySslClientCertOutcomeCallable VpcClient::EnableVpnGate
     return task->get_future();
 }
 
+VpcClient::GenerateVpnConnectionDefaultHealthCheckIpOutcome VpcClient::GenerateVpnConnectionDefaultHealthCheckIp(const GenerateVpnConnectionDefaultHealthCheckIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateVpnConnectionDefaultHealthCheckIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateVpnConnectionDefaultHealthCheckIpResponse rsp = GenerateVpnConnectionDefaultHealthCheckIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateVpnConnectionDefaultHealthCheckIpOutcome(rsp);
+        else
+            return GenerateVpnConnectionDefaultHealthCheckIpOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateVpnConnectionDefaultHealthCheckIpOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::GenerateVpnConnectionDefaultHealthCheckIpAsync(const GenerateVpnConnectionDefaultHealthCheckIpRequest& request, const GenerateVpnConnectionDefaultHealthCheckIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateVpnConnectionDefaultHealthCheckIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::GenerateVpnConnectionDefaultHealthCheckIpOutcomeCallable VpcClient::GenerateVpnConnectionDefaultHealthCheckIpCallable(const GenerateVpnConnectionDefaultHealthCheckIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateVpnConnectionDefaultHealthCheckIpOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateVpnConnectionDefaultHealthCheckIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::GetCcnRegionBandwidthLimitsOutcome VpcClient::GetCcnRegionBandwidthLimits(const GetCcnRegionBandwidthLimitsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetCcnRegionBandwidthLimits");

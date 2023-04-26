@@ -241,6 +241,24 @@ namespace TencentCloud
                      */
                     bool ResourcePackageNumHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型 1:原web相关类型 2:app端类型
+                     * @return InstanceType 实例类型 1:原web相关类型 2:app端类型
+                     */
+                    int64_t GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型 1:原web相关类型 2:app端类型
+                     * @param InstanceType 实例类型 1:原web相关类型 2:app端类型
+                     */
+                    void SetInstanceType(const int64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +326,12 @@ namespace TencentCloud
                      */
                     uint64_t m_resourcePackageNum;
                     bool m_resourcePackageNumHasBeenSet;
+
+                    /**
+                     * 实例类型 1:原web相关类型 2:app端类型
+                     */
+                    int64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

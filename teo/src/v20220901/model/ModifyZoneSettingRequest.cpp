@@ -41,7 +41,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_cachePrefreshHasBeenSet(false),
     m_ipv6HasBeenSet(false),
     m_clientIpCountryHasBeenSet(false),
-    m_grpcHasBeenSet(false)
+    m_grpcHasBeenSet(false),
+    m_imageOptimizeHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grpc.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_imageOptimizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageOptimize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageOptimize.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -532,6 +542,22 @@ void ModifyZoneSettingRequest::SetGrpc(const Grpc& _grpc)
 bool ModifyZoneSettingRequest::GrpcHasBeenSet() const
 {
     return m_grpcHasBeenSet;
+}
+
+ImageOptimize ModifyZoneSettingRequest::GetImageOptimize() const
+{
+    return m_imageOptimize;
+}
+
+void ModifyZoneSettingRequest::SetImageOptimize(const ImageOptimize& _imageOptimize)
+{
+    m_imageOptimize = _imageOptimize;
+    m_imageOptimizeHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::ImageOptimizeHasBeenSet() const
+{
+    return m_imageOptimizeHasBeenSet;
 }
 
 

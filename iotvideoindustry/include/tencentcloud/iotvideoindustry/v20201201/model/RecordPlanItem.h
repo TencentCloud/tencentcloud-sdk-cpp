@@ -179,6 +179,28 @@ namespace TencentCloud
                      */
                     bool DevicesHasBeenSet() const;
 
+                    /**
+                     * 获取录像存储天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordStorageTime 录像存储天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRecordStorageTime() const;
+
+                    /**
+                     * 设置录像存储天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecordStorageTime 录像存储天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordStorageTime(const int64_t& _recordStorageTime);
+
+                    /**
+                     * 判断参数 RecordStorageTime 是否已赋值
+                     * @return RecordStorageTime 是否已赋值
+                     */
+                    bool RecordStorageTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +244,13 @@ namespace TencentCloud
                      */
                     std::vector<DeviceItem> m_devices;
                     bool m_devicesHasBeenSet;
+
+                    /**
+                     * 录像存储天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_recordStorageTime;
+                    bool m_recordStorageTimeHasBeenSet;
 
                 };
             }

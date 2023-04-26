@@ -73,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。
+                     * 获取存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。
 为空则使用默认值：EO-Client-IPCountry。
-                     * @return HeaderName 存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。
+                     * @return HeaderName 存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。
 为空则使用默认值：EO-Client-IPCountry。
                      */
                     std::string GetHeaderName() const;
 
                     /**
-                     * 设置存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。
+                     * 设置存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。
 为空则使用默认值：EO-Client-IPCountry。
-                     * @param HeaderName 存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。
+                     * @param HeaderName 存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。
 为空则使用默认值：EO-Client-IPCountry。
                      */
                     void SetHeaderName(const std::string& _headerName);
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 存放客户端IP所属地域信息的请求头名称，当Switch=on时有效。
+                     * 存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。
 为空则使用默认值：EO-Client-IPCountry。
                      */
                     std::string m_headerName;

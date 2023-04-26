@@ -61,7 +61,8 @@ Disk::Disk() :
     m_diskBackupCountHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_lastAttachInsIdHasBeenSet(false),
-    m_errorPromptHasBeenSet(false)
+    m_errorPromptHasBeenSet(false),
+    m_burstPerformanceHasBeenSet(false)
 {
 }
 
@@ -503,6 +504,16 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_errorPromptHasBeenSet = true;
     }
 
+    if (value.HasMember("BurstPerformance") && !value["BurstPerformance"].IsNull())
+    {
+        if (!value["BurstPerformance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.BurstPerformance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_burstPerformance = value["BurstPerformance"].GetBool();
+        m_burstPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -854,6 +865,14 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ErrorPrompt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_burstPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BurstPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_burstPerformance, allocator);
     }
 
 }
@@ -1513,5 +1532,21 @@ void Disk::SetErrorPrompt(const string& _errorPrompt)
 bool Disk::ErrorPromptHasBeenSet() const
 {
     return m_errorPromptHasBeenSet;
+}
+
+bool Disk::GetBurstPerformance() const
+{
+    return m_burstPerformance;
+}
+
+void Disk::SetBurstPerformance(const bool& _burstPerformance)
+{
+    m_burstPerformance = _burstPerformance;
+    m_burstPerformanceHasBeenSet = true;
+}
+
+bool Disk::BurstPerformanceHasBeenSet() const
+{
+    return m_burstPerformanceHasBeenSet;
 }
 

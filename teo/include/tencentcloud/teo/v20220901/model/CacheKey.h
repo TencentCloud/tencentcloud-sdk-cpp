@@ -108,17 +108,17 @@ namespace TencentCloud
                     bool IgnoreCaseHasBeenSet() const;
 
                     /**
-                     * 获取CacheKey中包含请求参数。
+                     * 获取CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryString CacheKey中包含请求参数。
+                     * @return QueryString CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryString GetQueryString() const;
 
                     /**
-                     * 设置CacheKey中包含请求参数。
+                     * 设置CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryString CacheKey中包含请求参数。
+                     * @param QueryString CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQueryString(const QueryString& _queryString);
@@ -150,7 +150,7 @@ namespace TencentCloud
                     bool m_ignoreCaseHasBeenSet;
 
                     /**
-                     * CacheKey中包含请求参数。
+                     * CacheKey 中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryString m_queryString;

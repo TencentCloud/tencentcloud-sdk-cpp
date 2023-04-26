@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool DomainAliasHasBeenSet() const;
 
+                    /**
+                     * 获取别名状态：1-DNS不正确；2-正常；3-封禁。
+                     * @return Status 别名状态：1-DNS不正确；2-正常；3-封禁。
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置别名状态：1-DNS不正确；2-正常；3-封禁。
+                     * @param Status 别名状态：1-DNS不正确；2-正常；3-封禁。
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_domainAlias;
                     bool m_domainAliasHasBeenSet;
+
+                    /**
+                     * 别名状态：1-DNS不正确；2-正常；3-封禁。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

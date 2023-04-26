@@ -49,6 +49,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateReplayTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSpeedTestingRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteSecurityIPGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAccelerationDomainsRequest.h>
@@ -183,6 +187,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRulePriorityRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRulePriorityResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyRequest.h>
@@ -252,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityIPGroupResponse> CreateSecurityIPGroupOutcome;
+                typedef std::future<CreateSecurityIPGroupOutcome> CreateSecurityIPGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateSecurityIPGroupRequest&, CreateSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIPGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSpeedTestingResponse> CreateSpeedTestingOutcome;
                 typedef std::future<CreateSpeedTestingOutcome> CreateSpeedTestingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSpeedTestingRequest&, CreateSpeedTestingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSpeedTestingAsyncHandler;
@@ -276,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRulesResponse> DeleteRulesOutcome;
                 typedef std::future<DeleteRulesOutcome> DeleteRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteRulesRequest&, DeleteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSecurityIPGroupResponse> DeleteSecurityIPGroupOutcome;
+                typedef std::future<DeleteSecurityIPGroupOutcome> DeleteSecurityIPGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteSecurityIPGroupRequest&, DeleteSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityIPGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteZoneResponse> DeleteZoneOutcome;
                 typedef std::future<DeleteZoneOutcome> DeleteZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteZoneRequest&, DeleteZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZoneAsyncHandler;
@@ -453,6 +465,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRulePriorityResponse> ModifyRulePriorityOutcome;
                 typedef std::future<ModifyRulePriorityOutcome> ModifyRulePriorityOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRulePriorityRequest&, ModifyRulePriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRulePriorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySecurityIPGroupResponse> ModifySecurityIPGroupOutcome;
+                typedef std::future<ModifySecurityIPGroupOutcome> ModifySecurityIPGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySecurityIPGroupRequest&, ModifySecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIPGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
@@ -598,6 +613,15 @@ namespace TencentCloud
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
 
                 /**
+                 *创建安全 IP 组
+                 * @param req CreateSecurityIPGroupRequest
+                 * @return CreateSecurityIPGroupOutcome
+                 */
+                CreateSecurityIPGroupOutcome CreateSecurityIPGroup(const Model::CreateSecurityIPGroupRequest &request);
+                void CreateSecurityIPGroupAsync(const Model::CreateSecurityIPGroupRequest& request, const CreateSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityIPGroupOutcomeCallable CreateSecurityIPGroupCallable(const Model::CreateSecurityIPGroupRequest& request);
+
+                /**
                  *对用户指定的域名进行一次站点拨测
                  * @param req CreateSpeedTestingRequest
                  * @return CreateSpeedTestingOutcome
@@ -668,6 +692,15 @@ namespace TencentCloud
                 DeleteRulesOutcome DeleteRules(const Model::DeleteRulesRequest &request);
                 void DeleteRulesAsync(const Model::DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRulesOutcomeCallable DeleteRulesCallable(const Model::DeleteRulesRequest& request);
+
+                /**
+                 *删除指定 IP 组，如果有规则引用了 IP 组情况，则不允许删除。
+                 * @param req DeleteSecurityIPGroupRequest
+                 * @return DeleteSecurityIPGroupOutcome
+                 */
+                DeleteSecurityIPGroupOutcome DeleteSecurityIPGroup(const Model::DeleteSecurityIPGroupRequest &request);
+                void DeleteSecurityIPGroupAsync(const Model::DeleteSecurityIPGroupRequest& request, const DeleteSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSecurityIPGroupOutcomeCallable DeleteSecurityIPGroupCallable(const Model::DeleteSecurityIPGroupRequest& request);
 
                 /**
                  *删除站点。
@@ -1199,6 +1232,15 @@ namespace TencentCloud
                 ModifyRulePriorityOutcome ModifyRulePriority(const Model::ModifyRulePriorityRequest &request);
                 void ModifyRulePriorityAsync(const Model::ModifyRulePriorityRequest& request, const ModifyRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRulePriorityOutcomeCallable ModifyRulePriorityCallable(const Model::ModifyRulePriorityRequest& request);
+
+                /**
+                 *修改安全 IP 组。
+                 * @param req ModifySecurityIPGroupRequest
+                 * @return ModifySecurityIPGroupOutcome
+                 */
+                ModifySecurityIPGroupOutcome ModifySecurityIPGroup(const Model::ModifySecurityIPGroupRequest &request);
+                void ModifySecurityIPGroupAsync(const Model::ModifySecurityIPGroupRequest& request, const ModifySecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySecurityIPGroupOutcomeCallable ModifySecurityIPGroupCallable(const Model::ModifySecurityIPGroupRequest& request);
 
                 /**
                  *修改Web&Bot安全配置。

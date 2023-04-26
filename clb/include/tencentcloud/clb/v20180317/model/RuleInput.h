@@ -162,14 +162,14 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
-                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
+                     * 获取负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。
+                     * @return ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。
                      */
                     std::string GetForwardType() const;
 
                     /**
-                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
-                     * @param ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
+                     * 设置负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。
+                     * @param ForwardType 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。
                      */
                     void SetForwardType(const std::string& _forwardType);
 
@@ -363,7 +363,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC
+                     * 负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。
                      */
                     std::string m_forwardType;
                     bool m_forwardTypeHasBeenSet;

@@ -31,7 +31,8 @@ DescribeTKEEdgeClusterCredentialResponse::DescribeTKEEdgeClusterCredentialRespon
     m_coreDnsHasBeenSet(false),
     m_healthRegionHasBeenSet(false),
     m_healthHasBeenSet(false),
-    m_gridDaemonHasBeenSet(false)
+    m_gridDaemonHasBeenSet(false),
+    m_unitClusterHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome DescribeTKEEdgeClusterCredentialResponse::Deserialize(const 
         m_gridDaemonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UnitCluster") && !rsp["UnitCluster"].IsNull())
+    {
+        if (!rsp["UnitCluster"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitCluster` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unitCluster = string(rsp["UnitCluster"].GetString());
+        m_unitClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ string DescribeTKEEdgeClusterCredentialResponse::ToJsonString() const
         string key = "GridDaemon";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gridDaemon.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitCluster.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -354,6 +373,16 @@ string DescribeTKEEdgeClusterCredentialResponse::GetGridDaemon() const
 bool DescribeTKEEdgeClusterCredentialResponse::GridDaemonHasBeenSet() const
 {
     return m_gridDaemonHasBeenSet;
+}
+
+string DescribeTKEEdgeClusterCredentialResponse::GetUnitCluster() const
+{
+    return m_unitCluster;
+}
+
+bool DescribeTKEEdgeClusterCredentialResponse::UnitClusterHasBeenSet() const
+{
+    return m_unitClusterHasBeenSet;
 }
 
 

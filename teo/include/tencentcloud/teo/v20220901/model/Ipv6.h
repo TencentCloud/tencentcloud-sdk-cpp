@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Ipv6访问功能配置，取值有：
+                     * 获取Ipv6 访问功能配置，取值有：
 <li>on：开启Ipv6访问功能；</li>
 <li>off：关闭Ipv6访问功能。</li>
-                     * @return Switch Ipv6访问功能配置，取值有：
+                     * @return Switch Ipv6 访问功能配置，取值有：
 <li>on：开启Ipv6访问功能；</li>
 <li>off：关闭Ipv6访问功能。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置Ipv6访问功能配置，取值有：
+                     * 设置Ipv6 访问功能配置，取值有：
 <li>on：开启Ipv6访问功能；</li>
 <li>off：关闭Ipv6访问功能。</li>
-                     * @param Switch Ipv6访问功能配置，取值有：
+                     * @param Switch Ipv6 访问功能配置，取值有：
 <li>on：开启Ipv6访问功能；</li>
 <li>off：关闭Ipv6访问功能。</li>
                      */
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Ipv6访问功能配置，取值有：
+                     * Ipv6 访问功能配置，取值有：
 <li>on：开启Ipv6访问功能；</li>
 <li>off：关闭Ipv6访问功能。</li>
                      */

@@ -2702,7 +2702,7 @@ namespace TencentCloud
                 UpdateImageCacheOutcomeCallable UpdateImageCacheCallable(const Model::UpdateImageCacheRequest& request);
 
                 /**
-                 *修改边缘计算集群名称等属性 
+                 *修改边缘计算集群名称等属性
                  * @param req UpdateTKEEdgeClusterRequest
                  * @return UpdateTKEEdgeClusterOutcome
                  */

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月
-                     * @return ChargeType 付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月
+                     * 获取付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
+                     * @return ChargeType 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月
-                     * @param ChargeType 付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月
+                     * 设置付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
+                     * @param ChargeType 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      */
                     void SetChargeType(const std::string& _chargeType);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 付费模式：POSTPAID_BY_HOUR按量付费、PREPAID包年包月
+                     * 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;

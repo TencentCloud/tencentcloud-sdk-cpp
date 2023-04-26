@@ -599,6 +599,49 @@ TeoClient::CreateRuleOutcomeCallable TeoClient::CreateRuleCallable(const CreateR
     return task->get_future();
 }
 
+TeoClient::CreateSecurityIPGroupOutcome TeoClient::CreateSecurityIPGroup(const CreateSecurityIPGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityIPGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityIPGroupResponse rsp = CreateSecurityIPGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityIPGroupOutcome(rsp);
+        else
+            return CreateSecurityIPGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityIPGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateSecurityIPGroupAsync(const CreateSecurityIPGroupRequest& request, const CreateSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityIPGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateSecurityIPGroupOutcomeCallable TeoClient::CreateSecurityIPGroupCallable(const CreateSecurityIPGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityIPGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityIPGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateSpeedTestingOutcome TeoClient::CreateSpeedTesting(const CreateSpeedTestingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSpeedTesting");
@@ -936,6 +979,49 @@ TeoClient::DeleteRulesOutcomeCallable TeoClient::DeleteRulesCallable(const Delet
         [this, request]()
         {
             return this->DeleteRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteSecurityIPGroupOutcome TeoClient::DeleteSecurityIPGroup(const DeleteSecurityIPGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSecurityIPGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSecurityIPGroupResponse rsp = DeleteSecurityIPGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSecurityIPGroupOutcome(rsp);
+        else
+            return DeleteSecurityIPGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSecurityIPGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteSecurityIPGroupAsync(const DeleteSecurityIPGroupRequest& request, const DeleteSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSecurityIPGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteSecurityIPGroupOutcomeCallable TeoClient::DeleteSecurityIPGroupCallable(const DeleteSecurityIPGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSecurityIPGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSecurityIPGroup(request);
         }
     );
 
@@ -3473,6 +3559,49 @@ TeoClient::ModifyRulePriorityOutcomeCallable TeoClient::ModifyRulePriorityCallab
         [this, request]()
         {
             return this->ModifyRulePriority(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifySecurityIPGroupOutcome TeoClient::ModifySecurityIPGroup(const ModifySecurityIPGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityIPGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityIPGroupResponse rsp = ModifySecurityIPGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityIPGroupOutcome(rsp);
+        else
+            return ModifySecurityIPGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityIPGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifySecurityIPGroupAsync(const ModifySecurityIPGroupRequest& request, const ModifySecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityIPGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifySecurityIPGroupOutcomeCallable TeoClient::ModifySecurityIPGroupCallable(const ModifySecurityIPGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityIPGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityIPGroup(request);
         }
     );
 

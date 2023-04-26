@@ -27,7 +27,9 @@ SnapshotRecord::SnapshotRecord() :
     m_valueHasBeenSet(false),
     m_tTLHasBeenSet(false),
     m_recordIdHasBeenSet(false),
-    m_mXHasBeenSet(false)
+    m_mXHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome SnapshotRecord::Deserialize(const rapidjson::Value &value)
         m_mXHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotRecord.Weight` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = string(value["Weight"].GetString());
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotRecord.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void SnapshotRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mX.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weight.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void SnapshotRecord::SetMX(const string& _mX)
 bool SnapshotRecord::MXHasBeenSet() const
 {
     return m_mXHasBeenSet;
+}
+
+string SnapshotRecord::GetWeight() const
+{
+    return m_weight;
+}
+
+void SnapshotRecord::SetWeight(const string& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool SnapshotRecord::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+string SnapshotRecord::GetReason() const
+{
+    return m_reason;
+}
+
+void SnapshotRecord::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool SnapshotRecord::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

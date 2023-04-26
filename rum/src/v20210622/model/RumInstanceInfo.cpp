@@ -32,7 +32,8 @@ RumInstanceInfo::RumInstanceInfo() :
     m_updatedAtHasBeenSet(false),
     m_dataRetentionDaysHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome RumInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_createdAtHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumInstanceInfo.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetInt64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void RumInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void RumInstanceInfo::SetCreatedAt(const string& _createdAt)
 bool RumInstanceInfo::CreatedAtHasBeenSet() const
 {
     return m_createdAtHasBeenSet;
+}
+
+int64_t RumInstanceInfo::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void RumInstanceInfo::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool RumInstanceInfo::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
