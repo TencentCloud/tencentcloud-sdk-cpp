@@ -255,6 +255,18 @@ video 纯视频
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取打开学生麦克风/摄像头的授权开关
+                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     */
+                    uint64_t GetEnableDirectControl() const;
+
+                    /**
+                     * 判断参数 EnableDirectControl 是否已赋值
+                     * @return EnableDirectControl 是否已赋值
+                     */
+                    bool EnableDirectControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +374,12 @@ video 纯视频
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 打开学生麦克风/摄像头的授权开关
+                     */
+                    uint64_t m_enableDirectControl;
+                    bool m_enableDirectControlHasBeenSet;
 
                 };
             }

@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeUnitRulesV2Response.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
-DescribeAccountQuotaResponse::DescribeAccountQuotaResponse() :
-    m_appIdHasBeenSet(false),
-    m_accountQuotaOverviewHasBeenSet(false)
+DescribeUnitRulesV2Response::DescribeUnitRulesV2Response() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAccountQuotaResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUnitRulesV2Response::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,58 +62,40 @@ CoreInternalOutcome DescribeAccountQuotaResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["AppId"].IsUint64())
+        if (!rsp["Result"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `AppId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = rsp["AppId"].GetUint64();
-        m_appIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AccountQuotaOverview") && !rsp["AccountQuotaOverview"].IsNull())
-    {
-        if (!rsp["AccountQuotaOverview"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccountQuotaOverview` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_accountQuotaOverview.Deserialize(rsp["AccountQuotaOverview"]);
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_accountQuotaOverviewHasBeenSet = true;
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAccountQuotaResponse::ToJsonString() const
+string DescribeUnitRulesV2Response::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_appIdHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
-    }
-
-    if (m_accountQuotaOverviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccountQuotaOverview";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accountQuotaOverview.ToJsonObject(value[key.c_str()], allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,24 +110,14 @@ string DescribeAccountQuotaResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeAccountQuotaResponse::GetAppId() const
+TsfPageUnitRuleV2 DescribeUnitRulesV2Response::GetResult() const
 {
-    return m_appId;
+    return m_result;
 }
 
-bool DescribeAccountQuotaResponse::AppIdHasBeenSet() const
+bool DescribeUnitRulesV2Response::ResultHasBeenSet() const
 {
-    return m_appIdHasBeenSet;
-}
-
-AccountQuotaOverview DescribeAccountQuotaResponse::GetAccountQuotaOverview() const
-{
-    return m_accountQuotaOverview;
-}
-
-bool DescribeAccountQuotaResponse::AccountQuotaOverviewHasBeenSet() const
-{
-    return m_accountQuotaOverviewHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

@@ -48,7 +48,7 @@ namespace TencentCloud
                      * 获取用户appid
                      * @return AppId 用户appid
                      */
-                    std::string GetAppId() const;
+                    uint64_t GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
@@ -73,7 +73,7 @@ namespace TencentCloud
                     /**
                      * 用户appid
                      */
-                    std::string m_appId;
+                    uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**

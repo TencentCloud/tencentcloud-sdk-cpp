@@ -14,54 +14,58 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
-#define TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
+#ifndef TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBEUNITRULESV2RESPONSE_H_
+#define TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBEUNITRULESV2RESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/TsfPageUnitRuleV2.h>
 
 
 namespace TencentCloud
 {
-    namespace Redis
+    namespace Tsf
     {
-        namespace V20180412
+        namespace V20180326
         {
             namespace Model
             {
                 /**
-                * KillMasterGroup返回参数结构体
+                * DescribeUnitRulesV2返回参数结构体
                 */
-                class KillMasterGroupResponse : public AbstractModel
+                class DescribeUnitRulesV2Response : public AbstractModel
                 {
                 public:
-                    KillMasterGroupResponse();
-                    ~KillMasterGroupResponse() = default;
+                    DescribeUnitRulesV2Response();
+                    ~DescribeUnitRulesV2Response() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步任务ID。
-                     * @return TaskId 异步任务ID。
+                     * 获取分页列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 分页列表信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetTaskId() const;
+                    TsfPageUnitRuleV2 GetResult() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步任务ID。
+                     * 分页列表信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    TsfPageUnitRuleV2 m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -69,4 +73,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
+#endif // !TENCENTCLOUD_TSF_V20180326_MODEL_DESCRIBEUNITRULESV2RESPONSE_H_

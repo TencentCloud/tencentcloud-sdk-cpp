@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取未消费消息的保留时间，以毫秒为单位，60秒-15天
-                     * @return Ttl 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * 获取已废弃
+                     * @return Ttl 已废弃
                      */
                     uint64_t GetTtl() const;
 
                     /**
-                     * 设置未消费消息的保留时间，以毫秒为单位，60秒-15天
-                     * @param Ttl 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * 设置已废弃
+                     * @param Ttl 已废弃
                      */
                     void SetTtl(const uint64_t& _ttl);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TtlHasBeenSet() const;
 
                     /**
-                     * 获取消息持久化后保留的时间，以毫秒为单位
-                     * @return RetentionTime 消息持久化后保留的时间，以毫秒为单位
+                     * 获取已废弃
+                     * @return RetentionTime 已废弃
                      */
                     uint64_t GetRetentionTime() const;
 
                     /**
-                     * 设置消息持久化后保留的时间，以毫秒为单位
-                     * @param RetentionTime 消息持久化后保留的时间，以毫秒为单位
+                     * 设置已废弃
+                     * @param RetentionTime 已废弃
                      */
                     void SetRetentionTime(const uint64_t& _retentionTime);
 
@@ -147,13 +147,13 @@ namespace TencentCloud
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * 已废弃
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;
 
                     /**
-                     * 消息持久化后保留的时间，以毫秒为单位
+                     * 已废弃
                      */
                     uint64_t m_retentionTime;
                     bool m_retentionTimeHasBeenSet;

@@ -296,6 +296,50 @@ namespace TencentCloud
                      */
                     bool RecordUrlHasBeenSet() const;
 
+                    /**
+                     * 获取最高房间内人数（包括老师），0表示不限制，默认为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxMicNumber 最高房间内人数（包括老师），0表示不限制，默认为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxMicNumber() const;
+
+                    /**
+                     * 设置最高房间内人数（包括老师），0表示不限制，默认为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxMicNumber 最高房间内人数（包括老师），0表示不限制，默认为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxMicNumber(const uint64_t& _maxMicNumber);
+
+                    /**
+                     * 判断参数 MaxMicNumber 是否已赋值
+                     * @return MaxMicNumber 是否已赋值
+                     */
+                    bool MaxMicNumberHasBeenSet() const;
+
+                    /**
+                     * 获取打开学生麦克风/摄像头的授权开关 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableDirectControl() const;
+
+                    /**
+                     * 设置打开学生麦克风/摄像头的授权开关 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableDirectControl 打开学生麦克风/摄像头的授权开关 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableDirectControl(const uint64_t& _enableDirectControl);
+
+                    /**
+                     * 判断参数 EnableDirectControl 是否已赋值
+                     * @return EnableDirectControl 是否已赋值
+                     */
+                    bool EnableDirectControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +420,20 @@ namespace TencentCloud
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
+
+                    /**
+                     * 最高房间内人数（包括老师），0表示不限制，默认为0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxMicNumber;
+                    bool m_maxMicNumberHasBeenSet;
+
+                    /**
+                     * 打开学生麦克风/摄像头的授权开关 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableDirectControl;
+                    bool m_enableDirectControlHasBeenSet;
 
                 };
             }

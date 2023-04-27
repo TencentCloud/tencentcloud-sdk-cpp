@@ -36,7 +36,10 @@ SecretMetadata::SecretMetadata() :
     m_resourceNameHasBeenSet(false),
     m_projectIDHasBeenSet(false),
     m_associatedInstanceIDsHasBeenSet(false),
-    m_targetUinHasBeenSet(false)
+    m_targetUinHasBeenSet(false),
+    m_rotationFrequencyHasBeenSet(false),
+    m_resourceIDHasBeenSet(false),
+    m_rotationBeginTimeHasBeenSet(false)
 {
 }
 
@@ -208,6 +211,36 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_targetUinHasBeenSet = true;
     }
 
+    if (value.HasMember("RotationFrequency") && !value["RotationFrequency"].IsNull())
+    {
+        if (!value["RotationFrequency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.RotationFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotationFrequency = value["RotationFrequency"].GetInt64();
+        m_rotationFrequencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceID") && !value["ResourceID"].IsNull())
+    {
+        if (!value["ResourceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.ResourceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceID = string(value["ResourceID"].GetString());
+        m_resourceIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("RotationBeginTime") && !value["RotationBeginTime"].IsNull())
+    {
+        if (!value["RotationBeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.RotationBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotationBeginTime = string(value["RotationBeginTime"].GetString());
+        m_rotationBeginTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +379,30 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TargetUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetUin, allocator);
+    }
+
+    if (m_rotationFrequencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotationFrequency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rotationFrequency, allocator);
+    }
+
+    if (m_resourceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rotationBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotationBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rotationBeginTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -605,5 +662,53 @@ void SecretMetadata::SetTargetUin(const uint64_t& _targetUin)
 bool SecretMetadata::TargetUinHasBeenSet() const
 {
     return m_targetUinHasBeenSet;
+}
+
+int64_t SecretMetadata::GetRotationFrequency() const
+{
+    return m_rotationFrequency;
+}
+
+void SecretMetadata::SetRotationFrequency(const int64_t& _rotationFrequency)
+{
+    m_rotationFrequency = _rotationFrequency;
+    m_rotationFrequencyHasBeenSet = true;
+}
+
+bool SecretMetadata::RotationFrequencyHasBeenSet() const
+{
+    return m_rotationFrequencyHasBeenSet;
+}
+
+string SecretMetadata::GetResourceID() const
+{
+    return m_resourceID;
+}
+
+void SecretMetadata::SetResourceID(const string& _resourceID)
+{
+    m_resourceID = _resourceID;
+    m_resourceIDHasBeenSet = true;
+}
+
+bool SecretMetadata::ResourceIDHasBeenSet() const
+{
+    return m_resourceIDHasBeenSet;
+}
+
+string SecretMetadata::GetRotationBeginTime() const
+{
+    return m_rotationBeginTime;
+}
+
+void SecretMetadata::SetRotationBeginTime(const string& _rotationBeginTime)
+{
+    m_rotationBeginTime = _rotationBeginTime;
+    m_rotationBeginTimeHasBeenSet = true;
+}
+
+bool SecretMetadata::RotationBeginTimeHasBeenSet() const
+{
+    return m_rotationBeginTimeHasBeenSet;
 }
 

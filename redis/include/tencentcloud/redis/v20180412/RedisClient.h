@@ -1077,7 +1077,7 @@ namespace TencentCloud
                 InquiryPriceUpgradeInstanceOutcomeCallable InquiryPriceUpgradeInstanceCallable(const Model::InquiryPriceUpgradeInstanceRequest& request);
 
                 /**
-                 *模拟故障
+                 *本接口（KillMasterGroup）模拟故障。
                  * @param req KillMasterGroupRequest
                  * @return KillMasterGroupOutcome
                  */

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @return SrcDatabaseType 源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 获取源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * @return SrcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @param SrcDatabaseType 源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 设置源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * @param SrcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @return DstDatabaseType 目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 获取目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * @return DstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
-                     * @param DstDatabaseType 目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 设置目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
+                     * @param DstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
 
@@ -190,13 +190,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 目标实例数据库类型，mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb
+                     * 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;

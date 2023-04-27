@@ -765,6 +765,50 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取spark_emr_livy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineClusterType spark_emr_livy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataEngineClusterType() const;
+
+                    /**
+                     * 设置spark_emr_livy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataEngineClusterType spark_emr_livy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataEngineClusterType(const std::string& _dataEngineClusterType);
+
+                    /**
+                     * 判断参数 DataEngineClusterType 是否已赋值
+                     * @return DataEngineClusterType 是否已赋值
+                     */
+                    bool DataEngineClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Spark 3.2-EMR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineImageVersion Spark 3.2-EMR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataEngineImageVersion() const;
+
+                    /**
+                     * 设置Spark 3.2-EMR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataEngineImageVersion Spark 3.2-EMR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataEngineImageVersion(const std::string& _dataEngineImageVersion);
+
+                    /**
+                     * 判断参数 DataEngineImageVersion 是否已赋值
+                     * @return DataEngineImageVersion 是否已赋值
+                     */
+                    bool DataEngineImageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1001,6 +1045,20 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * spark_emr_livy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataEngineClusterType;
+                    bool m_dataEngineClusterTypeHasBeenSet;
+
+                    /**
+                     * Spark 3.2-EMR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataEngineImageVersion;
+                    bool m_dataEngineImageVersionHasBeenSet;
 
                 };
             }

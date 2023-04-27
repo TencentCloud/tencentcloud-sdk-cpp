@@ -1674,6 +1674,49 @@ GaapClient::DescribeAccessRegionsByDestRegionOutcomeCallable GaapClient::Describ
     return task->get_future();
 }
 
+GaapClient::DescribeAuthSignatureOutcome GaapClient::DescribeAuthSignature(const DescribeAuthSignatureRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuthSignature");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuthSignatureResponse rsp = DescribeAuthSignatureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuthSignatureOutcome(rsp);
+        else
+            return DescribeAuthSignatureOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuthSignatureOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeAuthSignatureAsync(const DescribeAuthSignatureRequest& request, const DescribeAuthSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuthSignature(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeAuthSignatureOutcomeCallable GaapClient::DescribeAuthSignatureCallable(const DescribeAuthSignatureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuthSignatureOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuthSignature(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DescribeBlackHeaderOutcome GaapClient::DescribeBlackHeader(const DescribeBlackHeaderRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlackHeader");

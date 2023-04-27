@@ -6490,6 +6490,49 @@ TsfClient::DescribeUnitRulesOutcomeCallable TsfClient::DescribeUnitRulesCallable
     return task->get_future();
 }
 
+TsfClient::DescribeUnitRulesV2Outcome TsfClient::DescribeUnitRulesV2(const DescribeUnitRulesV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnitRulesV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnitRulesV2Response rsp = DescribeUnitRulesV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnitRulesV2Outcome(rsp);
+        else
+            return DescribeUnitRulesV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnitRulesV2Outcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeUnitRulesV2Async(const DescribeUnitRulesV2Request& request, const DescribeUnitRulesV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnitRulesV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeUnitRulesV2OutcomeCallable TsfClient::DescribeUnitRulesV2Callable(const DescribeUnitRulesV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnitRulesV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnitRulesV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeUploadInfoOutcome TsfClient::DescribeUploadInfo(const DescribeUploadInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUploadInfo");

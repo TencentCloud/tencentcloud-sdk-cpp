@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件,当前只支持按照单个条件ClusterName进行过滤
-                     * @return Filters 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * 获取过滤条件,当前只支持按照ClusterName和云标签进行过滤
+                     * @return Filters 过滤条件,当前只支持按照ClusterName和云标签进行过滤
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件,当前只支持按照单个条件ClusterName进行过滤
-                     * @param Filters 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * 设置过滤条件,当前只支持按照ClusterName和云标签进行过滤
+                     * @param Filters 过滤条件,当前只支持按照ClusterName和云标签进行过滤
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件,当前只支持按照单个条件ClusterName进行过滤
+                     * 过滤条件,当前只支持按照ClusterName和云标签进行过滤
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

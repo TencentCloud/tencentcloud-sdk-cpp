@@ -31,7 +31,9 @@ RoomItem::RoomItem() :
     m_resolutionHasBeenSet(false),
     m_maxRTCMemberHasBeenSet(false),
     m_replayUrlHasBeenSet(false),
-    m_recordUrlHasBeenSet(false)
+    m_recordUrlHasBeenSet(false),
+    m_maxMicNumberHasBeenSet(false),
+    m_enableDirectControlHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome RoomItem::Deserialize(const rapidjson::Value &value)
         m_recordUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxMicNumber") && !value["MaxMicNumber"].IsNull())
+    {
+        if (!value["MaxMicNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.MaxMicNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxMicNumber = value["MaxMicNumber"].GetUint64();
+        m_maxMicNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDirectControl") && !value["EnableDirectControl"].IsNull())
+    {
+        if (!value["EnableDirectControl"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.EnableDirectControl` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDirectControl = value["EnableDirectControl"].GetUint64();
+        m_enableDirectControlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void RoomItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxMicNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMicNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxMicNumber, allocator);
+    }
+
+    if (m_enableDirectControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDirectControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDirectControl, allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void RoomItem::SetRecordUrl(const string& _recordUrl)
 bool RoomItem::RecordUrlHasBeenSet() const
 {
     return m_recordUrlHasBeenSet;
+}
+
+uint64_t RoomItem::GetMaxMicNumber() const
+{
+    return m_maxMicNumber;
+}
+
+void RoomItem::SetMaxMicNumber(const uint64_t& _maxMicNumber)
+{
+    m_maxMicNumber = _maxMicNumber;
+    m_maxMicNumberHasBeenSet = true;
+}
+
+bool RoomItem::MaxMicNumberHasBeenSet() const
+{
+    return m_maxMicNumberHasBeenSet;
+}
+
+uint64_t RoomItem::GetEnableDirectControl() const
+{
+    return m_enableDirectControl;
+}
+
+void RoomItem::SetEnableDirectControl(const uint64_t& _enableDirectControl)
+{
+    m_enableDirectControl = _enableDirectControl;
+    m_enableDirectControlHasBeenSet = true;
+}
+
+bool RoomItem::EnableDirectControlHasBeenSet() const
+{
+    return m_enableDirectControlHasBeenSet;
 }
 

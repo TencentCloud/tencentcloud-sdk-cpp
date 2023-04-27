@@ -36,7 +36,8 @@ RoomInfo::RoomInfo() :
     m_rTCAudienceNumberHasBeenSet(false),
     m_audienceTypeHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_enableDirectControlHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_groupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDirectControl") && !value["EnableDirectControl"].IsNull())
+    {
+        if (!value["EnableDirectControl"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.EnableDirectControl` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDirectControl = value["EnableDirectControl"].GetUint64();
+        m_enableDirectControlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDirectControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDirectControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDirectControl, allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void RoomInfo::SetGroupId(const string& _groupId)
 bool RoomInfo::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+uint64_t RoomInfo::GetEnableDirectControl() const
+{
+    return m_enableDirectControl;
+}
+
+void RoomInfo::SetEnableDirectControl(const uint64_t& _enableDirectControl)
+{
+    m_enableDirectControl = _enableDirectControl;
+    m_enableDirectControlHasBeenSet = true;
+}
+
+bool RoomInfo::EnableDirectControlHasBeenSet() const
+{
+    return m_enableDirectControlHasBeenSet;
 }
 

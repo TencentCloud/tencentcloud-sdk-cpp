@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/MachineGroupTypeInfo.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/MetaTagInfo.h>
 
 
 namespace TencentCloud
@@ -170,6 +171,24 @@ namespace TencentCloud
                      */
                     bool ServiceLoggingHasBeenSet() const;
 
+                    /**
+                     * 获取机器组元数据信息列表
+                     * @return MetaTags 机器组元数据信息列表
+                     */
+                    std::vector<MetaTagInfo> GetMetaTags() const;
+
+                    /**
+                     * 设置机器组元数据信息列表
+                     * @param MetaTags 机器组元数据信息列表
+                     */
+                    void SetMetaTags(const std::vector<MetaTagInfo>& _metaTags);
+
+                    /**
+                     * 判断参数 MetaTags 是否已赋值
+                     * @return MetaTags 是否已赋值
+                     */
+                    bool MetaTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +232,12 @@ namespace TencentCloud
                      */
                     bool m_serviceLogging;
                     bool m_serviceLoggingHasBeenSet;
+
+                    /**
+                     * 机器组元数据信息列表
+                     */
+                    std::vector<MetaTagInfo> m_metaTags;
+                    bool m_metaTagsHasBeenSet;
 
                 };
             }

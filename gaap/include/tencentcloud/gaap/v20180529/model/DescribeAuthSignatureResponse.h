@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
-#define TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
+#ifndef TENCENTCLOUD_GAAP_V20180529_MODEL_DESCRIBEAUTHSIGNATURERESPONSE_H_
+#define TENCENTCLOUD_GAAP_V20180529_MODEL_DESCRIBEAUTHSIGNATURERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Redis
+    namespace Gaap
     {
-        namespace V20180412
+        namespace V20180529
         {
             namespace Model
             {
                 /**
-                * KillMasterGroup返回参数结构体
+                * DescribeAuthSignature返回参数结构体
                 */
-                class KillMasterGroupResponse : public AbstractModel
+                class DescribeAuthSignatureResponse : public AbstractModel
                 {
                 public:
-                    KillMasterGroupResponse();
-                    ~KillMasterGroupResponse() = default;
+                    DescribeAuthSignatureResponse();
+                    ~DescribeAuthSignatureResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取异步任务ID。
-                     * @return TaskId 异步任务ID。
-                     */
-                    int64_t GetTaskId() const;
-
-                    /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
-                     */
-                    bool TaskIdHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 异步任务ID。
-                     */
-                    int64_t m_taskId;
-                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -69,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_KILLMASTERGROUPRESPONSE_H_
+#endif // !TENCENTCLOUD_GAAP_V20180529_MODEL_DESCRIBEAUTHSIGNATURERESPONSE_H_

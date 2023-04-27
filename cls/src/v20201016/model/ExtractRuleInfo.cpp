@@ -35,7 +35,10 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_jsonStandardHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_addressHasBeenSet(false),
-    m_parseProtocolHasBeenSet(false)
+    m_parseProtocolHasBeenSet(false),
+    m_metadataTypeHasBeenSet(false),
+    m_pathRegexHasBeenSet(false),
+    m_metaTagsHasBeenSet(false)
 {
 }
 
@@ -207,6 +210,46 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_parseProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("MetadataType") && !value["MetadataType"].IsNull())
+    {
+        if (!value["MetadataType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.MetadataType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metadataType = value["MetadataType"].GetInt64();
+        m_metadataTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PathRegex") && !value["PathRegex"].IsNull())
+    {
+        if (!value["PathRegex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.PathRegex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathRegex = string(value["PathRegex"].GetString());
+        m_pathRegexHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetaTags") && !value["MetaTags"].IsNull())
+    {
+        if (!value["MetaTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.MetaTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetaTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetaTagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metaTags.push_back(item);
+        }
+        m_metaTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +387,37 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ParseProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parseProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetadataType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metadataType, allocator);
+    }
+
+    if (m_pathRegexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathRegex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pathRegex.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaTags.begin(); itr != m_metaTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -587,5 +661,53 @@ void ExtractRuleInfo::SetParseProtocol(const string& _parseProtocol)
 bool ExtractRuleInfo::ParseProtocolHasBeenSet() const
 {
     return m_parseProtocolHasBeenSet;
+}
+
+int64_t ExtractRuleInfo::GetMetadataType() const
+{
+    return m_metadataType;
+}
+
+void ExtractRuleInfo::SetMetadataType(const int64_t& _metadataType)
+{
+    m_metadataType = _metadataType;
+    m_metadataTypeHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::MetadataTypeHasBeenSet() const
+{
+    return m_metadataTypeHasBeenSet;
+}
+
+string ExtractRuleInfo::GetPathRegex() const
+{
+    return m_pathRegex;
+}
+
+void ExtractRuleInfo::SetPathRegex(const string& _pathRegex)
+{
+    m_pathRegex = _pathRegex;
+    m_pathRegexHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::PathRegexHasBeenSet() const
+{
+    return m_pathRegexHasBeenSet;
+}
+
+vector<MetaTagInfo> ExtractRuleInfo::GetMetaTags() const
+{
+    return m_metaTags;
+}
+
+void ExtractRuleInfo::SetMetaTags(const vector<MetaTagInfo>& _metaTags)
+{
+    m_metaTags = _metaTags;
+    m_metaTagsHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::MetaTagsHasBeenSet() const
+{
+    return m_metaTagsHasBeenSet;
 }
 

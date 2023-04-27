@@ -38,7 +38,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_assistantsHasBeenSet(false),
     m_recordUrlHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_enableDirectControlHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_groupIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableDirectControl") && !rsp["EnableDirectControl"].IsNull())
+    {
+        if (!rsp["EnableDirectControl"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableDirectControl` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDirectControl = rsp["EnableDirectControl"].GetUint64();
+        m_enableDirectControlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +373,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDirectControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDirectControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDirectControl, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -524,6 +543,16 @@ string DescribeRoomResponse::GetGroupId() const
 bool DescribeRoomResponse::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetEnableDirectControl() const
+{
+    return m_enableDirectControl;
+}
+
+bool DescribeRoomResponse::EnableDirectControlHasBeenSet() const
+{
+    return m_enableDirectControlHasBeenSet;
 }
 
 

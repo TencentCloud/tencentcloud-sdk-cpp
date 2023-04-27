@@ -334,6 +334,24 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取打开学生麦克风/摄像头的授权开关
+                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     */
+                    uint64_t GetEnableDirectControl() const;
+
+                    /**
+                     * 设置打开学生麦克风/摄像头的授权开关
+                     * @param EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     */
+                    void SetEnableDirectControl(const uint64_t& _enableDirectControl);
+
+                    /**
+                     * 判断参数 EnableDirectControl 是否已赋值
+                     * @return EnableDirectControl 是否已赋值
+                     */
+                    bool EnableDirectControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +449,12 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 打开学生麦克风/摄像头的授权开关
+                     */
+                    uint64_t m_enableDirectControl;
+                    bool m_enableDirectControlHasBeenSet;
 
                 };
             }

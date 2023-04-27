@@ -30,7 +30,8 @@ ModifyMachineGroupRequest::ModifyMachineGroupRequest() :
     m_autoUpdateHasBeenSet(false),
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
-    m_serviceLoggingHasBeenSet(false)
+    m_serviceLoggingHasBeenSet(false),
+    m_metaTagsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string ModifyMachineGroupRequest::ToJsonString() const
         string key = "ServiceLogging";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serviceLogging, allocator);
+    }
+
+    if (m_metaTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaTags.begin(); itr != m_metaTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -247,6 +263,22 @@ void ModifyMachineGroupRequest::SetServiceLogging(const bool& _serviceLogging)
 bool ModifyMachineGroupRequest::ServiceLoggingHasBeenSet() const
 {
     return m_serviceLoggingHasBeenSet;
+}
+
+vector<MetaTagInfo> ModifyMachineGroupRequest::GetMetaTags() const
+{
+    return m_metaTags;
+}
+
+void ModifyMachineGroupRequest::SetMetaTags(const vector<MetaTagInfo>& _metaTags)
+{
+    m_metaTags = _metaTags;
+    m_metaTagsHasBeenSet = true;
+}
+
+bool ModifyMachineGroupRequest::MetaTagsHasBeenSet() const
+{
+    return m_metaTagsHasBeenSet;
 }
 
 

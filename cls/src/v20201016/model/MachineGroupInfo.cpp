@@ -29,7 +29,8 @@ MachineGroupInfo::MachineGroupInfo() :
     m_autoUpdateHasBeenSet(false),
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
-    m_serviceLoggingHasBeenSet(false)
+    m_serviceLoggingHasBeenSet(false),
+    m_metaTagsHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,26 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
         m_serviceLoggingHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaTags") && !value["MetaTags"].IsNull())
+    {
+        if (!value["MetaTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.MetaTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetaTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetaTagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metaTags.push_back(item);
+        }
+        m_metaTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +251,21 @@ void MachineGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ServiceLogging";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceLogging, allocator);
+    }
+
+    if (m_metaTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metaTags.begin(); itr != m_metaTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -377,5 +413,21 @@ void MachineGroupInfo::SetServiceLogging(const bool& _serviceLogging)
 bool MachineGroupInfo::ServiceLoggingHasBeenSet() const
 {
     return m_serviceLoggingHasBeenSet;
+}
+
+vector<MetaTagInfo> MachineGroupInfo::GetMetaTags() const
+{
+    return m_metaTags;
+}
+
+void MachineGroupInfo::SetMetaTags(const vector<MetaTagInfo>& _metaTags)
+{
+    m_metaTags = _metaTags;
+    m_metaTagsHasBeenSet = true;
+}
+
+bool MachineGroupInfo::MetaTagsHasBeenSet() const
+{
+    return m_metaTagsHasBeenSet;
 }
 

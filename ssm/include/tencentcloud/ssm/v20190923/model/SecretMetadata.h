@@ -378,6 +378,72 @@ namespace TencentCloud
                      */
                     bool TargetUinHasBeenSet() const;
 
+                    /**
+                     * 获取轮转的频率，以天作为单位，在轮转开启状态下生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRotationFrequency() const;
+
+                    /**
+                     * 设置轮转的频率，以天作为单位，在轮转开启状态下生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRotationFrequency(const int64_t& _rotationFrequency);
+
+                    /**
+                     * 判断参数 RotationFrequency 是否已赋值
+                     * @return RotationFrequency 是否已赋值
+                     */
+                    bool RotationFrequencyHasBeenSet() const;
+
+                    /**
+                     * 获取云产品凭据对应的云产品实例 ID 号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceID 云产品凭据对应的云产品实例 ID 号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceID() const;
+
+                    /**
+                     * 设置云产品凭据对应的云产品实例 ID 号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceID 云产品凭据对应的云产品实例 ID 号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceID(const std::string& _resourceID);
+
+                    /**
+                     * 判断参数 ResourceID 是否已赋值
+                     * @return ResourceID 是否已赋值
+                     */
+                    bool ResourceIDHasBeenSet() const;
+
+                    /**
+                     * 获取用户指定的轮转开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RotationBeginTime 用户指定的轮转开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRotationBeginTime() const;
+
+                    /**
+                     * 设置用户指定的轮转开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RotationBeginTime 用户指定的轮转开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRotationBeginTime(const std::string& _rotationBeginTime);
+
+                    /**
+                     * 判断参数 RotationBeginTime 是否已赋值
+                     * @return RotationBeginTime 是否已赋值
+                     */
+                    bool RotationBeginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +552,27 @@ namespace TencentCloud
                      */
                     uint64_t m_targetUin;
                     bool m_targetUinHasBeenSet;
+
+                    /**
+                     * 轮转的频率，以天作为单位，在轮转开启状态下生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rotationFrequency;
+                    bool m_rotationFrequencyHasBeenSet;
+
+                    /**
+                     * 云产品凭据对应的云产品实例 ID 号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceID;
+                    bool m_resourceIDHasBeenSet;
+
+                    /**
+                     * 用户指定的轮转开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rotationBeginTime;
+                    bool m_rotationBeginTimeHasBeenSet;
 
                 };
             }

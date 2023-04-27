@@ -99,6 +99,8 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsByDestRegionRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsByDestRegionResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeAuthSignatureRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeAuthSignatureResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeBlackHeaderRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeBlackHeaderResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificateDetailRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessRegionsByDestRegionResponse> DescribeAccessRegionsByDestRegionOutcome;
                 typedef std::future<DescribeAccessRegionsByDestRegionOutcome> DescribeAccessRegionsByDestRegionOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeAccessRegionsByDestRegionRequest&, DescribeAccessRegionsByDestRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessRegionsByDestRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuthSignatureResponse> DescribeAuthSignatureOutcome;
+                typedef std::future<DescribeAuthSignatureOutcome> DescribeAuthSignatureOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeAuthSignatureRequest&, DescribeAuthSignatureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthSignatureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlackHeaderResponse> DescribeBlackHeaderOutcome;
                 typedef std::future<DescribeBlackHeaderOutcome> DescribeBlackHeaderOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeBlackHeaderRequest&, DescribeBlackHeaderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlackHeaderAsyncHandler;
@@ -893,6 +898,15 @@ namespace TencentCloud
                 DescribeAccessRegionsByDestRegionOutcome DescribeAccessRegionsByDestRegion(const Model::DescribeAccessRegionsByDestRegionRequest &request);
                 void DescribeAccessRegionsByDestRegionAsync(const Model::DescribeAccessRegionsByDestRegionRequest& request, const DescribeAccessRegionsByDestRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessRegionsByDestRegionOutcomeCallable DescribeAccessRegionsByDestRegionCallable(const Model::DescribeAccessRegionsByDestRegionRequest& request);
+
+                /**
+                 *为了防止在下单、询价、后付费开通等过程中确保来源合法以及订单参数没有被篡改过，各个业务方使用下单、询价等场景需调用计费签名接口获取签名，获取签名的请求需带上签名以验证身份，本接口可以获取计费签名。
+                 * @param req DescribeAuthSignatureRequest
+                 * @return DescribeAuthSignatureOutcome
+                 */
+                DescribeAuthSignatureOutcome DescribeAuthSignature(const Model::DescribeAuthSignatureRequest &request);
+                void DescribeAuthSignatureAsync(const Model::DescribeAuthSignatureRequest& request, const DescribeAuthSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuthSignatureOutcomeCallable DescribeAuthSignatureCallable(const Model::DescribeAuthSignatureRequest& request);
 
                 /**
                  *本接口（DescribeBlackHeader）用于查询禁用的自定义header 名称

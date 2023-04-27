@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KeyRegexInfo.h>
+#include <tencentcloud/cls/v20201016/model/MetaTagInfo.h>
 
 
 namespace TencentCloud
@@ -397,6 +398,64 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                      */
                     bool ParseProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     * @return MetadataType 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     */
+                    int64_t GetMetadataType() const;
+
+                    /**
+                     * 设置元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     * @param MetadataType 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     */
+                    void SetMetadataType(const int64_t& _metadataType);
+
+                    /**
+                     * 判断参数 MetadataType 是否已赋值
+                     * @return MetadataType 是否已赋值
+                     */
+                    bool MetadataTypeHasBeenSet() const;
+
+                    /**
+                     * 获取采集配置路径正则表达式，MetadataType为1时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathRegex 采集配置路径正则表达式，MetadataType为1时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPathRegex() const;
+
+                    /**
+                     * 设置采集配置路径正则表达式，MetadataType为1时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathRegex 采集配置路径正则表达式，MetadataType为1时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathRegex(const std::string& _pathRegex);
+
+                    /**
+                     * 判断参数 PathRegex 是否已赋值
+                     * @return PathRegex 是否已赋值
+                     */
+                    bool PathRegexHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义元数据信息，MetadataType为2时必填
+                     * @return MetaTags 用户自定义元数据信息，MetadataType为2时必填
+                     */
+                    std::vector<MetaTagInfo> GetMetaTags() const;
+
+                    /**
+                     * 设置用户自定义元数据信息，MetadataType为2时必填
+                     * @param MetaTags 用户自定义元数据信息，MetadataType为2时必填
+                     */
+                    void SetMetaTags(const std::vector<MetaTagInfo>& _metaTags);
+
+                    /**
+                     * 判断参数 MetaTags 是否已赋值
+                     * @return MetaTags 是否已赋值
+                     */
+                    bool MetaTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +567,25 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                      */
                     std::string m_parseProtocol;
                     bool m_parseProtocolHasBeenSet;
+
+                    /**
+                     * 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     */
+                    int64_t m_metadataType;
+                    bool m_metadataTypeHasBeenSet;
+
+                    /**
+                     * 采集配置路径正则表达式，MetadataType为1时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pathRegex;
+                    bool m_pathRegexHasBeenSet;
+
+                    /**
+                     * 用户自定义元数据信息，MetadataType为2时必填
+                     */
+                    std::vector<MetaTagInfo> m_metaTags;
+                    bool m_metaTagsHasBeenSet;
 
                 };
             }

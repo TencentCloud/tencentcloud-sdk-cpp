@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_REDIS_V20180412_MODEL_INSTANCETAGINFO_H_
-#define TENCENTCLOUD_REDIS_V20180412_MODEL_INSTANCETAGINFO_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_METATAGINFO_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_METATAGINFO_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Redis
+    namespace Cls
     {
-        namespace V20180412
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * 实例标签信息
+                * 元数据信息
                 */
-                class InstanceTagInfo : public AbstractModel
+                class MetaTagInfo : public AbstractModel
                 {
                 public:
-                    InstanceTagInfo();
-                    ~InstanceTagInfo() = default;
+                    MetaTagInfo();
+                    ~MetaTagInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取标签键。
-                     * @return TagKey 标签键。
+                     * 获取元数据key
+                     * @return Key 元数据key
                      */
-                    std::string GetTagKey() const;
+                    std::string GetKey() const;
 
                     /**
-                     * 设置标签键。
-                     * @param TagKey 标签键。
+                     * 设置元数据key
+                     * @param Key 元数据key
                      */
-                    void SetTagKey(const std::string& _tagKey);
+                    void SetKey(const std::string& _key);
 
                     /**
-                     * 判断参数 TagKey 是否已赋值
-                     * @return TagKey 是否已赋值
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
                      */
-                    bool TagKeyHasBeenSet() const;
+                    bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取标签值。
-                     * @return TagValue 标签值。
+                     * 获取元数据value
+                     * @return Value 元数据value
                      */
-                    std::string GetTagValue() const;
+                    std::string GetValue() const;
 
                     /**
-                     * 设置标签值。
-                     * @param TagValue 标签值。
+                     * 设置元数据value
+                     * @param Value 元数据value
                      */
-                    void SetTagValue(const std::string& _tagValue);
+                    void SetValue(const std::string& _value);
 
                     /**
-                     * 判断参数 TagValue 是否已赋值
-                     * @return TagValue 是否已赋值
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
                      */
-                    bool TagValueHasBeenSet() const;
+                    bool ValueHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 标签键。
+                     * 元数据key
                      */
-                    std::string m_tagKey;
-                    bool m_tagKeyHasBeenSet;
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                     /**
-                     * 标签值。
+                     * 元数据value
                      */
-                    std::string m_tagValue;
-                    bool m_tagValueHasBeenSet;
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_REDIS_V20180412_MODEL_INSTANCETAGINFO_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_METATAGINFO_H_

@@ -39,7 +39,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_rTCAudienceNumberHasBeenSet(false),
     m_audienceTypeHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_enableDirectControlHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDirectControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDirectControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDirectControl, allocator);
     }
 
 
@@ -469,6 +478,22 @@ void CreateRoomRequest::SetGroupId(const string& _groupId)
 bool CreateRoomRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetEnableDirectControl() const
+{
+    return m_enableDirectControl;
+}
+
+void CreateRoomRequest::SetEnableDirectControl(const uint64_t& _enableDirectControl)
+{
+    m_enableDirectControl = _enableDirectControl;
+    m_enableDirectControlHasBeenSet = true;
+}
+
+bool CreateRoomRequest::EnableDirectControlHasBeenSet() const
+{
+    return m_enableDirectControlHasBeenSet;
 }
 
 

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点名称
-                     * @return Name 节点名称
+                     * 获取节点名称。
+                     * @return Name 节点名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param Name 节点名称
+                     * 设置节点名称。
+                     * @param Name 节点名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例运行时节点Id
-                     * @return RunId 实例运行时节点Id
+                     * 获取实例运行时节点 ID。
+                     * @return RunId 实例运行时节点 ID。
                      */
                     std::string GetRunId() const;
 
                     /**
-                     * 设置实例运行时节点Id
-                     * @param RunId 实例运行时节点Id
+                     * 设置实例运行时节点 ID。
+                     * @param RunId 实例运行时节点 ID。
                      */
                     void SetRunId(const std::string& _runId);
 
@@ -83,14 +83,22 @@ namespace TencentCloud
                     bool RunIdHasBeenSet() const;
 
                     /**
-                     * 获取集群角色：0-master；1-slave
-                     * @return Role 集群角色：0-master；1-slave
+                     * 获取集群角色。
+- 0：master。
+- 1：slave。
+                     * @return Role 集群角色。
+- 0：master。
+- 1：slave。
                      */
                     int64_t GetRole() const;
 
                     /**
-                     * 设置集群角色：0-master；1-slave
-                     * @param Role 集群角色：0-master；1-slave
+                     * 设置集群角色。
+- 0：master。
+- 1：slave。
+                     * @param Role 集群角色。
+- 0：master。
+- 1：slave。
                      */
                     void SetRole(const int64_t& _role);
 
@@ -101,14 +109,26 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取节点状态：0-readwrite, 1-read, 2-backup
-                     * @return Status 节点状态：0-readwrite, 1-read, 2-backup
+                     * 获取节点状态。
+- 0：readwrite,。
+- 1：read。
+- 2：backup。
+                     * @return Status 节点状态。
+- 0：readwrite,。
+- 1：read。
+- 2：backup。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置节点状态：0-readwrite, 1-read, 2-backup
-                     * @param Status 节点状态：0-readwrite, 1-read, 2-backup
+                     * 设置节点状态。
+- 0：readwrite,。
+- 1：read。
+- 2：backup。
+                     * @param Status 节点状态。
+- 0：readwrite,。
+- 1：read。
+- 2：backup。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -119,14 +139,22 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取服务状态：0-down；1-on
-                     * @return Connected 服务状态：0-down；1-on
+                     * 获取服务状态。
+0-down。
+1-on
+                     * @return Connected 服务状态。
+0-down。
+1-on
                      */
                     int64_t GetConnected() const;
 
                     /**
-                     * 设置服务状态：0-down；1-on
-                     * @param Connected 服务状态：0-down；1-on
+                     * 设置服务状态。
+0-down。
+1-on
+                     * @param Connected 服务状态。
+0-down。
+1-on
                      */
                     void SetConnected(const int64_t& _connected);
 
@@ -137,14 +165,14 @@ namespace TencentCloud
                     bool ConnectedHasBeenSet() const;
 
                     /**
-                     * 获取节点创建时间
-                     * @return CreateTime 节点创建时间
+                     * 获取节点创建时间。
+                     * @return CreateTime 节点创建时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置节点创建时间
-                     * @param CreateTime 节点创建时间
+                     * 设置节点创建时间。
+                     * @param CreateTime 节点创建时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -155,14 +183,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取节点下线时间
-                     * @return DownTime 节点下线时间
+                     * 获取节点下线时间。
+                     * @return DownTime 节点下线时间。
                      */
                     std::string GetDownTime() const;
 
                     /**
-                     * 设置节点下线时间
-                     * @param DownTime 节点下线时间
+                     * 设置节点下线时间。
+                     * @param DownTime 节点下线时间。
                      */
                     void SetDownTime(const std::string& _downTime);
 
@@ -173,14 +201,14 @@ namespace TencentCloud
                     bool DownTimeHasBeenSet() const;
 
                     /**
-                     * 获取节点slot分布
-                     * @return Slots 节点slot分布
+                     * 获取节点 Slot 分布区间。
+                     * @return Slots 节点 Slot 分布区间。
                      */
                     std::string GetSlots() const;
 
                     /**
-                     * 设置节点slot分布
-                     * @param Slots 节点slot分布
+                     * 设置节点 Slot 分布区间。
+                     * @param Slots 节点 Slot 分布区间。
                      */
                     void SetSlots(const std::string& _slots);
 
@@ -191,14 +219,14 @@ namespace TencentCloud
                     bool SlotsHasBeenSet() const;
 
                     /**
-                     * 获取节点key分布
-                     * @return Keys 节点key分布
+                     * 获取节点 Key分布。
+                     * @return Keys 节点 Key分布。
                      */
                     int64_t GetKeys() const;
 
                     /**
-                     * 设置节点key分布
-                     * @param Keys 节点key分布
+                     * 设置节点 Key分布。
+                     * @param Keys 节点 Key分布。
                      */
                     void SetKeys(const int64_t& _keys);
 
@@ -209,14 +237,14 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取节点qps
-                     * @return Qps 节点qps
+                     * 获取节点 QPS。分片节点每秒执行次数。单位：次/秒。
+                     * @return Qps 节点 QPS。分片节点每秒执行次数。单位：次/秒。
                      */
                     int64_t GetQps() const;
 
                     /**
-                     * 设置节点qps
-                     * @param Qps 节点qps
+                     * 设置节点 QPS。分片节点每秒执行次数。单位：次/秒。
+                     * @param Qps 节点 QPS。分片节点每秒执行次数。单位：次/秒。
                      */
                     void SetQps(const int64_t& _qps);
 
@@ -227,14 +255,14 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取节点qps倾斜度
-                     * @return QpsSlope 节点qps倾斜度
+                     * 获取节点 QPS 倾斜度。
+                     * @return QpsSlope 节点 QPS 倾斜度。
                      */
                     double GetQpsSlope() const;
 
                     /**
-                     * 设置节点qps倾斜度
-                     * @param QpsSlope 节点qps倾斜度
+                     * 设置节点 QPS 倾斜度。
+                     * @param QpsSlope 节点 QPS 倾斜度。
                      */
                     void SetQpsSlope(const double& _qpsSlope);
 
@@ -245,14 +273,14 @@ namespace TencentCloud
                     bool QpsSlopeHasBeenSet() const;
 
                     /**
-                     * 获取节点存储
-                     * @return Storage 节点存储
+                     * 获取节点存储。
+                     * @return Storage 节点存储。
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置节点存储
-                     * @param Storage 节点存储
+                     * 设置节点存储。
+                     * @param Storage 节点存储。
                      */
                     void SetStorage(const int64_t& _storage);
 
@@ -263,14 +291,14 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取节点存储倾斜度
-                     * @return StorageSlope 节点存储倾斜度
+                     * 获取节点存储倾斜度。
+                     * @return StorageSlope 节点存储倾斜度。
                      */
                     double GetStorageSlope() const;
 
                     /**
-                     * 设置节点存储倾斜度
-                     * @param StorageSlope 节点存储倾斜度
+                     * 设置节点存储倾斜度。
+                     * @param StorageSlope 节点存储倾斜度。
                      */
                     void SetStorageSlope(const double& _storageSlope);
 
@@ -283,79 +311,86 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点名称
+                     * 节点名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例运行时节点Id
+                     * 实例运行时节点 ID。
                      */
                     std::string m_runId;
                     bool m_runIdHasBeenSet;
 
                     /**
-                     * 集群角色：0-master；1-slave
+                     * 集群角色。
+- 0：master。
+- 1：slave。
                      */
                     int64_t m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 节点状态：0-readwrite, 1-read, 2-backup
+                     * 节点状态。
+- 0：readwrite,。
+- 1：read。
+- 2：backup。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 服务状态：0-down；1-on
+                     * 服务状态。
+0-down。
+1-on
                      */
                     int64_t m_connected;
                     bool m_connectedHasBeenSet;
 
                     /**
-                     * 节点创建时间
+                     * 节点创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 节点下线时间
+                     * 节点下线时间。
                      */
                     std::string m_downTime;
                     bool m_downTimeHasBeenSet;
 
                     /**
-                     * 节点slot分布
+                     * 节点 Slot 分布区间。
                      */
                     std::string m_slots;
                     bool m_slotsHasBeenSet;
 
                     /**
-                     * 节点key分布
+                     * 节点 Key分布。
                      */
                     int64_t m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
-                     * 节点qps
+                     * 节点 QPS。分片节点每秒执行次数。单位：次/秒。
                      */
                     int64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * 节点qps倾斜度
+                     * 节点 QPS 倾斜度。
                      */
                     double m_qpsSlope;
                     bool m_qpsSlopeHasBeenSet;
 
                     /**
-                     * 节点存储
+                     * 节点存储。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 节点存储倾斜度
+                     * 节点存储倾斜度。
                      */
                     double m_storageSlope;
                     bool m_storageSlopeHasBeenSet;

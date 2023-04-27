@@ -323,6 +323,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitRulesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitRulesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeUnitRulesV2Request.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeUnitRulesV2Response.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUsableUnitNamespacesRequest.h>
@@ -917,6 +919,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUnitRulesResponse> DescribeUnitRulesOutcome;
                 typedef std::future<DescribeUnitRulesOutcome> DescribeUnitRulesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUnitRulesRequest&, DescribeUnitRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUnitRulesV2Response> DescribeUnitRulesV2Outcome;
+                typedef std::future<DescribeUnitRulesV2Outcome> DescribeUnitRulesV2OutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeUnitRulesV2Request&, DescribeUnitRulesV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitRulesV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUploadInfoResponse> DescribeUploadInfoOutcome;
                 typedef std::future<DescribeUploadInfoOutcome> DescribeUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUploadInfoRequest&, DescribeUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadInfoAsyncHandler;
@@ -2466,6 +2471,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeUnitRulesOutcome DescribeUnitRules(const Model::DescribeUnitRulesRequest &request);
                 void DescribeUnitRulesAsync(const Model::DescribeUnitRulesRequest& request, const DescribeUnitRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUnitRulesOutcomeCallable DescribeUnitRulesCallable(const Model::DescribeUnitRulesRequest& request);
+
+                /**
+                 *查询单元化规则列表V2
+                 * @param req DescribeUnitRulesV2Request
+                 * @return DescribeUnitRulesV2Outcome
+                 */
+                DescribeUnitRulesV2Outcome DescribeUnitRulesV2(const Model::DescribeUnitRulesV2Request &request);
+                void DescribeUnitRulesV2Async(const Model::DescribeUnitRulesV2Request& request, const DescribeUnitRulesV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnitRulesV2OutcomeCallable DescribeUnitRulesV2Callable(const Model::DescribeUnitRulesV2Request& request);
 
                 /**
                  *TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeAuthSignatureResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cvm::V20170312::Model;
+using namespace TencentCloud::Gaap::V20180529::Model;
 using namespace std;
 
-DescribeAccountQuotaResponse::DescribeAccountQuotaResponse() :
-    m_appIdHasBeenSet(false),
-    m_accountQuotaOverviewHasBeenSet(false)
+DescribeAuthSignatureResponse::DescribeAuthSignatureResponse()
 {
 }
 
-CoreInternalOutcome DescribeAccountQuotaResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeAuthSignatureResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,59 +61,15 @@ CoreInternalOutcome DescribeAccountQuotaResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
-    {
-        if (!rsp["AppId"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = rsp["AppId"].GetUint64();
-        m_appIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AccountQuotaOverview") && !rsp["AccountQuotaOverview"].IsNull())
-    {
-        if (!rsp["AccountQuotaOverview"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccountQuotaOverview` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_accountQuotaOverview.Deserialize(rsp["AccountQuotaOverview"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_accountQuotaOverviewHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAccountQuotaResponse::ToJsonString() const
+string DescribeAuthSignatureResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
-    }
-
-    if (m_accountQuotaOverviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccountQuotaOverview";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accountQuotaOverview.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -128,25 +82,5 @@ string DescribeAccountQuotaResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t DescribeAccountQuotaResponse::GetAppId() const
-{
-    return m_appId;
-}
-
-bool DescribeAccountQuotaResponse::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
-}
-
-AccountQuotaOverview DescribeAccountQuotaResponse::GetAccountQuotaOverview() const
-{
-    return m_accountQuotaOverview;
-}
-
-bool DescribeAccountQuotaResponse::AccountQuotaOverviewHasBeenSet() const
-{
-    return m_accountQuotaOverviewHasBeenSet;
-}
 
 
