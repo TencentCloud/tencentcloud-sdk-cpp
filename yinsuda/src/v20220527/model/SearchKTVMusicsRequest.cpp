@@ -29,7 +29,8 @@ SearchKTVMusicsRequest::SearchKTVMusicsRequest() :
     m_scrollTokenHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_rightFiltersHasBeenSet(false),
-    m_playSceneHasBeenSet(false)
+    m_playSceneHasBeenSet(false),
+    m_materialFiltersHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,19 @@ string SearchKTVMusicsRequest::ToJsonString() const
         string key = "PlayScene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_playScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_materialFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaterialFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_materialFilters.begin(); itr != m_materialFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -219,6 +233,22 @@ void SearchKTVMusicsRequest::SetPlayScene(const string& _playScene)
 bool SearchKTVMusicsRequest::PlaySceneHasBeenSet() const
 {
     return m_playSceneHasBeenSet;
+}
+
+vector<string> SearchKTVMusicsRequest::GetMaterialFilters() const
+{
+    return m_materialFilters;
+}
+
+void SearchKTVMusicsRequest::SetMaterialFilters(const vector<string>& _materialFilters)
+{
+    m_materialFilters = _materialFilters;
+    m_materialFiltersHasBeenSet = true;
+}
+
+bool SearchKTVMusicsRequest::MaterialFiltersHasBeenSet() const
+{
+    return m_materialFiltersHasBeenSet;
 }
 
 

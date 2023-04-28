@@ -405,6 +405,24 @@ namespace TencentCloud
                      */
                     bool AddDeleteFilesHasBeenSet() const;
 
+                    /**
+                     * 获取下游节点数据源ID
+                     * @return TargetDatasourceId 下游节点数据源ID
+                     */
+                    std::string GetTargetDatasourceId() const;
+
+                    /**
+                     * 设置下游节点数据源ID
+                     * @param TargetDatasourceId 下游节点数据源ID
+                     */
+                    void SetTargetDatasourceId(const std::string& _targetDatasourceId);
+
+                    /**
+                     * 判断参数 TargetDatasourceId 是否已赋值
+                     * @return TargetDatasourceId 是否已赋值
+                     */
+                    bool TargetDatasourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -526,6 +544,12 @@ namespace TencentCloud
                      */
                     int64_t m_addDeleteFiles;
                     bool m_addDeleteFilesHasBeenSet;
+
+                    /**
+                     * 下游节点数据源ID
+                     */
+                    std::string m_targetDatasourceId;
+                    bool m_targetDatasourceIdHasBeenSet;
 
                 };
             }

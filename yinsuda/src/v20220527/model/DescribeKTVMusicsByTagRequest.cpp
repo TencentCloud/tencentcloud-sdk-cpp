@@ -28,7 +28,8 @@ DescribeKTVMusicsByTagRequest::DescribeKTVMusicsByTagRequest() :
     m_tagIdHasBeenSet(false),
     m_scrollTokenHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_rightFiltersHasBeenSet(false)
+    m_rightFiltersHasBeenSet(false),
+    m_materialFiltersHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,19 @@ string DescribeKTVMusicsByTagRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_rightFilters.begin(); itr != m_rightFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_materialFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaterialFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_materialFilters.begin(); itr != m_materialFilters.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -194,6 +208,22 @@ void DescribeKTVMusicsByTagRequest::SetRightFilters(const vector<string>& _right
 bool DescribeKTVMusicsByTagRequest::RightFiltersHasBeenSet() const
 {
     return m_rightFiltersHasBeenSet;
+}
+
+vector<string> DescribeKTVMusicsByTagRequest::GetMaterialFilters() const
+{
+    return m_materialFilters;
+}
+
+void DescribeKTVMusicsByTagRequest::SetMaterialFilters(const vector<string>& _materialFilters)
+{
+    m_materialFilters = _materialFilters;
+    m_materialFiltersHasBeenSet = true;
+}
+
+bool DescribeKTVMusicsByTagRequest::MaterialFiltersHasBeenSet() const
+{
+    return m_materialFiltersHasBeenSet;
 }
 
 

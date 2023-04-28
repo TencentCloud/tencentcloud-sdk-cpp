@@ -28,7 +28,8 @@ BotPkg::BotPkg() :
     m_endTimeHasBeenSet(false),
     m_inquireNumHasBeenSet(false),
     m_usedNumHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotPkg.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetUint64();
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void BotPkg::SetType(const string& _type)
 bool BotPkg::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t BotPkg::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void BotPkg::SetRenewFlag(const uint64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool BotPkg::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 

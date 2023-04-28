@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取队列中弹性节点数量最小值。取值范围0～200。
-                     * @return MinSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 获取队列中弹性节点数量最小值。默认值：0。取值范围：0～200。
+                     * @return MinSize 队列中弹性节点数量最小值。默认值：0。取值范围：0～200。
                      */
                     uint64_t GetMinSize() const;
 
                     /**
-                     * 设置队列中弹性节点数量最小值。取值范围0～200。
-                     * @param MinSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 设置队列中弹性节点数量最小值。默认值：0。取值范围：0～200。
+                     * @param MinSize 队列中弹性节点数量最小值。默认值：0。取值范围：0～200。
                      */
                     void SetMinSize(const uint64_t& _minSize);
 
@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取队列中弹性节点数量最大值。取值范围0～200。
-                     * @return MaxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 获取队列中弹性节点数量最大值。默认值：10。取值范围：0～200。
+                     * @return MaxSize 队列中弹性节点数量最大值。默认值：10。取值范围：0～200。
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置队列中弹性节点数量最大值。取值范围0～200。
-                     * @param MaxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 设置队列中弹性节点数量最大值。默认值：10。取值范围：0～200。
+                     * @param MaxSize 队列中弹性节点数量最大值。默认值：10。取值范围：0～200。
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
 
@@ -239,13 +239,13 @@ namespace TencentCloud
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 队列中弹性节点数量最小值。取值范围0～200。
+                     * 队列中弹性节点数量最小值。默认值：0。取值范围：0～200。
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 队列中弹性节点数量最大值。取值范围0～200。
+                     * 队列中弹性节点数量最大值。默认值：10。取值范围：0～200。
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

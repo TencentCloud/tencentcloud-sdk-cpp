@@ -452,6 +452,28 @@ FAILED:已失败
                      */
                     bool FailReasonHasBeenSet() const;
 
+                    /**
+                     * 获取资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FundingAccountSubType 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFundingAccountSubType() const;
+
+                    /**
+                     * 设置资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FundingAccountSubType 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFundingAccountSubType(const std::string& _fundingAccountSubType);
+
+                    /**
+                     * 判断参数 FundingAccountSubType 是否已赋值
+                     * @return FundingAccountSubType 是否已赋值
+                     */
+                    bool FundingAccountSubTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -583,6 +605,13 @@ FAILED:已失败
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
+
+                    /**
+                     * 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fundingAccountSubType;
+                    bool m_fundingAccountSubTypeHasBeenSet;
 
                 };
             }

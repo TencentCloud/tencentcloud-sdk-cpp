@@ -39,7 +39,8 @@ PaymentOrderResult::PaymentOrderResult() :
     m_individualIncomeTaxHasBeenSet(false),
     m_additionalTaxSumHasBeenSet(false),
     m_additionalTaxItemHasBeenSet(false),
-    m_failReasonHasBeenSet(false)
+    m_failReasonHasBeenSet(false),
+    m_fundingAccountSubTypeHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome PaymentOrderResult::Deserialize(const rapidjson::Value &valu
         m_failReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("FundingAccountSubType") && !value["FundingAccountSubType"].IsNull())
+    {
+        if (!value["FundingAccountSubType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PaymentOrderResult.FundingAccountSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fundingAccountSubType = string(value["FundingAccountSubType"].GetString());
+        m_fundingAccountSubTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void PaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "FailReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fundingAccountSubTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FundingAccountSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fundingAccountSubType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void PaymentOrderResult::SetFailReason(const string& _failReason)
 bool PaymentOrderResult::FailReasonHasBeenSet() const
 {
     return m_failReasonHasBeenSet;
+}
+
+string PaymentOrderResult::GetFundingAccountSubType() const
+{
+    return m_fundingAccountSubType;
+}
+
+void PaymentOrderResult::SetFundingAccountSubType(const string& _fundingAccountSubType)
+{
+    m_fundingAccountSubType = _fundingAccountSubType;
+    m_fundingAccountSubTypeHasBeenSet = true;
+}
+
+bool PaymentOrderResult::FundingAccountSubTypeHasBeenSet() const
+{
+    return m_fundingAccountSubTypeHasBeenSet;
 }
 

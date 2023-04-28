@@ -235,14 +235,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署前置条件：是否需要阅读全文，默认为不需要
-                     * @return IsFullText 签署前置条件：是否需要阅读全文，默认为不需要
+                     * 获取合同强制需要阅读全文，无需传此参数
+                     * @return IsFullText 合同强制需要阅读全文，无需传此参数
                      */
                     bool GetIsFullText() const;
 
                     /**
-                     * 设置签署前置条件：是否需要阅读全文，默认为不需要
-                     * @param IsFullText 签署前置条件：是否需要阅读全文，默认为不需要
+                     * 设置合同强制需要阅读全文，无需传此参数
+                     * @param IsFullText 合同强制需要阅读全文，无需传此参数
                      */
                     void SetIsFullText(const bool& _isFullText);
 
@@ -253,14 +253,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool IsFullTextHasBeenSet() const;
 
                     /**
-                     * 获取签署前置条件：阅读时长限制，单位秒，默认为不需要
-                     * @return PreReadTime 签署前置条件：阅读时长限制，单位秒，默认为不需要
+                     * 获取合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @return PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
                      */
                     uint64_t GetPreReadTime() const;
 
                     /**
-                     * 设置签署前置条件：阅读时长限制，单位秒，默认为不需要
-                     * @param PreReadTime 签署前置条件：阅读时长限制，单位秒，默认为不需要
+                     * 设置合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @param PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
                      */
                     void SetPreReadTime(const uint64_t& _preReadTime);
 
@@ -441,13 +441,13 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 签署前置条件：是否需要阅读全文，默认为不需要
+                     * 合同强制需要阅读全文，无需传此参数
                      */
                     bool m_isFullText;
                     bool m_isFullTextHasBeenSet;
 
                     /**
-                     * 签署前置条件：阅读时长限制，单位秒，默认为不需要
+                     * 合同的强制预览时间：3~300s，未指定则按合同页数计算
                      */
                     uint64_t m_preReadTime;
                     bool m_preReadTimeHasBeenSet;

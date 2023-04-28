@@ -508,6 +508,28 @@ namespace TencentCloud
                      */
                     bool SnapshotHasBeenSet() const;
 
+                    /**
+                     * 获取账户资源状态：0-不可用 1-可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccountStatus 账户资源状态：0-不可用 1-可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAccountStatus() const;
+
+                    /**
+                     * 设置账户资源状态：0-不可用 1-可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccountStatus 账户资源状态：0-不可用 1-可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccountStatus(const int64_t& _accountStatus);
+
+                    /**
+                     * 判断参数 AccountStatus 是否已赋值
+                     * @return AccountStatus 是否已赋值
+                     */
+                    bool AccountStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +678,13 @@ namespace TencentCloud
                      */
                     std::string m_snapshot;
                     bool m_snapshotHasBeenSet;
+
+                    /**
+                     * 账户资源状态：0-不可用 1-可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_accountStatus;
+                    bool m_accountStatusHasBeenSet;
 
                 };
             }

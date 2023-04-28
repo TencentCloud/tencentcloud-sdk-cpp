@@ -42,7 +42,8 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_addDataFilesHasBeenSet(false),
     m_addEqualityDeletesHasBeenSet(false),
     m_addPositionDeletesHasBeenSet(false),
-    m_addDeleteFilesHasBeenSet(false)
+    m_addDeleteFilesHasBeenSet(false),
+    m_targetDatasourceIdHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,14 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "AddDeleteFiles";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addDeleteFiles, allocator);
+    }
+
+    if (m_targetDatasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetDatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetDatasourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -560,6 +569,22 @@ void GenHiveTableDDLSqlRequest::SetAddDeleteFiles(const int64_t& _addDeleteFiles
 bool GenHiveTableDDLSqlRequest::AddDeleteFilesHasBeenSet() const
 {
     return m_addDeleteFilesHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetTargetDatasourceId() const
+{
+    return m_targetDatasourceId;
+}
+
+void GenHiveTableDDLSqlRequest::SetTargetDatasourceId(const string& _targetDatasourceId)
+{
+    m_targetDatasourceId = _targetDatasourceId;
+    m_targetDatasourceIdHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TargetDatasourceIdHasBeenSet() const
+{
+    return m_targetDatasourceIdHasBeenSet;
 }
 
 

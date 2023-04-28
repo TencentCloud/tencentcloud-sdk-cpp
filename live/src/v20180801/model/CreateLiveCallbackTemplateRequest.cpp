@@ -32,7 +32,8 @@ CreateLiveCallbackTemplateRequest::CreateLiveCallbackTemplateRequest() :
     m_pornCensorshipNotifyUrlHasBeenSet(false),
     m_callbackKeyHasBeenSet(false),
     m_streamMixNotifyUrlHasBeenSet(false),
-    m_pushExceptionNotifyUrlHasBeenSet(false)
+    m_pushExceptionNotifyUrlHasBeenSet(false),
+    m_audioAuditNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateLiveCallbackTemplateRequest::ToJsonString() const
         string key = "PushExceptionNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pushExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioAuditNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioAuditNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioAuditNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateLiveCallbackTemplateRequest::SetPushExceptionNotifyUrl(const string& 
 bool CreateLiveCallbackTemplateRequest::PushExceptionNotifyUrlHasBeenSet() const
 {
     return m_pushExceptionNotifyUrlHasBeenSet;
+}
+
+string CreateLiveCallbackTemplateRequest::GetAudioAuditNotifyUrl() const
+{
+    return m_audioAuditNotifyUrl;
+}
+
+void CreateLiveCallbackTemplateRequest::SetAudioAuditNotifyUrl(const string& _audioAuditNotifyUrl)
+{
+    m_audioAuditNotifyUrl = _audioAuditNotifyUrl;
+    m_audioAuditNotifyUrlHasBeenSet = true;
+}
+
+bool CreateLiveCallbackTemplateRequest::AudioAuditNotifyUrlHasBeenSet() const
+{
+    return m_audioAuditNotifyUrlHasBeenSet;
 }
 
 

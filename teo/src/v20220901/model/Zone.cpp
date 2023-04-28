@@ -39,7 +39,8 @@ Zone::Zone() :
     m_vanityNameServersIpsHasBeenSet(false),
     m_activeStatusHasBeenSet(false),
     m_aliasZoneNameHasBeenSet(false),
-    m_isFakeHasBeenSet(false)
+    m_isFakeHasBeenSet(false),
+    m_lockStatusHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_isFakeHasBeenSet = true;
     }
 
+    if (value.HasMember("LockStatus") && !value["LockStatus"].IsNull())
+    {
+        if (!value["LockStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.LockStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockStatus = string(value["LockStatus"].GetString());
+        m_lockStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -470,6 +481,14 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "IsFake";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFake, allocator);
+    }
+
+    if (m_lockStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -777,5 +796,21 @@ void Zone::SetIsFake(const int64_t& _isFake)
 bool Zone::IsFakeHasBeenSet() const
 {
     return m_isFakeHasBeenSet;
+}
+
+string Zone::GetLockStatus() const
+{
+    return m_lockStatus;
+}
+
+void Zone::SetLockStatus(const string& _lockStatus)
+{
+    m_lockStatus = _lockStatus;
+    m_lockStatusHasBeenSet = true;
+}
+
+bool Zone::LockStatusHasBeenSet() const
+{
+    return m_lockStatusHasBeenSet;
 }
 

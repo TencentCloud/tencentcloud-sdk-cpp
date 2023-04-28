@@ -121,14 +121,14 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool UrlTypeHasBeenSet() const;
 
                     /**
-                     * 获取通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
-                     * @return NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     * 获取通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * @return NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
-                     * @param NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     * 设置通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * @param NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
@@ -184,7 +184,7 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool m_urlTypeHasBeenSet;
 
                     /**
-                     * 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     * 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 CreateCmdTemplateRequest::CreateCmdTemplateRequest() :
     m_nameHasBeenSet(false),
-    m_cmdListHasBeenSet(false)
+    m_cmdListHasBeenSet(false),
+    m_encodingHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateCmdTemplateRequest::ToJsonString() const
         string key = "CmdList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cmdList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encoding, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateCmdTemplateRequest::SetCmdList(const string& _cmdList)
 bool CreateCmdTemplateRequest::CmdListHasBeenSet() const
 {
     return m_cmdListHasBeenSet;
+}
+
+uint64_t CreateCmdTemplateRequest::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void CreateCmdTemplateRequest::SetEncoding(const uint64_t& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool CreateCmdTemplateRequest::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
 }
 
 

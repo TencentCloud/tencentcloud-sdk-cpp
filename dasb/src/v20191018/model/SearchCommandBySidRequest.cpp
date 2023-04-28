@@ -25,6 +25,7 @@ using namespace std;
 SearchCommandBySidRequest::SearchCommandBySidRequest() :
     m_sidHasBeenSet(false),
     m_cmdHasBeenSet(false),
+    m_encodingHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_auditActionHasBeenSet(false)
@@ -52,6 +53,14 @@ string SearchCommandBySidRequest::ToJsonString() const
         string key = "Cmd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cmd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encoding, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -121,6 +130,22 @@ void SearchCommandBySidRequest::SetCmd(const string& _cmd)
 bool SearchCommandBySidRequest::CmdHasBeenSet() const
 {
     return m_cmdHasBeenSet;
+}
+
+uint64_t SearchCommandBySidRequest::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void SearchCommandBySidRequest::SetEncoding(const uint64_t& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool SearchCommandBySidRequest::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
 }
 
 uint64_t SearchCommandBySidRequest::GetOffset() const

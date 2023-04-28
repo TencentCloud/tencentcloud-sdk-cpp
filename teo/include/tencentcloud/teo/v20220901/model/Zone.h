@@ -454,11 +454,9 @@ namespace TencentCloud
                      * 获取是否伪站点，取值有：
 <li> 0：非伪站点；</li>
 <li> 1：伪站点。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFake 是否伪站点，取值有：
 <li> 0：非伪站点；</li>
 <li> 1：伪站点。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIsFake() const;
 
@@ -466,11 +464,9 @@ namespace TencentCloud
                      * 设置是否伪站点，取值有：
 <li> 0：非伪站点；</li>
 <li> 1：伪站点。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param IsFake 是否伪站点，取值有：
 <li> 0：非伪站点；</li>
 <li> 1：伪站点。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsFake(const int64_t& _isFake);
 
@@ -479,6 +475,24 @@ namespace TencentCloud
                      * @return IsFake 是否已赋值
                      */
                     bool IsFakeHasBeenSet() const;
+
+                    /**
+                     * 获取锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     * @return LockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     */
+                    std::string GetLockStatus() const;
+
+                    /**
+                     * 设置锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     * @param LockStatus 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     */
+                    void SetLockStatus(const std::string& _lockStatus);
+
+                    /**
+                     * 判断参数 LockStatus 是否已赋值
+                     * @return LockStatus 是否已赋值
+                     */
+                    bool LockStatusHasBeenSet() const;
 
                 private:
 
@@ -613,10 +627,15 @@ namespace TencentCloud
                      * 是否伪站点，取值有：
 <li> 0：非伪站点；</li>
 <li> 1：伪站点。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isFake;
                     bool m_isFakeHasBeenSet;
+
+                    /**
+                     * 锁定状态，取值有：<li> enable：正常，允许进行修改操作；</li><li> disable：锁定中，不允许进行修改操作。</li>
+                     */
+                    std::string m_lockStatus;
+                    bool m_lockStatusHasBeenSet;
 
                 };
             }

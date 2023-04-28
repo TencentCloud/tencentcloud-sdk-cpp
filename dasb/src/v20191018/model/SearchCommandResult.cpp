@@ -31,7 +31,15 @@ SearchCommandResult::SearchCommandResult() :
     m_cmdHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_sidHasBeenSet(false),
-    m_timeOffsetHasBeenSet(false)
+    m_timeOffsetHasBeenSet(false),
+    m_accountHasBeenSet(false),
+    m_fromIpHasBeenSet(false),
+    m_sessTimeHasBeenSet(false),
+    m_confirmTimeHasBeenSet(false),
+    m_userDepartmentIdHasBeenSet(false),
+    m_userDepartmentNameHasBeenSet(false),
+    m_deviceDepartmentIdHasBeenSet(false),
+    m_deviceDepartmentNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +158,86 @@ CoreInternalOutcome SearchCommandResult::Deserialize(const rapidjson::Value &val
         m_timeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("Account") && !value["Account"].IsNull())
+    {
+        if (!value["Account"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.Account` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_account = string(value["Account"].GetString());
+        m_accountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FromIp") && !value["FromIp"].IsNull())
+    {
+        if (!value["FromIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.FromIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fromIp = string(value["FromIp"].GetString());
+        m_fromIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessTime") && !value["SessTime"].IsNull())
+    {
+        if (!value["SessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.SessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessTime = string(value["SessTime"].GetString());
+        m_sessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfirmTime") && !value["ConfirmTime"].IsNull())
+    {
+        if (!value["ConfirmTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.ConfirmTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_confirmTime = string(value["ConfirmTime"].GetString());
+        m_confirmTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserDepartmentId") && !value["UserDepartmentId"].IsNull())
+    {
+        if (!value["UserDepartmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.UserDepartmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDepartmentId = string(value["UserDepartmentId"].GetString());
+        m_userDepartmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserDepartmentName") && !value["UserDepartmentName"].IsNull())
+    {
+        if (!value["UserDepartmentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.UserDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDepartmentName = string(value["UserDepartmentName"].GetString());
+        m_userDepartmentNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceDepartmentId") && !value["DeviceDepartmentId"].IsNull())
+    {
+        if (!value["DeviceDepartmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.DeviceDepartmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceDepartmentId = string(value["DeviceDepartmentId"].GetString());
+        m_deviceDepartmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceDepartmentName") && !value["DeviceDepartmentName"].IsNull())
+    {
+        if (!value["DeviceDepartmentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchCommandResult.DeviceDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceDepartmentName = string(value["DeviceDepartmentName"].GetString());
+        m_deviceDepartmentNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +331,70 @@ void SearchCommandResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "TimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOffset, allocator);
+    }
+
+    if (m_accountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Account";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_account.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FromIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fromIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_confirmTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfirmTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_confirmTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDepartmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDepartmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDepartmentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDepartmentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDepartmentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceDepartmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceDepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceDepartmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceDepartmentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceDepartmentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceDepartmentName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +574,133 @@ void SearchCommandResult::SetTimeOffset(const uint64_t& _timeOffset)
 bool SearchCommandResult::TimeOffsetHasBeenSet() const
 {
     return m_timeOffsetHasBeenSet;
+}
+
+string SearchCommandResult::GetAccount() const
+{
+    return m_account;
+}
+
+void SearchCommandResult::SetAccount(const string& _account)
+{
+    m_account = _account;
+    m_accountHasBeenSet = true;
+}
+
+bool SearchCommandResult::AccountHasBeenSet() const
+{
+    return m_accountHasBeenSet;
+}
+
+string SearchCommandResult::GetFromIp() const
+{
+    return m_fromIp;
+}
+
+void SearchCommandResult::SetFromIp(const string& _fromIp)
+{
+    m_fromIp = _fromIp;
+    m_fromIpHasBeenSet = true;
+}
+
+bool SearchCommandResult::FromIpHasBeenSet() const
+{
+    return m_fromIpHasBeenSet;
+}
+
+string SearchCommandResult::GetSessTime() const
+{
+    return m_sessTime;
+}
+
+void SearchCommandResult::SetSessTime(const string& _sessTime)
+{
+    m_sessTime = _sessTime;
+    m_sessTimeHasBeenSet = true;
+}
+
+bool SearchCommandResult::SessTimeHasBeenSet() const
+{
+    return m_sessTimeHasBeenSet;
+}
+
+string SearchCommandResult::GetConfirmTime() const
+{
+    return m_confirmTime;
+}
+
+void SearchCommandResult::SetConfirmTime(const string& _confirmTime)
+{
+    m_confirmTime = _confirmTime;
+    m_confirmTimeHasBeenSet = true;
+}
+
+bool SearchCommandResult::ConfirmTimeHasBeenSet() const
+{
+    return m_confirmTimeHasBeenSet;
+}
+
+string SearchCommandResult::GetUserDepartmentId() const
+{
+    return m_userDepartmentId;
+}
+
+void SearchCommandResult::SetUserDepartmentId(const string& _userDepartmentId)
+{
+    m_userDepartmentId = _userDepartmentId;
+    m_userDepartmentIdHasBeenSet = true;
+}
+
+bool SearchCommandResult::UserDepartmentIdHasBeenSet() const
+{
+    return m_userDepartmentIdHasBeenSet;
+}
+
+string SearchCommandResult::GetUserDepartmentName() const
+{
+    return m_userDepartmentName;
+}
+
+void SearchCommandResult::SetUserDepartmentName(const string& _userDepartmentName)
+{
+    m_userDepartmentName = _userDepartmentName;
+    m_userDepartmentNameHasBeenSet = true;
+}
+
+bool SearchCommandResult::UserDepartmentNameHasBeenSet() const
+{
+    return m_userDepartmentNameHasBeenSet;
+}
+
+string SearchCommandResult::GetDeviceDepartmentId() const
+{
+    return m_deviceDepartmentId;
+}
+
+void SearchCommandResult::SetDeviceDepartmentId(const string& _deviceDepartmentId)
+{
+    m_deviceDepartmentId = _deviceDepartmentId;
+    m_deviceDepartmentIdHasBeenSet = true;
+}
+
+bool SearchCommandResult::DeviceDepartmentIdHasBeenSet() const
+{
+    return m_deviceDepartmentIdHasBeenSet;
+}
+
+string SearchCommandResult::GetDeviceDepartmentName() const
+{
+    return m_deviceDepartmentName;
+}
+
+void SearchCommandResult::SetDeviceDepartmentName(const string& _deviceDepartmentName)
+{
+    m_deviceDepartmentName = _deviceDepartmentName;
+    m_deviceDepartmentNameHasBeenSet = true;
+}
+
+bool SearchCommandResult::DeviceDepartmentNameHasBeenSet() const
+{
+    return m_deviceDepartmentNameHasBeenSet;
 }
 

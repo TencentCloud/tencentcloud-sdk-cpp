@@ -32,6 +32,7 @@ SearchCommandRequest::SearchCommandRequest() :
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
     m_cmdHasBeenSet(false),
+    m_encodingHasBeenSet(false),
     m_auditActionHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
@@ -115,6 +116,14 @@ string SearchCommandRequest::ToJsonString() const
         string key = "Cmd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cmd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encoding, allocator);
     }
 
     if (m_auditActionHasBeenSet)
@@ -296,6 +305,22 @@ void SearchCommandRequest::SetCmd(const string& _cmd)
 bool SearchCommandRequest::CmdHasBeenSet() const
 {
     return m_cmdHasBeenSet;
+}
+
+uint64_t SearchCommandRequest::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void SearchCommandRequest::SetEncoding(const uint64_t& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool SearchCommandRequest::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
 }
 
 vector<uint64_t> SearchCommandRequest::GetAuditAction() const

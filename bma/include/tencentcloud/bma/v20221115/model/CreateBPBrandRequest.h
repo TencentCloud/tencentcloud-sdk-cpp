@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
+                     * 获取品牌logo
+                     * @return BrandLogo 品牌logo
+                     */
+                    std::string GetBrandLogo() const;
+
+                    /**
+                     * 设置品牌logo
+                     * @param BrandLogo 品牌logo
+                     */
+                    void SetBrandLogo(const std::string& _brandLogo);
+
+                    /**
+                     * 判断参数 BrandLogo 是否已赋值
+                     * @return BrandLogo 是否已赋值
+                     */
+                    bool BrandLogoHasBeenSet() const;
+
+                    /**
                      * 获取联系电话
                      * @return Phone 联系电话
                      */
@@ -289,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
+
+                    /**
+                     * 品牌logo
+                     */
+                    std::string m_brandLogo;
+                    bool m_brandLogoHasBeenSet;
 
                     /**
                      * 联系电话

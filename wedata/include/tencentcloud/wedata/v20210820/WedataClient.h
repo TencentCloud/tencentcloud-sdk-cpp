@@ -211,6 +211,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeOperateTasksRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeOperateTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProdTasksRequest.h>
@@ -709,6 +711,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOfflineTaskTokenResponse> DescribeOfflineTaskTokenOutcome;
                 typedef std::future<DescribeOfflineTaskTokenOutcome> DescribeOfflineTaskTokenOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOfflineTaskTokenRequest&, DescribeOfflineTaskTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineTaskTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOperateTasksResponse> DescribeOperateTasksOutcome;
+                typedef std::future<DescribeOperateTasksOutcome> DescribeOperateTasksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeOperateTasksRequest&, DescribeOperateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperateTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationalFunctionsResponse> DescribeOrganizationalFunctionsOutcome;
                 typedef std::future<DescribeOrganizationalFunctionsOutcome> DescribeOrganizationalFunctionsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOrganizationalFunctionsRequest&, DescribeOrganizationalFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationalFunctionsAsyncHandler;
@@ -1878,6 +1883,15 @@ namespace TencentCloud
                 DescribeOfflineTaskTokenOutcome DescribeOfflineTaskToken(const Model::DescribeOfflineTaskTokenRequest &request);
                 void DescribeOfflineTaskTokenAsync(const Model::DescribeOfflineTaskTokenRequest& request, const DescribeOfflineTaskTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOfflineTaskTokenOutcomeCallable DescribeOfflineTaskTokenCallable(const Model::DescribeOfflineTaskTokenRequest& request);
+
+                /**
+                 *任务运维列表组合条件查询
+                 * @param req DescribeOperateTasksRequest
+                 * @return DescribeOperateTasksOutcome
+                 */
+                DescribeOperateTasksOutcome DescribeOperateTasks(const Model::DescribeOperateTasksRequest &request);
+                void DescribeOperateTasksAsync(const Model::DescribeOperateTasksRequest& request, const DescribeOperateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOperateTasksOutcomeCallable DescribeOperateTasksCallable(const Model::DescribeOperateTasksRequest& request);
 
                 /**
                  *查询全量函数

@@ -35,7 +35,8 @@ BlockIgnoreRule::BlockIgnoreRule() :
     m_sourceHasBeenSet(false),
     m_uniqueIdHasBeenSet(false),
     m_matchTimesHasBeenSet(false),
-    m_countryHasBeenSet(false)
+    m_countryHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         m_countryHasBeenSet = true;
     }
 
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Country";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_country.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void BlockIgnoreRule::SetCountry(const string& _country)
 bool BlockIgnoreRule::CountryHasBeenSet() const
 {
     return m_countryHasBeenSet;
+}
+
+string BlockIgnoreRule::GetComment() const
+{
+    return m_comment;
+}
+
+void BlockIgnoreRule::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

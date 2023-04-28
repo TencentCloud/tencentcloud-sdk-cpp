@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
-                     * @return Order 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
+                     * 获取排序类型：desc降序，asc正序
+                     * @return Order 排序类型：desc降序，asc正序
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
-                     * @param Order 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
+                     * 设置排序类型：desc降序，asc正序
+                     * @param Order 排序类型：desc降序，asc正序
                      */
                     void SetOrder(const std::string& _order);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序类型：desc降序，asc正序
-                     * @return By 排序类型：desc降序，asc正序
+                     * 获取排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
+                     * @return By 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序类型：desc降序，asc正序
-                     * @param By 排序类型：desc降序，asc正序
+                     * 设置排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
+                     * @param By 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
                      */
                     void SetBy(const std::string& _by);
 
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
+                     * 排序类型：desc降序，asc正序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序类型：desc降序，asc正序
+                     * 排序列：EndTime结束时间，StartTime开始时间，MatchTimes命中次数
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

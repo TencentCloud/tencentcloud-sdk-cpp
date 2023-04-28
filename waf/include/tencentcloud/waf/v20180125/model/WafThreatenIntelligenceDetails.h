@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Waf 威胁情报封禁模块配置详情
+                * 当前WAF威胁情报封禁模块详情
                 */
                 class WafThreatenIntelligenceDetails : public AbstractModel
                 {
@@ -45,24 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取封禁模组启用状态
-                     * @return DefenseStatus 封禁模组启用状态
-                     */
-                    int64_t GetDefenseStatus() const;
-
-                    /**
-                     * 设置封禁模组启用状态
-                     * @param DefenseStatus 封禁模组启用状态
-                     */
-                    void SetDefenseStatus(const int64_t& _defenseStatus);
-
-                    /**
-                     * 判断参数 DefenseStatus 是否已赋值
-                     * @return DefenseStatus 是否已赋值
-                     */
-                    bool DefenseStatusHasBeenSet() const;
 
                     /**
                      * 获取封禁属性标签
@@ -87,6 +69,24 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取封禁模组启用状态
+                     * @return DefenseStatus 封禁模组启用状态
+                     */
+                    int64_t GetDefenseStatus() const;
+
+                    /**
+                     * 设置封禁模组启用状态
+                     * @param DefenseStatus 封禁模组启用状态
+                     */
+                    void SetDefenseStatus(const int64_t& _defenseStatus);
+
+                    /**
+                     * 判断参数 DefenseStatus 是否已赋值
+                     * @return DefenseStatus 是否已赋值
+                     */
+                    bool DefenseStatusHasBeenSet() const;
+
+                    /**
                      * 获取最后更新时间
                      * @return LastUpdateTime 最后更新时间
                      */
@@ -107,17 +107,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 封禁模组启用状态
-                     */
-                    int64_t m_defenseStatus;
-                    bool m_defenseStatusHasBeenSet;
-
-                    /**
                      * 封禁属性标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 封禁模组启用状态
+                     */
+                    int64_t m_defenseStatus;
+                    bool m_defenseStatusHasBeenSet;
 
                     /**
                      * 最后更新时间

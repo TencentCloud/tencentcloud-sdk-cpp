@@ -26,7 +26,8 @@ AlarmIndicatorInfo::AlarmIndicatorInfo() :
     m_alarmIndicatorDescHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_estimatedTimeHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_alarmIndicatorUnitHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AlarmIndicatorInfo::Deserialize(const rapidjson::Value &valu
         m_operatorHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmIndicatorUnit") && !value["AlarmIndicatorUnit"].IsNull())
+    {
+        if (!value["AlarmIndicatorUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.AlarmIndicatorUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmIndicatorUnit = string(value["AlarmIndicatorUnit"].GetString());
+        m_alarmIndicatorUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AlarmIndicatorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operator, allocator);
+    }
+
+    if (m_alarmIndicatorUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmIndicatorUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmIndicatorUnit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AlarmIndicatorInfo::SetOperator(const uint64_t& _operator)
 bool AlarmIndicatorInfo::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string AlarmIndicatorInfo::GetAlarmIndicatorUnit() const
+{
+    return m_alarmIndicatorUnit;
+}
+
+void AlarmIndicatorInfo::SetAlarmIndicatorUnit(const string& _alarmIndicatorUnit)
+{
+    m_alarmIndicatorUnit = _alarmIndicatorUnit;
+    m_alarmIndicatorUnitHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::AlarmIndicatorUnitHasBeenSet() const
+{
+    return m_alarmIndicatorUnitHasBeenSet;
 }
 

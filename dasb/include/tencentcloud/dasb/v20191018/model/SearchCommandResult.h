@@ -244,6 +244,182 @@ namespace TencentCloud
                      */
                     bool TimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Account 账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccount() const;
+
+                    /**
+                     * 设置账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Account 账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccount(const std::string& _account);
+
+                    /**
+                     * 判断参数 Account 是否已赋值
+                     * @return Account 是否已赋值
+                     */
+                    bool AccountHasBeenSet() const;
+
+                    /**
+                     * 获取source ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FromIp source ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFromIp() const;
+
+                    /**
+                     * 设置source ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FromIp source ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFromIp(const std::string& _fromIp);
+
+                    /**
+                     * 判断参数 FromIp 是否已赋值
+                     * @return FromIp 是否已赋值
+                     */
+                    bool FromIpHasBeenSet() const;
+
+                    /**
+                     * 获取该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessTime 该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessTime() const;
+
+                    /**
+                     * 设置该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessTime 该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessTime(const std::string& _sessTime);
+
+                    /**
+                     * 判断参数 SessTime 是否已赋值
+                     * @return SessTime 是否已赋值
+                     */
+                    bool SessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取复核时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfirmTime 复核时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConfirmTime() const;
+
+                    /**
+                     * 设置复核时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfirmTime 复核时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfirmTime(const std::string& _confirmTime);
+
+                    /**
+                     * 判断参数 ConfirmTime 是否已赋值
+                     * @return ConfirmTime 是否已赋值
+                     */
+                    bool ConfirmTimeHasBeenSet() const;
+
+                    /**
+                     * 获取部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserDepartmentId 部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserDepartmentId() const;
+
+                    /**
+                     * 设置部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserDepartmentId 部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserDepartmentId(const std::string& _userDepartmentId);
+
+                    /**
+                     * 判断参数 UserDepartmentId 是否已赋值
+                     * @return UserDepartmentId 是否已赋值
+                     */
+                    bool UserDepartmentIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserDepartmentName 用户部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserDepartmentName() const;
+
+                    /**
+                     * 设置用户部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserDepartmentName 用户部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserDepartmentName(const std::string& _userDepartmentName);
+
+                    /**
+                     * 判断参数 UserDepartmentName 是否已赋值
+                     * @return UserDepartmentName 是否已赋值
+                     */
+                    bool UserDepartmentNameHasBeenSet() const;
+
+                    /**
+                     * 获取设备部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceDepartmentId 设备部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceDepartmentId() const;
+
+                    /**
+                     * 设置设备部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceDepartmentId 设备部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceDepartmentId(const std::string& _deviceDepartmentId);
+
+                    /**
+                     * 判断参数 DeviceDepartmentId 是否已赋值
+                     * @return DeviceDepartmentId 是否已赋值
+                     */
+                    bool DeviceDepartmentIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceDepartmentName 设备部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceDepartmentName() const;
+
+                    /**
+                     * 设置设备部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceDepartmentName 设备部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceDepartmentName(const std::string& _deviceDepartmentName);
+
+                    /**
+                     * 判断参数 DeviceDepartmentName 是否已赋值
+                     * @return DeviceDepartmentName 是否已赋值
+                     */
+                    bool DeviceDepartmentNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +487,62 @@ namespace TencentCloud
                      */
                     uint64_t m_timeOffset;
                     bool m_timeOffsetHasBeenSet;
+
+                    /**
+                     * 账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_account;
+                    bool m_accountHasBeenSet;
+
+                    /**
+                     * source ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fromIp;
+                    bool m_fromIpHasBeenSet;
+
+                    /**
+                     * 该命令所属会话的会话开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessTime;
+                    bool m_sessTimeHasBeenSet;
+
+                    /**
+                     * 复核时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_confirmTime;
+                    bool m_confirmTimeHasBeenSet;
+
+                    /**
+                     * 部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userDepartmentId;
+                    bool m_userDepartmentIdHasBeenSet;
+
+                    /**
+                     * 用户部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userDepartmentName;
+                    bool m_userDepartmentNameHasBeenSet;
+
+                    /**
+                     * 设备部门id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceDepartmentId;
+                    bool m_deviceDepartmentIdHasBeenSet;
+
+                    /**
+                     * 设备部门名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceDepartmentName;
+                    bool m_deviceDepartmentNameHasBeenSet;
 
                 };
             }

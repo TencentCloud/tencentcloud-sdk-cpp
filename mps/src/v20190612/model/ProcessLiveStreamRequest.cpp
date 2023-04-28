@@ -29,6 +29,7 @@ ProcessLiveStreamRequest::ProcessLiveStreamRequest() :
     m_outputDirHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -91,6 +92,15 @@ string ProcessLiveStreamRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -211,6 +221,22 @@ void ProcessLiveStreamRequest::SetAiRecognitionTask(const AiRecognitionTaskInput
 bool ProcessLiveStreamRequest::AiRecognitionTaskHasBeenSet() const
 {
     return m_aiRecognitionTaskHasBeenSet;
+}
+
+AiAnalysisTaskInput ProcessLiveStreamRequest::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void ProcessLiveStreamRequest::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool ProcessLiveStreamRequest::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
 }
 
 string ProcessLiveStreamRequest::GetSessionId() const

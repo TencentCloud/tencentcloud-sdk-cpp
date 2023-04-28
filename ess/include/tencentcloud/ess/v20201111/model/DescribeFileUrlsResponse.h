@@ -45,8 +45,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取URL信息
-                     * @return FileUrls URL信息
+                     * 获取文件URL信息；
+链接不是永久链接，有效期5分钟后链接失效。
+                     * @return FileUrls 文件URL信息；
+链接不是永久链接，有效期5分钟后链接失效。
                      */
                     std::vector<FileUrl> GetFileUrls() const;
 
@@ -71,7 +73,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * URL信息
+                     * 文件URL信息；
+链接不是永久链接，有效期5分钟后链接失效。
                      */
                     std::vector<FileUrl> m_fileUrls;
                     bool m_fileUrlsHasBeenSet;

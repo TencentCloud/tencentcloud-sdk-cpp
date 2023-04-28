@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return TaskId 无
+                     * 获取要查看的实时任务的任务Id
+                     * @return TaskId 要查看的实时任务的任务Id
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置无
-                     * @param TaskId 无
+                     * 设置要查看的实时任务的任务Id
+                     * @param TaskId 要查看的实时任务的任务Id
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -78,10 +78,46 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     */
+                    uint64_t GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param StartTime 开始时间
+                     */
+                    void SetStartTime(const uint64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     */
+                    uint64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param EndTime 结束时间
+                     */
+                    void SetEndTime(const uint64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 无
+                     * 要查看的实时任务的任务Id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    uint64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    uint64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

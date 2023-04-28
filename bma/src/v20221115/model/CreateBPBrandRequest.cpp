@@ -25,6 +25,7 @@ using namespace std;
 CreateBPBrandRequest::CreateBPBrandRequest() :
     m_brandNameHasBeenSet(false),
     m_companyNameHasBeenSet(false),
+    m_brandLogoHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_licenseHasBeenSet(false),
     m_authorizationHasBeenSet(false),
@@ -60,6 +61,14 @@ string CreateBPBrandRequest::ToJsonString() const
         string key = "CompanyName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_companyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_brandLogoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrandLogo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_brandLogo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
@@ -228,6 +237,22 @@ void CreateBPBrandRequest::SetCompanyName(const string& _companyName)
 bool CreateBPBrandRequest::CompanyNameHasBeenSet() const
 {
     return m_companyNameHasBeenSet;
+}
+
+string CreateBPBrandRequest::GetBrandLogo() const
+{
+    return m_brandLogo;
+}
+
+void CreateBPBrandRequest::SetBrandLogo(const string& _brandLogo)
+{
+    m_brandLogo = _brandLogo;
+    m_brandLogoHasBeenSet = true;
+}
+
+bool CreateBPBrandRequest::BrandLogoHasBeenSet() const
+{
+    return m_brandLogoHasBeenSet;
 }
 
 string CreateBPBrandRequest::GetPhone() const

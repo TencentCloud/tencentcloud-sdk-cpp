@@ -178,6 +178,28 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmIndicatorUnit 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlarmIndicatorUnit() const;
+
+                    /**
+                     * 设置告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmIndicatorUnit 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmIndicatorUnit(const std::string& _alarmIndicatorUnit);
+
+                    /**
+                     * 判断参数 AlarmIndicatorUnit 是否已赋值
+                     * @return AlarmIndicatorUnit 是否已赋值
+                     */
+                    bool AlarmIndicatorUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +243,13 @@ namespace TencentCloud
                      */
                     uint64_t m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 告警指标阈值单位：ms(毫秒)、s(秒)、min(分钟)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmIndicatorUnit;
+                    bool m_alarmIndicatorUnitHasBeenSet;
 
                 };
             }

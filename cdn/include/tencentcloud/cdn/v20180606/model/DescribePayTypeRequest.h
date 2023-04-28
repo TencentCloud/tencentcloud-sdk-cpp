@@ -46,11 +46,13 @@ namespace TencentCloud
                      * 获取指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
-未填充时默认为 mainland
+global：全球计费方式查询
+未填充时，默认为 mainland
                      * @return Area 指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
-未填充时默认为 mainland
+global：全球计费方式查询
+未填充时，默认为 mainland
                      */
                     std::string GetArea() const;
 
@@ -58,11 +60,13 @@ overseas：境外计费方式查询
                      * 设置指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
-未填充时默认为 mainland
+global：全球计费方式查询
+未填充时，默认为 mainland
                      * @param Area 指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
-未填充时默认为 mainland
+global：全球计费方式查询
+未填充时，默认为 mainland
                      */
                     void SetArea(const std::string& _area);
 
@@ -90,13 +94,44 @@ overseas：境外计费方式查询
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取指定资源包查询
+flux：流量包
+https：HTTPS请求包
+未填充时，默认为 flux
+                     * @return Type 指定资源包查询
+flux：流量包
+https：HTTPS请求包
+未填充时，默认为 flux
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置指定资源包查询
+flux：流量包
+https：HTTPS请求包
+未填充时，默认为 flux
+                     * @param Type 指定资源包查询
+flux：流量包
+https：HTTPS请求包
+未填充时，默认为 flux
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
-未填充时默认为 mainland
+global：全球计费方式查询
+未填充时，默认为 mainland
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
@@ -106,6 +141,15 @@ overseas：境外计费方式查询
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 指定资源包查询
+flux：流量包
+https：HTTPS请求包
+未填充时，默认为 flux
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

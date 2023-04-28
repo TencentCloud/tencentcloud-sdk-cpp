@@ -107,6 +107,14 @@
 #include <tencentcloud/kms/v20190118/model/ListKeysResponse.h>
 #include <tencentcloud/kms/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsRequest.h>
 #include <tencentcloud/kms/v20190118/model/OverwriteWhiteBoxDeviceFingerprintsResponse.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptRequest.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoEncryptRequest.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoEncryptResponse.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoSignRequest.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoSignResponse.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyRequest.h>
+#include <tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyResponse.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptRequest.h>
 #include <tencentcloud/kms/v20190118/model/ReEncryptResponse.h>
 #include <tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h>
@@ -261,6 +269,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OverwriteWhiteBoxDeviceFingerprintsResponse> OverwriteWhiteBoxDeviceFingerprintsOutcome;
                 typedef std::future<OverwriteWhiteBoxDeviceFingerprintsOutcome> OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::OverwriteWhiteBoxDeviceFingerprintsRequest&, OverwriteWhiteBoxDeviceFingerprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OverwriteWhiteBoxDeviceFingerprintsAsyncHandler;
+                typedef Outcome<Core::Error, Model::PostQuantumCryptoDecryptResponse> PostQuantumCryptoDecryptOutcome;
+                typedef std::future<PostQuantumCryptoDecryptOutcome> PostQuantumCryptoDecryptOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::PostQuantumCryptoDecryptRequest&, PostQuantumCryptoDecryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostQuantumCryptoDecryptAsyncHandler;
+                typedef Outcome<Core::Error, Model::PostQuantumCryptoEncryptResponse> PostQuantumCryptoEncryptOutcome;
+                typedef std::future<PostQuantumCryptoEncryptOutcome> PostQuantumCryptoEncryptOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::PostQuantumCryptoEncryptRequest&, PostQuantumCryptoEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostQuantumCryptoEncryptAsyncHandler;
+                typedef Outcome<Core::Error, Model::PostQuantumCryptoSignResponse> PostQuantumCryptoSignOutcome;
+                typedef std::future<PostQuantumCryptoSignOutcome> PostQuantumCryptoSignOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::PostQuantumCryptoSignRequest&, PostQuantumCryptoSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostQuantumCryptoSignAsyncHandler;
+                typedef Outcome<Core::Error, Model::PostQuantumCryptoVerifyResponse> PostQuantumCryptoVerifyOutcome;
+                typedef std::future<PostQuantumCryptoVerifyOutcome> PostQuantumCryptoVerifyOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::PostQuantumCryptoVerifyRequest&, PostQuantumCryptoVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostQuantumCryptoVerifyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReEncryptResponse> ReEncryptOutcome;
                 typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::ReEncryptRequest&, ReEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReEncryptAsyncHandler;
@@ -663,6 +683,42 @@ namespace TencentCloud
                 OverwriteWhiteBoxDeviceFingerprintsOutcome OverwriteWhiteBoxDeviceFingerprints(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest &request);
                 void OverwriteWhiteBoxDeviceFingerprintsAsync(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest& request, const OverwriteWhiteBoxDeviceFingerprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable OverwriteWhiteBoxDeviceFingerprintsCallable(const Model::OverwriteWhiteBoxDeviceFingerprintsRequest& request);
+
+                /**
+                 *本接口使用后量子密码算法密钥，解密密文，并得到明文数据。
+                 * @param req PostQuantumCryptoDecryptRequest
+                 * @return PostQuantumCryptoDecryptOutcome
+                 */
+                PostQuantumCryptoDecryptOutcome PostQuantumCryptoDecrypt(const Model::PostQuantumCryptoDecryptRequest &request);
+                void PostQuantumCryptoDecryptAsync(const Model::PostQuantumCryptoDecryptRequest& request, const PostQuantumCryptoDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PostQuantumCryptoDecryptOutcomeCallable PostQuantumCryptoDecryptCallable(const Model::PostQuantumCryptoDecryptRequest& request);
+
+                /**
+                 *本接口使用后量子密码算法密钥，可加密最多为4KB任意数据，可用于加密数据库密码，RSA Key，或其它较小的敏感信息。对于应用的数据加密，使用GenerateDataKey生成的DataKey进行本地数据的加解密操作。
+                 * @param req PostQuantumCryptoEncryptRequest
+                 * @return PostQuantumCryptoEncryptOutcome
+                 */
+                PostQuantumCryptoEncryptOutcome PostQuantumCryptoEncrypt(const Model::PostQuantumCryptoEncryptRequest &request);
+                void PostQuantumCryptoEncryptAsync(const Model::PostQuantumCryptoEncryptRequest& request, const PostQuantumCryptoEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PostQuantumCryptoEncryptOutcomeCallable PostQuantumCryptoEncryptCallable(const Model::PostQuantumCryptoEncryptRequest& request);
+
+                /**
+                 *使用后量子密码算法签名验签密钥进行签名。
+                 * @param req PostQuantumCryptoSignRequest
+                 * @return PostQuantumCryptoSignOutcome
+                 */
+                PostQuantumCryptoSignOutcome PostQuantumCryptoSign(const Model::PostQuantumCryptoSignRequest &request);
+                void PostQuantumCryptoSignAsync(const Model::PostQuantumCryptoSignRequest& request, const PostQuantumCryptoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PostQuantumCryptoSignOutcomeCallable PostQuantumCryptoSignCallable(const Model::PostQuantumCryptoSignRequest& request);
+
+                /**
+                 *使用后量子密码算法密钥对签名进行验证。
+                 * @param req PostQuantumCryptoVerifyRequest
+                 * @return PostQuantumCryptoVerifyOutcome
+                 */
+                PostQuantumCryptoVerifyOutcome PostQuantumCryptoVerify(const Model::PostQuantumCryptoVerifyRequest &request);
+                void PostQuantumCryptoVerifyAsync(const Model::PostQuantumCryptoVerifyRequest& request, const PostQuantumCryptoVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PostQuantumCryptoVerifyOutcomeCallable PostQuantumCryptoVerifyCallable(const Model::PostQuantumCryptoVerifyRequest& request);
 
                 /**
                  *使用指定CMK对密文重新加密。

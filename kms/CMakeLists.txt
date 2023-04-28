@@ -45,6 +45,7 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/GenerateDataKeyRequest.h
   include/tencentcloud/kms/v20190118/model/UpdateAliasResponse.h
   include/tencentcloud/kms/v20190118/model/ScheduleKeyDeletionResponse.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyRequest.h
   include/tencentcloud/kms/v20190118/model/GenerateRandomResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeKeysRequest.h
   include/tencentcloud/kms/v20190118/model/GetPublicKeyRequest.h
@@ -96,6 +97,8 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/CancelKeyArchiveResponse.h
   include/tencentcloud/kms/v20190118/model/DecryptRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignRequest.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptRequest.h
   include/tencentcloud/kms/v20190118/model/AsymmetricRsaDecryptResponse.h
   include/tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h
   include/tencentcloud/kms/v20190118/model/DisableKeysRequest.h
@@ -108,17 +111,22 @@ set(kms_public_header_model
   include/tencentcloud/kms/v20190118/model/SignByAsymmetricKeyRequest.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.h
   include/tencentcloud/kms/v20190118/model/GetRegionsRequest.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoEncryptResponse.h
   include/tencentcloud/kms/v20190118/model/EncryptByWhiteBoxRequest.h
   include/tencentcloud/kms/v20190118/model/GenerateRandomRequest.h
   include/tencentcloud/kms/v20190118/model/ScheduleKeyDeletionRequest.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoEncryptRequest.h
   include/tencentcloud/kms/v20190118/model/DisableKeyRequest.h
   include/tencentcloud/kms/v20190118/model/ImportKeyMaterialResponse.h
   include/tencentcloud/kms/v20190118/model/GetPublicKeyResponse.h
   include/tencentcloud/kms/v20190118/model/BindCloudResourceRequest.h
   include/tencentcloud/kms/v20190118/model/TagFilter.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoSignResponse.h
   include/tencentcloud/kms/v20190118/model/SignByAsymmetricKeyResponse.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoVerifyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.h
+  include/tencentcloud/kms/v20190118/model/PostQuantumCryptoDecryptResponse.h
   include/tencentcloud/kms/v20190118/model/UpdateKeyDescriptionRequest.h
   include/tencentcloud/kms/v20190118/model/UnbindCloudResourceResponse.h
   include/tencentcloud/kms/v20190118/model/DescribeKeyResponse.h
@@ -154,6 +162,7 @@ set(kms_src
   src/v20190118/model/GenerateDataKeyRequest.cpp
   src/v20190118/model/UpdateAliasResponse.cpp
   src/v20190118/model/ScheduleKeyDeletionResponse.cpp
+  src/v20190118/model/PostQuantumCryptoVerifyRequest.cpp
   src/v20190118/model/GenerateRandomResponse.cpp
   src/v20190118/model/DescribeKeysRequest.cpp
   src/v20190118/model/GetPublicKeyRequest.cpp
@@ -205,6 +214,8 @@ set(kms_src
   src/v20190118/model/CancelKeyArchiveResponse.cpp
   src/v20190118/model/DecryptRequest.cpp
   src/v20190118/model/DescribeWhiteBoxKeyDetailsRequest.cpp
+  src/v20190118/model/PostQuantumCryptoSignRequest.cpp
+  src/v20190118/model/PostQuantumCryptoDecryptRequest.cpp
   src/v20190118/model/AsymmetricRsaDecryptResponse.cpp
   src/v20190118/model/CancelKeyDeletionResponse.cpp
   src/v20190118/model/DisableKeysRequest.cpp
@@ -217,17 +228,22 @@ set(kms_src
   src/v20190118/model/SignByAsymmetricKeyRequest.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsRequest.cpp
   src/v20190118/model/GetRegionsRequest.cpp
+  src/v20190118/model/PostQuantumCryptoEncryptResponse.cpp
   src/v20190118/model/EncryptByWhiteBoxRequest.cpp
   src/v20190118/model/GenerateRandomRequest.cpp
   src/v20190118/model/ScheduleKeyDeletionRequest.cpp
+  src/v20190118/model/PostQuantumCryptoEncryptRequest.cpp
   src/v20190118/model/DisableKeyRequest.cpp
   src/v20190118/model/ImportKeyMaterialResponse.cpp
   src/v20190118/model/GetPublicKeyResponse.cpp
   src/v20190118/model/BindCloudResourceRequest.cpp
   src/v20190118/model/TagFilter.cpp
+  src/v20190118/model/PostQuantumCryptoSignResponse.cpp
   src/v20190118/model/SignByAsymmetricKeyResponse.cpp
+  src/v20190118/model/PostQuantumCryptoVerifyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDecryptKeyResponse.cpp
   src/v20190118/model/DescribeWhiteBoxDeviceFingerprintsResponse.cpp
+  src/v20190118/model/PostQuantumCryptoDecryptResponse.cpp
   src/v20190118/model/UpdateKeyDescriptionRequest.cpp
   src/v20190118/model/UnbindCloudResourceResponse.cpp
   src/v20190118/model/DescribeKeyResponse.cpp

@@ -180,6 +180,32 @@ namespace TencentCloud
                      */
                     bool PlaySceneHasBeenSet() const;
 
+                    /**
+                     * 获取物料过滤，取值有：
+<li>Lyrics：含有歌词；</li>
+<li>Midi：含有音高线。</li>
+                     * @return MaterialFilters 物料过滤，取值有：
+<li>Lyrics：含有歌词；</li>
+<li>Midi：含有音高线。</li>
+                     */
+                    std::vector<std::string> GetMaterialFilters() const;
+
+                    /**
+                     * 设置物料过滤，取值有：
+<li>Lyrics：含有歌词；</li>
+<li>Midi：含有音高线。</li>
+                     * @param MaterialFilters 物料过滤，取值有：
+<li>Lyrics：含有歌词；</li>
+<li>Midi：含有音高线。</li>
+                     */
+                    void SetMaterialFilters(const std::vector<std::string>& _materialFilters);
+
+                    /**
+                     * 判断参数 MaterialFilters 是否已赋值
+                     * @return MaterialFilters 是否已赋值
+                     */
+                    bool MaterialFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +252,14 @@ namespace TencentCloud
                      */
                     std::string m_playScene;
                     bool m_playSceneHasBeenSet;
+
+                    /**
+                     * 物料过滤，取值有：
+<li>Lyrics：含有歌词；</li>
+<li>Midi：含有音高线。</li>
+                     */
+                    std::vector<std::string> m_materialFilters;
+                    bool m_materialFiltersHasBeenSet;
 
                 };
             }

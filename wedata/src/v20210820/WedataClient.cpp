@@ -4082,6 +4082,49 @@ WedataClient::DescribeOfflineTaskTokenOutcomeCallable WedataClient::DescribeOffl
     return task->get_future();
 }
 
+WedataClient::DescribeOperateTasksOutcome WedataClient::DescribeOperateTasks(const DescribeOperateTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOperateTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOperateTasksResponse rsp = DescribeOperateTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOperateTasksOutcome(rsp);
+        else
+            return DescribeOperateTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOperateTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeOperateTasksAsync(const DescribeOperateTasksRequest& request, const DescribeOperateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOperateTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeOperateTasksOutcomeCallable WedataClient::DescribeOperateTasksCallable(const DescribeOperateTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOperateTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOperateTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeOrganizationalFunctionsOutcome WedataClient::DescribeOrganizationalFunctions(const DescribeOrganizationalFunctionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationalFunctions");

@@ -49,7 +49,8 @@ DataSourceInfo::DataSourceInfo() :
     m_dataSourceStatusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_paramsStringHasBeenSet(false),
-    m_bizParamsStringHasBeenSet(false)
+    m_bizParamsStringHasBeenSet(false),
+    m_modifiedTimeHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_bizParamsStringHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifiedTime") && !value["ModifiedTime"].IsNull())
+    {
+        if (!value["ModifiedTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ModifiedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedTime = value["ModifiedTime"].GetInt64();
+        m_modifiedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +596,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BizParamsString";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bizParamsString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifiedTime, allocator);
     }
 
 }
@@ -1052,5 +1071,21 @@ void DataSourceInfo::SetBizParamsString(const string& _bizParamsString)
 bool DataSourceInfo::BizParamsStringHasBeenSet() const
 {
     return m_bizParamsStringHasBeenSet;
+}
+
+int64_t DataSourceInfo::GetModifiedTime() const
+{
+    return m_modifiedTime;
+}
+
+void DataSourceInfo::SetModifiedTime(const int64_t& _modifiedTime)
+{
+    m_modifiedTime = _modifiedTime;
+    m_modifiedTimeHasBeenSet = true;
+}
+
+bool DataSourceInfo::ModifiedTimeHasBeenSet() const
+{
+    return m_modifiedTimeHasBeenSet;
 }
 

@@ -79,6 +79,28 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
+                     * 获取Cmd字段是前端传值是否进行base64.
+0:否，1：是
+                     * @return Encoding Cmd字段是前端传值是否进行base64.
+0:否，1：是
+                     */
+                    uint64_t GetEncoding() const;
+
+                    /**
+                     * 设置Cmd字段是前端传值是否进行base64.
+0:否，1：是
+                     * @param Encoding Cmd字段是前端传值是否进行base64.
+0:否，1：是
+                     */
+                    void SetEncoding(const uint64_t& _encoding);
+
+                    /**
+                     * 判断参数 Encoding 是否已赋值
+                     * @return Encoding 是否已赋值
+                     */
+                    bool EncodingHasBeenSet() const;
+
+                    /**
                      * 获取偏移量
                      * @return Offset 偏移量
                      */
@@ -145,6 +167,13 @@ namespace TencentCloud
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
+
+                    /**
+                     * Cmd字段是前端传值是否进行base64.
+0:否，1：是
+                     */
+                    uint64_t m_encoding;
+                    bool m_encodingHasBeenSet;
 
                     /**
                      * 偏移量

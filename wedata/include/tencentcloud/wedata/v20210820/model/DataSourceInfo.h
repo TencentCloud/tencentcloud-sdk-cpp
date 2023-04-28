@@ -684,6 +684,28 @@ namespace TencentCloud
                      */
                     bool BizParamsStringHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifiedTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetModifiedTime() const;
+
+                    /**
+                     * 设置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifiedTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifiedTime(const int64_t& _modifiedTime);
+
+                    /**
+                     * 判断参数 ModifiedTime 是否已赋值
+                     * @return ModifiedTime 是否已赋值
+                     */
+                    bool ModifiedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -888,6 +910,13 @@ namespace TencentCloud
                      */
                     std::string m_bizParamsString;
                     bool m_bizParamsStringHasBeenSet;
+
+                    /**
+                     * 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_modifiedTime;
+                    bool m_modifiedTimeHasBeenSet;
 
                 };
             }

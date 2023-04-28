@@ -1846,6 +1846,178 @@ KmsClient::OverwriteWhiteBoxDeviceFingerprintsOutcomeCallable KmsClient::Overwri
     return task->get_future();
 }
 
+KmsClient::PostQuantumCryptoDecryptOutcome KmsClient::PostQuantumCryptoDecrypt(const PostQuantumCryptoDecryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "PostQuantumCryptoDecrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PostQuantumCryptoDecryptResponse rsp = PostQuantumCryptoDecryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PostQuantumCryptoDecryptOutcome(rsp);
+        else
+            return PostQuantumCryptoDecryptOutcome(o.GetError());
+    }
+    else
+    {
+        return PostQuantumCryptoDecryptOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::PostQuantumCryptoDecryptAsync(const PostQuantumCryptoDecryptRequest& request, const PostQuantumCryptoDecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PostQuantumCryptoDecrypt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::PostQuantumCryptoDecryptOutcomeCallable KmsClient::PostQuantumCryptoDecryptCallable(const PostQuantumCryptoDecryptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PostQuantumCryptoDecryptOutcome()>>(
+        [this, request]()
+        {
+            return this->PostQuantumCryptoDecrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::PostQuantumCryptoEncryptOutcome KmsClient::PostQuantumCryptoEncrypt(const PostQuantumCryptoEncryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "PostQuantumCryptoEncrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PostQuantumCryptoEncryptResponse rsp = PostQuantumCryptoEncryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PostQuantumCryptoEncryptOutcome(rsp);
+        else
+            return PostQuantumCryptoEncryptOutcome(o.GetError());
+    }
+    else
+    {
+        return PostQuantumCryptoEncryptOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::PostQuantumCryptoEncryptAsync(const PostQuantumCryptoEncryptRequest& request, const PostQuantumCryptoEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PostQuantumCryptoEncrypt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::PostQuantumCryptoEncryptOutcomeCallable KmsClient::PostQuantumCryptoEncryptCallable(const PostQuantumCryptoEncryptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PostQuantumCryptoEncryptOutcome()>>(
+        [this, request]()
+        {
+            return this->PostQuantumCryptoEncrypt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::PostQuantumCryptoSignOutcome KmsClient::PostQuantumCryptoSign(const PostQuantumCryptoSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "PostQuantumCryptoSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PostQuantumCryptoSignResponse rsp = PostQuantumCryptoSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PostQuantumCryptoSignOutcome(rsp);
+        else
+            return PostQuantumCryptoSignOutcome(o.GetError());
+    }
+    else
+    {
+        return PostQuantumCryptoSignOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::PostQuantumCryptoSignAsync(const PostQuantumCryptoSignRequest& request, const PostQuantumCryptoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PostQuantumCryptoSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::PostQuantumCryptoSignOutcomeCallable KmsClient::PostQuantumCryptoSignCallable(const PostQuantumCryptoSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PostQuantumCryptoSignOutcome()>>(
+        [this, request]()
+        {
+            return this->PostQuantumCryptoSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+KmsClient::PostQuantumCryptoVerifyOutcome KmsClient::PostQuantumCryptoVerify(const PostQuantumCryptoVerifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "PostQuantumCryptoVerify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PostQuantumCryptoVerifyResponse rsp = PostQuantumCryptoVerifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PostQuantumCryptoVerifyOutcome(rsp);
+        else
+            return PostQuantumCryptoVerifyOutcome(o.GetError());
+    }
+    else
+    {
+        return PostQuantumCryptoVerifyOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::PostQuantumCryptoVerifyAsync(const PostQuantumCryptoVerifyRequest& request, const PostQuantumCryptoVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PostQuantumCryptoVerify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KmsClient::PostQuantumCryptoVerifyOutcomeCallable KmsClient::PostQuantumCryptoVerifyCallable(const PostQuantumCryptoVerifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PostQuantumCryptoVerifyOutcome()>>(
+        [this, request]()
+        {
+            return this->PostQuantumCryptoVerify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KmsClient::ReEncryptOutcome KmsClient::ReEncrypt(const ReEncryptRequest &request)
 {
     auto outcome = MakeRequest(request, "ReEncrypt");

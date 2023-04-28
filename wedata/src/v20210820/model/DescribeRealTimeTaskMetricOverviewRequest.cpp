@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeRealTimeTaskMetricOverviewRequest::DescribeRealTimeTaskMetricOverviewRequest() :
     m_taskIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeRealTimeTaskMetricOverviewRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeRealTimeTaskMetricOverviewRequest::SetProjectId(const string& _proj
 bool DescribeRealTimeTaskMetricOverviewRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+uint64_t DescribeRealTimeTaskMetricOverviewRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeRealTimeTaskMetricOverviewRequest::SetStartTime(const uint64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeRealTimeTaskMetricOverviewRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+uint64_t DescribeRealTimeTaskMetricOverviewRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeRealTimeTaskMetricOverviewRequest::SetEndTime(const uint64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeRealTimeTaskMetricOverviewRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

@@ -21,8 +21,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 WafThreatenIntelligenceDetails::WafThreatenIntelligenceDetails() :
-    m_defenseStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_defenseStatusHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false)
 {
 }
@@ -31,16 +31,6 @@ CoreInternalOutcome WafThreatenIntelligenceDetails::Deserialize(const rapidjson:
 {
     string requestId = "";
 
-
-    if (value.HasMember("DefenseStatus") && !value["DefenseStatus"].IsNull())
-    {
-        if (!value["DefenseStatus"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `WafThreatenIntelligenceDetails.DefenseStatus` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_defenseStatus = value["DefenseStatus"].GetInt64();
-        m_defenseStatusHasBeenSet = true;
-    }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
     {
@@ -53,6 +43,16 @@ CoreInternalOutcome WafThreatenIntelligenceDetails::Deserialize(const rapidjson:
             m_tags.push_back((*itr).GetString());
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefenseStatus") && !value["DefenseStatus"].IsNull())
+    {
+        if (!value["DefenseStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WafThreatenIntelligenceDetails.DefenseStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defenseStatus = value["DefenseStatus"].GetInt64();
+        m_defenseStatusHasBeenSet = true;
     }
 
     if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
@@ -72,14 +72,6 @@ CoreInternalOutcome WafThreatenIntelligenceDetails::Deserialize(const rapidjson:
 void WafThreatenIntelligenceDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_defenseStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DefenseStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_defenseStatus, allocator);
-    }
-
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -93,6 +85,14 @@ void WafThreatenIntelligenceDetails::ToJsonObject(rapidjson::Value &value, rapid
         }
     }
 
+    if (m_defenseStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefenseStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defenseStatus, allocator);
+    }
+
     if (m_lastUpdateTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -103,22 +103,6 @@ void WafThreatenIntelligenceDetails::ToJsonObject(rapidjson::Value &value, rapid
 
 }
 
-
-int64_t WafThreatenIntelligenceDetails::GetDefenseStatus() const
-{
-    return m_defenseStatus;
-}
-
-void WafThreatenIntelligenceDetails::SetDefenseStatus(const int64_t& _defenseStatus)
-{
-    m_defenseStatus = _defenseStatus;
-    m_defenseStatusHasBeenSet = true;
-}
-
-bool WafThreatenIntelligenceDetails::DefenseStatusHasBeenSet() const
-{
-    return m_defenseStatusHasBeenSet;
-}
 
 vector<string> WafThreatenIntelligenceDetails::GetTags() const
 {
@@ -134,6 +118,22 @@ void WafThreatenIntelligenceDetails::SetTags(const vector<string>& _tags)
 bool WafThreatenIntelligenceDetails::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t WafThreatenIntelligenceDetails::GetDefenseStatus() const
+{
+    return m_defenseStatus;
+}
+
+void WafThreatenIntelligenceDetails::SetDefenseStatus(const int64_t& _defenseStatus)
+{
+    m_defenseStatus = _defenseStatus;
+    m_defenseStatusHasBeenSet = true;
+}
+
+bool WafThreatenIntelligenceDetails::DefenseStatusHasBeenSet() const
+{
+    return m_defenseStatusHasBeenSet;
 }
 
 string WafThreatenIntelligenceDetails::GetLastUpdateTime() const

@@ -27,7 +27,8 @@ FraudPkg::FraudPkg() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inquireNumHasBeenSet(false),
-    m_usedNumHasBeenSet(false)
+    m_usedNumHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome FraudPkg::Deserialize(const rapidjson::Value &value)
         m_usedNumHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FraudPkg.RenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetUint64();
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void FraudPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UsedNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedNum, allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void FraudPkg::SetUsedNum(const int64_t& _usedNum)
 bool FraudPkg::UsedNumHasBeenSet() const
 {
     return m_usedNumHasBeenSet;
+}
+
+uint64_t FraudPkg::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void FraudPkg::SetRenewFlag(const uint64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool FraudPkg::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 

@@ -115,6 +115,28 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取Cmd字段前端是否做base64加密
+0：否，1：是
+                     * @return Encoding Cmd字段前端是否做base64加密
+0：否，1：是
+                     */
+                    uint64_t GetEncoding() const;
+
+                    /**
+                     * 设置Cmd字段前端是否做base64加密
+0：否，1：是
+                     * @param Encoding Cmd字段前端是否做base64加密
+0：否，1：是
+                     */
+                    void SetEncoding(const uint64_t& _encoding);
+
+                    /**
+                     * 判断参数 Encoding 是否已赋值
+                     * @return Encoding 是否已赋值
+                     */
+                    bool EncodingHasBeenSet() const;
+
+                    /**
                      * 获取结束时间
                      * @return EndTime 结束时间
                      */
@@ -157,6 +179,13 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * Cmd字段前端是否做base64加密
+0：否，1：是
+                     */
+                    uint64_t m_encoding;
+                    bool m_encodingHasBeenSet;
 
                     /**
                      * 结束时间

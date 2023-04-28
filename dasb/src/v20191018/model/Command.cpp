@@ -24,7 +24,18 @@ Command::Command() :
     m_cmdHasBeenSet(false),
     m_timeHasBeenSet(false),
     m_timeOffsetHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_sidHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_accountHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_fromIpHasBeenSet(false),
+    m_sessTimeHasBeenSet(false),
+    m_confirmTimeHasBeenSet(false),
+    m_userDepartmentIdHasBeenSet(false),
+    m_userDepartmentNameHasBeenSet(false),
+    m_deviceDepartmentIdHasBeenSet(false),
+    m_deviceDepartmentNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +84,116 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
         m_actionHasBeenSet = true;
     }
 
+    if (value.HasMember("Sid") && !value["Sid"].IsNull())
+    {
+        if (!value["Sid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.Sid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sid = string(value["Sid"].GetString());
+        m_sidHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserName") && !value["UserName"].IsNull())
+    {
+        if (!value["UserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.UserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userName = string(value["UserName"].GetString());
+        m_userNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Account") && !value["Account"].IsNull())
+    {
+        if (!value["Account"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.Account` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_account = string(value["Account"].GetString());
+        m_accountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FromIp") && !value["FromIp"].IsNull())
+    {
+        if (!value["FromIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.FromIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fromIp = string(value["FromIp"].GetString());
+        m_fromIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessTime") && !value["SessTime"].IsNull())
+    {
+        if (!value["SessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.SessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessTime = string(value["SessTime"].GetString());
+        m_sessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfirmTime") && !value["ConfirmTime"].IsNull())
+    {
+        if (!value["ConfirmTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.ConfirmTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_confirmTime = string(value["ConfirmTime"].GetString());
+        m_confirmTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserDepartmentId") && !value["UserDepartmentId"].IsNull())
+    {
+        if (!value["UserDepartmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.UserDepartmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDepartmentId = string(value["UserDepartmentId"].GetString());
+        m_userDepartmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserDepartmentName") && !value["UserDepartmentName"].IsNull())
+    {
+        if (!value["UserDepartmentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.UserDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDepartmentName = string(value["UserDepartmentName"].GetString());
+        m_userDepartmentNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceDepartmentId") && !value["DeviceDepartmentId"].IsNull())
+    {
+        if (!value["DeviceDepartmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.DeviceDepartmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceDepartmentId = string(value["DeviceDepartmentId"].GetString());
+        m_deviceDepartmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceDepartmentName") && !value["DeviceDepartmentName"].IsNull())
+    {
+        if (!value["DeviceDepartmentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.DeviceDepartmentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceDepartmentName = string(value["DeviceDepartmentName"].GetString());
+        m_deviceDepartmentNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +231,94 @@ void Command::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_action, allocator);
+    }
+
+    if (m_sidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Account";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_account.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FromIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fromIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_confirmTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfirmTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_confirmTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDepartmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDepartmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDepartmentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDepartmentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDepartmentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceDepartmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceDepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceDepartmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceDepartmentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceDepartmentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceDepartmentName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +386,181 @@ void Command::SetAction(const int64_t& _action)
 bool Command::ActionHasBeenSet() const
 {
     return m_actionHasBeenSet;
+}
+
+string Command::GetSid() const
+{
+    return m_sid;
+}
+
+void Command::SetSid(const string& _sid)
+{
+    m_sid = _sid;
+    m_sidHasBeenSet = true;
+}
+
+bool Command::SidHasBeenSet() const
+{
+    return m_sidHasBeenSet;
+}
+
+string Command::GetUserName() const
+{
+    return m_userName;
+}
+
+void Command::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool Command::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string Command::GetAccount() const
+{
+    return m_account;
+}
+
+void Command::SetAccount(const string& _account)
+{
+    m_account = _account;
+    m_accountHasBeenSet = true;
+}
+
+bool Command::AccountHasBeenSet() const
+{
+    return m_accountHasBeenSet;
+}
+
+string Command::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Command::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Command::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string Command::GetFromIp() const
+{
+    return m_fromIp;
+}
+
+void Command::SetFromIp(const string& _fromIp)
+{
+    m_fromIp = _fromIp;
+    m_fromIpHasBeenSet = true;
+}
+
+bool Command::FromIpHasBeenSet() const
+{
+    return m_fromIpHasBeenSet;
+}
+
+string Command::GetSessTime() const
+{
+    return m_sessTime;
+}
+
+void Command::SetSessTime(const string& _sessTime)
+{
+    m_sessTime = _sessTime;
+    m_sessTimeHasBeenSet = true;
+}
+
+bool Command::SessTimeHasBeenSet() const
+{
+    return m_sessTimeHasBeenSet;
+}
+
+string Command::GetConfirmTime() const
+{
+    return m_confirmTime;
+}
+
+void Command::SetConfirmTime(const string& _confirmTime)
+{
+    m_confirmTime = _confirmTime;
+    m_confirmTimeHasBeenSet = true;
+}
+
+bool Command::ConfirmTimeHasBeenSet() const
+{
+    return m_confirmTimeHasBeenSet;
+}
+
+string Command::GetUserDepartmentId() const
+{
+    return m_userDepartmentId;
+}
+
+void Command::SetUserDepartmentId(const string& _userDepartmentId)
+{
+    m_userDepartmentId = _userDepartmentId;
+    m_userDepartmentIdHasBeenSet = true;
+}
+
+bool Command::UserDepartmentIdHasBeenSet() const
+{
+    return m_userDepartmentIdHasBeenSet;
+}
+
+string Command::GetUserDepartmentName() const
+{
+    return m_userDepartmentName;
+}
+
+void Command::SetUserDepartmentName(const string& _userDepartmentName)
+{
+    m_userDepartmentName = _userDepartmentName;
+    m_userDepartmentNameHasBeenSet = true;
+}
+
+bool Command::UserDepartmentNameHasBeenSet() const
+{
+    return m_userDepartmentNameHasBeenSet;
+}
+
+string Command::GetDeviceDepartmentId() const
+{
+    return m_deviceDepartmentId;
+}
+
+void Command::SetDeviceDepartmentId(const string& _deviceDepartmentId)
+{
+    m_deviceDepartmentId = _deviceDepartmentId;
+    m_deviceDepartmentIdHasBeenSet = true;
+}
+
+bool Command::DeviceDepartmentIdHasBeenSet() const
+{
+    return m_deviceDepartmentIdHasBeenSet;
+}
+
+string Command::GetDeviceDepartmentName() const
+{
+    return m_deviceDepartmentName;
+}
+
+void Command::SetDeviceDepartmentName(const string& _deviceDepartmentName)
+{
+    m_deviceDepartmentName = _deviceDepartmentName;
+    m_deviceDepartmentNameHasBeenSet = true;
+}
+
+bool Command::DeviceDepartmentNameHasBeenSet() const
+{
+    return m_deviceDepartmentNameHasBeenSet;
 }
 

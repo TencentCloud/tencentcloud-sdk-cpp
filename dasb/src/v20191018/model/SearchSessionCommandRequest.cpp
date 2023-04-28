@@ -27,6 +27,7 @@ SearchSessionCommandRequest::SearchSessionCommandRequest() :
     m_startTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_encodingHasBeenSet(false),
     m_endTimeHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string SearchSessionCommandRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encoding, allocator);
     }
 
     if (m_endTimeHasBeenSet)
@@ -148,6 +157,22 @@ void SearchSessionCommandRequest::SetLimit(const uint64_t& _limit)
 bool SearchSessionCommandRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t SearchSessionCommandRequest::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void SearchSessionCommandRequest::SetEncoding(const uint64_t& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool SearchSessionCommandRequest::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
 }
 
 string SearchSessionCommandRequest::GetEndTime() const
