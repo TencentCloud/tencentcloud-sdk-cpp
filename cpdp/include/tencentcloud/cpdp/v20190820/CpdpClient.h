@@ -41,6 +41,8 @@
 #include <tencentcloud/cpdp/v20190820/model/ApplyFlexPaymentResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyFlexSettlementRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyFlexSettlementResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexWechatPreAuthRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexWechatPreAuthResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankSettleOrderRequest.h>
@@ -293,6 +295,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexServiceProviderAccountBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexWechatAuthResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexWechatAuthResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
@@ -500,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyFlexSettlementResponse> ApplyFlexSettlementOutcome;
                 typedef std::future<ApplyFlexSettlementOutcome> ApplyFlexSettlementOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyFlexSettlementRequest&, ApplyFlexSettlementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFlexSettlementAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyFlexWechatPreAuthResponse> ApplyFlexWechatPreAuthOutcome;
+                typedef std::future<ApplyFlexWechatPreAuthOutcome> ApplyFlexWechatPreAuthOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyFlexWechatPreAuthRequest&, ApplyFlexWechatPreAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFlexWechatPreAuthAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyOpenBankOrderDetailReceiptResponse> ApplyOpenBankOrderDetailReceiptOutcome;
                 typedef std::future<ApplyOpenBankOrderDetailReceiptOutcome> ApplyOpenBankOrderDetailReceiptOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyOpenBankOrderDetailReceiptRequest&, ApplyOpenBankOrderDetailReceiptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOpenBankOrderDetailReceiptAsyncHandler;
@@ -878,6 +885,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryFlexSettlementOrderListResponse> QueryFlexSettlementOrderListOutcome;
                 typedef std::future<QueryFlexSettlementOrderListOutcome> QueryFlexSettlementOrderListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexSettlementOrderListRequest&, QueryFlexSettlementOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexSettlementOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexWechatAuthResultResponse> QueryFlexWechatAuthResultOutcome;
+                typedef std::future<QueryFlexWechatAuthResultOutcome> QueryFlexWechatAuthResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexWechatAuthResultRequest&, QueryFlexWechatAuthResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexWechatAuthResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryFundsTransactionDetailsResponse> QueryFundsTransactionDetailsOutcome;
                 typedef std::future<QueryFundsTransactionDetailsOutcome> QueryFundsTransactionDetailsOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFundsTransactionDetailsRequest&, QueryFundsTransactionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFundsTransactionDetailsAsyncHandler;
@@ -1210,6 +1220,15 @@ namespace TencentCloud
                 ApplyFlexSettlementOutcome ApplyFlexSettlement(const Model::ApplyFlexSettlementRequest &request);
                 void ApplyFlexSettlementAsync(const Model::ApplyFlexSettlementRequest& request, const ApplyFlexSettlementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyFlexSettlementOutcomeCallable ApplyFlexSettlementCallable(const Model::ApplyFlexSettlementRequest& request);
+
+                /**
+                 *微工卡开通预核身接口
+                 * @param req ApplyFlexWechatPreAuthRequest
+                 * @return ApplyFlexWechatPreAuthOutcome
+                 */
+                ApplyFlexWechatPreAuthOutcome ApplyFlexWechatPreAuth(const Model::ApplyFlexWechatPreAuthRequest &request);
+                void ApplyFlexWechatPreAuthAsync(const Model::ApplyFlexWechatPreAuthRequest& request, const ApplyFlexWechatPreAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFlexWechatPreAuthOutcomeCallable ApplyFlexWechatPreAuthCallable(const Model::ApplyFlexWechatPreAuthRequest& request);
 
                 /**
                  *云企付-申请单笔交易回单
@@ -2354,6 +2373,15 @@ namespace TencentCloud
                 QueryFlexSettlementOrderListOutcome QueryFlexSettlementOrderList(const Model::QueryFlexSettlementOrderListRequest &request);
                 void QueryFlexSettlementOrderListAsync(const Model::QueryFlexSettlementOrderListRequest& request, const QueryFlexSettlementOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryFlexSettlementOrderListOutcomeCallable QueryFlexSettlementOrderListCallable(const Model::QueryFlexSettlementOrderListRequest& request);
+
+                /**
+                 *查询微工卡核身结果
+                 * @param req QueryFlexWechatAuthResultRequest
+                 * @return QueryFlexWechatAuthResultOutcome
+                 */
+                QueryFlexWechatAuthResultOutcome QueryFlexWechatAuthResult(const Model::QueryFlexWechatAuthResultRequest &request);
+                void QueryFlexWechatAuthResultAsync(const Model::QueryFlexWechatAuthResultRequest& request, const QueryFlexWechatAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexWechatAuthResultOutcomeCallable QueryFlexWechatAuthResultCallable(const Model::QueryFlexWechatAuthResultRequest& request);
 
                 /**
                  *聚鑫-查询会员资金交易信息列表

@@ -25,7 +25,8 @@ using namespace std;
 AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() :
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false)
+    m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_qosLevelHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string AssignPrivateIpAddressesRequest::ToJsonString() const
         string key = "SecondaryPrivateIpAddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_secondaryPrivateIpAddressCount, allocator);
+    }
+
+    if (m_qosLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QosLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void AssignPrivateIpAddressesRequest::SetSecondaryPrivateIpAddressCount(const ui
 bool AssignPrivateIpAddressesRequest::SecondaryPrivateIpAddressCountHasBeenSet() const
 {
     return m_secondaryPrivateIpAddressCountHasBeenSet;
+}
+
+string AssignPrivateIpAddressesRequest::GetQosLevel() const
+{
+    return m_qosLevel;
+}
+
+void AssignPrivateIpAddressesRequest::SetQosLevel(const string& _qosLevel)
+{
+    m_qosLevel = _qosLevel;
+    m_qosLevelHasBeenSet = true;
+}
+
+bool AssignPrivateIpAddressesRequest::QosLevelHasBeenSet() const
+{
+    return m_qosLevelHasBeenSet;
 }
 
 

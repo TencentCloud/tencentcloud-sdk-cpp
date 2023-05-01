@@ -642,6 +642,49 @@ ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(con
     return task->get_future();
 }
 
+ThpcClient::ModifyInitNodeScriptsOutcome ThpcClient::ModifyInitNodeScripts(const ModifyInitNodeScriptsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInitNodeScripts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInitNodeScriptsResponse rsp = ModifyInitNodeScriptsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInitNodeScriptsOutcome(rsp);
+        else
+            return ModifyInitNodeScriptsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInitNodeScriptsOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyInitNodeScriptsAsync(const ModifyInitNodeScriptsRequest& request, const ModifyInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInitNodeScripts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::ModifyInitNodeScriptsOutcomeCallable ThpcClient::ModifyInitNodeScriptsCallable(const ModifyInitNodeScriptsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInitNodeScriptsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInitNodeScripts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAutoScalingConfiguration");

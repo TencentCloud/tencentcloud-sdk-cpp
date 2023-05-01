@@ -29,6 +29,7 @@
 #include <tencentcloud/thpc/v20230321/model/StorageOption.h>
 #include <tencentcloud/thpc/v20230321/model/LoginNode.h>
 #include <tencentcloud/thpc/v20230321/model/Tag.h>
+#include <tencentcloud/thpc/v20230321/model/NodeScript.h>
 
 
 namespace TencentCloud
@@ -412,6 +413,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool AutoScalingTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点初始化脚本信息列表。
+                     * @return InitNodeScripts 节点初始化脚本信息列表。
+                     */
+                    std::vector<NodeScript> GetInitNodeScripts() const;
+
+                    /**
+                     * 设置节点初始化脚本信息列表。
+                     * @param InitNodeScripts 节点初始化脚本信息列表。
+                     */
+                    void SetInitNodeScripts(const std::vector<NodeScript>& _initNodeScripts);
+
+                    /**
+                     * 判断参数 InitNodeScripts 是否已赋值
+                     * @return InitNodeScripts 是否已赋值
+                     */
+                    bool InitNodeScriptsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +551,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::string m_autoScalingType;
                     bool m_autoScalingTypeHasBeenSet;
+
+                    /**
+                     * 节点初始化脚本信息列表。
+                     */
+                    std::vector<NodeScript> m_initNodeScripts;
+                    bool m_initNodeScriptsHasBeenSet;
 
                 };
             }

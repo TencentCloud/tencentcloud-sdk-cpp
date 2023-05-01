@@ -41,7 +41,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_loginNodeHasBeenSet(false),
     m_loginNodeCountHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoScalingTypeHasBeenSet(false)
+    m_autoScalingTypeHasBeenSet(false),
+    m_initNodeScriptsHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,21 @@ string CreateClusterRequest::ToJsonString() const
         string key = "AutoScalingType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoScalingType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initNodeScriptsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitNodeScripts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_initNodeScripts.begin(); itr != m_initNodeScripts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -533,6 +549,22 @@ void CreateClusterRequest::SetAutoScalingType(const string& _autoScalingType)
 bool CreateClusterRequest::AutoScalingTypeHasBeenSet() const
 {
     return m_autoScalingTypeHasBeenSet;
+}
+
+vector<NodeScript> CreateClusterRequest::GetInitNodeScripts() const
+{
+    return m_initNodeScripts;
+}
+
+void CreateClusterRequest::SetInitNodeScripts(const vector<NodeScript>& _initNodeScripts)
+{
+    m_initNodeScripts = _initNodeScripts;
+    m_initNodeScriptsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::InitNodeScriptsHasBeenSet() const
+{
+    return m_initNodeScriptsHasBeenSet;
 }
 
 

@@ -155,6 +155,28 @@ namespace TencentCloud
                      */
                     bool ExpansionNodeConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DesiredIdleNodeCapacity 队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDesiredIdleNodeCapacity() const;
+
+                    /**
+                     * 设置队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DesiredIdleNodeCapacity 队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDesiredIdleNodeCapacity(const int64_t& _desiredIdleNodeCapacity);
+
+                    /**
+                     * 判断参数 DesiredIdleNodeCapacity 是否已赋值
+                     * @return DesiredIdleNodeCapacity 是否已赋值
+                     */
+                    bool DesiredIdleNodeCapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::vector<ExpansionNodeConfigOverview> m_expansionNodeConfigs;
                     bool m_expansionNodeConfigsHasBeenSet;
+
+                    /**
+                     * 队列中期望的空闲节点数量（包含弹性节点和静态节点）。默认值：0。队列中，处于空闲状态的节点小于此值，集群会扩容弹性节点；处于空闲状态的节点大于此值，集群会缩容弹性节点。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_desiredIdleNodeCapacity;
+                    bool m_desiredIdleNodeCapacityHasBeenSet;
 
                 };
             }

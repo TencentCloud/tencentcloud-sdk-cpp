@@ -30,7 +30,8 @@ QueueConfig::QueueConfig() :
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
-    m_expansionNodeConfigsHasBeenSet(false)
+    m_expansionNodeConfigsHasBeenSet(false),
+    m_desiredIdleNodeCapacityHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome QueueConfig::Deserialize(const rapidjson::Value &value)
         m_expansionNodeConfigsHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredIdleNodeCapacity") && !value["DesiredIdleNodeCapacity"].IsNull())
+    {
+        if (!value["DesiredIdleNodeCapacity"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfig.DesiredIdleNodeCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredIdleNodeCapacity = value["DesiredIdleNodeCapacity"].GetInt64();
+        m_desiredIdleNodeCapacityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +285,14 @@ void QueueConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_desiredIdleNodeCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesiredIdleNodeCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredIdleNodeCapacity, allocator);
     }
 
 }
@@ -437,5 +456,21 @@ void QueueConfig::SetExpansionNodeConfigs(const vector<ExpansionNodeConfig>& _ex
 bool QueueConfig::ExpansionNodeConfigsHasBeenSet() const
 {
     return m_expansionNodeConfigsHasBeenSet;
+}
+
+int64_t QueueConfig::GetDesiredIdleNodeCapacity() const
+{
+    return m_desiredIdleNodeCapacity;
+}
+
+void QueueConfig::SetDesiredIdleNodeCapacity(const int64_t& _desiredIdleNodeCapacity)
+{
+    m_desiredIdleNodeCapacity = _desiredIdleNodeCapacity;
+    m_desiredIdleNodeCapacityHasBeenSet = true;
+}
+
+bool QueueConfig::DesiredIdleNodeCapacityHasBeenSet() const
+{
+    return m_desiredIdleNodeCapacityHasBeenSet;
 }
 

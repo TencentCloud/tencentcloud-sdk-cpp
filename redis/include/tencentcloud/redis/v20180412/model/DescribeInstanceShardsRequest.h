@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,22 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤掉从节信息
-                     * @return FilterSlave 是否过滤掉从节信息
+                     * 获取是否过滤掉从节信息。
+- true；过滤从节点。
+- false：不过滤。
+                     * @return FilterSlave 是否过滤掉从节信息。
+- true；过滤从节点。
+- false：不过滤。
                      */
                     bool GetFilterSlave() const;
 
                     /**
-                     * 设置是否过滤掉从节信息
-                     * @param FilterSlave 是否过滤掉从节信息
+                     * 设置是否过滤掉从节信息。
+- true；过滤从节点。
+- false：不过滤。
+                     * @param FilterSlave 是否过滤掉从节信息。
+- true；过滤从节点。
+- false：不过滤。
                      */
                     void SetFilterSlave(const bool& _filterSlave);
 
@@ -81,13 +89,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否过滤掉从节信息
+                     * 是否过滤掉从节信息。
+- true；过滤从节点。
+- false：不过滤。
                      */
                     bool m_filterSlave;
                     bool m_filterSlaveHasBeenSet;

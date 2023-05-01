@@ -51,6 +51,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h>
 
@@ -109,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQueuesResponse> DescribeQueuesOutcome;
                 typedef std::future<DescribeQueuesOutcome> DescribeQueuesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeQueuesRequest&, DescribeQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInitNodeScriptsResponse> ModifyInitNodeScriptsOutcome;
+                typedef std::future<ModifyInitNodeScriptsOutcome> ModifyInitNodeScriptsOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyInitNodeScriptsRequest&, ModifyInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInitNodeScriptsAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
                 typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
@@ -247,6 +252,15 @@ namespace TencentCloud
                 DescribeQueuesOutcome DescribeQueues(const Model::DescribeQueuesRequest &request);
                 void DescribeQueuesAsync(const Model::DescribeQueuesRequest& request, const DescribeQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQueuesOutcomeCallable DescribeQueuesCallable(const Model::DescribeQueuesRequest& request);
+
+                /**
+                 *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。
+                 * @param req ModifyInitNodeScriptsRequest
+                 * @return ModifyInitNodeScriptsOutcome
+                 */
+                ModifyInitNodeScriptsOutcome ModifyInitNodeScripts(const Model::ModifyInitNodeScriptsRequest &request);
+                void ModifyInitNodeScriptsAsync(const Model::ModifyInitNodeScriptsRequest& request, const ModifyInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInitNodeScriptsOutcomeCallable ModifyInitNodeScriptsCallable(const Model::ModifyInitNodeScriptsRequest& request);
 
                 /**
                  *本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。

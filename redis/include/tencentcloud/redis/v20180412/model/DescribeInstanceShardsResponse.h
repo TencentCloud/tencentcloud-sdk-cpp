@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例分片列表信息
-                     * @return InstanceShards 实例分片列表信息
+                     * 获取实例分片列表信息，包括：节点信息、节点ID、Key数量、使用容量、容量倾斜率等信息。
+                     * @return InstanceShards 实例分片列表信息，包括：节点信息、节点ID、Key数量、使用容量、容量倾斜率等信息。
                      */
                     std::vector<InstanceClusterShard> GetInstanceShards() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool InstanceShardsHasBeenSet() const;
 
                     /**
-                     * 获取实例分片节点总数
-                     * @return TotalCount 实例分片节点总数
+                     * 获取实例分片节点数量。
+                     * @return TotalCount 实例分片节点数量。
                      */
                     int64_t GetTotalCount() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例分片列表信息
+                     * 实例分片列表信息，包括：节点信息、节点ID、Key数量、使用容量、容量倾斜率等信息。
                      */
                     std::vector<InstanceClusterShard> m_instanceShards;
                     bool m_instanceShardsHasBeenSet;
 
                     /**
-                     * 实例分片节点总数
+                     * 实例分片节点数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

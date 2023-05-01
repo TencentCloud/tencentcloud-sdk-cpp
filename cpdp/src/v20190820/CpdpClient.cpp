@@ -427,6 +427,49 @@ CpdpClient::ApplyFlexSettlementOutcomeCallable CpdpClient::ApplyFlexSettlementCa
     return task->get_future();
 }
 
+CpdpClient::ApplyFlexWechatPreAuthOutcome CpdpClient::ApplyFlexWechatPreAuth(const ApplyFlexWechatPreAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyFlexWechatPreAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyFlexWechatPreAuthResponse rsp = ApplyFlexWechatPreAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyFlexWechatPreAuthOutcome(rsp);
+        else
+            return ApplyFlexWechatPreAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyFlexWechatPreAuthOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ApplyFlexWechatPreAuthAsync(const ApplyFlexWechatPreAuthRequest& request, const ApplyFlexWechatPreAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyFlexWechatPreAuth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ApplyFlexWechatPreAuthOutcomeCallable CpdpClient::ApplyFlexWechatPreAuthCallable(const ApplyFlexWechatPreAuthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyFlexWechatPreAuthOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyFlexWechatPreAuth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::ApplyOpenBankOrderDetailReceiptOutcome CpdpClient::ApplyOpenBankOrderDetailReceipt(const ApplyOpenBankOrderDetailReceiptRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyOpenBankOrderDetailReceipt");
@@ -5838,6 +5881,49 @@ CpdpClient::QueryFlexSettlementOrderListOutcomeCallable CpdpClient::QueryFlexSet
         [this, request]()
         {
             return this->QueryFlexSettlementOrderList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexWechatAuthResultOutcome CpdpClient::QueryFlexWechatAuthResult(const QueryFlexWechatAuthResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexWechatAuthResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexWechatAuthResultResponse rsp = QueryFlexWechatAuthResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexWechatAuthResultOutcome(rsp);
+        else
+            return QueryFlexWechatAuthResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexWechatAuthResultOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexWechatAuthResultAsync(const QueryFlexWechatAuthResultRequest& request, const QueryFlexWechatAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexWechatAuthResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexWechatAuthResultOutcomeCallable CpdpClient::QueryFlexWechatAuthResultCallable(const QueryFlexWechatAuthResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexWechatAuthResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexWechatAuthResult(request);
         }
     );
 

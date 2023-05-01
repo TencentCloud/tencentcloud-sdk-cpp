@@ -861,7 +861,7 @@ namespace TencentCloud
                 DescribeInstanceSecurityGroupOutcomeCallable DescribeInstanceSecurityGroupCallable(const Model::DescribeInstanceSecurityGroupRequest& request);
 
                 /**
-                 *获取集群版实例分片信息
+                 *本接口（DescribeInstanceShards）用于获取集群架构实例的分片信息。
                  * @param req DescribeInstanceShardsRequest
                  * @return DescribeInstanceShardsOutcome
                  */
@@ -879,7 +879,7 @@ namespace TencentCloud
                 DescribeInstanceZoneInfoOutcomeCallable DescribeInstanceZoneInfoCallable(const Model::DescribeInstanceZoneInfoRequest& request);
 
                 /**
-                 *查询Redis实例列表
+                 *本接口（DescribeInstances）用于查询Redis实例列表。
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */

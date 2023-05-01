@@ -29,6 +29,7 @@ CreateAndAttachNetworkInterfaceRequest::CreateAndAttachNetworkInterfaceRequest()
     m_instanceIdHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_qosLevelHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_networkInterfaceDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -96,6 +97,14 @@ string CreateAndAttachNetworkInterfaceRequest::ToJsonString() const
         string key = "SecondaryPrivateIpAddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_secondaryPrivateIpAddressCount, allocator);
+    }
+
+    if (m_qosLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QosLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityGroupIdsHasBeenSet)
@@ -244,6 +253,22 @@ void CreateAndAttachNetworkInterfaceRequest::SetSecondaryPrivateIpAddressCount(c
 bool CreateAndAttachNetworkInterfaceRequest::SecondaryPrivateIpAddressCountHasBeenSet() const
 {
     return m_secondaryPrivateIpAddressCountHasBeenSet;
+}
+
+string CreateAndAttachNetworkInterfaceRequest::GetQosLevel() const
+{
+    return m_qosLevel;
+}
+
+void CreateAndAttachNetworkInterfaceRequest::SetQosLevel(const string& _qosLevel)
+{
+    m_qosLevel = _qosLevel;
+    m_qosLevelHasBeenSet = true;
+}
+
+bool CreateAndAttachNetworkInterfaceRequest::QosLevelHasBeenSet() const
+{
+    return m_qosLevelHasBeenSet;
 }
 
 vector<string> CreateAndAttachNetworkInterfaceRequest::GetSecurityGroupIds() const

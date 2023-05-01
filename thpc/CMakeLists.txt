@@ -52,6 +52,8 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20230321/model/Tag.h
   include/tencentcloud/thpc/v20230321/model/LoginNode.h
+  include/tencentcloud/thpc/v20230321/model/NodeScript.h
+  include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h
   include/tencentcloud/thpc/v20230321/model/ManagerNodeOverview.h
   include/tencentcloud/thpc/v20230321/model/ManagerNode.h
   include/tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h
@@ -70,6 +72,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/QueueConfigOverview.h
   include/tencentcloud/thpc/v20230321/model/VirtualPrivateCloud.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfigOverview.h
+  include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h
   include/tencentcloud/thpc/v20230321/model/GooseFSxOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20230321/model/StorageOption.h
@@ -208,6 +211,8 @@ set(thpc_src
   src/v20230321/model/InstanceChargePrepaid.cpp
   src/v20230321/model/Tag.cpp
   src/v20230321/model/LoginNode.cpp
+  src/v20230321/model/NodeScript.cpp
+  src/v20230321/model/ModifyInitNodeScriptsResponse.cpp
   src/v20230321/model/ManagerNodeOverview.cpp
   src/v20230321/model/ManagerNode.cpp
   src/v20230321/model/DeleteClusterRequest.cpp
@@ -226,6 +231,7 @@ set(thpc_src
   src/v20230321/model/QueueConfigOverview.cpp
   src/v20230321/model/VirtualPrivateCloud.cpp
   src/v20230321/model/ExpansionNodeConfigOverview.cpp
+  src/v20230321/model/ModifyInitNodeScriptsRequest.cpp
   src/v20230321/model/GooseFSxOptionOverview.cpp
   src/v20230321/model/DescribeAutoScalingConfigurationRequest.cpp
   src/v20230321/model/StorageOption.cpp

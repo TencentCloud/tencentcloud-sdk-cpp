@@ -188,6 +188,24 @@ AVAILABLE：可用的
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     * @return QosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     */
+                    std::string GetQosLevel() const;
+
+                    /**
+                     * 设置IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     * @param QosLevel IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     */
+                    void SetQosLevel(const std::string& _qosLevel);
+
+                    /**
+                     * 判断参数 QosLevel 是否已赋值
+                     * @return QosLevel 是否已赋值
+                     */
+                    bool QosLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ AVAILABLE：可用的
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。
+                     */
+                    std::string m_qosLevel;
+                    bool m_qosLevelHasBeenSet;
 
                 };
             }

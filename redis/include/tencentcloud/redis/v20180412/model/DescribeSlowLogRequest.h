@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id。
-                     * @return InstanceId 实例Id。
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id。
-                     * @param InstanceId 实例Id。
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
+                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +65,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。
-                     * @return BeginTime 开始时间。
+                     * 获取预查询慢日志的起始时间。
+                     * @return BeginTime 预查询慢日志的起始时间。
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param BeginTime 开始时间。
+                     * 设置预查询慢日志的起始时间。
+                     * @param BeginTime 预查询慢日志的起始时间。
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
@@ -79,14 +83,14 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取预查询慢日志的结束时间。
+                     * @return EndTime 预查询慢日志的结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * 设置预查询慢日志的结束时间。
+                     * @param EndTime 预查询慢日志的结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -97,14 +101,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取慢查询平均执行时间阈值（单位：毫秒）。
-                     * @return MinQueryTime 慢查询平均执行时间阈值（单位：毫秒）。
+                     * 获取慢查询平均执行时间阈值，单位：毫秒。
+                     * @return MinQueryTime 慢查询平均执行时间阈值，单位：毫秒。
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
-                     * 设置慢查询平均执行时间阈值（单位：毫秒）。
-                     * @param MinQueryTime 慢查询平均执行时间阈值（单位：毫秒）。
+                     * 设置慢查询平均执行时间阈值，单位：毫秒。
+                     * @param MinQueryTime 慢查询平均执行时间阈值，单位：毫秒。
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
@@ -133,14 +137,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取慢查询条数的偏移量，取Limit整数倍。
-                     * @return Offset 慢查询条数的偏移量，取Limit整数倍。
+                     * 获取慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置慢查询条数的偏移量，取Limit整数倍。
-                     * @param Offset 慢查询条数的偏移量，取Limit整数倍。
+                     * 设置慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param Offset 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -171,25 +175,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id。
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间。
+                     * 预查询慢日志的起始时间。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 预查询慢日志的结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 慢查询平均执行时间阈值（单位：毫秒）。
+                     * 慢查询平均执行时间阈值，单位：毫秒。
                      */
                     int64_t m_minQueryTime;
                     bool m_minQueryTimeHasBeenSet;
@@ -201,7 +206,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 慢查询条数的偏移量，取Limit整数倍。
+                     * 慢查询条数的偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
