@@ -169,49 +169,6 @@ MsClient::CreateResourceInstancesOutcomeCallable MsClient::CreateResourceInstanc
     return task->get_future();
 }
 
-MsClient::CreateScanInstancesOutcome MsClient::CreateScanInstances(const CreateScanInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateScanInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateScanInstancesResponse rsp = CreateScanInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateScanInstancesOutcome(rsp);
-        else
-            return CreateScanInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateScanInstancesOutcome(outcome.GetError());
-    }
-}
-
-void MsClient::CreateScanInstancesAsync(const CreateScanInstancesRequest& request, const CreateScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateScanInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MsClient::CreateScanInstancesOutcomeCallable MsClient::CreateScanInstancesCallable(const CreateScanInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateScanInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateScanInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 MsClient::CreateShieldInstanceOutcome MsClient::CreateShieldInstance(const CreateShieldInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateShieldInstance");
@@ -291,49 +248,6 @@ MsClient::CreateShieldPlanInstanceOutcomeCallable MsClient::CreateShieldPlanInst
         [this, request]()
         {
             return this->CreateShieldPlanInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-MsClient::DeleteScanInstancesOutcome MsClient::DeleteScanInstances(const DeleteScanInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteScanInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteScanInstancesResponse rsp = DeleteScanInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteScanInstancesOutcome(rsp);
-        else
-            return DeleteScanInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteScanInstancesOutcome(outcome.GetError());
-    }
-}
-
-void MsClient::DeleteScanInstancesAsync(const DeleteScanInstancesRequest& request, const DeleteScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteScanInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MsClient::DeleteScanInstancesOutcomeCallable MsClient::DeleteScanInstancesCallable(const DeleteScanInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteScanInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteScanInstances(request);
         }
     );
 
@@ -463,92 +377,6 @@ MsClient::DescribeResourceInstancesOutcomeCallable MsClient::DescribeResourceIns
         [this, request]()
         {
             return this->DescribeResourceInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-MsClient::DescribeScanInstancesOutcome MsClient::DescribeScanInstances(const DescribeScanInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeScanInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeScanInstancesResponse rsp = DescribeScanInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeScanInstancesOutcome(rsp);
-        else
-            return DescribeScanInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeScanInstancesOutcome(outcome.GetError());
-    }
-}
-
-void MsClient::DescribeScanInstancesAsync(const DescribeScanInstancesRequest& request, const DescribeScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MsClient::DescribeScanInstancesOutcomeCallable MsClient::DescribeScanInstancesCallable(const DescribeScanInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeScanInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-MsClient::DescribeScanResultsOutcome MsClient::DescribeScanResults(const DescribeScanResultsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeScanResults");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeScanResultsResponse rsp = DescribeScanResultsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeScanResultsOutcome(rsp);
-        else
-            return DescribeScanResultsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeScanResultsOutcome(outcome.GetError());
-    }
-}
-
-void MsClient::DescribeScanResultsAsync(const DescribeScanResultsRequest& request, const DescribeScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeScanResults(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MsClient::DescribeScanResultsOutcomeCallable MsClient::DescribeScanResultsCallable(const DescribeScanResultsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeScanResultsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeScanResults(request);
         }
     );
 

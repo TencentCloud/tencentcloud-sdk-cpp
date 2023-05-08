@@ -22,7 +22,8 @@ using namespace std;
 
 AlertListData::AlertListData() :
     m_totalHasBeenSet(false),
-    m_alertListHasBeenSet(false)
+    m_alertListHasBeenSet(false),
+    m_aggregationsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome AlertListData::Deserialize(const rapidjson::Value &value)
         m_alertListHasBeenSet = true;
     }
 
+    if (value.HasMember("Aggregations") && !value["Aggregations"].IsNull())
+    {
+        if (!value["Aggregations"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertListData.Aggregations` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aggregations.Deserialize(value["Aggregations"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aggregationsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +107,15 @@ void AlertListData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_aggregationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Aggregations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aggregations.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -124,5 +151,21 @@ void AlertListData::SetAlertList(const vector<AlertType>& _alertList)
 bool AlertListData::AlertListHasBeenSet() const
 {
     return m_alertListHasBeenSet;
+}
+
+AlertListAggregations AlertListData::GetAggregations() const
+{
+    return m_aggregations;
+}
+
+void AlertListData::SetAggregations(const AlertListAggregations& _aggregations)
+{
+    m_aggregations = _aggregations;
+    m_aggregationsHasBeenSet = true;
+}
+
+bool AlertListData::AggregationsHasBeenSet() const
+{
+    return m_aggregationsHasBeenSet;
 }
 

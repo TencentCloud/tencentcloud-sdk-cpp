@@ -29,6 +29,7 @@ ServeParticipant::ServeParticipant() :
     m_recordIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_transferFromHasBeenSet(false),
+    m_transferFromTypeHasBeenSet(false),
     m_transferToHasBeenSet(false),
     m_transferToTypeHasBeenSet(false),
     m_skillGroupIdHasBeenSet(false),
@@ -124,6 +125,16 @@ CoreInternalOutcome ServeParticipant::Deserialize(const rapidjson::Value &value)
         }
         m_transferFrom = string(value["TransferFrom"].GetString());
         m_transferFromHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferFromType") && !value["TransferFromType"].IsNull())
+    {
+        if (!value["TransferFromType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServeParticipant.TransferFromType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferFromType = string(value["TransferFromType"].GetString());
+        m_transferFromTypeHasBeenSet = true;
     }
 
     if (value.HasMember("TransferTo") && !value["TransferTo"].IsNull())
@@ -285,6 +296,14 @@ void ServeParticipant::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TransferFrom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transferFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferFromTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferFromType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferFromType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transferToHasBeenSet)
@@ -488,6 +507,22 @@ void ServeParticipant::SetTransferFrom(const string& _transferFrom)
 bool ServeParticipant::TransferFromHasBeenSet() const
 {
     return m_transferFromHasBeenSet;
+}
+
+string ServeParticipant::GetTransferFromType() const
+{
+    return m_transferFromType;
+}
+
+void ServeParticipant::SetTransferFromType(const string& _transferFromType)
+{
+    m_transferFromType = _transferFromType;
+    m_transferFromTypeHasBeenSet = true;
+}
+
+bool ServeParticipant::TransferFromTypeHasBeenSet() const
+{
+    return m_transferFromTypeHasBeenSet;
 }
 
 string ServeParticipant::GetTransferTo() const

@@ -989,6 +989,138 @@ namespace TencentCloud
                      */
                     bool AssetVulNumHasBeenSet() const;
 
+                    /**
+                     * 获取资产事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetEventNum 资产事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAssetEventNum() const;
+
+                    /**
+                     * 设置资产事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetEventNum 资产事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetEventNum(const int64_t& _assetEventNum);
+
+                    /**
+                     * 判断参数 AssetEventNum 是否已赋值
+                     * @return AssetEventNum 是否已赋值
+                     */
+                    bool AssetEventNumHasBeenSet() const;
+
+                    /**
+                     * 获取cspm风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetCspmRiskNum cspm风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAssetCspmRiskNum() const;
+
+                    /**
+                     * 设置cspm风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetCspmRiskNum cspm风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetCspmRiskNum(const int64_t& _assetCspmRiskNum);
+
+                    /**
+                     * 判断参数 AssetCspmRiskNum 是否已赋值
+                     * @return AssetCspmRiskNum 是否已赋值
+                     */
+                    bool AssetCspmRiskNumHasBeenSet() const;
+
+                    /**
+                     * 获取资产删除时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SsaAssetDeleteTime 资产删除时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSsaAssetDeleteTime() const;
+
+                    /**
+                     * 设置资产删除时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SsaAssetDeleteTime 资产删除时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSsaAssetDeleteTime(const std::string& _ssaAssetDeleteTime);
+
+                    /**
+                     * 判断参数 SsaAssetDeleteTime 是否已赋值
+                     * @return SsaAssetDeleteTime 是否已赋值
+                     */
+                    bool SsaAssetDeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取费用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 费用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置费用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 费用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetRegionName 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssetRegionName() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetRegionName 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetRegionName(const std::string& _assetRegionName);
+
+                    /**
+                     * 判断参数 AssetRegionName 是否已赋值
+                     * @return AssetRegionName 是否已赋值
+                     */
+                    bool AssetRegionNameHasBeenSet() const;
+
+                    /**
+                     * 获取vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetVpcid vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssetVpcid() const;
+
+                    /**
+                     * 设置vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetVpcid vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetVpcid(const std::string& _assetVpcid);
+
+                    /**
+                     * 判断参数 AssetVpcid 是否已赋值
+                     * @return AssetVpcid 是否已赋值
+                     */
+                    bool AssetVpcidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1293,6 +1425,48 @@ namespace TencentCloud
                      */
                     int64_t m_assetVulNum;
                     bool m_assetVulNumHasBeenSet;
+
+                    /**
+                     * 资产事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_assetEventNum;
+                    bool m_assetEventNumHasBeenSet;
+
+                    /**
+                     * cspm风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_assetCspmRiskNum;
+                    bool m_assetCspmRiskNumHasBeenSet;
+
+                    /**
+                     * 资产删除时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ssaAssetDeleteTime;
+                    bool m_ssaAssetDeleteTimeHasBeenSet;
+
+                    /**
+                     * 费用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetRegionName;
+                    bool m_assetRegionNameHasBeenSet;
+
+                    /**
+                     * vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetVpcid;
+                    bool m_assetVpcidHasBeenSet;
 
                 };
             }

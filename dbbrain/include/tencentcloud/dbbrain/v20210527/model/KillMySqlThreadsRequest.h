@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     * @return RecordHistory 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     */
+                    bool GetRecordHistory() const;
+
+                    /**
+                     * 设置默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     * @param RecordHistory 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     */
+                    void SetRecordHistory(const bool& _recordHistory);
+
+                    /**
+                     * 判断参数 RecordHistory 是否已赋值
+                     * @return RecordHistory 是否已赋值
+                     */
+                    bool RecordHistoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 默认是ture, 记录下kill的记录，为了加快kill，可设置为false。
+                     */
+                    bool m_recordHistory;
+                    bool m_recordHistoryHasBeenSet;
 
                 };
             }

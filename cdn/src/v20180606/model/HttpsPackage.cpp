@@ -38,7 +38,8 @@ HttpsPackage::HttpsPackage() :
     m_areaHasBeenSet(false),
     m_contractExtensionHasBeenSet(false),
     m_extensionAvailableHasBeenSet(false),
-    m_extensionModeHasBeenSet(false)
+    m_extensionModeHasBeenSet(false),
+    m_autoExtensionHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome HttpsPackage::Deserialize(const rapidjson::Value &value)
         m_extensionModeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoExtension") && !value["AutoExtension"].IsNull())
+    {
+        if (!value["AutoExtension"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HttpsPackage.AutoExtension` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExtension = value["AutoExtension"].GetBool();
+        m_autoExtensionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void HttpsPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ExtensionMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_extensionMode, allocator);
+    }
+
+    if (m_autoExtensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExtension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExtension, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void HttpsPackage::SetExtensionMode(const uint64_t& _extensionMode)
 bool HttpsPackage::ExtensionModeHasBeenSet() const
 {
     return m_extensionModeHasBeenSet;
+}
+
+bool HttpsPackage::GetAutoExtension() const
+{
+    return m_autoExtension;
+}
+
+void HttpsPackage::SetAutoExtension(const bool& _autoExtension)
+{
+    m_autoExtension = _autoExtension;
+    m_autoExtensionHasBeenSet = true;
+}
+
+bool HttpsPackage::AutoExtensionHasBeenSet() const
+{
+    return m_autoExtensionHasBeenSet;
 }
 

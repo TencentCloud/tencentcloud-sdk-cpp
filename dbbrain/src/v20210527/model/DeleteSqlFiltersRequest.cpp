@@ -25,7 +25,8 @@ using namespace std;
 DeleteSqlFiltersRequest::DeleteSqlFiltersRequest() :
     m_instanceIdHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_filterIdsHasBeenSet(false)
+    m_filterIdsHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DeleteSqlFiltersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DeleteSqlFiltersRequest::SetFilterIds(const vector<int64_t>& _filterIds)
 bool DeleteSqlFiltersRequest::FilterIdsHasBeenSet() const
 {
     return m_filterIdsHasBeenSet;
+}
+
+string DeleteSqlFiltersRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DeleteSqlFiltersRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DeleteSqlFiltersRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@ CreateFlowSignUrlRequest::CreateFlowSignUrlRequest() :
     m_flowIdHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
     m_operatorHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_organizationHasBeenSet(false)
 {
 }
@@ -67,6 +68,15 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_organizationHasBeenSet)
@@ -132,6 +142,22 @@ void CreateFlowSignUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateFlowSignUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+Agent CreateFlowSignUrlRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowSignUrlRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowSignUrlRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 OrganizationInfo CreateFlowSignUrlRequest::GetOrganization() const

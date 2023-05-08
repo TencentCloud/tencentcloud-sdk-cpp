@@ -31,7 +31,9 @@ Metric::Metric() :
     m_metricConfigHasBeenSet(false),
     m_isAdvancedHasBeenSet(false),
     m_isOpenHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_operatorsHasBeenSet(false),
+    m_periodsHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,39 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
         m_productIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Operators") && !value["Operators"].IsNull())
+    {
+        if (!value["Operators"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Metric.Operators` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Operators"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Operator item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_operators.push_back(item);
+        }
+        m_operatorsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Periods") && !value["Periods"].IsNull())
+    {
+        if (!value["Periods"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Metric.Periods` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Periods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_periods.push_back((*itr).GetInt64());
+        }
+        m_periodsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +294,34 @@ void Metric::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_productId, allocator);
+    }
+
+    if (m_operatorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operators";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_operators.begin(); itr != m_operators.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_periodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Periods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_periods.begin(); itr != m_periods.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -438,5 +501,37 @@ void Metric::SetProductId(const int64_t& _productId)
 bool Metric::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+vector<Operator> Metric::GetOperators() const
+{
+    return m_operators;
+}
+
+void Metric::SetOperators(const vector<Operator>& _operators)
+{
+    m_operators = _operators;
+    m_operatorsHasBeenSet = true;
+}
+
+bool Metric::OperatorsHasBeenSet() const
+{
+    return m_operatorsHasBeenSet;
+}
+
+vector<int64_t> Metric::GetPeriods() const
+{
+    return m_periods;
+}
+
+void Metric::SetPeriods(const vector<int64_t>& _periods)
+{
+    m_periods = _periods;
+    m_periodsHasBeenSet = true;
+}
+
+bool Metric::PeriodsHasBeenSet() const
+{
+    return m_periodsHasBeenSet;
 }
 

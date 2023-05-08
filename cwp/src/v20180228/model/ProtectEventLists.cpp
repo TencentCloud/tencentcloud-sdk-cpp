@@ -30,7 +30,8 @@ ProtectEventLists::ProtectEventLists() :
     m_restoreTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_quuidHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome ProtectEventLists::Deserialize(const rapidjson::Value &value
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Quuid") && !value["Quuid"].IsNull())
+    {
+        if (!value["Quuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectEventLists.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quuid = string(value["Quuid"].GetString());
+        m_quuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void ProtectEventLists::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void ProtectEventLists::SetMachineExtraInfo(const MachineExtraInfo& _machineExtr
 bool ProtectEventLists::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string ProtectEventLists::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void ProtectEventLists::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool ProtectEventLists::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
 }
 

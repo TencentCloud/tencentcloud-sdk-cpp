@@ -22,7 +22,9 @@ using namespace std;
 
 DeviceUser::DeviceUser() :
     m_userIdHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_familyIdHasBeenSet(false),
+    m_familyNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome DeviceUser::Deserialize(const rapidjson::Value &value)
         m_roleHasBeenSet = true;
     }
 
+    if (value.HasMember("FamilyId") && !value["FamilyId"].IsNull())
+    {
+        if (!value["FamilyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceUser.FamilyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_familyId = string(value["FamilyId"].GetString());
+        m_familyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FamilyName") && !value["FamilyName"].IsNull())
+    {
+        if (!value["FamilyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceUser.FamilyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_familyName = string(value["FamilyName"].GetString());
+        m_familyNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void DeviceUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_role, allocator);
+    }
+
+    if (m_familyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FamilyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_familyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_familyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FamilyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_familyName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void DeviceUser::SetRole(const int64_t& _role)
 bool DeviceUser::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+string DeviceUser::GetFamilyId() const
+{
+    return m_familyId;
+}
+
+void DeviceUser::SetFamilyId(const string& _familyId)
+{
+    m_familyId = _familyId;
+    m_familyIdHasBeenSet = true;
+}
+
+bool DeviceUser::FamilyIdHasBeenSet() const
+{
+    return m_familyIdHasBeenSet;
+}
+
+string DeviceUser::GetFamilyName() const
+{
+    return m_familyName;
+}
+
+void DeviceUser::SetFamilyName(const string& _familyName)
+{
+    m_familyName = _familyName;
+    m_familyNameHasBeenSet = true;
+}
+
+bool DeviceUser::FamilyNameHasBeenSet() const
+{
+    return m_familyNameHasBeenSet;
 }
 

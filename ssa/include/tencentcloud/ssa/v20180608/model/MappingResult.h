@@ -443,6 +443,50 @@ namespace TencentCloud
                      */
                     bool SecurityStatusHasBeenSet() const;
 
+                    /**
+                     * 获取处置建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisposalRecommendation 处置建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDisposalRecommendation() const;
+
+                    /**
+                     * 设置处置建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisposalRecommendation 处置建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisposalRecommendation(const int64_t& _disposalRecommendation);
+
+                    /**
+                     * 判断参数 DisposalRecommendation 是否已赋值
+                     * @return DisposalRecommendation 是否已赋值
+                     */
+                    bool DisposalRecommendationHasBeenSet() const;
+
+                    /**
+                     * 获取测绘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MappingType 测绘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMappingType() const;
+
+                    /**
+                     * 设置测绘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MappingType 测绘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMappingType(const std::string& _mappingType);
+
+                    /**
+                     * 判断参数 MappingType 是否已赋值
+                     * @return MappingType 是否已赋值
+                     */
+                    bool MappingTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +614,20 @@ namespace TencentCloud
                      */
                     std::vector<SecurityStatus> m_securityStatus;
                     bool m_securityStatusHasBeenSet;
+
+                    /**
+                     * 处置建议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_disposalRecommendation;
+                    bool m_disposalRecommendationHasBeenSet;
+
+                    /**
+                     * 测绘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mappingType;
+                    bool m_mappingTypeHasBeenSet;
 
                 };
             }

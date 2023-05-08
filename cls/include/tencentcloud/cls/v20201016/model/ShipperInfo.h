@@ -317,6 +317,136 @@ namespace TencentCloud
                      */
                     bool FilenameModeHasBeenSet() const;
 
+                    /**
+                     * 获取投递数据范围的开始时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 投递数据范围的开始时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置投递数据范围的开始时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTime 投递数据范围的开始时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取投递数据范围的结束时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 投递数据范围的结束时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置投递数据范围的结束时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndTime 投递数据范围的结束时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetProgress() const;
+
+                    /**
+                     * 设置历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProgress(const double& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
+                     * 获取历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRemainTime() const;
+
+                    /**
+                     * 设置历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemainTime(const int64_t& _remainTime);
+
+                    /**
+                     * 判断参数 RemainTime 是否已赋值
+                     * @return RemainTime 是否已赋值
+                     */
+                    bool RemainTimeHasBeenSet() const;
+
+                    /**
+                     * 获取历史任务状态：
+0：实时任务
+1：任务准备中
+2：任务运行中
+3：任务运行异常
+4：任务运行结束
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HistoryStatus 历史任务状态：
+0：实时任务
+1：任务准备中
+2：任务运行中
+3：任务运行异常
+4：任务运行结束
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHistoryStatus() const;
+
+                    /**
+                     * 设置历史任务状态：
+0：实时任务
+1：任务准备中
+2：任务运行中
+3：任务运行异常
+4：任务运行结束
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HistoryStatus 历史任务状态：
+0：实时任务
+1：任务准备中
+2：任务运行中
+3：任务运行异常
+4：任务运行结束
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHistoryStatus(const int64_t& _historyStatus);
+
+                    /**
+                     * 判断参数 HistoryStatus 是否已赋值
+                     * @return HistoryStatus 是否已赋值
+                     */
+                    bool HistoryStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +536,46 @@ namespace TencentCloud
                      */
                     uint64_t m_filenameMode;
                     bool m_filenameModeHasBeenSet;
+
+                    /**
+                     * 投递数据范围的开始时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 投递数据范围的结束时间点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
+                     * 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remainTime;
+                    bool m_remainTimeHasBeenSet;
+
+                    /**
+                     * 历史任务状态：
+0：实时任务
+1：任务准备中
+2：任务运行中
+3：任务运行异常
+4：任务运行结束
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_historyStatus;
+                    bool m_historyStatusHasBeenSet;
 
                 };
             }

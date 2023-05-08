@@ -597,6 +597,160 @@ namespace TencentCloud
                      */
                     bool VictimAssetSubHasBeenSet() const;
 
+                    /**
+                     * 获取资产vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VictimAssetVpc 资产vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVictimAssetVpc() const;
+
+                    /**
+                     * 设置资产vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VictimAssetVpc 资产vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVictimAssetVpc(const std::string& _victimAssetVpc);
+
+                    /**
+                     * 判断参数 VictimAssetVpc 是否已赋值
+                     * @return VictimAssetVpc 是否已赋值
+                     */
+                    bool VictimAssetVpcHasBeenSet() const;
+
+                    /**
+                     * 获取时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Timestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTimestamp() const;
+
+                    /**
+                     * 设置时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Timestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimestamp(const std::string& _timestamp);
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     */
+                    bool TimestampHasBeenSet() const;
+
+                    /**
+                     * 获取资产组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetGroupName 资产组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAssetGroupName() const;
+
+                    /**
+                     * 设置资产组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetGroupName 资产组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetGroupName(const std::vector<std::string>& _assetGroupName);
+
+                    /**
+                     * 判断参数 AssetGroupName 是否已赋值
+                     * @return AssetGroupName 是否已赋值
+                     */
+                    bool AssetGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取资产项目名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetProjectName 资产项目名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssetProjectName() const;
+
+                    /**
+                     * 设置资产项目名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetProjectName 资产项目名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetProjectName(const std::string& _assetProjectName);
+
+                    /**
+                     * 判断参数 AssetProjectName 是否已赋值
+                     * @return AssetProjectName 是否已赋值
+                     */
+                    bool AssetProjectNameHasBeenSet() const;
+
+                    /**
+                     * 获取失陷资产内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VictimAssetContent 失陷资产内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetVictimAssetContent() const;
+
+                    /**
+                     * 设置失陷资产内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VictimAssetContent 失陷资产内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVictimAssetContent(const std::vector<std::string>& _victimAssetContent);
+
+                    /**
+                     * 判断参数 VictimAssetContent 是否已赋值
+                     * @return VictimAssetContent 是否已赋值
+                     */
+                    bool VictimAssetContentHasBeenSet() const;
+
+                    /**
+                     * 获取错误报告状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WrongReportStatus 错误报告状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWrongReportStatus() const;
+
+                    /**
+                     * 设置错误报告状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WrongReportStatus 错误报告状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWrongReportStatus(const int64_t& _wrongReportStatus);
+
+                    /**
+                     * 判断参数 WrongReportStatus 是否已赋值
+                     * @return WrongReportStatus 是否已赋值
+                     */
+                    bool WrongReportStatusHasBeenSet() const;
+
+                    /**
+                     * 获取错误报告Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WrongReportConditionId 错误报告Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWrongReportConditionId() const;
+
+                    /**
+                     * 设置错误报告Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WrongReportConditionId 错误报告Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWrongReportConditionId(const int64_t& _wrongReportConditionId);
+
+                    /**
+                     * 判断参数 WrongReportConditionId 是否已赋值
+                     * @return WrongReportConditionId 是否已赋值
+                     */
+                    bool WrongReportConditionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -773,6 +927,55 @@ namespace TencentCloud
                      */
                     std::string m_victimAssetSub;
                     bool m_victimAssetSubHasBeenSet;
+
+                    /**
+                     * 资产vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_victimAssetVpc;
+                    bool m_victimAssetVpcHasBeenSet;
+
+                    /**
+                     * 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timestamp;
+                    bool m_timestampHasBeenSet;
+
+                    /**
+                     * 资产组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_assetGroupName;
+                    bool m_assetGroupNameHasBeenSet;
+
+                    /**
+                     * 资产项目名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetProjectName;
+                    bool m_assetProjectNameHasBeenSet;
+
+                    /**
+                     * 失陷资产内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_victimAssetContent;
+                    bool m_victimAssetContentHasBeenSet;
+
+                    /**
+                     * 错误报告状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_wrongReportStatus;
+                    bool m_wrongReportStatusHasBeenSet;
+
+                    /**
+                     * 错误报告Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_wrongReportConditionId;
+                    bool m_wrongReportConditionIdHasBeenSet;
 
                 };
             }

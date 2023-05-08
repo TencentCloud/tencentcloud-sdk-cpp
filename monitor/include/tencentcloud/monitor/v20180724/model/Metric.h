@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/MetricConfig.h>
+#include <tencentcloud/monitor/v20180724/model/Operator.h>
 
 
 namespace TencentCloud
@@ -261,6 +262,50 @@ namespace TencentCloud
                      */
                     bool ProductIdHasBeenSet() const;
 
+                    /**
+                     * 获取匹配运算符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Operators 匹配运算符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Operator> GetOperators() const;
+
+                    /**
+                     * 设置匹配运算符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Operators 匹配运算符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperators(const std::vector<Operator>& _operators);
+
+                    /**
+                     * 判断参数 Operators 是否已赋值
+                     * @return Operators 是否已赋值
+                     */
+                    bool OperatorsHasBeenSet() const;
+
+                    /**
+                     * 获取指标触发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Periods 指标触发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetPeriods() const;
+
+                    /**
+                     * 设置指标触发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Periods 指标触发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPeriods(const std::vector<int64_t>& _periods);
+
+                    /**
+                     * 判断参数 Periods 是否已赋值
+                     * @return Periods 是否已赋值
+                     */
+                    bool PeriodsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +377,20 @@ namespace TencentCloud
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
+
+                    /**
+                     * 匹配运算符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Operator> m_operators;
+                    bool m_operatorsHasBeenSet;
+
+                    /**
+                     * 指标触发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_periods;
+                    bool m_periodsHasBeenSet;
 
                 };
             }

@@ -22,9 +22,10 @@ using namespace std;
 
 FlowApproverUrlInfo::FlowApproverUrlInfo() :
     m_signUrlHasBeenSet(false),
-    m_mobileHasBeenSet(false),
+    m_approverTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_approverTypeHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_longUrlHasBeenSet(false)
 {
 }
 
@@ -43,14 +44,14 @@ CoreInternalOutcome FlowApproverUrlInfo::Deserialize(const rapidjson::Value &val
         m_signUrlHasBeenSet = true;
     }
 
-    if (value.HasMember("Mobile") && !value["Mobile"].IsNull())
+    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
     {
-        if (!value["Mobile"].IsString())
+        if (!value["ApproverType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfo.Mobile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfo.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_mobile = string(value["Mobile"].GetString());
-        m_mobileHasBeenSet = true;
+        m_approverType = string(value["ApproverType"].GetString());
+        m_approverTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -63,14 +64,24 @@ CoreInternalOutcome FlowApproverUrlInfo::Deserialize(const rapidjson::Value &val
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
+    if (value.HasMember("Mobile") && !value["Mobile"].IsNull())
     {
-        if (!value["ApproverType"].IsString())
+        if (!value["Mobile"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfo.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfo.Mobile` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_approverType = string(value["ApproverType"].GetString());
-        m_approverTypeHasBeenSet = true;
+        m_mobile = string(value["Mobile"].GetString());
+        m_mobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("LongUrl") && !value["LongUrl"].IsNull())
+    {
+        if (!value["LongUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfo.LongUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_longUrl = string(value["LongUrl"].GetString());
+        m_longUrlHasBeenSet = true;
     }
 
 
@@ -88,12 +99,12 @@ void FlowApproverUrlInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_signUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_mobileHasBeenSet)
+    if (m_approverTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Mobile";
+        string key = "ApproverType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -104,12 +115,20 @@ void FlowApproverUrlInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_approverTypeHasBeenSet)
+    if (m_mobileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverType";
+        string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -131,20 +150,20 @@ bool FlowApproverUrlInfo::SignUrlHasBeenSet() const
     return m_signUrlHasBeenSet;
 }
 
-string FlowApproverUrlInfo::GetMobile() const
+string FlowApproverUrlInfo::GetApproverType() const
 {
-    return m_mobile;
+    return m_approverType;
 }
 
-void FlowApproverUrlInfo::SetMobile(const string& _mobile)
+void FlowApproverUrlInfo::SetApproverType(const string& _approverType)
 {
-    m_mobile = _mobile;
-    m_mobileHasBeenSet = true;
+    m_approverType = _approverType;
+    m_approverTypeHasBeenSet = true;
 }
 
-bool FlowApproverUrlInfo::MobileHasBeenSet() const
+bool FlowApproverUrlInfo::ApproverTypeHasBeenSet() const
 {
-    return m_mobileHasBeenSet;
+    return m_approverTypeHasBeenSet;
 }
 
 string FlowApproverUrlInfo::GetName() const
@@ -163,19 +182,35 @@ bool FlowApproverUrlInfo::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string FlowApproverUrlInfo::GetApproverType() const
+string FlowApproverUrlInfo::GetMobile() const
 {
-    return m_approverType;
+    return m_mobile;
 }
 
-void FlowApproverUrlInfo::SetApproverType(const string& _approverType)
+void FlowApproverUrlInfo::SetMobile(const string& _mobile)
 {
-    m_approverType = _approverType;
-    m_approverTypeHasBeenSet = true;
+    m_mobile = _mobile;
+    m_mobileHasBeenSet = true;
 }
 
-bool FlowApproverUrlInfo::ApproverTypeHasBeenSet() const
+bool FlowApproverUrlInfo::MobileHasBeenSet() const
 {
-    return m_approverTypeHasBeenSet;
+    return m_mobileHasBeenSet;
+}
+
+string FlowApproverUrlInfo::GetLongUrl() const
+{
+    return m_longUrl;
+}
+
+void FlowApproverUrlInfo::SetLongUrl(const string& _longUrl)
+{
+    m_longUrl = _longUrl;
+    m_longUrlHasBeenSet = true;
+}
+
+bool FlowApproverUrlInfo::LongUrlHasBeenSet() const
+{
+    return m_longUrlHasBeenSet;
 }
 

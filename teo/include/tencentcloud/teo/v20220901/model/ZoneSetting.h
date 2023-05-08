@@ -43,6 +43,7 @@
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
 #include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
+#include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
 
 
 namespace TencentCloud
@@ -527,6 +528,28 @@ namespace TencentCloud
                      */
                     bool ImageOptimizeHasBeenSet() const;
 
+                    /**
+                     * 获取中国大陆加速优化配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccelerateMainland 中国大陆加速优化配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccelerateMainland GetAccelerateMainland() const;
+
+                    /**
+                     * 设置中国大陆加速优化配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccelerateMainland 中国大陆加速优化配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
+
+                    /**
+                     * 判断参数 AccelerateMainland 是否已赋值
+                     * @return AccelerateMainland 是否已赋值
+                     */
+                    bool AccelerateMainlandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -675,6 +698,13 @@ namespace TencentCloud
                      */
                     ImageOptimize m_imageOptimize;
                     bool m_imageOptimizeHasBeenSet;
+
+                    /**
+                     * 中国大陆加速优化配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccelerateMainland m_accelerateMainland;
+                    bool m_accelerateMainlandHasBeenSet;
 
                 };
             }

@@ -250,7 +250,6 @@ namespace TencentCloud
 
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
-
                  * @param req DescribeGroupsRequest
                  * @return DescribeGroupsOutcome
                  */

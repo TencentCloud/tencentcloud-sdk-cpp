@@ -27,7 +27,8 @@ DescribeSqlFiltersRequest::DescribeSqlFiltersRequest() :
     m_filterIdsHasBeenSet(false),
     m_statusesHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string DescribeSqlFiltersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +183,22 @@ void DescribeSqlFiltersRequest::SetLimit(const int64_t& _limit)
 bool DescribeSqlFiltersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSqlFiltersRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeSqlFiltersRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeSqlFiltersRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

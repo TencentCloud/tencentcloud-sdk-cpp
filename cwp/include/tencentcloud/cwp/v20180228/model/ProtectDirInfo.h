@@ -208,6 +208,94 @@ namespace TencentCloud
                      */
                     bool AutoRestoreSwitchStatusHasBeenSet() const;
 
+                    /**
+                     * 获取首次开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstProtectTime 首次开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFirstProtectTime() const;
+
+                    /**
+                     * 设置首次开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FirstProtectTime 首次开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFirstProtectTime(const std::string& _firstProtectTime);
+
+                    /**
+                     * 判断参数 FirstProtectTime 是否已赋值
+                     * @return FirstProtectTime 是否已赋值
+                     */
+                    bool FirstProtectTimeHasBeenSet() const;
+
+                    /**
+                     * 获取最近开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestProtectTime 最近开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestProtectTime() const;
+
+                    /**
+                     * 设置最近开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestProtectTime 最近开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestProtectTime(const std::string& _latestProtectTime);
+
+                    /**
+                     * 判断参数 LatestProtectTime 是否已赋值
+                     * @return LatestProtectTime 是否已赋值
+                     */
+                    bool LatestProtectTimeHasBeenSet() const;
+
+                    /**
+                     * 获取防护文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectFileType 防护文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtectFileType() const;
+
+                    /**
+                     * 设置防护文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProtectFileType 防护文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtectFileType(const std::string& _protectFileType);
+
+                    /**
+                     * 判断参数 ProtectFileType 是否已赋值
+                     * @return ProtectFileType 是否已赋值
+                     */
+                    bool ProtectFileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取防护文件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectFilesCount 防护文件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProtectFilesCount() const;
+
+                    /**
+                     * 设置防护文件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProtectFilesCount 防护文件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtectFilesCount(const int64_t& _protectFilesCount);
+
+                    /**
+                     * 判断参数 ProtectFilesCount 是否已赋值
+                     * @return ProtectFilesCount 是否已赋值
+                     */
+                    bool ProtectFilesCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +351,34 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRestoreSwitchStatus;
                     bool m_autoRestoreSwitchStatusHasBeenSet;
+
+                    /**
+                     * 首次开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_firstProtectTime;
+                    bool m_firstProtectTimeHasBeenSet;
+
+                    /**
+                     * 最近开启防护时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestProtectTime;
+                    bool m_latestProtectTimeHasBeenSet;
+
+                    /**
+                     * 防护文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protectFileType;
+                    bool m_protectFileTypeHasBeenSet;
+
+                    /**
+                     * 防护文件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_protectFilesCount;
+                    bool m_protectFilesCountHasBeenSet;
 
                 };
             }

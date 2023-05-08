@@ -117,6 +117,8 @@
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
@@ -344,6 +346,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeContainerOCRResponse> RecognizeContainerOCROutcome;
                 typedef std::future<RecognizeContainerOCROutcome> RecognizeContainerOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeContainerOCRRequest&, RecognizeContainerOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeContainerOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
+                typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
@@ -1203,6 +1208,17 @@ namespace TencentCloud
                 RecognizeContainerOCROutcome RecognizeContainerOCR(const Model::RecognizeContainerOCRRequest &request);
                 void RecognizeContainerOCRAsync(const Model::RecognizeContainerOCRRequest& request, const RecognizeContainerOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeContainerOCROutcomeCallable RecognizeContainerOCRCallable(const Model::RecognizeContainerOCRRequest& request);
+
+                /**
+                 *本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。
+
+默认接口请求频率限制：5次/秒。
+                 * @param req RecognizeGeneralInvoiceRequest
+                 * @return RecognizeGeneralInvoiceOutcome
+                 */
+                RecognizeGeneralInvoiceOutcome RecognizeGeneralInvoice(const Model::RecognizeGeneralInvoiceRequest &request);
+                void RecognizeGeneralInvoiceAsync(const Model::RecognizeGeneralInvoiceRequest& request, const RecognizeGeneralInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
 
                 /**
                  *本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。

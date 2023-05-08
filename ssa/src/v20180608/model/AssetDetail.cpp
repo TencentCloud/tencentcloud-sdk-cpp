@@ -65,7 +65,13 @@ AssetDetail::AssetDetail() :
     m_sSHRiskHasBeenSet(false),
     m_rDPRiskHasBeenSet(false),
     m_eventRiskHasBeenSet(false),
-    m_assetVulNumHasBeenSet(false)
+    m_assetVulNumHasBeenSet(false),
+    m_assetEventNumHasBeenSet(false),
+    m_assetCspmRiskNumHasBeenSet(false),
+    m_ssaAssetDeleteTimeHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_assetRegionNameHasBeenSet(false),
+    m_assetVpcidHasBeenSet(false)
 {
 }
 
@@ -552,6 +558,66 @@ CoreInternalOutcome AssetDetail::Deserialize(const rapidjson::Value &value)
         m_assetVulNumHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetEventNum") && !value["AssetEventNum"].IsNull())
+    {
+        if (!value["AssetEventNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetEventNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetEventNum = value["AssetEventNum"].GetInt64();
+        m_assetEventNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetCspmRiskNum") && !value["AssetCspmRiskNum"].IsNull())
+    {
+        if (!value["AssetCspmRiskNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetCspmRiskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetCspmRiskNum = value["AssetCspmRiskNum"].GetInt64();
+        m_assetCspmRiskNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("SsaAssetDeleteTime") && !value["SsaAssetDeleteTime"].IsNull())
+    {
+        if (!value["SsaAssetDeleteTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.SsaAssetDeleteTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ssaAssetDeleteTime = string(value["SsaAssetDeleteTime"].GetString());
+        m_ssaAssetDeleteTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
+    {
+        if (!value["ChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeType = string(value["ChargeType"].GetString());
+        m_chargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetRegionName") && !value["AssetRegionName"].IsNull())
+    {
+        if (!value["AssetRegionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetRegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetRegionName = string(value["AssetRegionName"].GetString());
+        m_assetRegionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetVpcid") && !value["AssetVpcid"].IsNull())
+    {
+        if (!value["AssetVpcid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDetail.AssetVpcid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetVpcid = string(value["AssetVpcid"].GetString());
+        m_assetVpcidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -954,6 +1020,54 @@ void AssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AssetVulNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_assetVulNum, allocator);
+    }
+
+    if (m_assetEventNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetEventNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_assetEventNum, allocator);
+    }
+
+    if (m_assetCspmRiskNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetCspmRiskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_assetCspmRiskNum, allocator);
+    }
+
+    if (m_ssaAssetDeleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SsaAssetDeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ssaAssetDeleteTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetRegionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetRegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetRegionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetVpcidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetVpcid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetVpcid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1677,5 +1791,101 @@ void AssetDetail::SetAssetVulNum(const int64_t& _assetVulNum)
 bool AssetDetail::AssetVulNumHasBeenSet() const
 {
     return m_assetVulNumHasBeenSet;
+}
+
+int64_t AssetDetail::GetAssetEventNum() const
+{
+    return m_assetEventNum;
+}
+
+void AssetDetail::SetAssetEventNum(const int64_t& _assetEventNum)
+{
+    m_assetEventNum = _assetEventNum;
+    m_assetEventNumHasBeenSet = true;
+}
+
+bool AssetDetail::AssetEventNumHasBeenSet() const
+{
+    return m_assetEventNumHasBeenSet;
+}
+
+int64_t AssetDetail::GetAssetCspmRiskNum() const
+{
+    return m_assetCspmRiskNum;
+}
+
+void AssetDetail::SetAssetCspmRiskNum(const int64_t& _assetCspmRiskNum)
+{
+    m_assetCspmRiskNum = _assetCspmRiskNum;
+    m_assetCspmRiskNumHasBeenSet = true;
+}
+
+bool AssetDetail::AssetCspmRiskNumHasBeenSet() const
+{
+    return m_assetCspmRiskNumHasBeenSet;
+}
+
+string AssetDetail::GetSsaAssetDeleteTime() const
+{
+    return m_ssaAssetDeleteTime;
+}
+
+void AssetDetail::SetSsaAssetDeleteTime(const string& _ssaAssetDeleteTime)
+{
+    m_ssaAssetDeleteTime = _ssaAssetDeleteTime;
+    m_ssaAssetDeleteTimeHasBeenSet = true;
+}
+
+bool AssetDetail::SsaAssetDeleteTimeHasBeenSet() const
+{
+    return m_ssaAssetDeleteTimeHasBeenSet;
+}
+
+string AssetDetail::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void AssetDetail::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool AssetDetail::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+string AssetDetail::GetAssetRegionName() const
+{
+    return m_assetRegionName;
+}
+
+void AssetDetail::SetAssetRegionName(const string& _assetRegionName)
+{
+    m_assetRegionName = _assetRegionName;
+    m_assetRegionNameHasBeenSet = true;
+}
+
+bool AssetDetail::AssetRegionNameHasBeenSet() const
+{
+    return m_assetRegionNameHasBeenSet;
+}
+
+string AssetDetail::GetAssetVpcid() const
+{
+    return m_assetVpcid;
+}
+
+void AssetDetail::SetAssetVpcid(const string& _assetVpcid)
+{
+    m_assetVpcid = _assetVpcid;
+    m_assetVpcidHasBeenSet = true;
+}
+
+bool AssetDetail::AssetVpcidHasBeenSet() const
+{
+    return m_assetVpcidHasBeenSet;
 }
 

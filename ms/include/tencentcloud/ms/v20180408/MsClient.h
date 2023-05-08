@@ -29,24 +29,16 @@
 #include <tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateResourceInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateResourceInstancesResponse.h>
-#include <tencentcloud/ms/v20180408/model/CreateScanInstancesRequest.h>
-#include <tencentcloud/ms/v20180408/model/CreateScanInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateShieldInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateShieldInstanceResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateShieldPlanInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateShieldPlanInstanceResponse.h>
-#include <tencentcloud/ms/v20180408/model/DeleteScanInstancesRequest.h>
-#include <tencentcloud/ms/v20180408/model/DeleteScanInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DeleteShieldInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DeleteShieldInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesResponse.h>
-#include <tencentcloud/ms/v20180408/model/DescribeScanInstancesRequest.h>
-#include <tencentcloud/ms/v20180408/model/DescribeScanInstancesResponse.h>
-#include <tencentcloud/ms/v20180408/model/DescribeScanResultsRequest.h>
-#include <tencentcloud/ms/v20180408/model/DescribeScanResultsResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceRequest.h>
@@ -80,18 +72,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceInstancesResponse> CreateResourceInstancesOutcome;
                 typedef std::future<CreateResourceInstancesOutcome> CreateResourceInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateResourceInstancesRequest&, CreateResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateScanInstancesResponse> CreateScanInstancesOutcome;
-                typedef std::future<CreateScanInstancesOutcome> CreateScanInstancesOutcomeCallable;
-                typedef std::function<void(const MsClient*, const Model::CreateScanInstancesRequest&, CreateScanInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateShieldInstanceResponse> CreateShieldInstanceOutcome;
                 typedef std::future<CreateShieldInstanceOutcome> CreateShieldInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateShieldInstanceRequest&, CreateShieldInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateShieldInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateShieldPlanInstanceResponse> CreateShieldPlanInstanceOutcome;
                 typedef std::future<CreateShieldPlanInstanceOutcome> CreateShieldPlanInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateShieldPlanInstanceRequest&, CreateShieldPlanInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateShieldPlanInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteScanInstancesResponse> DeleteScanInstancesOutcome;
-                typedef std::future<DeleteScanInstancesOutcome> DeleteScanInstancesOutcomeCallable;
-                typedef std::function<void(const MsClient*, const Model::DeleteScanInstancesRequest&, DeleteScanInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScanInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShieldInstancesResponse> DeleteShieldInstancesOutcome;
                 typedef std::future<DeleteShieldInstancesOutcome> DeleteShieldInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DeleteShieldInstancesRequest&, DeleteShieldInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShieldInstancesAsyncHandler;
@@ -101,12 +87,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceInstancesResponse> DescribeResourceInstancesOutcome;
                 typedef std::future<DescribeResourceInstancesOutcome> DescribeResourceInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeResourceInstancesRequest&, DescribeResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScanInstancesResponse> DescribeScanInstancesOutcome;
-                typedef std::future<DescribeScanInstancesOutcome> DescribeScanInstancesOutcomeCallable;
-                typedef std::function<void(const MsClient*, const Model::DescribeScanInstancesRequest&, DescribeScanInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeScanResultsResponse> DescribeScanResultsOutcome;
-                typedef std::future<DescribeScanResultsOutcome> DescribeScanResultsOutcomeCallable;
-                typedef std::function<void(const MsClient*, const Model::DescribeScanResultsRequest&, DescribeScanResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShieldInstancesResponse> DescribeShieldInstancesOutcome;
                 typedef std::future<DescribeShieldInstancesOutcome> DescribeShieldInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeShieldInstancesRequest&, DescribeShieldInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShieldInstancesAsyncHandler;
@@ -153,17 +133,6 @@ namespace TencentCloud
                 CreateResourceInstancesOutcomeCallable CreateResourceInstancesCallable(const Model::CreateResourceInstancesRequest& request);
 
                 /**
-                 *由于该产品是线上免费使用产品，无企业版用户，升级迭代成本高及人力安排等原因，安全测评产品不再接入新用户，故下线。
-
-用户通过该接口批量提交应用进行应用扫描，扫描后需通过DescribeScanResults接口查询扫描结果
-                 * @param req CreateScanInstancesRequest
-                 * @return CreateScanInstancesOutcome
-                 */
-                CreateScanInstancesOutcome CreateScanInstances(const Model::CreateScanInstancesRequest &request);
-                void CreateScanInstancesAsync(const Model::CreateScanInstancesRequest& request, const CreateScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateScanInstancesOutcomeCallable CreateScanInstancesCallable(const Model::CreateScanInstancesRequest& request);
-
-                /**
                  *用户通过该接口提交应用进行应用加固，加固后需通过DescribeShieldResult接口查询加固结果。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）
                  * @param req CreateShieldInstanceRequest
                  * @return CreateShieldInstanceOutcome
@@ -180,17 +149,6 @@ namespace TencentCloud
                 CreateShieldPlanInstanceOutcome CreateShieldPlanInstance(const Model::CreateShieldPlanInstanceRequest &request);
                 void CreateShieldPlanInstanceAsync(const Model::CreateShieldPlanInstanceRequest& request, const CreateShieldPlanInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateShieldPlanInstanceOutcomeCallable CreateShieldPlanInstanceCallable(const Model::CreateShieldPlanInstanceRequest& request);
-
-                /**
-                 *由于该产品是线上免费使用产品，无企业版用户，升级迭代成本高及人力安排等原因，安全测评产品不再接入新用户，故下线。
-
-删除一个或者多个app扫描信息
-                 * @param req DeleteScanInstancesRequest
-                 * @return DeleteScanInstancesOutcome
-                 */
-                DeleteScanInstancesOutcome DeleteScanInstances(const Model::DeleteScanInstancesRequest &request);
-                void DeleteScanInstancesAsync(const Model::DeleteScanInstancesRequest& request, const DeleteScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteScanInstancesOutcomeCallable DeleteScanInstancesCallable(const Model::DeleteScanInstancesRequest& request);
 
                 /**
                  *删除一个或者多个app加固信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）
@@ -218,29 +176,6 @@ namespace TencentCloud
                 DescribeResourceInstancesOutcome DescribeResourceInstances(const Model::DescribeResourceInstancesRequest &request);
                 void DescribeResourceInstancesAsync(const Model::DescribeResourceInstancesRequest& request, const DescribeResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceInstancesOutcomeCallable DescribeResourceInstancesCallable(const Model::DescribeResourceInstancesRequest& request);
-
-                /**
-                 *由于该产品是线上免费使用产品，无企业版用户，升级迭代成本高及人力安排等原因，安全测评产品不再接入新用户，故下线。
-
-本接口用于查看app列表。
-可以通过指定任务唯一标识ItemId来查询指定app的详细信息，或通过设定过滤器来查询满足过滤条件的app的详细信息。 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个app信息。
-                 * @param req DescribeScanInstancesRequest
-                 * @return DescribeScanInstancesOutcome
-                 */
-                DescribeScanInstancesOutcome DescribeScanInstances(const Model::DescribeScanInstancesRequest &request);
-                void DescribeScanInstancesAsync(const Model::DescribeScanInstancesRequest& request, const DescribeScanInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScanInstancesOutcomeCallable DescribeScanInstancesCallable(const Model::DescribeScanInstancesRequest& request);
-
-                /**
-                 *由于该产品是线上免费使用产品，无企业版用户，升级迭代成本高及人力安排等原因，安全测评产品不再接入新用户，故下线。
-
-用户通过CreateScanInstances接口提交应用进行风险批量扫描后，用此接口批量获取风险详细信息,包含漏洞信息，广告信息，插件信息和病毒信息
-                 * @param req DescribeScanResultsRequest
-                 * @return DescribeScanResultsOutcome
-                 */
-                DescribeScanResultsOutcome DescribeScanResults(const Model::DescribeScanResultsRequest &request);
-                void DescribeScanResultsAsync(const Model::DescribeScanResultsRequest& request, const DescribeScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeScanResultsOutcomeCallable DescribeScanResultsCallable(const Model::DescribeScanResultsRequest& request);
 
                 /**
                  *本接口用于查看app列表。

@@ -402,6 +402,28 @@ global：全球
                      */
                     bool ExtensionModeHasBeenSet() const;
 
+                    /**
+                     * 获取HTTPS请求包是否自动续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoExtension HTTPS请求包是否自动续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoExtension() const;
+
+                    /**
+                     * 设置HTTPS请求包是否自动续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoExtension HTTPS请求包是否自动续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoExtension(const bool& _autoExtension);
+
+                    /**
+                     * 判断参数 AutoExtension 是否已赋值
+                     * @return AutoExtension 是否已赋值
+                     */
+                    bool AutoExtensionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +541,13 @@ global：全球
                      */
                     uint64_t m_extensionMode;
                     bool m_extensionModeHasBeenSet;
+
+                    /**
+                     * HTTPS请求包是否自动续订
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoExtension;
+                    bool m_autoExtensionHasBeenSet;
 
                 };
             }

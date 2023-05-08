@@ -28,6 +28,7 @@
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/CFSConfig.h>
 #include <tencentcloud/tione/v20211111/model/HDFSConfig.h>
+#include <tencentcloud/tione/v20211111/model/GooseFS.h>
 
 
 namespace TencentCloud
@@ -178,6 +179,28 @@ namespace TencentCloud
                      */
                     bool HDFSSourceHasBeenSet() const;
 
+                    /**
+                     * 获取配饰GooseFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GooseFSSource 配饰GooseFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GooseFS GetGooseFSSource() const;
+
+                    /**
+                     * 设置配饰GooseFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GooseFSSource 配饰GooseFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGooseFSSource(const GooseFS& _gooseFSSource);
+
+                    /**
+                     * 判断参数 GooseFSSource 是否已赋值
+                     * @return GooseFSSource 是否已赋值
+                     */
+                    bool GooseFSSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +243,13 @@ namespace TencentCloud
                      */
                     HDFSConfig m_hDFSSource;
                     bool m_hDFSSourceHasBeenSet;
+
+                    /**
+                     * 配饰GooseFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GooseFS m_gooseFSSource;
+                    bool m_gooseFSSourceHasBeenSet;
 
                 };
             }

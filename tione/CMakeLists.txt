@@ -100,6 +100,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupRequest.h
+  include/tencentcloud/tione/v20211111/model/RDMAConfig.h
   include/tencentcloud/tione/v20211111/model/TrainingMetric.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h
   include/tencentcloud/tione/v20211111/model/SpecUnit.h
@@ -147,6 +148,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ModelAccEngineVersion.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/Spec.h
+  include/tencentcloud/tione/v20211111/model/GooseFS.h
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionInfo.h
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/ResourceGroup.h
@@ -366,6 +368,7 @@ set(tione_src
   src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
   src/v20211111/model/DescribeTrainingFrameworksResponse.cpp
   src/v20211111/model/DescribeModelServiceGroupRequest.cpp
+  src/v20211111/model/RDMAConfig.cpp
   src/v20211111/model/TrainingMetric.cpp
   src/v20211111/model/DescribeTrainingModelVersionsRequest.cpp
   src/v20211111/model/SpecUnit.cpp
@@ -413,6 +416,7 @@ set(tione_src
   src/v20211111/model/ModelAccEngineVersion.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/Spec.cpp
+  src/v20211111/model/GooseFS.cpp
   src/v20211111/model/TextLabelDistributionInfo.cpp
   src/v20211111/model/Option.cpp
   src/v20211111/model/ResourceGroup.cpp

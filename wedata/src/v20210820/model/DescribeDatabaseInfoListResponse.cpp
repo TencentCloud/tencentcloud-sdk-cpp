@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-DescribeDatabaseInfoListResponse::DescribeDatabaseInfoListResponse()
+DescribeDatabaseInfoListResponse::DescribeDatabaseInfoListResponse() :
+    m_databaseInfoHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeDatabaseInfoListResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("DatabaseInfo") && !rsp["DatabaseInfo"].IsNull())
+    {
+        if (!rsp["DatabaseInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DatabaseInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DatabaseInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_databaseInfo.push_back(item);
+        }
+        m_databaseInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeDatabaseInfoListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_databaseInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_databaseInfo.begin(); itr != m_databaseInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeDatabaseInfoListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<DatabaseInfo> DescribeDatabaseInfoListResponse::GetDatabaseInfo() const
+{
+    return m_databaseInfo;
+}
+
+bool DescribeDatabaseInfoListResponse::DatabaseInfoHasBeenSet() const
+{
+    return m_databaseInfoHasBeenSet;
+}
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取客户端session信息，从SDK请求中获得
-                     * @return ClientSession 客户端session信息，从SDK请求中获得
+                     * 获取客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     * @return ClientSession 客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
                      */
                     std::string GetClientSession() const;
 
                     /**
-                     * 设置客户端session信息，从SDK请求中获得
-                     * @param ClientSession 客户端session信息，从SDK请求中获得
+                     * 设置客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     * @param ClientSession 客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
                      */
                     void SetClientSession(const std::string& _clientSession);
 
@@ -122,6 +122,58 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                      */
                     bool RunModeHasBeenSet() const;
 
+                    /**
+                     * 获取【多人互动】房主用户ID，在多人互动模式下为必填字段。
+如果该用户是房主，HostUserId需要和UserId保持一致；
+如果该用户非房主，HostUserId需要填写房主的HostUserId。
+                     * @return HostUserId 【多人互动】房主用户ID，在多人互动模式下为必填字段。
+如果该用户是房主，HostUserId需要和UserId保持一致；
+如果该用户非房主，HostUserId需要填写房主的HostUserId。
+                     */
+                    std::string GetHostUserId() const;
+
+                    /**
+                     * 设置【多人互动】房主用户ID，在多人互动模式下为必填字段。
+如果该用户是房主，HostUserId需要和UserId保持一致；
+如果该用户非房主，HostUserId需要填写房主的HostUserId。
+                     * @param HostUserId 【多人互动】房主用户ID，在多人互动模式下为必填字段。
+如果该用户是房主，HostUserId需要和UserId保持一致；
+如果该用户非房主，HostUserId需要填写房主的HostUserId。
+                     */
+                    void SetHostUserId(const std::string& _hostUserId);
+
+                    /**
+                     * 判断参数 HostUserId 是否已赋值
+                     * @return HostUserId 是否已赋值
+                     */
+                    bool HostUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取【多人互动】角色。
+Player：玩家（可通过键鼠等操作应用）
+Viewer：观察者（只能观看，无法操作）
+                     * @return Role 【多人互动】角色。
+Player：玩家（可通过键鼠等操作应用）
+Viewer：观察者（只能观看，无法操作）
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置【多人互动】角色。
+Player：玩家（可通过键鼠等操作应用）
+Viewer：观察者（只能观看，无法操作）
+                     * @param Role 【多人互动】角色。
+Player：玩家（可通过键鼠等操作应用）
+Viewer：观察者（只能观看，无法操作）
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -137,7 +189,7 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 客户端session信息，从SDK请求中获得
+                     * 客户端session信息，从SDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
                      */
                     std::string m_clientSession;
                     bool m_clientSessionHasBeenSet;
@@ -149,6 +201,22 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
+
+                    /**
+                     * 【多人互动】房主用户ID，在多人互动模式下为必填字段。
+如果该用户是房主，HostUserId需要和UserId保持一致；
+如果该用户非房主，HostUserId需要填写房主的HostUserId。
+                     */
+                    std::string m_hostUserId;
+                    bool m_hostUserIdHasBeenSet;
+
+                    /**
+                     * 【多人互动】角色。
+Player：玩家（可通过键鼠等操作应用）
+Viewer：观察者（只能观看，无法操作）
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

@@ -180,14 +180,14 @@ namespace TencentCloud
                     bool AttachmentsHasBeenSet() const;
 
                     /**
-                     * 获取退订选项 1: 加入退订链接 0: 不加入退订链接
-                     * @return Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * 获取退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语
+                     * @return Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语
                      */
                     std::string GetUnsubscribe() const;
 
                     /**
-                     * 设置退订选项 1: 加入退订链接 0: 不加入退订链接
-                     * @param Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * 设置退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语
+                     * @param Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语
                      */
                     void SetUnsubscribe(const std::string& _unsubscribe);
 
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_attachmentsHasBeenSet;
 
                     /**
-                     * 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;

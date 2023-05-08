@@ -29,7 +29,11 @@ ProtectDirInfo::ProtectDirInfo() :
     m_idHasBeenSet(false),
     m_protectStatusHasBeenSet(false),
     m_protectExceptionHasBeenSet(false),
-    m_autoRestoreSwitchStatusHasBeenSet(false)
+    m_autoRestoreSwitchStatusHasBeenSet(false),
+    m_firstProtectTimeHasBeenSet(false),
+    m_latestProtectTimeHasBeenSet(false),
+    m_protectFileTypeHasBeenSet(false),
+    m_protectFilesCountHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,46 @@ CoreInternalOutcome ProtectDirInfo::Deserialize(const rapidjson::Value &value)
         m_autoRestoreSwitchStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstProtectTime") && !value["FirstProtectTime"].IsNull())
+    {
+        if (!value["FirstProtectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectDirInfo.FirstProtectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstProtectTime = string(value["FirstProtectTime"].GetString());
+        m_firstProtectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestProtectTime") && !value["LatestProtectTime"].IsNull())
+    {
+        if (!value["LatestProtectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectDirInfo.LatestProtectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestProtectTime = string(value["LatestProtectTime"].GetString());
+        m_latestProtectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtectFileType") && !value["ProtectFileType"].IsNull())
+    {
+        if (!value["ProtectFileType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectDirInfo.ProtectFileType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectFileType = string(value["ProtectFileType"].GetString());
+        m_protectFileTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtectFilesCount") && !value["ProtectFilesCount"].IsNull())
+    {
+        if (!value["ProtectFilesCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectDirInfo.ProtectFilesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectFilesCount = value["ProtectFilesCount"].GetInt64();
+        m_protectFilesCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +249,38 @@ void ProtectDirInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AutoRestoreSwitchStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRestoreSwitchStatus, allocator);
+    }
+
+    if (m_firstProtectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstProtectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstProtectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestProtectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestProtectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestProtectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectFileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectFileType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectFileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectFilesCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectFilesCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectFilesCount, allocator);
     }
 
 }
@@ -352,5 +428,69 @@ void ProtectDirInfo::SetAutoRestoreSwitchStatus(const uint64_t& _autoRestoreSwit
 bool ProtectDirInfo::AutoRestoreSwitchStatusHasBeenSet() const
 {
     return m_autoRestoreSwitchStatusHasBeenSet;
+}
+
+string ProtectDirInfo::GetFirstProtectTime() const
+{
+    return m_firstProtectTime;
+}
+
+void ProtectDirInfo::SetFirstProtectTime(const string& _firstProtectTime)
+{
+    m_firstProtectTime = _firstProtectTime;
+    m_firstProtectTimeHasBeenSet = true;
+}
+
+bool ProtectDirInfo::FirstProtectTimeHasBeenSet() const
+{
+    return m_firstProtectTimeHasBeenSet;
+}
+
+string ProtectDirInfo::GetLatestProtectTime() const
+{
+    return m_latestProtectTime;
+}
+
+void ProtectDirInfo::SetLatestProtectTime(const string& _latestProtectTime)
+{
+    m_latestProtectTime = _latestProtectTime;
+    m_latestProtectTimeHasBeenSet = true;
+}
+
+bool ProtectDirInfo::LatestProtectTimeHasBeenSet() const
+{
+    return m_latestProtectTimeHasBeenSet;
+}
+
+string ProtectDirInfo::GetProtectFileType() const
+{
+    return m_protectFileType;
+}
+
+void ProtectDirInfo::SetProtectFileType(const string& _protectFileType)
+{
+    m_protectFileType = _protectFileType;
+    m_protectFileTypeHasBeenSet = true;
+}
+
+bool ProtectDirInfo::ProtectFileTypeHasBeenSet() const
+{
+    return m_protectFileTypeHasBeenSet;
+}
+
+int64_t ProtectDirInfo::GetProtectFilesCount() const
+{
+    return m_protectFilesCount;
+}
+
+void ProtectDirInfo::SetProtectFilesCount(const int64_t& _protectFilesCount)
+{
+    m_protectFilesCount = _protectFilesCount;
+    m_protectFilesCountHasBeenSet = true;
+}
+
+bool ProtectDirInfo::ProtectFilesCountHasBeenSet() const
+{
+    return m_protectFilesCountHasBeenSet;
 }
 

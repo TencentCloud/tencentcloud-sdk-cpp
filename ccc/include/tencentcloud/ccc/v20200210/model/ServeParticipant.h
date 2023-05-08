@@ -223,6 +223,28 @@ namespace TencentCloud
                     bool TransferFromHasBeenSet() const;
 
                     /**
+                     * 获取转接来源参与者类型，取值与 Type 一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransferFromType 转接来源参与者类型，取值与 Type 一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTransferFromType() const;
+
+                    /**
+                     * 设置转接来源参与者类型，取值与 Type 一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TransferFromType 转接来源参与者类型，取值与 Type 一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransferFromType(const std::string& _transferFromType);
+
+                    /**
+                     * 判断参数 TransferFromType 是否已赋值
+                     * @return TransferFromType 是否已赋值
+                     */
+                    bool TransferFromTypeHasBeenSet() const;
+
+                    /**
                      * 获取转接去向坐席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferTo 转接去向坐席信息
@@ -477,6 +499,13 @@ namespace TencentCloud
                      */
                     std::string m_transferFrom;
                     bool m_transferFromHasBeenSet;
+
+                    /**
+                     * 转接来源参与者类型，取值与 Type 一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_transferFromType;
+                    bool m_transferFromTypeHasBeenSet;
 
                     /**
                      * 转接去向坐席信息

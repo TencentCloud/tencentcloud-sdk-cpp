@@ -34,7 +34,8 @@ LoginWhiteCombinedInfo::LoginWhiteCombinedInfo() :
     m_idHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_locationsHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome LoginWhiteCombinedInfo::Deserialize(const rapidjson::Value &
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("Locations") && !value["Locations"].IsNull())
+    {
+        if (!value["Locations"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginWhiteCombinedInfo.Locations` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_locations = string(value["Locations"].GetString());
+        m_locationsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void LoginWhiteCombinedInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Locations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_locations.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void LoginWhiteCombinedInfo::SetUuid(const string& _uuid)
 bool LoginWhiteCombinedInfo::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string LoginWhiteCombinedInfo::GetLocations() const
+{
+    return m_locations;
+}
+
+void LoginWhiteCombinedInfo::SetLocations(const string& _locations)
+{
+    m_locations = _locations;
+    m_locationsHasBeenSet = true;
+}
+
+bool LoginWhiteCombinedInfo::LocationsHasBeenSet() const
+{
+    return m_locationsHasBeenSet;
 }
 

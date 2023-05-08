@@ -28,7 +28,8 @@ ResourceConfigInfo::ResourceConfigInfo() :
     m_gpuHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
-    m_instanceTypeAliasHasBeenSet(false)
+    m_instanceTypeAliasHasBeenSet(false),
+    m_rDMAConfigHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome ResourceConfigInfo::Deserialize(const rapidjson::Value &valu
         m_instanceTypeAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("RDMAConfig") && !value["RDMAConfig"].IsNull())
+    {
+        if (!value["RDMAConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceConfigInfo.RDMAConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rDMAConfig.Deserialize(value["RDMAConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rDMAConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +204,15 @@ void ResourceConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "InstanceTypeAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceTypeAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rDMAConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RDMAConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rDMAConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -317,5 +344,21 @@ void ResourceConfigInfo::SetInstanceTypeAlias(const string& _instanceTypeAlias)
 bool ResourceConfigInfo::InstanceTypeAliasHasBeenSet() const
 {
     return m_instanceTypeAliasHasBeenSet;
+}
+
+RDMAConfig ResourceConfigInfo::GetRDMAConfig() const
+{
+    return m_rDMAConfig;
+}
+
+void ResourceConfigInfo::SetRDMAConfig(const RDMAConfig& _rDMAConfig)
+{
+    m_rDMAConfig = _rDMAConfig;
+    m_rDMAConfigHasBeenSet = true;
+}
+
+bool ResourceConfigInfo::RDMAConfigHasBeenSet() const
+{
+    return m_rDMAConfigHasBeenSet;
 }
 

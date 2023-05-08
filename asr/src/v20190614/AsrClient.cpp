@@ -642,6 +642,49 @@ AsrClient::GetCustomizationListOutcomeCallable AsrClient::GetCustomizationListCa
     return task->get_future();
 }
 
+AsrClient::GetModelInfoOutcome AsrClient::GetModelInfo(const GetModelInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetModelInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetModelInfoResponse rsp = GetModelInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetModelInfoOutcome(rsp);
+        else
+            return GetModelInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetModelInfoOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetModelInfoAsync(const GetModelInfoRequest& request, const GetModelInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetModelInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetModelInfoOutcomeCallable AsrClient::GetModelInfoCallable(const GetModelInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetModelInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetModelInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::ModifyCustomizationOutcome AsrClient::ModifyCustomization(const ModifyCustomizationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomization");

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/DatabaseInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取数据库列表
+                     * @return DatabaseInfo 数据库列表
+                     */
+                    std::vector<DatabaseInfo> GetDatabaseInfo() const;
+
+                    /**
+                     * 判断参数 DatabaseInfo 是否已赋值
+                     * @return DatabaseInfo 是否已赋值
+                     */
+                    bool DatabaseInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 数据库列表
+                     */
+                    std::vector<DatabaseInfo> m_databaseInfo;
+                    bool m_databaseInfoHasBeenSet;
 
                 };
             }

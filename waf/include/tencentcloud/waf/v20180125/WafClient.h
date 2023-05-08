@@ -373,8 +373,6 @@ namespace TencentCloud
 
                 /**
                  *删除域名规则白名单
-
-
                  * @param req DeleteDomainWhiteRulesRequest
                  * @return DeleteDomainWhiteRulesOutcome
                  */

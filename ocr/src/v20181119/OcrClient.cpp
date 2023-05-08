@@ -2061,6 +2061,49 @@ OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCR
     return task->get_future();
 }
 
+OcrClient::RecognizeGeneralInvoiceOutcome OcrClient::RecognizeGeneralInvoice(const RecognizeGeneralInvoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeGeneralInvoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeGeneralInvoiceResponse rsp = RecognizeGeneralInvoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeGeneralInvoiceOutcome(rsp);
+        else
+            return RecognizeGeneralInvoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeGeneralInvoiceOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeGeneralInvoiceAsync(const RecognizeGeneralInvoiceRequest& request, const RecognizeGeneralInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeGeneralInvoice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeGeneralInvoiceOutcomeCallable OcrClient::RecognizeGeneralInvoiceCallable(const RecognizeGeneralInvoiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeGeneralInvoiceOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeGeneralInvoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeHealthCodeOCROutcome OcrClient::RecognizeHealthCodeOCR(const RecognizeHealthCodeOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeHealthCodeOCR");

@@ -26,7 +26,8 @@ DataConfig::DataConfig() :
     m_dataSetSourceHasBeenSet(false),
     m_cOSSourceHasBeenSet(false),
     m_cFSSourceHasBeenSet(false),
-    m_hDFSSourceHasBeenSet(false)
+    m_hDFSSourceHasBeenSet(false),
+    m_gooseFSSourceHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_hDFSSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSSource") && !value["GooseFSSource"].IsNull())
+    {
+        if (!value["GooseFSSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.GooseFSSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gooseFSSource.Deserialize(value["GooseFSSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gooseFSSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +198,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hDFSSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gooseFSSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gooseFSSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -279,5 +306,21 @@ void DataConfig::SetHDFSSource(const HDFSConfig& _hDFSSource)
 bool DataConfig::HDFSSourceHasBeenSet() const
 {
     return m_hDFSSourceHasBeenSet;
+}
+
+GooseFS DataConfig::GetGooseFSSource() const
+{
+    return m_gooseFSSource;
+}
+
+void DataConfig::SetGooseFSSource(const GooseFS& _gooseFSSource)
+{
+    m_gooseFSSource = _gooseFSSource;
+    m_gooseFSSourceHasBeenSet = true;
+}
+
+bool DataConfig::GooseFSSourceHasBeenSet() const
+{
+    return m_gooseFSSourceHasBeenSet;
 }
 

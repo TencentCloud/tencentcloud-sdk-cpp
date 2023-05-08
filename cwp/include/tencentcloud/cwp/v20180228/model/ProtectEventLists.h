@@ -231,6 +231,28 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取机器实例uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Quuid 机器实例uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置机器实例uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Quuid 机器实例uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +315,13 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 机器实例uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                 };
             }

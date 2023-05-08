@@ -247,6 +247,18 @@ namespace TencentCloud
                      */
                     bool AutoRepurchaseRenewSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取已销毁订单数
+                     * @return DestroyOrderNum 已销毁订单数
+                     */
+                    uint64_t GetDestroyOrderNum() const;
+
+                    /**
+                     * 判断参数 DestroyOrderNum 是否已赋值
+                     * @return DestroyOrderNum 是否已赋值
+                     */
+                    bool DestroyOrderNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +362,12 @@ namespace TencentCloud
                      */
                     bool m_autoRepurchaseRenewSwitch;
                     bool m_autoRepurchaseRenewSwitchHasBeenSet;
+
+                    /**
+                     * 已销毁订单数
+                     */
+                    uint64_t m_destroyOrderNum;
+                    bool m_destroyOrderNumHasBeenSet;
 
                 };
             }

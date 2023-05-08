@@ -31,7 +31,8 @@ ParameterDetail::ParameterDetail() :
     m_minHasBeenSet(false),
     m_enumValueHasBeenSet(false),
     m_maxFuncHasBeenSet(false),
-    m_minFuncHasBeenSet(false)
+    m_minFuncHasBeenSet(false),
+    m_isNotSupportEditHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome ParameterDetail::Deserialize(const rapidjson::Value &value)
         m_minFuncHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNotSupportEdit") && !value["IsNotSupportEdit"].IsNull())
+    {
+        if (!value["IsNotSupportEdit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParameterDetail.IsNotSupportEdit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNotSupportEdit = value["IsNotSupportEdit"].GetBool();
+        m_isNotSupportEditHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void ParameterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "MinFunc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_minFunc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNotSupportEditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNotSupportEdit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNotSupportEdit, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void ParameterDetail::SetMinFunc(const string& _minFunc)
 bool ParameterDetail::MinFuncHasBeenSet() const
 {
     return m_minFuncHasBeenSet;
+}
+
+bool ParameterDetail::GetIsNotSupportEdit() const
+{
+    return m_isNotSupportEdit;
+}
+
+void ParameterDetail::SetIsNotSupportEdit(const bool& _isNotSupportEdit)
+{
+    m_isNotSupportEdit = _isNotSupportEdit;
+    m_isNotSupportEditHasBeenSet = true;
+}
+
+bool ParameterDetail::IsNotSupportEditHasBeenSet() const
+{
+    return m_isNotSupportEditHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ssa/v20180608/model/AlertType.h>
+#include <tencentcloud/ssa/v20180608/model/AlertListAggregations.h>
 
 
 namespace TencentCloud
@@ -91,6 +92,28 @@ namespace TencentCloud
                      */
                     bool AlertListHasBeenSet() const;
 
+                    /**
+                     * 获取聚合参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Aggregations 聚合参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlertListAggregations GetAggregations() const;
+
+                    /**
+                     * 设置聚合参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Aggregations 聚合参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAggregations(const AlertListAggregations& _aggregations);
+
+                    /**
+                     * 判断参数 Aggregations 是否已赋值
+                     * @return Aggregations 是否已赋值
+                     */
+                    bool AggregationsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +129,13 @@ namespace TencentCloud
                      */
                     std::vector<AlertType> m_alertList;
                     bool m_alertListHasBeenSet;
+
+                    /**
+                     * 聚合参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlertListAggregations m_aggregations;
+                    bool m_aggregationsHasBeenSet;
 
                 };
             }

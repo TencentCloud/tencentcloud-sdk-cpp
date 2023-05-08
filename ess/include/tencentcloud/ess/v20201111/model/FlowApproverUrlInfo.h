@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 获取签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SignUrl 签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @return SignUrl 签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSignUrl() const;
 
                     /**
-                     * 设置签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 设置签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignUrl 签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * @param SignUrl 签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSignUrl(const std::string& _signUrl);
@@ -69,26 +69,26 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号
+                     * 获取签署人类型 1-个人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverMobile 签署人手机号
+                     * @return ApproverType 签署人类型 1-个人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetApproverMobile() const;
+                    int64_t GetApproverType() const;
 
                     /**
-                     * 设置签署人手机号
+                     * 设置签署人类型 1-个人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApproverMobile 签署人手机号
+                     * @param ApproverType 签署人类型 1-个人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetApproverMobile(const std::string& _approverMobile);
+                    void SetApproverType(const int64_t& _approverType);
 
                     /**
-                     * 判断参数 ApproverMobile 是否已赋值
-                     * @return ApproverMobile 是否已赋值
+                     * 判断参数 ApproverType 是否已赋值
+                     * @return ApproverType 是否已赋值
                      */
-                    bool ApproverMobileHasBeenSet() const;
+                    bool ApproverTypeHasBeenSet() const;
 
                     /**
                      * 获取签署人姓名
@@ -113,42 +113,64 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型 1-个人
+                     * 获取签署人手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverType 签署人类型 1-个人
+                     * @return ApproverMobile 签署人手机号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetApproverType() const;
+                    std::string GetApproverMobile() const;
 
                     /**
-                     * 设置签署人类型 1-个人
+                     * 设置签署人手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApproverType 签署人类型 1-个人
+                     * @param ApproverMobile 签署人手机号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetApproverType(const int64_t& _approverType);
+                    void SetApproverMobile(const std::string& _approverMobile);
 
                     /**
-                     * 判断参数 ApproverType 是否已赋值
-                     * @return ApproverType 是否已赋值
+                     * 判断参数 ApproverMobile 是否已赋值
+                     * @return ApproverMobile 是否已赋值
                      */
-                    bool ApproverTypeHasBeenSet() const;
+                    bool ApproverMobileHasBeenSet() const;
+
+                    /**
+                     * 获取签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LongUrl 签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLongUrl() const;
+
+                    /**
+                     * 设置签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LongUrl 签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLongUrl(const std::string& _longUrl);
+
+                    /**
+                     * 判断参数 LongUrl 是否已赋值
+                     * @return LongUrl 是否已赋值
+                     */
+                    bool LongUrlHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 签署链接，注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+                     * 签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 签署人手机号
+                     * 签署人类型 1-个人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_approverMobile;
-                    bool m_approverMobileHasBeenSet;
+                    int64_t m_approverType;
+                    bool m_approverTypeHasBeenSet;
 
                     /**
                      * 签署人姓名
@@ -158,11 +180,18 @@ namespace TencentCloud
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 签署人类型 1-个人
+                     * 签署人手机号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_approverType;
-                    bool m_approverTypeHasBeenSet;
+                    std::string m_approverMobile;
+                    bool m_approverMobileHasBeenSet;
+
+                    /**
+                     * 签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_longUrl;
+                    bool m_longUrlHasBeenSet;
 
                 };
             }

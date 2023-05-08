@@ -378,6 +378,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool ApproverOptionHasBeenSet() const;
 
+                    /**
+                     * 获取签署完前端跳转的url，暂未使用
+                     * @return JumpUrl 签署完前端跳转的url，暂未使用
+                     */
+                    std::string GetJumpUrl() const;
+
+                    /**
+                     * 设置签署完前端跳转的url，暂未使用
+                     * @param JumpUrl 签署完前端跳转的url，暂未使用
+                     */
+                    void SetJumpUrl(const std::string& _jumpUrl);
+
+                    /**
+                     * 判断参数 JumpUrl 是否已赋值
+                     * @return JumpUrl 是否已赋值
+                     */
+                    bool JumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,6 +505,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     ApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;
+
+                    /**
+                     * 签署完前端跳转的url，暂未使用
+                     */
+                    std::string m_jumpUrl;
+                    bool m_jumpUrlHasBeenSet;
 
                 };
             }

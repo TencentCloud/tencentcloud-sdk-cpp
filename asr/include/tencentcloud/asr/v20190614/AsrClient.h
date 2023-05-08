@@ -51,6 +51,8 @@
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetCustomizationListRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetModelInfoRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetModelInfoResponse.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationRequest.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationStateRequest.h>
@@ -117,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetCustomizationListResponse> GetCustomizationListOutcome;
                 typedef std::future<GetCustomizationListOutcome> GetCustomizationListOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetCustomizationListRequest&, GetCustomizationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomizationListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetModelInfoResponse> GetModelInfoOutcome;
+                typedef std::future<GetModelInfoOutcome> GetModelInfoOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::GetModelInfoRequest&, GetModelInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomizationResponse> ModifyCustomizationOutcome;
                 typedef std::future<ModifyCustomizationOutcome> ModifyCustomizationOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::ModifyCustomizationRequest&, ModifyCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationAsyncHandler;
@@ -286,6 +291,15 @@ namespace TencentCloud
                 GetCustomizationListOutcome GetCustomizationList(const Model::GetCustomizationListRequest &request);
                 void GetCustomizationListAsync(const Model::GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetCustomizationListOutcomeCallable GetCustomizationListCallable(const Model::GetCustomizationListRequest& request);
+
+                /**
+                 *通过自学习模型id获取自学习模型详细信息
+                 * @param req GetModelInfoRequest
+                 * @return GetModelInfoOutcome
+                 */
+                GetModelInfoOutcome GetModelInfo(const Model::GetModelInfoRequest &request);
+                void GetModelInfoAsync(const Model::GetModelInfoRequest& request, const GetModelInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetModelInfoOutcomeCallable GetModelInfoCallable(const Model::GetModelInfoRequest& request);
 
                 /**
                  *用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。

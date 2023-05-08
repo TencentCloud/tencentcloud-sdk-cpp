@@ -82,6 +82,50 @@ namespace TencentCloud
                      */
                     bool RoleHasBeenSet() const;
 
+                    /**
+                     * 获取家庭ID，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FamilyId 家庭ID，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFamilyId() const;
+
+                    /**
+                     * 设置家庭ID，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FamilyId 家庭ID，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFamilyId(const std::string& _familyId);
+
+                    /**
+                     * 判断参数 FamilyId 是否已赋值
+                     * @return FamilyId 是否已赋值
+                     */
+                    bool FamilyIdHasBeenSet() const;
+
+                    /**
+                     * 获取家庭名称，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FamilyName 家庭名称，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFamilyName() const;
+
+                    /**
+                     * 设置家庭名称，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FamilyName 家庭名称，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFamilyName(const std::string& _familyName);
+
+                    /**
+                     * 判断参数 FamilyName 是否已赋值
+                     * @return FamilyName 是否已赋值
+                     */
+                    bool FamilyNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +139,20 @@ namespace TencentCloud
                      */
                     int64_t m_role;
                     bool m_roleHasBeenSet;
+
+                    /**
+                     * 家庭ID，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_familyId;
+                    bool m_familyIdHasBeenSet;
+
+                    /**
+                     * 家庭名称，所有者带该参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_familyName;
+                    bool m_familyNameHasBeenSet;
 
                 };
             }

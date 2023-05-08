@@ -38,7 +38,9 @@ MappingResult::MappingResult() :
     m_domainHasBeenSet(false),
     m_mappingStatusHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_securityStatusHasBeenSet(false)
+    m_securityStatusHasBeenSet(false),
+    m_disposalRecommendationHasBeenSet(false),
+    m_mappingTypeHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome MappingResult::Deserialize(const rapidjson::Value &value)
         m_securityStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DisposalRecommendation") && !value["DisposalRecommendation"].IsNull())
+    {
+        if (!value["DisposalRecommendation"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappingResult.DisposalRecommendation` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disposalRecommendation = value["DisposalRecommendation"].GetInt64();
+        m_disposalRecommendationHasBeenSet = true;
+    }
+
+    if (value.HasMember("MappingType") && !value["MappingType"].IsNull())
+    {
+        if (!value["MappingType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappingResult.MappingType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mappingType = string(value["MappingType"].GetString());
+        m_mappingTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void MappingResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_disposalRecommendationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisposalRecommendation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disposalRecommendation, allocator);
+    }
+
+    if (m_mappingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MappingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mappingType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void MappingResult::SetSecurityStatus(const vector<SecurityStatus>& _securitySta
 bool MappingResult::SecurityStatusHasBeenSet() const
 {
     return m_securityStatusHasBeenSet;
+}
+
+int64_t MappingResult::GetDisposalRecommendation() const
+{
+    return m_disposalRecommendation;
+}
+
+void MappingResult::SetDisposalRecommendation(const int64_t& _disposalRecommendation)
+{
+    m_disposalRecommendation = _disposalRecommendation;
+    m_disposalRecommendationHasBeenSet = true;
+}
+
+bool MappingResult::DisposalRecommendationHasBeenSet() const
+{
+    return m_disposalRecommendationHasBeenSet;
+}
+
+string MappingResult::GetMappingType() const
+{
+    return m_mappingType;
+}
+
+void MappingResult::SetMappingType(const string& _mappingType)
+{
+    m_mappingType = _mappingType;
+    m_mappingTypeHasBeenSet = true;
+}
+
+bool MappingResult::MappingTypeHasBeenSet() const
+{
+    return m_mappingTypeHasBeenSet;
 }
 

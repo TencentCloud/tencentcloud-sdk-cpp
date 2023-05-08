@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/RDMAConfig.h>
 
 
 namespace TencentCloud
@@ -326,6 +327,28 @@ TI.GN7.20XLARGE320.POST: 80C32
                      */
                     bool InstanceTypeAliasHasBeenSet() const;
 
+                    /**
+                     * 获取RDMA配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RDMAConfig RDMA配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RDMAConfig GetRDMAConfig() const;
+
+                    /**
+                     * 设置RDMA配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RDMAConfig RDMA配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRDMAConfig(const RDMAConfig& _rDMAConfig);
+
+                    /**
+                     * 判断参数 RDMAConfig 是否已赋值
+                     * @return RDMAConfig 是否已赋值
+                     */
+                    bool RDMAConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +432,13 @@ TI.GN7.20XLARGE320.POST: 80C32
                      */
                     std::string m_instanceTypeAlias;
                     bool m_instanceTypeAliasHasBeenSet;
+
+                    /**
+                     * RDMA配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RDMAConfig m_rDMAConfig;
+                    bool m_rDMAConfigHasBeenSet;
 
                 };
             }

@@ -303,6 +303,24 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取登陆地
+                     * @return Locations 登陆地
+                     */
+                    std::string GetLocations() const;
+
+                    /**
+                     * 设置登陆地
+                     * @param Locations 登陆地
+                     */
+                    void SetLocations(const std::string& _locations);
+
+                    /**
+                     * 判断参数 Locations 是否已赋值
+                     * @return Locations 是否已赋值
+                     */
+                    bool LocationsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +407,12 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * 登陆地
+                     */
+                    std::string m_locations;
+                    bool m_locationsHasBeenSet;
 
                 };
             }

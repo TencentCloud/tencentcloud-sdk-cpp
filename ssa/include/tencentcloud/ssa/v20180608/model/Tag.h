@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FidHasBeenSet() const;
 
                     /**
-                     * 获取标签名称
-                     * @return Fname 标签名称
+                     * 获取标签名称字段
+                     * @return Fname 标签名称字段
                      */
                     std::string GetFname() const;
 
                     /**
-                     * 设置标签名称
-                     * @param Fname 标签名称
+                     * 设置标签名称字段
+                     * @param Fname 标签名称字段
                      */
                     void SetFname(const std::string& _fname);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_fidHasBeenSet;
 
                     /**
-                     * 标签名称
+                     * 标签名称字段
                      */
                     std::string m_fname;
                     bool m_fnameHasBeenSet;

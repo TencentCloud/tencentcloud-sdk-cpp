@@ -45,7 +45,14 @@ AlertType::AlertType() :
     m_attackNameHasBeenSet(false),
     m_assetPublicIpHasBeenSet(false),
     m_attackTacticHasBeenSet(false),
-    m_victimAssetSubHasBeenSet(false)
+    m_victimAssetSubHasBeenSet(false),
+    m_victimAssetVpcHasBeenSet(false),
+    m_timestampHasBeenSet(false),
+    m_assetGroupNameHasBeenSet(false),
+    m_assetProjectNameHasBeenSet(false),
+    m_victimAssetContentHasBeenSet(false),
+    m_wrongReportStatusHasBeenSet(false),
+    m_wrongReportConditionIdHasBeenSet(false)
 {
 }
 
@@ -320,6 +327,82 @@ CoreInternalOutcome AlertType::Deserialize(const rapidjson::Value &value)
         m_victimAssetSubHasBeenSet = true;
     }
 
+    if (value.HasMember("VictimAssetVpc") && !value["VictimAssetVpc"].IsNull())
+    {
+        if (!value["VictimAssetVpc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertType.VictimAssetVpc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_victimAssetVpc = string(value["VictimAssetVpc"].GetString());
+        m_victimAssetVpcHasBeenSet = true;
+    }
+
+    if (value.HasMember("Timestamp") && !value["Timestamp"].IsNull())
+    {
+        if (!value["Timestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertType.Timestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = string(value["Timestamp"].GetString());
+        m_timestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetGroupName") && !value["AssetGroupName"].IsNull())
+    {
+        if (!value["AssetGroupName"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlertType.AssetGroupName` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssetGroupName"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_assetGroupName.push_back((*itr).GetString());
+        }
+        m_assetGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetProjectName") && !value["AssetProjectName"].IsNull())
+    {
+        if (!value["AssetProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertType.AssetProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetProjectName = string(value["AssetProjectName"].GetString());
+        m_assetProjectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("VictimAssetContent") && !value["VictimAssetContent"].IsNull())
+    {
+        if (!value["VictimAssetContent"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlertType.VictimAssetContent` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VictimAssetContent"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_victimAssetContent.push_back((*itr).GetString());
+        }
+        m_victimAssetContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("WrongReportStatus") && !value["WrongReportStatus"].IsNull())
+    {
+        if (!value["WrongReportStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertType.WrongReportStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wrongReportStatus = value["WrongReportStatus"].GetInt64();
+        m_wrongReportStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("WrongReportConditionId") && !value["WrongReportConditionId"].IsNull())
+    {
+        if (!value["WrongReportConditionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertType.WrongReportConditionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wrongReportConditionId = value["WrongReportConditionId"].GetInt64();
+        m_wrongReportConditionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -542,6 +625,72 @@ void AlertType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "VictimAssetSub";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_victimAssetSub.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_victimAssetVpcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VictimAssetVpc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_victimAssetVpc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assetGroupName.begin(); itr != m_assetGroupName.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_assetProjectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetProjectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_victimAssetContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VictimAssetContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_victimAssetContent.begin(); itr != m_victimAssetContent.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_wrongReportStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WrongReportStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wrongReportStatus, allocator);
+    }
+
+    if (m_wrongReportConditionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WrongReportConditionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wrongReportConditionId, allocator);
     }
 
 }
@@ -945,5 +1094,117 @@ void AlertType::SetVictimAssetSub(const string& _victimAssetSub)
 bool AlertType::VictimAssetSubHasBeenSet() const
 {
     return m_victimAssetSubHasBeenSet;
+}
+
+string AlertType::GetVictimAssetVpc() const
+{
+    return m_victimAssetVpc;
+}
+
+void AlertType::SetVictimAssetVpc(const string& _victimAssetVpc)
+{
+    m_victimAssetVpc = _victimAssetVpc;
+    m_victimAssetVpcHasBeenSet = true;
+}
+
+bool AlertType::VictimAssetVpcHasBeenSet() const
+{
+    return m_victimAssetVpcHasBeenSet;
+}
+
+string AlertType::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+void AlertType::SetTimestamp(const string& _timestamp)
+{
+    m_timestamp = _timestamp;
+    m_timestampHasBeenSet = true;
+}
+
+bool AlertType::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
+
+vector<string> AlertType::GetAssetGroupName() const
+{
+    return m_assetGroupName;
+}
+
+void AlertType::SetAssetGroupName(const vector<string>& _assetGroupName)
+{
+    m_assetGroupName = _assetGroupName;
+    m_assetGroupNameHasBeenSet = true;
+}
+
+bool AlertType::AssetGroupNameHasBeenSet() const
+{
+    return m_assetGroupNameHasBeenSet;
+}
+
+string AlertType::GetAssetProjectName() const
+{
+    return m_assetProjectName;
+}
+
+void AlertType::SetAssetProjectName(const string& _assetProjectName)
+{
+    m_assetProjectName = _assetProjectName;
+    m_assetProjectNameHasBeenSet = true;
+}
+
+bool AlertType::AssetProjectNameHasBeenSet() const
+{
+    return m_assetProjectNameHasBeenSet;
+}
+
+vector<string> AlertType::GetVictimAssetContent() const
+{
+    return m_victimAssetContent;
+}
+
+void AlertType::SetVictimAssetContent(const vector<string>& _victimAssetContent)
+{
+    m_victimAssetContent = _victimAssetContent;
+    m_victimAssetContentHasBeenSet = true;
+}
+
+bool AlertType::VictimAssetContentHasBeenSet() const
+{
+    return m_victimAssetContentHasBeenSet;
+}
+
+int64_t AlertType::GetWrongReportStatus() const
+{
+    return m_wrongReportStatus;
+}
+
+void AlertType::SetWrongReportStatus(const int64_t& _wrongReportStatus)
+{
+    m_wrongReportStatus = _wrongReportStatus;
+    m_wrongReportStatusHasBeenSet = true;
+}
+
+bool AlertType::WrongReportStatusHasBeenSet() const
+{
+    return m_wrongReportStatusHasBeenSet;
+}
+
+int64_t AlertType::GetWrongReportConditionId() const
+{
+    return m_wrongReportConditionId;
+}
+
+void AlertType::SetWrongReportConditionId(const int64_t& _wrongReportConditionId)
+{
+    m_wrongReportConditionId = _wrongReportConditionId;
+    m_wrongReportConditionIdHasBeenSet = true;
+}
+
+bool AlertType::WrongReportConditionIdHasBeenSet() const
+{
+    return m_wrongReportConditionIdHasBeenSet;
 }
 
