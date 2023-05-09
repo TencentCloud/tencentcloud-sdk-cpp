@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
+                     * 获取任务 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务Id
+                     * @return TaskId 任务 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTaskId() const;
 
                     /**
-                     * 设置任务Id
+                     * 设置任务 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务Id
+                     * @param TaskId 任务 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
+                     * 获取任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 开始时间
+                     * @return StartTime 任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
+                     * 设置任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param StartTime 任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -91,17 +91,93 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型
+                     * @return TaskType 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskType 任务类型
+                     * @param TaskType 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -113,17 +189,17 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
+                     * 获取实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 实例名称
+                     * @return InstanceName 实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
+                     * 设置实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 实例名称
+                     * @param InstanceName 实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -135,17 +211,17 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
+                     * 获取实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例Id
+                     * @return InstanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
+                     * 设置实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例Id
+                     * @param InstanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -157,17 +233,17 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取项目Id
+                     * 获取项目 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目Id
+                     * @return ProjectId 项目 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目Id
+                     * 设置项目 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目Id
+                     * @param ProjectId 项目 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -179,17 +255,17 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务进度
+                     * 获取任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Progress 任务进度
+                     * @return Progress 任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置任务进度
+                     * 设置任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 任务进度
+                     * @param Progress 任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProgress(const double& _progress);
@@ -201,17 +277,17 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取任务执行结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 结束时间
+                     * @return EndTime 任务执行结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置任务执行结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param EndTime 任务执行结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -223,17 +299,37 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
+                     * 获取任务执行状态。
+
+0：任务初始化。
+1：执行中。
+2：完成。
+4：失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 任务状态
+                     * @return Result 任务执行状态。
+
+0：任务初始化。
+1：执行中。
+2：完成。
+4：失败。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetResult() const;
 
                     /**
-                     * 设置任务状态
+                     * 设置任务执行状态。
+
+0：任务初始化。
+1：执行中。
+2：完成。
+4：失败。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 任务状态
+                     * @param Result 任务执行状态。
+
+0：任务初始化。
+1：执行中。
+2：完成。
+4：失败。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResult(const int64_t& _result);
@@ -247,63 +343,87 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * 任务 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 任务开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例Id
+                     * 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 项目Id
+                     * 项目 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务进度
+                     * 任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 任务执行结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务执行状态。
+
+0：任务初始化。
+1：执行中。
+2：完成。
+4：失败。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_result;

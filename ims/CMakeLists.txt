@@ -38,8 +38,10 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/ImageModerationResponse.h
   include/tencentcloud/ims/v20201229/model/User.h
   include/tencentcloud/ims/v20200713/model/ImageModerationRequest.h
+  include/tencentcloud/ims/v20200713/model/RecognitionResult.h
   include/tencentcloud/ims/v20200713/model/ObjectResult.h
   include/tencentcloud/ims/v20200713/model/OcrTextDetail.h
+  include/tencentcloud/ims/v20200713/model/RecognitionTag.h
   include/tencentcloud/ims/v20200713/model/ObjectDetail.h
   include/tencentcloud/ims/v20200713/model/OcrResult.h
   include/tencentcloud/ims/v20200713/model/LibDetail.h
@@ -73,8 +75,10 @@ set(ims_src
   src/v20201229/model/ImageModerationResponse.cpp
   src/v20201229/model/User.cpp
   src/v20200713/model/ImageModerationRequest.cpp
+  src/v20200713/model/RecognitionResult.cpp
   src/v20200713/model/ObjectResult.cpp
   src/v20200713/model/OcrTextDetail.cpp
+  src/v20200713/model/RecognitionTag.cpp
   src/v20200713/model/ObjectDetail.cpp
   src/v20200713/model/OcrResult.cpp
   src/v20200713/model/LibDetail.cpp

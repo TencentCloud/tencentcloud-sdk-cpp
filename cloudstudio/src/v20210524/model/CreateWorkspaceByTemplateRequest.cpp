@@ -24,7 +24,8 @@ using namespace std;
 
 CreateWorkspaceByTemplateRequest::CreateWorkspaceByTemplateRequest() :
     m_cloudStudioSessionTeamHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateWorkspaceByTemplateRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateWorkspaceByTemplateRequest::SetTemplateId(const int64_t& _templateId)
 bool CreateWorkspaceByTemplateRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string CreateWorkspaceByTemplateRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateWorkspaceByTemplateRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateWorkspaceByTemplateRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

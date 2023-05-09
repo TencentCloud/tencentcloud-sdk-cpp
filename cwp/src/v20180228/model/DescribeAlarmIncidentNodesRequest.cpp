@@ -25,7 +25,8 @@ using namespace std;
 DescribeAlarmIncidentNodesRequest::DescribeAlarmIncidentNodesRequest() :
     m_uuidHasBeenSet(false),
     m_alarmVidHasBeenSet(false),
-    m_alarmTimeHasBeenSet(false)
+    m_alarmTimeHasBeenSet(false),
+    m_tableIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeAlarmIncidentNodesRequest::ToJsonString() const
         string key = "AlarmTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alarmTime, allocator);
+    }
+
+    if (m_tableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tableId, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeAlarmIncidentNodesRequest::SetAlarmTime(const int64_t& _alarmTime)
 bool DescribeAlarmIncidentNodesRequest::AlarmTimeHasBeenSet() const
 {
     return m_alarmTimeHasBeenSet;
+}
+
+int64_t DescribeAlarmIncidentNodesRequest::GetTableId() const
+{
+    return m_tableId;
+}
+
+void DescribeAlarmIncidentNodesRequest::SetTableId(const int64_t& _tableId)
+{
+    m_tableId = _tableId;
+    m_tableIdHasBeenSet = true;
+}
+
+bool DescribeAlarmIncidentNodesRequest::TableIdHasBeenSet() const
+{
+    return m_tableIdHasBeenSet;
 }
 
 

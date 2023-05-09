@@ -155,6 +155,28 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取该参数用于返回命中的人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectId 该参数用于返回命中的人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetObjectId() const;
+
+                    /**
+                     * 设置该参数用于返回命中的人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ObjectId 该参数用于返回命中的人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetObjectId(const std::string& _objectId);
+
+                    /**
+                     * 判断参数 ObjectId 是否已赋值
+                     * @return ObjectId 是否已赋值
+                     */
+                    bool ObjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 该参数用于返回命中的人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_objectId;
+                    bool m_objectIdHasBeenSet;
 
                 };
             }

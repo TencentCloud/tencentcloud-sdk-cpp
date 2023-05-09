@@ -411,14 +411,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费金额信息，eg：2.00元/小时 (for后付费)
-                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 获取计费金额信息，eg：2.00元/小时 (按量计费)
+                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (按量计费)
                      */
                     std::string GetBillingInfo() const;
 
                     /**
-                     * 设置计费金额信息，eg：2.00元/小时 (for后付费)
-                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 设置计费金额信息，eg：2.00元/小时 (按量计费)
+                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (按量计费)
                      */
                     void SetBillingInfo(const std::string& _billingInfo);
 
@@ -654,7 +654,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 计费金额信息，eg：2.00元/小时 (按量计费)
                      */
                     std::string m_billingInfo;
                     bool m_billingInfoHasBeenSet;

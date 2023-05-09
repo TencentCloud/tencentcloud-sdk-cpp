@@ -51,8 +51,12 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQUserRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQVipInstanceRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQVipInstanceResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQVirtualHostRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRabbitMQVirtualHostResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupRequest.h>
@@ -295,9 +299,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentRoleResponse> CreateEnvironmentRoleOutcome;
                 typedef std::future<CreateEnvironmentRoleOutcome> CreateEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRoleRequest&, CreateEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRabbitMQUserResponse> CreateRabbitMQUserOutcome;
+                typedef std::future<CreateRabbitMQUserOutcome> CreateRabbitMQUserOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRabbitMQUserRequest&, CreateRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRabbitMQUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRabbitMQVipInstanceResponse> CreateRabbitMQVipInstanceOutcome;
                 typedef std::future<CreateRabbitMQVipInstanceOutcome> CreateRabbitMQVipInstanceOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRabbitMQVipInstanceRequest&, CreateRabbitMQVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRabbitMQVipInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRabbitMQVirtualHostResponse> CreateRabbitMQVirtualHostOutcome;
+                typedef std::future<CreateRabbitMQVirtualHostOutcome> CreateRabbitMQVirtualHostOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRabbitMQVirtualHostRequest&, CreateRabbitMQVirtualHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRabbitMQVirtualHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRocketMQClusterResponse> CreateRocketMQClusterOutcome;
                 typedef std::future<CreateRocketMQClusterOutcome> CreateRocketMQClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQClusterRequest&, CreateRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQClusterAsyncHandler;
@@ -717,6 +727,15 @@ namespace TencentCloud
                 CreateEnvironmentRoleOutcomeCallable CreateEnvironmentRoleCallable(const Model::CreateEnvironmentRoleRequest& request);
 
                 /**
+                 *创建RabbitMQ的用户
+                 * @param req CreateRabbitMQUserRequest
+                 * @return CreateRabbitMQUserOutcome
+                 */
+                CreateRabbitMQUserOutcome CreateRabbitMQUser(const Model::CreateRabbitMQUserRequest &request);
+                void CreateRabbitMQUserAsync(const Model::CreateRabbitMQUserRequest& request, const CreateRabbitMQUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRabbitMQUserOutcomeCallable CreateRabbitMQUserCallable(const Model::CreateRabbitMQUserRequest& request);
+
+                /**
                  *创建RabbitMQ专享版实例
                  * @param req CreateRabbitMQVipInstanceRequest
                  * @return CreateRabbitMQVipInstanceOutcome
@@ -724,6 +743,15 @@ namespace TencentCloud
                 CreateRabbitMQVipInstanceOutcome CreateRabbitMQVipInstance(const Model::CreateRabbitMQVipInstanceRequest &request);
                 void CreateRabbitMQVipInstanceAsync(const Model::CreateRabbitMQVipInstanceRequest& request, const CreateRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRabbitMQVipInstanceOutcomeCallable CreateRabbitMQVipInstanceCallable(const Model::CreateRabbitMQVipInstanceRequest& request);
+
+                /**
+                 *创建RabbitMQ的vhost
+                 * @param req CreateRabbitMQVirtualHostRequest
+                 * @return CreateRabbitMQVirtualHostOutcome
+                 */
+                CreateRabbitMQVirtualHostOutcome CreateRabbitMQVirtualHost(const Model::CreateRabbitMQVirtualHostRequest &request);
+                void CreateRabbitMQVirtualHostAsync(const Model::CreateRabbitMQVirtualHostRequest& request, const CreateRabbitMQVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRabbitMQVirtualHostOutcomeCallable CreateRabbitMQVirtualHostCallable(const Model::CreateRabbitMQVirtualHostRequest& request);
 
                 /**
                  *此接口用于创建一个RocketMQ集群

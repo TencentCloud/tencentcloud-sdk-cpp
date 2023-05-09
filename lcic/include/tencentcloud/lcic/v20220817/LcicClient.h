@@ -522,7 +522,7 @@ namespace TencentCloud
                 DescribeCurrentMemberListOutcomeCallable DescribeCurrentMemberListCallable(const Model::DescribeCurrentMemberListRequest& request);
 
                 /**
-                 *服务商信息获取
+                 *开发商信息获取
                  * @param req DescribeDeveloperRequest
                  * @return DescribeDeveloperOutcome
                  */

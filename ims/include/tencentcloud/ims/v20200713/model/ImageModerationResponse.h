@@ -25,6 +25,7 @@
 #include <tencentcloud/ims/v20200713/model/ObjectResult.h>
 #include <tencentcloud/ims/v20200713/model/OcrResult.h>
 #include <tencentcloud/ims/v20200713/model/LibResult.h>
+#include <tencentcloud/ims/v20200713/model/RecognitionResult.h>
 
 
 namespace TencentCloud
@@ -213,6 +214,20 @@ namespace TencentCloud
                      */
                     bool ExtraHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecognitionResults 该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> GetRecognitionResults() const;
+
+                    /**
+                     * 判断参数 RecognitionResults 是否已赋值
+                     * @return RecognitionResults 是否已赋值
+                     */
+                    bool RecognitionResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +312,13 @@ namespace TencentCloud
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * 该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> m_recognitionResults;
+                    bool m_recognitionResultsHasBeenSet;
 
                 };
             }

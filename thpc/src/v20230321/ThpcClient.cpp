@@ -556,6 +556,49 @@ ThpcClient::DescribeClustersOutcomeCallable ThpcClient::DescribeClustersCallable
     return task->get_future();
 }
 
+ThpcClient::DescribeInitNodeScriptsOutcome ThpcClient::DescribeInitNodeScripts(const DescribeInitNodeScriptsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInitNodeScripts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInitNodeScriptsResponse rsp = DescribeInitNodeScriptsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInitNodeScriptsOutcome(rsp);
+        else
+            return DescribeInitNodeScriptsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInitNodeScriptsOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeInitNodeScriptsAsync(const DescribeInitNodeScriptsRequest& request, const DescribeInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInitNodeScripts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeInitNodeScriptsOutcomeCallable ThpcClient::DescribeInitNodeScriptsCallable(const DescribeInitNodeScriptsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInitNodeScriptsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInitNodeScripts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DescribeNodesOutcome ThpcClient::DescribeNodes(const DescribeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodes");

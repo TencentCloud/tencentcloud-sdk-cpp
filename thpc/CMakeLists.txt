@@ -31,7 +31,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/DeleteNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/AddClusterStorageOptionResponse.h
-  include/tencentcloud/thpc/v20230321/model/StorageOptionOverview.h
+  include/tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsRequest.h
   include/tencentcloud/thpc/v20230321/model/DeleteClusterResponse.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfig.h
   include/tencentcloud/thpc/v20230321/model/NodeActivity.h
@@ -52,6 +52,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20230321/model/Tag.h
   include/tencentcloud/thpc/v20230321/model/LoginNode.h
+  include/tencentcloud/thpc/v20230321/model/StorageOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/NodeScript.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h
   include/tencentcloud/thpc/v20230321/model/ManagerNodeOverview.h
@@ -83,6 +84,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterActivitiesResponse.h
+  include/tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsResponse.h
   include/tencentcloud/thpc/v20230321/model/DataDisk.h
   include/tencentcloud/thpc/v20230321/model/DeleteQueueResponse.h
   include/tencentcloud/thpc/v20230321/model/AddNodesResponse.h
@@ -190,7 +192,7 @@ set(thpc_src
   src/v20230321/model/DescribeNodesRequest.cpp
   src/v20230321/model/DeleteNodesResponse.cpp
   src/v20230321/model/AddClusterStorageOptionResponse.cpp
-  src/v20230321/model/StorageOptionOverview.cpp
+  src/v20230321/model/DescribeInitNodeScriptsRequest.cpp
   src/v20230321/model/DeleteClusterResponse.cpp
   src/v20230321/model/ExpansionNodeConfig.cpp
   src/v20230321/model/NodeActivity.cpp
@@ -211,6 +213,7 @@ set(thpc_src
   src/v20230321/model/InstanceChargePrepaid.cpp
   src/v20230321/model/Tag.cpp
   src/v20230321/model/LoginNode.cpp
+  src/v20230321/model/StorageOptionOverview.cpp
   src/v20230321/model/NodeScript.cpp
   src/v20230321/model/ModifyInitNodeScriptsResponse.cpp
   src/v20230321/model/ManagerNodeOverview.cpp
@@ -242,6 +245,7 @@ set(thpc_src
   src/v20230321/model/DeleteClusterStorageOptionResponse.cpp
   src/v20230321/model/DescribeNodesResponse.cpp
   src/v20230321/model/DescribeClusterActivitiesResponse.cpp
+  src/v20230321/model/DescribeInitNodeScriptsResponse.cpp
   src/v20230321/model/DataDisk.cpp
   src/v20230321/model/DeleteQueueResponse.cpp
   src/v20230321/model/AddNodesResponse.cpp

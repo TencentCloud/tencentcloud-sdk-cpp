@@ -36,31 +36,31 @@ CoreInternalOutcome PolicyDetail::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("UserDiscount") && !value["UserDiscount"].IsNull())
     {
-        if (!value["UserDiscount"].IsInt64())
+        if (!value["UserDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `PolicyDetail.UserDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.UserDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_userDiscount = value["UserDiscount"].GetInt64();
+        m_userDiscount = value["UserDiscount"].GetDouble();
         m_userDiscountHasBeenSet = true;
     }
 
     if (value.HasMember("CommonDiscount") && !value["CommonDiscount"].IsNull())
     {
-        if (!value["CommonDiscount"].IsInt64())
+        if (!value["CommonDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `PolicyDetail.CommonDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.CommonDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_commonDiscount = value["CommonDiscount"].GetInt64();
+        m_commonDiscount = value["CommonDiscount"].GetDouble();
         m_commonDiscountHasBeenSet = true;
     }
 
     if (value.HasMember("FinalDiscount") && !value["FinalDiscount"].IsNull())
     {
-        if (!value["FinalDiscount"].IsInt64())
+        if (!value["FinalDiscount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `PolicyDetail.FinalDiscount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail.FinalDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_finalDiscount = value["FinalDiscount"].GetInt64();
+        m_finalDiscount = value["FinalDiscount"].GetDouble();
         m_finalDiscountHasBeenSet = true;
     }
 
@@ -134,12 +134,12 @@ void PolicyDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
 }
 
 
-int64_t PolicyDetail::GetUserDiscount() const
+double PolicyDetail::GetUserDiscount() const
 {
     return m_userDiscount;
 }
 
-void PolicyDetail::SetUserDiscount(const int64_t& _userDiscount)
+void PolicyDetail::SetUserDiscount(const double& _userDiscount)
 {
     m_userDiscount = _userDiscount;
     m_userDiscountHasBeenSet = true;
@@ -150,12 +150,12 @@ bool PolicyDetail::UserDiscountHasBeenSet() const
     return m_userDiscountHasBeenSet;
 }
 
-int64_t PolicyDetail::GetCommonDiscount() const
+double PolicyDetail::GetCommonDiscount() const
 {
     return m_commonDiscount;
 }
 
-void PolicyDetail::SetCommonDiscount(const int64_t& _commonDiscount)
+void PolicyDetail::SetCommonDiscount(const double& _commonDiscount)
 {
     m_commonDiscount = _commonDiscount;
     m_commonDiscountHasBeenSet = true;
@@ -166,12 +166,12 @@ bool PolicyDetail::CommonDiscountHasBeenSet() const
     return m_commonDiscountHasBeenSet;
 }
 
-int64_t PolicyDetail::GetFinalDiscount() const
+double PolicyDetail::GetFinalDiscount() const
 {
     return m_finalDiscount;
 }
 
-void PolicyDetail::SetFinalDiscount(const int64_t& _finalDiscount)
+void PolicyDetail::SetFinalDiscount(const double& _finalDiscount)
 {
     m_finalDiscount = _finalDiscount;
     m_finalDiscountHasBeenSet = true;

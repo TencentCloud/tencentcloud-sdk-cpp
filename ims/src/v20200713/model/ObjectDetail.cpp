@@ -26,7 +26,9 @@ ObjectDetail::ObjectDetail() :
     m_valueHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_subLabelHasBeenSet(false)
+    m_subLabelHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_objectIdHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome ObjectDetail::Deserialize(const rapidjson::Value &value)
         m_subLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectId") && !value["ObjectId"].IsNull())
+    {
+        if (!value["ObjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectDetail.ObjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectId = string(value["ObjectId"].GetString());
+        m_objectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void ObjectDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SubLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void ObjectDetail::SetSubLabel(const string& _subLabel)
 bool ObjectDetail::SubLabelHasBeenSet() const
 {
     return m_subLabelHasBeenSet;
+}
+
+string ObjectDetail::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ObjectDetail::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ObjectDetail::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+string ObjectDetail::GetObjectId() const
+{
+    return m_objectId;
+}
+
+void ObjectDetail::SetObjectId(const string& _objectId)
+{
+    m_objectId = _objectId;
+    m_objectIdHasBeenSet = true;
+}
+
+bool ObjectDetail::ObjectIdHasBeenSet() const
+{
+    return m_objectIdHasBeenSet;
 }
 

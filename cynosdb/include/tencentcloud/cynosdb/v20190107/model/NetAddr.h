@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool WanStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceGroupId 实例组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceGroupId() const;
+
+                    /**
+                     * 设置实例组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceGroupId 实例组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceGroupId(const std::string& _instanceGroupId);
+
+                    /**
+                     * 判断参数 InstanceGroupId 是否已赋值
+                     * @return InstanceGroupId 是否已赋值
+                     */
+                    bool InstanceGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     std::string m_wanStatus;
                     bool m_wanStatusHasBeenSet;
+
+                    /**
+                     * 实例组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceGroupId;
+                    bool m_instanceGroupIdHasBeenSet;
 
                 };
             }

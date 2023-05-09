@@ -22,7 +22,8 @@ using namespace std;
 
 WorkspaceInfo::WorkspaceInfo() :
     m_workspaceIdHasBeenSet(false),
-    m_spaceKeyHasBeenSet(false)
+    m_spaceKeyHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome WorkspaceInfo::Deserialize(const rapidjson::Value &value)
         m_spaceKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkspaceInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void WorkspaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SpaceKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_spaceKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void WorkspaceInfo::SetSpaceKey(const string& _spaceKey)
 bool WorkspaceInfo::SpaceKeyHasBeenSet() const
 {
     return m_spaceKeyHasBeenSet;
+}
+
+string WorkspaceInfo::GetName() const
+{
+    return m_name;
+}
+
+void WorkspaceInfo::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool WorkspaceInfo::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

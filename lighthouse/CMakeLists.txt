@@ -23,6 +23,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h
@@ -57,6 +58,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AttachDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
@@ -157,7 +159,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Snapshot.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskDiscountRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CreateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/AttachDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DiskBackupDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/CreateDiskBackupRequest.h
@@ -203,6 +205,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableRequest.h
   include/tencentcloud/lighthouse/v20200324/model/SoftwareDetail.h
+  include/tencentcloud/lighthouse/v20200324/model/AutoMountConfiguration.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePrice.h
   include/tencentcloud/lighthouse/v20200324/model/Tag.h
   include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h
@@ -235,6 +238,7 @@ set(lighthouse_src
   src/v20200324/model/AssociateInstancesKeyPairsResponse.cpp
   src/v20200324/model/RenewInstancesRequest.cpp
   src/v20200324/model/DescribeDisksDeniedActionsRequest.cpp
+  src/v20200324/model/InquirePriceCreateBlueprintRequest.cpp
   src/v20200324/model/DescribeDiskBackupsRequest.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
   src/v20200324/model/DeleteKeyPairsResponse.cpp
@@ -269,6 +273,7 @@ set(lighthouse_src
   src/v20200324/model/AttachCcnResponse.cpp
   src/v20200324/model/RebootInstancesRequest.cpp
   src/v20200324/model/ResetAttachCcnRequest.cpp
+  src/v20200324/model/CreateDisksRequest.cpp
   src/v20200324/model/AttachDisksRequest.cpp
   src/v20200324/model/ImportKeyPairResponse.cpp
   src/v20200324/model/DescribeSnapshotsRequest.cpp
@@ -369,7 +374,7 @@ set(lighthouse_src
   src/v20200324/model/Snapshot.cpp
   src/v20200324/model/ModifyFirewallRuleDescriptionResponse.cpp
   src/v20200324/model/DescribeDiskDiscountRequest.cpp
-  src/v20200324/model/InquirePriceCreateBlueprintRequest.cpp
+  src/v20200324/model/CreateDisksResponse.cpp
   src/v20200324/model/AttachDisksResponse.cpp
   src/v20200324/model/DiskBackupDeniedActions.cpp
   src/v20200324/model/CreateDiskBackupRequest.cpp
@@ -415,6 +420,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeResetInstanceBlueprintsResponse.cpp
   src/v20200324/model/DescribeDisksReturnableRequest.cpp
   src/v20200324/model/SoftwareDetail.cpp
+  src/v20200324/model/AutoMountConfiguration.cpp
   src/v20200324/model/InstancePrice.cpp
   src/v20200324/model/Tag.cpp
   src/v20200324/model/ModifySnapshotAttributeResponse.cpp

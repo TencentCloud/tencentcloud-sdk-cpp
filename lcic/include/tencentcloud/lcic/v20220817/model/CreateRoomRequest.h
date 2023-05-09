@@ -351,14 +351,14 @@ video 纯视频
                     bool RTCAudienceNumberHasBeenSet() const;
 
                     /**
-                     * 获取观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
-                     * @return AudienceType 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     * 获取观看类型，互动直播（默认）。
+                     * @return AudienceType 观看类型，互动直播（默认）。
                      */
                     uint64_t GetAudienceType() const;
 
                     /**
-                     * 设置观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
-                     * @param AudienceType 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     * 设置观看类型，互动直播（默认）。
+                     * @param AudienceType 观看类型，互动直播（默认）。
                      */
                     void SetAudienceType(const uint64_t& _audienceType);
 
@@ -405,14 +405,22 @@ video 纯视频
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取打开学生麦克风/摄像头的授权开关
-                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 获取是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+0 不允许直接控制（需同意，默认值）
+1 允许直接控制（无需同意）
+                     * @return EnableDirectControl 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+0 不允许直接控制（需同意，默认值）
+1 允许直接控制（无需同意）
                      */
                     uint64_t GetEnableDirectControl() const;
 
                     /**
-                     * 设置打开学生麦克风/摄像头的授权开关
-                     * @param EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 设置是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+0 不允许直接控制（需同意，默认值）
+1 允许直接控制（无需同意）
+                     * @param EnableDirectControl 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+0 不允许直接控制（需同意，默认值）
+1 允许直接控制（无需同意）
                      */
                     void SetEnableDirectControl(const uint64_t& _enableDirectControl);
 
@@ -523,7 +531,7 @@ video 纯视频
                     bool m_rTCAudienceNumberHasBeenSet;
 
                     /**
-                     * 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     * 观看类型，互动直播（默认）。
                      */
                     uint64_t m_audienceType;
                     bool m_audienceTypeHasBeenSet;
@@ -541,7 +549,9 @@ video 纯视频
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 打开学生麦克风/摄像头的授权开关
+                     * 是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：
+0 不允许直接控制（需同意，默认值）
+1 允许直接控制（无需同意）
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;

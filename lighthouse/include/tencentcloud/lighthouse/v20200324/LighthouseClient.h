@@ -37,6 +37,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateDiskBackupRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateDiskBackupResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
@@ -212,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDiskBackupResponse> CreateDiskBackupOutcome;
                 typedef std::future<CreateDiskBackupOutcome> CreateDiskBackupOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateDiskBackupRequest&, CreateDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDisksResponse> CreateDisksOutcome;
+                typedef std::future<CreateDisksOutcome> CreateDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateDisksRequest&, CreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFirewallRulesResponse> CreateFirewallRulesOutcome;
                 typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallRulesRequest&, CreateFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
@@ -502,6 +507,15 @@ namespace TencentCloud
                 CreateDiskBackupOutcome CreateDiskBackup(const Model::CreateDiskBackupRequest &request);
                 void CreateDiskBackupAsync(const Model::CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDiskBackupOutcomeCallable CreateDiskBackupCallable(const Model::CreateDiskBackupRequest& request);
+
+                /**
+                 *本接口(CreateDisks)用于创建一个或多个云硬盘。
+                 * @param req CreateDisksRequest
+                 * @return CreateDisksOutcome
+                 */
+                CreateDisksOutcome CreateDisks(const Model::CreateDisksRequest &request);
+                void CreateDisksAsync(const Model::CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDisksOutcomeCallable CreateDisksCallable(const Model::CreateDisksRequest& request);
 
                 /**
                  *本接口（CreateFirewallRules）用于在实例上添加防火墙规则。

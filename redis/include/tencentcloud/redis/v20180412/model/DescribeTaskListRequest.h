@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称。
+                     * @return InstanceName 实例名称。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称。
+                     * @param InstanceName 实例名称。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取分页大小,默认20，上限不大于100
-                     * @return Limit 分页大小,默认20，上限不大于100
+                     * 获取每页输出的任务列表大小。默认为 20，最多输出100条。
+                     * @return Limit 每页输出的任务列表大小。默认为 20，最多输出100条。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小,默认20，上限不大于100
-                     * @param Limit 分页大小,默认20，上限不大于100
+                     * 设置每页输出的任务列表大小。默认为 20，最多输出100条。
+                     * @param Limit 每页输出的任务列表大小。默认为 20，最多输出100条。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍（自动向下取整）
-                     * @return Offset 偏移量，取Limit整数倍（自动向下取整）
+                     * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍（自动向下取整）
-                     * @param Offset 偏移量，取Limit整数倍（自动向下取整）
+                     * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectIds 项目Id
+                     * 获取项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
+                     * @return ProjectIds 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目Id
-                     * @param ProjectIds 项目Id
+                     * 设置项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
+                     * @param ProjectIds 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
@@ -133,14 +133,90 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskTypes 任务类型
+                     * 获取任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
+                     * @return TaskTypes 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
                      */
                     std::vector<std::string> GetTaskTypes() const;
 
                     /**
-                     * 设置任务类型
-                     * @param TaskTypes 任务类型
+                     * 设置任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
+                     * @param TaskTypes 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
                      */
                     void SetTaskTypes(const std::vector<std::string>& _taskTypes);
 
@@ -151,14 +227,14 @@ namespace TencentCloud
                     bool TaskTypesHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return BeginTime 起始时间
+                     * 获取任务执行的起始时间。格式如：2021-12-30 00:00:00。
+                     * @return BeginTime 任务执行的起始时间。格式如：2021-12-30 00:00:00。
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param BeginTime 起始时间
+                     * 设置任务执行的起始时间。格式如：2021-12-30 00:00:00。
+                     * @param BeginTime 任务执行的起始时间。格式如：2021-12-30 00:00:00。
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
@@ -169,14 +245,14 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取终止时间
-                     * @return EndTime 终止时间
+                     * 获取任务运行的终止时间。格式如：2021-12-30 20:59:35
+                     * @return EndTime 任务运行的终止时间。格式如：2021-12-30 20:59:35
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置终止时间
-                     * @param EndTime 终止时间
+                     * 设置任务运行的终止时间。格式如：2021-12-30 20:59:35
+                     * @param EndTime 任务运行的终止时间。格式如：2021-12-30 20:59:35
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -187,14 +263,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return TaskStatus 任务状态
+                     * 获取该参数为内部使用，请忽略。
+                     * @return TaskStatus 该参数为内部使用，请忽略。
                      */
                     std::vector<int64_t> GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param TaskStatus 任务状态
+                     * 设置该参数为内部使用，请忽略。
+                     * @param TaskStatus 该参数为内部使用，请忽略。
                      */
                     void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
 
@@ -205,14 +281,30 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Result 任务状态
+                     * 获取任务执行状态。
+- 0：任务初始化。
+- 1：执行中。
+- 2：完成。
+- 4：失败。
+                     * @return Result 任务执行状态。
+- 0：任务初始化。
+- 1：执行中。
+- 2：完成。
+- 4：失败。
                      */
                     std::vector<int64_t> GetResult() const;
 
                     /**
-                     * 设置任务状态
-                     * @param Result 任务状态
+                     * 设置任务执行状态。
+- 0：任务初始化。
+- 1：执行中。
+- 2：完成。
+- 4：失败。
+                     * @param Result 任务执行状态。
+- 0：任务初始化。
+- 1：执行中。
+- 2：完成。
+- 4：失败。
                      */
                     void SetResult(const std::vector<int64_t>& _result);
 
@@ -223,14 +315,14 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取操作者Uin，该字段已废弃，使用OperateUin代替
-                     * @return OperatorUin 操作者Uin，该字段已废弃，使用OperateUin代替
+                     * 获取该字段已废弃，使用OperateUin代替，请忽略。
+                     * @return OperatorUin 该字段已废弃，使用OperateUin代替，请忽略。
                      */
                     std::vector<int64_t> GetOperatorUin() const;
 
                     /**
-                     * 设置操作者Uin，该字段已废弃，使用OperateUin代替
-                     * @param OperatorUin 操作者Uin，该字段已废弃，使用OperateUin代替
+                     * 设置该字段已废弃，使用OperateUin代替，请忽略。
+                     * @param OperatorUin 该字段已废弃，使用OperateUin代替，请忽略。
                      */
                     void SetOperatorUin(const std::vector<int64_t>& _operatorUin);
 
@@ -241,14 +333,14 @@ namespace TencentCloud
                     bool OperatorUinHasBeenSet() const;
 
                     /**
-                     * 获取操作者Uin
-                     * @return OperateUin 操作者Uin
+                     * 获取操作者账号 ID，UIN。
+                     * @return OperateUin 操作者账号 ID，UIN。
                      */
                     std::vector<std::string> GetOperateUin() const;
 
                     /**
-                     * 设置操作者Uin
-                     * @param OperateUin 操作者Uin
+                     * 设置操作者账号 ID，UIN。
+                     * @param OperateUin 操作者账号 ID，UIN。
                      */
                     void SetOperateUin(const std::vector<std::string>& _operateUin);
 
@@ -261,73 +353,96 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 分页大小,默认20，上限不大于100
+                     * 每页输出的任务列表大小。默认为 20，最多输出100条。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍（自动向下取整）
+                     * 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 项目Id
+                     * 项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型。
+- FLOW_CREATE：创建实例。
+- FLOW_MODIFYCONNECTIONCONFIG：调整带宽连接数。
+- FLOW_MODIFYINSTANCEPASSWORDFREE：免密变更流程。
+- FLOW_CLEARNETWORK：VPC退还中。
+- FLOW_SETPWD：设置访问密码。
+- FLOW_EXPORSHR：扩缩容流程。
+- FLOW_UpgradeArch：实例架构升级流程。
+- FLOW_MODIFYINSTANCEPARAMS：修改实例参数。
+- FLOW_MODIFYINSTACEREADONLY：只读变更流程。
+- FLOW_CLOSE：关闭实例。
+- FLOW_DELETE：删除实例。
+- FLOW_OPEN_WAN：开启外网。
+- FLOW_CLEAN：清空实例。      
+- FLOW_MODIFYINSTANCEACCOUNT：修改实例账号。
+- FLOW_ENABLEINSTANCE_REPLICATE：开启副本只读。
+- FLOW_DISABLEINSTANCE_REPLICATE: 关闭副本只读。
+- FLOW_SWITCHINSTANCEVIP：交换实例 VIP。
+- FLOW_CHANGE_REPLICA_TO_MSTER：副本节点升主节点。
+- FLOW_BACKUPINSTANCE：备份实例。
                      */
                     std::vector<std::string> m_taskTypes;
                     bool m_taskTypesHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 任务执行的起始时间。格式如：2021-12-30 00:00:00。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 终止时间
+                     * 任务运行的终止时间。格式如：2021-12-30 20:59:35
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 该参数为内部使用，请忽略。
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务执行状态。
+- 0：任务初始化。
+- 1：执行中。
+- 2：完成。
+- 4：失败。
                      */
                     std::vector<int64_t> m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 操作者Uin，该字段已废弃，使用OperateUin代替
+                     * 该字段已废弃，使用OperateUin代替，请忽略。
                      */
                     std::vector<int64_t> m_operatorUin;
                     bool m_operatorUinHasBeenSet;
 
                     /**
-                     * 操作者Uin
+                     * 操作者账号 ID，UIN。
                      */
                     std::vector<std::string> m_operateUin;
                     bool m_operateUinHasBeenSet;

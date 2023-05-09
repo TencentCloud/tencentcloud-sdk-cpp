@@ -159,6 +159,50 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取图库或人脸库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 图库或人脸库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置图库或人脸库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 图库或人脸库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取图或人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectId 图或人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetObjectId() const;
+
+                    /**
+                     * 设置图或人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ObjectId 图或人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetObjectId(const std::string& _objectId);
+
+                    /**
+                     * 判断参数 ObjectId 是否已赋值
+                     * @return ObjectId 是否已赋值
+                     */
+                    bool ObjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +241,20 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 图库或人脸库id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 图或人脸id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_objectId;
+                    bool m_objectIdHasBeenSet;
 
                 };
             }

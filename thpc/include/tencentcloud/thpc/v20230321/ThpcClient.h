@@ -47,6 +47,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeClusterStorageOptionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClustersRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeClustersResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInitNodeScriptsResponse> DescribeInitNodeScriptsOutcome;
+                typedef std::future<DescribeInitNodeScriptsOutcome> DescribeInitNodeScriptsOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeInitNodeScriptsRequest&, DescribeInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInitNodeScriptsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
                 typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
@@ -234,6 +239,15 @@ namespace TencentCloud
                 DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
                 void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
+
+                /**
+                 *本接口 (DescribeInitNodeScripts) 用于查询节点初始化脚本列表。
+                 * @param req DescribeInitNodeScriptsRequest
+                 * @return DescribeInitNodeScriptsOutcome
+                 */
+                DescribeInitNodeScriptsOutcome DescribeInitNodeScripts(const Model::DescribeInitNodeScriptsRequest &request);
+                void DescribeInitNodeScriptsAsync(const Model::DescribeInitNodeScriptsRequest& request, const DescribeInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInitNodeScriptsOutcomeCallable DescribeInitNodeScriptsCallable(const Model::DescribeInitNodeScriptsRequest& request);
 
                 /**
                  *本接口 (DescribeNodes) 用于查询指定集群节点概览信息列表。

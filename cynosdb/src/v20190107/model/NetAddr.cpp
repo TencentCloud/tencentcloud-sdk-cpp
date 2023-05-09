@@ -30,7 +30,8 @@ NetAddr::NetAddr() :
     m_uniqVpcIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_wanIPHasBeenSet(false),
-    m_wanStatusHasBeenSet(false)
+    m_wanStatusHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome NetAddr::Deserialize(const rapidjson::Value &value)
         m_wanStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceGroupId") && !value["InstanceGroupId"].IsNull())
+    {
+        if (!value["InstanceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAddr.InstanceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceGroupId = string(value["InstanceGroupId"].GetString());
+        m_instanceGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void NetAddr::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "WanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_wanStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void NetAddr::SetWanStatus(const string& _wanStatus)
 bool NetAddr::WanStatusHasBeenSet() const
 {
     return m_wanStatusHasBeenSet;
+}
+
+string NetAddr::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void NetAddr::SetInstanceGroupId(const string& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool NetAddr::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
 }
 

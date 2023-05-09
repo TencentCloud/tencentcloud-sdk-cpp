@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool AlarmTimeHasBeenSet() const;
 
+                    /**
+                     * 获取告警来源表ID
+                     * @return TableId 告警来源表ID
+                     */
+                    int64_t GetTableId() const;
+
+                    /**
+                     * 设置告警来源表ID
+                     * @param TableId 告警来源表ID
+                     */
+                    void SetTableId(const int64_t& _tableId);
+
+                    /**
+                     * 判断参数 TableId 是否已赋值
+                     * @return TableId 是否已赋值
+                     */
+                    bool TableIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_alarmTime;
                     bool m_alarmTimeHasBeenSet;
+
+                    /**
+                     * 告警来源表ID
+                     */
+                    int64_t m_tableId;
+                    bool m_tableIdHasBeenSet;
 
                 };
             }

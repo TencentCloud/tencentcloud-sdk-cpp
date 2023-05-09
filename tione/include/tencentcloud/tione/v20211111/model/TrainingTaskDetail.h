@@ -746,17 +746,17 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 获取计费金额信息，eg：2.00元/小时 (按量计费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (按量计费)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBillingInfo() const;
 
                     /**
-                     * 设置计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 设置计费金额信息，eg：2.00元/小时 (按量计费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (按量计费)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBillingInfo(const std::string& _billingInfo);
@@ -1078,7 +1078,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 计费金额信息，eg：2.00元/小时 (按量计费)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingInfo;
