@@ -81,6 +81,20 @@ namespace TencentCloud
                      */
                     bool OffsiteFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否提示信任设备1 ：提示 0: 不提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PromptTrust 是否提示信任设备1 ：提示 0: 不提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPromptTrust() const;
+
+                    /**
+                     * 判断参数 PromptTrust 是否已赋值
+                     * @return PromptTrust 是否已赋值
+                     */
+                    bool PromptTrustHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +114,13 @@ namespace TencentCloud
                      */
                     OffsiteFlag m_offsiteFlag;
                     bool m_offsiteFlagHasBeenSet;
+
+                    /**
+                     * 是否提示信任设备1 ：提示 0: 不提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_promptTrust;
+                    bool m_promptTrustHasBeenSet;
 
                 };
             }

@@ -3781,6 +3781,49 @@ LiveClient::DescribeLiveWatermarksOutcomeCallable LiveClient::DescribeLiveWaterm
     return task->get_future();
 }
 
+LiveClient::DescribeLiveXP2PDetailInfoListOutcome LiveClient::DescribeLiveXP2PDetailInfoList(const DescribeLiveXP2PDetailInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveXP2PDetailInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveXP2PDetailInfoListResponse rsp = DescribeLiveXP2PDetailInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveXP2PDetailInfoListOutcome(rsp);
+        else
+            return DescribeLiveXP2PDetailInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveXP2PDetailInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveXP2PDetailInfoListAsync(const DescribeLiveXP2PDetailInfoListRequest& request, const DescribeLiveXP2PDetailInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveXP2PDetailInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveXP2PDetailInfoListOutcomeCallable LiveClient::DescribeLiveXP2PDetailInfoListCallable(const DescribeLiveXP2PDetailInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveXP2PDetailInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveXP2PDetailInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLogDownloadListOutcome LiveClient::DescribeLogDownloadList(const DescribeLogDownloadListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogDownloadList");

@@ -197,6 +197,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarkRulesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarksRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarksResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveXP2PDetailInfoListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveXP2PDetailInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLogDownloadListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLogDownloadListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListRequest.h>
@@ -558,6 +560,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveWatermarksResponse> DescribeLiveWatermarksOutcome;
                 typedef std::future<DescribeLiveWatermarksOutcome> DescribeLiveWatermarksOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveWatermarksRequest&, DescribeLiveWatermarksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveWatermarksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveXP2PDetailInfoListResponse> DescribeLiveXP2PDetailInfoListOutcome;
+                typedef std::future<DescribeLiveXP2PDetailInfoListOutcome> DescribeLiveXP2PDetailInfoListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveXP2PDetailInfoListRequest&, DescribeLiveXP2PDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveXP2PDetailInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogDownloadListResponse> DescribeLogDownloadListOutcome;
                 typedef std::future<DescribeLogDownloadListOutcome> DescribeLogDownloadListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLogDownloadListRequest&, DescribeLogDownloadListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogDownloadListAsyncHandler;
@@ -1561,6 +1566,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveWatermarksOutcome DescribeLiveWatermarks(const Model::DescribeLiveWatermarksRequest &request);
                 void DescribeLiveWatermarksAsync(const Model::DescribeLiveWatermarksRequest& request, const DescribeLiveWatermarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveWatermarksOutcomeCallable DescribeLiveWatermarksCallable(const Model::DescribeLiveWatermarksRequest& request);
+
+                /**
+                 *P2P流数据查询接口，用来获取流量、卡播和起播信息。
+                 * @param req DescribeLiveXP2PDetailInfoListRequest
+                 * @return DescribeLiveXP2PDetailInfoListOutcome
+                 */
+                DescribeLiveXP2PDetailInfoListOutcome DescribeLiveXP2PDetailInfoList(const Model::DescribeLiveXP2PDetailInfoListRequest &request);
+                void DescribeLiveXP2PDetailInfoListAsync(const Model::DescribeLiveXP2PDetailInfoListRequest& request, const DescribeLiveXP2PDetailInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveXP2PDetailInfoListOutcomeCallable DescribeLiveXP2PDetailInfoListCallable(const Model::DescribeLiveXP2PDetailInfoListRequest& request);
 
                 /**
                  *批量获取日志URL。

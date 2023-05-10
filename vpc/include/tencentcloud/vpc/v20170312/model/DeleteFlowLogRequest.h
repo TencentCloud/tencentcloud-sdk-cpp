@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志唯一ID
-                     * @return FlowLogId 流日志唯一ID
+                     * 获取流日志唯一ID。
+                     * @return FlowLogId 流日志唯一ID。
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID
-                     * @param FlowLogId 流日志唯一ID
+                     * 设置流日志唯一ID。
+                     * @param FlowLogId 流日志唯一ID。
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志唯一ID
+                     * 流日志唯一ID。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;

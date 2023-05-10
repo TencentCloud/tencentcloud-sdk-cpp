@@ -2878,6 +2878,49 @@ CynosdbClient::OpenAuditServiceOutcomeCallable CynosdbClient::OpenAuditServiceCa
     return task->get_future();
 }
 
+CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcome CynosdbClient::OpenReadOnlyInstanceExclusiveAccess(const OpenReadOnlyInstanceExclusiveAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenReadOnlyInstanceExclusiveAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenReadOnlyInstanceExclusiveAccessResponse rsp = OpenReadOnlyInstanceExclusiveAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenReadOnlyInstanceExclusiveAccessOutcome(rsp);
+        else
+            return OpenReadOnlyInstanceExclusiveAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenReadOnlyInstanceExclusiveAccessOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenReadOnlyInstanceExclusiveAccessAsync(const OpenReadOnlyInstanceExclusiveAccessRequest& request, const OpenReadOnlyInstanceExclusiveAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenReadOnlyInstanceExclusiveAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OpenReadOnlyInstanceExclusiveAccessOutcomeCallable CynosdbClient::OpenReadOnlyInstanceExclusiveAccessCallable(const OpenReadOnlyInstanceExclusiveAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenReadOnlyInstanceExclusiveAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenReadOnlyInstanceExclusiveAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::PauseServerlessOutcome CynosdbClient::PauseServerless(const PauseServerlessRequest &request)
 {
     auto outcome = MakeRequest(request, "PauseServerless");

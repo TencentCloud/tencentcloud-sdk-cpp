@@ -23,6 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/omics/v20221128/model/CreateEnvironmentRequest.h>
+#include <tencentcloud/omics/v20221128/model/CreateEnvironmentResponse.h>
+#include <tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h>
+#include <tencentcloud/omics/v20221128/model/DeleteEnvironmentResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunsRequest.h>
@@ -49,6 +55,15 @@ namespace TencentCloud
                 OmicsClient(const Credential &credential, const std::string &region);
                 OmicsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
+                typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnvironmentResponse> DeleteEnvironmentOutcome;
+                typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DeleteEnvironmentRequest&, DeleteEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
+                typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRunGroupsResponse> DescribeRunGroupsOutcome;
                 typedef std::future<DescribeRunGroupsOutcome> DescribeRunGroupsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeRunGroupsRequest&, DescribeRunGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunGroupsAsyncHandler;
@@ -69,6 +84,33 @@ namespace TencentCloud
                 typedef std::function<void(const OmicsClient*, const Model::RunApplicationRequest&, RunApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunApplicationAsyncHandler;
 
 
+
+                /**
+                 *创建组学平台计算环境。
+                 * @param req CreateEnvironmentRequest
+                 * @return CreateEnvironmentOutcome
+                 */
+                CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest &request);
+                void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
+
+                /**
+                 *删除环境。
+                 * @param req DeleteEnvironmentRequest
+                 * @return DeleteEnvironmentOutcome
+                 */
+                DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest &request);
+                void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request);
+
+                /**
+                 *查询环境列表。
+                 * @param req DescribeEnvironmentsRequest
+                 * @return DescribeEnvironmentsOutcome
+                 */
+                DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
+                void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
 
                 /**
                  *查询任务批次列表。

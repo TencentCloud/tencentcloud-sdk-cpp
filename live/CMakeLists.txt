@@ -23,6 +23,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/BillDataInfo.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainResponse.h
   include/tencentcloud/live/v20180801/model/DescribeUploadStreamNumsResponse.h
+  include/tencentcloud/live/v20180801/model/DescribeLiveXP2PDetailInfoListResponse.h
   include/tencentcloud/live/v20180801/model/HlsSpecialParam.h
   include/tencentcloud/live/v20180801/model/TranscodeTotalInfo.h
   include/tencentcloud/live/v20180801/model/StopRecordTaskResponse.h
@@ -242,6 +243,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveDelayInfoListResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLiveTranscodeTemplateRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCallbackRulesRequest.h
+  include/tencentcloud/live/v20180801/model/XP2PDetailInfo.h
   include/tencentcloud/live/v20180801/model/ClientIpPlaySumInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplateResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveSnapshotTemplateResponse.h
@@ -330,6 +332,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListResponse.h
   include/tencentcloud/live/v20180801/model/StopLiveRecordRequest.h
   include/tencentcloud/live/v20180801/model/DescribeVisitTopSumInfoListResponse.h
+  include/tencentcloud/live/v20180801/model/DescribeLiveXP2PDetailInfoListRequest.h
   include/tencentcloud/live/v20180801/model/ModifyLivePullStreamTaskResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveSnapshotRuleResponse.h
   include/tencentcloud/live/v20180801/model/DelayInfo.h
@@ -358,6 +361,7 @@ set(live_src
   src/v20180801/model/BillDataInfo.cpp
   src/v20180801/model/EnableLiveDomainResponse.cpp
   src/v20180801/model/DescribeUploadStreamNumsResponse.cpp
+  src/v20180801/model/DescribeLiveXP2PDetailInfoListResponse.cpp
   src/v20180801/model/HlsSpecialParam.cpp
   src/v20180801/model/TranscodeTotalInfo.cpp
   src/v20180801/model/StopRecordTaskResponse.cpp
@@ -577,6 +581,7 @@ set(live_src
   src/v20180801/model/DescribeLiveDelayInfoListResponse.cpp
   src/v20180801/model/DeleteLiveTranscodeTemplateRequest.cpp
   src/v20180801/model/DescribeLiveCallbackRulesRequest.cpp
+  src/v20180801/model/XP2PDetailInfo.cpp
   src/v20180801/model/ClientIpPlaySumInfo.cpp
   src/v20180801/model/DescribeLiveTranscodeTemplateResponse.cpp
   src/v20180801/model/CreateLiveSnapshotTemplateResponse.cpp
@@ -665,6 +670,7 @@ set(live_src
   src/v20180801/model/DescribeStreamDayPlayInfoListResponse.cpp
   src/v20180801/model/StopLiveRecordRequest.cpp
   src/v20180801/model/DescribeVisitTopSumInfoListResponse.cpp
+  src/v20180801/model/DescribeLiveXP2PDetailInfoListRequest.cpp
   src/v20180801/model/ModifyLivePullStreamTaskResponse.cpp
   src/v20180801/model/CreateLiveSnapshotRuleResponse.cpp
   src/v20180801/model/DelayInfo.cpp

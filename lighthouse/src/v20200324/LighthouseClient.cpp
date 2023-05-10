@@ -2491,6 +2491,49 @@ LighthouseClient::InquirePriceRenewInstancesOutcomeCallable LighthouseClient::In
     return task->get_future();
 }
 
+LighthouseClient::IsolateDisksOutcome LighthouseClient::IsolateDisks(const IsolateDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateDisksResponse rsp = IsolateDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateDisksOutcome(rsp);
+        else
+            return IsolateDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateDisksOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::IsolateDisksAsync(const IsolateDisksRequest& request, const IsolateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::IsolateDisksOutcomeCallable LighthouseClient::IsolateDisksCallable(const IsolateDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateDisks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::IsolateInstancesOutcome LighthouseClient::IsolateInstances(const IsolateInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateInstances");
@@ -3043,6 +3086,49 @@ LighthouseClient::RebootInstancesOutcomeCallable LighthouseClient::RebootInstanc
         [this, request]()
         {
             return this->RebootInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::RenewDisksOutcome LighthouseClient::RenewDisks(const RenewDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewDisksResponse rsp = RenewDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewDisksOutcome(rsp);
+        else
+            return RenewDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewDisksOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RenewDisksAsync(const RenewDisksRequest& request, const RenewDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RenewDisksOutcomeCallable LighthouseClient::RenewDisksCallable(const RenewDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewDisks(request);
         }
     );
 

@@ -91,6 +91,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RenewDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DockerContainerPublishPort.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
@@ -190,6 +191,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RenewDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InternetAccessible.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
@@ -199,6 +201,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Price.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDiskBackupsAttributeResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/IsolateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleResponse.h
   include/tencentcloud/lighthouse/v20200324/model/GeneralResourceQuota.h
@@ -216,6 +219,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/IsolateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiskDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h
@@ -306,6 +310,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeBlueprintsRequest.cpp
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp
+  src/v20200324/model/RenewDisksRequest.cpp
   src/v20200324/model/ModifyDisksAttributeRequest.cpp
   src/v20200324/model/DockerContainerPublishPort.cpp
   src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
@@ -405,6 +410,7 @@ set(lighthouse_src
   src/v20200324/model/TerminateDisksRequest.cpp
   src/v20200324/model/ResetInstanceRequest.cpp
   src/v20200324/model/DescribeDiskConfigsResponse.cpp
+  src/v20200324/model/RenewDisksResponse.cpp
   src/v20200324/model/InternetAccessible.cpp
   src/v20200324/model/InstancePriceDetail.cpp
   src/v20200324/model/RebootInstancesResponse.cpp
@@ -414,6 +420,7 @@ set(lighthouse_src
   src/v20200324/model/Price.cpp
   src/v20200324/model/DescribeDisksReturnableResponse.cpp
   src/v20200324/model/ModifyDiskBackupsAttributeResponse.cpp
+  src/v20200324/model/IsolateDisksRequest.cpp
   src/v20200324/model/CreateInstanceSnapshotResponse.cpp
   src/v20200324/model/ModifyInstancesBundleResponse.cpp
   src/v20200324/model/GeneralResourceQuota.cpp
@@ -431,6 +438,7 @@ set(lighthouse_src
   src/v20200324/model/RenewInstancesResponse.cpp
   src/v20200324/model/DescribeDisksDeniedActionsResponse.cpp
   src/v20200324/model/ResetInstanceResponse.cpp
+  src/v20200324/model/IsolateDisksResponse.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
   src/v20200324/model/DiskDeniedActions.cpp
   src/v20200324/model/InquirePriceCreateInstancesRequest.cpp

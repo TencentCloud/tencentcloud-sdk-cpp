@@ -2391,7 +2391,7 @@ namespace TencentCloud
                 DeleteDirectConnectGatewayCcnRoutesOutcomeCallable DeleteDirectConnectGatewayCcnRoutesCallable(const Model::DeleteDirectConnectGatewayCcnRoutesRequest& request);
 
                 /**
-                 *本接口（DeleteFlowLog）用于删除流日志
+                 *本接口（DeleteFlowLog）用于删除流日志。
                  * @param req DeleteFlowLogRequest
                  * @return DeleteFlowLogOutcome
                  */
@@ -2878,7 +2878,7 @@ namespace TencentCloud
                 DescribeDirectConnectGatewaysOutcomeCallable DescribeDirectConnectGatewaysCallable(const Model::DescribeDirectConnectGatewaysRequest& request);
 
                 /**
-                 *本接口（DescribeFlowLog）用于查询流日志实例信息
+                 *本接口（DescribeFlowLog）用于查询流日志实例信息。
                  * @param req DescribeFlowLogRequest
                  * @return DescribeFlowLogOutcome
                  */
@@ -3920,7 +3920,7 @@ LimitTypes取值范围：
                 ModifyDirectConnectGatewayAttributeOutcomeCallable ModifyDirectConnectGatewayAttributeCallable(const Model::ModifyDirectConnectGatewayAttributeRequest& request);
 
                 /**
-                 *本接口（ModifyFlowLogAttribute）用于修改流日志属性
+                 *本接口（ModifyFlowLogAttribute）用于修改流日志属性。
                  * @param req ModifyFlowLogAttributeRequest
                  * @return ModifyFlowLogAttributeOutcome
                  */

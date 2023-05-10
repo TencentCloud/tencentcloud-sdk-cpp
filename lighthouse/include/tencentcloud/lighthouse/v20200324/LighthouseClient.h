@@ -137,6 +137,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/IsolateDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/IsolateDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/IsolateInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
@@ -163,6 +165,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
@@ -364,6 +368,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRenewInstancesResponse> InquirePriceRenewInstancesOutcome;
                 typedef std::future<InquirePriceRenewInstancesOutcome> InquirePriceRenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::InquirePriceRenewInstancesRequest&, InquirePriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateDisksResponse> IsolateDisksOutcome;
+                typedef std::future<IsolateDisksOutcome> IsolateDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::IsolateDisksRequest&, IsolateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateInstancesResponse> IsolateInstancesOutcome;
                 typedef std::future<IsolateInstancesOutcome> IsolateInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::IsolateInstancesRequest&, IsolateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateInstancesAsyncHandler;
@@ -403,6 +410,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewDisksResponse> RenewDisksOutcome;
+                typedef std::future<RenewDisksOutcome> RenewDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RenewDisksRequest&, RenewDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
                 typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
@@ -1004,6 +1014,20 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 InquirePriceRenewInstancesOutcomeCallable InquirePriceRenewInstancesCallable(const Model::InquirePriceRenewInstancesRequest& request);
 
                 /**
+                 *本接口(IsolateDisks)用于退还一个或多个轻量应用服务器云硬盘。
+
+只有状态为 UNATTACHED 的数据盘才可以进行此操作。
+接口调用成功后，云硬盘会进入SHUTDOWN 状态。
+支持批量操作。每次请求批量资源的上限为 20。
+本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。云硬盘操作结果可以通过调用 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询，如果云硬盘的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req IsolateDisksRequest
+                 * @return IsolateDisksOutcome
+                 */
+                IsolateDisksOutcome IsolateDisks(const Model::IsolateDisksRequest &request);
+                void IsolateDisksAsync(const Model::IsolateDisksRequest& request, const IsolateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateDisksOutcomeCallable IsolateDisksCallable(const Model::IsolateDisksRequest& request);
+
+                /**
                  *本接口(IsolateInstances)用于退还一个或多个轻量应用服务器实例。
 * 只有状态为 RUNNING 或 STOPPED 的实例才可以进行此操作。
 * 接口调用成功后，实例会进入SHUTDOWN 状态。
@@ -1159,6 +1183,19 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest &request);
                 void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
+
+                /**
+                 *本接口(RenewDisks)用于续费一个或多个轻量应用服务器云硬盘。
+
+只有状态为 ATTACHED，UNATTACHED 或 SHUTDOWN 的数据盘才可以进行此操作。
+支持批量操作。每次请求批量云硬盘的上限为 50。
+本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。云硬盘操作结果可以通过调用 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询，如果云硬盘的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req RenewDisksRequest
+                 * @return RenewDisksOutcome
+                 */
+                RenewDisksOutcome RenewDisks(const Model::RenewDisksRequest &request);
+                void RenewDisksAsync(const Model::RenewDisksRequest& request, const RenewDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewDisksOutcomeCallable RenewDisksCallable(const Model::RenewDisksRequest& request);
 
                 /**
                  *本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。

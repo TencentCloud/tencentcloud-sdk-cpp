@@ -40,6 +40,135 @@ OmicsClient::OmicsClient(const Credential &credential, const string &region, con
 }
 
 
+OmicsClient::CreateEnvironmentOutcome OmicsClient::CreateEnvironment(const CreateEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEnvironmentResponse rsp = CreateEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEnvironmentOutcome(rsp);
+        else
+            return CreateEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::CreateEnvironmentOutcomeCallable OmicsClient::CreateEnvironmentCallable(const CreateEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::DeleteEnvironmentOutcome OmicsClient::DeleteEnvironment(const DeleteEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEnvironmentResponse rsp = DeleteEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEnvironmentOutcome(rsp);
+        else
+            return DeleteEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DeleteEnvironmentOutcomeCallable OmicsClient::DeleteEnvironmentCallable(const DeleteEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::DescribeEnvironmentsOutcome OmicsClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvironmentsResponse rsp = DescribeEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvironmentsOutcome(rsp);
+        else
+            return DescribeEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DescribeEnvironmentsOutcomeCallable OmicsClient::DescribeEnvironmentsCallable(const DescribeEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OmicsClient::DescribeRunGroupsOutcome OmicsClient::DescribeRunGroups(const DescribeRunGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRunGroups");

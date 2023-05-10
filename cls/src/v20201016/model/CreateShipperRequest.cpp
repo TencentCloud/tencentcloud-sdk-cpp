@@ -33,7 +33,9 @@ CreateShipperRequest::CreateShipperRequest() :
     m_partitionHasBeenSet(false),
     m_compressHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_filenameModeHasBeenSet(false)
+    m_filenameModeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string CreateShipperRequest::ToJsonString() const
         string key = "FilenameMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filenameMode, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
 
@@ -323,6 +341,38 @@ void CreateShipperRequest::SetFilenameMode(const uint64_t& _filenameMode)
 bool CreateShipperRequest::FilenameModeHasBeenSet() const
 {
     return m_filenameModeHasBeenSet;
+}
+
+int64_t CreateShipperRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void CreateShipperRequest::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool CreateShipperRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t CreateShipperRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void CreateShipperRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool CreateShipperRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取sql模版的md5值
-                     * @return Md5 sql模版的md5值
+                     * 获取sql模板的md5值
+                     * @return Md5 sql模板的md5值
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置sql模版的md5值
-                     * @param Md5 sql模版的md5值
+                     * 设置sql模板的md5值
+                     * @param Md5 sql模板的md5值
                      */
                     void SetMd5(const std::string& _md5);
 
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * sql模版的md5值
+                     * sql模板的md5值
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;

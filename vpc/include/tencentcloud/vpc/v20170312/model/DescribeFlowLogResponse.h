@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志信息
-                     * @return FlowLog 流日志信息
+                     * 获取流日志信息。
+                     * @return FlowLog 流日志信息。
                      */
                     std::vector<FlowLog> GetFlowLog() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志信息
+                     * 流日志信息。
                      */
                     std::vector<FlowLog> m_flowLog;
                     bool m_flowLogHasBeenSet;

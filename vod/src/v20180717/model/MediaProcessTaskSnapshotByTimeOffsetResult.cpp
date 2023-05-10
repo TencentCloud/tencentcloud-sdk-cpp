@@ -27,7 +27,9 @@ MediaProcessTaskSnapshotByTimeOffsetResult::MediaProcessTaskSnapshotByTimeOffset
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_beginProcessTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,26 @@ CoreInternalOutcome MediaProcessTaskSnapshotByTimeOffsetResult::Deserialize(cons
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginProcessTime") && !value["BeginProcessTime"].IsNull())
+    {
+        if (!value["BeginProcessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskSnapshotByTimeOffsetResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginProcessTime = string(value["BeginProcessTime"].GetString());
+        m_beginProcessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskSnapshotByTimeOffsetResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ void MediaProcessTaskSnapshotByTimeOffsetResult::ToJsonObject(rapidjson::Value &
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_beginProcessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginProcessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginProcessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +336,37 @@ void MediaProcessTaskSnapshotByTimeOffsetResult::SetProgress(const int64_t& _pro
 bool MediaProcessTaskSnapshotByTimeOffsetResult::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string MediaProcessTaskSnapshotByTimeOffsetResult::GetBeginProcessTime() const
+{
+    return m_beginProcessTime;
+}
+
+void MediaProcessTaskSnapshotByTimeOffsetResult::SetBeginProcessTime(const string& _beginProcessTime)
+{
+    m_beginProcessTime = _beginProcessTime;
+    m_beginProcessTimeHasBeenSet = true;
+}
+
+bool MediaProcessTaskSnapshotByTimeOffsetResult::BeginProcessTimeHasBeenSet() const
+{
+    return m_beginProcessTimeHasBeenSet;
+}
+
+string MediaProcessTaskSnapshotByTimeOffsetResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void MediaProcessTaskSnapshotByTimeOffsetResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool MediaProcessTaskSnapshotByTimeOffsetResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取proxy节点数量
-                     * @return ProxyCount proxy节点数量
+                     * 获取Proxy节点数量。
+                     * @return ProxyCount Proxy节点数量。
                      */
                     int64_t GetProxyCount() const;
 
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool ProxyCountHasBeenSet() const;
 
                     /**
-                     * 获取proxy节点信息
+                     * 获取Proxy节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Proxy proxy节点信息
+                     * @return Proxy Proxy节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNodes> GetProxy() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ProxyHasBeenSet() const;
 
                     /**
-                     * 获取redis节点数量
-                     * @return RedisCount redis节点数量
+                     * 获取Redis节点数量。
+                     * @return RedisCount Redis节点数量。
                      */
                     int64_t GetRedisCount() const;
 
@@ -85,9 +85,9 @@ namespace TencentCloud
                     bool RedisCountHasBeenSet() const;
 
                     /**
-                     * 获取redis节点信息
+                     * 获取Redis节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Redis redis节点信息
+                     * @return Redis Redis节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RedisNodes> GetRedis() const;
@@ -99,8 +99,8 @@ namespace TencentCloud
                     bool RedisHasBeenSet() const;
 
                     /**
-                     * 获取tendis节点数量
-                     * @return TendisCount tendis节点数量
+                     * 获取该参数不再使用，请忽略。
+                     * @return TendisCount 该参数不再使用，请忽略。
                      */
                     int64_t GetTendisCount() const;
 
@@ -111,9 +111,9 @@ namespace TencentCloud
                     bool TendisCountHasBeenSet() const;
 
                     /**
-                     * 获取tendis节点信息
+                     * 获取该参数不再使用，请忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tendis tendis节点信息
+                     * @return Tendis 该参数不再使用，请忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TendisNodes> GetTendis() const;
@@ -127,39 +127,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * proxy节点数量
+                     * Proxy节点数量。
                      */
                     int64_t m_proxyCount;
                     bool m_proxyCountHasBeenSet;
 
                     /**
-                     * proxy节点信息
+                     * Proxy节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNodes> m_proxy;
                     bool m_proxyHasBeenSet;
 
                     /**
-                     * redis节点数量
+                     * Redis节点数量。
                      */
                     int64_t m_redisCount;
                     bool m_redisCountHasBeenSet;
 
                     /**
-                     * redis节点信息
+                     * Redis节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RedisNodes> m_redis;
                     bool m_redisHasBeenSet;
 
                     /**
-                     * tendis节点数量
+                     * 该参数不再使用，请忽略。
                      */
                     int64_t m_tendisCount;
                     bool m_tendisCountHasBeenSet;
 
                     /**
-                     * tendis节点信息
+                     * 该参数不再使用，请忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TendisNodes> m_tendis;

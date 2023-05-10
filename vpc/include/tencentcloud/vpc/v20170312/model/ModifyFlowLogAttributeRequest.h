@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志唯一ID
-                     * @return FlowLogId 流日志唯一ID
+                     * 获取流日志唯一ID。
+                     * @return FlowLogId 流日志唯一ID。
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID
-                     * @param FlowLogId 流日志唯一ID
+                     * 设置流日志唯一ID。
+                     * @param FlowLogId 流日志唯一ID。
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字
-                     * @return FlowLogName 流日志实例名字
+                     * 获取流日志实例名字。
+                     * @return FlowLogName 流日志实例名字。
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字
-                     * @param FlowLogName 流日志实例名字
+                     * 设置流日志实例名字。
+                     * @param FlowLogName 流日志实例名字。
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例描述
-                     * @return FlowLogDescription 流日志实例描述
+                     * 获取流日志实例描述。
+                     * @return FlowLogDescription 流日志实例描述。
                      */
                     std::string GetFlowLogDescription() const;
 
                     /**
-                     * 设置流日志实例描述
-                     * @param FlowLogDescription 流日志实例描述
+                     * 设置流日志实例描述。
+                     * @param FlowLogDescription 流日志实例描述。
                      */
                     void SetFlowLogDescription(const std::string& _flowLogDescription);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志唯一ID
+                     * 流日志唯一ID。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
@@ -129,13 +129,13 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字
+                     * 流日志实例名字。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志实例描述
+                     * 流日志实例描述。
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;

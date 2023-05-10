@@ -36,7 +36,8 @@ EdgeCluster::EdgeCluster() :
     m_levelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
-    m_edgeVersionHasBeenSet(false)
+    m_edgeVersionHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,23 @@ CoreInternalOutcome EdgeCluster::Deserialize(const rapidjson::Value &value)
         m_edgeVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.TagSpecification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagSpecification.Deserialize(value["TagSpecification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagSpecificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +364,15 @@ void EdgeCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EdgeVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_edgeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -605,5 +632,21 @@ void EdgeCluster::SetEdgeVersion(const string& _edgeVersion)
 bool EdgeCluster::EdgeVersionHasBeenSet() const
 {
     return m_edgeVersionHasBeenSet;
+}
+
+TagSpecification EdgeCluster::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void EdgeCluster::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool EdgeCluster::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 

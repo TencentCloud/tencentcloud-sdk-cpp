@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/EdgeClusterAdvancedSettings.h>
+#include <tencentcloud/tke/v20180525/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -359,6 +360,28 @@ namespace TencentCloud
                      */
                     bool EdgeVersionHasBeenSet() const;
 
+                    /**
+                     * 获取集群绑定的云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSpecification 集群绑定的云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TagSpecification GetTagSpecification() const;
+
+                    /**
+                     * 设置集群绑定的云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagSpecification 集群绑定的云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagSpecification(const TagSpecification& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +485,13 @@ namespace TencentCloud
                      */
                     std::string m_edgeVersion;
                     bool m_edgeVersionHasBeenSet;
+
+                    /**
+                     * 集群绑定的云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TagSpecification m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }
