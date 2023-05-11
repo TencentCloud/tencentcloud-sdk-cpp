@@ -89,6 +89,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeFlowResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeZonesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesRequest.h>
@@ -298,6 +302,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceDetailResponse> DescribeInstanceDetailOutcome;
                 typedef std::future<DescribeInstanceDetailOutcome> DescribeInstanceDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceDetailRequest&, DescribeInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceErrorLogsResponse> DescribeInstanceErrorLogsOutcome;
+                typedef std::future<DescribeInstanceErrorLogsOutcome> DescribeInstanceErrorLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceErrorLogsRequest&, DescribeInstanceErrorLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceErrorLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceSlowQueriesResponse> DescribeInstanceSlowQueriesOutcome;
                 typedef std::future<DescribeInstanceSlowQueriesOutcome> DescribeInstanceSlowQueriesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSlowQueriesRequest&, DescribeInstanceSlowQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSlowQueriesAsyncHandler;
@@ -331,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportInstanceErrorLogsResponse> ExportInstanceErrorLogsOutcome;
+                typedef std::future<ExportInstanceErrorLogsOutcome> ExportInstanceErrorLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ExportInstanceErrorLogsRequest&, ExportInstanceErrorLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportInstanceErrorLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportInstanceSlowQueriesResponse> ExportInstanceSlowQueriesOutcome;
                 typedef std::future<ExportInstanceSlowQueriesOutcome> ExportInstanceSlowQueriesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ExportInstanceSlowQueriesRequest&, ExportInstanceSlowQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportInstanceSlowQueriesAsyncHandler;
@@ -743,6 +753,15 @@ namespace TencentCloud
                 DescribeInstanceDetailOutcomeCallable DescribeInstanceDetailCallable(const Model::DescribeInstanceDetailRequest& request);
 
                 /**
+                 *查询实例错误日志列表
+                 * @param req DescribeInstanceErrorLogsRequest
+                 * @return DescribeInstanceErrorLogsOutcome
+                 */
+                DescribeInstanceErrorLogsOutcome DescribeInstanceErrorLogs(const Model::DescribeInstanceErrorLogsRequest &request);
+                void DescribeInstanceErrorLogsAsync(const Model::DescribeInstanceErrorLogsRequest& request, const DescribeInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceErrorLogsOutcomeCallable DescribeInstanceErrorLogsCallable(const Model::DescribeInstanceErrorLogsRequest& request);
+
+                /**
                  *此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。
                  * @param req DescribeInstanceSlowQueriesRequest
                  * @return DescribeInstanceSlowQueriesOutcome
@@ -840,6 +859,15 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
                 void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
+                 *此接口（ExportInstanceErrorLogs）用于导出实例错误日志。
+                 * @param req ExportInstanceErrorLogsRequest
+                 * @return ExportInstanceErrorLogsOutcome
+                 */
+                ExportInstanceErrorLogsOutcome ExportInstanceErrorLogs(const Model::ExportInstanceErrorLogsRequest &request);
+                void ExportInstanceErrorLogsAsync(const Model::ExportInstanceErrorLogsRequest& request, const ExportInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportInstanceErrorLogsOutcomeCallable ExportInstanceErrorLogsCallable(const Model::ExportInstanceErrorLogsRequest& request);
 
                 /**
                  *此接口（ExportInstanceSlowQueries）用于导出实例慢日志。

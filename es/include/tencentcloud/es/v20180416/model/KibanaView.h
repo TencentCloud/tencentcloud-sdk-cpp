@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取ts-0noqayxu-az6-hot-03222010-0
+                     * @return NodeId ts-0noqayxu-az6-hot-03222010-0
+                     */
+                    std::string GetNodeId() const;
+
+                    /**
+                     * 设置ts-0noqayxu-az6-hot-03222010-0
+                     * @param NodeId ts-0noqayxu-az6-hot-03222010-0
+                     */
+                    void SetNodeId(const std::string& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     */
+                    bool NodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * ts-0noqayxu-az6-hot-03222010-0
+                     */
+                    std::string m_nodeId;
+                    bool m_nodeIdHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ InstanceLog::InstanceLog() :
     m_timeHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_nodeIDHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome InstanceLog::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLog.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void InstanceLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void InstanceLog::SetMessage(const string& _message)
 bool InstanceLog::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string InstanceLog::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void InstanceLog::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool InstanceLog::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
 }
 

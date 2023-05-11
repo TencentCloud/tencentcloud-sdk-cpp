@@ -23,9 +23,9 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 ModifySnapshotsSharePermissionRequest::ModifySnapshotsSharePermissionRequest() :
+    m_snapshotIdsHasBeenSet(false),
     m_accountIdsHasBeenSet(false),
-    m_permissionHasBeenSet(false),
-    m_snapshotIdsHasBeenSet(false)
+    m_permissionHasBeenSet(false)
 {
 }
 
@@ -35,6 +35,19 @@ string ModifySnapshotsSharePermissionRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_snapshotIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_snapshotIds.begin(); itr != m_snapshotIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_accountIdsHasBeenSet)
     {
@@ -57,19 +70,6 @@ string ModifySnapshotsSharePermissionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_permission.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_snapshotIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SnapshotIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_snapshotIds.begin(); itr != m_snapshotIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -77,6 +77,22 @@ string ModifySnapshotsSharePermissionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> ModifySnapshotsSharePermissionRequest::GetSnapshotIds() const
+{
+    return m_snapshotIds;
+}
+
+void ModifySnapshotsSharePermissionRequest::SetSnapshotIds(const vector<string>& _snapshotIds)
+{
+    m_snapshotIds = _snapshotIds;
+    m_snapshotIdsHasBeenSet = true;
+}
+
+bool ModifySnapshotsSharePermissionRequest::SnapshotIdsHasBeenSet() const
+{
+    return m_snapshotIdsHasBeenSet;
+}
 
 vector<string> ModifySnapshotsSharePermissionRequest::GetAccountIds() const
 {
@@ -108,22 +124,6 @@ void ModifySnapshotsSharePermissionRequest::SetPermission(const string& _permiss
 bool ModifySnapshotsSharePermissionRequest::PermissionHasBeenSet() const
 {
     return m_permissionHasBeenSet;
-}
-
-vector<string> ModifySnapshotsSharePermissionRequest::GetSnapshotIds() const
-{
-    return m_snapshotIds;
-}
-
-void ModifySnapshotsSharePermissionRequest::SetSnapshotIds(const vector<string>& _snapshotIds)
-{
-    m_snapshotIds = _snapshotIds;
-    m_snapshotIdsHasBeenSet = true;
-}
-
-bool ModifySnapshotsSharePermissionRequest::SnapshotIdsHasBeenSet() const
-{
-    return m_snapshotIdsHasBeenSet;
 }
 
 

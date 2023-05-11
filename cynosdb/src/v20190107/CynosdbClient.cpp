@@ -1459,6 +1459,49 @@ CynosdbClient::DescribeInstanceDetailOutcomeCallable CynosdbClient::DescribeInst
     return task->get_future();
 }
 
+CynosdbClient::DescribeInstanceErrorLogsOutcome CynosdbClient::DescribeInstanceErrorLogs(const DescribeInstanceErrorLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceErrorLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceErrorLogsResponse rsp = DescribeInstanceErrorLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceErrorLogsOutcome(rsp);
+        else
+            return DescribeInstanceErrorLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceErrorLogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceErrorLogsAsync(const DescribeInstanceErrorLogsRequest& request, const DescribeInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceErrorLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeInstanceErrorLogsOutcomeCallable CynosdbClient::DescribeInstanceErrorLogsCallable(const DescribeInstanceErrorLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceErrorLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceErrorLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeInstanceSlowQueriesOutcome CynosdbClient::DescribeInstanceSlowQueries(const DescribeInstanceSlowQueriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceSlowQueries");
@@ -1925,6 +1968,49 @@ CynosdbClient::DisassociateSecurityGroupsOutcomeCallable CynosdbClient::Disassoc
         [this, request]()
         {
             return this->DisassociateSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ExportInstanceErrorLogsOutcome CynosdbClient::ExportInstanceErrorLogs(const ExportInstanceErrorLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportInstanceErrorLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportInstanceErrorLogsResponse rsp = ExportInstanceErrorLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportInstanceErrorLogsOutcome(rsp);
+        else
+            return ExportInstanceErrorLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportInstanceErrorLogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ExportInstanceErrorLogsAsync(const ExportInstanceErrorLogsRequest& request, const ExportInstanceErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportInstanceErrorLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ExportInstanceErrorLogsOutcomeCallable CynosdbClient::ExportInstanceErrorLogsCallable(const ExportInstanceErrorLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportInstanceErrorLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportInstanceErrorLogs(request);
         }
     );
 

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取权重值，取值[0,100]
-                     * @return Weight 权重值，取值[0,100]
+                     * 获取权重值，取值[0,100]，暂不支持
+                     * @return Weight 权重值，取值[0,100]，暂不支持
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重值，取值[0,100]
-                     * @param Weight 权重值，取值[0,100]
+                     * 设置权重值，取值[0,100]，暂不支持
+                     * @param Weight 权重值，取值[0,100]，暂不支持
                      */
                     void SetWeight(const uint64_t& _weight);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 权重值，取值[0,100]
+                     * 权重值，取值[0,100]，暂不支持
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

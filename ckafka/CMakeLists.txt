@@ -113,7 +113,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CdcClusterResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesConfig.h
-  include/tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTaskStatusResponse.h
   include/tencentcloud/ckafka/v20190819/model/AuthorizeTokenRequest.h
   include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
   include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h
@@ -248,6 +248,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h
   include/tencentcloud/ckafka/v20190819/model/DateParam.h
+  include/tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h
   include/tencentcloud/ckafka/v20190819/model/ValueParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
   include/tencentcloud/ckafka/v20190819/model/InquiryDiskParam.h
@@ -308,8 +309,10 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/SaleInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/ScfParam.h
+  include/tencentcloud/ckafka/v20190819/model/TaskStatusResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTaskStatusRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h
@@ -422,7 +425,7 @@ set(ckafka_src
   src/v20190819/model/CdcClusterResponse.cpp
   src/v20190819/model/ModifyPasswordResponse.cpp
   src/v20190819/model/ModifyInstanceAttributesConfig.cpp
-  src/v20190819/model/FetchDatahubMessageByOffsetRequest.cpp
+  src/v20190819/model/DescribeTaskStatusResponse.cpp
   src/v20190819/model/AuthorizeTokenRequest.cpp
   src/v20190819/model/OperateResponseData.cpp
   src/v20190819/model/RenewCkafkaInstanceResponse.cpp
@@ -557,6 +560,7 @@ set(ckafka_src
   src/v20190819/model/CreateDatahubTopicResponse.cpp
   src/v20190819/model/InquireCkafkaPriceRequest.cpp
   src/v20190819/model/DateParam.cpp
+  src/v20190819/model/FetchDatahubMessageByOffsetRequest.cpp
   src/v20190819/model/ValueParam.cpp
   src/v20190819/model/DescribeDatahubTasksResponse.cpp
   src/v20190819/model/InquiryDiskParam.cpp
@@ -617,8 +621,10 @@ set(ckafka_src
   src/v20190819/model/SaleInfo.cpp
   src/v20190819/model/DeleteTopicResponse.cpp
   src/v20190819/model/ScfParam.cpp
+  src/v20190819/model/TaskStatusResponse.cpp
   src/v20190819/model/CreateDatahubTaskResponse.cpp
   src/v20190819/model/ClickHouseConnectParam.cpp
+  src/v20190819/model/DescribeTaskStatusRequest.cpp
   src/v20190819/model/DescribeUserRequest.cpp
   src/v20190819/model/DescribeDatahubTopicsResp.cpp
   src/v20190819/model/DescribeTopicSyncReplicaRequest.cpp

@@ -62,6 +62,24 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
+                     * 获取Pulsar 集群的ID
+                     * @return ClusterId Pulsar 集群的ID
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置Pulsar 集群的ID
+                     * @param ClusterId Pulsar 集群的ID
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取主题名模糊匹配。
                      * @return TopicName 主题名模糊匹配。
                      */
@@ -150,24 +168,6 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取Pulsar 集群的ID
-                     * @return ClusterId Pulsar 集群的ID
-                     */
-                    std::string GetClusterId() const;
-
-                    /**
-                     * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
-                     */
-                    void SetClusterId(const std::string& _clusterId);
-
-                    /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
-                     */
-                    bool ClusterIdHasBeenSet() const;
-
-                    /**
                      * 获取* TopicName
 按照主题名字查询，精确查询。
 类型：String
@@ -232,6 +232,12 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
+                     * Pulsar 集群的ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * 主题名模糊匹配。
                      */
                     std::string m_topicName;
@@ -258,12 +264,6 @@ namespace TencentCloud
                      */
                     uint64_t m_topicType;
                     bool m_topicTypeHasBeenSet;
-
-                    /**
-                     * Pulsar 集群的ID
-                     */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * * TopicName

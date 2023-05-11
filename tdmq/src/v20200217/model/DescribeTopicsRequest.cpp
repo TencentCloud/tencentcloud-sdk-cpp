@@ -24,11 +24,11 @@ using namespace std;
 
 DescribeTopicsRequest::DescribeTopicsRequest() :
     m_environmentIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_topicCreatorHasBeenSet(false)
 {
@@ -47,6 +47,14 @@ string DescribeTopicsRequest::ToJsonString() const
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicNameHasBeenSet)
@@ -79,14 +87,6 @@ string DescribeTopicsRequest::ToJsonString() const
         string key = "TopicType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_topicType, allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -134,6 +134,22 @@ void DescribeTopicsRequest::SetEnvironmentId(const string& _environmentId)
 bool DescribeTopicsRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+string DescribeTopicsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeTopicsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeTopicsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 string DescribeTopicsRequest::GetTopicName() const
@@ -198,22 +214,6 @@ void DescribeTopicsRequest::SetTopicType(const uint64_t& _topicType)
 bool DescribeTopicsRequest::TopicTypeHasBeenSet() const
 {
     return m_topicTypeHasBeenSet;
-}
-
-string DescribeTopicsRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DescribeTopicsRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DescribeTopicsRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 vector<Filter> DescribeTopicsRequest::GetFilters() const

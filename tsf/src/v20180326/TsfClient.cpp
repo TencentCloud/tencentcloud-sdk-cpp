@@ -1975,6 +1975,49 @@ TsfClient::DeleteFileConfigOutcomeCallable TsfClient::DeleteFileConfigCallable(c
     return task->get_future();
 }
 
+TsfClient::DeleteGatewayApiOutcome TsfClient::DeleteGatewayApi(const DeleteGatewayApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGatewayApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGatewayApiResponse rsp = DeleteGatewayApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGatewayApiOutcome(rsp);
+        else
+            return DeleteGatewayApiOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGatewayApiOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteGatewayApiAsync(const DeleteGatewayApiRequest& request, const DeleteGatewayApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGatewayApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteGatewayApiOutcomeCallable TsfClient::DeleteGatewayApiCallable(const DeleteGatewayApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGatewayApiOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGatewayApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteGroupOutcome TsfClient::DeleteGroup(const DeleteGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteGroup");

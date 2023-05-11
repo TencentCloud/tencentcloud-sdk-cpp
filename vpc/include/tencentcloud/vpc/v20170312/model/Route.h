@@ -120,13 +120,17 @@ LOCAL_GATEWAY：本地网关。
 
                     /**
                      * 获取下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
+特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
                      * @return GatewayId 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
+特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
+特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
                      * @param GatewayId 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
+特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
@@ -347,6 +351,7 @@ LOCAL_GATEWAY：本地网关。
 
                     /**
                      * 下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。
+特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。
-                     * @return DiskIds 一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。
+                     * 获取一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。
+                     * @return DiskIds 一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。
-                     * @param DiskIds 一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。
+                     * 设置一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。
+                     * @param DiskIds 一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。
+                     * 一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;

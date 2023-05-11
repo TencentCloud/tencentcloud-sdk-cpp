@@ -108,6 +108,50 @@ namespace TencentCloud
                      */
                     bool UseErrorOnHoldHasBeenSet() const;
 
+                    /**
+                     * 获取输出归档COS路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinalWorkflowOutputsDir 输出归档COS路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFinalWorkflowOutputsDir() const;
+
+                    /**
+                     * 设置输出归档COS路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FinalWorkflowOutputsDir 输出归档COS路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFinalWorkflowOutputsDir(const std::string& _finalWorkflowOutputsDir);
+
+                    /**
+                     * 判断参数 FinalWorkflowOutputsDir 是否已赋值
+                     * @return FinalWorkflowOutputsDir 是否已赋值
+                     */
+                    bool FinalWorkflowOutputsDirHasBeenSet() const;
+
+                    /**
+                     * 获取是否使用相对目录归档输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseRelativeOutputPaths 是否使用相对目录归档输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUseRelativeOutputPaths() const;
+
+                    /**
+                     * 设置是否使用相对目录归档输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseRelativeOutputPaths 是否使用相对目录归档输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseRelativeOutputPaths(const bool& _useRelativeOutputPaths);
+
+                    /**
+                     * 判断参数 UseRelativeOutputPaths 是否已赋值
+                     * @return UseRelativeOutputPaths 是否已赋值
+                     */
+                    bool UseRelativeOutputPathsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +173,20 @@ namespace TencentCloud
                      */
                     bool m_useErrorOnHold;
                     bool m_useErrorOnHoldHasBeenSet;
+
+                    /**
+                     * 输出归档COS路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finalWorkflowOutputsDir;
+                    bool m_finalWorkflowOutputsDirHasBeenSet;
+
+                    /**
+                     * 是否使用相对目录归档输出。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useRelativeOutputPaths;
+                    bool m_useRelativeOutputPathsHasBeenSet;
 
                 };
             }

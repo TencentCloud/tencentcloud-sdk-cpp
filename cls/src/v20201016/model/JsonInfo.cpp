@@ -22,7 +22,8 @@ using namespace std;
 
 JsonInfo::JsonInfo() :
     m_enableTagHasBeenSet(false),
-    m_metaFieldsHasBeenSet(false)
+    m_metaFieldsHasBeenSet(false),
+    m_jsonTypeHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome JsonInfo::Deserialize(const rapidjson::Value &value)
         m_metaFieldsHasBeenSet = true;
     }
 
+    if (value.HasMember("JsonType") && !value["JsonType"].IsNull())
+    {
+        if (!value["JsonType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JsonInfo.JsonType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jsonType = value["JsonType"].GetInt64();
+        m_jsonTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void JsonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_jsonTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JsonType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jsonType, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void JsonInfo::SetMetaFields(const vector<string>& _metaFields)
 bool JsonInfo::MetaFieldsHasBeenSet() const
 {
     return m_metaFieldsHasBeenSet;
+}
+
+int64_t JsonInfo::GetJsonType() const
+{
+    return m_jsonType;
+}
+
+void JsonInfo::SetJsonType(const int64_t& _jsonType)
+{
+    m_jsonType = _jsonType;
+    m_jsonTypeHasBeenSet = true;
+}
+
+bool JsonInfo::JsonTypeHasBeenSet() const
+{
+    return m_jsonTypeHasBeenSet;
 }
 

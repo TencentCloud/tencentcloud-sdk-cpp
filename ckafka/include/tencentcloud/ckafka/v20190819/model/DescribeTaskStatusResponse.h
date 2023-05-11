@@ -14,57 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CBS_V20170312_MODEL_CREATEDISKSRESPONSE_H_
-#define TENCENTCLOUD_CBS_V20170312_MODEL_CREATEDISKSRESPONSE_H_
+#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBETASKSTATUSRESPONSE_H_
+#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBETASKSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/TaskStatusResponse.h>
 
 
 namespace TencentCloud
 {
-    namespace Cbs
+    namespace Ckafka
     {
-        namespace V20170312
+        namespace V20190819
         {
             namespace Model
             {
                 /**
-                * CreateDisks返回参数结构体
+                * DescribeTaskStatus返回参数结构体
                 */
-                class CreateDisksResponse : public AbstractModel
+                class DescribeTaskStatusResponse : public AbstractModel
                 {
                 public:
-                    CreateDisksResponse();
-                    ~CreateDisksResponse() = default;
+                    DescribeTaskStatusResponse();
+                    ~DescribeTaskStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取创建的云硬盘ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskIdSet 创建的云硬盘ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回结果
+                     * @return Result 返回结果
                      */
-                    std::vector<std::string> GetDiskIdSet() const;
+                    TaskStatusResponse GetResult() const;
 
                     /**
-                     * 判断参数 DiskIdSet 是否已赋值
-                     * @return DiskIdSet 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool DiskIdSetHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 创建的云硬盘ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回结果
                      */
-                    std::vector<std::string> m_diskIdSet;
-                    bool m_diskIdSetHasBeenSet;
+                    TaskStatusResponse m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -72,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CBS_V20170312_MODEL_CREATEDISKSRESPONSE_H_
+#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBETASKSTATUSRESPONSE_H_

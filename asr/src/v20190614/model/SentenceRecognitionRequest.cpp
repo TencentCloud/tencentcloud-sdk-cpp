@@ -39,7 +39,8 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_convertNumModeHasBeenSet(false),
     m_hotwordIdHasBeenSet(false),
     m_customizationIdHasBeenSet(false),
-    m_reinforceHotwordHasBeenSet(false)
+    m_reinforceHotwordHasBeenSet(false),
+    m_hotwordListHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "ReinforceHotword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_reinforceHotword, allocator);
+    }
+
+    if (m_hotwordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotwordList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordList.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +473,22 @@ void SentenceRecognitionRequest::SetReinforceHotword(const int64_t& _reinforceHo
 bool SentenceRecognitionRequest::ReinforceHotwordHasBeenSet() const
 {
     return m_reinforceHotwordHasBeenSet;
+}
+
+string SentenceRecognitionRequest::GetHotwordList() const
+{
+    return m_hotwordList;
+}
+
+void SentenceRecognitionRequest::SetHotwordList(const string& _hotwordList)
+{
+    m_hotwordList = _hotwordList;
+    m_hotwordListHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::HotwordListHasBeenSet() const
+{
+    return m_hotwordListHasBeenSet;
 }
 
 

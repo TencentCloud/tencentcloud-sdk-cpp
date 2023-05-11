@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取集群节点ID
+                     * @return NodeID 集群节点ID
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 设置集群节点ID
+                     * @param NodeID 集群节点ID
+                     */
+                    void SetNodeID(const std::string& _nodeID);
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 集群节点ID
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
 
                 };
             }

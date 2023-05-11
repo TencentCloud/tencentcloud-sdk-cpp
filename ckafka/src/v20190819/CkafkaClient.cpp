@@ -2319,6 +2319,49 @@ CkafkaClient::DescribeRouteOutcomeCallable CkafkaClient::DescribeRouteCallable(c
     return task->get_future();
 }
 
+CkafkaClient::DescribeTaskStatusOutcome CkafkaClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskStatusResponse rsp = DescribeTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskStatusOutcome(rsp);
+        else
+            return DescribeTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTaskStatusOutcomeCallable CkafkaClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTopicOutcome CkafkaClient::DescribeTopic(const DescribeTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopic");

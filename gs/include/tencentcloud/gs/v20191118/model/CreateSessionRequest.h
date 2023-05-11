@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取游戏ID
-                     * @return GameId 游戏ID
+                     * 获取【已废弃】只在TrylockWorker时生效
+                     * @return GameId 【已废弃】只在TrylockWorker时生效
                      */
                     std::string GetGameId() const;
 
                     /**
-                     * 设置游戏ID
-                     * @param GameId 游戏ID
+                     * 设置【已废弃】只在TrylockWorker时生效
+                     * @param GameId 【已废弃】只在TrylockWorker时生效
                      */
                     void SetGameId(const std::string& _gameId);
 
@@ -383,7 +383,7 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 游戏ID
+                     * 【已废弃】只在TrylockWorker时生效
                      */
                     std::string m_gameId;
                     bool m_gameIdHasBeenSet;

@@ -129,6 +129,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesRequest.h>
@@ -348,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteResponse> DescribeRouteOutcome;
                 typedef std::future<DescribeRouteOutcome> DescribeRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeRouteRequest&, DescribeRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
+                typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
@@ -896,6 +901,15 @@ namespace TencentCloud
                 DescribeRouteOutcome DescribeRoute(const Model::DescribeRouteRequest &request);
                 void DescribeRouteAsync(const Model::DescribeRouteRequest& request, const DescribeRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteOutcomeCallable DescribeRouteCallable(const Model::DescribeRouteRequest& request);
+
+                /**
+                 *查询任务状态
+                 * @param req DescribeTaskStatusRequest
+                 * @return DescribeTaskStatusOutcome
+                 */
+                DescribeTaskStatusOutcome DescribeTaskStatus(const Model::DescribeTaskStatusRequest &request);
+                void DescribeTaskStatusAsync(const Model::DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
                  *接口请求域名：https://ckafka.tencentcloudapi.com

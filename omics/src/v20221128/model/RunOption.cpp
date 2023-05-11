@@ -23,7 +23,9 @@ using namespace std;
 RunOption::RunOption() :
     m_failureModeHasBeenSet(false),
     m_useCallCacheHasBeenSet(false),
-    m_useErrorOnHoldHasBeenSet(false)
+    m_useErrorOnHoldHasBeenSet(false),
+    m_finalWorkflowOutputsDirHasBeenSet(false),
+    m_useRelativeOutputPathsHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome RunOption::Deserialize(const rapidjson::Value &value)
         m_useErrorOnHoldHasBeenSet = true;
     }
 
+    if (value.HasMember("FinalWorkflowOutputsDir") && !value["FinalWorkflowOutputsDir"].IsNull())
+    {
+        if (!value["FinalWorkflowOutputsDir"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunOption.FinalWorkflowOutputsDir` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finalWorkflowOutputsDir = string(value["FinalWorkflowOutputsDir"].GetString());
+        m_finalWorkflowOutputsDirHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseRelativeOutputPaths") && !value["UseRelativeOutputPaths"].IsNull())
+    {
+        if (!value["UseRelativeOutputPaths"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunOption.UseRelativeOutputPaths` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useRelativeOutputPaths = value["UseRelativeOutputPaths"].GetBool();
+        m_useRelativeOutputPathsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void RunOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UseErrorOnHold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useErrorOnHold, allocator);
+    }
+
+    if (m_finalWorkflowOutputsDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinalWorkflowOutputsDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finalWorkflowOutputsDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useRelativeOutputPathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseRelativeOutputPaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useRelativeOutputPaths, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void RunOption::SetUseErrorOnHold(const bool& _useErrorOnHold)
 bool RunOption::UseErrorOnHoldHasBeenSet() const
 {
     return m_useErrorOnHoldHasBeenSet;
+}
+
+string RunOption::GetFinalWorkflowOutputsDir() const
+{
+    return m_finalWorkflowOutputsDir;
+}
+
+void RunOption::SetFinalWorkflowOutputsDir(const string& _finalWorkflowOutputsDir)
+{
+    m_finalWorkflowOutputsDir = _finalWorkflowOutputsDir;
+    m_finalWorkflowOutputsDirHasBeenSet = true;
+}
+
+bool RunOption::FinalWorkflowOutputsDirHasBeenSet() const
+{
+    return m_finalWorkflowOutputsDirHasBeenSet;
+}
+
+bool RunOption::GetUseRelativeOutputPaths() const
+{
+    return m_useRelativeOutputPaths;
+}
+
+void RunOption::SetUseRelativeOutputPaths(const bool& _useRelativeOutputPaths)
+{
+    m_useRelativeOutputPaths = _useRelativeOutputPaths;
+    m_useRelativeOutputPathsHasBeenSet = true;
+}
+
+bool RunOption::UseRelativeOutputPathsHasBeenSet() const
+{
+    return m_useRelativeOutputPathsHasBeenSet;
 }
 

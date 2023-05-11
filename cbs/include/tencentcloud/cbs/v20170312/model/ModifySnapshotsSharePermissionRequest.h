@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
+                     * @return SnapshotIds 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
+                     */
+                    std::vector<std::string> GetSnapshotIds() const;
+
+                    /**
+                     * 设置快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
+                     * @param SnapshotIds 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
+                     */
+                    void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
+
+                    /**
+                     * 判断参数 SnapshotIds 是否已赋值
+                     * @return SnapshotIds 是否已赋值
+                     */
+                    bool SnapshotIdsHasBeenSet() const;
+
+                    /**
                      * 获取接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。
                      * @return AccountIds 接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。
                      */
@@ -78,25 +96,13 @@ namespace TencentCloud
                      */
                     bool PermissionHasBeenSet() const;
 
-                    /**
-                     * 获取快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
-                     * @return SnapshotIds 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
-                     */
-                    std::vector<std::string> GetSnapshotIds() const;
-
-                    /**
-                     * 设置快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
-                     * @param SnapshotIds 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
-                     */
-                    void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
-
-                    /**
-                     * 判断参数 SnapshotIds 是否已赋值
-                     * @return SnapshotIds 是否已赋值
-                     */
-                    bool SnapshotIdsHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
+                     */
+                    std::vector<std::string> m_snapshotIds;
+                    bool m_snapshotIdsHasBeenSet;
 
                     /**
                      * 接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。
@@ -109,12 +115,6 @@ namespace TencentCloud
                      */
                     std::string m_permission;
                     bool m_permissionHasBeenSet;
-
-                    /**
-                     * 快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。
-                     */
-                    std::vector<std::string> m_snapshotIds;
-                    bool m_snapshotIdsHasBeenSet;
 
                 };
             }

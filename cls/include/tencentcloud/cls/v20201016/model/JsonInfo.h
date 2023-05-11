@@ -86,6 +86,28 @@ namespace TencentCloud
                      */
                     bool MetaFieldsHasBeenSet() const;
 
+                    /**
+                     * 获取投递Json格式，0：字符串方式投递；1:以结构化方式投递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetJsonType() const;
+
+                    /**
+                     * 设置投递Json格式，0：字符串方式投递；1:以结构化方式投递
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJsonType(const int64_t& _jsonType);
+
+                    /**
+                     * 判断参数 JsonType 是否已赋值
+                     * @return JsonType 是否已赋值
+                     */
+                    bool JsonTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +122,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_metaFields;
                     bool m_metaFieldsHasBeenSet;
+
+                    /**
+                     * 投递Json格式，0：字符串方式投递；1:以结构化方式投递
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jsonType;
+                    bool m_jsonTypeHasBeenSet;
 
                 };
             }
