@@ -39,7 +39,8 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_resourceNameHasBeenSet(false),
     m_projectIDHasBeenSet(false),
     m_associatedInstanceIDsHasBeenSet(false),
-    m_targetUinHasBeenSet(false)
+    m_targetUinHasBeenSet(false),
+    m_additionalConfigHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,16 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_targetUinHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AdditionalConfig") && !rsp["AdditionalConfig"].IsNull())
+    {
+        if (!rsp["AdditionalConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdditionalConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_additionalConfig = string(rsp["AdditionalConfig"].GetString());
+        m_additionalConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +392,14 @@ string DescribeSecretResponse::ToJsonString() const
         string key = "TargetUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetUin, allocator);
+    }
+
+    if (m_additionalConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_additionalConfig.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -553,6 +572,16 @@ uint64_t DescribeSecretResponse::GetTargetUin() const
 bool DescribeSecretResponse::TargetUinHasBeenSet() const
 {
     return m_targetUinHasBeenSet;
+}
+
+string DescribeSecretResponse::GetAdditionalConfig() const
+{
+    return m_additionalConfig;
+}
+
+bool DescribeSecretResponse::AdditionalConfigHasBeenSet() const
+{
+    return m_additionalConfigHasBeenSet;
 }
 
 

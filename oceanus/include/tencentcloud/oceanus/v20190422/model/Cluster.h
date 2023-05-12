@@ -28,6 +28,7 @@
 #include <tencentcloud/oceanus/v20190422/model/Tag.h>
 #include <tencentcloud/oceanus/v20190422/model/ClusterVersion.h>
 #include <tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h>
+#include <tencentcloud/oceanus/v20190422/model/ClusterSession.h>
 
 
 namespace TencentCloud
@@ -752,6 +753,28 @@ namespace TencentCloud
                      */
                     bool IsNeedManageNodeHasBeenSet() const;
 
+                    /**
+                     * 获取session集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterSessions session集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterSession> GetClusterSessions() const;
+
+                    /**
+                     * 设置session集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterSessions session集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterSessions(const std::vector<ClusterSession>& _clusterSessions);
+
+                    /**
+                     * 判断参数 ClusterSessions 是否已赋值
+                     * @return ClusterSessions 是否已赋值
+                     */
+                    bool ClusterSessionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -981,6 +1004,13 @@ namespace TencentCloud
                      */
                     int64_t m_isNeedManageNode;
                     bool m_isNeedManageNodeHasBeenSet;
+
+                    /**
+                     * session集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterSession> m_clusterSessions;
+                    bool m_clusterSessionsHasBeenSet;
 
                 };
             }

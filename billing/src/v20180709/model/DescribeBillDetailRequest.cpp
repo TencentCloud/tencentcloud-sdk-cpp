@@ -35,7 +35,8 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_resourceIdHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_businessCodeHasBeenSet(false)
+    m_businessCodeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "BusinessCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeBillDetailRequest::SetBusinessCode(const string& _businessCode)
 bool DescribeBillDetailRequest::BusinessCodeHasBeenSet() const
 {
     return m_businessCodeHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetContext() const
+{
+    return m_context;
+}
+
+void DescribeBillDetailRequest::SetContext(const string& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
 }
 
 

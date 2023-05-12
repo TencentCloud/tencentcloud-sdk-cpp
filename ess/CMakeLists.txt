@@ -81,6 +81,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/FormField.h
+  include/tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h
   include/tencentcloud/ess/v20201111/model/Staff.h
@@ -89,7 +90,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/GroupOrganization.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
-  include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
+  include/tencentcloud/ess/v20201111/model/FlowDetailInfo.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
@@ -101,7 +102,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateReleaseFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h
-  include/tencentcloud/ess/v20201111/model/FlowDetailInfo.h
+  include/tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesResponse.h
@@ -115,6 +116,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateStaffResult.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h
+  include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
@@ -225,6 +227,7 @@ set(ess_src
   src/v20201111/model/CreateFlowSignUrlResponse.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/FormField.cpp
+  src/v20201111/model/CreateChannelSubOrganizationModifyQrCodeRequest.cpp
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/CreateFlowApproversRequest.cpp
   src/v20201111/model/Staff.cpp
@@ -233,7 +236,7 @@ set(ess_src
   src/v20201111/model/GroupOrganization.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersResponse.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
-  src/v20201111/model/RemindFlowRecords.cpp
+  src/v20201111/model/FlowDetailInfo.cpp
   src/v20201111/model/CreatePreparedPersonalEsignResponse.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
@@ -245,7 +248,7 @@ set(ess_src
   src/v20201111/model/CreateFlowSignUrlRequest.cpp
   src/v20201111/model/CreateReleaseFlowRequest.cpp
   src/v20201111/model/CreateIntegrationUserRolesRequest.cpp
-  src/v20201111/model/FlowDetailInfo.cpp
+  src/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.cpp
   src/v20201111/model/SuccessUpdateStaffData.cpp
   src/v20201111/model/CreateFlowByFilesResponse.cpp
   src/v20201111/model/UploadFilesResponse.cpp
@@ -259,6 +262,7 @@ set(ess_src
   src/v20201111/model/CreateStaffResult.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.cpp
+  src/v20201111/model/RemindFlowRecords.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/DeleteSealPoliciesRequest.cpp

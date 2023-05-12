@@ -136,6 +136,60 @@ namespace TencentCloud
                      */
                     bool InstanceSecurityGroupLimitHasBeenSet() const;
 
+                    /**
+                     * 获取安全组展开后的规则数限制
+                     * @return SecurityGroupExtendedPolicyLimit 安全组展开后的规则数限制
+                     */
+                    uint64_t GetSecurityGroupExtendedPolicyLimit() const;
+
+                    /**
+                     * 设置安全组展开后的规则数限制
+                     * @param SecurityGroupExtendedPolicyLimit 安全组展开后的规则数限制
+                     */
+                    void SetSecurityGroupExtendedPolicyLimit(const uint64_t& _securityGroupExtendedPolicyLimit);
+
+                    /**
+                     * 判断参数 SecurityGroupExtendedPolicyLimit 是否已赋值
+                     * @return SecurityGroupExtendedPolicyLimit 是否已赋值
+                     */
+                    bool SecurityGroupExtendedPolicyLimitHasBeenSet() const;
+
+                    /**
+                     * 获取被引用的安全组关联CVM、ENI的实例配额
+                     * @return SecurityGroupReferedCvmAndEniLimit 被引用的安全组关联CVM、ENI的实例配额
+                     */
+                    uint64_t GetSecurityGroupReferedCvmAndEniLimit() const;
+
+                    /**
+                     * 设置被引用的安全组关联CVM、ENI的实例配额
+                     * @param SecurityGroupReferedCvmAndEniLimit 被引用的安全组关联CVM、ENI的实例配额
+                     */
+                    void SetSecurityGroupReferedCvmAndEniLimit(const uint64_t& _securityGroupReferedCvmAndEniLimit);
+
+                    /**
+                     * 判断参数 SecurityGroupReferedCvmAndEniLimit 是否已赋值
+                     * @return SecurityGroupReferedCvmAndEniLimit 是否已赋值
+                     */
+                    bool SecurityGroupReferedCvmAndEniLimitHasBeenSet() const;
+
+                    /**
+                     * 获取被引用的安全组关联数据库、LB等服务实例配额
+                     * @return SecurityGroupReferedSvcLimit 被引用的安全组关联数据库、LB等服务实例配额
+                     */
+                    uint64_t GetSecurityGroupReferedSvcLimit() const;
+
+                    /**
+                     * 设置被引用的安全组关联数据库、LB等服务实例配额
+                     * @param SecurityGroupReferedSvcLimit 被引用的安全组关联数据库、LB等服务实例配额
+                     */
+                    void SetSecurityGroupReferedSvcLimit(const uint64_t& _securityGroupReferedSvcLimit);
+
+                    /**
+                     * 判断参数 SecurityGroupReferedSvcLimit 是否已赋值
+                     * @return SecurityGroupReferedSvcLimit 是否已赋值
+                     */
+                    bool SecurityGroupReferedSvcLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +221,24 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceSecurityGroupLimit;
                     bool m_instanceSecurityGroupLimitHasBeenSet;
+
+                    /**
+                     * 安全组展开后的规则数限制
+                     */
+                    uint64_t m_securityGroupExtendedPolicyLimit;
+                    bool m_securityGroupExtendedPolicyLimitHasBeenSet;
+
+                    /**
+                     * 被引用的安全组关联CVM、ENI的实例配额
+                     */
+                    uint64_t m_securityGroupReferedCvmAndEniLimit;
+                    bool m_securityGroupReferedCvmAndEniLimitHasBeenSet;
+
+                    /**
+                     * 被引用的安全组关联数据库、LB等服务实例配额
+                     */
+                    uint64_t m_securityGroupReferedSvcLimit;
+                    bool m_securityGroupReferedSvcLimitHasBeenSet;
 
                 };
             }

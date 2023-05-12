@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取项目ID。
+                     * @return ProjectId 项目ID。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * 设置项目ID。
+                     * @param ProjectId 项目ID。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建安全组的时间。
+                     * @return CreateTime 创建安全组的时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置创建安全组的时间。
+                     * @param CreateTime 创建安全组的时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取安全组Id
-                     * @return SecurityGroupId 安全组Id
+                     * 获取安全组 ID。
+                     * @return SecurityGroupId 安全组 ID。
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组Id
-                     * @param SecurityGroupId 安全组Id
+                     * 设置安全组 ID。
+                     * @param SecurityGroupId 安全组 ID。
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组名称
-                     * @return SecurityGroupName 安全组名称
+                     * 获取安全组名称。
+                     * @return SecurityGroupName 安全组名称。
                      */
                     std::string GetSecurityGroupName() const;
 
                     /**
-                     * 设置安全组名称
-                     * @param SecurityGroupName 安全组名称
+                     * 设置安全组名称。
+                     * @param SecurityGroupName 安全组名称。
                      */
                     void SetSecurityGroupName(const std::string& _securityGroupName);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool SecurityGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组标记
-                     * @return SecurityGroupRemark 安全组标记
+                     * 获取安全组标记。
+                     * @return SecurityGroupRemark 安全组标记。
                      */
                     std::string GetSecurityGroupRemark() const;
 
                     /**
-                     * 设置安全组标记
-                     * @param SecurityGroupRemark 安全组标记
+                     * 设置安全组标记。
+                     * @param SecurityGroupRemark 安全组标记。
                      */
                     void SetSecurityGroupRemark(const std::string& _securityGroupRemark);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool SecurityGroupRemarkHasBeenSet() const;
 
                     /**
-                     * 获取安全组入站规则
-                     * @return InboundRule 安全组入站规则
+                     * 获取安全组入站规则，即控制访问数据库的来源。
+                     * @return InboundRule 安全组入站规则，即控制访问数据库的来源。
                      */
                     std::vector<SecurityGroupsInboundAndOutbound> GetInboundRule() const;
 
                     /**
-                     * 设置安全组入站规则
-                     * @param InboundRule 安全组入站规则
+                     * 设置安全组入站规则，即控制访问数据库的来源。
+                     * @param InboundRule 安全组入站规则，即控制访问数据库的来源。
                      */
                     void SetInboundRule(const std::vector<SecurityGroupsInboundAndOutbound>& _inboundRule);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool InboundRuleHasBeenSet() const;
 
                     /**
-                     * 获取安全组出站规则
-                     * @return OutboundRule 安全组出站规则
+                     * 获取安全组出站规则。
+                     * @return OutboundRule 安全组出站规则。
                      */
                     std::vector<SecurityGroupsInboundAndOutbound> GetOutboundRule() const;
 
                     /**
-                     * 设置安全组出站规则
-                     * @param OutboundRule 安全组出站规则
+                     * 设置安全组出站规则。
+                     * @param OutboundRule 安全组出站规则。
                      */
                     void SetOutboundRule(const std::vector<SecurityGroupsInboundAndOutbound>& _outboundRule);
 
@@ -176,43 +176,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目Id
+                     * 项目ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建安全组的时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 安全组Id
+                     * 安全组 ID。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 安全组名称
+                     * 安全组名称。
                      */
                     std::string m_securityGroupName;
                     bool m_securityGroupNameHasBeenSet;
 
                     /**
-                     * 安全组标记
+                     * 安全组标记。
                      */
                     std::string m_securityGroupRemark;
                     bool m_securityGroupRemarkHasBeenSet;
 
                     /**
-                     * 安全组入站规则
+                     * 安全组入站规则，即控制访问数据库的来源。
                      */
                     std::vector<SecurityGroupsInboundAndOutbound> m_inboundRule;
                     bool m_inboundRuleHasBeenSet;
 
                     /**
-                     * 安全组出站规则
+                     * 安全组出站规则。
                      */
                     std::vector<SecurityGroupsInboundAndOutbound> m_outboundRule;
                     bool m_outboundRuleHasBeenSet;

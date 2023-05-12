@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例节点信息
+                * 实例节点组信息
                 */
                 class ReplicaGroup : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点组ID
-                     * @return GroupId 节点组ID
+                     * 获取节点组 ID。
+                     * @return GroupId 节点组 ID。
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置节点组ID
-                     * @param GroupId 节点组ID
+                     * 设置节点组 ID。
+                     * @param GroupId 节点组 ID。
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取节点组的名称，主节点为空
-                     * @return GroupName 节点组的名称，主节点为空
+                     * 获取节点组的名称，主节点为空。
+                     * @return GroupName 节点组的名称，主节点为空。
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置节点组的名称，主节点为空
-                     * @param GroupName 节点组的名称，主节点为空
+                     * 设置节点组的名称，主节点为空。
+                     * @param GroupName 节点组的名称，主节点为空。
                      */
                     void SetGroupName(const std::string& _groupName);
 
@@ -140,13 +140,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点组ID
+                     * 节点组 ID。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 节点组的名称，主节点为空
+                     * 节点组的名称，主节点为空。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

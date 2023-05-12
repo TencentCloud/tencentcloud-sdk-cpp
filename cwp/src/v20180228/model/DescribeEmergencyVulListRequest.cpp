@@ -27,7 +27,8 @@ DescribeEmergencyVulListRequest::DescribeEmergencyVulListRequest() :
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_hotspotAttackHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeEmergencyVulListRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotspotAttackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotspotAttack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hotspotAttack, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeEmergencyVulListRequest::SetBy(const string& _by)
 bool DescribeEmergencyVulListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+bool DescribeEmergencyVulListRequest::GetHotspotAttack() const
+{
+    return m_hotspotAttack;
+}
+
+void DescribeEmergencyVulListRequest::SetHotspotAttack(const bool& _hotspotAttack)
+{
+    m_hotspotAttack = _hotspotAttack;
+    m_hotspotAttackHasBeenSet = true;
+}
+
+bool DescribeEmergencyVulListRequest::HotspotAttackHasBeenSet() const
+{
+    return m_hotspotAttackHasBeenSet;
 }
 
 

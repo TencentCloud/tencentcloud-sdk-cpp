@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点key的个数
-                     * @return Keys 节点key的个数
+                     * 获取Redis 节点上 Key 的个数。
+                     * @return Keys Redis 节点上 Key 的个数。
                      */
                     int64_t GetKeys() const;
 
                     /**
-                     * 设置节点key的个数
-                     * @param Keys 节点key的个数
+                     * 设置Redis 节点上 Key 的个数。
+                     * @param Keys Redis 节点上 Key 的个数。
                      */
                     void SetKeys(const int64_t& _keys);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取节点slot分布
-                     * @return Slot 节点slot分布
+                     * 获取Redis 节点 Slot 分布范围。例如：0-5460。
+                     * @return Slot Redis 节点 Slot 分布范围。例如：0-5460。
                      */
                     std::string GetSlot() const;
 
                     /**
-                     * 设置节点slot分布
-                     * @param Slot 节点slot分布
+                     * 设置Redis 节点 Slot 分布范围。例如：0-5460。
+                     * @param Slot Redis 节点 Slot 分布范围。例如：0-5460。
                      */
                     void SetSlot(const std::string& _slot);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool SlotHasBeenSet() const;
 
                     /**
-                     * 获取节点的序列ID
-                     * @return NodeId 节点的序列ID
+                     * 获取节点的序列 ID。
+                     * @return NodeId 节点的序列 ID。
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置节点的序列ID
-                     * @param NodeId 节点的序列ID
+                     * 设置节点的序列 ID。
+                     * @param NodeId 节点的序列 ID。
                      */
                     void SetNodeId(const std::string& _nodeId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取节点的状态
-                     * @return Status 节点的状态
+                     * 获取节点的状态。
+                     * @return Status 节点的状态。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置节点的状态
-                     * @param Status 节点的状态
+                     * 设置节点的状态。
+                     * @param Status 节点的状态。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取节点角色
-                     * @return Role 节点角色
+                     * 获取节点角色。
+                     * @return Role 节点角色。
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置节点角色
-                     * @param Role 节点角色
+                     * 设置节点角色。
+                     * @param Role 节点角色。
                      */
                     void SetRole(const std::string& _role);
 
@@ -139,31 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点key的个数
+                     * Redis 节点上 Key 的个数。
                      */
                     int64_t m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
-                     * 节点slot分布
+                     * Redis 节点 Slot 分布范围。例如：0-5460。
                      */
                     std::string m_slot;
                     bool m_slotHasBeenSet;
 
                     /**
-                     * 节点的序列ID
+                     * 节点的序列 ID。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 节点的状态
+                     * 节点的状态。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 节点角色
+                     * 节点角色。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

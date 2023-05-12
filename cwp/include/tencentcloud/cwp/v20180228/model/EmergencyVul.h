@@ -322,6 +322,72 @@ namespace TencentCloud
                      */
                     bool DefenseAttackCountHasBeenSet() const;
 
+                    /**
+                     * 获取检测规则 0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Method 检测规则 0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMethod() const;
+
+                    /**
+                     * 设置检测规则 0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Method 检测规则 0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMethod(const uint64_t& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     */
+                    bool MethodHasBeenSet() const;
+
+                    /**
+                     * 获取攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackLevel 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAttackLevel() const;
+
+                    /**
+                     * 设置攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttackLevel 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttackLevel(const uint64_t& _attackLevel);
+
+                    /**
+                     * 判断参数 AttackLevel 是否已赋值
+                     * @return AttackLevel 是否已赋值
+                     */
+                    bool AttackLevelHasBeenSet() const;
+
+                    /**
+                     * 获取是否有漏洞主机开启漏洞防御
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefenseState 是否有漏洞主机开启漏洞防御
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDefenseState() const;
+
+                    /**
+                     * 设置是否有漏洞主机开启漏洞防御
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefenseState 是否有漏洞主机开启漏洞防御
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefenseState(const bool& _defenseState);
+
+                    /**
+                     * 判断参数 DefenseState 是否已赋值
+                     * @return DefenseState 是否已赋值
+                     */
+                    bool DefenseStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,6 +479,27 @@ namespace TencentCloud
                      */
                     uint64_t m_defenseAttackCount;
                     bool m_defenseAttackCountHasBeenSet;
+
+                    /**
+                     * 检测规则 0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_method;
+                    bool m_methodHasBeenSet;
+
+                    /**
+                     * 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_attackLevel;
+                    bool m_attackLevelHasBeenSet;
+
+                    /**
+                     * 是否有漏洞主机开启漏洞防御
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_defenseState;
+                    bool m_defenseStateHasBeenSet;
 
                 };
             }

@@ -49,13 +49,17 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Version 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVersion(const std::string& _version);
 
@@ -67,13 +71,17 @@ namespace TencentCloud
 
                     /**
                      * 获取出站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Egress 出站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupPolicy> GetEgress() const;
 
                     /**
                      * 设置出站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Egress 出站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEgress(const std::vector<SecurityGroupPolicy>& _egress);
 
@@ -85,13 +93,17 @@ namespace TencentCloud
 
                     /**
                      * 获取入站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ingress 入站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupPolicy> GetIngress() const;
 
                     /**
                      * 设置入站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Ingress 入站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIngress(const std::vector<SecurityGroupPolicy>& _ingress);
 
@@ -105,18 +117,21 @@ namespace TencentCloud
 
                     /**
                      * 安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 出站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupPolicy> m_egress;
                     bool m_egressHasBeenSet;
 
                     /**
                      * 入站规则。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupPolicy> m_ingress;
                     bool m_ingressHasBeenSet;

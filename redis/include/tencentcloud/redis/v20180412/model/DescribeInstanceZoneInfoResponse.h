@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例节点组的个数
-                     * @return TotalCount 实例节点组的个数
+                     * 获取实例节点组的个数。
+                     * @return TotalCount 实例节点组的个数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例节点组列表
-                     * @return ReplicaGroups 实例节点组列表
+                     * 获取实例节点组列表。
+                     * @return ReplicaGroups 实例节点组列表。
                      */
                     std::vector<ReplicaGroup> GetReplicaGroups() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例节点组的个数
+                     * 实例节点组的个数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例节点组列表
+                     * 实例节点组列表。
                      */
                     std::vector<ReplicaGroup> m_replicaGroups;
                     bool m_replicaGroupsHasBeenSet;

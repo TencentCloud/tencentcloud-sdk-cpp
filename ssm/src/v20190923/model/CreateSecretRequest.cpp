@@ -27,8 +27,10 @@ CreateSecretRequest::CreateSecretRequest() :
     m_versionIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_secretTypeHasBeenSet(false),
     m_secretBinaryHasBeenSet(false),
     m_secretStringHasBeenSet(false),
+    m_additionalConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -72,6 +74,14 @@ string CreateSecretRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_secretTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_secretType, allocator);
+    }
+
     if (m_secretBinaryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -86,6 +96,14 @@ string CreateSecretRequest::ToJsonString() const
         string key = "SecretString";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_additionalConfig.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -175,6 +193,22 @@ bool CreateSecretRequest::KmsKeyIdHasBeenSet() const
     return m_kmsKeyIdHasBeenSet;
 }
 
+uint64_t CreateSecretRequest::GetSecretType() const
+{
+    return m_secretType;
+}
+
+void CreateSecretRequest::SetSecretType(const uint64_t& _secretType)
+{
+    m_secretType = _secretType;
+    m_secretTypeHasBeenSet = true;
+}
+
+bool CreateSecretRequest::SecretTypeHasBeenSet() const
+{
+    return m_secretTypeHasBeenSet;
+}
+
 string CreateSecretRequest::GetSecretBinary() const
 {
     return m_secretBinary;
@@ -205,6 +239,22 @@ void CreateSecretRequest::SetSecretString(const string& _secretString)
 bool CreateSecretRequest::SecretStringHasBeenSet() const
 {
     return m_secretStringHasBeenSet;
+}
+
+string CreateSecretRequest::GetAdditionalConfig() const
+{
+    return m_additionalConfig;
+}
+
+void CreateSecretRequest::SetAdditionalConfig(const string& _additionalConfig)
+{
+    m_additionalConfig = _additionalConfig;
+    m_additionalConfigHasBeenSet = true;
+}
+
+bool CreateSecretRequest::AdditionalConfigHasBeenSet() const
+{
+    return m_additionalConfigHasBeenSet;
 }
 
 vector<Tag> CreateSecretRequest::GetTags() const

@@ -253,6 +253,20 @@ namespace TencentCloud
                      */
                     bool TargetUinHasBeenSet() const;
 
+                    /**
+                     * 获取凭据额外配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdditionalConfig 凭据额外配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAdditionalConfig() const;
+
+                    /**
+                     * 判断参数 AdditionalConfig 是否已赋值
+                     * @return AdditionalConfig 是否已赋值
+                     */
+                    bool AdditionalConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +373,13 @@ namespace TencentCloud
                      */
                     uint64_t m_targetUin;
                     bool m_targetUinHasBeenSet;
+
+                    /**
+                     * 凭据额外配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_additionalConfig;
+                    bool m_additionalConfigHasBeenSet;
 
                 };
             }

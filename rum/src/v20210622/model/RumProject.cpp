@@ -36,7 +36,8 @@ RumProject::RumProject() :
     m_instanceKeyHasBeenSet(false),
     m_descHasBeenSet(false),
     m_isStarHasBeenSet(false),
-    m_projectStatusHasBeenSet(false)
+    m_projectStatusHasBeenSet(false),
+    m_accessPointHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome RumProject::Deserialize(const rapidjson::Value &value)
         m_projectStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessPoint") && !value["AccessPoint"].IsNull())
+    {
+        if (!value["AccessPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumProject.AccessPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPoint = string(value["AccessPoint"].GetString());
+        m_accessPointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void RumProject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProjectStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectStatus, allocator);
+    }
+
+    if (m_accessPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void RumProject::SetProjectStatus(const int64_t& _projectStatus)
 bool RumProject::ProjectStatusHasBeenSet() const
 {
     return m_projectStatusHasBeenSet;
+}
+
+string RumProject::GetAccessPoint() const
+{
+    return m_accessPoint;
+}
+
+void RumProject::SetAccessPoint(const string& _accessPoint)
+{
+    m_accessPoint = _accessPoint;
+    m_accessPointHasBeenSet = true;
+}
+
+bool RumProject::AccessPointHasBeenSet() const
+{
+    return m_accessPointHasBeenSet;
 }
 

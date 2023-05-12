@@ -41,6 +41,7 @@ ModifyAclRequest::ModifyAclRequest() :
     m_deviceGroupIdSetHasBeenSet(false),
     m_accountSetHasBeenSet(false),
     m_cmdTemplateIdSetHasBeenSet(false),
+    m_aCTemplateIdSetHasBeenSet(false),
     m_allowDiskFileUpHasBeenSet(false),
     m_allowDiskFileDownHasBeenSet(false),
     m_allowShellFileUpHasBeenSet(false),
@@ -230,6 +231,19 @@ string ModifyAclRequest::ToJsonString() const
         for (auto itr = m_cmdTemplateIdSet.begin(); itr != m_cmdTemplateIdSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_aCTemplateIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ACTemplateIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_aCTemplateIdSet.begin(); itr != m_aCTemplateIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -591,6 +605,22 @@ void ModifyAclRequest::SetCmdTemplateIdSet(const vector<uint64_t>& _cmdTemplateI
 bool ModifyAclRequest::CmdTemplateIdSetHasBeenSet() const
 {
     return m_cmdTemplateIdSetHasBeenSet;
+}
+
+vector<string> ModifyAclRequest::GetACTemplateIdSet() const
+{
+    return m_aCTemplateIdSet;
+}
+
+void ModifyAclRequest::SetACTemplateIdSet(const vector<string>& _aCTemplateIdSet)
+{
+    m_aCTemplateIdSet = _aCTemplateIdSet;
+    m_aCTemplateIdSetHasBeenSet = true;
+}
+
+bool ModifyAclRequest::ACTemplateIdSetHasBeenSet() const
+{
+    return m_aCTemplateIdSetHasBeenSet;
 }
 
 bool ModifyAclRequest::GetAllowDiskFileUp() const

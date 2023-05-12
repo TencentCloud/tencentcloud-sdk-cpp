@@ -354,6 +354,28 @@ namespace TencentCloud
                      */
                     bool ProjectStatusHasBeenSet() const;
 
+                    /**
+                     * 获取日志接入点，用户忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPoint 日志接入点，用户忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccessPoint() const;
+
+                    /**
+                     * 设置日志接入点，用户忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccessPoint 日志接入点，用户忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccessPoint(const std::string& _accessPoint);
+
+                    /**
+                     * 判断参数 AccessPoint 是否已赋值
+                     * @return AccessPoint 是否已赋值
+                     */
+                    bool AccessPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +478,13 @@ namespace TencentCloud
                      */
                     int64_t m_projectStatus;
                     bool m_projectStatusHasBeenSet;
+
+                    /**
+                     * 日志接入点，用户忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessPoint;
+                    bool m_accessPointHasBeenSet;
 
                 };
             }

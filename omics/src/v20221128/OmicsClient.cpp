@@ -255,6 +255,92 @@ OmicsClient::DescribeRunsOutcomeCallable OmicsClient::DescribeRunsCallable(const
     return task->get_future();
 }
 
+OmicsClient::DescribeTablesOutcome OmicsClient::DescribeTables(const DescribeTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTablesResponse rsp = DescribeTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTablesOutcome(rsp);
+        else
+            return DescribeTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTablesOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeTablesAsync(const DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DescribeTablesOutcomeCallable OmicsClient::DescribeTablesCallable(const DescribeTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::DescribeTablesRowsOutcome OmicsClient::DescribeTablesRows(const DescribeTablesRowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTablesRows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTablesRowsResponse rsp = DescribeTablesRowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTablesRowsOutcome(rsp);
+        else
+            return DescribeTablesRowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTablesRowsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeTablesRowsAsync(const DescribeTablesRowsRequest& request, const DescribeTablesRowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTablesRows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DescribeTablesRowsOutcomeCallable OmicsClient::DescribeTablesRowsCallable(const DescribeTablesRowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTablesRowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTablesRows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OmicsClient::GetRunCallsOutcome OmicsClient::GetRunCalls(const GetRunCallsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRunCalls");
@@ -377,6 +463,49 @@ OmicsClient::ImportTableFileOutcomeCallable OmicsClient::ImportTableFileCallable
         [this, request]()
         {
             return this->ImportTableFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::RetryRunsOutcome OmicsClient::RetryRuns(const RetryRunsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryRuns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryRunsResponse rsp = RetryRunsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryRunsOutcome(rsp);
+        else
+            return RetryRunsOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryRunsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::RetryRunsAsync(const RetryRunsRequest& request, const RetryRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RetryRuns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::RetryRunsOutcomeCallable OmicsClient::RetryRunsCallable(const RetryRunsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RetryRunsOutcome()>>(
+        [this, request]()
+        {
+            return this->RetryRuns(request);
         }
     );
 

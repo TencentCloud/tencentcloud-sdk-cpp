@@ -55,7 +55,8 @@ Cluster::Cluster() :
     m_correlationsHasBeenSet(false),
     m_runningCuHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_isNeedManageNodeHasBeenSet(false)
+    m_isNeedManageNodeHasBeenSet(false),
+    m_clusterSessionsHasBeenSet(false)
 {
 }
 
@@ -451,6 +452,26 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_isNeedManageNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterSessions") && !value["ClusterSessions"].IsNull())
+    {
+        if (!value["ClusterSessions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterSessions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterSessions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterSession item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterSessions.push_back(item);
+        }
+        m_clusterSessionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -758,6 +779,21 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IsNeedManageNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNeedManageNode, allocator);
+    }
+
+    if (m_clusterSessionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterSessions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterSessions.begin(); itr != m_clusterSessions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1321,5 +1357,21 @@ void Cluster::SetIsNeedManageNode(const int64_t& _isNeedManageNode)
 bool Cluster::IsNeedManageNodeHasBeenSet() const
 {
     return m_isNeedManageNodeHasBeenSet;
+}
+
+vector<ClusterSession> Cluster::GetClusterSessions() const
+{
+    return m_clusterSessions;
+}
+
+void Cluster::SetClusterSessions(const vector<ClusterSession>& _clusterSessions)
+{
+    m_clusterSessions = _clusterSessions;
+    m_clusterSessionsHasBeenSet = true;
+}
+
+bool Cluster::ClusterSessionsHasBeenSet() const
+{
+    return m_clusterSessionsHasBeenSet;
 }
 

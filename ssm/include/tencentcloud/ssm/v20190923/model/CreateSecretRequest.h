@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
-                     * @return VersionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * 获取凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
+                     * @return VersionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
-                     * @param VersionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * 设置凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
+                     * @param VersionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
                      */
                     void SetVersionId(const std::string& _versionId);
 
@@ -116,6 +116,24 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
+                     * 获取凭据类型，默认为自定义凭据。
+                     * @return SecretType 凭据类型，默认为自定义凭据。
+                     */
+                    uint64_t GetSecretType() const;
+
+                    /**
+                     * 设置凭据类型，默认为自定义凭据。
+                     * @param SecretType 凭据类型，默认为自定义凭据。
+                     */
+                    void SetSecretType(const uint64_t& _secretType);
+
+                    /**
+                     * 判断参数 SecretType 是否已赋值
+                     * @return SecretType 是否已赋值
+                     */
+                    bool SecretTypeHasBeenSet() const;
+
+                    /**
                      * 获取二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。
                      * @return SecretBinary 二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。
                      */
@@ -152,6 +170,24 @@ namespace TencentCloud
                     bool SecretStringHasBeenSet() const;
 
                     /**
+                     * 获取JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     * @return AdditionalConfig JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     */
+                    std::string GetAdditionalConfig() const;
+
+                    /**
+                     * 设置JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     * @param AdditionalConfig JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     */
+                    void SetAdditionalConfig(const std::string& _additionalConfig);
+
+                    /**
+                     * 判断参数 AdditionalConfig 是否已赋值
+                     * @return AdditionalConfig 是否已赋值
+                     */
+                    bool AdditionalConfigHasBeenSet() const;
+
+                    /**
                      * 获取标签列表
                      * @return Tags 标签列表
                      */
@@ -178,7 +214,7 @@ namespace TencentCloud
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。
+                     * 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
@@ -196,6 +232,12 @@ namespace TencentCloud
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
+                     * 凭据类型，默认为自定义凭据。
+                     */
+                    uint64_t m_secretType;
+                    bool m_secretTypeHasBeenSet;
+
+                    /**
                      * 二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。
                      */
                     std::string m_secretBinary;
@@ -206,6 +248,12 @@ namespace TencentCloud
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;
+
+                    /**
+                     * JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     */
+                    std::string m_additionalConfig;
+                    bool m_additionalConfigHasBeenSet;
 
                     /**
                      * 标签列表

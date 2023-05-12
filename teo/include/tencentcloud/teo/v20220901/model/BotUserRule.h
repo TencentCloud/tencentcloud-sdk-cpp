@@ -73,6 +73,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
+<li>random：随机处置；</li>
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
@@ -82,6 +83,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
+<li>random：随机处置；</li>
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
@@ -95,6 +97,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
+<li>random：随机处置；</li>
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
@@ -104,6 +107,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
+<li>random：随机处置；</li>
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
@@ -311,6 +315,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
+<li>random：随机处置；</li>
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>

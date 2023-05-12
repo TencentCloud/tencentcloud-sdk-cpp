@@ -2491,6 +2491,49 @@ MonitorClient::DescribeBindingPolicyObjectListOutcomeCallable MonitorClient::Des
     return task->get_future();
 }
 
+MonitorClient::DescribeClusterAgentCreatingProgressOutcome MonitorClient::DescribeClusterAgentCreatingProgress(const DescribeClusterAgentCreatingProgressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAgentCreatingProgress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAgentCreatingProgressResponse rsp = DescribeClusterAgentCreatingProgressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAgentCreatingProgressOutcome(rsp);
+        else
+            return DescribeClusterAgentCreatingProgressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAgentCreatingProgressOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeClusterAgentCreatingProgressAsync(const DescribeClusterAgentCreatingProgressRequest& request, const DescribeClusterAgentCreatingProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAgentCreatingProgress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeClusterAgentCreatingProgressOutcomeCallable MonitorClient::DescribeClusterAgentCreatingProgressCallable(const DescribeClusterAgentCreatingProgressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAgentCreatingProgressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAgentCreatingProgress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeConditionsTemplateListOutcome MonitorClient::DescribeConditionsTemplateList(const DescribeConditionsTemplateListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConditionsTemplateList");

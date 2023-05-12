@@ -349,6 +349,24 @@ namespace TencentCloud
                     bool CmdTemplateIdSetHasBeenSet() const;
 
                     /**
+                     * 获取关联高危DB模版ID
+                     * @return ACTemplateIdSet 关联高危DB模版ID
+                     */
+                    std::vector<std::string> GetACTemplateIdSet() const;
+
+                    /**
+                     * 设置关联高危DB模版ID
+                     * @param ACTemplateIdSet 关联高危DB模版ID
+                     */
+                    void SetACTemplateIdSet(const std::vector<std::string>& _aCTemplateIdSet);
+
+                    /**
+                     * 判断参数 ACTemplateIdSet 是否已赋值
+                     * @return ACTemplateIdSet 是否已赋值
+                     */
+                    bool ACTemplateIdSetHasBeenSet() const;
+
+                    /**
                      * 获取是否开启rdp磁盘映射文件上传
                      * @return AllowDiskFileUp 是否开启rdp磁盘映射文件上传
                      */
@@ -603,6 +621,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_cmdTemplateIdSet;
                     bool m_cmdTemplateIdSetHasBeenSet;
+
+                    /**
+                     * 关联高危DB模版ID
+                     */
+                    std::vector<std::string> m_aCTemplateIdSet;
+                    bool m_aCTemplateIdSetHasBeenSet;
 
                     /**
                      * 是否开启rdp磁盘映射文件上传

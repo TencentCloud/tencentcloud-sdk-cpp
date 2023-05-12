@@ -172,6 +172,50 @@ namespace TencentCloud
                      */
                     bool CompanyPhoneHasBeenSet() const;
 
+                    /**
+                     * 获取类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdType 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIdType() const;
+
+                    /**
+                     * 设置类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdType 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdType(const std::string& _idType);
+
+                    /**
+                     * 判断参数 IdType 是否已赋值
+                     * @return IdType 是否已赋值
+                     */
+                    bool IdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取ID号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdNumber ID号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIdNumber() const;
+
+                    /**
+                     * 设置ID号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdNumber ID号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdNumber(const std::string& _idNumber);
+
+                    /**
+                     * 判断参数 IdNumber 是否已赋值
+                     * @return IdNumber 是否已赋值
+                     */
+                    bool IdNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +259,20 @@ namespace TencentCloud
                      */
                     std::string m_companyPhone;
                     bool m_companyPhoneHasBeenSet;
+
+                    /**
+                     * 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_idType;
+                    bool m_idTypeHasBeenSet;
+
+                    /**
+                     * ID号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_idNumber;
+                    bool m_idNumberHasBeenSet;
 
                 };
             }

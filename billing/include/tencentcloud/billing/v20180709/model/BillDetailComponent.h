@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool CostHasBeenSet() const;
 
                     /**
-                     * 获取折扣率
-                     * @return Discount 折扣率
+                     * 获取折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）
+                     * @return Discount 折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）
                      */
                     std::string GetDiscount() const;
 
                     /**
-                     * 设置折扣率
-                     * @param Discount 折扣率
+                     * 设置折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）
+                     * @param Discount 折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）
                      */
                     void SetDiscount(const std::string& _discount);
 
@@ -379,17 +379,17 @@ namespace TencentCloud
                     bool ComponentCodeHasBeenSet() const;
 
                     /**
-                     * 获取合同价
+                     * 获取组件单价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContractPrice 合同价
+                     * @return ContractPrice 组件单价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContractPrice() const;
 
                     /**
-                     * 设置合同价
+                     * 设置组件单价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContractPrice 合同价
+                     * @param ContractPrice 组件单价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContractPrice(const std::string& _contractPrice);
@@ -445,17 +445,17 @@ namespace TencentCloud
                     bool RiTimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取按组件原价的口径换算的预留实例抵扣金额
+                     * 获取预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginalCostWithRI 按组件原价的口径换算的预留实例抵扣金额
+                     * @return OriginalCostWithRI 预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalCostWithRI() const;
 
                     /**
-                     * 设置按组件原价的口径换算的预留实例抵扣金额
+                     * 设置预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalCostWithRI 按组件原价的口径换算的预留实例抵扣金额
+                     * @param OriginalCostWithRI 预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalCostWithRI(const std::string& _originalCostWithRI);
@@ -467,17 +467,17 @@ namespace TencentCloud
                     bool OriginalCostWithRIHasBeenSet() const;
 
                     /**
-                     * 获取节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+                     * 获取节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SPDeductionRate 节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+                     * @return SPDeductionRate 节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSPDeductionRate() const;
 
                     /**
-                     * 设置节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+                     * 设置节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SPDeductionRate 节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+                     * @param SPDeductionRate 节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSPDeductionRate(const std::string& _sPDeductionRate);
@@ -489,17 +489,17 @@ namespace TencentCloud
                     bool SPDeductionRateHasBeenSet() const;
 
                     /**
-                     * 获取节省计划抵扣的SP包面值
+                     * 获取节省计划抵扣金额，节省计划抵扣的SP包面值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SPDeduction 节省计划抵扣的SP包面值
+                     * @return SPDeduction 节省计划抵扣金额，节省计划抵扣的SP包面值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSPDeduction() const;
 
                     /**
-                     * 设置节省计划抵扣的SP包面值
+                     * 设置节省计划抵扣金额，节省计划抵扣的SP包面值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SPDeduction 节省计划抵扣的SP包面值
+                     * @param SPDeduction 节省计划抵扣金额，节省计划抵扣的SP包面值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSPDeduction(const std::string& _sPDeduction);
@@ -511,17 +511,17 @@ namespace TencentCloud
                     bool SPDeductionHasBeenSet() const;
 
                     /**
-                     * 获取按组件原价的口径换算的节省计划抵扣金额
+                     * 获取节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginalCostWithSP 按组件原价的口径换算的节省计划抵扣金额
+                     * @return OriginalCostWithSP 节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalCostWithSP() const;
 
                     /**
-                     * 设置按组件原价的口径换算的节省计划抵扣金额
+                     * 设置节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalCostWithSP 按组件原价的口径换算的节省计划抵扣金额
+                     * @param OriginalCostWithSP 节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalCostWithSP(const std::string& _originalCostWithSP);
@@ -533,17 +533,17 @@ namespace TencentCloud
                     bool OriginalCostWithSPHasBeenSet() const;
 
                     /**
-                     * 获取综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率
+                     * 获取混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BlendedDiscount 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率
+                     * @return BlendedDiscount 混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBlendedDiscount() const;
 
                     /**
-                     * 设置综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率
+                     * 设置混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlendedDiscount 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率
+                     * @param BlendedDiscount 混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBlendedDiscount(const std::string& _blendedDiscount);
@@ -617,7 +617,7 @@ namespace TencentCloud
                     bool m_costHasBeenSet;
 
                     /**
-                     * 折扣率
+                     * 折扣率，本资源享受的折扣率（如果客户享受一口价/合同价则默认不展示，退费场景也默认不展示）
                      */
                     std::string m_discount;
                     bool m_discountHasBeenSet;
@@ -667,7 +667,7 @@ namespace TencentCloud
                     bool m_componentCodeHasBeenSet;
 
                     /**
-                     * 合同价
+                     * 组件单价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contractPrice;
@@ -688,35 +688,35 @@ namespace TencentCloud
                     bool m_riTimeSpanHasBeenSet;
 
                     /**
-                     * 按组件原价的口径换算的预留实例抵扣金额
+                     * 预留实例抵扣组件原价，本产品或服务使用预留实例抵扣的组件原价金额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCostWithRI;
                     bool m_originalCostWithRIHasBeenSet;
 
                     /**
-                     * 节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+                     * 节省计划抵扣率，节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sPDeductionRate;
                     bool m_sPDeductionRateHasBeenSet;
 
                     /**
-                     * 节省计划抵扣的SP包面值
+                     * 节省计划抵扣金额，节省计划抵扣的SP包面值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sPDeduction;
                     bool m_sPDeductionHasBeenSet;
 
                     /**
-                     * 按组件原价的口径换算的节省计划抵扣金额
+                     * 节省计划抵扣组件原价，节省计划抵扣原价=节省计划包抵扣金额/节省计划抵扣率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalCostWithSP;
                     bool m_originalCostWithSPHasBeenSet;
 
                     /**
-                     * 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率
+                     * 混合折扣率，综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 组件原价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_blendedDiscount;

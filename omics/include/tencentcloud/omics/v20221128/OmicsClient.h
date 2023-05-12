@@ -33,12 +33,18 @@
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunsResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeTablesRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeTablesResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeTablesRowsRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunStatusRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunStatusResponse.h>
 #include <tencentcloud/omics/v20221128/model/ImportTableFileRequest.h>
 #include <tencentcloud/omics/v20221128/model/ImportTableFileResponse.h>
+#include <tencentcloud/omics/v20221128/model/RetryRunsRequest.h>
+#include <tencentcloud/omics/v20221128/model/RetryRunsResponse.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationRequest.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationResponse.h>
 
@@ -70,6 +76,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRunsResponse> DescribeRunsOutcome;
                 typedef std::future<DescribeRunsOutcome> DescribeRunsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeRunsRequest&, DescribeRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
+                typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTablesRowsResponse> DescribeTablesRowsOutcome;
+                typedef std::future<DescribeTablesRowsOutcome> DescribeTablesRowsOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeTablesRowsRequest&, DescribeTablesRowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesRowsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRunCallsResponse> GetRunCallsOutcome;
                 typedef std::future<GetRunCallsOutcome> GetRunCallsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunCallsRequest&, GetRunCallsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunCallsAsyncHandler;
@@ -79,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportTableFileResponse> ImportTableFileOutcome;
                 typedef std::future<ImportTableFileOutcome> ImportTableFileOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::ImportTableFileRequest&, ImportTableFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportTableFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryRunsResponse> RetryRunsOutcome;
+                typedef std::future<RetryRunsOutcome> RetryRunsOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::RetryRunsRequest&, RetryRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryRunsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunApplicationResponse> RunApplicationOutcome;
                 typedef std::future<RunApplicationOutcome> RunApplicationOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::RunApplicationRequest&, RunApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunApplicationAsyncHandler;
@@ -131,6 +146,24 @@ namespace TencentCloud
                 DescribeRunsOutcomeCallable DescribeRunsCallable(const Model::DescribeRunsRequest& request);
 
                 /**
+                 *查询表格。
+                 * @param req DescribeTablesRequest
+                 * @return DescribeTablesOutcome
+                 */
+                DescribeTablesOutcome DescribeTables(const Model::DescribeTablesRequest &request);
+                void DescribeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTablesOutcomeCallable DescribeTablesCallable(const Model::DescribeTablesRequest& request);
+
+                /**
+                 *查询表格行数据。
+                 * @param req DescribeTablesRowsRequest
+                 * @return DescribeTablesRowsOutcome
+                 */
+                DescribeTablesRowsOutcome DescribeTablesRows(const Model::DescribeTablesRowsRequest &request);
+                void DescribeTablesRowsAsync(const Model::DescribeTablesRowsRequest& request, const DescribeTablesRowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTablesRowsOutcomeCallable DescribeTablesRowsCallable(const Model::DescribeTablesRowsRequest& request);
+
+                /**
                  *查询作业详情。
                  * @param req GetRunCallsRequest
                  * @return GetRunCallsOutcome
@@ -156,6 +189,15 @@ namespace TencentCloud
                 ImportTableFileOutcome ImportTableFile(const Model::ImportTableFileRequest &request);
                 void ImportTableFileAsync(const Model::ImportTableFileRequest& request, const ImportTableFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportTableFileOutcomeCallable ImportTableFileCallable(const Model::ImportTableFileRequest& request);
+
+                /**
+                 *重试任务。
+                 * @param req RetryRunsRequest
+                 * @return RetryRunsOutcome
+                 */
+                RetryRunsOutcome RetryRuns(const Model::RetryRunsRequest &request);
+                void RetryRunsAsync(const Model::RetryRunsRequest& request, const RetryRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryRunsOutcomeCallable RetryRunsCallable(const Model::RetryRunsRequest& request);
 
                 /**
                  *运行应用。

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表
-                     * @return InstanceIds 实例列表
+                     * 获取实例 ID 列表。例如;["crs-f2ho5rsz\n"]
+                     * @return InstanceIds 实例 ID 列表。例如;["crs-f2ho5rsz\n"]
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例列表
-                     * @param InstanceIds 实例列表
+                     * 设置实例 ID 列表。例如;["crs-f2ho5rsz\n"]
+                     * @param InstanceIds 实例 ID 列表。例如;["crs-f2ho5rsz\n"]
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例列表
+                     * 实例 ID 列表。例如;["crs-f2ho5rsz\n"]
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

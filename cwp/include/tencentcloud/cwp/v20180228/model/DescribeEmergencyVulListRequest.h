@@ -153,6 +153,24 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
+                    /**
+                     * 获取是否热点漏洞
+                     * @return HotspotAttack 是否热点漏洞
+                     */
+                    bool GetHotspotAttack() const;
+
+                    /**
+                     * 设置是否热点漏洞
+                     * @param HotspotAttack 是否热点漏洞
+                     */
+                    void SetHotspotAttack(const bool& _hotspotAttack);
+
+                    /**
+                     * 判断参数 HotspotAttack 是否已赋值
+                     * @return HotspotAttack 是否已赋值
+                     */
+                    bool HotspotAttackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +207,12 @@ namespace TencentCloud
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
+
+                    /**
+                     * 是否热点漏洞
+                     */
+                    bool m_hotspotAttack;
+                    bool m_hotspotAttackHasBeenSet;
 
                 };
             }

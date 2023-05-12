@@ -33,6 +33,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/PartitionOffset.h
   include/tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceResponse.h
+  include/tencentcloud/ckafka/v20190819/model/EsModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicResultDTO.h
   include/tencentcloud/ckafka/v20190819/model/SubscribedInfo.h
@@ -82,9 +83,11 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CheckCdcClusterResponse.h
   include/tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateTokenResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTopicFlowRankingRequest.h
   include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
+  include/tencentcloud/ckafka/v20190819/model/TopicMessageHeapRanking.h
   include/tencentcloud/ckafka/v20190819/model/DorisConnectParam.h
-  include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
+  include/tencentcloud/ckafka/v20190819/model/TopicFlowRanking.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesRequest.h
@@ -202,6 +205,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ConsumerGroupSpeed.h
   include/tencentcloud/ckafka/v20190819/model/VipEntity.h
   include/tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionResponse.h
@@ -227,6 +231,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/Filter.h
   include/tencentcloud/ckafka/v20190819/model/Connection.h
   include/tencentcloud/ckafka/v20190819/model/BatchCreateAclResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/RouteResponse.h
@@ -242,6 +247,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailRequest.h
   include/tencentcloud/ckafka/v20190819/model/JsonPathReplaceParam.h
   include/tencentcloud/ckafka/v20190819/model/SubstrParam.h
+  include/tencentcloud/ckafka/v20190819/model/TopicFlowRankingResult.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h
   include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h
@@ -276,7 +282,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicResponse.h
-  include/tencentcloud/ckafka/v20190819/model/EsModifyConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeTopicFlowRankingResponse.h
   include/tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/InstanceChargeParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsRequest.h
@@ -345,6 +351,7 @@ set(ckafka_src
   src/v20190819/model/PartitionOffset.cpp
   src/v20190819/model/SQLServerConnectParam.cpp
   src/v20190819/model/CreateConnectResourceResponse.cpp
+  src/v20190819/model/EsModifyConnectParam.cpp
   src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
   src/v20190819/model/BatchModifyTopicResultDTO.cpp
   src/v20190819/model/SubscribedInfo.cpp
@@ -394,9 +401,11 @@ set(ckafka_src
   src/v20190819/model/CheckCdcClusterResponse.cpp
   src/v20190819/model/CtsdbModifyConnectParam.cpp
   src/v20190819/model/CreateTokenResponse.cpp
+  src/v20190819/model/DescribeTopicFlowRankingRequest.cpp
   src/v20190819/model/DynamicDiskConfig.cpp
+  src/v20190819/model/TopicMessageHeapRanking.cpp
   src/v20190819/model/DorisConnectParam.cpp
-  src/v20190819/model/ZoneInfo.cpp
+  src/v20190819/model/TopicFlowRanking.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp
   src/v20190819/model/DeleteAclRuleRequest.cpp
   src/v20190819/model/DescribeConnectResourcesRequest.cpp
@@ -514,6 +523,7 @@ set(ckafka_src
   src/v20190819/model/DeleteDatahubTopicRequest.cpp
   src/v20190819/model/DescribeRegionResponse.cpp
   src/v20190819/model/CreateTopicResponse.cpp
+  src/v20190819/model/ConsumerGroupSpeed.cpp
   src/v20190819/model/VipEntity.cpp
   src/v20190819/model/KafkaConnectParam.cpp
   src/v20190819/model/DescribeTopicProduceConnectionResponse.cpp
@@ -539,6 +549,7 @@ set(ckafka_src
   src/v20190819/model/Filter.cpp
   src/v20190819/model/Connection.cpp
   src/v20190819/model/BatchCreateAclResponse.cpp
+  src/v20190819/model/ZoneInfo.cpp
   src/v20190819/model/ModifyInstancePreResponse.cpp
   src/v20190819/model/CreateUserRequest.cpp
   src/v20190819/model/RouteResponse.cpp
@@ -554,6 +565,7 @@ set(ckafka_src
   src/v20190819/model/DescribeInstancesDetailRequest.cpp
   src/v20190819/model/JsonPathReplaceParam.cpp
   src/v20190819/model/SubstrParam.cpp
+  src/v20190819/model/TopicFlowRankingResult.cpp
   src/v20190819/model/FetchMessageByOffsetResponse.cpp
   src/v20190819/model/CreateConsumerRequest.cpp
   src/v20190819/model/InquireCkafkaPriceResponse.cpp
@@ -588,7 +600,7 @@ set(ckafka_src
   src/v20190819/model/BatchModifyTopicInfo.cpp
   src/v20190819/model/DescribeRouteResponse.cpp
   src/v20190819/model/ModifyDatahubTopicResponse.cpp
-  src/v20190819/model/EsModifyConnectParam.cpp
+  src/v20190819/model/DescribeTopicFlowRankingResponse.cpp
   src/v20190819/model/ModifyConnectResourceResponse.cpp
   src/v20190819/model/InstanceChargeParam.cpp
   src/v20190819/model/DescribeDatahubTopicsRequest.cpp

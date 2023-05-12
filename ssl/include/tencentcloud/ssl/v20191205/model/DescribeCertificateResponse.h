@@ -495,6 +495,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取CA证书的所有加密方式	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CAEncryptAlgorithms CA证书的所有加密方式	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCAEncryptAlgorithms() const;
+
+                    /**
+                     * 判断参数 CAEncryptAlgorithms 是否已赋值
+                     * @return CAEncryptAlgorithms 是否已赋值
+                     */
+                    bool CAEncryptAlgorithmsHasBeenSet() const;
+
+                    /**
+                     * 获取CA证书的所有通用名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CACommonNames CA证书的所有通用名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCACommonNames() const;
+
+                    /**
+                     * 判断参数 CACommonNames 是否已赋值
+                     * @return CACommonNames 是否已赋值
+                     */
+                    bool CACommonNamesHasBeenSet() const;
+
+                    /**
+                     * 获取CA证书所有的到期时间	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CAEndTimes CA证书所有的到期时间	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCAEndTimes() const;
+
+                    /**
+                     * 判断参数 CAEndTimes 是否已赋值
+                     * @return CAEndTimes 是否已赋值
+                     */
+                    bool CAEndTimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +762,27 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * CA证书的所有加密方式	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cAEncryptAlgorithms;
+                    bool m_cAEncryptAlgorithmsHasBeenSet;
+
+                    /**
+                     * CA证书的所有通用名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cACommonNames;
+                    bool m_cACommonNamesHasBeenSet;
+
+                    /**
+                     * CA证书所有的到期时间	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cAEndTimes;
+                    bool m_cAEndTimesHasBeenSet;
 
                 };
             }

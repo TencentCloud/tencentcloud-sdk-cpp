@@ -2491,6 +2491,49 @@ CkafkaClient::DescribeTopicDetailOutcomeCallable CkafkaClient::DescribeTopicDeta
     return task->get_future();
 }
 
+CkafkaClient::DescribeTopicFlowRankingOutcome CkafkaClient::DescribeTopicFlowRanking(const DescribeTopicFlowRankingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicFlowRanking");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicFlowRankingResponse rsp = DescribeTopicFlowRankingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicFlowRankingOutcome(rsp);
+        else
+            return DescribeTopicFlowRankingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicFlowRankingOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTopicFlowRankingAsync(const DescribeTopicFlowRankingRequest& request, const DescribeTopicFlowRankingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicFlowRanking(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTopicFlowRankingOutcomeCallable CkafkaClient::DescribeTopicFlowRankingCallable(const DescribeTopicFlowRankingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicFlowRankingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicFlowRanking(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTopicProduceConnectionOutcome CkafkaClient::DescribeTopicProduceConnection(const DescribeTopicProduceConnectionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopicProduceConnection");

@@ -708,7 +708,7 @@ namespace TencentCloud
                 DescribeCommonDBInstancesOutcomeCallable DescribeCommonDBInstancesCallable(const Model::DescribeCommonDBInstancesRequest& request);
 
                 /**
-                 *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。
+                 *本接口（DescribeDBSecurityGroups）用于查询实例的安全组详情。
                  * @param req DescribeDBSecurityGroupsRequest
                  * @return DescribeDBSecurityGroupsOutcome
                  */
@@ -717,7 +717,7 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
-                 *查看实例子账号信息
+                 *本接口（DescribeInstanceAccount）用于查看实例子账号信息。
                  * @param req DescribeInstanceAccountRequest
                  * @return DescribeInstanceAccountOutcome
                  */
@@ -843,7 +843,7 @@ namespace TencentCloud
                 DescribeInstanceParamRecordsOutcomeCallable DescribeInstanceParamRecordsCallable(const Model::DescribeInstanceParamRecordsRequest& request);
 
                 /**
-                 *查询实例参数列表
+                 *本接口（DescribeInstanceParams）用于查询实例参数列表。
                  * @param req DescribeInstanceParamsRequest
                  * @return DescribeInstanceParamsOutcome
                  */
@@ -852,7 +852,7 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
-                 *查询实例安全组信息
+                 *本接口（DescribeInstanceSecurityGroup）用于查询实例安全组信息。
                  * @param req DescribeInstanceSecurityGroupRequest
                  * @return DescribeInstanceSecurityGroupOutcome
                  */
@@ -870,7 +870,7 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
 
                 /**
-                 *查询Redis节点详细信息
+                 *本接口（DescribeInstanceZoneInfo）用于查询 Redis 节点详细信息。
                  * @param req DescribeInstanceZoneInfoRequest
                  * @return DescribeInstanceZoneInfoOutcome
                  */
@@ -1086,7 +1086,7 @@ namespace TencentCloud
                 KillMasterGroupOutcomeCallable KillMasterGroupCallable(const Model::KillMasterGroupRequest& request);
 
                 /**
-                 *手动备份Redis实例
+                 *本接口（ManualBackupInstance）用于手动备份Redis实例。
                  * @param req ManualBackupInstanceRequest
                  * @return ManualBackupInstanceOutcome
                  */

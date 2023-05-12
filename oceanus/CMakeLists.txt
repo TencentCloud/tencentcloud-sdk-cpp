@@ -33,6 +33,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
@@ -112,6 +113,7 @@ set(oceanus_src
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/CreateFolderRequest.cpp
   src/v20190422/model/ModifyJobResponse.cpp
+  src/v20190422/model/ClusterSession.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp

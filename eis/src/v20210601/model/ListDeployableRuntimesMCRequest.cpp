@@ -22,7 +22,10 @@
 using namespace TencentCloud::Eis::V20210601::Model;
 using namespace std;
 
-ListDeployableRuntimesMCRequest::ListDeployableRuntimesMCRequest()
+ListDeployableRuntimesMCRequest::ListDeployableRuntimesMCRequest() :
+    m_projectIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_planTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string ListDeployableRuntimesMCRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceId, allocator);
+    }
+
+    if (m_planTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_planType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string ListDeployableRuntimesMCRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ListDeployableRuntimesMCRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ListDeployableRuntimesMCRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ListDeployableRuntimesMCRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+int64_t ListDeployableRuntimesMCRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ListDeployableRuntimesMCRequest::SetInstanceId(const int64_t& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ListDeployableRuntimesMCRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+int64_t ListDeployableRuntimesMCRequest::GetPlanType() const
+{
+    return m_planType;
+}
+
+void ListDeployableRuntimesMCRequest::SetPlanType(const int64_t& _planType)
+{
+    m_planType = _planType;
+    m_planTypeHasBeenSet = true;
+}
+
+bool ListDeployableRuntimesMCRequest::PlanTypeHasBeenSet() const
+{
+    return m_planTypeHasBeenSet;
+}
 
 

@@ -55,7 +55,10 @@ DescribeCertificateResponse::DescribeCertificateResponse() :
     m_renewAbleHasBeenSet(false),
     m_submittedDataHasBeenSet(false),
     m_deployableHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_cAEncryptAlgorithmsHasBeenSet(false),
+    m_cACommonNamesHasBeenSet(false),
+    m_cAEndTimesHasBeenSet(false)
 {
 }
 
@@ -447,6 +450,45 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CAEncryptAlgorithms") && !rsp["CAEncryptAlgorithms"].IsNull())
+    {
+        if (!rsp["CAEncryptAlgorithms"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CAEncryptAlgorithms` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CAEncryptAlgorithms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cAEncryptAlgorithms.push_back((*itr).GetString());
+        }
+        m_cAEncryptAlgorithmsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CACommonNames") && !rsp["CACommonNames"].IsNull())
+    {
+        if (!rsp["CACommonNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CACommonNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CACommonNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cACommonNames.push_back((*itr).GetString());
+        }
+        m_cACommonNamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CAEndTimes") && !rsp["CAEndTimes"].IsNull())
+    {
+        if (!rsp["CAEndTimes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CAEndTimes` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CAEndTimes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cAEndTimes.push_back((*itr).GetString());
+        }
+        m_cAEndTimesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -725,6 +767,45 @@ string DescribeCertificateResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cAEncryptAlgorithmsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAEncryptAlgorithms";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cAEncryptAlgorithms.begin(); itr != m_cAEncryptAlgorithms.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cACommonNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CACommonNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cACommonNames.begin(); itr != m_cACommonNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cAEndTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAEndTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cAEndTimes.begin(); itr != m_cAEndTimes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -1058,6 +1139,36 @@ vector<Tags> DescribeCertificateResponse::GetTags() const
 bool DescribeCertificateResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> DescribeCertificateResponse::GetCAEncryptAlgorithms() const
+{
+    return m_cAEncryptAlgorithms;
+}
+
+bool DescribeCertificateResponse::CAEncryptAlgorithmsHasBeenSet() const
+{
+    return m_cAEncryptAlgorithmsHasBeenSet;
+}
+
+vector<string> DescribeCertificateResponse::GetCACommonNames() const
+{
+    return m_cACommonNames;
+}
+
+bool DescribeCertificateResponse::CACommonNamesHasBeenSet() const
+{
+    return m_cACommonNamesHasBeenSet;
+}
+
+vector<string> DescribeCertificateResponse::GetCAEndTimes() const
+{
+    return m_cAEndTimes;
+}
+
+bool DescribeCertificateResponse::CAEndTimesHasBeenSet() const
+{
+    return m_cAEndTimesHasBeenSet;
 }
 
 

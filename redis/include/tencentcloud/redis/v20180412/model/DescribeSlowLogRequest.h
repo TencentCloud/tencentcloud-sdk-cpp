@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取每个页面展示的慢查询条数，默认值为20。
-                     * @return Limit 每个页面展示的慢查询条数，默认值为20。
+                     * 获取每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
+                     * @return Limit 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每个页面展示的慢查询条数，默认值为20。
-                     * @param Limit 每个页面展示的慢查询条数，默认值为20。
+                     * 设置每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
+                     * @param Limit 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 每个页面展示的慢查询条数，默认值为20。
+                     * 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -29,7 +29,8 @@ NetworkAuditRecord::NetworkAuditRecord() :
     m_networkPolicyNameHasBeenSet(false),
     m_operationTimeHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_policyIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome NetworkAuditRecord::Deserialize(const rapidjson::Value &valu
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyId") && !value["PolicyId"].IsNull())
+    {
+        if (!value["PolicyId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAuditRecord.PolicyId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyId = value["PolicyId"].GetUint64();
+        m_policyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void NetworkAuditRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyId, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void NetworkAuditRecord::SetUin(const string& _uin)
 bool NetworkAuditRecord::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+uint64_t NetworkAuditRecord::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void NetworkAuditRecord::SetPolicyId(const uint64_t& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool NetworkAuditRecord::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 

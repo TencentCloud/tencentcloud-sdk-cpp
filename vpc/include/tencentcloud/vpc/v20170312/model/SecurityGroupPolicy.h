@@ -125,14 +125,14 @@ namespace TencentCloud
                     bool ServiceTemplateHasBeenSet() const;
 
                     /**
-                     * 获取网段或IP(互斥)。
-                     * @return CidrBlock 网段或IP(互斥)。
+                     * 获取网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * @return CidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置网段或IP(互斥)。
-                     * @param CidrBlock 网段或IP(互斥)。
+                     * 设置网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * @param CidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_serviceTemplateHasBeenSet;
 
                     /**
-                     * 网段或IP(互斥)。
+                     * 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;

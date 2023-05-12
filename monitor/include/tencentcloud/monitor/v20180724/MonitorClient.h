@@ -137,6 +137,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeClusterAgentCreatingProgressRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeClusterAgentCreatingProgressResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeConditionsTemplateListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeConditionsTemplateListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeDNSConfigRequest.h>
@@ -506,6 +508,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBindingPolicyObjectListResponse> DescribeBindingPolicyObjectListOutcome;
                 typedef std::future<DescribeBindingPolicyObjectListOutcome> DescribeBindingPolicyObjectListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeBindingPolicyObjectListRequest&, DescribeBindingPolicyObjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindingPolicyObjectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterAgentCreatingProgressResponse> DescribeClusterAgentCreatingProgressOutcome;
+                typedef std::future<DescribeClusterAgentCreatingProgressOutcome> DescribeClusterAgentCreatingProgressOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeClusterAgentCreatingProgressRequest&, DescribeClusterAgentCreatingProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAgentCreatingProgressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConditionsTemplateListResponse> DescribeConditionsTemplateListOutcome;
                 typedef std::future<DescribeConditionsTemplateListOutcome> DescribeConditionsTemplateListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeConditionsTemplateListRequest&, DescribeConditionsTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConditionsTemplateListAsyncHandler;
@@ -1305,6 +1310,15 @@ namespace TencentCloud
                 DescribeBindingPolicyObjectListOutcome DescribeBindingPolicyObjectList(const Model::DescribeBindingPolicyObjectListRequest &request);
                 void DescribeBindingPolicyObjectListAsync(const Model::DescribeBindingPolicyObjectListRequest& request, const DescribeBindingPolicyObjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBindingPolicyObjectListOutcomeCallable DescribeBindingPolicyObjectListCallable(const Model::DescribeBindingPolicyObjectListRequest& request);
+
+                /**
+                 *获取prom实例中集群详细的关联状态
+                 * @param req DescribeClusterAgentCreatingProgressRequest
+                 * @return DescribeClusterAgentCreatingProgressOutcome
+                 */
+                DescribeClusterAgentCreatingProgressOutcome DescribeClusterAgentCreatingProgress(const Model::DescribeClusterAgentCreatingProgressRequest &request);
+                void DescribeClusterAgentCreatingProgressAsync(const Model::DescribeClusterAgentCreatingProgressRequest& request, const DescribeClusterAgentCreatingProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterAgentCreatingProgressOutcomeCallable DescribeClusterAgentCreatingProgressCallable(const Model::DescribeClusterAgentCreatingProgressRequest& request);
 
                 /**
                  *获取条件模板列表

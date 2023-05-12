@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。
-                     * @return ZoneId 加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。
+                     * 获取加速域名所属站点ID。
+                     * @return ZoneId 加速域名所属站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。
-                     * @param ZoneId 加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。
+                     * 设置加速域名所属站点ID。
+                     * @param ZoneId 加速域名所属站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -224,7 +224,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速域名所属站点ID。不填写该参数默认返回所有站点下的加速域名。
+                     * 加速域名所属站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

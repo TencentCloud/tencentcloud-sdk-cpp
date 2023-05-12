@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组信息
-                     * @return SecurityGroupDetails 安全组信息
+                     * 获取安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
+                     * @return SecurityGroupDetails 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
                      */
                     std::vector<SecurityGroupDetail> GetSecurityGroupDetails() const;
 
                     /**
-                     * 设置安全组信息
-                     * @param SecurityGroupDetails 安全组信息
+                     * 设置安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
+                     * @param SecurityGroupDetails 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
                      */
                     void SetSecurityGroupDetails(const std::vector<SecurityGroupDetail>& _securityGroupDetails);
 
@@ -86,13 +86,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 安全组信息
+                     * 安全组信息，包括：安全组 ID、安全组名称、安全组出入站规则。
                      */
                     std::vector<SecurityGroupDetail> m_securityGroupDetails;
                     bool m_securityGroupDetailsHasBeenSet;

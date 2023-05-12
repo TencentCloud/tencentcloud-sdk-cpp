@@ -31,6 +31,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
@@ -139,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateChannelSubOrganizationModifyQrCodeResponse> CreateChannelSubOrganizationModifyQrCodeOutcome;
+                typedef std::future<CreateChannelSubOrganizationModifyQrCodeOutcome> CreateChannelSubOrganizationModifyQrCodeOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateChannelSubOrganizationModifyQrCodeRequest&, CreateChannelSubOrganizationModifyQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelSubOrganizationModifyQrCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConvertTaskApiResponse> CreateConvertTaskApiOutcome;
                 typedef std::future<CreateConvertTaskApiOutcome> CreateConvertTaskApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateConvertTaskApiRequest&, CreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConvertTaskApiAsyncHandler;
@@ -304,6 +309,15 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcome CreateBatchCancelFlowUrl(const Model::CreateBatchCancelFlowUrlRequest &request);
                 void CreateBatchCancelFlowUrlAsync(const Model::CreateBatchCancelFlowUrlRequest& request, const CreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
+
+                /**
+                 *生成子客编辑企业信息二维码
+                 * @param req CreateChannelSubOrganizationModifyQrCodeRequest
+                 * @return CreateChannelSubOrganizationModifyQrCodeOutcome
+                 */
+                CreateChannelSubOrganizationModifyQrCodeOutcome CreateChannelSubOrganizationModifyQrCode(const Model::CreateChannelSubOrganizationModifyQrCodeRequest &request);
+                void CreateChannelSubOrganizationModifyQrCodeAsync(const Model::CreateChannelSubOrganizationModifyQrCodeRequest& request, const CreateChannelSubOrganizationModifyQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChannelSubOrganizationModifyQrCodeOutcomeCallable CreateChannelSubOrganizationModifyQrCodeCallable(const Model::CreateChannelSubOrganizationModifyQrCodeRequest& request);
 
                 /**
                  *上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。

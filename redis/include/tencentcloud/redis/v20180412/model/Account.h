@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
+                     * 获取实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID
+                     * @return InstanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例ID
+                     * @param InstanceId 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取账号名称（如果是主账号，名称为root）
+                     * 获取账号名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountName 账号名称（如果是主账号，名称为root）
+                     * @return AccountName 账号名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置账号名称（如果是主账号，名称为root）
+                     * 设置账号名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountName 账号名称（如果是主账号，名称为root）
+                     * @param AccountName 账号名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取账号描述信息
+                     * 获取账号描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 账号描述信息
+                     * @return Remark 账号描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置账号描述信息
+                     * 设置账号描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 账号描述信息
+                     * @param Remark 账号描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRemark(const std::string& _remark);
@@ -113,17 +113,29 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取读写策略：r-只读，w-只写，rw-读写
+                     * 获取读写权限策略。
+- r：只读。
+- w：只写。
+- rw：读写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Privilege 读写策略：r-只读，w-只写，rw-读写
+                     * @return Privilege 读写权限策略。
+- r：只读。
+- w：只写。
+- rw：读写。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置读写策略：r-只读，w-只写，rw-读写
+                     * 设置读写权限策略。
+- r：只读。
+- w：只写。
+- rw：读写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Privilege 读写策略：r-只读，w-只写，rw-读写
+                     * @param Privilege 读写权限策略。
+- r：只读。
+- w：只写。
+- rw：读写。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -135,17 +147,25 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取路由策略：master-主节点，replication-从节点
+                     * 获取只读路由策略。
+- master：主节点。
+- replication：从节点。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadonlyPolicy 路由策略：master-主节点，replication-从节点
+                     * @return ReadonlyPolicy 只读路由策略。
+- master：主节点。
+- replication：从节点。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
-                     * 设置路由策略：master-主节点，replication-从节点
+                     * 设置只读路由策略。
+- master：主节点。
+- replication：从节点。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadonlyPolicy 路由策略：master-主节点，replication-从节点
+                     * @param ReadonlyPolicy 只读路由策略。
+- master：主节点。
+- replication：从节点。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -157,17 +177,29 @@ namespace TencentCloud
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取子账号状态：1-账号变更中，2-账号有效，-4-账号已删除
+                     * 获取子账号状态.
+- 1：账号变更中。
+- 2：账号有效。
+- 4：账号已删除。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 子账号状态：1-账号变更中，2-账号有效，-4-账号已删除
+                     * @return Status 子账号状态.
+- 1：账号变更中。
+- 2：账号有效。
+- 4：账号已删除。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置子账号状态：1-账号变更中，2-账号有效，-4-账号已删除
+                     * 设置子账号状态.
+- 1：账号变更中。
+- 2：账号有效。
+- 4：账号已删除。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 子账号状态：1-账号变更中，2-账号有效，-4-账号已删除
+                     * @param Status 子账号状态.
+- 1：账号变更中。
+- 2：账号有效。
+- 4：账号已删除。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -181,42 +213,50 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 账号名称（如果是主账号，名称为root）
+                     * 账号名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 账号描述信息
+                     * 账号描述信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 读写策略：r-只读，w-只写，rw-读写
+                     * 读写权限策略。
+- r：只读。
+- w：只写。
+- rw：读写。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * 路由策略：master-主节点，replication-从节点
+                     * 只读路由策略。
+- master：主节点。
+- replication：从节点。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * 子账号状态：1-账号变更中，2-账号有效，-4-账号已删除
+                     * 子账号状态.
+- 1：账号变更中。
+- 2：账号有效。
+- 4：账号已删除。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;

@@ -27,7 +27,9 @@ CompanyInfo::CompanyInfo() :
     m_companyProvinceHasBeenSet(false),
     m_companyCityHasBeenSet(false),
     m_companyAddressHasBeenSet(false),
-    m_companyPhoneHasBeenSet(false)
+    m_companyPhoneHasBeenSet(false),
+    m_idTypeHasBeenSet(false),
+    m_idNumberHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
         m_companyPhoneHasBeenSet = true;
     }
 
+    if (value.HasMember("IdType") && !value["IdType"].IsNull())
+    {
+        if (!value["IdType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.IdType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idType = string(value["IdType"].GetString());
+        m_idTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdNumber") && !value["IdNumber"].IsNull())
+    {
+        if (!value["IdNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyInfo.IdNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idNumber = string(value["IdNumber"].GetString());
+        m_idNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void CompanyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CompanyPhone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_companyPhone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void CompanyInfo::SetCompanyPhone(const string& _companyPhone)
 bool CompanyInfo::CompanyPhoneHasBeenSet() const
 {
     return m_companyPhoneHasBeenSet;
+}
+
+string CompanyInfo::GetIdType() const
+{
+    return m_idType;
+}
+
+void CompanyInfo::SetIdType(const string& _idType)
+{
+    m_idType = _idType;
+    m_idTypeHasBeenSet = true;
+}
+
+bool CompanyInfo::IdTypeHasBeenSet() const
+{
+    return m_idTypeHasBeenSet;
+}
+
+string CompanyInfo::GetIdNumber() const
+{
+    return m_idNumber;
+}
+
+void CompanyInfo::SetIdNumber(const string& _idNumber)
+{
+    m_idNumber = _idNumber;
+    m_idNumberHasBeenSet = true;
+}
+
+bool CompanyInfo::IdNumberHasBeenSet() const
+{
+    return m_idNumberHasBeenSet;
 }
 

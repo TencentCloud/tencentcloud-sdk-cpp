@@ -25,7 +25,10 @@ SecurityGroupLimitSet::SecurityGroupLimitSet() :
     m_securityGroupPolicyLimitHasBeenSet(false),
     m_referedSecurityGroupLimitHasBeenSet(false),
     m_securityGroupInstanceLimitHasBeenSet(false),
-    m_instanceSecurityGroupLimitHasBeenSet(false)
+    m_instanceSecurityGroupLimitHasBeenSet(false),
+    m_securityGroupExtendedPolicyLimitHasBeenSet(false),
+    m_securityGroupReferedCvmAndEniLimitHasBeenSet(false),
+    m_securityGroupReferedSvcLimitHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &v
         m_instanceSecurityGroupLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupExtendedPolicyLimit") && !value["SecurityGroupExtendedPolicyLimit"].IsNull())
+    {
+        if (!value["SecurityGroupExtendedPolicyLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupExtendedPolicyLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupExtendedPolicyLimit = value["SecurityGroupExtendedPolicyLimit"].GetUint64();
+        m_securityGroupExtendedPolicyLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupReferedCvmAndEniLimit") && !value["SecurityGroupReferedCvmAndEniLimit"].IsNull())
+    {
+        if (!value["SecurityGroupReferedCvmAndEniLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupReferedCvmAndEniLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupReferedCvmAndEniLimit = value["SecurityGroupReferedCvmAndEniLimit"].GetUint64();
+        m_securityGroupReferedCvmAndEniLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupReferedSvcLimit") && !value["SecurityGroupReferedSvcLimit"].IsNull())
+    {
+        if (!value["SecurityGroupReferedSvcLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupLimitSet.SecurityGroupReferedSvcLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupReferedSvcLimit = value["SecurityGroupReferedSvcLimit"].GetUint64();
+        m_securityGroupReferedSvcLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void SecurityGroupLimitSet::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceSecurityGroupLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceSecurityGroupLimit, allocator);
+    }
+
+    if (m_securityGroupExtendedPolicyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupExtendedPolicyLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityGroupExtendedPolicyLimit, allocator);
+    }
+
+    if (m_securityGroupReferedCvmAndEniLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupReferedCvmAndEniLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityGroupReferedCvmAndEniLimit, allocator);
+    }
+
+    if (m_securityGroupReferedSvcLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupReferedSvcLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityGroupReferedSvcLimit, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void SecurityGroupLimitSet::SetInstanceSecurityGroupLimit(const uint64_t& _insta
 bool SecurityGroupLimitSet::InstanceSecurityGroupLimitHasBeenSet() const
 {
     return m_instanceSecurityGroupLimitHasBeenSet;
+}
+
+uint64_t SecurityGroupLimitSet::GetSecurityGroupExtendedPolicyLimit() const
+{
+    return m_securityGroupExtendedPolicyLimit;
+}
+
+void SecurityGroupLimitSet::SetSecurityGroupExtendedPolicyLimit(const uint64_t& _securityGroupExtendedPolicyLimit)
+{
+    m_securityGroupExtendedPolicyLimit = _securityGroupExtendedPolicyLimit;
+    m_securityGroupExtendedPolicyLimitHasBeenSet = true;
+}
+
+bool SecurityGroupLimitSet::SecurityGroupExtendedPolicyLimitHasBeenSet() const
+{
+    return m_securityGroupExtendedPolicyLimitHasBeenSet;
+}
+
+uint64_t SecurityGroupLimitSet::GetSecurityGroupReferedCvmAndEniLimit() const
+{
+    return m_securityGroupReferedCvmAndEniLimit;
+}
+
+void SecurityGroupLimitSet::SetSecurityGroupReferedCvmAndEniLimit(const uint64_t& _securityGroupReferedCvmAndEniLimit)
+{
+    m_securityGroupReferedCvmAndEniLimit = _securityGroupReferedCvmAndEniLimit;
+    m_securityGroupReferedCvmAndEniLimitHasBeenSet = true;
+}
+
+bool SecurityGroupLimitSet::SecurityGroupReferedCvmAndEniLimitHasBeenSet() const
+{
+    return m_securityGroupReferedCvmAndEniLimitHasBeenSet;
+}
+
+uint64_t SecurityGroupLimitSet::GetSecurityGroupReferedSvcLimit() const
+{
+    return m_securityGroupReferedSvcLimit;
+}
+
+void SecurityGroupLimitSet::SetSecurityGroupReferedSvcLimit(const uint64_t& _securityGroupReferedSvcLimit)
+{
+    m_securityGroupReferedSvcLimit = _securityGroupReferedSvcLimit;
+    m_securityGroupReferedSvcLimitHasBeenSet = true;
+}
+
+bool SecurityGroupLimitSet::SecurityGroupReferedSvcLimitHasBeenSet() const
+{
+    return m_securityGroupReferedSvcLimitHasBeenSet;
 }
 
