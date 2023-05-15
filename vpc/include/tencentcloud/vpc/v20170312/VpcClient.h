@@ -2621,7 +2621,7 @@ namespace TencentCloud
                 DeleteVpcEndPointServiceWhiteListOutcomeCallable DeleteVpcEndPointServiceWhiteListCallable(const Model::DeleteVpcEndPointServiceWhiteListRequest& request);
 
                 /**
-                 *本接口(DeleteVpnConnection)用于删除VPN通道。
+                 *本接口（DeleteVpnConnection）用于删除VPN通道。
                  * @param req DeleteVpnConnectionRequest
                  * @return DeleteVpnConnectionOutcome
                  */
@@ -3377,7 +3377,7 @@ LimitTypes取值范围：
                 DescribeVpcsOutcomeCallable DescribeVpcsCallable(const Model::DescribeVpcsRequest& request);
 
                 /**
-                 * 本接口（DescribeVpnConnections）查询VPN通道列表。
+                 *本接口（DescribeVpnConnections）用于查询VPN通道列表。
                  * @param req DescribeVpnConnectionsRequest
                  * @return DescribeVpnConnectionsOutcome
                  */
@@ -4406,7 +4406,7 @@ LimitTypes取值范围：
                 ResetRoutesOutcomeCallable ResetRoutesCallable(const Model::ResetRoutesRequest& request);
 
                 /**
-                 *本接口(ResetVpnConnection)用于重置VPN通道。
+                 *本接口（ResetVpnConnection）用于重置VPN通道。
                  * @param req ResetVpnConnectionRequest
                  * @return ResetVpnConnectionOutcome
                  */
@@ -4415,7 +4415,7 @@ LimitTypes取值范围：
                 ResetVpnConnectionOutcomeCallable ResetVpnConnectionCallable(const Model::ResetVpnConnectionRequest& request);
 
                 /**
-                 *本接口（ResetVpnGatewayInternetMaxBandwidth）调整VPN网关带宽上限。目前支持升级配置，如果是包年包月VPN网关需要在有效期内。
+                 *本接口（ResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限。VPN网关带宽目前仅支持部分带宽范围内升降配，如【5,100】Mbps和【200,1000】Mbps，在各自带宽范围内可提升配额，跨范围提升配额和降配暂不支持，如果是包年包月VPN网关需要在有效期内。
                  * @param req ResetVpnGatewayInternetMaxBandwidthRequest
                  * @return ResetVpnGatewayInternetMaxBandwidthOutcome
                  */

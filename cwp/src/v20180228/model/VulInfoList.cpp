@@ -43,7 +43,10 @@ VulInfoList::VulInfoList() :
     m_isSupportDefenseHasBeenSet(false),
     m_defenseAttackCountHasBeenSet(false),
     m_firstAppearTimeHasBeenSet(false),
-    m_vulCategoryHasBeenSet(false)
+    m_vulCategoryHasBeenSet(false),
+    m_attackLevelHasBeenSet(false),
+    m_fixNoNeedRestartHasBeenSet(false),
+    m_methodHasBeenSet(false)
 {
 }
 
@@ -282,6 +285,36 @@ CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
         m_vulCategoryHasBeenSet = true;
     }
 
+    if (value.HasMember("AttackLevel") && !value["AttackLevel"].IsNull())
+    {
+        if (!value["AttackLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.AttackLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackLevel = value["AttackLevel"].GetUint64();
+        m_attackLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("FixNoNeedRestart") && !value["FixNoNeedRestart"].IsNull())
+    {
+        if (!value["FixNoNeedRestart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.FixNoNeedRestart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixNoNeedRestart = value["FixNoNeedRestart"].GetBool();
+        m_fixNoNeedRestartHasBeenSet = true;
+    }
+
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.Method` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = value["Method"].GetUint64();
+        m_methodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +504,30 @@ void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VulCategory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulCategory, allocator);
+    }
+
+    if (m_attackLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attackLevel, allocator);
+    }
+
+    if (m_fixNoNeedRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixNoNeedRestart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixNoNeedRestart, allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_method, allocator);
     }
 
 }
@@ -842,5 +899,53 @@ void VulInfoList::SetVulCategory(const uint64_t& _vulCategory)
 bool VulInfoList::VulCategoryHasBeenSet() const
 {
     return m_vulCategoryHasBeenSet;
+}
+
+uint64_t VulInfoList::GetAttackLevel() const
+{
+    return m_attackLevel;
+}
+
+void VulInfoList::SetAttackLevel(const uint64_t& _attackLevel)
+{
+    m_attackLevel = _attackLevel;
+    m_attackLevelHasBeenSet = true;
+}
+
+bool VulInfoList::AttackLevelHasBeenSet() const
+{
+    return m_attackLevelHasBeenSet;
+}
+
+bool VulInfoList::GetFixNoNeedRestart() const
+{
+    return m_fixNoNeedRestart;
+}
+
+void VulInfoList::SetFixNoNeedRestart(const bool& _fixNoNeedRestart)
+{
+    m_fixNoNeedRestart = _fixNoNeedRestart;
+    m_fixNoNeedRestartHasBeenSet = true;
+}
+
+bool VulInfoList::FixNoNeedRestartHasBeenSet() const
+{
+    return m_fixNoNeedRestartHasBeenSet;
+}
+
+uint64_t VulInfoList::GetMethod() const
+{
+    return m_method;
+}
+
+void VulInfoList::SetMethod(const uint64_t& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool VulInfoList::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
 }
 

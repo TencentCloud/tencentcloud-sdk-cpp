@@ -214,6 +214,28 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据源版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 数据源版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置数据源版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version 数据源版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +291,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 数据源版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

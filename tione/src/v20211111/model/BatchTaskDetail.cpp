@@ -52,7 +52,8 @@ BatchTaskDetail::BatchTaskDetail() :
     m_remarkHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_billingInfoHasBeenSet(false),
-    m_podListHasBeenSet(false)
+    m_podListHasBeenSet(false),
+    m_modelInferenceCodeInfoHasBeenSet(false)
 {
 }
 
@@ -449,6 +450,23 @@ CoreInternalOutcome BatchTaskDetail::Deserialize(const rapidjson::Value &value)
         m_podListHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelInferenceCodeInfo") && !value["ModelInferenceCodeInfo"].IsNull())
+    {
+        if (!value["ModelInferenceCodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchTaskDetail.ModelInferenceCodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelInferenceCodeInfo.Deserialize(value["ModelInferenceCodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelInferenceCodeInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -741,6 +759,15 @@ void BatchTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_modelInferenceCodeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelInferenceCodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelInferenceCodeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1256,5 +1283,21 @@ void BatchTaskDetail::SetPodList(const vector<string>& _podList)
 bool BatchTaskDetail::PodListHasBeenSet() const
 {
     return m_podListHasBeenSet;
+}
+
+CosPathInfo BatchTaskDetail::GetModelInferenceCodeInfo() const
+{
+    return m_modelInferenceCodeInfo;
+}
+
+void BatchTaskDetail::SetModelInferenceCodeInfo(const CosPathInfo& _modelInferenceCodeInfo)
+{
+    m_modelInferenceCodeInfo = _modelInferenceCodeInfo;
+    m_modelInferenceCodeInfoHasBeenSet = true;
+}
+
+bool BatchTaskDetail::ModelInferenceCodeInfoHasBeenSet() const
+{
+    return m_modelInferenceCodeInfoHasBeenSet;
 }
 

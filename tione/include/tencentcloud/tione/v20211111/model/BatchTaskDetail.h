@@ -162,17 +162,17 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取预付费专用资源组id
+                     * 获取包年包月资源组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupId 预付费专用资源组id
+                     * @return ResourceGroupId 包年包月资源组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置预付费专用资源组id
+                     * 设置包年包月资源组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupId 预付费专用资源组id
+                     * @param ResourceGroupId 包年包月资源组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -184,17 +184,17 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费专用资源组名称
+                     * 获取包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupName 预付费专用资源组名称
+                     * @return ResourceGroupName 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
-                     * 设置预付费专用资源组名称
+                     * 设置包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupName 预付费专用资源组名称
+                     * @param ResourceGroupName 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -705,6 +705,28 @@ namespace TencentCloud
                      */
                     bool PodListHasBeenSet() const;
 
+                    /**
+                     * 获取模型推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelInferenceCodeInfo 模型推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosPathInfo GetModelInferenceCodeInfo() const;
+
+                    /**
+                     * 设置模型推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelInferenceCodeInfo 模型推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelInferenceCodeInfo(const CosPathInfo& _modelInferenceCodeInfo);
+
+                    /**
+                     * 判断参数 ModelInferenceCodeInfo 是否已赋值
+                     * @return ModelInferenceCodeInfo 是否已赋值
+                     */
+                    bool ModelInferenceCodeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -744,14 +766,14 @@ namespace TencentCloud
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 预付费专用资源组id
+                     * 包年包月资源组id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 预付费专用资源组名称
+                     * 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
@@ -917,6 +939,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_podList;
                     bool m_podListHasBeenSet;
+
+                    /**
+                     * 模型推理代码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosPathInfo m_modelInferenceCodeInfo;
+                    bool m_modelInferenceCodeInfoHasBeenSet;
 
                 };
             }

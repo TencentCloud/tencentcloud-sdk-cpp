@@ -23,7 +23,9 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 DescribeRollbackRangeTimeRequest::DescribeRollbackRangeTimeRequest() :
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_isRemoteZoneHasBeenSet(false),
+    m_backupRegionHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,22 @@ string DescribeRollbackRangeTimeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isRemoteZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRemoteZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isRemoteZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +87,38 @@ void DescribeRollbackRangeTimeRequest::SetInstanceIds(const vector<string>& _ins
 bool DescribeRollbackRangeTimeRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DescribeRollbackRangeTimeRequest::GetIsRemoteZone() const
+{
+    return m_isRemoteZone;
+}
+
+void DescribeRollbackRangeTimeRequest::SetIsRemoteZone(const string& _isRemoteZone)
+{
+    m_isRemoteZone = _isRemoteZone;
+    m_isRemoteZoneHasBeenSet = true;
+}
+
+bool DescribeRollbackRangeTimeRequest::IsRemoteZoneHasBeenSet() const
+{
+    return m_isRemoteZoneHasBeenSet;
+}
+
+string DescribeRollbackRangeTimeRequest::GetBackupRegion() const
+{
+    return m_backupRegion;
+}
+
+void DescribeRollbackRangeTimeRequest::SetBackupRegion(const string& _backupRegion)
+{
+    m_backupRegion = _backupRegion;
+    m_backupRegionHasBeenSet = true;
+}
+
+bool DescribeRollbackRangeTimeRequest::BackupRegionHasBeenSet() const
+{
+    return m_backupRegionHasBeenSet;
 }
 
 

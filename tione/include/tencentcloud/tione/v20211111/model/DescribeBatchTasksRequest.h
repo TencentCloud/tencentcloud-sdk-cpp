@@ -51,7 +51,7 @@ namespace TencentCloud
 Name（名称）：task1
 Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
+ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
                      * @return Filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
 
@@ -59,7 +59,7 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
 Name（名称）：task1
 Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
+ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
                      */
                     std::vector<Filter> GetFilters() const;
@@ -71,7 +71,7 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
 Name（名称）：task1
 Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
+ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
                      * @param Filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
 
@@ -79,7 +79,7 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
 Name（名称）：task1
 Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
+ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -189,7 +189,7 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
 Name（名称）：task1
 Id（task ID）：train-23091792777383936
 Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）
+ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
 CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
                      */
                     std::vector<Filter> m_filters;

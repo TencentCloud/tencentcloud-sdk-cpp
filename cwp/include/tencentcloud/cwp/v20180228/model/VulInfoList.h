@@ -520,6 +520,72 @@ namespace TencentCloud
                      */
                     bool VulCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackLevel 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAttackLevel() const;
+
+                    /**
+                     * 设置攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttackLevel 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttackLevel(const uint64_t& _attackLevel);
+
+                    /**
+                     * 判断参数 AttackLevel 是否已赋值
+                     * @return AttackLevel 是否已赋值
+                     */
+                    bool AttackLevelHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞修复后是否需要重启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixNoNeedRestart 漏洞修复后是否需要重启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetFixNoNeedRestart() const;
+
+                    /**
+                     * 设置漏洞修复后是否需要重启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FixNoNeedRestart 漏洞修复后是否需要重启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFixNoNeedRestart(const bool& _fixNoNeedRestart);
+
+                    /**
+                     * 判断参数 FixNoNeedRestart 是否已赋值
+                     * @return FixNoNeedRestart 是否已赋值
+                     */
+                    bool FixNoNeedRestartHasBeenSet() const;
+
+                    /**
+                     * 获取检测方式0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Method 检测方式0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMethod() const;
+
+                    /**
+                     * 设置检测方式0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Method 检测方式0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMethod(const uint64_t& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     */
+                    bool MethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -674,6 +740,27 @@ namespace TencentCloud
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;
+
+                    /**
+                     * 攻击热度级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_attackLevel;
+                    bool m_attackLevelHasBeenSet;
+
+                    /**
+                     * 漏洞修复后是否需要重启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_fixNoNeedRestart;
+                    bool m_fixNoNeedRestartHasBeenSet;
+
+                    /**
+                     * 检测方式0 - 版本比对, 1 - POC验证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_method;
+                    bool m_methodHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ TableBaseInfo::TableBaseInfo() :
     m_tableFormatHasBeenSet(false),
     m_userAliasHasBeenSet(false),
     m_userSubUinHasBeenSet(false),
-    m_governPolicyHasBeenSet(false)
+    m_governPolicyHasBeenSet(false),
+    m_dbGovernPolicyIsDisableHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_governPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("DbGovernPolicyIsDisable") && !value["DbGovernPolicyIsDisable"].IsNull())
+    {
+        if (!value["DbGovernPolicyIsDisable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.DbGovernPolicyIsDisable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbGovernPolicyIsDisable = string(value["DbGovernPolicyIsDisable"].GetString());
+        m_dbGovernPolicyIsDisableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_governPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dbGovernPolicyIsDisableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbGovernPolicyIsDisable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbGovernPolicyIsDisable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void TableBaseInfo::SetGovernPolicy(const DataGovernPolicy& _governPolicy)
 bool TableBaseInfo::GovernPolicyHasBeenSet() const
 {
     return m_governPolicyHasBeenSet;
+}
+
+string TableBaseInfo::GetDbGovernPolicyIsDisable() const
+{
+    return m_dbGovernPolicyIsDisable;
+}
+
+void TableBaseInfo::SetDbGovernPolicyIsDisable(const string& _dbGovernPolicyIsDisable)
+{
+    m_dbGovernPolicyIsDisable = _dbGovernPolicyIsDisable;
+    m_dbGovernPolicyIsDisableHasBeenSet = true;
+}
+
+bool TableBaseInfo::DbGovernPolicyIsDisableHasBeenSet() const
+{
+    return m_dbGovernPolicyIsDisableHasBeenSet;
 }
 

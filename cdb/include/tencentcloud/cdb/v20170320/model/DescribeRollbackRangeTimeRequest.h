@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * @return IsRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     */
+                    std::string GetIsRemoteZone() const;
+
+                    /**
+                     * 设置克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * @param IsRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     */
+                    void SetIsRemoteZone(const std::string& _isRemoteZone);
+
+                    /**
+                     * 判断参数 IsRemoteZone 是否已赋值
+                     * @return IsRemoteZone 是否已赋值
+                     */
+                    bool IsRemoteZoneHasBeenSet() const;
+
+                    /**
+                     * 获取克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     * @return BackupRegion 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     */
+                    std::string GetBackupRegion() const;
+
+                    /**
+                     * 设置克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     * @param BackupRegion 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     */
+                    void SetBackupRegion(const std::string& _backupRegion);
+
+                    /**
+                     * 判断参数 BackupRegion 是否已赋值
+                     * @return BackupRegion 是否已赋值
+                     */
+                    bool BackupRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     */
+                    std::string m_isRemoteZone;
+                    bool m_isRemoteZoneHasBeenSet;
+
+                    /**
+                     * 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     */
+                    std::string m_backupRegion;
+                    bool m_backupRegionHasBeenSet;
 
                 };
             }

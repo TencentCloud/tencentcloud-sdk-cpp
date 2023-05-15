@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool BatchTaskNameHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
-                     * @return ChargeType 计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
+                     * 获取计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费
+                     * @return ChargeType 计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
-                     * @param ChargeType 计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
+                     * 设置计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费
+                     * @param ChargeType 计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费
                      */
                     void SetChargeType(const std::string& _chargeType);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool CronInfoHasBeenSet() const;
 
                     /**
-                     * 获取预付费专用资源组
-                     * @return ResourceGroupId 预付费专用资源组
+                     * 获取包年包月资源组ID
+                     * @return ResourceGroupId 包年包月资源组ID
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置预付费专用资源组
-                     * @param ResourceGroupId 预付费专用资源组
+                     * 设置包年包月资源组ID
+                     * @param ResourceGroupId 包年包月资源组ID
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
 
@@ -401,7 +401,7 @@ namespace TencentCloud
                     bool m_batchTaskNameHasBeenSet;
 
                     /**
-                     * 计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
+                     * 计费模式，eg：PREPAID 包年包月；POSTPAID_BY_HOUR 按量计费
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
@@ -437,7 +437,7 @@ namespace TencentCloud
                     bool m_cronInfoHasBeenSet;
 
                     /**
-                     * 预付费专用资源组
+                     * 包年包月资源组ID
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;

@@ -20,7 +20,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DataGovernPolicy::DataGovernPolicy()
+DataGovernPolicy::DataGovernPolicy() :
+    m_ruleTypeHasBeenSet(false),
+    m_governEngineHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,26 @@ CoreInternalOutcome DataGovernPolicy::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
+    {
+        if (!value["RuleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataGovernPolicy.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleType = string(value["RuleType"].GetString());
+        m_ruleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GovernEngine") && !value["GovernEngine"].IsNull())
+    {
+        if (!value["GovernEngine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataGovernPolicy.GovernEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_governEngine = string(value["GovernEngine"].GetString());
+        m_governEngineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +58,54 @@ CoreInternalOutcome DataGovernPolicy::Deserialize(const rapidjson::Value &value)
 void DataGovernPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_governEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_governEngine.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string DataGovernPolicy::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void DataGovernPolicy::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool DataGovernPolicy::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+string DataGovernPolicy::GetGovernEngine() const
+{
+    return m_governEngine;
+}
+
+void DataGovernPolicy::SetGovernEngine(const string& _governEngine)
+{
+    m_governEngine = _governEngine;
+    m_governEngineHasBeenSet = true;
+}
+
+bool DataGovernPolicy::GovernEngineHasBeenSet() const
+{
+    return m_governEngineHasBeenSet;
+}
 

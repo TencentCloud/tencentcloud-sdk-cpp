@@ -26,7 +26,8 @@ GenerateCreateMangedTableSqlRequest::GenerateCreateMangedTableSqlRequest() :
     m_tableBaseInfoHasBeenSet(false),
     m_columnsHasBeenSet(false),
     m_partitionsHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_upsertKeysHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,19 @@ string GenerateCreateMangedTableSqlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_upsertKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpsertKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_upsertKeys.begin(); itr != m_upsertKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -161,6 +175,22 @@ void GenerateCreateMangedTableSqlRequest::SetProperties(const vector<Property>& 
 bool GenerateCreateMangedTableSqlRequest::PropertiesHasBeenSet() const
 {
     return m_propertiesHasBeenSet;
+}
+
+vector<string> GenerateCreateMangedTableSqlRequest::GetUpsertKeys() const
+{
+    return m_upsertKeys;
+}
+
+void GenerateCreateMangedTableSqlRequest::SetUpsertKeys(const vector<string>& _upsertKeys)
+{
+    m_upsertKeys = _upsertKeys;
+    m_upsertKeysHasBeenSet = true;
+}
+
+bool GenerateCreateMangedTableSqlRequest::UpsertKeysHasBeenSet() const
+{
+    return m_upsertKeysHasBeenSet;
 }
 
 

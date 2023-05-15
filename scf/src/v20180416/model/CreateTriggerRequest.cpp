@@ -30,7 +30,8 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_namespaceHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_customArgumentHasBeenSet(false)
+    m_customArgumentHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateTriggerRequest::ToJsonString() const
         string key = "CustomArgument";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customArgument.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateTriggerRequest::SetCustomArgument(const string& _customArgument)
 bool CreateTriggerRequest::CustomArgumentHasBeenSet() const
 {
     return m_customArgumentHasBeenSet;
+}
+
+string CreateTriggerRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateTriggerRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateTriggerRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

@@ -164,17 +164,17 @@ namespace TencentCloud
                     bool ChargeStatusHasBeenSet() const;
 
                     /**
-                     * 获取预付费专用资源组
+                     * 获取包年包月资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupId 预付费专用资源组
+                     * @return ResourceGroupId 包年包月资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置预付费专用资源组
+                     * 设置包年包月资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupId 预付费专用资源组
+                     * @param ResourceGroupId 包年包月资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -368,17 +368,17 @@ namespace TencentCloud
                     bool OutputsHasBeenSet() const;
 
                     /**
-                     * 获取预付费专用资源组名称
+                     * 获取包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupName 预付费专用资源组名称
+                     * @return ResourceGroupName 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResourceGroupName() const;
 
                     /**
-                     * 设置预付费专用资源组名称
+                     * 设置包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceGroupName 预付费专用资源组名称
+                     * @param ResourceGroupName 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroupName(const std::string& _resourceGroupName);
@@ -408,14 +408,14 @@ namespace TencentCloud
                     bool FailureReasonHasBeenSet() const;
 
                     /**
-                     * 获取计费金额信息，eg：2.00元/小时 (for后付费)
-                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 获取计费金额信息，eg：2.00元/小时 (for 按量计费)
+                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (for 按量计费)
                      */
                     std::string GetBillingInfo() const;
 
                     /**
-                     * 设置计费金额信息，eg：2.00元/小时 (for后付费)
-                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 设置计费金额信息，eg：2.00元/小时 (for 按量计费)
+                     * @param BillingInfo 计费金额信息，eg：2.00元/小时 (for 按量计费)
                      */
                     void SetBillingInfo(const std::string& _billingInfo);
 
@@ -465,7 +465,7 @@ namespace TencentCloud
                     bool m_chargeStatusHasBeenSet;
 
                     /**
-                     * 预付费专用资源组
+                     * 包年包月资源组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
@@ -531,7 +531,7 @@ namespace TencentCloud
                     bool m_outputsHasBeenSet;
 
                     /**
-                     * 预付费专用资源组名称
+                     * 包年包月资源组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupName;
@@ -544,7 +544,7 @@ namespace TencentCloud
                     bool m_failureReasonHasBeenSet;
 
                     /**
-                     * 计费金额信息，eg：2.00元/小时 (for后付费)
+                     * 计费金额信息，eg：2.00元/小时 (for 按量计费)
                      */
                     std::string m_billingInfo;
                     bool m_billingInfoHasBeenSet;

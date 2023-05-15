@@ -28,7 +28,8 @@ DatasourceBaseInfo::DatasourceBaseInfo() :
     m_nameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome DatasourceBaseInfo::Deserialize(const rapidjson::Value &valu
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceBaseInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void DatasourceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void DatasourceBaseInfo::SetClusterId(const string& _clusterId)
 bool DatasourceBaseInfo::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DatasourceBaseInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void DatasourceBaseInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool DatasourceBaseInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

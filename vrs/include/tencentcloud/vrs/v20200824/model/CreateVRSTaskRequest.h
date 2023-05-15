@@ -81,20 +81,20 @@ namespace TencentCloud
                     /**
                      * 获取音频采样率：
 
-16000：16k（默认）
+16000：16k
                      * @return SampleRate 音频采样率：
 
-16000：16k（默认）
+16000：16k
                      */
                     int64_t GetSampleRate() const;
 
                     /**
                      * 设置音频采样率：
 
-16000：16k（默认）
+16000：16k
                      * @param SampleRate 音频采样率：
 
-16000：16k（默认）
+16000：16k
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
 
@@ -141,20 +141,20 @@ namespace TencentCloud
                     /**
                      * 获取语言类型：
 
-1-中文（默认）
+1-中文
                      * @return VoiceLanguage 语言类型：
 
-1-中文（默认）
+1-中文
                      */
                     int64_t GetVoiceLanguage() const;
 
                     /**
                      * 设置语言类型：
 
-1-中文（默认）
+1-中文
                      * @param VoiceLanguage 语言类型：
 
-1-中文（默认）
+1-中文
                      */
                     void SetVoiceLanguage(const int64_t& _voiceLanguage);
 
@@ -239,7 +239,7 @@ namespace TencentCloud
                     /**
                      * 音频采样率：
 
-16000：16k（默认）
+16000：16k
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
@@ -257,7 +257,7 @@ namespace TencentCloud
                     /**
                      * 语言类型：
 
-1-中文（默认）
+1-中文
                      */
                     int64_t m_voiceLanguage;
                     bool m_voiceLanguageHasBeenSet;

@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool QualifierHasBeenSet() const;
 
+                    /**
+                     * 获取触发器描述
+                     * @return Description 触发器描述
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置触发器描述
+                     * @param Description 触发器描述
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
+
+                    /**
+                     * 触发器描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

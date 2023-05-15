@@ -23,7 +23,8 @@ using namespace TencentCloud::Eis::V20210601::Model;
 using namespace std;
 
 ListRuntimesMCRequest::ListRuntimesMCRequest() :
-    m_runtimeClassHasBeenSet(false)
+    m_runtimeClassHasBeenSet(false),
+    m_planTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ListRuntimesMCRequest::ToJsonString() const
         string key = "RuntimeClass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_runtimeClass, allocator);
+    }
+
+    if (m_planTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_planType, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ListRuntimesMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
 bool ListRuntimesMCRequest::RuntimeClassHasBeenSet() const
 {
     return m_runtimeClassHasBeenSet;
+}
+
+int64_t ListRuntimesMCRequest::GetPlanType() const
+{
+    return m_planType;
+}
+
+void ListRuntimesMCRequest::SetPlanType(const int64_t& _planType)
+{
+    m_planType = _planType;
+    m_planTypeHasBeenSet = true;
+}
+
+bool ListRuntimesMCRequest::PlanTypeHasBeenSet() const
+{
+    return m_planTypeHasBeenSet;
 }
 
 

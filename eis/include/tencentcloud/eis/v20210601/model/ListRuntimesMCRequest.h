@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool RuntimeClassHasBeenSet() const;
 
+                    /**
+                     * 获取计划类型：0-pro 1-lite
+                     * @return PlanType 计划类型：0-pro 1-lite
+                     */
+                    int64_t GetPlanType() const;
+
+                    /**
+                     * 设置计划类型：0-pro 1-lite
+                     * @param PlanType 计划类型：0-pro 1-lite
+                     */
+                    void SetPlanType(const int64_t& _planType);
+
+                    /**
+                     * 判断参数 PlanType 是否已赋值
+                     * @return PlanType 是否已赋值
+                     */
+                    bool PlanTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     int64_t m_runtimeClass;
                     bool m_runtimeClassHasBeenSet;
+
+                    /**
+                     * 计划类型：0-pro 1-lite
+                     */
+                    int64_t m_planType;
+                    bool m_planTypeHasBeenSet;
 
                 };
             }

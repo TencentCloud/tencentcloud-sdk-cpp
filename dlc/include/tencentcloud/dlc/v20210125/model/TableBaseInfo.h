@@ -237,6 +237,28 @@ namespace TencentCloud
                      */
                     bool GovernPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取库数据治理是否关闭，关闭：true，开启：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbGovernPolicyIsDisable() const;
+
+                    /**
+                     * 设置库数据治理是否关闭，关闭：true，开启：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbGovernPolicyIsDisable(const std::string& _dbGovernPolicyIsDisable);
+
+                    /**
+                     * 判断参数 DbGovernPolicyIsDisable 是否已赋值
+                     * @return DbGovernPolicyIsDisable 是否已赋值
+                     */
+                    bool DbGovernPolicyIsDisableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +321,13 @@ namespace TencentCloud
                      */
                     DataGovernPolicy m_governPolicy;
                     bool m_governPolicyHasBeenSet;
+
+                    /**
+                     * 库数据治理是否关闭，关闭：true，开启：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbGovernPolicyIsDisable;
+                    bool m_dbGovernPolicyIsDisableHasBeenSet;
 
                 };
             }
