@@ -3179,6 +3179,49 @@ TkeClient::DescribeClusterEndpointsOutcomeCallable TkeClient::DescribeClusterEnd
     return task->get_future();
 }
 
+TkeClient::DescribeClusterInspectionResultsOverviewOutcome TkeClient::DescribeClusterInspectionResultsOverview(const DescribeClusterInspectionResultsOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterInspectionResultsOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterInspectionResultsOverviewResponse rsp = DescribeClusterInspectionResultsOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterInspectionResultsOverviewOutcome(rsp);
+        else
+            return DescribeClusterInspectionResultsOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterInspectionResultsOverviewOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterInspectionResultsOverviewAsync(const DescribeClusterInspectionResultsOverviewRequest& request, const DescribeClusterInspectionResultsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterInspectionResultsOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterInspectionResultsOverviewOutcomeCallable TkeClient::DescribeClusterInspectionResultsOverviewCallable(const DescribeClusterInspectionResultsOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterInspectionResultsOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterInspectionResultsOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterInstancesOutcome TkeClient::DescribeClusterInstances(const DescribeClusterInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterInstances");
@@ -6655,6 +6698,92 @@ TkeClient::InstallLogAgentOutcomeCallable TkeClient::InstallLogAgentCallable(con
         [this, request]()
         {
             return this->InstallLogAgent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ListClusterInspectionResultsOutcome TkeClient::ListClusterInspectionResults(const ListClusterInspectionResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListClusterInspectionResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListClusterInspectionResultsResponse rsp = ListClusterInspectionResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListClusterInspectionResultsOutcome(rsp);
+        else
+            return ListClusterInspectionResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListClusterInspectionResultsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ListClusterInspectionResultsAsync(const ListClusterInspectionResultsRequest& request, const ListClusterInspectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListClusterInspectionResults(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ListClusterInspectionResultsOutcomeCallable TkeClient::ListClusterInspectionResultsCallable(const ListClusterInspectionResultsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListClusterInspectionResultsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListClusterInspectionResults(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ListClusterInspectionResultsItemsOutcome TkeClient::ListClusterInspectionResultsItems(const ListClusterInspectionResultsItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListClusterInspectionResultsItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListClusterInspectionResultsItemsResponse rsp = ListClusterInspectionResultsItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListClusterInspectionResultsItemsOutcome(rsp);
+        else
+            return ListClusterInspectionResultsItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListClusterInspectionResultsItemsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ListClusterInspectionResultsItemsAsync(const ListClusterInspectionResultsItemsRequest& request, const ListClusterInspectionResultsItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListClusterInspectionResultsItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ListClusterInspectionResultsItemsOutcomeCallable TkeClient::ListClusterInspectionResultsItemsCallable(const ListClusterInspectionResultsItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListClusterInspectionResultsItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListClusterInspectionResultsItems(request);
         }
     );
 

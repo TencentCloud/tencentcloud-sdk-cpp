@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
 
 
 namespace TencentCloud
@@ -100,6 +101,46 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取修复建议
+                     * @return FixMessage 修复建议
+                     */
+                    std::string GetFixMessage() const;
+
+                    /**
+                     * 设置修复建议
+                     * @param FixMessage 修复建议
+                     */
+                    void SetFixMessage(const std::string& _fixMessage);
+
+                    /**
+                     * 判断参数 FixMessage 是否已赋值
+                     * @return FixMessage 是否已赋值
+                     */
+                    bool FixMessageHasBeenSet() const;
+
+                    /**
+                     * 获取机器额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineExtraInfo 机器额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo GetMachineExtraInfo() const;
+
+                    /**
+                     * 设置机器额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineExtraInfo 机器额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
+
+                    /**
+                     * 判断参数 MachineExtraInfo 是否已赋值
+                     * @return MachineExtraInfo 是否已赋值
+                     */
+                    bool MachineExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +160,19 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 修复建议
+                     */
+                    std::string m_fixMessage;
+                    bool m_fixMessageHasBeenSet;
+
+                    /**
+                     * 机器额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo m_machineExtraInfo;
+                    bool m_machineExtraInfoHasBeenSet;
 
                 };
             }

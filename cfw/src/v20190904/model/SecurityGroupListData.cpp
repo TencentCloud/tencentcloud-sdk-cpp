@@ -43,7 +43,12 @@ SecurityGroupListData::SecurityGroupListData() :
     m_serviceTemplateIdHasBeenSet(false),
     m_bothWayInfoHasBeenSet(false),
     m_directionHasBeenSet(false),
-    m_protocolPortTypeHasBeenSet(false)
+    m_protocolPortTypeHasBeenSet(false),
+    m_uuidHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_assetGroupNameInHasBeenSet(false),
+    m_assetGroupNameOutHasBeenSet(false),
+    m_parameterNameHasBeenSet(false)
 {
 }
 
@@ -292,6 +297,56 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         m_protocolPortTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetGroupNameIn") && !value["AssetGroupNameIn"].IsNull())
+    {
+        if (!value["AssetGroupNameIn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.AssetGroupNameIn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetGroupNameIn = string(value["AssetGroupNameIn"].GetString());
+        m_assetGroupNameInHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetGroupNameOut") && !value["AssetGroupNameOut"].IsNull())
+    {
+        if (!value["AssetGroupNameOut"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.AssetGroupNameOut` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetGroupNameOut = string(value["AssetGroupNameOut"].GetString());
+        m_assetGroupNameOutHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParameterName") && !value["ParameterName"].IsNull())
+    {
+        if (!value["ParameterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.ParameterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parameterName = string(value["ParameterName"].GetString());
+        m_parameterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +543,46 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ProtocolPortType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_protocolPortType, allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetGroupNameInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetGroupNameIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetGroupNameIn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetGroupNameOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetGroupNameOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetGroupNameOut.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parameterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParameterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parameterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +954,85 @@ void SecurityGroupListData::SetProtocolPortType(const uint64_t& _protocolPortTyp
 bool SecurityGroupListData::ProtocolPortTypeHasBeenSet() const
 {
     return m_protocolPortTypeHasBeenSet;
+}
+
+string SecurityGroupListData::GetUuid() const
+{
+    return m_uuid;
+}
+
+void SecurityGroupListData::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool SecurityGroupListData::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
+}
+
+string SecurityGroupListData::GetRegion() const
+{
+    return m_region;
+}
+
+void SecurityGroupListData::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool SecurityGroupListData::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string SecurityGroupListData::GetAssetGroupNameIn() const
+{
+    return m_assetGroupNameIn;
+}
+
+void SecurityGroupListData::SetAssetGroupNameIn(const string& _assetGroupNameIn)
+{
+    m_assetGroupNameIn = _assetGroupNameIn;
+    m_assetGroupNameInHasBeenSet = true;
+}
+
+bool SecurityGroupListData::AssetGroupNameInHasBeenSet() const
+{
+    return m_assetGroupNameInHasBeenSet;
+}
+
+string SecurityGroupListData::GetAssetGroupNameOut() const
+{
+    return m_assetGroupNameOut;
+}
+
+void SecurityGroupListData::SetAssetGroupNameOut(const string& _assetGroupNameOut)
+{
+    m_assetGroupNameOut = _assetGroupNameOut;
+    m_assetGroupNameOutHasBeenSet = true;
+}
+
+bool SecurityGroupListData::AssetGroupNameOutHasBeenSet() const
+{
+    return m_assetGroupNameOutHasBeenSet;
+}
+
+string SecurityGroupListData::GetParameterName() const
+{
+    return m_parameterName;
+}
+
+void SecurityGroupListData::SetParameterName(const string& _parameterName)
+{
+    m_parameterName = _parameterName;
+    m_parameterNameHasBeenSet = true;
+}
+
+bool SecurityGroupListData::ParameterNameHasBeenSet() const
+{
+    return m_parameterNameHasBeenSet;
 }
 

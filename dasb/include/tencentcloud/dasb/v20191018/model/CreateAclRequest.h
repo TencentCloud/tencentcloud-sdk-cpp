@@ -349,14 +349,14 @@ namespace TencentCloud
                     bool CmdTemplateIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联高危DB模版ID
-                     * @return ACTemplateIdSet 关联高危DB模版ID
+                     * 获取关联高危DB模板ID
+                     * @return ACTemplateIdSet 关联高危DB模板ID
                      */
                     std::vector<std::string> GetACTemplateIdSet() const;
 
                     /**
-                     * 设置关联高危DB模版ID
-                     * @param ACTemplateIdSet 关联高危DB模版ID
+                     * 设置关联高危DB模板ID
+                     * @param ACTemplateIdSet 关联高危DB模板ID
                      */
                     void SetACTemplateIdSet(const std::vector<std::string>& _aCTemplateIdSet);
 
@@ -623,7 +623,7 @@ namespace TencentCloud
                     bool m_cmdTemplateIdSetHasBeenSet;
 
                     /**
-                     * 关联高危DB模版ID
+                     * 关联高危DB模板ID
                      */
                     std::vector<std::string> m_aCTemplateIdSet;
                     bool m_aCTemplateIdSetHasBeenSet;

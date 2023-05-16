@@ -365,6 +365,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceRequest.h>
@@ -1156,6 +1158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsedIpAddressResponse> DescribeUsedIpAddressOutcome;
+                typedef std::future<DescribeUsedIpAddressOutcome> DescribeUsedIpAddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeUsedIpAddressRequest&, DescribeUsedIpAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsedIpAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcEndPointResponse> DescribeVpcEndPointOutcome;
                 typedef std::future<DescribeVpcEndPointOutcome> DescribeVpcEndPointOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointRequest&, DescribeVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointAsyncHandler;
@@ -2084,7 +2089,7 @@ namespace TencentCloud
                 CreateRouteTableOutcomeCallable CreateRouteTableCallable(const Model::CreateRouteTableRequest& request);
 
                 /**
-                 *本接口(CreateRoutes)用于创建路由策略。
+                 *本接口（CreateRoutes）用于创建路由策略。
 * 向指定路由表批量新增路由策略。
                  * @param req CreateRoutesRequest
                  * @return CreateRoutesOutcome
@@ -3252,6 +3257,16 @@ namespace TencentCloud
                 DescribeTrafficPackagesOutcome DescribeTrafficPackages(const Model::DescribeTrafficPackagesRequest &request);
                 void DescribeTrafficPackagesAsync(const Model::DescribeTrafficPackagesRequest& request, const DescribeTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrafficPackagesOutcomeCallable DescribeTrafficPackagesCallable(const Model::DescribeTrafficPackagesRequest& request);
+
+                /**
+                 *本接口(DescribeUsedIpAddress)用于查询Subnet或者Vpc内的ip的使用情况，
+如被ip被占用，返回占用ip的资源类别与id；如未被占用，返回空值
+                 * @param req DescribeUsedIpAddressRequest
+                 * @return DescribeUsedIpAddressOutcome
+                 */
+                DescribeUsedIpAddressOutcome DescribeUsedIpAddress(const Model::DescribeUsedIpAddressRequest &request);
+                void DescribeUsedIpAddressAsync(const Model::DescribeUsedIpAddressRequest& request, const DescribeUsedIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsedIpAddressOutcomeCallable DescribeUsedIpAddressCallable(const Model::DescribeUsedIpAddressRequest& request);
 
                 /**
                  *本接口（DescribeVpcEndPoint）用于查询终端节点列表。

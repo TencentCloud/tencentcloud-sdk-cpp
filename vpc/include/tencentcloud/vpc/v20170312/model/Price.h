@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool InstancePriceHasBeenSet() const;
 
                     /**
-                     * 获取网络价格。
-                     * @return BandwidthPrice 网络价格。
+                     * 获取带宽价格。
+                     * @return BandwidthPrice 带宽价格。
                      */
                     ItemPrice GetBandwidthPrice() const;
 
                     /**
-                     * 设置网络价格。
-                     * @param BandwidthPrice 网络价格。
+                     * 设置带宽价格。
+                     * @param BandwidthPrice 带宽价格。
                      */
                     void SetBandwidthPrice(const ItemPrice& _bandwidthPrice);
 
@@ -92,7 +92,7 @@ namespace TencentCloud
                     bool m_instancePriceHasBeenSet;
 
                     /**
-                     * 网络价格。
+                     * 带宽价格。
                      */
                     ItemPrice m_bandwidthPrice;
                     bool m_bandwidthPriceHasBeenSet;

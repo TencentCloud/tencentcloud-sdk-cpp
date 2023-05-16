@@ -212,6 +212,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteDirectConnectGatewayCcnRoutesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeAssistantCidrResponse.h
   include/tencentcloud/vpc/v20170312/model/BackupPolicy.h
+  include/tencentcloud/vpc/v20170312/model/IpAddressStates.h
   include/tencentcloud/vpc/v20170312/model/InstanceStatistic.h
   include/tencentcloud/vpc/v20170312/model/CreateVpnConnectionRequest.h
   include/tencentcloud/vpc/v20170312/model/CcnRoute.h
@@ -474,6 +475,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/PrivateIpAddressSpecification.h
   include/tencentcloud/vpc/v20170312/model/AlgType.h
   include/tencentcloud/vpc/v20170312/model/MigratePrivateIpAddressResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteRouteTableResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpcInstancesResponse.h
   include/tencentcloud/vpc/v20170312/model/AccountAttribute.h
@@ -744,6 +746,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceWhiteListResponse.h
   include/tencentcloud/vpc/v20170312/model/AcceptAttachCcnInstancesResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressResponse.h
   include/tencentcloud/vpc/v20170312/model/AddressInfo.h
   include/tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeNetDetectsResponse.h
@@ -944,6 +947,7 @@ set(vpc_src
   src/v20170312/model/DeleteDirectConnectGatewayCcnRoutesResponse.cpp
   src/v20170312/model/DescribeAssistantCidrResponse.cpp
   src/v20170312/model/BackupPolicy.cpp
+  src/v20170312/model/IpAddressStates.cpp
   src/v20170312/model/InstanceStatistic.cpp
   src/v20170312/model/CreateVpnConnectionRequest.cpp
   src/v20170312/model/CcnRoute.cpp
@@ -1206,6 +1210,7 @@ set(vpc_src
   src/v20170312/model/PrivateIpAddressSpecification.cpp
   src/v20170312/model/AlgType.cpp
   src/v20170312/model/MigratePrivateIpAddressResponse.cpp
+  src/v20170312/model/DescribeUsedIpAddressRequest.cpp
   src/v20170312/model/DeleteRouteTableResponse.cpp
   src/v20170312/model/DescribeVpcInstancesResponse.cpp
   src/v20170312/model/AccountAttribute.cpp
@@ -1476,6 +1481,7 @@ set(vpc_src
   src/v20170312/model/AddTemplateMemberRequest.cpp
   src/v20170312/model/DescribeVpcEndPointServiceWhiteListResponse.cpp
   src/v20170312/model/AcceptAttachCcnInstancesResponse.cpp
+  src/v20170312/model/DescribeUsedIpAddressResponse.cpp
   src/v20170312/model/AddressInfo.cpp
   src/v20170312/model/AuditCrossBorderComplianceRequest.cpp
   src/v20170312/model/DescribeNetDetectsResponse.cpp

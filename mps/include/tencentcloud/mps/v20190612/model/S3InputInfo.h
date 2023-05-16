@@ -65,14 +65,26 @@ namespace TencentCloud
                     bool S3BucketHasBeenSet() const;
 
                     /**
-                     * 获取S3 bucket 对应的区域。
-                     * @return S3Region S3 bucket 对应的区域。
+                     * 获取S3 bucket 对应的区域，目前支持：  
+us-east-1  
+eu-west-3
+
+                     * @return S3Region S3 bucket 对应的区域，目前支持：  
+us-east-1  
+eu-west-3
+
                      */
                     std::string GetS3Region() const;
 
                     /**
-                     * 设置S3 bucket 对应的区域。
-                     * @param S3Region S3 bucket 对应的区域。
+                     * 设置S3 bucket 对应的区域，目前支持：  
+us-east-1  
+eu-west-3
+
+                     * @param S3Region S3 bucket 对应的区域，目前支持：  
+us-east-1  
+eu-west-3
+
                      */
                     void SetS3Region(const std::string& _s3Region);
 
@@ -145,7 +157,10 @@ namespace TencentCloud
                     bool m_s3BucketHasBeenSet;
 
                     /**
-                     * S3 bucket 对应的区域。
+                     * S3 bucket 对应的区域，目前支持：  
+us-east-1  
+eu-west-3
+
                      */
                     std::string m_s3Region;
                     bool m_s3RegionHasBeenSet;

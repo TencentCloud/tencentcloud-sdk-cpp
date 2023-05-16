@@ -299,6 +299,28 @@ namespace TencentCloud
                      */
                     bool ClientBandWidthHasBeenSet() const;
 
+                    /**
+                     * 获取客户端内网开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableConfigIntranet 客户端内网开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableConfigIntranet() const;
+
+                    /**
+                     * 设置客户端内网开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableConfigIntranet 客户端内网开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableConfigIntranet(const bool& _enableConfigIntranet);
+
+                    /**
+                     * 判断参数 EnableConfigIntranet 是否已赋值
+                     * @return EnableConfigIntranet 是否已赋值
+                     */
+                    bool EnableConfigIntranetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +406,13 @@ namespace TencentCloud
                      */
                     uint64_t m_clientBandWidth;
                     bool m_clientBandWidthHasBeenSet;
+
+                    /**
+                     * 客户端内网开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableConfigIntranet;
+                    bool m_enableConfigIntranetHasBeenSet;
 
                 };
             }

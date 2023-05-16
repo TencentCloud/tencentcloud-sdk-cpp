@@ -23,7 +23,9 @@ using namespace std;
 LicenseBindTaskDetail::LicenseBindTaskDetail() :
     m_quuidHasBeenSet(false),
     m_errMsgHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_fixMessageHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,33 @@ CoreInternalOutcome LicenseBindTaskDetail::Deserialize(const rapidjson::Value &v
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("FixMessage") && !value["FixMessage"].IsNull())
+    {
+        if (!value["FixMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseBindTaskDetail.FixMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixMessage = string(value["FixMessage"].GetString());
+        m_fixMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseBindTaskDetail.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +120,23 @@ void LicenseBindTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_fixMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fixMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +188,37 @@ void LicenseBindTaskDetail::SetStatus(const uint64_t& _status)
 bool LicenseBindTaskDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string LicenseBindTaskDetail::GetFixMessage() const
+{
+    return m_fixMessage;
+}
+
+void LicenseBindTaskDetail::SetFixMessage(const string& _fixMessage)
+{
+    m_fixMessage = _fixMessage;
+    m_fixMessageHasBeenSet = true;
+}
+
+bool LicenseBindTaskDetail::FixMessageHasBeenSet() const
+{
+    return m_fixMessageHasBeenSet;
+}
+
+MachineExtraInfo LicenseBindTaskDetail::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void LicenseBindTaskDetail::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool LicenseBindTaskDetail::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

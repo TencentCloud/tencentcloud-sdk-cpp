@@ -468,6 +468,50 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取关联的演练计划ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPlanId 关联的演练计划ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskPlanId() const;
+
+                    /**
+                     * 设置关联的演练计划ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskPlanId 关联的演练计划ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskPlanId(const int64_t& _taskPlanId);
+
+                    /**
+                     * 判断参数 TaskPlanId 是否已赋值
+                     * @return TaskPlanId 是否已赋值
+                     */
+                    bool TaskPlanIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联的演练计划名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPlanTitle 关联的演练计划名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskPlanTitle() const;
+
+                    /**
+                     * 设置关联的演练计划名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskPlanTitle 关联的演练计划名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskPlanTitle(const std::string& _taskPlanTitle);
+
+                    /**
+                     * 判断参数 TaskPlanTitle 是否已赋值
+                     * @return TaskPlanTitle 是否已赋值
+                     */
+                    bool TaskPlanTitleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -605,6 +649,20 @@ namespace TencentCloud
                      */
                     std::vector<TagWithDescribe> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 关联的演练计划ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskPlanId;
+                    bool m_taskPlanIdHasBeenSet;
+
+                    /**
+                     * 关联的演练计划名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskPlanTitle;
+                    bool m_taskPlanTitleHasBeenSet;
 
                 };
             }

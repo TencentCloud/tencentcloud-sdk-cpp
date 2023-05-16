@@ -107,6 +107,8 @@
 #include <tencentcloud/lcic/v20220817/model/GetRoomsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetWatermarkRequest.h>
 #include <tencentcloud/lcic/v20220817/model/GetWatermarkResponse.h>
+#include <tencentcloud/lcic/v20220817/model/KickUserFromRoomRequest.h>
+#include <tencentcloud/lcic/v20220817/model/KickUserFromRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h>
 #include <tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h>
 #include <tencentcloud/lcic/v20220817/model/LoginUserRequest.h>
@@ -269,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetWatermarkResponse> GetWatermarkOutcome;
                 typedef std::future<GetWatermarkOutcome> GetWatermarkOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::GetWatermarkRequest&, GetWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWatermarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::KickUserFromRoomResponse> KickUserFromRoomOutcome;
+                typedef std::future<KickUserFromRoomOutcome> KickUserFromRoomOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::KickUserFromRoomRequest&, KickUserFromRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KickUserFromRoomAsyncHandler;
                 typedef Outcome<Core::Error, Model::LoginOriginIdResponse> LoginOriginIdOutcome;
                 typedef std::future<LoginOriginIdOutcome> LoginOriginIdOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::LoginOriginIdRequest&, LoginOriginIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LoginOriginIdAsyncHandler;
@@ -684,6 +689,15 @@ namespace TencentCloud
                 GetWatermarkOutcome GetWatermark(const Model::GetWatermarkRequest &request);
                 void GetWatermarkAsync(const Model::GetWatermarkRequest& request, const GetWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetWatermarkOutcomeCallable GetWatermarkCallable(const Model::GetWatermarkRequest& request);
+
+                /**
+                 *从房间里面踢出用户
+                 * @param req KickUserFromRoomRequest
+                 * @return KickUserFromRoomOutcome
+                 */
+                KickUserFromRoomOutcome KickUserFromRoom(const Model::KickUserFromRoomRequest &request);
+                void KickUserFromRoomAsync(const Model::KickUserFromRoomRequest& request, const KickUserFromRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KickUserFromRoomOutcomeCallable KickUserFromRoomCallable(const Model::KickUserFromRoomRequest& request);
 
                 /**
                  *使用源账号登录，源账号为注册时填入的originId

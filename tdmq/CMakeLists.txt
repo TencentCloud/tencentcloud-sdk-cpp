@@ -127,6 +127,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRolesRequest.h
@@ -134,6 +135,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/RocketMQMessageTrack.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRoleRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h
@@ -241,6 +243,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/SendMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/ResetRocketMQConsumerOffSetRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPQueuesResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/QueueQuota.h
@@ -413,6 +416,7 @@ set(tdmq_src
   src/v20200217/model/DeleteCmqQueueResponse.cpp
   src/v20200217/model/DescribeRocketMQClusterRequest.cpp
   src/v20200217/model/DeleteRocketMQTopicResponse.cpp
+  src/v20200217/model/DescribeRocketMQMsgRequest.cpp
   src/v20200217/model/ModifyCmqTopicAttributeRequest.cpp
   src/v20200217/model/DescribeRabbitMQVipInstancesResponse.cpp
   src/v20200217/model/DeleteRolesRequest.cpp
@@ -420,6 +424,7 @@ set(tdmq_src
   src/v20200217/model/CreateCmqSubscribeResponse.cpp
   src/v20200217/model/DescribeCmqDeadLetterSourceQueuesRequest.cpp
   src/v20200217/model/DescribeSubscriptionsResponse.cpp
+  src/v20200217/model/RocketMQMessageTrack.cpp
   src/v20200217/model/ModifyRoleRequest.cpp
   src/v20200217/model/DescribeRabbitMQNodeListResponse.cpp
   src/v20200217/model/SendMessagesResponse.cpp
@@ -527,6 +532,7 @@ set(tdmq_src
   src/v20200217/model/SendMsgRequest.cpp
   src/v20200217/model/ResetRocketMQConsumerOffSetRequest.cpp
   src/v20200217/model/DescribeCmqQueueDetailRequest.cpp
+  src/v20200217/model/DescribeRocketMQMsgResponse.cpp
   src/v20200217/model/DescribeAMQPQueuesResponse.cpp
   src/v20200217/model/CreateRocketMQTopicRequest.cpp
   src/v20200217/model/QueueQuota.cpp

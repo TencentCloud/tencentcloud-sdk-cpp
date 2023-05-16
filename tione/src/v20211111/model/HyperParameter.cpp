@@ -27,7 +27,8 @@ HyperParameter::HyperParameter() :
     m_gpuCachePercentageHasBeenSet(false),
     m_enableDistributedHasBeenSet(false),
     m_minBlockSizePtHasBeenSet(false),
-    m_minBlockSizeTfHasBeenSet(false)
+    m_minBlockSizeTfHasBeenSet(false),
+    m_pipelineArgsHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome HyperParameter::Deserialize(const rapidjson::Value &value)
         m_minBlockSizeTfHasBeenSet = true;
     }
 
+    if (value.HasMember("PipelineArgs") && !value["PipelineArgs"].IsNull())
+    {
+        if (!value["PipelineArgs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HyperParameter.PipelineArgs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pipelineArgs = string(value["PipelineArgs"].GetString());
+        m_pipelineArgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void HyperParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MinBlockSizeTf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_minBlockSizeTf.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pipelineArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PipelineArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pipelineArgs.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void HyperParameter::SetMinBlockSizeTf(const string& _minBlockSizeTf)
 bool HyperParameter::MinBlockSizeTfHasBeenSet() const
 {
     return m_minBlockSizeTfHasBeenSet;
+}
+
+string HyperParameter::GetPipelineArgs() const
+{
+    return m_pipelineArgs;
+}
+
+void HyperParameter::SetPipelineArgs(const string& _pipelineArgs)
+{
+    m_pipelineArgs = _pipelineArgs;
+    m_pipelineArgsHasBeenSet = true;
+}
+
+bool HyperParameter::PipelineArgsHasBeenSet() const
+{
+    return m_pipelineArgsHasBeenSet;
 }
 

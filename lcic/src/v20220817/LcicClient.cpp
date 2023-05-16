@@ -1846,6 +1846,49 @@ LcicClient::GetWatermarkOutcomeCallable LcicClient::GetWatermarkCallable(const G
     return task->get_future();
 }
 
+LcicClient::KickUserFromRoomOutcome LcicClient::KickUserFromRoom(const KickUserFromRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "KickUserFromRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KickUserFromRoomResponse rsp = KickUserFromRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KickUserFromRoomOutcome(rsp);
+        else
+            return KickUserFromRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return KickUserFromRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::KickUserFromRoomAsync(const KickUserFromRoomRequest& request, const KickUserFromRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KickUserFromRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::KickUserFromRoomOutcomeCallable LcicClient::KickUserFromRoomCallable(const KickUserFromRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KickUserFromRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->KickUserFromRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::LoginOriginIdOutcome LcicClient::LoginOriginId(const LoginOriginIdRequest &request)
 {
     auto outcome = MakeRequest(request, "LoginOriginId");

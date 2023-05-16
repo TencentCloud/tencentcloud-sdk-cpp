@@ -169,6 +169,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h>
@@ -331,6 +333,10 @@
 #include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/InstallLogAgentResponse.h>
+#include <tencentcloud/tke/v20180525/model/ListClusterInspectionResultsRequest.h>
+#include <tencentcloud/tke/v20180525/model/ListClusterInspectionResultsResponse.h>
+#include <tencentcloud/tke/v20180525/model/ListClusterInspectionResultsItemsRequest.h>
+#include <tencentcloud/tke/v20180525/model/ListClusterInspectionResultsItemsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupOptionAttributeRequest.h>
@@ -640,6 +646,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterEndpointsResponse> DescribeClusterEndpointsOutcome;
                 typedef std::future<DescribeClusterEndpointsOutcome> DescribeClusterEndpointsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointsRequest&, DescribeClusterEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterInspectionResultsOverviewResponse> DescribeClusterInspectionResultsOverviewOutcome;
+                typedef std::future<DescribeClusterInspectionResultsOverviewOutcome> DescribeClusterInspectionResultsOverviewOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterInspectionResultsOverviewRequest&, DescribeClusterInspectionResultsOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInspectionResultsOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
@@ -883,6 +892,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstallLogAgentResponse> InstallLogAgentOutcome;
                 typedef std::future<InstallLogAgentOutcome> InstallLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::InstallLogAgentRequest&, InstallLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallLogAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListClusterInspectionResultsResponse> ListClusterInspectionResultsOutcome;
+                typedef std::future<ListClusterInspectionResultsOutcome> ListClusterInspectionResultsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ListClusterInspectionResultsRequest&, ListClusterInspectionResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterInspectionResultsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListClusterInspectionResultsItemsResponse> ListClusterInspectionResultsItemsOutcome;
+                typedef std::future<ListClusterInspectionResultsItemsOutcome> ListClusterInspectionResultsItemsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ListClusterInspectionResultsItemsRequest&, ListClusterInspectionResultsItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterInspectionResultsItemsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterAsGroupAttributeResponse> ModifyClusterAsGroupAttributeOutcome;
                 typedef std::future<ModifyClusterAsGroupAttributeOutcome> ModifyClusterAsGroupAttributeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterAsGroupAttributeRequest&, ModifyClusterAsGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsGroupAttributeAsyncHandler;
@@ -1658,6 +1673,15 @@ namespace TencentCloud
                 DescribeClusterEndpointsOutcomeCallable DescribeClusterEndpointsCallable(const Model::DescribeClusterEndpointsRequest& request);
 
                 /**
+                 *查询用户单个Region下的所有集群巡检结果概览信息
+                 * @param req DescribeClusterInspectionResultsOverviewRequest
+                 * @return DescribeClusterInspectionResultsOverviewOutcome
+                 */
+                DescribeClusterInspectionResultsOverviewOutcome DescribeClusterInspectionResultsOverview(const Model::DescribeClusterInspectionResultsOverviewRequest &request);
+                void DescribeClusterInspectionResultsOverviewAsync(const Model::DescribeClusterInspectionResultsOverviewRequest& request, const DescribeClusterInspectionResultsOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterInspectionResultsOverviewOutcomeCallable DescribeClusterInspectionResultsOverviewCallable(const Model::DescribeClusterInspectionResultsOverviewRequest& request);
+
+                /**
                  *查询集群下节点实例信息
                  * @param req DescribeClusterInstancesRequest
                  * @return DescribeClusterInstancesOutcome
@@ -2385,6 +2409,24 @@ namespace TencentCloud
                 InstallLogAgentOutcome InstallLogAgent(const Model::InstallLogAgentRequest &request);
                 void InstallLogAgentAsync(const Model::InstallLogAgentRequest& request, const InstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InstallLogAgentOutcomeCallable InstallLogAgentCallable(const Model::InstallLogAgentRequest& request);
+
+                /**
+                 *查询指定集群的巡检结果信息
+                 * @param req ListClusterInspectionResultsRequest
+                 * @return ListClusterInspectionResultsOutcome
+                 */
+                ListClusterInspectionResultsOutcome ListClusterInspectionResults(const Model::ListClusterInspectionResultsRequest &request);
+                void ListClusterInspectionResultsAsync(const Model::ListClusterInspectionResultsRequest& request, const ListClusterInspectionResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListClusterInspectionResultsOutcomeCallable ListClusterInspectionResultsCallable(const Model::ListClusterInspectionResultsRequest& request);
+
+                /**
+                 *查询集群巡检结果历史列表
+                 * @param req ListClusterInspectionResultsItemsRequest
+                 * @return ListClusterInspectionResultsItemsOutcome
+                 */
+                ListClusterInspectionResultsItemsOutcome ListClusterInspectionResultsItems(const Model::ListClusterInspectionResultsItemsRequest &request);
+                void ListClusterInspectionResultsItemsAsync(const Model::ListClusterInspectionResultsItemsRequest& request, const ListClusterInspectionResultsItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListClusterInspectionResultsItemsOutcomeCallable ListClusterInspectionResultsItemsCallable(const Model::ListClusterInspectionResultsItemsRequest& request);
 
                 /**
                  *修改集群伸缩组属性

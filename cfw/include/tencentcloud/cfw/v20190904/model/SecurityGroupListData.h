@@ -493,6 +493,116 @@ namespace TencentCloud
                      */
                     bool ProtocolPortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uuid Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uuid Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetGroupNameIn 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssetGroupNameIn() const;
+
+                    /**
+                     * 设置资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetGroupNameIn 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetGroupNameIn(const std::string& _assetGroupNameIn);
+
+                    /**
+                     * 判断参数 AssetGroupNameIn 是否已赋值
+                     * @return AssetGroupNameIn 是否已赋值
+                     */
+                    bool AssetGroupNameInHasBeenSet() const;
+
+                    /**
+                     * 获取资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetGroupNameOut 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssetGroupNameOut() const;
+
+                    /**
+                     * 设置资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssetGroupNameOut 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssetGroupNameOut(const std::string& _assetGroupNameOut);
+
+                    /**
+                     * 判断参数 AssetGroupNameOut 是否已赋值
+                     * @return AssetGroupNameOut 是否已赋值
+                     */
+                    bool AssetGroupNameOutHasBeenSet() const;
+
+                    /**
+                     * 获取模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParameterName 模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetParameterName() const;
+
+                    /**
+                     * 设置模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ParameterName 模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetParameterName(const std::string& _parameterName);
+
+                    /**
+                     * 判断参数 ParameterName 是否已赋值
+                     * @return ParameterName 是否已赋值
+                     */
+                    bool ParameterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -640,6 +750,41 @@ namespace TencentCloud
                      */
                     uint64_t m_protocolPortType;
                     bool m_protocolPortTypeHasBeenSet;
+
+                    /**
+                     * Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetGroupNameIn;
+                    bool m_assetGroupNameInHasBeenSet;
+
+                    /**
+                     * 资产分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetGroupNameOut;
+                    bool m_assetGroupNameOutHasBeenSet;
+
+                    /**
+                     * 模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parameterName;
+                    bool m_parameterNameHasBeenSet;
 
                 };
             }

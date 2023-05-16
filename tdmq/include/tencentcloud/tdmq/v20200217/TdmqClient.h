@@ -173,6 +173,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
@@ -482,6 +484,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQGroupsResponse> DescribeRocketMQGroupsOutcome;
                 typedef std::future<DescribeRocketMQGroupsOutcome> DescribeRocketMQGroupsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQGroupsRequest&, DescribeRocketMQGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQMsgResponse> DescribeRocketMQMsgOutcome;
+                typedef std::future<DescribeRocketMQMsgOutcome> DescribeRocketMQMsgOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQMsgRequest&, DescribeRocketMQMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQNamespacesResponse> DescribeRocketMQNamespacesOutcome;
                 typedef std::future<DescribeRocketMQNamespacesOutcome> DescribeRocketMQNamespacesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQNamespacesRequest&, DescribeRocketMQNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQNamespacesAsyncHandler;
@@ -1296,6 +1301,15 @@ namespace TencentCloud
                 DescribeRocketMQGroupsOutcome DescribeRocketMQGroups(const Model::DescribeRocketMQGroupsRequest &request);
                 void DescribeRocketMQGroupsAsync(const Model::DescribeRocketMQGroupsRequest& request, const DescribeRocketMQGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQGroupsOutcomeCallable DescribeRocketMQGroupsCallable(const Model::DescribeRocketMQGroupsRequest& request);
+
+                /**
+                 *rocketmq消息详情
+                 * @param req DescribeRocketMQMsgRequest
+                 * @return DescribeRocketMQMsgOutcome
+                 */
+                DescribeRocketMQMsgOutcome DescribeRocketMQMsg(const Model::DescribeRocketMQMsgRequest &request);
+                void DescribeRocketMQMsgAsync(const Model::DescribeRocketMQMsgRequest& request, const DescribeRocketMQMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQMsgOutcomeCallable DescribeRocketMQMsgCallable(const Model::DescribeRocketMQMsgRequest& request);
 
                 /**
                  *获取RocketMQ命名空间列表

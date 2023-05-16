@@ -7393,6 +7393,49 @@ VpcClient::DescribeTrafficPackagesOutcomeCallable VpcClient::DescribeTrafficPack
     return task->get_future();
 }
 
+VpcClient::DescribeUsedIpAddressOutcome VpcClient::DescribeUsedIpAddress(const DescribeUsedIpAddressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsedIpAddress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsedIpAddressResponse rsp = DescribeUsedIpAddressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsedIpAddressOutcome(rsp);
+        else
+            return DescribeUsedIpAddressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsedIpAddressOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeUsedIpAddressAsync(const DescribeUsedIpAddressRequest& request, const DescribeUsedIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUsedIpAddress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeUsedIpAddressOutcomeCallable VpcClient::DescribeUsedIpAddressCallable(const DescribeUsedIpAddressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUsedIpAddressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUsedIpAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeVpcEndPointOutcome VpcClient::DescribeVpcEndPoint(const DescribeVpcEndPointRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcEndPoint");

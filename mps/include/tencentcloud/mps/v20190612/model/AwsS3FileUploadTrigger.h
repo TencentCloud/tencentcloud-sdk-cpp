@@ -66,14 +66,22 @@ namespace TencentCloud
                     bool S3BucketHasBeenSet() const;
 
                     /**
-                     * 获取绑定的桶所在 AWS 区域。
-                     * @return S3Region 绑定的桶所在 AWS 区域。
+                     * 获取绑定的桶所在 AWS 区域，目前支持：  
+us-east-1  
+eu-west-3
+                     * @return S3Region 绑定的桶所在 AWS 区域，目前支持：  
+us-east-1  
+eu-west-3
                      */
                     std::string GetS3Region() const;
 
                     /**
-                     * 设置绑定的桶所在 AWS 区域。
-                     * @param S3Region 绑定的桶所在 AWS 区域。
+                     * 设置绑定的桶所在 AWS 区域，目前支持：  
+us-east-1  
+eu-west-3
+                     * @param S3Region 绑定的桶所在 AWS 区域，目前支持：  
+us-east-1  
+eu-west-3
                      */
                     void SetS3Region(const std::string& _s3Region);
 
@@ -198,7 +206,9 @@ namespace TencentCloud
                     bool m_s3BucketHasBeenSet;
 
                     /**
-                     * 绑定的桶所在 AWS 区域。
+                     * 绑定的桶所在 AWS 区域，目前支持：  
+us-east-1  
+eu-west-3
                      */
                     std::string m_s3Region;
                     bool m_s3RegionHasBeenSet;

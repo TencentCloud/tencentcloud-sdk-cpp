@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool MinBlockSizeTfHasBeenSet() const;
 
+                    /**
+                     * 获取Stable Diffusion 模型优化参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PipelineArgs Stable Diffusion 模型优化参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPipelineArgs() const;
+
+                    /**
+                     * 设置Stable Diffusion 模型优化参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PipelineArgs Stable Diffusion 模型优化参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPipelineArgs(const std::string& _pipelineArgs);
+
+                    /**
+                     * 判断参数 PipelineArgs 是否已赋值
+                     * @return PipelineArgs 是否已赋值
+                     */
+                    bool PipelineArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     std::string m_minBlockSizeTf;
                     bool m_minBlockSizeTfHasBeenSet;
+
+                    /**
+                     * Stable Diffusion 模型优化参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pipelineArgs;
+                    bool m_pipelineArgsHasBeenSet;
 
                 };
             }

@@ -41,7 +41,9 @@ Task::Task() :
     m_taskRegionIdHasBeenSet(false),
     m_taskMonitorsHasBeenSet(false),
     m_taskPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_taskPlanIdHasBeenSet(false),
+    m_taskPlanTitleHasBeenSet(false)
 {
 }
 
@@ -297,6 +299,26 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskPlanId") && !value["TaskPlanId"].IsNull())
+    {
+        if (!value["TaskPlanId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskPlanId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskPlanId = value["TaskPlanId"].GetInt64();
+        m_taskPlanIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskPlanTitle") && !value["TaskPlanTitle"].IsNull())
+    {
+        if (!value["TaskPlanTitle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskPlanTitle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskPlanTitle = string(value["TaskPlanTitle"].GetString());
+        m_taskPlanTitleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -492,6 +514,22 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_taskPlanIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPlanId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskPlanId, allocator);
+    }
+
+    if (m_taskPlanTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPlanTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskPlanTitle.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -831,5 +869,37 @@ void Task::SetTags(const vector<TagWithDescribe>& _tags)
 bool Task::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t Task::GetTaskPlanId() const
+{
+    return m_taskPlanId;
+}
+
+void Task::SetTaskPlanId(const int64_t& _taskPlanId)
+{
+    m_taskPlanId = _taskPlanId;
+    m_taskPlanIdHasBeenSet = true;
+}
+
+bool Task::TaskPlanIdHasBeenSet() const
+{
+    return m_taskPlanIdHasBeenSet;
+}
+
+string Task::GetTaskPlanTitle() const
+{
+    return m_taskPlanTitle;
+}
+
+void Task::SetTaskPlanTitle(const string& _taskPlanTitle)
+{
+    m_taskPlanTitle = _taskPlanTitle;
+    m_taskPlanTitleHasBeenSet = true;
+}
+
+bool Task::TaskPlanTitleHasBeenSet() const
+{
+    return m_taskPlanTitleHasBeenSet;
 }
 

@@ -34,7 +34,8 @@ EnvInfo::EnvInfo() :
     m_runningCountHasBeenSet(false),
     m_aliasEnvNameHasBeenSet(false),
     m_envDescHasBeenSet(false),
-    m_clientBandWidthHasBeenSet(false)
+    m_clientBandWidthHasBeenSet(false),
+    m_enableConfigIntranetHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_clientBandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableConfigIntranet") && !value["EnableConfigIntranet"].IsNull())
+    {
+        if (!value["EnableConfigIntranet"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.EnableConfigIntranet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableConfigIntranet = value["EnableConfigIntranet"].GetBool();
+        m_enableConfigIntranetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ClientBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clientBandWidth, allocator);
+    }
+
+    if (m_enableConfigIntranetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableConfigIntranet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableConfigIntranet, allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void EnvInfo::SetClientBandWidth(const uint64_t& _clientBandWidth)
 bool EnvInfo::ClientBandWidthHasBeenSet() const
 {
     return m_clientBandWidthHasBeenSet;
+}
+
+bool EnvInfo::GetEnableConfigIntranet() const
+{
+    return m_enableConfigIntranet;
+}
+
+void EnvInfo::SetEnableConfigIntranet(const bool& _enableConfigIntranet)
+{
+    m_enableConfigIntranet = _enableConfigIntranet;
+    m_enableConfigIntranetHasBeenSet = true;
+}
+
+bool EnvInfo::EnableConfigIntranetHasBeenSet() const
+{
+    return m_enableConfigIntranetHasBeenSet;
 }
 
