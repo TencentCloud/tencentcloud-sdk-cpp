@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on|off
-                     * @return Switch on|off
+                     * 获取Scdn ddos配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch Scdn ddos配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on|off
-                     * @param Switch on|off
+                     * 设置Scdn ddos配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch Scdn ddos配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on|off
+                     * Scdn ddos配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

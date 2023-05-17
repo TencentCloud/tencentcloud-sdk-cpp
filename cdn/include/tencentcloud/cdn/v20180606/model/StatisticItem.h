@@ -157,17 +157,25 @@ namespace TencentCloud
                     bool AlertPercentageHasBeenSet() const;
 
                     /**
-                     * 获取提醒开关 on/off
+                     * 获取累计用量封顶告警配置，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertSwitch 提醒开关 on/off
+                     * @return AlertSwitch 累计用量封顶告警配置，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAlertSwitch() const;
 
                     /**
-                     * 设置提醒开关 on/off
+                     * 设置累计用量封顶告警配置，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertSwitch 提醒开关 on/off
+                     * @param AlertSwitch 累计用量封顶告警配置，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlertSwitch(const std::string& _alertSwitch);
@@ -223,17 +231,25 @@ namespace TencentCloud
                     bool CycleHasBeenSet() const;
 
                     /**
-                     * 获取是否开启该选项，on/off
+                     * 获取累计用量封顶配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 是否开启该选项，on/off
+                     * @return Switch 累计用量封顶配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启该选项，on/off
+                     * 设置累计用量封顶配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 是否开启该选项，on/off
+                     * @param Switch 累计用量封顶配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -282,7 +298,9 @@ namespace TencentCloud
                     bool m_alertPercentageHasBeenSet;
 
                     /**
-                     * 提醒开关 on/off
+                     * 累计用量封顶告警配置，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alertSwitch;
@@ -303,7 +321,9 @@ namespace TencentCloud
                     bool m_cycleHasBeenSet;
 
                     /**
-                     * 是否开启该选项，on/off
+                     * 累计用量封顶配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

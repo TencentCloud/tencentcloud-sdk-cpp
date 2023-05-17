@@ -1760,6 +1760,49 @@ CdbClient::DescribeBackupDatabasesOutcomeCallable CdbClient::DescribeBackupDatab
     return task->get_future();
 }
 
+CdbClient::DescribeBackupDecryptionKeyOutcome CdbClient::DescribeBackupDecryptionKey(const DescribeBackupDecryptionKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDecryptionKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDecryptionKeyResponse rsp = DescribeBackupDecryptionKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDecryptionKeyOutcome(rsp);
+        else
+            return DescribeBackupDecryptionKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDecryptionKeyOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBackupDecryptionKeyAsync(const DescribeBackupDecryptionKeyRequest& request, const DescribeBackupDecryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDecryptionKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBackupDecryptionKeyOutcomeCallable CdbClient::DescribeBackupDecryptionKeyCallable(const DescribeBackupDecryptionKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDecryptionKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDecryptionKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeBackupDownloadRestrictionOutcome CdbClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDownloadRestriction");

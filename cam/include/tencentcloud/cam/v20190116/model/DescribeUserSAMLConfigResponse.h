@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取辅助域名
+                     * @return AuxiliaryDomain 辅助域名
+                     */
+                    std::string GetAuxiliaryDomain() const;
+
+                    /**
+                     * 判断参数 AuxiliaryDomain 是否已赋值
+                     * @return AuxiliaryDomain 是否已赋值
+                     */
+                    bool AuxiliaryDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 辅助域名
+                     */
+                    std::string m_auxiliaryDomain;
+                    bool m_auxiliaryDomainHasBeenSet;
 
                 };
             }

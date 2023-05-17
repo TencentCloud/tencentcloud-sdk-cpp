@@ -26,7 +26,9 @@ MediaProcessTaskAdaptiveDynamicStreamingResult::MediaProcessTaskAdaptiveDynamicS
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_beginProcessTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,26 @@ CoreInternalOutcome MediaProcessTaskAdaptiveDynamicStreamingResult::Deserialize(
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginProcessTime") && !value["BeginProcessTime"].IsNull())
+    {
+        if (!value["BeginProcessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskAdaptiveDynamicStreamingResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginProcessTime = string(value["BeginProcessTime"].GetString());
+        m_beginProcessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskAdaptiveDynamicStreamingResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +186,22 @@ void MediaProcessTaskAdaptiveDynamicStreamingResult::ToJsonObject(rapidjson::Val
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_beginProcessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginProcessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginProcessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -263,5 +301,37 @@ void MediaProcessTaskAdaptiveDynamicStreamingResult::SetOutput(const AdaptiveDyn
 bool MediaProcessTaskAdaptiveDynamicStreamingResult::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+string MediaProcessTaskAdaptiveDynamicStreamingResult::GetBeginProcessTime() const
+{
+    return m_beginProcessTime;
+}
+
+void MediaProcessTaskAdaptiveDynamicStreamingResult::SetBeginProcessTime(const string& _beginProcessTime)
+{
+    m_beginProcessTime = _beginProcessTime;
+    m_beginProcessTimeHasBeenSet = true;
+}
+
+bool MediaProcessTaskAdaptiveDynamicStreamingResult::BeginProcessTimeHasBeenSet() const
+{
+    return m_beginProcessTimeHasBeenSet;
+}
+
+string MediaProcessTaskAdaptiveDynamicStreamingResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void MediaProcessTaskAdaptiveDynamicStreamingResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool MediaProcessTaskAdaptiveDynamicStreamingResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

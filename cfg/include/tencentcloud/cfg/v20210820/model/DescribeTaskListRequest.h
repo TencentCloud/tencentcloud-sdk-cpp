@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool TaskTagHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return TaskStatus 状态
+                     * 获取任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * @return TaskStatus 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
                      */
                     int64_t GetTaskStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param TaskStatus 状态
+                     * 设置任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
+                     * @param TaskStatus 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
                      */
                     void SetTaskStatus(const int64_t& _taskStatus);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_taskTagHasBeenSet;
 
                     /**
-                     * 状态
+                     * 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;

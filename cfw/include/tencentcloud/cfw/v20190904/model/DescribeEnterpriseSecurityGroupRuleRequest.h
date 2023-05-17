@@ -314,6 +314,24 @@ true为启用，false为不启用
                      */
                     bool ServiceTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则的uuid
+                     * @return RuleUuid 规则的uuid
+                     */
+                    int64_t GetRuleUuid() const;
+
+                    /**
+                     * 设置规则的uuid
+                     * @param RuleUuid 规则的uuid
+                     */
+                    void SetRuleUuid(const int64_t& _ruleUuid);
+
+                    /**
+                     * 判断参数 RuleUuid 是否已赋值
+                     * @return RuleUuid 是否已赋值
+                     */
+                    bool RuleUuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +416,12 @@ true为启用，false为不启用
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;
+
+                    /**
+                     * 规则的uuid
+                     */
+                    int64_t m_ruleUuid;
+                    bool m_ruleUuidHasBeenSet;
 
                 };
             }

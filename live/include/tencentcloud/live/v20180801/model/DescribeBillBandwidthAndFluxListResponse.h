@@ -45,8 +45,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @return PeakBandwidthTime 峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 获取峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * @return PeakBandwidthTime 峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
                      */
                     std::string GetPeakBandwidthTime() const;
 
@@ -69,8 +73,12 @@ namespace TencentCloud
                     bool PeakBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取95峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
-                     * @return P95PeakBandwidthTime 95峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 获取95峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * @return P95PeakBandwidthTime 95峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
                      */
                     std::string GetP95PeakBandwidthTime() const;
 
@@ -119,7 +127,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
                      */
                     std::string m_peakBandwidthTime;
                     bool m_peakBandwidthTimeHasBeenSet;
@@ -131,7 +141,9 @@ namespace TencentCloud
                     bool m_peakBandwidthHasBeenSet;
 
                     /**
-                     * 95峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。
+                     * 95峰值带宽所在时间点，接口返回支持两种时间格式(与接口请求传递的时间格式一致)：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
                      */
                     std::string m_p95PeakBandwidthTime;
                     bool m_p95PeakBandwidthTimeHasBeenSet;

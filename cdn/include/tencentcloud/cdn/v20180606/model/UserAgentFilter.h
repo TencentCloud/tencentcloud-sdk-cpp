@@ -48,17 +48,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关，on或off
+                     * 获取UserAgent黑白名单配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 开关，on或off
+                     * @return Switch UserAgent黑白名单配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关，on或off
+                     * 设置UserAgent黑白名单配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关，on或off
+                     * @param Switch UserAgent黑白名单配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -94,7 +102,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关，on或off
+                     * UserAgent黑白名单配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool SAMLMetadataDocumentHasBeenSet() const;
 
+                    /**
+                     * 获取辅助域名
+                     * @return AuxiliaryDomain 辅助域名
+                     */
+                    std::string GetAuxiliaryDomain() const;
+
+                    /**
+                     * 设置辅助域名
+                     * @param AuxiliaryDomain 辅助域名
+                     */
+                    void SetAuxiliaryDomain(const std::string& _auxiliaryDomain);
+
+                    /**
+                     * 判断参数 AuxiliaryDomain 是否已赋值
+                     * @return AuxiliaryDomain 是否已赋值
+                     */
+                    bool AuxiliaryDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_sAMLMetadataDocument;
                     bool m_sAMLMetadataDocumentHasBeenSet;
+
+                    /**
+                     * 辅助域名
+                     */
+                    std::string m_auxiliaryDomain;
+                    bool m_auxiliaryDomainHasBeenSet;
 
                 };
             }

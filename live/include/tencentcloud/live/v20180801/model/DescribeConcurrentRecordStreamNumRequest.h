@@ -65,17 +65,25 @@ NormalLive：普通直播。
                     bool LiveTypeHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 获取起始时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 可以查询最近180天的数据。
-                     * @return StartTime 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @return StartTime 起始时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 可以查询最近180天的数据。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 设置起始时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 可以查询最近180天的数据。
-                     * @param StartTime 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param StartTime 起始时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 可以查询最近180天的数据。
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -87,17 +95,25 @@ NormalLive：普通直播。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 获取结束时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 时间跨度最大支持31天。
-                     * @return EndTime 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @return EndTime 结束时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 时间跨度最大支持31天。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 设置结束时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 时间跨度最大支持31天。
-                     * @param EndTime 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param EndTime 结束时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 时间跨度最大支持31天。
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -154,14 +170,18 @@ NormalLive：普通直播。
                     bool m_liveTypeHasBeenSet;
 
                     /**
-                     * 起始时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 起始时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 可以查询最近180天的数据。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 结束时间点，接口查询支持两种时间格式：
+1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
+2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 时间跨度最大支持31天。
                      */
                     std::string m_endTime;

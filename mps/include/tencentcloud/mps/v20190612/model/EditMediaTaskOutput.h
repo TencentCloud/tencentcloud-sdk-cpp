@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/MediaMetaData.h>
 
 
 namespace TencentCloud
@@ -83,6 +84,28 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取编辑后的视频文件元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaData 编辑后的视频文件元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData GetMetaData() const;
+
+                    /**
+                     * 设置编辑后的视频文件元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetaData 编辑后的视频文件元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetaData(const MediaMetaData& _metaData);
+
+                    /**
+                     * 判断参数 MetaData 是否已赋值
+                     * @return MetaData 是否已赋值
+                     */
+                    bool MetaDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +119,13 @@ namespace TencentCloud
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * 编辑后的视频文件元信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetaData m_metaData;
+                    bool m_metaDataHasBeenSet;
 
                 };
             }

@@ -220,17 +220,25 @@ namespace TencentCloud
                     bool ConfigureHasBeenSet() const;
 
                     /**
-                     * 获取是否开启改规则 on 开启，off关闭
+                     * 获取自定义cc规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 是否开启改规则 on 开启，off关闭
+                     * @return Switch 自定义cc规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启改规则 on 开启，off关闭
+                     * 设置自定义cc规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 是否开启改规则 on 开启，off关闭
+                     * @param Switch 自定义cc规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -299,7 +307,9 @@ namespace TencentCloud
                     bool m_configureHasBeenSet;
 
                     /**
-                     * 是否开启改规则 on 开启，off关闭
+                     * 自定义cc规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

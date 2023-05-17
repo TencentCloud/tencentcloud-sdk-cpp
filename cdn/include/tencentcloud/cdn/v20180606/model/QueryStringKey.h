@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off CacheKey是否由QueryString组成
+                     * 获取CacheKey是否由QueryString组成配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch on | off CacheKey是否由QueryString组成
+                     * @return Switch CacheKey是否由QueryString组成配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off CacheKey是否由QueryString组成
+                     * 设置CacheKey是否由QueryString组成配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch on | off CacheKey是否由QueryString组成
+                     * @param Switch CacheKey是否由QueryString组成配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -91,17 +99,33 @@ namespace TencentCloud
                     bool ReorderHasBeenSet() const;
 
                     /**
-                     * 获取includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
+                     * 获取使用/排除部分url参数，取值有：
+includeAll：包含所有
+excludeAll：排除所有
+includeCustom：自定义包含
+excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
+                     * @return Action 使用/排除部分url参数，取值有：
+includeAll：包含所有
+excludeAll：排除所有
+includeCustom：自定义包含
+excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
+                     * 设置使用/排除部分url参数，取值有：
+includeAll：包含所有
+excludeAll：排除所有
+includeCustom：自定义包含
+excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
+                     * @param Action 使用/排除部分url参数，取值有：
+includeAll：包含所有
+excludeAll：排除所有
+includeCustom：自定义包含
+excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -137,7 +161,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on | off CacheKey是否由QueryString组成
+                     * CacheKey是否由QueryString组成配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
@@ -151,7 +177,11 @@ namespace TencentCloud
                     bool m_reorderHasBeenSet;
 
                     /**
-                     * includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
+                     * 使用/排除部分url参数，取值有：
+includeAll：包含所有
+excludeAll：排除所有
+includeCustom：自定义包含
+excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
+#include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,42 @@ namespace TencentCloud
                      */
                     bool VariablesHasBeenSet() const;
 
+                    /**
+                     * 获取UUI
+                     * @return UUI UUI
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 设置UUI
+                     * @param UUI UUI
+                     */
+                    void SetUUI(const std::string& _uUI);
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     */
+                    bool UUIHasBeenSet() const;
+
+                    /**
+                     * 获取被叫属性
+                     * @return CalleeAttributes 被叫属性
+                     */
+                    std::vector<CalleeAttribute> GetCalleeAttributes() const;
+
+                    /**
+                     * 设置被叫属性
+                     * @param CalleeAttributes 被叫属性
+                     */
+                    void SetCalleeAttributes(const std::vector<CalleeAttribute>& _calleeAttributes);
+
+                    /**
+                     * 判断参数 CalleeAttributes 是否已赋值
+                     * @return CalleeAttributes 是否已赋值
+                     */
+                    bool CalleeAttributesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +321,18 @@ namespace TencentCloud
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
+
+                    /**
+                     * UUI
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
+
+                    /**
+                     * 被叫属性
+                     */
+                    std::vector<CalleeAttribute> m_calleeAttributes;
+                    bool m_calleeAttributesHasBeenSet;
 
                 };
             }

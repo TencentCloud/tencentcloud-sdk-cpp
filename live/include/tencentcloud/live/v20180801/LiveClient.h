@@ -1741,7 +1741,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeTranscodeTaskNumOutcomeCallable DescribeTranscodeTaskNumCallable(const Model::DescribeTranscodeTaskNumRequest& request);
 
                 /**
-                 *直播上行路数查询
+                 *直播上行路数查询。
                  * @param req DescribeUploadStreamNumsRequest
                  * @return DescribeUploadStreamNumsOutcome
                  */

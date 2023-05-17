@@ -219,6 +219,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcEndPointRequest.h>
@@ -355,6 +357,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotFilesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSubnetResourceDashboardRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSubnetResourceDashboardResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultRequest.h>
@@ -939,6 +943,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTemplateMemberResponse> DeleteTemplateMemberOutcome;
                 typedef std::future<DeleteTemplateMemberOutcome> DeleteTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTemplateMemberRequest&, DeleteTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTrafficPackagesResponse> DeleteTrafficPackagesOutcome;
+                typedef std::future<DeleteTrafficPackagesOutcome> DeleteTrafficPackagesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteTrafficPackagesRequest&, DeleteTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteVpcResponse> DeleteVpcOutcome;
                 typedef std::future<DeleteVpcOutcome> DeleteVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpcRequest&, DeleteVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcAsyncHandler;
@@ -1143,6 +1150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSnapshotPoliciesResponse> DescribeSnapshotPoliciesOutcome;
                 typedef std::future<DescribeSnapshotPoliciesOutcome> DescribeSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSnapshotPoliciesRequest&, DescribeSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubnetResourceDashboardResponse> DescribeSubnetResourceDashboardOutcome;
+                typedef std::future<DescribeSubnetResourceDashboardOutcome> DescribeSubnetResourceDashboardOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSubnetResourceDashboardRequest&, DescribeSubnetResourceDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetResourceDashboardAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
@@ -2588,6 +2598,15 @@ namespace TencentCloud
                 DeleteTemplateMemberOutcomeCallable DeleteTemplateMemberCallable(const Model::DeleteTemplateMemberRequest& request);
 
                 /**
+                 *删除共享带宽包（仅非活动状态的流量包可删除）。
+                 * @param req DeleteTrafficPackagesRequest
+                 * @return DeleteTrafficPackagesOutcome
+                 */
+                DeleteTrafficPackagesOutcome DeleteTrafficPackages(const Model::DeleteTrafficPackagesRequest &request);
+                void DeleteTrafficPackagesAsync(const Model::DeleteTrafficPackagesRequest& request, const DeleteTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTrafficPackagesOutcomeCallable DeleteTrafficPackagesCallable(const Model::DeleteTrafficPackagesRequest& request);
+
+                /**
                  *本接口（DeleteVpc）用于删除私有网络。
 * 删除前请确保 VPC 内已经没有相关资源，例如云服务器、云数据库、NoSQL、VPN网关、专线网关、负载均衡、对等连接、与之互通的基础网络设备等。
 * 删除私有网络是不可逆的操作，请谨慎处理。
@@ -3210,6 +3229,15 @@ namespace TencentCloud
                 DescribeSnapshotPoliciesOutcome DescribeSnapshotPolicies(const Model::DescribeSnapshotPoliciesRequest &request);
                 void DescribeSnapshotPoliciesAsync(const Model::DescribeSnapshotPoliciesRequest& request, const DescribeSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSnapshotPoliciesOutcomeCallable DescribeSnapshotPoliciesCallable(const Model::DescribeSnapshotPoliciesRequest& request);
+
+                /**
+                 *本接口(DescribeSubnetResourceDashboard)用于查看Subnet资源信息。
+                 * @param req DescribeSubnetResourceDashboardRequest
+                 * @return DescribeSubnetResourceDashboardOutcome
+                 */
+                DescribeSubnetResourceDashboardOutcome DescribeSubnetResourceDashboard(const Model::DescribeSubnetResourceDashboardRequest &request);
+                void DescribeSubnetResourceDashboardAsync(const Model::DescribeSubnetResourceDashboardRequest& request, const DescribeSubnetResourceDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubnetResourceDashboardOutcomeCallable DescribeSubnetResourceDashboardCallable(const Model::DescribeSubnetResourceDashboardRequest& request);
 
                 /**
                  *本接口（DescribeSubnets）用于查询子网列表。

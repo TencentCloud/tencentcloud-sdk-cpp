@@ -22,7 +22,8 @@ using namespace std;
 
 EditMediaTaskOutput::EditMediaTaskOutput() :
     m_outputStorageHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_metaDataHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome EditMediaTaskOutput::Deserialize(const rapidjson::Value &val
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
+    {
+        if (!value["MetaData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaTaskOutput.MetaData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metaData.Deserialize(value["MetaData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metaDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void EditMediaTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void EditMediaTaskOutput::SetPath(const string& _path)
 bool EditMediaTaskOutput::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+MediaMetaData EditMediaTaskOutput::GetMetaData() const
+{
+    return m_metaData;
+}
+
+void EditMediaTaskOutput::SetMetaData(const MediaMetaData& _metaData)
+{
+    m_metaData = _metaData;
+    m_metaDataHasBeenSet = true;
+}
+
+bool EditMediaTaskOutput::MetaDataHasBeenSet() const
+{
+    return m_metaDataHasBeenSet;
 }
 

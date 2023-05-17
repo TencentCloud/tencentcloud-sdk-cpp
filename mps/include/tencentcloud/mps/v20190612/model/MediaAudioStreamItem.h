@@ -122,6 +122,50 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取音频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Codecs 音频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCodecs() const;
+
+                    /**
+                     * 设置音频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Codecs 音频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCodecs(const std::string& _codecs);
+
+                    /**
+                     * 判断参数 Codecs 是否已赋值
+                     * @return Codecs 是否已赋值
+                     */
+                    bool CodecsHasBeenSet() const;
+
+                    /**
+                     * 获取音频响度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Loudness 音频响度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetLoudness() const;
+
+                    /**
+                     * 设置音频响度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Loudness 音频响度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoudness(const double& _loudness);
+
+                    /**
+                     * 判断参数 Loudness 是否已赋值
+                     * @return Loudness 是否已赋值
+                     */
+                    bool LoudnessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +192,20 @@ namespace TencentCloud
                      */
                     int64_t m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 音频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codecs;
+                    bool m_codecsHasBeenSet;
+
+                    /**
+                     * 音频响度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_loudness;
+                    bool m_loudnessHasBeenSet;
 
                 };
             }

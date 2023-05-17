@@ -26,7 +26,9 @@ ScheduleReviewTaskResult::ScheduleReviewTaskResult() :
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_beginProcessTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,26 @@ CoreInternalOutcome ScheduleReviewTaskResult::Deserialize(const rapidjson::Value
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginProcessTime") && !value["BeginProcessTime"].IsNull())
+    {
+        if (!value["BeginProcessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleReviewTaskResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginProcessTime = string(value["BeginProcessTime"].GetString());
+        m_beginProcessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleReviewTaskResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +195,22 @@ void ScheduleReviewTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_beginProcessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginProcessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginProcessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -272,5 +310,37 @@ void ScheduleReviewTaskResult::SetOutput(const vector<AiContentReviewResult>& _o
 bool ScheduleReviewTaskResult::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+string ScheduleReviewTaskResult::GetBeginProcessTime() const
+{
+    return m_beginProcessTime;
+}
+
+void ScheduleReviewTaskResult::SetBeginProcessTime(const string& _beginProcessTime)
+{
+    m_beginProcessTime = _beginProcessTime;
+    m_beginProcessTimeHasBeenSet = true;
+}
+
+bool ScheduleReviewTaskResult::BeginProcessTimeHasBeenSet() const
+{
+    return m_beginProcessTimeHasBeenSet;
+}
+
+string ScheduleReviewTaskResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void ScheduleReviewTaskResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool ScheduleReviewTaskResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

@@ -224,6 +224,28 @@ namespace TencentCloud
                      */
                     bool HdrTypeHasBeenSet() const;
 
+                    /**
+                     * 获取视频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Codecs 视频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCodecs() const;
+
+                    /**
+                     * 设置视频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Codecs 视频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCodecs(const std::string& _codecs);
+
+                    /**
+                     * 判断参数 Codecs 是否已赋值
+                     * @return Codecs 是否已赋值
+                     */
+                    bool CodecsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +305,13 @@ namespace TencentCloud
                      */
                     std::string m_hdrType;
                     bool m_hdrTypeHasBeenSet;
+
+                    /**
+                     * 视频Codecs。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codecs;
+                    bool m_codecsHasBeenSet;
 
                 };
             }

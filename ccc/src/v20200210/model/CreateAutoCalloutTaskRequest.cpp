@@ -32,7 +32,9 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_descriptionHasBeenSet(false),
     m_notAfterHasBeenSet(false),
     m_triesHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_uUIHasBeenSet(false),
+    m_calleeAttributesHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,29 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_variables.begin(); itr != m_variables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_uUIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUI";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calleeAttributesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalleeAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_calleeAttributes.begin(); itr != m_calleeAttributes.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -306,6 +331,38 @@ void CreateAutoCalloutTaskRequest::SetVariables(const vector<Variable>& _variabl
 bool CreateAutoCalloutTaskRequest::VariablesHasBeenSet() const
 {
     return m_variablesHasBeenSet;
+}
+
+string CreateAutoCalloutTaskRequest::GetUUI() const
+{
+    return m_uUI;
+}
+
+void CreateAutoCalloutTaskRequest::SetUUI(const string& _uUI)
+{
+    m_uUI = _uUI;
+    m_uUIHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::UUIHasBeenSet() const
+{
+    return m_uUIHasBeenSet;
+}
+
+vector<CalleeAttribute> CreateAutoCalloutTaskRequest::GetCalleeAttributes() const
+{
+    return m_calleeAttributes;
+}
+
+void CreateAutoCalloutTaskRequest::SetCalleeAttributes(const vector<CalleeAttribute>& _calleeAttributes)
+{
+    m_calleeAttributes = _calleeAttributes;
+    m_calleeAttributesHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::CalleeAttributesHasBeenSet() const
+{
+    return m_calleeAttributesHasBeenSet;
 }
 
 

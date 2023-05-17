@@ -4254,6 +4254,49 @@ VpcClient::DeleteTemplateMemberOutcomeCallable VpcClient::DeleteTemplateMemberCa
     return task->get_future();
 }
 
+VpcClient::DeleteTrafficPackagesOutcome VpcClient::DeleteTrafficPackages(const DeleteTrafficPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrafficPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrafficPackagesResponse rsp = DeleteTrafficPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrafficPackagesOutcome(rsp);
+        else
+            return DeleteTrafficPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrafficPackagesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteTrafficPackagesAsync(const DeleteTrafficPackagesRequest& request, const DeleteTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTrafficPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteTrafficPackagesOutcomeCallable VpcClient::DeleteTrafficPackagesCallable(const DeleteTrafficPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTrafficPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DeleteVpcOutcome VpcClient::DeleteVpc(const DeleteVpcRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteVpc");
@@ -7171,6 +7214,49 @@ VpcClient::DescribeSnapshotPoliciesOutcomeCallable VpcClient::DescribeSnapshotPo
         [this, request]()
         {
             return this->DescribeSnapshotPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeSubnetResourceDashboardOutcome VpcClient::DescribeSubnetResourceDashboard(const DescribeSubnetResourceDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubnetResourceDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubnetResourceDashboardResponse rsp = DescribeSubnetResourceDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubnetResourceDashboardOutcome(rsp);
+        else
+            return DescribeSubnetResourceDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubnetResourceDashboardOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSubnetResourceDashboardAsync(const DescribeSubnetResourceDashboardRequest& request, const DescribeSubnetResourceDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubnetResourceDashboard(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSubnetResourceDashboardOutcomeCallable VpcClient::DescribeSubnetResourceDashboardCallable(const DescribeSubnetResourceDashboardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubnetResourceDashboardOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubnetResourceDashboard(request);
         }
     );
 

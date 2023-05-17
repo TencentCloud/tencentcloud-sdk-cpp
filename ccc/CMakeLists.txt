@@ -107,6 +107,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h
+  include/tencentcloud/ccc/v20200210/model/CalleeAttribute.h
   include/tencentcloud/ccc/v20200210/model/StaffStatusExtra.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
@@ -220,6 +221,7 @@ set(ccc_src
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp
   src/v20200210/model/DeleteStaffResponse.cpp
+  src/v20200210/model/CalleeAttribute.cpp
   src/v20200210/model/StaffStatusExtra.cpp
   src/v20200210/model/CreateStaffRequest.cpp
   src/v20200210/model/DescribeChatMessagesResponse.cpp

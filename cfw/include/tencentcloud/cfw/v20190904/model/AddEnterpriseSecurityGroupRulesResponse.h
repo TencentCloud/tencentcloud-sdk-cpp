@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/SecurityGroupSimplifyRule.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,20 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取规则uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Rules 规则uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityGroupSimplifyRule> GetRules() const;
+
+                    /**
+                     * 判断参数 Rules 是否已赋值
+                     * @return Rules 是否已赋值
+                     */
+                    bool RulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +77,13 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 规则uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityGroupSimplifyRule> m_rules;
+                    bool m_rulesHasBeenSet;
 
                 };
             }

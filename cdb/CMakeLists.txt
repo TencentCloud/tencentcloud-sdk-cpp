@@ -50,6 +50,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/TableName.h
   include/tencentcloud/cdb/v20170320/model/CdbRegionSellConf.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeBackupDecryptionKeyRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateCdbProxyAddressResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTableName.h
   include/tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h
@@ -374,6 +375,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsResponse.h
   include/tencentcloud/cdb/v20170320/model/Outbound.h
   include/tencentcloud/cdb/v20170320/model/ParamInfo.h
+  include/tencentcloud/cdb/v20170320/model/DescribeBackupDecryptionKeyResponse.h
   include/tencentcloud/cdb/v20170320/model/SecurityGroup.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfResponse.h
   include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h
@@ -452,6 +454,7 @@ set(cdb_src
   src/v20170320/model/TableName.cpp
   src/v20170320/model/CdbRegionSellConf.cpp
   src/v20170320/model/DescribeRoGroupsRequest.cpp
+  src/v20170320/model/DescribeBackupDecryptionKeyRequest.cpp
   src/v20170320/model/CreateCdbProxyAddressResponse.cpp
   src/v20170320/model/RollbackTableName.cpp
   src/v20170320/model/CloseWanServiceRequest.cpp
@@ -776,6 +779,7 @@ set(cdb_src
   src/v20170320/model/ModifyAccountMaxUserConnectionsResponse.cpp
   src/v20170320/model/Outbound.cpp
   src/v20170320/model/ParamInfo.cpp
+  src/v20170320/model/DescribeBackupDecryptionKeyResponse.cpp
   src/v20170320/model/SecurityGroup.cpp
   src/v20170320/model/DescribeProxyConnectionPoolConfResponse.cpp
   src/v20170320/model/OfflineIsolatedInstancesRequest.cpp

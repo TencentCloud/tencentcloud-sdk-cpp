@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问URL重写配置开关
+                     * 获取访问URL重写配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 访问URL重写配置开关
+                     * @return Switch 访问URL重写配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置访问URL重写配置开关
+                     * 设置访问URL重写配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 访问URL重写配置开关
+                     * @param Switch 访问URL重写配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * 访问URL重写配置开关
+                     * 访问URL重写配置开关，取值有：
 on：开启
 off：关闭
                      */

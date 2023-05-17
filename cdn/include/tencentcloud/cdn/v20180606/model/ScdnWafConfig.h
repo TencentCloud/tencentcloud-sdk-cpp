@@ -50,14 +50,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on|off
-                     * @return Switch on|off
+                     * 获取Scdn waf配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch Scdn waf配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on|off
-                     * @param Switch on|off
+                     * 设置Scdn waf配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch Scdn waf配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -112,17 +120,25 @@ namespace TencentCloud
                     bool ErrorPageHasBeenSet() const;
 
                     /**
-                     * 获取webshell拦截开关，on|off，默认off
+                     * 获取webshell拦截配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebShellSwitch webshell拦截开关，on|off，默认off
+                     * @return WebShellSwitch webshell拦截配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWebShellSwitch() const;
 
                     /**
-                     * 设置webshell拦截开关，on|off，默认off
+                     * 设置webshell拦截配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebShellSwitch webshell拦截开关，on|off，默认off
+                     * @param WebShellSwitch webshell拦截配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWebShellSwitch(const std::string& _webShellSwitch);
@@ -178,17 +194,25 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取waf子规则开关
+                     * 获取waf子规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubRuleSwitch waf子规则开关
+                     * @return SubRuleSwitch waf子规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WafSubRuleStatus> GetSubRuleSwitch() const;
 
                     /**
-                     * 设置waf子规则开关
+                     * 设置waf子规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubRuleSwitch waf子规则开关
+                     * @param SubRuleSwitch waf子规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubRuleSwitch(const std::vector<WafSubRuleStatus>& _subRuleSwitch);
@@ -202,7 +226,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on|off
+                     * Scdn waf配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
@@ -222,7 +248,9 @@ namespace TencentCloud
                     bool m_errorPageHasBeenSet;
 
                     /**
-                     * webshell拦截开关，on|off，默认off
+                     * webshell拦截配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webShellSwitch;
@@ -243,7 +271,9 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * waf子规则开关
+                     * waf子规则配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WafSubRuleStatus> m_subRuleSwitch;

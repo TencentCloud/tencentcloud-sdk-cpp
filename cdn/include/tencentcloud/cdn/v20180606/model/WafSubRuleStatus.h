@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子规则状态，on|off
-                     * @return Switch 子规则状态，on|off
+                     * 获取Waf子规则开关状态配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch Waf子规则开关状态配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置子规则状态，on|off
-                     * @param Switch 子规则状态，on|off
+                     * 设置Waf子规则开关状态配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch Waf子规则开关状态配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -85,7 +93,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子规则状态，on|off
+                     * Waf子规则开关状态配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

@@ -53,7 +53,7 @@ namespace TencentCloud
 • 16k_zh-PY：中英粤;
 • 16k_zh_medical：中文医疗；
 • 16k_en：英语；
-• 16k_ca：粤语；
+• 16k_yue：粤语；
 • 16k_ja：日语；
 • 16k_ko：韩语；
 • 16k_vi：越南语；
@@ -74,7 +74,7 @@ namespace TencentCloud
 • 16k_zh-PY：中英粤;
 • 16k_zh_medical：中文医疗；
 • 16k_en：英语；
-• 16k_ca：粤语；
+• 16k_yue：粤语；
 • 16k_ja：日语；
 • 16k_ko：韩语；
 • 16k_vi：越南语；
@@ -99,7 +99,7 @@ namespace TencentCloud
 • 16k_zh-PY：中英粤;
 • 16k_zh_medical：中文医疗；
 • 16k_en：英语；
-• 16k_ca：粤语；
+• 16k_yue：粤语；
 • 16k_ja：日语；
 • 16k_ko：韩语；
 • 16k_vi：越南语；
@@ -120,7 +120,7 @@ namespace TencentCloud
 • 16k_zh-PY：中英粤;
 • 16k_zh_medical：中文医疗；
 • 16k_en：英语；
-• 16k_ca：粤语；
+• 16k_yue：粤语；
 • 16k_ja：日语；
 • 16k_ko：韩语；
 • 16k_vi：越南语；
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
-                     * @return VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
+                     * 获取识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
+                     * @return VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
                      */
                     std::string GetVoiceFormat() const;
 
                     /**
-                     * 设置识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
-                     * @param VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
+                     * 设置识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
+                     * @param VoiceFormat 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
                      */
                     void SetVoiceFormat(const std::string& _voiceFormat);
 
@@ -463,7 +463,7 @@ namespace TencentCloud
 • 16k_zh-PY：中英粤;
 • 16k_zh_medical：中文医疗；
 • 16k_en：英语；
-• 16k_ca：粤语；
+• 16k_yue：粤语；
 • 16k_ja：日语；
 • 16k_ko：韩语；
 • 16k_vi：越南语；
@@ -485,7 +485,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。
+                     * 识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。
                      */
                     std::string m_voiceFormat;
                     bool m_voiceFormatHasBeenSet;

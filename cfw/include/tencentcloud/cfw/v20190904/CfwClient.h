@@ -414,7 +414,7 @@ namespace TencentCloud
                 AddEnterpriseSecurityGroupRulesOutcomeCallable AddEnterpriseSecurityGroupRulesCallable(const Model::AddEnterpriseSecurityGroupRulesRequest& request);
 
                 /**
-                 *添加nat访问控制规则
+                 *添加nat访问控制规则(地域必填)
                  * @param req AddNatAcRuleRequest
                  * @return AddNatAcRuleOutcome
                  */

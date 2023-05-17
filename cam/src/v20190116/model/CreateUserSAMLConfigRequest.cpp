@@ -23,7 +23,8 @@ using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
 CreateUserSAMLConfigRequest::CreateUserSAMLConfigRequest() :
-    m_sAMLMetadataDocumentHasBeenSet(false)
+    m_sAMLMetadataDocumentHasBeenSet(false),
+    m_auxiliaryDomainHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateUserSAMLConfigRequest::ToJsonString() const
         string key = "SAMLMetadataDocument";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sAMLMetadataDocument.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auxiliaryDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuxiliaryDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_auxiliaryDomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateUserSAMLConfigRequest::SetSAMLMetadataDocument(const string& _sAMLMet
 bool CreateUserSAMLConfigRequest::SAMLMetadataDocumentHasBeenSet() const
 {
     return m_sAMLMetadataDocumentHasBeenSet;
+}
+
+string CreateUserSAMLConfigRequest::GetAuxiliaryDomain() const
+{
+    return m_auxiliaryDomain;
+}
+
+void CreateUserSAMLConfigRequest::SetAuxiliaryDomain(const string& _auxiliaryDomain)
+{
+    m_auxiliaryDomain = _auxiliaryDomain;
+    m_auxiliaryDomainHasBeenSet = true;
+}
+
+bool CreateUserSAMLConfigRequest::AuxiliaryDomainHasBeenSet() const
+{
+    return m_auxiliaryDomainHasBeenSet;
 }
 
 

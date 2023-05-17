@@ -36,6 +36,7 @@ namespace TencentCloud
             {
                 /**
                 * ShareCname配置
+ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
                 */
                 class ShareCname : public AbstractModel
                 {
@@ -47,22 +48,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.
+                     * 获取ShareCname 配置开关, 取值有：
+on：开启，使用共享CNAME
+off：关闭，使用默认CNAME
 
-* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
-                     * @return Switch ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.
+                     * @return Switch ShareCname 配置开关, 取值有：
+on：开启，使用共享CNAME
+off：关闭，使用默认CNAME
 
-* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.
+                     * 设置ShareCname 配置开关, 取值有：
+on：开启，使用共享CNAME
+off：关闭，使用默认CNAME
 
-* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
-                     * @param Switch ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.
+                     * @param Switch ShareCname 配置开关, 取值有：
+on：开启，使用共享CNAME
+off：关闭，使用默认CNAME
 
-* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -97,9 +102,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.
+                     * ShareCname 配置开关, 取值有：
+on：开启，使用共享CNAME
+off：关闭，使用默认CNAME
 
-* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

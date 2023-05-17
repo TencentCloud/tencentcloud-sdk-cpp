@@ -25,7 +25,8 @@ ParamTemplateInfo::ParamTemplateInfo() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ParamTemplateInfo::Deserialize(const rapidjson::Value &value
         m_templateTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateInfo.EngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = string(value["EngineType"].GetString());
+        m_engineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ParamTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TemplateType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ParamTemplateInfo::SetTemplateType(const string& _templateType)
 bool ParamTemplateInfo::TemplateTypeHasBeenSet() const
 {
     return m_templateTypeHasBeenSet;
+}
+
+string ParamTemplateInfo::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void ParamTemplateInfo::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool ParamTemplateInfo::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 

@@ -131,6 +131,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/SecurityGroupSimplifyRule.h
   include/tencentcloud/cfw/v20190904/model/IocListData.h
   include/tencentcloud/cfw/v20190904/model/InstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h
@@ -315,6 +316,7 @@ set(cfw_src
   src/v20190904/model/DescribeResourceGroupNewRequest.cpp
   src/v20190904/model/ModifyBlockTopRequest.cpp
   src/v20190904/model/DeleteAcRuleResponse.cpp
+  src/v20190904/model/SecurityGroupSimplifyRule.cpp
   src/v20190904/model/IocListData.cpp
   src/v20190904/model/InstanceInfo.cpp
   src/v20190904/model/DescribeIPStatusListRequest.cpp

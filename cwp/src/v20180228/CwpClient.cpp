@@ -5802,6 +5802,92 @@ CwpClient::DescribeLicenseListOutcomeCallable CwpClient::DescribeLicenseListCall
     return task->get_future();
 }
 
+CwpClient::DescribeLogStorageConfigOutcome CwpClient::DescribeLogStorageConfig(const DescribeLogStorageConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogStorageConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogStorageConfigResponse rsp = DescribeLogStorageConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogStorageConfigOutcome(rsp);
+        else
+            return DescribeLogStorageConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogStorageConfigOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLogStorageConfigAsync(const DescribeLogStorageConfigRequest& request, const DescribeLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogStorageConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLogStorageConfigOutcomeCallable CwpClient::DescribeLogStorageConfigCallable(const DescribeLogStorageConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogStorageConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeLogStorageRecordOutcome CwpClient::DescribeLogStorageRecord(const DescribeLogStorageRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogStorageRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogStorageRecordResponse rsp = DescribeLogStorageRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogStorageRecordOutcome(rsp);
+        else
+            return DescribeLogStorageRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogStorageRecordOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLogStorageRecordAsync(const DescribeLogStorageRecordRequest& request, const DescribeLogStorageRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogStorageRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLogStorageRecordOutcomeCallable CwpClient::DescribeLogStorageRecordCallable(const DescribeLogStorageRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogStorageRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeLogStorageStatisticOutcome CwpClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
@@ -10697,6 +10783,49 @@ CwpClient::ModifyLicenseUnBindsOutcomeCallable CwpClient::ModifyLicenseUnBindsCa
         [this, request]()
         {
             return this->ModifyLicenseUnBinds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyLogStorageConfigOutcome CwpClient::ModifyLogStorageConfig(const ModifyLogStorageConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLogStorageConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogStorageConfigResponse rsp = ModifyLogStorageConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogStorageConfigOutcome(rsp);
+        else
+            return ModifyLogStorageConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogStorageConfigOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyLogStorageConfigAsync(const ModifyLogStorageConfigRequest& request, const ModifyLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLogStorageConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyLogStorageConfigOutcomeCallable CwpClient::ModifyLogStorageConfigCallable(const ModifyLogStorageConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLogStorageConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLogStorageConfig(request);
         }
     );
 

@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频拖拽开关
+                     * 获取视频拖拽配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 视频拖拽开关
+                     * @return Switch 视频拖拽配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置视频拖拽开关
+                     * 设置视频拖拽配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 视频拖拽开关
+                     * @param Switch 视频拖拽配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -75,7 +75,7 @@ off：关闭
                 private:
 
                     /**
-                     * 视频拖拽开关
+                     * 视频拖拽配置开关，取值有：
 on：开启
 off：关闭
                      */

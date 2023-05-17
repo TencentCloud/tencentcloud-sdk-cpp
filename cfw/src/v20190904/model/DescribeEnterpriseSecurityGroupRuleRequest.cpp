@@ -32,7 +32,8 @@ DescribeEnterpriseSecurityGroupRuleRequest::DescribeEnterpriseSecurityGroupRuleR
     m_enableHasBeenSet(false),
     m_portHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_serviceTemplateIdHasBeenSet(false)
+    m_serviceTemplateIdHasBeenSet(false),
+    m_ruleUuidHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeEnterpriseSecurityGroupRuleRequest::ToJsonString() const
         string key = "ServiceTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleUuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleUuid, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeEnterpriseSecurityGroupRuleRequest::SetServiceTemplateId(const stri
 bool DescribeEnterpriseSecurityGroupRuleRequest::ServiceTemplateIdHasBeenSet() const
 {
     return m_serviceTemplateIdHasBeenSet;
+}
+
+int64_t DescribeEnterpriseSecurityGroupRuleRequest::GetRuleUuid() const
+{
+    return m_ruleUuid;
+}
+
+void DescribeEnterpriseSecurityGroupRuleRequest::SetRuleUuid(const int64_t& _ruleUuid)
+{
+    m_ruleUuid = _ruleUuid;
+    m_ruleUuidHasBeenSet = true;
+}
+
+bool DescribeEnterpriseSecurityGroupRuleRequest::RuleUuidHasBeenSet() const
+{
+    return m_ruleUuidHasBeenSet;
 }
 
 

@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool SetNoHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @return Bitrate 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 获取【已废弃】
+                     * @return Bitrate 【已废弃】
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @param Bitrate 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 设置【已废弃】
+                     * @param Bitrate 【已废弃】
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
@@ -425,7 +425,7 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                     bool m_setNoHasBeenSet;
 
                     /**
-                     * 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 【已废弃】
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;

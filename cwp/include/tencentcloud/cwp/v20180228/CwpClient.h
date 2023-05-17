@@ -291,6 +291,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeLicenseGeneralResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLicenseListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLicenseListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageConfigRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageConfigResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageRecordRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageRecordResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteCombinedListRequest.h>
@@ -519,6 +523,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseBindsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLogStorageConfigRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLogStorageConfigResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMachineRemarkRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMachineRemarkResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsRequest.h>
@@ -983,6 +989,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLicenseListResponse> DescribeLicenseListOutcome;
                 typedef std::future<DescribeLicenseListOutcome> DescribeLicenseListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLicenseListRequest&, DescribeLicenseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogStorageConfigResponse> DescribeLogStorageConfigOutcome;
+                typedef std::future<DescribeLogStorageConfigOutcome> DescribeLogStorageConfigOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLogStorageConfigRequest&, DescribeLogStorageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogStorageRecordResponse> DescribeLogStorageRecordOutcome;
+                typedef std::future<DescribeLogStorageRecordOutcome> DescribeLogStorageRecordOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLogStorageRecordRequest&, DescribeLogStorageRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
                 typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
@@ -1325,6 +1337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLicenseUnBindsResponse> ModifyLicenseUnBindsOutcome;
                 typedef std::future<ModifyLicenseUnBindsOutcome> ModifyLicenseUnBindsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyLicenseUnBindsRequest&, ModifyLicenseUnBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseUnBindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLogStorageConfigResponse> ModifyLogStorageConfigOutcome;
+                typedef std::future<ModifyLogStorageConfigOutcome> ModifyLogStorageConfigOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyLogStorageConfigRequest&, ModifyLogStorageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogStorageConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMachineRemarkResponse> ModifyMachineRemarkOutcome;
                 typedef std::future<ModifyMachineRemarkOutcome> ModifyMachineRemarkOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyMachineRemarkRequest&, ModifyMachineRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineRemarkAsyncHandler;
@@ -2610,6 +2625,24 @@ namespace TencentCloud
                 DescribeLicenseListOutcomeCallable DescribeLicenseListCallable(const Model::DescribeLicenseListRequest& request);
 
                 /**
+                 *获取日志存储配置
+                 * @param req DescribeLogStorageConfigRequest
+                 * @return DescribeLogStorageConfigOutcome
+                 */
+                DescribeLogStorageConfigOutcome DescribeLogStorageConfig(const Model::DescribeLogStorageConfigRequest &request);
+                void DescribeLogStorageConfigAsync(const Model::DescribeLogStorageConfigRequest& request, const DescribeLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogStorageConfigOutcomeCallable DescribeLogStorageConfigCallable(const Model::DescribeLogStorageConfigRequest& request);
+
+                /**
+                 *获取日志存储量记录
+                 * @param req DescribeLogStorageRecordRequest
+                 * @return DescribeLogStorageRecordOutcome
+                 */
+                DescribeLogStorageRecordOutcome DescribeLogStorageRecord(const Model::DescribeLogStorageRecordRequest &request);
+                void DescribeLogStorageRecordAsync(const Model::DescribeLogStorageRecordRequest& request, const DescribeLogStorageRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogStorageRecordOutcomeCallable DescribeLogStorageRecordCallable(const Model::DescribeLogStorageRecordRequest& request);
+
+                /**
                  *获取日志检索容量使用统计
                  * @param req DescribeLogStorageStatisticRequest
                  * @return DescribeLogStorageStatisticOutcome
@@ -3636,6 +3669,15 @@ namespace TencentCloud
                 ModifyLicenseUnBindsOutcome ModifyLicenseUnBinds(const Model::ModifyLicenseUnBindsRequest &request);
                 void ModifyLicenseUnBindsAsync(const Model::ModifyLicenseUnBindsRequest& request, const ModifyLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLicenseUnBindsOutcomeCallable ModifyLicenseUnBindsCallable(const Model::ModifyLicenseUnBindsRequest& request);
+
+                /**
+                 *修改日志存储配置
+                 * @param req ModifyLogStorageConfigRequest
+                 * @return ModifyLogStorageConfigOutcome
+                 */
+                ModifyLogStorageConfigOutcome ModifyLogStorageConfig(const Model::ModifyLogStorageConfigRequest &request);
+                void ModifyLogStorageConfigAsync(const Model::ModifyLogStorageConfigRequest& request, const ModifyLogStorageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogStorageConfigOutcomeCallable ModifyLogStorageConfigCallable(const Model::ModifyLogStorageConfigRequest& request);
 
                 /**
                  *修改主机备注信息

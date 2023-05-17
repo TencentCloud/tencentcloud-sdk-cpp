@@ -160,6 +160,50 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBeginProcessTime() const;
+
+                    /**
+                     * 设置任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBeginProcessTime(const std::string& _beginProcessTime);
+
+                    /**
+                     * 判断参数 BeginProcessTime 是否已赋值
+                     * @return BeginProcessTime 是否已赋值
+                     */
+                    bool BeginProcessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +242,20 @@ namespace TencentCloud
                      */
                     std::vector<AiRecognitionResult> m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_beginProcessTime;
+                    bool m_beginProcessTimeHasBeenSet;
+
+                    /**
+                     * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

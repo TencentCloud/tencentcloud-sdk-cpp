@@ -24,7 +24,9 @@ MediaAudioStreamItem::MediaAudioStreamItem() :
     m_bitrateHasBeenSet(false),
     m_samplingRateHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_codecsHasBeenSet(false),
+    m_loudnessHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("Codecs") && !value["Codecs"].IsNull())
+    {
+        if (!value["Codecs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.Codecs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codecs = string(value["Codecs"].GetString());
+        m_codecsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Loudness") && !value["Loudness"].IsNull())
+    {
+        if (!value["Loudness"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAudioStreamItem.Loudness` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_loudness = value["Loudness"].GetDouble();
+        m_loudnessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void MediaAudioStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channel, allocator);
+    }
+
+    if (m_codecsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Codecs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codecs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loudnessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Loudness";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loudness, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void MediaAudioStreamItem::SetChannel(const int64_t& _channel)
 bool MediaAudioStreamItem::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string MediaAudioStreamItem::GetCodecs() const
+{
+    return m_codecs;
+}
+
+void MediaAudioStreamItem::SetCodecs(const string& _codecs)
+{
+    m_codecs = _codecs;
+    m_codecsHasBeenSet = true;
+}
+
+bool MediaAudioStreamItem::CodecsHasBeenSet() const
+{
+    return m_codecsHasBeenSet;
+}
+
+double MediaAudioStreamItem::GetLoudness() const
+{
+    return m_loudness;
+}
+
+void MediaAudioStreamItem::SetLoudness(const double& _loudness)
+{
+    m_loudness = _loudness;
+    m_loudnessHasBeenSet = true;
+}
+
+bool MediaAudioStreamItem::LoudnessHasBeenSet() const
+{
+    return m_loudnessHasBeenSet;
 }
 

@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取撤销理由
-                     * @return CancelMessage 撤销理由
+                     * 获取撤销理由,不超过200个字符
+                     * @return CancelMessage 撤销理由,不超过200个字符
                      */
                     std::string GetCancelMessage() const;
 
                     /**
-                     * 设置撤销理由
-                     * @param CancelMessage 撤销理由
+                     * 设置撤销理由,不超过200个字符
+                     * @param CancelMessage 撤销理由,不超过200个字符
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
 
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 撤销理由
+                     * 撤销理由,不超过200个字符
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;

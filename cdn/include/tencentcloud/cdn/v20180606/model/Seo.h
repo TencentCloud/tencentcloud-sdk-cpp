@@ -47,11 +47,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SEO 配置开关
+                     * 获取SEO 搜索引擎优化配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch SEO 配置开关
+                     * @return Switch SEO 搜索引擎优化配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -59,11 +59,11 @@ off：关闭
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置SEO 配置开关
+                     * 设置SEO 搜索引擎优化配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch SEO 配置开关
+                     * @param Switch SEO 搜索引擎优化配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -79,7 +79,7 @@ off：关闭
                 private:
 
                     /**
-                     * SEO 配置开关
+                     * SEO 搜索引擎优化配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。

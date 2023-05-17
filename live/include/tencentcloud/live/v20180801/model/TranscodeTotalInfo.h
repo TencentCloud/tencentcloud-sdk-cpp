@@ -47,18 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间点，北京时间，
-示例：2019-03-01 00:00:00。
-                     * @return Time 时间点，北京时间，
-示例：2019-03-01 00:00:00。
+                     * 获取时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return Time 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间点，北京时间，
-示例：2019-03-01 00:00:00。
-                     * @param Time 时间点，北京时间，
-示例：2019-03-01 00:00:00。
+                     * 设置时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param Time 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetTime(const std::string& _time);
 
@@ -149,8 +157,10 @@ topspeed_H265 =》极速高清-H265。
                 private:
 
                     /**
-                     * 时间点，北京时间，
-示例：2019-03-01 00:00:00。
+                     * 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;

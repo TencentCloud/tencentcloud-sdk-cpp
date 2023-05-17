@@ -47,14 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间点，格式: yyyy-mm-dd HH:MM:SS。
-                     * @return Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * 获取时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return Time 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间点，格式: yyyy-mm-dd HH:MM:SS。
-                     * @param Time 时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * 设置时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param Time 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     void SetTime(const std::string& _time);
 
@@ -139,7 +151,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间点，格式: yyyy-mm-dd HH:MM:SS。
+                     * 时间点，
+使用UTC格式时间，
+例如：2019-01-08T10:00:00Z。
+注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
