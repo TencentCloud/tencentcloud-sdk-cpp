@@ -41,7 +41,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_flowDescriptionHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_ccNotifyTypeHasBeenSet(false)
+    m_ccNotifyTypeHasBeenSet(false),
+    m_autoSignSceneHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "CcNotifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ccNotifyType, allocator);
+    }
+
+    if (m_autoSignSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSignScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -542,6 +551,22 @@ void CreateFlowByFilesRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
 bool CreateFlowByFilesRequest::CcNotifyTypeHasBeenSet() const
 {
     return m_ccNotifyTypeHasBeenSet;
+}
+
+string CreateFlowByFilesRequest::GetAutoSignScene() const
+{
+    return m_autoSignScene;
+}
+
+void CreateFlowByFilesRequest::SetAutoSignScene(const string& _autoSignScene)
+{
+    m_autoSignScene = _autoSignScene;
+    m_autoSignSceneHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::AutoSignSceneHasBeenSet() const
+{
+    return m_autoSignSceneHasBeenSet;
 }
 
 

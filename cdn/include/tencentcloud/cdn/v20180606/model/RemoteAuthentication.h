@@ -50,25 +50,25 @@ RemoteAuthenticationRules和Server 互斥，只需要配置其中一个。
 
 
                     /**
-                     * 获取远程鉴权开关；
-on : 开启;
-off: 关闭；
+                     * 获取远程鉴权配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 远程鉴权开关；
-on : 开启;
-off: 关闭；
+                     * @return Switch 远程鉴权配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置远程鉴权开关；
-on : 开启;
-off: 关闭；
+                     * 设置远程鉴权配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 远程鉴权开关；
-on : 开启;
-off: 关闭；
+                     * @param Switch 远程鉴权配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -126,9 +126,9 @@ off: 关闭；
                 private:
 
                     /**
-                     * 远程鉴权开关；
-on : 开启;
-off: 关闭；
+                     * 远程鉴权配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

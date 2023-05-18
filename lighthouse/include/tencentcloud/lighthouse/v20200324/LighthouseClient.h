@@ -927,7 +927,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
                 /**
-                 *本接口 (AttachCcn) 用于解除与云联网的关联。
+                 *本接口 (DetachCcn) 用于解除与云联网的关联。
                  * @param req DetachCcnRequest
                  * @return DetachCcnOutcome
                  */

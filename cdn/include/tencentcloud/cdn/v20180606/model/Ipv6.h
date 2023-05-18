@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Ipv6启用配置，不可更改
+                * Ipv6源站启用配置，不可更改
                 */
                 class Ipv6 : public AbstractModel
                 {
@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名是否开启ipv6功能，on或off。
+                     * 获取域名开启源站ipv6配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 域名是否开启ipv6功能，on或off。
+                     * @return Switch 域名开启源站ipv6配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置域名是否开启ipv6功能，on或off。
+                     * 设置域名开启源站ipv6配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 域名是否开启ipv6功能，on或off。
+                     * @param Switch 域名开启源站ipv6配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -71,7 +79,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名是否开启ipv6功能，on或off。
+                     * 域名开启源站ipv6配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

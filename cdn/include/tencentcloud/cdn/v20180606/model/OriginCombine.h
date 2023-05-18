@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on|off 是否开启合并回源
-                     * @return Switch on|off 是否开启合并回源
+                     * 获取合并回源配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 合并回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on|off 是否开启合并回源
-                     * @param Switch on|off 是否开启合并回源
+                     * 设置合并回源配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 合并回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on|off 是否开启合并回源
+                     * 合并回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

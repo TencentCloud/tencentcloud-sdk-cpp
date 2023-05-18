@@ -348,6 +348,24 @@ false：有序签
                      */
                     bool CcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @return AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string GetAutoSignScene() const;
+
+                    /**
+                     * 设置个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @param AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    void SetAutoSignScene(const std::string& _autoSignScene);
+
+                    /**
+                     * 判断参数 AutoSignScene 是否已赋值
+                     * @return AutoSignScene 是否已赋值
+                     */
+                    bool AutoSignSceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,6 +465,12 @@ false：有序签
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string m_autoSignScene;
+                    bool m_autoSignSceneHasBeenSet;
 
                 };
             }

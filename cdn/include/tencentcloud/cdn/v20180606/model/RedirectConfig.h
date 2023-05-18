@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置开关
-                     * @return Switch 配置开关
+                     * 获取自定义回源302 follow请求host配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 自定义回源302 follow请求host配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置配置开关
-                     * @param Switch 配置开关
+                     * 设置自定义回源302 follow请求host配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 自定义回源302 follow请求host配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -103,7 +111,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置开关
+                     * 自定义回源302 follow请求host配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

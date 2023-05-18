@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源站头部缓存开关
+                     * 获取源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 源站头部缓存开关
+                     * @return Switch 源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置源站头部缓存开关
+                     * 设置源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 源站头部缓存开关
+                     * @param Switch 源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -75,7 +75,7 @@ off：关闭
                 private:
 
                     /**
-                     * 源站头部缓存开关
+                     * 源站头部缓存配置开关，取值有：
 on：开启
 off：关闭
                      */

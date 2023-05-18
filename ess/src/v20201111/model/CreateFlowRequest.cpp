@@ -37,7 +37,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_needSignReviewHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_ccInfosHasBeenSet(false)
+    m_ccInfosHasBeenSet(false),
+    m_autoSignSceneHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,14 @@ string CreateFlowRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoSignSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSignScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -430,6 +439,22 @@ void CreateFlowRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 bool CreateFlowRequest::CcInfosHasBeenSet() const
 {
     return m_ccInfosHasBeenSet;
+}
+
+string CreateFlowRequest::GetAutoSignScene() const
+{
+    return m_autoSignScene;
+}
+
+void CreateFlowRequest::SetAutoSignScene(const string& _autoSignScene)
+{
+    m_autoSignScene = _autoSignScene;
+    m_autoSignSceneHasBeenSet = true;
+}
+
+bool CreateFlowRequest::AutoSignSceneHasBeenSet() const
+{
+    return m_autoSignSceneHasBeenSet;
 }
 
 

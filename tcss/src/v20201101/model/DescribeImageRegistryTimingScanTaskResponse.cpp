@@ -30,7 +30,8 @@ DescribeImageRegistryTimingScanTaskResponse::DescribeImageRegistryTimingScanTask
     m_scanTypeHasBeenSet(false),
     m_allHasBeenSet(false),
     m_imagesHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_latestHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,16 @@ CoreInternalOutcome DescribeImageRegistryTimingScanTaskResponse::Deserialize(con
         m_idHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Latest") && !rsp["Latest"].IsNull())
+    {
+        if (!rsp["Latest"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Latest` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_latest = rsp["Latest"].GetBool();
+        m_latestHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +248,14 @@ string DescribeImageRegistryTimingScanTaskResponse::ToJsonString() const
         }
     }
 
+    if (m_latestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Latest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latest, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -317,6 +336,16 @@ vector<uint64_t> DescribeImageRegistryTimingScanTaskResponse::GetId() const
 bool DescribeImageRegistryTimingScanTaskResponse::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::GetLatest() const
+{
+    return m_latest;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::LatestHasBeenSet() const
+{
+    return m_latestHasBeenSet;
 }
 
 

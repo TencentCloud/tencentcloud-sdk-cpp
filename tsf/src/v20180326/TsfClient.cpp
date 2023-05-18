@@ -1545,6 +1545,49 @@ TsfClient::CreateTaskFlowOutcomeCallable TsfClient::CreateTaskFlowCallable(const
     return task->get_future();
 }
 
+TsfClient::CreateUnitNamespacesOutcome TsfClient::CreateUnitNamespaces(const CreateUnitNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUnitNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUnitNamespacesResponse rsp = CreateUnitNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUnitNamespacesOutcome(rsp);
+        else
+            return CreateUnitNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUnitNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateUnitNamespacesAsync(const CreateUnitNamespacesRequest& request, const CreateUnitNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUnitNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateUnitNamespacesOutcomeCallable TsfClient::CreateUnitNamespacesCallable(const CreateUnitNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUnitNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUnitNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateUnitRuleOutcome TsfClient::CreateUnitRule(const CreateUnitRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUnitRule");

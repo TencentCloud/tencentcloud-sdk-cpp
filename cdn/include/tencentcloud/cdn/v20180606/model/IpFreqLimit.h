@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 单节点单 IP 访问限频配置，默认为关闭状态 
+                * 单节点单 IP 访问限频配置，默认为关闭状态
                 */
                 class IpFreqLimit : public AbstractModel
                 {
@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP 限频配置开关
+                     * 获取IP 限频配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch IP 限频配置开关
+                     * @return Switch IP 限频配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置IP 限频配置开关
+                     * 设置IP 限频配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch IP 限频配置开关
+                     * @param Switch IP 限频配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -101,7 +101,7 @@ off：关闭
                 private:
 
                     /**
-                     * IP 限频配置开关
+                     * IP 限频配置开关，取值有：
 on：开启
 off：关闭
                      */

@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分片回源配置开关
+                     * 获取分片回源配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 分片回源配置开关
+                     * @return Switch 分片回源配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置分片回源配置开关
+                     * 设置分片回源配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 分片回源配置开关
+                     * @param Switch 分片回源配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * 分片回源配置开关
+                     * 分片回源配置开关，取值有：
 on：开启
 off：关闭
                      */

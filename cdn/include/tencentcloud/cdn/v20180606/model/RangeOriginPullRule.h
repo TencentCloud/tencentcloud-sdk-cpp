@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分片回源配置开关
-                     * @return Switch 分片回源配置开关
+                     * 获取分片回源配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 分片回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置分片回源配置开关
-                     * @param Switch 分片回源配置开关
+                     * 设置分片回源配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 分片回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -135,7 +143,9 @@ path 时填充绝对路径，如 /xxx/test.html
                 private:
 
                     /**
-                     * 分片回源配置开关
+                     * 分片回源配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

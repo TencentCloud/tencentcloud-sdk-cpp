@@ -36,7 +36,8 @@ CreateBPBrandRequest::CreateBPBrandRequest() :
     m_protectURLsHasBeenSet(false),
     m_protectAPPsHasBeenSet(false),
     m_protectOfficialAccountsHasBeenSet(false),
-    m_protectMiniProgramsHasBeenSet(false)
+    m_protectMiniProgramsHasBeenSet(false),
+    m_aPISourceHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,14 @@ string CreateBPBrandRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_aPISourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APISource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aPISource, allocator);
     }
 
 
@@ -429,6 +438,22 @@ void CreateBPBrandRequest::SetProtectMiniPrograms(const vector<string>& _protect
 bool CreateBPBrandRequest::ProtectMiniProgramsHasBeenSet() const
 {
     return m_protectMiniProgramsHasBeenSet;
+}
+
+int64_t CreateBPBrandRequest::GetAPISource() const
+{
+    return m_aPISource;
+}
+
+void CreateBPBrandRequest::SetAPISource(const int64_t& _aPISource)
+{
+    m_aPISource = _aPISource;
+    m_aPISourceHasBeenSet = true;
+}
+
+bool CreateBPBrandRequest::APISourceHasBeenSet() const
+{
+    return m_aPISourceHasBeenSet;
 }
 
 

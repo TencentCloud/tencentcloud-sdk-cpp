@@ -246,14 +246,14 @@ namespace TencentCloud
                     bool CustomShowMapHasBeenSet() const;
 
                     /**
-                     * 获取业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-                     * @return CustomerData 业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * 获取业务信息，最大长度1000个字符。
+                     * @return CustomerData 业务信息，最大长度1000个字符。
                      */
                     std::string GetCustomerData() const;
 
                     /**
-                     * 设置业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-                     * @param CustomerData 业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * 设置业务信息，最大长度1000个字符。
+                     * @param CustomerData 业务信息，最大长度1000个字符。
                      */
                     void SetCustomerData(const std::string& _customerData);
 
@@ -383,6 +383,24 @@ MobileCheck：手机号验证
                      */
                     bool CcNotifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @return AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string GetAutoSignScene() const;
+
+                    /**
+                     * 设置个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @param AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    void SetAutoSignScene(const std::string& _autoSignScene);
+
+                    /**
+                     * 判断参数 AutoSignScene 是否已赋值
+                     * @return AutoSignScene 是否已赋值
+                     */
+                    bool AutoSignSceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,7 +470,7 @@ MobileCheck：手机号验证
                     bool m_customShowMapHasBeenSet;
 
                     /**
-                     * 业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * 业务信息，最大长度1000个字符。
                      */
                     std::string m_customerData;
                     bool m_customerDataHasBeenSet;
@@ -495,6 +513,12 @@ MobileCheck：手机号验证
                      */
                     int64_t m_ccNotifyType;
                     bool m_ccNotifyTypeHasBeenSet;
+
+                    /**
+                     * 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string m_autoSignScene;
+                    bool m_autoSignSceneHasBeenSet;
 
                 };
             }

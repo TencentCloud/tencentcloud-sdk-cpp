@@ -315,6 +315,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateTaskResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupsResponse.h
+  include/tencentcloud/tsf/v20180326/model/CreateUnitNamespacesResponse.h
   include/tencentcloud/tsf/v20180326/model/UpdateApiGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupsWithPluginResponse.h
   include/tencentcloud/tsf/v20180326/model/AddInstancesRequest.h
@@ -355,6 +356,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeBusinessLogConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateUnitRuleResponse.h
+  include/tencentcloud/tsf/v20180326/model/CreateUnitNamespacesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeTaskRecordsResponse.h
   include/tencentcloud/tsf/v20180326/model/VmGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiUseDetailResponse.h
@@ -930,6 +932,7 @@ set(tsf_src
   src/v20180326/model/CreateLaneRuleResponse.cpp
   src/v20180326/model/CreateTaskResponse.cpp
   src/v20180326/model/DescribeContainerGroupsResponse.cpp
+  src/v20180326/model/CreateUnitNamespacesResponse.cpp
   src/v20180326/model/UpdateApiGroupResponse.cpp
   src/v20180326/model/DescribeGroupsWithPluginResponse.cpp
   src/v20180326/model/AddInstancesRequest.cpp
@@ -970,6 +973,7 @@ set(tsf_src
   src/v20180326/model/DescribeBusinessLogConfigResponse.cpp
   src/v20180326/model/TerminateTaskFlowBatchRequest.cpp
   src/v20180326/model/CreateUnitRuleResponse.cpp
+  src/v20180326/model/CreateUnitNamespacesRequest.cpp
   src/v20180326/model/DescribeTaskRecordsResponse.cpp
   src/v20180326/model/VmGroup.cpp
   src/v20180326/model/DescribeApiUseDetailResponse.cpp

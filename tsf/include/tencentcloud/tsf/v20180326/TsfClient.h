@@ -93,6 +93,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskFlowRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateTaskFlowResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateUnitNamespacesRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitRuleWithDetailRespRequest.h>
@@ -576,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTaskFlowResponse> CreateTaskFlowOutcome;
                 typedef std::future<CreateTaskFlowOutcome> CreateTaskFlowOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateTaskFlowRequest&, CreateTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUnitNamespacesResponse> CreateUnitNamespacesOutcome;
+                typedef std::future<CreateUnitNamespacesOutcome> CreateUnitNamespacesOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateUnitNamespacesRequest&, CreateUnitNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnitNamespacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUnitRuleResponse> CreateUnitRuleOutcome;
                 typedef std::future<CreateUnitRuleOutcome> CreateUnitRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateUnitRuleRequest&, CreateUnitRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnitRuleAsyncHandler;
@@ -1439,6 +1444,15 @@ namespace TencentCloud
                 CreateTaskFlowOutcome CreateTaskFlow(const Model::CreateTaskFlowRequest &request);
                 void CreateTaskFlowAsync(const Model::CreateTaskFlowRequest& request, const CreateTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskFlowOutcomeCallable CreateTaskFlowCallable(const Model::CreateTaskFlowRequest& request);
+
+                /**
+                 *批量创建单元化命名空间
+                 * @param req CreateUnitNamespacesRequest
+                 * @return CreateUnitNamespacesOutcome
+                 */
+                CreateUnitNamespacesOutcome CreateUnitNamespaces(const Model::CreateUnitNamespacesRequest &request);
+                void CreateUnitNamespacesAsync(const Model::CreateUnitNamespacesRequest& request, const CreateUnitNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUnitNamespacesOutcomeCallable CreateUnitNamespacesCallable(const Model::CreateUnitNamespacesRequest& request);
 
                 /**
                  *创建单元化规则

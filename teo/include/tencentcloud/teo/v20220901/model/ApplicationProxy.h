@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
 #include <tencentcloud/teo/v20220901/model/ApplicationProxyRule.h>
+#include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
 
 
 namespace TencentCloud
@@ -442,6 +443,24 @@ namespace TencentCloud
                      */
                     bool ApplicationProxyRulesHasBeenSet() const;
 
+                    /**
+                     * 获取中国大陆加速优化配置。
+                     * @return AccelerateMainland 中国大陆加速优化配置。
+                     */
+                    AccelerateMainland GetAccelerateMainland() const;
+
+                    /**
+                     * 设置中国大陆加速优化配置。
+                     * @param AccelerateMainland 中国大陆加速优化配置。
+                     */
+                    void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
+
+                    /**
+                     * 判断参数 AccelerateMainland 是否已赋值
+                     * @return AccelerateMainland 是否已赋值
+                     */
+                    bool AccelerateMainlandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +586,12 @@ namespace TencentCloud
                      */
                     std::vector<ApplicationProxyRule> m_applicationProxyRules;
                     bool m_applicationProxyRulesHasBeenSet;
+
+                    /**
+                     * 中国大陆加速优化配置。
+                     */
+                    AccelerateMainland m_accelerateMainland;
+                    bool m_accelerateMainlandHasBeenSet;
 
                 };
             }

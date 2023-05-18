@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义响应头开关
+                     * 获取自定义响应头配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 自定义响应头开关
+                     * @return Switch 自定义响应头配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置自定义响应头开关
+                     * 设置自定义响应头配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 自定义响应头开关
+                     * @param Switch 自定义响应头配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * 自定义响应头开关
+                     * 自定义响应头配置开关，取值有：
 on：开启
 off：关闭
                      */

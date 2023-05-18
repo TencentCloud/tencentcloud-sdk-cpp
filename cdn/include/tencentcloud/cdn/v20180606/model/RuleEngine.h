@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则引擎配置开关
+                     * 获取规则引擎配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 规则引擎配置开关
+                     * @return Switch 规则引擎配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置规则引擎配置开关
+                     * 设置规则引擎配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 规则引擎配置开关
+                     * @param Switch 规则引擎配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -97,7 +97,7 @@ off：关闭
                 private:
 
                     /**
-                     * 规则引擎配置开关
+                     * 规则引擎配置开关，取值有：
 on：开启
 off：关闭
                      */

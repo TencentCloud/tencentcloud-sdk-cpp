@@ -33,7 +33,8 @@ FlowInfo::FlowInfo() :
     m_customShowMapHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
-    m_ccNotifyTypeHasBeenSet(false)
+    m_ccNotifyTypeHasBeenSet(false),
+    m_autoSignSceneHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,16 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_ccNotifyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoSignScene") && !value["AutoSignScene"].IsNull())
+    {
+        if (!value["AutoSignScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.AutoSignScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSignScene = string(value["AutoSignScene"].GetString());
+        m_autoSignSceneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -332,6 +343,14 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CcNotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ccNotifyType, allocator);
+    }
+
+    if (m_autoSignSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSignScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -543,5 +562,21 @@ void FlowInfo::SetCcNotifyType(const int64_t& _ccNotifyType)
 bool FlowInfo::CcNotifyTypeHasBeenSet() const
 {
     return m_ccNotifyTypeHasBeenSet;
+}
+
+string FlowInfo::GetAutoSignScene() const
+{
+    return m_autoSignScene;
+}
+
+void FlowInfo::SetAutoSignScene(const string& _autoSignScene)
+{
+    m_autoSignScene = _autoSignScene;
+    m_autoSignSceneHasBeenSet = true;
+}
+
+bool FlowInfo::AutoSignSceneHasBeenSet() const
+{
+    return m_autoSignSceneHasBeenSet;
 }
 

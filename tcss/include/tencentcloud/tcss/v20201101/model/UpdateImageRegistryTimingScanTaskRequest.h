@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取是否扫描最新版本
+                     * @return Latest 是否扫描最新版本
+                     */
+                    bool GetLatest() const;
+
+                    /**
+                     * 设置是否扫描最新版本
+                     * @param Latest 是否扫描最新版本
+                     */
+                    void SetLatest(const bool& _latest);
+
+                    /**
+                     * 判断参数 Latest 是否已赋值
+                     * @return Latest 是否已赋值
+                     */
+                    bool LatestHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 是否扫描最新版本
+                     */
+                    bool m_latest;
+                    bool m_latestHasBeenSet;
 
                 };
             }

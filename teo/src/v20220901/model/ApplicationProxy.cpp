@@ -37,7 +37,8 @@ ApplicationProxy::ApplicationProxy() :
     m_hostIdHasBeenSet(false),
     m_ipv6HasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_applicationProxyRulesHasBeenSet(false)
+    m_applicationProxyRulesHasBeenSet(false),
+    m_accelerateMainlandHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,23 @@ CoreInternalOutcome ApplicationProxy::Deserialize(const rapidjson::Value &value)
         m_applicationProxyRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("AccelerateMainland") && !value["AccelerateMainland"].IsNull())
+    {
+        if (!value["AccelerateMainland"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxy.AccelerateMainland` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accelerateMainland.Deserialize(value["AccelerateMainland"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accelerateMainlandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +408,15 @@ void ApplicationProxy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_accelerateMainlandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccelerateMainland";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_accelerateMainland.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -665,5 +692,21 @@ void ApplicationProxy::SetApplicationProxyRules(const vector<ApplicationProxyRul
 bool ApplicationProxy::ApplicationProxyRulesHasBeenSet() const
 {
     return m_applicationProxyRulesHasBeenSet;
+}
+
+AccelerateMainland ApplicationProxy::GetAccelerateMainland() const
+{
+    return m_accelerateMainland;
+}
+
+void ApplicationProxy::SetAccelerateMainland(const AccelerateMainland& _accelerateMainland)
+{
+    m_accelerateMainland = _accelerateMainland;
+    m_accelerateMainlandHasBeenSet = true;
+}
+
+bool ApplicationProxy::AccelerateMainlandHasBeenSet() const
+{
+    return m_accelerateMainlandHasBeenSet;
 }
 

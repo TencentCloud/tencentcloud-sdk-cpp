@@ -29,7 +29,8 @@ UpdateImageRegistryTimingScanTaskRequest::UpdateImageRegistryTimingScanTaskReque
     m_scanTypeHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_allHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_latestHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string UpdateImageRegistryTimingScanTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_latestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Latest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_latest, allocator);
     }
 
 
@@ -231,6 +240,22 @@ void UpdateImageRegistryTimingScanTaskRequest::SetId(const vector<uint64_t>& _id
 bool UpdateImageRegistryTimingScanTaskRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+bool UpdateImageRegistryTimingScanTaskRequest::GetLatest() const
+{
+    return m_latest;
+}
+
+void UpdateImageRegistryTimingScanTaskRequest::SetLatest(const bool& _latest)
+{
+    m_latest = _latest;
+    m_latestHasBeenSet = true;
+}
+
+bool UpdateImageRegistryTimingScanTaskRequest::LatestHasBeenSet() const
+{
+    return m_latestHasBeenSet;
 }
 
 

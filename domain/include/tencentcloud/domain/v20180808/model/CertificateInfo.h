@@ -213,6 +213,28 @@ GZJGZY: 公证机构执业证。
                     bool ImgUrlHasBeenSet() const;
 
                     /**
+                     * 获取原始照片地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginImgUrl 原始照片地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginImgUrl() const;
+
+                    /**
+                     * 设置原始照片地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginImgUrl 原始照片地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginImgUrl(const std::string& _originImgUrl);
+
+                    /**
+                     * 判断参数 OriginImgUrl 是否已赋值
+                     * @return OriginImgUrl 是否已赋值
+                     */
+                    bool OriginImgUrlHasBeenSet() const;
+
+                    /**
                      * 获取联系人证件号码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantCertificateCode 联系人证件号码。
@@ -325,6 +347,13 @@ GZJGZY: 公证机构执业证。
                      */
                     std::string m_imgUrl;
                     bool m_imgUrlHasBeenSet;
+
+                    /**
+                     * 原始照片地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originImgUrl;
+                    bool m_originImgUrlHasBeenSet;
 
                     /**
                      * 联系人证件号码。

@@ -50,14 +50,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启，on | off
-                     * @return Switch 是否开启，on | off
+                     * 获取SCDN访问控制配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch SCDN访问控制配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启，on | off
-                     * @param Switch 是否开启，on | off
+                     * 设置SCDN访问控制配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch SCDN访问控制配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -136,7 +144,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启，on | off
+                     * SCDN访问控制配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

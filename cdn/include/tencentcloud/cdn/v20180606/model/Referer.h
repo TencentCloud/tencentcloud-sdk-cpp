@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取referer 黑白名单配置开关
+                     * 获取referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch referer 黑白名单配置开关
+                     * @return Switch referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置referer 黑白名单配置开关
+                     * 设置referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch referer 黑白名单配置开关
+                     * @param Switch referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * referer 黑白名单配置开关
+                     * referer 黑白名单配置开关，取值有：
 on：开启
 off：关闭
                      */

@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off, 离线缓存是否开启
-                     * @return Switch on | off, 离线缓存是否开启
+                     * 获取离线缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 离线缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off, 离线缓存是否开启
-                     * @param Switch on | off, 离线缓存是否开启
+                     * 设置离线缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 离线缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on | off, 离线缓存是否开启
+                     * 离线缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

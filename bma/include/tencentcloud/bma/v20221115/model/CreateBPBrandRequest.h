@@ -294,6 +294,24 @@ namespace TencentCloud
                      */
                     bool ProtectMiniProgramsHasBeenSet() const;
 
+                    /**
+                     * 获取请求来源：0-反钓鱼 2-反假冒
+                     * @return APISource 请求来源：0-反钓鱼 2-反假冒
+                     */
+                    int64_t GetAPISource() const;
+
+                    /**
+                     * 设置请求来源：0-反钓鱼 2-反假冒
+                     * @param APISource 请求来源：0-反钓鱼 2-反假冒
+                     */
+                    void SetAPISource(const int64_t& _aPISource);
+
+                    /**
+                     * 判断参数 APISource 是否已赋值
+                     * @return APISource 是否已赋值
+                     */
+                    bool APISourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,6 +397,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_protectMiniPrograms;
                     bool m_protectMiniProgramsHasBeenSet;
+
+                    /**
+                     * 请求来源：0-反钓鱼 2-反假冒
+                     */
+                    int64_t m_aPISource;
+                    bool m_aPISourceHasBeenSet;
 
                 };
             }

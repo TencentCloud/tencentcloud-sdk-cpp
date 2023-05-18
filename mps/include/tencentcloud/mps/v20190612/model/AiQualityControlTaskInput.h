@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频质检模板 ID 。
+                     * 获取视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Definition 视频质检模板 ID 。
+                     * @return Definition 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置视频质检模板 ID 。
+                     * 设置视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Definition 视频质检模板 ID 。
+                     * @param Definition 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -93,7 +93,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频质检模板 ID 。
+                     * 视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_definition;

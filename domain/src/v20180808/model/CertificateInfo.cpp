@@ -24,6 +24,7 @@ CertificateInfo::CertificateInfo() :
     m_certificateCodeHasBeenSet(false),
     m_certificateTypeHasBeenSet(false),
     m_imgUrlHasBeenSet(false),
+    m_originImgUrlHasBeenSet(false),
     m_registrantCertificateCodeHasBeenSet(false),
     m_registrantCertificateTypeHasBeenSet(false),
     m_registrantImgUrlHasBeenSet(false)
@@ -63,6 +64,16 @@ CoreInternalOutcome CertificateInfo::Deserialize(const rapidjson::Value &value)
         }
         m_imgUrl = string(value["ImgUrl"].GetString());
         m_imgUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginImgUrl") && !value["OriginImgUrl"].IsNull())
+    {
+        if (!value["OriginImgUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.OriginImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originImgUrl = string(value["OriginImgUrl"].GetString());
+        m_originImgUrlHasBeenSet = true;
     }
 
     if (value.HasMember("RegistrantCertificateCode") && !value["RegistrantCertificateCode"].IsNull())
@@ -124,6 +135,14 @@ void CertificateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ImgUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imgUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originImgUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginImgUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originImgUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_registrantCertificateCodeHasBeenSet)
@@ -199,6 +218,22 @@ void CertificateInfo::SetImgUrl(const string& _imgUrl)
 bool CertificateInfo::ImgUrlHasBeenSet() const
 {
     return m_imgUrlHasBeenSet;
+}
+
+string CertificateInfo::GetOriginImgUrl() const
+{
+    return m_originImgUrl;
+}
+
+void CertificateInfo::SetOriginImgUrl(const string& _originImgUrl)
+{
+    m_originImgUrl = _originImgUrl;
+    m_originImgUrlHasBeenSet = true;
+}
+
+bool CertificateInfo::OriginImgUrlHasBeenSet() const
+{
+    return m_originImgUrlHasBeenSet;
 }
 
 string CertificateInfo::GetRegistrantCertificateCode() const

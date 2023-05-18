@@ -47,20 +47,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跨国回源优化配置开关
+                     * 获取跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 跨国回源优化配置开关
+                     * @return Switch 跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置跨国回源优化配置开关
+                     * 设置跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 跨国回源优化配置开关
+                     * @param Switch 跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -105,7 +105,7 @@ CNToOV：境内回源境外
                 private:
 
                     /**
-                     * 跨国回源优化配置开关
+                     * 跨国回源优化配置开关，取值有：
 on：开启
 off：关闭
                      */

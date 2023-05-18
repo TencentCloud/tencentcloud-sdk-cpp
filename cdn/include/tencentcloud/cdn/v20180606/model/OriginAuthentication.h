@@ -48,17 +48,29 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴权开关，on或off
+                     * 获取回源鉴权高级配置开关，取值有：
+on：开启
+off：关闭
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 鉴权开关，on或off
+                     * @return Switch 回源鉴权高级配置开关，取值有：
+on：开启
+off：关闭
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置鉴权开关，on或off
+                     * 设置回源鉴权高级配置开关，取值有：
+on：开启
+off：关闭
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 鉴权开关，on或off
+                     * @param Switch 回源鉴权高级配置开关，取值有：
+on：开启
+off：关闭
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -94,7 +106,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 鉴权开关，on或off
+                     * 回源鉴权高级配置开关，取值有：
+on：开启
+off：关闭
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
