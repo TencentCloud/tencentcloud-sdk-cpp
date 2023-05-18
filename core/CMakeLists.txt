@@ -16,6 +16,11 @@
 
 configure_file(src/Config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/include/tencentcloud/core/Config.h @ONLY)
 
+set(uuid "uuid")
+if(NO_NEED_LIB_UUID)
+    set(uuid "")
+endif()
+
 set(core_public_header
     include/tencentcloud/core/AbstractClient.h
     include/tencentcloud/core/AbstractModel.h
@@ -100,7 +105,9 @@ set_target_properties(core
 target_include_directories(core
     PRIVATE include )
 
+
 target_link_libraries(core
+    ${uuid}
     ${OPENSSL_LIBRARIES}
     ${CURL_LIBRARIES} )
 
