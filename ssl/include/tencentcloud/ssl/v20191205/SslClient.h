@@ -39,6 +39,12 @@
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateInstanceRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateInstanceResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRetryRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRetryResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateDetailRequest.h>
@@ -51,6 +57,36 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeCompaniesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostCdnInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostCdnInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostClbInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostClbInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostCosInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostCosInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDdosInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDdosInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordDetailRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordDetailResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostLighthouseInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostLighthouseInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostLiveInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostLiveInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostTeoInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostTeoInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordDetailRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordDetailResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostVodInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostVodInstanceListResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostWafInstanceListRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeHostWafInstanceListResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h>
@@ -75,6 +111,12 @@
 #include <tencentcloud/ssl/v20191205/model/SubmitAuditManagerResponse.h>
 #include <tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h>
 #include <tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateInstanceRequest.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateInstanceResponse.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateRecordRetryRequest.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateRecordRetryResponse.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateRecordRollbackRequest.h>
+#include <tencentcloud/ssl/v20191205/model/UpdateCertificateRecordRollbackResponse.h>
 #include <tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h>
@@ -121,6 +163,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteManagerResponse> DeleteManagerOutcome;
                 typedef std::future<DeleteManagerOutcome> DeleteManagerOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteManagerRequest&, DeleteManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployCertificateInstanceResponse> DeployCertificateInstanceOutcome;
+                typedef std::future<DeployCertificateInstanceOutcome> DeployCertificateInstanceOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DeployCertificateInstanceRequest&, DeployCertificateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployCertificateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployCertificateRecordRetryResponse> DeployCertificateRecordRetryOutcome;
+                typedef std::future<DeployCertificateRecordRetryOutcome> DeployCertificateRecordRetryOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DeployCertificateRecordRetryRequest&, DeployCertificateRecordRetryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployCertificateRecordRetryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployCertificateRecordRollbackResponse> DeployCertificateRecordRollbackOutcome;
+                typedef std::future<DeployCertificateRecordRollbackOutcome> DeployCertificateRecordRollbackOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DeployCertificateRecordRollbackRequest&, DeployCertificateRecordRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployCertificateRecordRollbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCertificateResponse> DescribeCertificateOutcome;
                 typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificateRequest&, DescribeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateAsyncHandler;
@@ -139,6 +190,51 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeployedResourcesResponse> DescribeDeployedResourcesOutcome;
                 typedef std::future<DescribeDeployedResourcesOutcome> DescribeDeployedResourcesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeDeployedResourcesRequest&, DescribeDeployedResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployedResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostApiGatewayInstanceListResponse> DescribeHostApiGatewayInstanceListOutcome;
+                typedef std::future<DescribeHostApiGatewayInstanceListOutcome> DescribeHostApiGatewayInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostApiGatewayInstanceListRequest&, DescribeHostApiGatewayInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostApiGatewayInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostCdnInstanceListResponse> DescribeHostCdnInstanceListOutcome;
+                typedef std::future<DescribeHostCdnInstanceListOutcome> DescribeHostCdnInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostCdnInstanceListRequest&, DescribeHostCdnInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostCdnInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostClbInstanceListResponse> DescribeHostClbInstanceListOutcome;
+                typedef std::future<DescribeHostClbInstanceListOutcome> DescribeHostClbInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostClbInstanceListRequest&, DescribeHostClbInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostClbInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostCosInstanceListResponse> DescribeHostCosInstanceListOutcome;
+                typedef std::future<DescribeHostCosInstanceListOutcome> DescribeHostCosInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostCosInstanceListRequest&, DescribeHostCosInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostCosInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostDdosInstanceListResponse> DescribeHostDdosInstanceListOutcome;
+                typedef std::future<DescribeHostDdosInstanceListOutcome> DescribeHostDdosInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostDdosInstanceListRequest&, DescribeHostDdosInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostDdosInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostDeployRecordResponse> DescribeHostDeployRecordOutcome;
+                typedef std::future<DescribeHostDeployRecordOutcome> DescribeHostDeployRecordOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostDeployRecordRequest&, DescribeHostDeployRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostDeployRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostDeployRecordDetailResponse> DescribeHostDeployRecordDetailOutcome;
+                typedef std::future<DescribeHostDeployRecordDetailOutcome> DescribeHostDeployRecordDetailOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostDeployRecordDetailRequest&, DescribeHostDeployRecordDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostDeployRecordDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostLighthouseInstanceListResponse> DescribeHostLighthouseInstanceListOutcome;
+                typedef std::future<DescribeHostLighthouseInstanceListOutcome> DescribeHostLighthouseInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostLighthouseInstanceListRequest&, DescribeHostLighthouseInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostLighthouseInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostLiveInstanceListResponse> DescribeHostLiveInstanceListOutcome;
+                typedef std::future<DescribeHostLiveInstanceListOutcome> DescribeHostLiveInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostLiveInstanceListRequest&, DescribeHostLiveInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostLiveInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostTeoInstanceListResponse> DescribeHostTeoInstanceListOutcome;
+                typedef std::future<DescribeHostTeoInstanceListOutcome> DescribeHostTeoInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostTeoInstanceListRequest&, DescribeHostTeoInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostTeoInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostTkeInstanceListResponse> DescribeHostTkeInstanceListOutcome;
+                typedef std::future<DescribeHostTkeInstanceListOutcome> DescribeHostTkeInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostTkeInstanceListRequest&, DescribeHostTkeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostTkeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostUpdateRecordResponse> DescribeHostUpdateRecordOutcome;
+                typedef std::future<DescribeHostUpdateRecordOutcome> DescribeHostUpdateRecordOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostUpdateRecordRequest&, DescribeHostUpdateRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostUpdateRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostUpdateRecordDetailResponse> DescribeHostUpdateRecordDetailOutcome;
+                typedef std::future<DescribeHostUpdateRecordDetailOutcome> DescribeHostUpdateRecordDetailOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostUpdateRecordDetailRequest&, DescribeHostUpdateRecordDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostUpdateRecordDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVodInstanceListResponse> DescribeHostVodInstanceListOutcome;
+                typedef std::future<DescribeHostVodInstanceListOutcome> DescribeHostVodInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostVodInstanceListRequest&, DescribeHostVodInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVodInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostWafInstanceListResponse> DescribeHostWafInstanceListOutcome;
+                typedef std::future<DescribeHostWafInstanceListOutcome> DescribeHostWafInstanceListOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeHostWafInstanceListRequest&, DescribeHostWafInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostWafInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeManagerDetailResponse> DescribeManagerDetailOutcome;
                 typedef std::future<DescribeManagerDetailOutcome> DescribeManagerDetailOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeManagerDetailRequest&, DescribeManagerDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagerDetailAsyncHandler;
@@ -175,6 +271,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitCertificateInformationResponse> SubmitCertificateInformationOutcome;
                 typedef std::future<SubmitCertificateInformationOutcome> SubmitCertificateInformationOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::SubmitCertificateInformationRequest&, SubmitCertificateInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCertificateInformationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCertificateInstanceResponse> UpdateCertificateInstanceOutcome;
+                typedef std::future<UpdateCertificateInstanceOutcome> UpdateCertificateInstanceOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::UpdateCertificateInstanceRequest&, UpdateCertificateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCertificateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCertificateRecordRetryResponse> UpdateCertificateRecordRetryOutcome;
+                typedef std::future<UpdateCertificateRecordRetryOutcome> UpdateCertificateRecordRetryOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::UpdateCertificateRecordRetryRequest&, UpdateCertificateRecordRetryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCertificateRecordRetryAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCertificateRecordRollbackResponse> UpdateCertificateRecordRollbackOutcome;
+                typedef std::future<UpdateCertificateRecordRollbackOutcome> UpdateCertificateRecordRollbackOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::UpdateCertificateRecordRollbackRequest&, UpdateCertificateRecordRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCertificateRecordRollbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadCertificateResponse> UploadCertificateOutcome;
                 typedef std::future<UploadCertificateOutcome> UploadCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::UploadCertificateRequest&, UploadCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadCertificateAsyncHandler;
@@ -263,6 +368,33 @@ namespace TencentCloud
                 DeleteManagerOutcomeCallable DeleteManagerCallable(const Model::DeleteManagerRequest& request);
 
                 /**
+                 *证书部署到云资源实例列表
+                 * @param req DeployCertificateInstanceRequest
+                 * @return DeployCertificateInstanceOutcome
+                 */
+                DeployCertificateInstanceOutcome DeployCertificateInstance(const Model::DeployCertificateInstanceRequest &request);
+                void DeployCertificateInstanceAsync(const Model::DeployCertificateInstanceRequest& request, const DeployCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployCertificateInstanceOutcomeCallable DeployCertificateInstanceCallable(const Model::DeployCertificateInstanceRequest& request);
+
+                /**
+                 *云资源部署重试部署记录
+                 * @param req DeployCertificateRecordRetryRequest
+                 * @return DeployCertificateRecordRetryOutcome
+                 */
+                DeployCertificateRecordRetryOutcome DeployCertificateRecordRetry(const Model::DeployCertificateRecordRetryRequest &request);
+                void DeployCertificateRecordRetryAsync(const Model::DeployCertificateRecordRetryRequest& request, const DeployCertificateRecordRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployCertificateRecordRetryOutcomeCallable DeployCertificateRecordRetryCallable(const Model::DeployCertificateRecordRetryRequest& request);
+
+                /**
+                 *云资源部署一键回滚
+                 * @param req DeployCertificateRecordRollbackRequest
+                 * @return DeployCertificateRecordRollbackOutcome
+                 */
+                DeployCertificateRecordRollbackOutcome DeployCertificateRecordRollback(const Model::DeployCertificateRecordRollbackRequest &request);
+                void DeployCertificateRecordRollbackAsync(const Model::DeployCertificateRecordRollbackRequest& request, const DeployCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployCertificateRecordRollbackOutcomeCallable DeployCertificateRecordRollbackCallable(const Model::DeployCertificateRecordRollbackRequest& request);
+
+                /**
                  *本接口（DescribeCertificate）用于获取证书信息。
                  * @param req DescribeCertificateRequest
                  * @return DescribeCertificateOutcome
@@ -315,6 +447,141 @@ namespace TencentCloud
                 DescribeDeployedResourcesOutcome DescribeDeployedResources(const Model::DescribeDeployedResourcesRequest &request);
                 void DescribeDeployedResourcesAsync(const Model::DescribeDeployedResourcesRequest& request, const DescribeDeployedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployedResourcesOutcomeCallable DescribeDeployedResourcesCallable(const Model::DescribeDeployedResourcesRequest& request);
+
+                /**
+                 *查询证书apiGateway云资源部署实例列表
+                 * @param req DescribeHostApiGatewayInstanceListRequest
+                 * @return DescribeHostApiGatewayInstanceListOutcome
+                 */
+                DescribeHostApiGatewayInstanceListOutcome DescribeHostApiGatewayInstanceList(const Model::DescribeHostApiGatewayInstanceListRequest &request);
+                void DescribeHostApiGatewayInstanceListAsync(const Model::DescribeHostApiGatewayInstanceListRequest& request, const DescribeHostApiGatewayInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostApiGatewayInstanceListOutcomeCallable DescribeHostApiGatewayInstanceListCallable(const Model::DescribeHostApiGatewayInstanceListRequest& request);
+
+                /**
+                 *查询证书cdn云资源部署实例列表
+                 * @param req DescribeHostCdnInstanceListRequest
+                 * @return DescribeHostCdnInstanceListOutcome
+                 */
+                DescribeHostCdnInstanceListOutcome DescribeHostCdnInstanceList(const Model::DescribeHostCdnInstanceListRequest &request);
+                void DescribeHostCdnInstanceListAsync(const Model::DescribeHostCdnInstanceListRequest& request, const DescribeHostCdnInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostCdnInstanceListOutcomeCallable DescribeHostCdnInstanceListCallable(const Model::DescribeHostCdnInstanceListRequest& request);
+
+                /**
+                 *查询证书clb云资源部署实例列表
+                 * @param req DescribeHostClbInstanceListRequest
+                 * @return DescribeHostClbInstanceListOutcome
+                 */
+                DescribeHostClbInstanceListOutcome DescribeHostClbInstanceList(const Model::DescribeHostClbInstanceListRequest &request);
+                void DescribeHostClbInstanceListAsync(const Model::DescribeHostClbInstanceListRequest& request, const DescribeHostClbInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostClbInstanceListOutcomeCallable DescribeHostClbInstanceListCallable(const Model::DescribeHostClbInstanceListRequest& request);
+
+                /**
+                 *查询证书cos云资源部署实例列表
+                 * @param req DescribeHostCosInstanceListRequest
+                 * @return DescribeHostCosInstanceListOutcome
+                 */
+                DescribeHostCosInstanceListOutcome DescribeHostCosInstanceList(const Model::DescribeHostCosInstanceListRequest &request);
+                void DescribeHostCosInstanceListAsync(const Model::DescribeHostCosInstanceListRequest& request, const DescribeHostCosInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostCosInstanceListOutcomeCallable DescribeHostCosInstanceListCallable(const Model::DescribeHostCosInstanceListRequest& request);
+
+                /**
+                 *查询证书ddos云资源部署实例列表
+                 * @param req DescribeHostDdosInstanceListRequest
+                 * @return DescribeHostDdosInstanceListOutcome
+                 */
+                DescribeHostDdosInstanceListOutcome DescribeHostDdosInstanceList(const Model::DescribeHostDdosInstanceListRequest &request);
+                void DescribeHostDdosInstanceListAsync(const Model::DescribeHostDdosInstanceListRequest& request, const DescribeHostDdosInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostDdosInstanceListOutcomeCallable DescribeHostDdosInstanceListCallable(const Model::DescribeHostDdosInstanceListRequest& request);
+
+                /**
+                 *查询证书云资源部署记录列表
+                 * @param req DescribeHostDeployRecordRequest
+                 * @return DescribeHostDeployRecordOutcome
+                 */
+                DescribeHostDeployRecordOutcome DescribeHostDeployRecord(const Model::DescribeHostDeployRecordRequest &request);
+                void DescribeHostDeployRecordAsync(const Model::DescribeHostDeployRecordRequest& request, const DescribeHostDeployRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostDeployRecordOutcomeCallable DescribeHostDeployRecordCallable(const Model::DescribeHostDeployRecordRequest& request);
+
+                /**
+                 *查询证书云资源部署记录详情列表
+                 * @param req DescribeHostDeployRecordDetailRequest
+                 * @return DescribeHostDeployRecordDetailOutcome
+                 */
+                DescribeHostDeployRecordDetailOutcome DescribeHostDeployRecordDetail(const Model::DescribeHostDeployRecordDetailRequest &request);
+                void DescribeHostDeployRecordDetailAsync(const Model::DescribeHostDeployRecordDetailRequest& request, const DescribeHostDeployRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostDeployRecordDetailOutcomeCallable DescribeHostDeployRecordDetailCallable(const Model::DescribeHostDeployRecordDetailRequest& request);
+
+                /**
+                 *查询证书Lighthouse云资源部署实例列表
+                 * @param req DescribeHostLighthouseInstanceListRequest
+                 * @return DescribeHostLighthouseInstanceListOutcome
+                 */
+                DescribeHostLighthouseInstanceListOutcome DescribeHostLighthouseInstanceList(const Model::DescribeHostLighthouseInstanceListRequest &request);
+                void DescribeHostLighthouseInstanceListAsync(const Model::DescribeHostLighthouseInstanceListRequest& request, const DescribeHostLighthouseInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostLighthouseInstanceListOutcomeCallable DescribeHostLighthouseInstanceListCallable(const Model::DescribeHostLighthouseInstanceListRequest& request);
+
+                /**
+                 *查询证书live云资源部署实例列表
+                 * @param req DescribeHostLiveInstanceListRequest
+                 * @return DescribeHostLiveInstanceListOutcome
+                 */
+                DescribeHostLiveInstanceListOutcome DescribeHostLiveInstanceList(const Model::DescribeHostLiveInstanceListRequest &request);
+                void DescribeHostLiveInstanceListAsync(const Model::DescribeHostLiveInstanceListRequest& request, const DescribeHostLiveInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostLiveInstanceListOutcomeCallable DescribeHostLiveInstanceListCallable(const Model::DescribeHostLiveInstanceListRequest& request);
+
+                /**
+                 *查询证书EdgeOne云资源部署实例列表
+                 * @param req DescribeHostTeoInstanceListRequest
+                 * @return DescribeHostTeoInstanceListOutcome
+                 */
+                DescribeHostTeoInstanceListOutcome DescribeHostTeoInstanceList(const Model::DescribeHostTeoInstanceListRequest &request);
+                void DescribeHostTeoInstanceListAsync(const Model::DescribeHostTeoInstanceListRequest& request, const DescribeHostTeoInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostTeoInstanceListOutcomeCallable DescribeHostTeoInstanceListCallable(const Model::DescribeHostTeoInstanceListRequest& request);
+
+                /**
+                 *查询证书tke云资源部署实例列表
+                 * @param req DescribeHostTkeInstanceListRequest
+                 * @return DescribeHostTkeInstanceListOutcome
+                 */
+                DescribeHostTkeInstanceListOutcome DescribeHostTkeInstanceList(const Model::DescribeHostTkeInstanceListRequest &request);
+                void DescribeHostTkeInstanceListAsync(const Model::DescribeHostTkeInstanceListRequest& request, const DescribeHostTkeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostTkeInstanceListOutcomeCallable DescribeHostTkeInstanceListCallable(const Model::DescribeHostTkeInstanceListRequest& request);
+
+                /**
+                 *查询证书云资源更新记录列表
+                 * @param req DescribeHostUpdateRecordRequest
+                 * @return DescribeHostUpdateRecordOutcome
+                 */
+                DescribeHostUpdateRecordOutcome DescribeHostUpdateRecord(const Model::DescribeHostUpdateRecordRequest &request);
+                void DescribeHostUpdateRecordAsync(const Model::DescribeHostUpdateRecordRequest& request, const DescribeHostUpdateRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostUpdateRecordOutcomeCallable DescribeHostUpdateRecordCallable(const Model::DescribeHostUpdateRecordRequest& request);
+
+                /**
+                 *查询证书云资源更新记录详情列表
+                 * @param req DescribeHostUpdateRecordDetailRequest
+                 * @return DescribeHostUpdateRecordDetailOutcome
+                 */
+                DescribeHostUpdateRecordDetailOutcome DescribeHostUpdateRecordDetail(const Model::DescribeHostUpdateRecordDetailRequest &request);
+                void DescribeHostUpdateRecordDetailAsync(const Model::DescribeHostUpdateRecordDetailRequest& request, const DescribeHostUpdateRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostUpdateRecordDetailOutcomeCallable DescribeHostUpdateRecordDetailCallable(const Model::DescribeHostUpdateRecordDetailRequest& request);
+
+                /**
+                 *查询证书Vod云资源部署实例列表
+                 * @param req DescribeHostVodInstanceListRequest
+                 * @return DescribeHostVodInstanceListOutcome
+                 */
+                DescribeHostVodInstanceListOutcome DescribeHostVodInstanceList(const Model::DescribeHostVodInstanceListRequest &request);
+                void DescribeHostVodInstanceListAsync(const Model::DescribeHostVodInstanceListRequest& request, const DescribeHostVodInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVodInstanceListOutcomeCallable DescribeHostVodInstanceListCallable(const Model::DescribeHostVodInstanceListRequest& request);
+
+                /**
+                 *查询证书waf云资源部署实例列表
+                 * @param req DescribeHostWafInstanceListRequest
+                 * @return DescribeHostWafInstanceListOutcome
+                 */
+                DescribeHostWafInstanceListOutcome DescribeHostWafInstanceList(const Model::DescribeHostWafInstanceListRequest &request);
+                void DescribeHostWafInstanceListAsync(const Model::DescribeHostWafInstanceListRequest& request, const DescribeHostWafInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostWafInstanceListOutcomeCallable DescribeHostWafInstanceListCallable(const Model::DescribeHostWafInstanceListRequest& request);
 
                 /**
                  *查询管理人详情
@@ -423,6 +690,33 @@ namespace TencentCloud
                 SubmitCertificateInformationOutcome SubmitCertificateInformation(const Model::SubmitCertificateInformationRequest &request);
                 void SubmitCertificateInformationAsync(const Model::SubmitCertificateInformationRequest& request, const SubmitCertificateInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitCertificateInformationOutcomeCallable SubmitCertificateInformationCallable(const Model::SubmitCertificateInformationRequest& request);
+
+                /**
+                 *一键更新旧证书资源
+                 * @param req UpdateCertificateInstanceRequest
+                 * @return UpdateCertificateInstanceOutcome
+                 */
+                UpdateCertificateInstanceOutcome UpdateCertificateInstance(const Model::UpdateCertificateInstanceRequest &request);
+                void UpdateCertificateInstanceAsync(const Model::UpdateCertificateInstanceRequest& request, const UpdateCertificateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCertificateInstanceOutcomeCallable UpdateCertificateInstanceCallable(const Model::UpdateCertificateInstanceRequest& request);
+
+                /**
+                 *云资源更新重试部署记录
+                 * @param req UpdateCertificateRecordRetryRequest
+                 * @return UpdateCertificateRecordRetryOutcome
+                 */
+                UpdateCertificateRecordRetryOutcome UpdateCertificateRecordRetry(const Model::UpdateCertificateRecordRetryRequest &request);
+                void UpdateCertificateRecordRetryAsync(const Model::UpdateCertificateRecordRetryRequest& request, const UpdateCertificateRecordRetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCertificateRecordRetryOutcomeCallable UpdateCertificateRecordRetryCallable(const Model::UpdateCertificateRecordRetryRequest& request);
+
+                /**
+                 *云资源更新一键回滚
+                 * @param req UpdateCertificateRecordRollbackRequest
+                 * @return UpdateCertificateRecordRollbackOutcome
+                 */
+                UpdateCertificateRecordRollbackOutcome UpdateCertificateRecordRollback(const Model::UpdateCertificateRecordRollbackRequest &request);
+                void UpdateCertificateRecordRollbackAsync(const Model::UpdateCertificateRecordRollbackRequest& request, const UpdateCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCertificateRecordRollbackOutcomeCallable UpdateCertificateRecordRollbackCallable(const Model::UpdateCertificateRecordRollbackRequest& request);
 
                 /**
                  *本接口（UploadCertificate）用于上传证书。

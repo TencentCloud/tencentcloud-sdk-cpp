@@ -47,11 +47,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缓存配置开关
+                     * 获取路径缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 缓存配置开关
+                     * @return Switch 路径缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -59,11 +59,11 @@ off：关闭
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置缓存配置开关
+                     * 设置路径缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 缓存配置开关
+                     * @param Switch 路径缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -207,7 +207,7 @@ off：关闭，遵循用户自定义的节点缓存规则
                 private:
 
                     /**
-                     * 缓存配置开关
+                     * 路径缓存配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。

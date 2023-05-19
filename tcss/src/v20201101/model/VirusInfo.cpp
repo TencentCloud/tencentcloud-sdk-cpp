@@ -41,7 +41,18 @@ VirusInfo::VirusInfo() :
     m_containerIsolateOperationSrcHasBeenSet(false),
     m_mD5HasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_checkPlatformHasBeenSet(false)
+    m_checkPlatformHasBeenSet(false),
+    m_nodeIDHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_podIPHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_clusterIDHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_publicIPHasBeenSet(false),
+    m_innerIPHasBeenSet(false),
+    m_nodeUniqueIDHasBeenSet(false),
+    m_hostIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -263,6 +274,116 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
         m_checkPlatformHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodIP") && !value["PodIP"].IsNull())
+    {
+        if (!value["PodIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.PodIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIP = string(value["PodIP"].GetString());
+        m_podIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterID") && !value["ClusterID"].IsNull())
+    {
+        if (!value["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(value["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIP") && !value["PublicIP"].IsNull())
+    {
+        if (!value["PublicIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.PublicIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIP = string(value["PublicIP"].GetString());
+        m_publicIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("InnerIP") && !value["InnerIP"].IsNull())
+    {
+        if (!value["InnerIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.InnerIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_innerIP = string(value["InnerIP"].GetString());
+        m_innerIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeUniqueID") && !value["NodeUniqueID"].IsNull())
+    {
+        if (!value["NodeUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.NodeUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeUniqueID = string(value["NodeUniqueID"].GetString());
+        m_nodeUniqueIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostID") && !value["HostID"].IsNull())
+    {
+        if (!value["HostID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.HostID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostID = string(value["HostID"].GetString());
+        m_hostIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +562,94 @@ void VirusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_innerIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InnerIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_innerIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeUniqueID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -780,5 +989,181 @@ void VirusInfo::SetCheckPlatform(const vector<string>& _checkPlatform)
 bool VirusInfo::CheckPlatformHasBeenSet() const
 {
     return m_checkPlatformHasBeenSet;
+}
+
+string VirusInfo::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void VirusInfo::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool VirusInfo::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
+}
+
+string VirusInfo::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void VirusInfo::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool VirusInfo::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+string VirusInfo::GetPodIP() const
+{
+    return m_podIP;
+}
+
+void VirusInfo::SetPodIP(const string& _podIP)
+{
+    m_podIP = _podIP;
+    m_podIPHasBeenSet = true;
+}
+
+bool VirusInfo::PodIPHasBeenSet() const
+{
+    return m_podIPHasBeenSet;
+}
+
+string VirusInfo::GetPodName() const
+{
+    return m_podName;
+}
+
+void VirusInfo::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool VirusInfo::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string VirusInfo::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+void VirusInfo::SetClusterID(const string& _clusterID)
+{
+    m_clusterID = _clusterID;
+    m_clusterIDHasBeenSet = true;
+}
+
+bool VirusInfo::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
+}
+
+string VirusInfo::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void VirusInfo::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool VirusInfo::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string VirusInfo::GetPublicIP() const
+{
+    return m_publicIP;
+}
+
+void VirusInfo::SetPublicIP(const string& _publicIP)
+{
+    m_publicIP = _publicIP;
+    m_publicIPHasBeenSet = true;
+}
+
+bool VirusInfo::PublicIPHasBeenSet() const
+{
+    return m_publicIPHasBeenSet;
+}
+
+string VirusInfo::GetInnerIP() const
+{
+    return m_innerIP;
+}
+
+void VirusInfo::SetInnerIP(const string& _innerIP)
+{
+    m_innerIP = _innerIP;
+    m_innerIPHasBeenSet = true;
+}
+
+bool VirusInfo::InnerIPHasBeenSet() const
+{
+    return m_innerIPHasBeenSet;
+}
+
+string VirusInfo::GetNodeUniqueID() const
+{
+    return m_nodeUniqueID;
+}
+
+void VirusInfo::SetNodeUniqueID(const string& _nodeUniqueID)
+{
+    m_nodeUniqueID = _nodeUniqueID;
+    m_nodeUniqueIDHasBeenSet = true;
+}
+
+bool VirusInfo::NodeUniqueIDHasBeenSet() const
+{
+    return m_nodeUniqueIDHasBeenSet;
+}
+
+string VirusInfo::GetHostID() const
+{
+    return m_hostID;
+}
+
+void VirusInfo::SetHostID(const string& _hostID)
+{
+    m_hostID = _hostID;
+    m_hostIDHasBeenSet = true;
+}
+
+bool VirusInfo::HostIDHasBeenSet() const
+{
+    return m_hostIDHasBeenSet;
+}
+
+string VirusInfo::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void VirusInfo::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool VirusInfo::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

@@ -47,14 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTPS服务，缺省时默认开启【会产生计费】
-                     * @return Switch HTTPS服务，缺省时默认开启【会产生计费】
+                     * 获取HTTPS服务配置开关，取值有：
+on：开启，缺省时默认开启【会产生计费】
+off：关闭，拦截https请求
+
+                     * @return Switch HTTPS服务配置开关，取值有：
+on：开启，缺省时默认开启【会产生计费】
+off：关闭，拦截https请求
+
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置HTTPS服务，缺省时默认开启【会产生计费】
-                     * @param Switch HTTPS服务，缺省时默认开启【会产生计费】
+                     * 设置HTTPS服务配置开关，取值有：
+on：开启，缺省时默认开启【会产生计费】
+off：关闭，拦截https请求
+
+                     * @param Switch HTTPS服务配置开关，取值有：
+on：开启，缺省时默认开启【会产生计费】
+off：关闭，拦截https请求
+
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +79,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTPS服务，缺省时默认开启【会产生计费】
+                     * HTTPS服务配置开关，取值有：
+on：开启，缺省时默认开启【会产生计费】
+off：关闭，拦截https请求
+
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

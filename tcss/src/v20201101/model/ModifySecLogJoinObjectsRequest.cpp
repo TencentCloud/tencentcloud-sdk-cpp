@@ -25,7 +25,8 @@ using namespace std;
 ModifySecLogJoinObjectsRequest::ModifySecLogJoinObjectsRequest() :
     m_logTypeHasBeenSet(false),
     m_bindListHasBeenSet(false),
-    m_unBindListHasBeenSet(false)
+    m_unBindListHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ModifySecLogJoinObjectsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -124,6 +133,22 @@ void ModifySecLogJoinObjectsRequest::SetUnBindList(const vector<string>& _unBind
 bool ModifySecLogJoinObjectsRequest::UnBindListHasBeenSet() const
 {
     return m_unBindListHasBeenSet;
+}
+
+string ModifySecLogJoinObjectsRequest::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void ModifySecLogJoinObjectsRequest::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool ModifySecLogJoinObjectsRequest::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
 }
 
 

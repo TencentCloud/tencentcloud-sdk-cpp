@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关，"on/off"
+                     * 获取图片优化AvifAdapter配置项开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 开关，"on/off"
+                     * @return Switch 图片优化AvifAdapter配置项开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关，"on/off"
+                     * 设置图片优化AvifAdapter配置项开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关，"on/off"
+                     * @param Switch 图片优化AvifAdapter配置项开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -71,7 +79,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关，"on/off"
+                     * 图片优化AvifAdapter配置项开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

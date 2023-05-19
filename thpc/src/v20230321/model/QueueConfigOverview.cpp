@@ -27,7 +27,9 @@ QueueConfigOverview::QueueConfigOverview() :
     m_enableAutoExpansionHasBeenSet(false),
     m_enableAutoShrinkHasBeenSet(false),
     m_expansionNodeConfigsHasBeenSet(false),
-    m_desiredIdleNodeCapacityHasBeenSet(false)
+    m_desiredIdleNodeCapacityHasBeenSet(false),
+    m_scaleOutRatioHasBeenSet(false),
+    m_scaleOutNodeThresholdHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome QueueConfigOverview::Deserialize(const rapidjson::Value &val
         m_desiredIdleNodeCapacityHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleOutRatio") && !value["ScaleOutRatio"].IsNull())
+    {
+        if (!value["ScaleOutRatio"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfigOverview.ScaleOutRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleOutRatio = value["ScaleOutRatio"].GetInt64();
+        m_scaleOutRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaleOutNodeThreshold") && !value["ScaleOutNodeThreshold"].IsNull())
+    {
+        if (!value["ScaleOutNodeThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfigOverview.ScaleOutNodeThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleOutNodeThreshold = value["ScaleOutNodeThreshold"].GetInt64();
+        m_scaleOutNodeThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void QueueConfigOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DesiredIdleNodeCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredIdleNodeCapacity, allocator);
+    }
+
+    if (m_scaleOutRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleOutRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleOutRatio, allocator);
+    }
+
+    if (m_scaleOutNodeThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleOutNodeThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleOutNodeThreshold, allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void QueueConfigOverview::SetDesiredIdleNodeCapacity(const int64_t& _desiredIdle
 bool QueueConfigOverview::DesiredIdleNodeCapacityHasBeenSet() const
 {
     return m_desiredIdleNodeCapacityHasBeenSet;
+}
+
+int64_t QueueConfigOverview::GetScaleOutRatio() const
+{
+    return m_scaleOutRatio;
+}
+
+void QueueConfigOverview::SetScaleOutRatio(const int64_t& _scaleOutRatio)
+{
+    m_scaleOutRatio = _scaleOutRatio;
+    m_scaleOutRatioHasBeenSet = true;
+}
+
+bool QueueConfigOverview::ScaleOutRatioHasBeenSet() const
+{
+    return m_scaleOutRatioHasBeenSet;
+}
+
+int64_t QueueConfigOverview::GetScaleOutNodeThreshold() const
+{
+    return m_scaleOutNodeThreshold;
+}
+
+void QueueConfigOverview::SetScaleOutNodeThreshold(const int64_t& _scaleOutNodeThreshold)
+{
+    m_scaleOutNodeThreshold = _scaleOutNodeThreshold;
+    m_scaleOutNodeThresholdHasBeenSet = true;
+}
+
+bool QueueConfigOverview::ScaleOutNodeThresholdHasBeenSet() const
+{
+    return m_scaleOutNodeThresholdHasBeenSet;
 }
 

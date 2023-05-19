@@ -30,7 +30,8 @@ TextVehicleBack::TextVehicleBack() :
     m_externalSizeHasBeenSet(false),
     m_marksHasBeenSet(false),
     m_recordHasBeenSet(false),
-    m_totalQuasiMassHasBeenSet(false)
+    m_totalQuasiMassHasBeenSet(false),
+    m_subPageCodeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
         m_totalQuasiMassHasBeenSet = true;
     }
 
+    if (value.HasMember("SubPageCode") && !value["SubPageCode"].IsNull())
+    {
+        if (!value["SubPageCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.SubPageCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subPageCode = string(value["SubPageCode"].GetString());
+        m_subPageCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void TextVehicleBack::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TotalQuasiMass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalQuasiMass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subPageCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubPageCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subPageCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void TextVehicleBack::SetTotalQuasiMass(const string& _totalQuasiMass)
 bool TextVehicleBack::TotalQuasiMassHasBeenSet() const
 {
     return m_totalQuasiMassHasBeenSet;
+}
+
+string TextVehicleBack::GetSubPageCode() const
+{
+    return m_subPageCode;
+}
+
+void TextVehicleBack::SetSubPageCode(const string& _subPageCode)
+{
+    m_subPageCode = _subPageCode;
+    m_subPageCodeHasBeenSet = true;
+}
+
+bool TextVehicleBack::SubPageCodeHasBeenSet() const
+{
+    return m_subPageCodeHasBeenSet;
 }
 

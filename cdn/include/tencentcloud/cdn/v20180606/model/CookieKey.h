@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off 是否使用Cookie作为Cache的一部分
+                     * 获取使用Cookie作为Cache的一部分配置开关，取值有：
+on：开启，使用Cookie作为Cache的一部分
+off：关闭，不使用Cookie作为Cache的一部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch on | off 是否使用Cookie作为Cache的一部分
+                     * @return Switch 使用Cookie作为Cache的一部分配置开关，取值有：
+on：开启，使用Cookie作为Cache的一部分
+off：关闭，不使用Cookie作为Cache的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off 是否使用Cookie作为Cache的一部分
+                     * 设置使用Cookie作为Cache的一部分配置开关，取值有：
+on：开启，使用Cookie作为Cache的一部分
+off：关闭，不使用Cookie作为Cache的一部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch on | off 是否使用Cookie作为Cache的一部分
+                     * @param Switch 使用Cookie作为Cache的一部分配置开关，取值有：
+on：开启，使用Cookie作为Cache的一部分
+off：关闭，不使用Cookie作为Cache的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -93,7 +101,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on | off 是否使用Cookie作为Cache的一部分
+                     * 使用Cookie作为Cache的一部分配置开关，取值有：
+on：开启，使用Cookie作为Cache的一部分
+off：关闭，不使用Cookie作为Cache的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

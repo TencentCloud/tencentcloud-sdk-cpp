@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ExtractTraceWatermarkTaskInput::ExtractTraceWatermarkTaskInput() :
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ExtractTraceWatermarkTaskInput::Deserialize(const rapidjson:
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractTraceWatermarkTaskInput.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ExtractTraceWatermarkTaskInput::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ExtractTraceWatermarkTaskInput::SetUrl(const string& _url)
 bool ExtractTraceWatermarkTaskInput::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string ExtractTraceWatermarkTaskInput::GetFileId() const
+{
+    return m_fileId;
+}
+
+void ExtractTraceWatermarkTaskInput::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool ExtractTraceWatermarkTaskInput::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

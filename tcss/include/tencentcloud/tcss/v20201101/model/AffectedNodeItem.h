@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool VerifyInfoHasBeenSet() const;
 
+                    /**
+                     * 获取节点名称
+                     * @return NodeName 节点名称
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点名称
+                     * @param NodeName 节点名称
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     */
+                    bool NodeNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_verifyInfo;
                     bool m_verifyInfoHasBeenSet;
+
+                    /**
+                     * 节点名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
 
                 };
             }

@@ -69,7 +69,7 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取润色类型。类型列表
+                     * 获取润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文
@@ -77,7 +77,7 @@ translation_a2m：从古文改写为现代文
 
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmbellishType 润色类型。类型列表
+                     * @return EmbellishType 润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文
@@ -89,7 +89,7 @@ translation_a2m：从古文改写为现代文
                     std::string GetEmbellishType() const;
 
                     /**
-                     * 设置润色类型。类型列表
+                     * 设置润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文
@@ -97,7 +97,7 @@ translation_a2m：从古文改写为现代文
 
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmbellishType 润色类型。类型列表
+                     * @param EmbellishType 润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文
@@ -124,7 +124,7 @@ translation_a2m：从古文改写为现代文
                     bool m_textHasBeenSet;
 
                     /**
-                     * 润色类型。类型列表
+                     * 润色类型。类型如下：
 expansion：扩写
 rewriting：改写
 translation_m2a：从现代文改写为古文

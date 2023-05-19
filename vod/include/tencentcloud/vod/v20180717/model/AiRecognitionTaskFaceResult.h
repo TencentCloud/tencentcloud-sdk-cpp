@@ -178,6 +178,42 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取人脸识别任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return BeginProcessTime 人脸识别任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string GetBeginProcessTime() const;
+
+                    /**
+                     * 设置人脸识别任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param BeginProcessTime 人脸识别任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    void SetBeginProcessTime(const std::string& _beginProcessTime);
+
+                    /**
+                     * 判断参数 BeginProcessTime 是否已赋值
+                     * @return BeginProcessTime 是否已赋值
+                     */
+                    bool BeginProcessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取人脸识别任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return FinishTime 人脸识别任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置人脸识别任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param FinishTime 人脸识别任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +258,18 @@ namespace TencentCloud
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 人脸识别任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string m_beginProcessTime;
+                    bool m_beginProcessTimeHasBeenSet;
+
+                    /**
+                     * 人脸识别任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

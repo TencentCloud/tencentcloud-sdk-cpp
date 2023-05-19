@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SslVpnServerIdHasBeenSet() const;
 
                     /**
-                     * 获取name
-                     * @return SslVpnClientName name
+                     * 获取SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
+                     * @return SslVpnClientName SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
                      */
                     std::string GetSslVpnClientName() const;
 
                     /**
-                     * 设置name
-                     * @param SslVpnClientName name
+                     * 设置SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
+                     * @param SslVpnClientName SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
                      */
                     void SetSslVpnClientName(const std::string& _sslVpnClientName);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return SslVpnClientName 是否已赋值
                      */
                     bool SslVpnClientNameHasBeenSet() const;
+
+                    /**
+                     * 获取SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     * @return SslVpnClientNames SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     */
+                    std::vector<std::string> GetSslVpnClientNames() const;
+
+                    /**
+                     * 设置SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     * @param SslVpnClientNames SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     */
+                    void SetSslVpnClientNames(const std::vector<std::string>& _sslVpnClientNames);
+
+                    /**
+                     * 判断参数 SslVpnClientNames 是否已赋值
+                     * @return SslVpnClientNames 是否已赋值
+                     */
+                    bool SslVpnClientNamesHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_sslVpnServerIdHasBeenSet;
 
                     /**
-                     * name
+                     * SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。
                      */
                     std::string m_sslVpnClientName;
                     bool m_sslVpnClientNameHasBeenSet;
+
+                    /**
+                     * SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。
+                     */
+                    std::vector<std::string> m_sslVpnClientNames;
+                    bool m_sslVpnClientNamesHasBeenSet;
 
                 };
             }

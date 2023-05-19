@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能压缩配置开关
+                     * 获取智能压缩配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 智能压缩配置开关
+                     * @return Switch 智能压缩配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置智能压缩配置开关
+                     * 设置智能压缩配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 智能压缩配置开关
+                     * @param Switch 智能压缩配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * 智能压缩配置开关
+                     * 智能压缩配置开关，取值有：
 on：开启
 off：关闭
                      */

@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用量封顶配置开关
+                     * 获取用量封顶配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 用量封顶配置开关
+                     * @return Switch 用量封顶配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置用量封顶配置开关
+                     * 设置用量封顶配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 用量封顶配置开关
+                     * @param Switch 用量封顶配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -144,11 +144,11 @@ RETURN_404：全部请求返回 404
                     bool LastTriggerTimeHasBeenSet() const;
 
                     /**
-                     * 获取用量封顶提醒开关
+                     * 获取用量封顶提醒配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertSwitch 用量封顶提醒开关
+                     * @return AlertSwitch 用量封顶提醒配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -156,11 +156,11 @@ off：关闭
                     std::string GetAlertSwitch() const;
 
                     /**
-                     * 设置用量封顶提醒开关
+                     * 设置用量封顶提醒配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertSwitch 用量封顶提醒开关
+                     * @param AlertSwitch 用量封顶提醒配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -272,7 +272,7 @@ off：关闭
                 private:
 
                     /**
-                     * 用量封顶配置开关
+                     * 用量封顶配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -302,7 +302,7 @@ RETURN_404：全部请求返回 404
                     bool m_lastTriggerTimeHasBeenSet;
 
                     /**
-                     * 用量封顶提醒开关
+                     * 用量封顶提醒配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。

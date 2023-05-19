@@ -33,7 +33,8 @@ DescribeCVMAssetsResponse::DescribeCVMAssetsResponse() :
     m_systemTypeListHasBeenSet(false),
     m_ipTypeListHasBeenSet(false),
     m_appIdListHasBeenSet(false),
-    m_zoneListHasBeenSet(false)
+    m_zoneListHasBeenSet(false),
+    m_osListHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,26 @@ CoreInternalOutcome DescribeCVMAssetsResponse::Deserialize(const string &payload
         m_zoneListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OsList") && !rsp["OsList"].IsNull())
+    {
+        if (!rsp["OsList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OsList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["OsList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_osList.push_back(item);
+        }
+        m_osListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +435,21 @@ string DescribeCVMAssetsResponse::ToJsonString() const
         }
     }
 
+    if (m_osListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_osList.begin(); itr != m_osList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -524,6 +560,16 @@ vector<FilterDataObject> DescribeCVMAssetsResponse::GetZoneList() const
 bool DescribeCVMAssetsResponse::ZoneListHasBeenSet() const
 {
     return m_zoneListHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeCVMAssetsResponse::GetOsList() const
+{
+    return m_osList;
+}
+
+bool DescribeCVMAssetsResponse::OsListHasBeenSet() const
+{
+    return m_osListHasBeenSet;
 }
 
 

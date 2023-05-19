@@ -27,7 +27,9 @@ AiRecognitionTaskOcrWordsResult::AiRecognitionTaskOcrWordsResult() :
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_beginProcessTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,26 @@ CoreInternalOutcome AiRecognitionTaskOcrWordsResult::Deserialize(const rapidjson
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginProcessTime") && !value["BeginProcessTime"].IsNull())
+    {
+        if (!value["BeginProcessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrWordsResult.BeginProcessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginProcessTime = string(value["BeginProcessTime"].GetString());
+        m_beginProcessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskOcrWordsResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ void AiRecognitionTaskOcrWordsResult::ToJsonObject(rapidjson::Value &value, rapi
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_beginProcessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginProcessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginProcessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +336,37 @@ void AiRecognitionTaskOcrWordsResult::SetProgress(const int64_t& _progress)
 bool AiRecognitionTaskOcrWordsResult::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string AiRecognitionTaskOcrWordsResult::GetBeginProcessTime() const
+{
+    return m_beginProcessTime;
+}
+
+void AiRecognitionTaskOcrWordsResult::SetBeginProcessTime(const string& _beginProcessTime)
+{
+    m_beginProcessTime = _beginProcessTime;
+    m_beginProcessTimeHasBeenSet = true;
+}
+
+bool AiRecognitionTaskOcrWordsResult::BeginProcessTimeHasBeenSet() const
+{
+    return m_beginProcessTimeHasBeenSet;
+}
+
+string AiRecognitionTaskOcrWordsResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void AiRecognitionTaskOcrWordsResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool AiRecognitionTaskOcrWordsResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

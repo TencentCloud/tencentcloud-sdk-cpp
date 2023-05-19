@@ -25,7 +25,8 @@ BoundIpInfo::BoundIpInfo() :
     m_bizTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_ispCodeHasBeenSet(false)
+    m_ispCodeHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome BoundIpInfo::Deserialize(const rapidjson::Value &value)
         m_ispCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BoundIpInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void BoundIpInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IspCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ispCode, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void BoundIpInfo::SetIspCode(const uint64_t& _ispCode)
 bool BoundIpInfo::IspCodeHasBeenSet() const
 {
     return m_ispCodeHasBeenSet;
+}
+
+string BoundIpInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void BoundIpInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool BoundIpInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

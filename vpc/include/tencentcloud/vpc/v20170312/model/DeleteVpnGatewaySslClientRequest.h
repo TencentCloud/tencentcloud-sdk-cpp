@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SSL-VPN-CLIENT 实例ID。
-                     * @return SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 获取SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。
+                     * @return SslVpnClientId SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。
                      */
                     std::string GetSslVpnClientId() const;
 
                     /**
-                     * 设置SSL-VPN-CLIENT 实例ID。
-                     * @param SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 设置SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。
+                     * @param SslVpnClientId SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。
                      */
                     void SetSslVpnClientId(const std::string& _sslVpnClientId);
 
@@ -60,13 +60,37 @@ namespace TencentCloud
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 
+                    /**
+                     * 获取SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。
+                     * @return SslVpnClientIds SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。
+                     */
+                    std::vector<std::string> GetSslVpnClientIds() const;
+
+                    /**
+                     * 设置SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。
+                     * @param SslVpnClientIds SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。
+                     */
+                    void SetSslVpnClientIds(const std::vector<std::string>& _sslVpnClientIds);
+
+                    /**
+                     * 判断参数 SslVpnClientIds 是否已赋值
+                     * @return SslVpnClientIds 是否已赋值
+                     */
+                    bool SslVpnClientIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * SSL-VPN-CLIENT 实例ID。
+                     * SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。
                      */
                     std::string m_sslVpnClientId;
                     bool m_sslVpnClientIdHasBeenSet;
+
+                    /**
+                     * SSL-VPN-CLIENT 实例ID列表。批量删除时使用。不可和SslVpnClientId同时使用。
+                     */
+                    std::vector<std::string> m_sslVpnClientIds;
+                    bool m_sslVpnClientIdsHasBeenSet;
 
                 };
             }

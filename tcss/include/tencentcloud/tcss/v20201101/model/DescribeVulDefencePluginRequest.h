@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机HostID即quuid
-                     * @return HostID 主机HostID即quuid
+                     * 获取主机HostID或超级节点UniqueId
+                     * @return HostID 主机HostID或超级节点UniqueId
                      */
                     std::string GetHostID() const;
 
                     /**
-                     * 设置主机HostID即quuid
-                     * @param HostID 主机HostID即quuid
+                     * 设置主机HostID或超级节点UniqueId
+                     * @param HostID 主机HostID或超级节点UniqueId
                      */
                     void SetHostID(const std::string& _hostID);
 
@@ -99,17 +99,25 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT</li>
+<li>
+Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+</li>
                      * @return Filters 过滤条件。
-<li>Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT</li>
+<li>
+Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+</li>
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT</li>
+<li>
+Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+</li>
                      * @param Filters 过滤条件。
-<li>Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT</li>
+<li>
+Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+</li>
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -122,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机HostID即quuid
+                     * 主机HostID或超级节点UniqueId
                      */
                     std::string m_hostID;
                     bool m_hostIDHasBeenSet;
@@ -141,7 +149,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT</li>
+<li>
+Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
+</li>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

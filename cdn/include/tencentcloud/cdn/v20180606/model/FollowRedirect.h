@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回源跟随开关
+                     * 获取回源跟随配置开关，取值有：
 on：开启
 off：关闭
-                     * @return Switch 回源跟随开关
+                     * @return Switch 回源跟随配置开关，取值有：
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置回源跟随开关
+                     * 设置回源跟随配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 回源跟随开关
+                     * @param Switch 回源跟随配置开关，取值有：
 on：开启
 off：关闭
                      */
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * 回源跟随开关
+                     * 回源跟随配置开关，取值有：
 on：开启
 off：关闭
                      */

@@ -32,7 +32,10 @@ VirusTaskInfo::VirusTaskInfo() :
     m_endTimeHasBeenSet(false),
     m_riskCntHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_publicIPHasBeenSet(false),
+    m_nodeIDHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,36 @@ CoreInternalOutcome VirusTaskInfo::Deserialize(const rapidjson::Value &value)
         m_errorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusTaskInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIP") && !value["PublicIP"].IsNull())
+    {
+        if (!value["PublicIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusTaskInfo.PublicIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIP = string(value["PublicIP"].GetString());
+        m_publicIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusTaskInfo.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +295,30 @@ void VirusTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +514,53 @@ void VirusTaskInfo::SetErrorMsg(const string& _errorMsg)
 bool VirusTaskInfo::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+string VirusTaskInfo::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void VirusTaskInfo::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool VirusTaskInfo::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string VirusTaskInfo::GetPublicIP() const
+{
+    return m_publicIP;
+}
+
+void VirusTaskInfo::SetPublicIP(const string& _publicIP)
+{
+    m_publicIP = _publicIP;
+    m_publicIPHasBeenSet = true;
+}
+
+bool VirusTaskInfo::PublicIPHasBeenSet() const
+{
+    return m_publicIPHasBeenSet;
+}
+
+string VirusTaskInfo::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void VirusTaskInfo::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool VirusTaskInfo::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
 }
 

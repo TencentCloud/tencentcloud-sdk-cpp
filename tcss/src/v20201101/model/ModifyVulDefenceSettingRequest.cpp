@@ -25,7 +25,9 @@ using namespace std;
 ModifyVulDefenceSettingRequest::ModifyVulDefenceSettingRequest() :
     m_isEnabledHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_hostIDsHasBeenSet(false)
+    m_hostIDsHasBeenSet(false),
+    m_superScopeHasBeenSet(false),
+    m_nodeIdsHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,27 @@ string ModifyVulDefenceSettingRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hostIDs.begin(); itr != m_hostIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_superScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_superScope, allocator);
+    }
+
+    if (m_nodeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeIds.begin(); itr != m_nodeIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -119,6 +142,38 @@ void ModifyVulDefenceSettingRequest::SetHostIDs(const vector<string>& _hostIDs)
 bool ModifyVulDefenceSettingRequest::HostIDsHasBeenSet() const
 {
     return m_hostIDsHasBeenSet;
+}
+
+int64_t ModifyVulDefenceSettingRequest::GetSuperScope() const
+{
+    return m_superScope;
+}
+
+void ModifyVulDefenceSettingRequest::SetSuperScope(const int64_t& _superScope)
+{
+    m_superScope = _superScope;
+    m_superScopeHasBeenSet = true;
+}
+
+bool ModifyVulDefenceSettingRequest::SuperScopeHasBeenSet() const
+{
+    return m_superScopeHasBeenSet;
+}
+
+vector<string> ModifyVulDefenceSettingRequest::GetNodeIds() const
+{
+    return m_nodeIds;
+}
+
+void ModifyVulDefenceSettingRequest::SetNodeIds(const vector<string>& _nodeIds)
+{
+    m_nodeIds = _nodeIds;
+    m_nodeIdsHasBeenSet = true;
+}
+
+bool ModifyVulDefenceSettingRequest::NodeIdsHasBeenSet() const
+{
+    return m_nodeIdsHasBeenSet;
 }
 
 

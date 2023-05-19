@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return SslClientConfigsSet 无
+                     * 获取SSL-VPN 客户端配置。
+                     * @return SslClientConfigsSet SSL-VPN 客户端配置。
                      */
                     std::string GetSslClientConfigsSet() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool SslClientConfigsSetHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN client配置
-                     * @return SslClientConfig SSL-VPN client配置
+                     * 获取SSL-VPN 客户端配置。
+                     * @return SslClientConfig SSL-VPN 客户端配置。
                      */
                     std::vector<SslClientConfig> GetSslClientConfig() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool SslClientConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否鉴权成功 只有传入SamlToken 才生效
-                     * @return Authenticated 是否鉴权成功 只有传入SamlToken 才生效
+                     * 获取是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。
+                     * @return Authenticated 是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。
                      */
                     uint64_t GetAuthenticated() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * SSL-VPN 客户端配置。
                      */
                     std::string m_sslClientConfigsSet;
                     bool m_sslClientConfigsSetHasBeenSet;
 
                     /**
-                     * SSL-VPN client配置
+                     * SSL-VPN 客户端配置。
                      */
                     std::vector<SslClientConfig> m_sslClientConfig;
                     bool m_sslClientConfigHasBeenSet;
 
                     /**
-                     * 是否鉴权成功 只有传入SamlToken 才生效
+                     * 是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。
                      */
                     uint64_t m_authenticated;
                     bool m_authenticatedHasBeenSet;

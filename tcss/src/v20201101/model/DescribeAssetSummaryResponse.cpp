@@ -43,7 +43,9 @@ DescribeAssetSummaryResponse::DescribeAssetSummaryResponse() :
     m_webServiceCntHasBeenSet(false),
     m_latestImageScanTimeHasBeenSet(false),
     m_imageUnsafeCntHasBeenSet(false),
-    m_hostUnInstallCntHasBeenSet(false)
+    m_hostUnInstallCntHasBeenSet(false),
+    m_superNodeCntHasBeenSet(false),
+    m_superNodeRunningCntHasBeenSet(false)
 {
 }
 
@@ -281,6 +283,26 @@ CoreInternalOutcome DescribeAssetSummaryResponse::Deserialize(const string &payl
         m_hostUnInstallCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SuperNodeCnt") && !rsp["SuperNodeCnt"].IsNull())
+    {
+        if (!rsp["SuperNodeCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCnt = rsp["SuperNodeCnt"].GetUint64();
+        m_superNodeCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuperNodeRunningCnt") && !rsp["SuperNodeRunningCnt"].IsNull())
+    {
+        if (!rsp["SuperNodeRunningCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeRunningCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeRunningCnt = rsp["SuperNodeRunningCnt"].GetUint64();
+        m_superNodeRunningCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +471,22 @@ string DescribeAssetSummaryResponse::ToJsonString() const
         string key = "HostUnInstallCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostUnInstallCnt, allocator);
+    }
+
+    if (m_superNodeCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCnt, allocator);
+    }
+
+    if (m_superNodeRunningCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeRunningCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeRunningCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -661,6 +699,26 @@ uint64_t DescribeAssetSummaryResponse::GetHostUnInstallCnt() const
 bool DescribeAssetSummaryResponse::HostUnInstallCntHasBeenSet() const
 {
     return m_hostUnInstallCntHasBeenSet;
+}
+
+uint64_t DescribeAssetSummaryResponse::GetSuperNodeCnt() const
+{
+    return m_superNodeCnt;
+}
+
+bool DescribeAssetSummaryResponse::SuperNodeCntHasBeenSet() const
+{
+    return m_superNodeCntHasBeenSet;
+}
+
+uint64_t DescribeAssetSummaryResponse::GetSuperNodeRunningCnt() const
+{
+    return m_superNodeRunningCnt;
+}
+
+bool DescribeAssetSummaryResponse::SuperNodeRunningCntHasBeenSet() const
+{
+    return m_superNodeRunningCntHasBeenSet;
 }
 
 

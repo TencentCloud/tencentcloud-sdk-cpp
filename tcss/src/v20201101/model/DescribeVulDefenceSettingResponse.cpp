@@ -30,7 +30,12 @@ DescribeVulDefenceSettingResponse::DescribeVulDefenceSettingResponse() :
     m_exceptionHostCountHasBeenSet(false),
     m_hostIDsHasBeenSet(false),
     m_hostTotalCountHasBeenSet(false),
-    m_supportDefenseVulCountHasBeenSet(false)
+    m_supportDefenseVulCountHasBeenSet(false),
+    m_hostNodeCountHasBeenSet(false),
+    m_superScopeHasBeenSet(false),
+    m_superNodeCountHasBeenSet(false),
+    m_superNodeIdsHasBeenSet(false),
+    m_nodeTotalCountHasBeenSet(false)
 {
 }
 
@@ -141,6 +146,59 @@ CoreInternalOutcome DescribeVulDefenceSettingResponse::Deserialize(const string 
         m_supportDefenseVulCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostNodeCount") && !rsp["HostNodeCount"].IsNull())
+    {
+        if (!rsp["HostNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostNodeCount = rsp["HostNodeCount"].GetInt64();
+        m_hostNodeCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuperScope") && !rsp["SuperScope"].IsNull())
+    {
+        if (!rsp["SuperScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superScope = rsp["SuperScope"].GetInt64();
+        m_superScopeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuperNodeCount") && !rsp["SuperNodeCount"].IsNull())
+    {
+        if (!rsp["SuperNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCount = rsp["SuperNodeCount"].GetInt64();
+        m_superNodeCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuperNodeIds") && !rsp["SuperNodeIds"].IsNull())
+    {
+        if (!rsp["SuperNodeIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuperNodeIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuperNodeIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_superNodeIds.push_back((*itr).GetString());
+        }
+        m_superNodeIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeTotalCount") && !rsp["NodeTotalCount"].IsNull())
+    {
+        if (!rsp["NodeTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeTotalCount = rsp["NodeTotalCount"].GetInt64();
+        m_nodeTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +268,51 @@ string DescribeVulDefenceSettingResponse::ToJsonString() const
         string key = "SupportDefenseVulCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportDefenseVulCount, allocator);
+    }
+
+    if (m_hostNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostNodeCount, allocator);
+    }
+
+    if (m_superScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superScope, allocator);
+    }
+
+    if (m_superNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCount, allocator);
+    }
+
+    if (m_superNodeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_superNodeIds.begin(); itr != m_superNodeIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeTotalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -292,6 +395,56 @@ int64_t DescribeVulDefenceSettingResponse::GetSupportDefenseVulCount() const
 bool DescribeVulDefenceSettingResponse::SupportDefenseVulCountHasBeenSet() const
 {
     return m_supportDefenseVulCountHasBeenSet;
+}
+
+int64_t DescribeVulDefenceSettingResponse::GetHostNodeCount() const
+{
+    return m_hostNodeCount;
+}
+
+bool DescribeVulDefenceSettingResponse::HostNodeCountHasBeenSet() const
+{
+    return m_hostNodeCountHasBeenSet;
+}
+
+int64_t DescribeVulDefenceSettingResponse::GetSuperScope() const
+{
+    return m_superScope;
+}
+
+bool DescribeVulDefenceSettingResponse::SuperScopeHasBeenSet() const
+{
+    return m_superScopeHasBeenSet;
+}
+
+int64_t DescribeVulDefenceSettingResponse::GetSuperNodeCount() const
+{
+    return m_superNodeCount;
+}
+
+bool DescribeVulDefenceSettingResponse::SuperNodeCountHasBeenSet() const
+{
+    return m_superNodeCountHasBeenSet;
+}
+
+vector<string> DescribeVulDefenceSettingResponse::GetSuperNodeIds() const
+{
+    return m_superNodeIds;
+}
+
+bool DescribeVulDefenceSettingResponse::SuperNodeIdsHasBeenSet() const
+{
+    return m_superNodeIdsHasBeenSet;
+}
+
+int64_t DescribeVulDefenceSettingResponse::GetNodeTotalCount() const
+{
+    return m_nodeTotalCount;
+}
+
+bool DescribeVulDefenceSettingResponse::NodeTotalCountHasBeenSet() const
+{
+    return m_nodeTotalCountHasBeenSet;
 }
 
 

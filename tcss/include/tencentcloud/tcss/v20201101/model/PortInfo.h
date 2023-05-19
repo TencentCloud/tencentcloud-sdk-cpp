@@ -298,6 +298,96 @@ namespace TencentCloud
                      */
                     bool PublicIpHasBeenSet() const;
 
+                    /**
+                     * 获取节点id
+                     * @return NodeID 节点id
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 设置节点id
+                     * @param NodeID 节点id
+                     */
+                    void SetNodeID(const std::string& _nodeID);
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
+                    /**
+                     * 获取podip
+                     * @return PodIP podip
+                     */
+                    std::string GetPodIP() const;
+
+                    /**
+                     * 设置podip
+                     * @param PodIP podip
+                     */
+                    void SetPodIP(const std::string& _podIP);
+
+                    /**
+                     * 判断参数 PodIP 是否已赋值
+                     * @return PodIP 是否已赋值
+                     */
+                    bool PodIPHasBeenSet() const;
+
+                    /**
+                     * 获取pod名称
+                     * @return PodName pod名称
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置pod名称
+                     * @param PodName pod名称
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型
+                     * @return NodeType 节点类型
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型
+                     * @param NodeType 节点类型
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点唯一id
+                     * @return NodeUniqueID 超级节点唯一id
+                     */
+                    std::string GetNodeUniqueID() const;
+
+                    /**
+                     * 设置超级节点唯一id
+                     * @param NodeUniqueID 超级节点唯一id
+                     */
+                    void SetNodeUniqueID(const std::string& _nodeUniqueID);
+
+                    /**
+                     * 判断参数 NodeUniqueID 是否已赋值
+                     * @return NodeUniqueID 是否已赋值
+                     */
+                    bool NodeUniqueIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +473,36 @@ namespace TencentCloud
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
+
+                    /**
+                     * 节点id
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * podip
+                     */
+                    std::string m_podIP;
+                    bool m_podIPHasBeenSet;
+
+                    /**
+                     * pod名称
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 超级节点唯一id
+                     */
+                    std::string m_nodeUniqueID;
+                    bool m_nodeUniqueIDHasBeenSet;
 
                 };
             }

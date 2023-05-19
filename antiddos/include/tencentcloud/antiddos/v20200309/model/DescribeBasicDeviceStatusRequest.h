@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool IpListHasBeenSet() const;
 
+                    /**
+                     * 获取域名化资源传id
+                     * @return IdList 域名化资源传id
+                     */
+                    std::vector<std::string> GetIdList() const;
+
+                    /**
+                     * 设置域名化资源传id
+                     * @param IdList 域名化资源传id
+                     */
+                    void SetIdList(const std::vector<std::string>& _idList);
+
+                    /**
+                     * 判断参数 IdList 是否已赋值
+                     * @return IdList 是否已赋值
+                     */
+                    bool IdListHasBeenSet() const;
+
+                    /**
+                     * 获取地域名称
+                     * @return FilterRegion 地域名称
+                     */
+                    uint64_t GetFilterRegion() const;
+
+                    /**
+                     * 设置地域名称
+                     * @param FilterRegion 地域名称
+                     */
+                    void SetFilterRegion(const uint64_t& _filterRegion);
+
+                    /**
+                     * 判断参数 FilterRegion 是否已赋值
+                     * @return FilterRegion 是否已赋值
+                     */
+                    bool FilterRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
+
+                    /**
+                     * 域名化资源传id
+                     */
+                    std::vector<std::string> m_idList;
+                    bool m_idListHasBeenSet;
+
+                    /**
+                     * 地域名称
+                     */
+                    uint64_t m_filterRegion;
+                    bool m_filterRegionHasBeenSet;
 
                 };
             }

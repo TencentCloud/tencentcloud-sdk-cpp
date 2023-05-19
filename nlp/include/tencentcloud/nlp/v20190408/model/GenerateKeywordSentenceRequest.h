@@ -83,11 +83,11 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取指定生成句子的领域，支持领域列表
+                     * 获取指定生成句子的领域，支持领域如下：
 general：通用领域，支持中英文
 academic：学术领域，仅支持英文
 默认为general（通用领域）。
-                     * @return Domain 指定生成句子的领域，支持领域列表
+                     * @return Domain 指定生成句子的领域，支持领域如下：
 general：通用领域，支持中英文
 academic：学术领域，仅支持英文
 默认为general（通用领域）。
@@ -95,11 +95,11 @@ academic：学术领域，仅支持英文
                     std::string GetDomain() const;
 
                     /**
-                     * 设置指定生成句子的领域，支持领域列表
+                     * 设置指定生成句子的领域，支持领域如下：
 general：通用领域，支持中英文
 academic：学术领域，仅支持英文
 默认为general（通用领域）。
-                     * @param Domain 指定生成句子的领域，支持领域列表
+                     * @param Domain 指定生成句子的领域，支持领域如下：
 general：通用领域，支持中英文
 academic：学术领域，仅支持英文
 默认为general（通用领域）。
@@ -128,7 +128,7 @@ academic：学术领域，仅支持英文
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 指定生成句子的领域，支持领域列表
+                     * 指定生成句子的领域，支持领域如下：
 general：通用领域，支持中英文
 academic：学术领域，仅支持英文
 默认为general（通用领域）。

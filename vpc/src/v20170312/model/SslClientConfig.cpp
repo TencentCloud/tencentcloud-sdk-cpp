@@ -24,7 +24,8 @@ SslClientConfig::SslClientConfig() :
     m_sslVpnClientConfigurationHasBeenSet(false),
     m_sslVpnRootCertHasBeenSet(false),
     m_sslVpnKeyHasBeenSet(false),
-    m_sslVpnCertHasBeenSet(false)
+    m_sslVpnCertHasBeenSet(false),
+    m_sslVpnClientIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SslClientConfig::Deserialize(const rapidjson::Value &value)
         m_sslVpnCertHasBeenSet = true;
     }
 
+    if (value.HasMember("SslVpnClientId") && !value["SslVpnClientId"].IsNull())
+    {
+        if (!value["SslVpnClientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslClientConfig.SslVpnClientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sslVpnClientId = string(value["SslVpnClientId"].GetString());
+        m_sslVpnClientIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SslClientConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SslVpnCert";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sslVpnCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sslVpnClientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslVpnClientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sslVpnClientId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SslClientConfig::SetSslVpnCert(const string& _sslVpnCert)
 bool SslClientConfig::SslVpnCertHasBeenSet() const
 {
     return m_sslVpnCertHasBeenSet;
+}
+
+string SslClientConfig::GetSslVpnClientId() const
+{
+    return m_sslVpnClientId;
+}
+
+void SslClientConfig::SetSslVpnClientId(const string& _sslVpnClientId)
+{
+    m_sslVpnClientId = _sslVpnClientId;
+    m_sslVpnClientIdHasBeenSet = true;
+}
+
+bool SslClientConfig::SslVpnClientIdHasBeenSet() const
+{
+    return m_sslVpnClientIdHasBeenSet;
 }
 

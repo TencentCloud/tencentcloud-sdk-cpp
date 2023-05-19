@@ -68,7 +68,8 @@ CVMAssetVO::CVMAssetVO() :
     m_scanTaskHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_osHasBeenSet(false)
+    m_osHasBeenSet(false),
+    m_riskExposureHasBeenSet(false)
 {
 }
 
@@ -567,6 +568,16 @@ CoreInternalOutcome CVMAssetVO::Deserialize(const rapidjson::Value &value)
         m_osHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskExposure") && !value["RiskExposure"].IsNull())
+    {
+        if (!value["RiskExposure"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.RiskExposure` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskExposure = value["RiskExposure"].GetInt64();
+        m_riskExposureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -963,6 +974,14 @@ void CVMAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Os";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_os.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskExposureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskExposure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskExposure, allocator);
     }
 
 }
@@ -1734,5 +1753,21 @@ void CVMAssetVO::SetOs(const string& _os)
 bool CVMAssetVO::OsHasBeenSet() const
 {
     return m_osHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetRiskExposure() const
+{
+    return m_riskExposure;
+}
+
+void CVMAssetVO::SetRiskExposure(const int64_t& _riskExposure)
+{
+    m_riskExposure = _riskExposure;
+    m_riskExposureHasBeenSet = true;
+}
+
+bool CVMAssetVO::RiskExposureHasBeenSet() const
+{
+    return m_riskExposureHasBeenSet;
 }
 

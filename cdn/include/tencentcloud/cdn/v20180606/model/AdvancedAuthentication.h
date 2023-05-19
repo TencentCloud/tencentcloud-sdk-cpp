@@ -53,14 +53,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。
-                     * @return Switch 防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。
+                     * 获取防盗链配置开关，取值有：
+on：开启
+off：关闭
+开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * @return Switch 防盗链配置开关，取值有：
+on：开启
+off：关闭
+开启时必须且只配置一种模式，其余模式需要设置为 null
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。
-                     * @param Switch 防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。
+                     * 设置防盗链配置开关，取值有：
+on：开启
+off：关闭
+开启时必须且只配置一种模式，其余模式需要设置为 null
+                     * @param Switch 防盗链配置开关，取值有：
+on：开启
+off：关闭
+开启时必须且只配置一种模式，其余模式需要设置为 null
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -205,7 +217,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防盗链配置开关，on或off，开启时必须且只能配置一种模式，其余模式为null。
+                     * 防盗链配置开关，取值有：
+on：开启
+off：关闭
+开启时必须且只配置一种模式，其余模式需要设置为 null
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

@@ -26,7 +26,8 @@ ListOrganizationIdentityRequest::ListOrganizationIdentityRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
-    m_identityIdHasBeenSet(false)
+    m_identityIdHasBeenSet(false),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ListOrganizationIdentityRequest::ToJsonString() const
         string key = "IdentityId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_identityId, allocator);
+    }
+
+    if (m_identityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_identityType, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ListOrganizationIdentityRequest::SetIdentityId(const uint64_t& _identityId)
 bool ListOrganizationIdentityRequest::IdentityIdHasBeenSet() const
 {
     return m_identityIdHasBeenSet;
+}
+
+uint64_t ListOrganizationIdentityRequest::GetIdentityType() const
+{
+    return m_identityType;
+}
+
+void ListOrganizationIdentityRequest::SetIdentityType(const uint64_t& _identityType)
+{
+    m_identityType = _identityType;
+    m_identityTypeHasBeenSet = true;
+}
+
+bool ListOrganizationIdentityRequest::IdentityTypeHasBeenSet() const
+{
+    return m_identityTypeHasBeenSet;
 }
 
 

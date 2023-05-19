@@ -612,6 +612,204 @@ VALIDATION: 参数非法
                      */
                     bool CheckPlatformHasBeenSet() const;
 
+                    /**
+                     * 获取节点ID
+                     * @return NodeID 节点ID
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 设置节点ID
+                     * @param NodeID 节点ID
+                     */
+                    void SetNodeID(const std::string& _nodeID);
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
+                    /**
+                     * 获取节点名称
+                     * @return NodeName 节点名称
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点名称
+                     * @param NodeName 节点名称
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取pod ip
+                     * @return PodIP pod ip
+                     */
+                    std::string GetPodIP() const;
+
+                    /**
+                     * 设置pod ip
+                     * @param PodIP pod ip
+                     */
+                    void SetPodIP(const std::string& _podIP);
+
+                    /**
+                     * 判断参数 PodIP 是否已赋值
+                     * @return PodIP 是否已赋值
+                     */
+                    bool PodIPHasBeenSet() const;
+
+                    /**
+                     * 获取pod(实例)的名字
+                     * @return PodName pod(实例)的名字
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置pod(实例)的名字
+                     * @param PodName pod(实例)的名字
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点所属集群ID
+                     * @return ClusterID 节点所属集群ID
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 设置节点所属集群ID
+                     * @param ClusterID 节点所属集群ID
+                     */
+                    void SetClusterID(const std::string& _clusterID);
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型：NORMAL普通节点、SUPER超级节点
+                     * @return NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型：NORMAL普通节点、SUPER超级节点
+                     * @param NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取节点外网IP
+                     * @return PublicIP 节点外网IP
+                     */
+                    std::string GetPublicIP() const;
+
+                    /**
+                     * 设置节点外网IP
+                     * @param PublicIP 节点外网IP
+                     */
+                    void SetPublicIP(const std::string& _publicIP);
+
+                    /**
+                     * 判断参数 PublicIP 是否已赋值
+                     * @return PublicIP 是否已赋值
+                     */
+                    bool PublicIPHasBeenSet() const;
+
+                    /**
+                     * 获取节点内网IP
+                     * @return InnerIP 节点内网IP
+                     */
+                    std::string GetInnerIP() const;
+
+                    /**
+                     * 设置节点内网IP
+                     * @param InnerIP 节点内网IP
+                     */
+                    void SetInnerIP(const std::string& _innerIP);
+
+                    /**
+                     * 判断参数 InnerIP 是否已赋值
+                     * @return InnerIP 是否已赋值
+                     */
+                    bool InnerIPHasBeenSet() const;
+
+                    /**
+                     * 获取节点唯一ID
+                     * @return NodeUniqueID 节点唯一ID
+                     */
+                    std::string GetNodeUniqueID() const;
+
+                    /**
+                     * 设置节点唯一ID
+                     * @param NodeUniqueID 节点唯一ID
+                     */
+                    void SetNodeUniqueID(const std::string& _nodeUniqueID);
+
+                    /**
+                     * 判断参数 NodeUniqueID 是否已赋值
+                     * @return NodeUniqueID 是否已赋值
+                     */
+                    bool NodeUniqueIDHasBeenSet() const;
+
+                    /**
+                     * 获取普通节点ID
+                     * @return HostID 普通节点ID
+                     */
+                    std::string GetHostID() const;
+
+                    /**
+                     * 设置普通节点ID
+                     * @param HostID 普通节点ID
+                     */
+                    void SetHostID(const std::string& _hostID);
+
+                    /**
+                     * 判断参数 HostID 是否已赋值
+                     * @return HostID 是否已赋值
+                     */
+                    bool HostIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param ClusterName 集群名称
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -786,6 +984,72 @@ VALIDATION: 参数非法
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;
+
+                    /**
+                     * 节点ID
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * 节点名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * pod ip
+                     */
+                    std::string m_podIP;
+                    bool m_podIPHasBeenSet;
+
+                    /**
+                     * pod(实例)的名字
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * 节点所属集群ID
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * 节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 节点外网IP
+                     */
+                    std::string m_publicIP;
+                    bool m_publicIPHasBeenSet;
+
+                    /**
+                     * 节点内网IP
+                     */
+                    std::string m_innerIP;
+                    bool m_innerIPHasBeenSet;
+
+                    /**
+                     * 节点唯一ID
+                     */
+                    std::string m_nodeUniqueID;
+                    bool m_nodeUniqueIDHasBeenSet;
+
+                    /**
+                     * 普通节点ID
+                     */
+                    std::string m_hostID;
+                    bool m_hostIDHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

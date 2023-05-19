@@ -132,21 +132,25 @@ CSR_DEL:已经删除
 
                     /**
                      * 获取集群类型:
-CT_TKE: TKE集群
-CT_USER_CREATE: 用户自建集群
+CT_TKE:TKE集群;
+CT_USER_CREATE:用户自建集群;
+CT_TKE_SERVERLESS:TKE Serverless集群;
                      * @return ClusterType 集群类型:
-CT_TKE: TKE集群
-CT_USER_CREATE: 用户自建集群
+CT_TKE:TKE集群;
+CT_USER_CREATE:用户自建集群;
+CT_TKE_SERVERLESS:TKE Serverless集群;
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型:
-CT_TKE: TKE集群
-CT_USER_CREATE: 用户自建集群
+CT_TKE:TKE集群;
+CT_USER_CREATE:用户自建集群;
+CT_TKE_SERVERLESS:TKE Serverless集群;
                      * @param ClusterType 集群类型:
-CT_TKE: TKE集群
-CT_USER_CREATE: 用户自建集群
+CT_TKE:TKE集群;
+CT_USER_CREATE:用户自建集群;
+CT_TKE_SERVERLESS:TKE Serverless集群;
                      */
                     void SetClusterType(const std::string& _clusterType);
 
@@ -155,6 +159,60 @@ CT_USER_CREATE: 用户自建集群
                      * @return ClusterType 是否已赋值
                      */
                     bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群版本
+                     * @return ClusterVersion 集群版本
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置集群版本
+                     * @param ClusterVersion 集群版本
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     */
+                    bool ClusterVersionHasBeenSet() const;
+
+                    /**
+                     * 获取内存量
+                     * @return MemLimit 内存量
+                     */
+                    int64_t GetMemLimit() const;
+
+                    /**
+                     * 设置内存量
+                     * @param MemLimit 内存量
+                     */
+                    void SetMemLimit(const int64_t& _memLimit);
+
+                    /**
+                     * 判断参数 MemLimit 是否已赋值
+                     * @return MemLimit 是否已赋值
+                     */
+                    bool MemLimitHasBeenSet() const;
+
+                    /**
+                     * 获取cpu
+                     * @return CpuLimit cpu
+                     */
+                    int64_t GetCpuLimit() const;
+
+                    /**
+                     * 设置cpu
+                     * @param CpuLimit cpu
+                     */
+                    void SetCpuLimit(const int64_t& _cpuLimit);
+
+                    /**
+                     * 判断参数 CpuLimit 是否已赋值
+                     * @return CpuLimit 是否已赋值
+                     */
+                    bool CpuLimitHasBeenSet() const;
 
                 private:
 
@@ -187,11 +245,30 @@ CSR_DEL:已经删除
 
                     /**
                      * 集群类型:
-CT_TKE: TKE集群
-CT_USER_CREATE: 用户自建集群
+CT_TKE:TKE集群;
+CT_USER_CREATE:用户自建集群;
+CT_TKE_SERVERLESS:TKE Serverless集群;
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群版本
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
+
+                    /**
+                     * 内存量
+                     */
+                    int64_t m_memLimit;
+                    bool m_memLimitHasBeenSet;
+
+                    /**
+                     * cpu
+                     */
+                    int64_t m_cpuLimit;
+                    bool m_cpuLimitHasBeenSet;
 
                 };
             }

@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool SslVpnCertHasBeenSet() const;
 
+                    /**
+                     * 获取SSL-VPN-CLIENT 实例ID。
+                     * @return SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     */
+                    std::string GetSslVpnClientId() const;
+
+                    /**
+                     * 设置SSL-VPN-CLIENT 实例ID。
+                     * @param SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     */
+                    void SetSslVpnClientId(const std::string& _sslVpnClientId);
+
+                    /**
+                     * 判断参数 SslVpnClientId 是否已赋值
+                     * @return SslVpnClientId 是否已赋值
+                     */
+                    bool SslVpnClientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_sslVpnCert;
                     bool m_sslVpnCertHasBeenSet;
+
+                    /**
+                     * SSL-VPN-CLIENT 实例ID。
+                     */
+                    std::string m_sslVpnClientId;
+                    bool m_sslVpnClientIdHasBeenSet;
 
                 };
             }

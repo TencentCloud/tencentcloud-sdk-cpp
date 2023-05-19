@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取需排序的字段
-                     * @return Order 需排序的字段
+                     * 获取排序采用升序还是降序 升:asc 降 desc
+                     * @return Order 排序采用升序还是降序 升:asc 降 desc
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置需排序的字段
-                     * @param Order 需排序的字段
+                     * 设置排序采用升序还是降序 升:asc 降 desc
+                     * @param Order 排序采用升序还是降序 升:asc 降 desc
                      */
                     void SetOrder(const std::string& _order);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序采用升序还是降序 升:asc 降 desc
-                     * @return By 排序采用升序还是降序 升:asc 降 desc
+                     * 获取需排序的字段
+                     * @return By 需排序的字段
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序采用升序还是降序 升:asc 降 desc
-                     * @param By 排序采用升序还是降序 升:asc 降 desc
+                     * 设置需排序的字段
+                     * @param By 需排序的字段
                      */
                     void SetBy(const std::string& _by);
 
@@ -188,13 +188,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 需排序的字段
+                     * 排序采用升序还是降序 升:asc 降 desc
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序采用升序还是降序 升:asc 降 desc
+                     * 需排序的字段
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

@@ -50,7 +50,20 @@ DescribeAssetContainerDetailResponse::DescribeAssetContainerDetailResponse() :
     m_netStatusHasBeenSet(false),
     m_netSubStatusHasBeenSet(false),
     m_isolateSourceHasBeenSet(false),
-    m_isolateTimeHasBeenSet(false)
+    m_isolateTimeHasBeenSet(false),
+    m_nodeIDHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_nodeSubNetIDHasBeenSet(false),
+    m_nodeSubNetNameHasBeenSet(false),
+    m_nodeSubNetCIDRHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_podIPHasBeenSet(false),
+    m_podStatusHasBeenSet(false),
+    m_clusterIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_nodeUniqueIDHasBeenSet(false),
+    m_publicIPHasBeenSet(false)
 {
 }
 
@@ -375,6 +388,136 @@ CoreInternalOutcome DescribeAssetContainerDetailResponse::Deserialize(const stri
         m_isolateTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NodeID") && !rsp["NodeID"].IsNull())
+    {
+        if (!rsp["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(rsp["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeName") && !rsp["NodeName"].IsNull())
+    {
+        if (!rsp["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(rsp["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeSubNetID") && !rsp["NodeSubNetID"].IsNull())
+    {
+        if (!rsp["NodeSubNetID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSubNetID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetID = string(rsp["NodeSubNetID"].GetString());
+        m_nodeSubNetIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeSubNetName") && !rsp["NodeSubNetName"].IsNull())
+    {
+        if (!rsp["NodeSubNetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSubNetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetName = string(rsp["NodeSubNetName"].GetString());
+        m_nodeSubNetNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeSubNetCIDR") && !rsp["NodeSubNetCIDR"].IsNull())
+    {
+        if (!rsp["NodeSubNetCIDR"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSubNetCIDR` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetCIDR = string(rsp["NodeSubNetCIDR"].GetString());
+        m_nodeSubNetCIDRHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodName") && !rsp["PodName"].IsNull())
+    {
+        if (!rsp["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(rsp["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodIP") && !rsp["PodIP"].IsNull())
+    {
+        if (!rsp["PodIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIP = string(rsp["PodIP"].GetString());
+        m_podIPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodStatus") && !rsp["PodStatus"].IsNull())
+    {
+        if (!rsp["PodStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podStatus = string(rsp["PodStatus"].GetString());
+        m_podStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterID") && !rsp["ClusterID"].IsNull())
+    {
+        if (!rsp["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(rsp["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterName") && !rsp["ClusterName"].IsNull())
+    {
+        if (!rsp["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(rsp["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeType") && !rsp["NodeType"].IsNull())
+    {
+        if (!rsp["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(rsp["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeUniqueID") && !rsp["NodeUniqueID"].IsNull())
+    {
+        if (!rsp["NodeUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeUniqueID = string(rsp["NodeUniqueID"].GetString());
+        m_nodeUniqueIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PublicIP") && !rsp["PublicIP"].IsNull())
+    {
+        if (!rsp["PublicIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PublicIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIP = string(rsp["PublicIP"].GetString());
+        m_publicIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -607,6 +750,110 @@ string DescribeAssetContainerDetailResponse::ToJsonString() const
         string key = "IsolateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeSubNetIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeSubNetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeSubNetCIDRHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeUniqueID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIP.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -889,6 +1136,136 @@ string DescribeAssetContainerDetailResponse::GetIsolateTime() const
 bool DescribeAssetContainerDetailResponse::IsolateTimeHasBeenSet() const
 {
     return m_isolateTimeHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeSubNetID() const
+{
+    return m_nodeSubNetID;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeSubNetIDHasBeenSet() const
+{
+    return m_nodeSubNetIDHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeSubNetName() const
+{
+    return m_nodeSubNetName;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeSubNetNameHasBeenSet() const
+{
+    return m_nodeSubNetNameHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeSubNetCIDR() const
+{
+    return m_nodeSubNetCIDR;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeSubNetCIDRHasBeenSet() const
+{
+    return m_nodeSubNetCIDRHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetPodName() const
+{
+    return m_podName;
+}
+
+bool DescribeAssetContainerDetailResponse::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetPodIP() const
+{
+    return m_podIP;
+}
+
+bool DescribeAssetContainerDetailResponse::PodIPHasBeenSet() const
+{
+    return m_podIPHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetPodStatus() const
+{
+    return m_podStatus;
+}
+
+bool DescribeAssetContainerDetailResponse::PodStatusHasBeenSet() const
+{
+    return m_podStatusHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+bool DescribeAssetContainerDetailResponse::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+bool DescribeAssetContainerDetailResponse::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNodeUniqueID() const
+{
+    return m_nodeUniqueID;
+}
+
+bool DescribeAssetContainerDetailResponse::NodeUniqueIDHasBeenSet() const
+{
+    return m_nodeUniqueIDHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetPublicIP() const
+{
+    return m_publicIP;
+}
+
+bool DescribeAssetContainerDetailResponse::PublicIPHasBeenSet() const
+{
+    return m_publicIPHasBeenSet;
 }
 
 

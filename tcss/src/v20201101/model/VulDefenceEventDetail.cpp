@@ -55,7 +55,16 @@ VulDefenceEventDetail::VulDefenceEventDetail() :
     m_containerIsolateOperationSrcHasBeenSet(false),
     m_containerStatusHasBeenSet(false),
     m_jNDIUrlHasBeenSet(false),
-    m_raspDetailHasBeenSet(false)
+    m_raspDetailHasBeenSet(false),
+    m_nodeSubNetNameHasBeenSet(false),
+    m_nodeSubNetCIDRHasBeenSet(false),
+    m_podIPHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_nodeIDHasBeenSet(false),
+    m_nodeUniqueIDHasBeenSet(false),
+    m_nodeSubNetIDHasBeenSet(false),
+    m_clusterIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -427,6 +436,96 @@ CoreInternalOutcome VulDefenceEventDetail::Deserialize(const rapidjson::Value &v
         m_raspDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeSubNetName") && !value["NodeSubNetName"].IsNull())
+    {
+        if (!value["NodeSubNetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeSubNetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetName = string(value["NodeSubNetName"].GetString());
+        m_nodeSubNetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeSubNetCIDR") && !value["NodeSubNetCIDR"].IsNull())
+    {
+        if (!value["NodeSubNetCIDR"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeSubNetCIDR` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetCIDR = string(value["NodeSubNetCIDR"].GetString());
+        m_nodeSubNetCIDRHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodIP") && !value["PodIP"].IsNull())
+    {
+        if (!value["PodIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.PodIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIP = string(value["PodIP"].GetString());
+        m_podIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeUniqueID") && !value["NodeUniqueID"].IsNull())
+    {
+        if (!value["NodeUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeUniqueID = string(value["NodeUniqueID"].GetString());
+        m_nodeUniqueIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeSubNetID") && !value["NodeSubNetID"].IsNull())
+    {
+        if (!value["NodeSubNetID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.NodeSubNetID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeSubNetID = string(value["NodeSubNetID"].GetString());
+        m_nodeSubNetIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterID") && !value["ClusterID"].IsNull())
+    {
+        if (!value["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(value["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -724,6 +823,78 @@ void VulDefenceEventDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nodeSubNetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeSubNetCIDRHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeUniqueID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeSubNetIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeSubNetID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeSubNetID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1287,5 +1458,149 @@ void VulDefenceEventDetail::SetRaspDetail(const vector<RaspInfo>& _raspDetail)
 bool VulDefenceEventDetail::RaspDetailHasBeenSet() const
 {
     return m_raspDetailHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeSubNetName() const
+{
+    return m_nodeSubNetName;
+}
+
+void VulDefenceEventDetail::SetNodeSubNetName(const string& _nodeSubNetName)
+{
+    m_nodeSubNetName = _nodeSubNetName;
+    m_nodeSubNetNameHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeSubNetNameHasBeenSet() const
+{
+    return m_nodeSubNetNameHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeSubNetCIDR() const
+{
+    return m_nodeSubNetCIDR;
+}
+
+void VulDefenceEventDetail::SetNodeSubNetCIDR(const string& _nodeSubNetCIDR)
+{
+    m_nodeSubNetCIDR = _nodeSubNetCIDR;
+    m_nodeSubNetCIDRHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeSubNetCIDRHasBeenSet() const
+{
+    return m_nodeSubNetCIDRHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetPodIP() const
+{
+    return m_podIP;
+}
+
+void VulDefenceEventDetail::SetPodIP(const string& _podIP)
+{
+    m_podIP = _podIP;
+    m_podIPHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::PodIPHasBeenSet() const
+{
+    return m_podIPHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void VulDefenceEventDetail::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void VulDefenceEventDetail::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeUniqueID() const
+{
+    return m_nodeUniqueID;
+}
+
+void VulDefenceEventDetail::SetNodeUniqueID(const string& _nodeUniqueID)
+{
+    m_nodeUniqueID = _nodeUniqueID;
+    m_nodeUniqueIDHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeUniqueIDHasBeenSet() const
+{
+    return m_nodeUniqueIDHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetNodeSubNetID() const
+{
+    return m_nodeSubNetID;
+}
+
+void VulDefenceEventDetail::SetNodeSubNetID(const string& _nodeSubNetID)
+{
+    m_nodeSubNetID = _nodeSubNetID;
+    m_nodeSubNetIDHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::NodeSubNetIDHasBeenSet() const
+{
+    return m_nodeSubNetIDHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+void VulDefenceEventDetail::SetClusterID(const string& _clusterID)
+{
+    m_clusterID = _clusterID;
+    m_clusterIDHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
+}
+
+string VulDefenceEventDetail::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void VulDefenceEventDetail::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

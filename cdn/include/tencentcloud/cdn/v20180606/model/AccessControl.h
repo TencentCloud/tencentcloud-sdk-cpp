@@ -48,14 +48,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off 是否启用请求头部及请求url访问控制
-                     * @return Switch on | off 是否启用请求头部及请求url访问控制
+                     * 获取启用请求头部及请求url访问控制开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 启用请求头部及请求url访问控制开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off 是否启用请求头部及请求url访问控制
-                     * @param Switch on | off 是否启用请求头部及请求url访问控制
+                     * 设置启用请求头部及请求url访问控制开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 启用请求头部及请求url访问控制开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -112,7 +120,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on | off 是否启用请求头部及请求url访问控制
+                     * 启用请求头部及请求url访问控制开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

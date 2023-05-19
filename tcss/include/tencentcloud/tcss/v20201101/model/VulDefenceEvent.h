@@ -489,17 +489,17 @@ namespace TencentCloud
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
                     /**
-                     * 获取主机QUUID
+                     * 获取主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QUUID 主机QUUID
+                     * @return QUUID 主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetQUUID() const;
 
                     /**
-                     * 设置主机QUUID
+                     * 设置主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QUUID 主机QUUID
+                     * @param QUUID 主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQUUID(const std::string& _qUUID);
@@ -533,17 +533,17 @@ namespace TencentCloud
                     bool HostIPHasBeenSet() const;
 
                     /**
-                     * 获取主机名称
+                     * 获取主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostName 主机名称
+                     * @return HostName 主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置主机名称
+                     * 设置主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 主机名称
+                     * @param HostName 主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHostName(const std::string& _hostName);
@@ -553,6 +553,114 @@ namespace TencentCloud
                      * @return HostName 是否已赋值
                      */
                     bool HostNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     * @return NodeType 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     * @param NodeType 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取外网IP
+                     * @return PublicIP 外网IP
+                     */
+                    std::string GetPublicIP() const;
+
+                    /**
+                     * 设置外网IP
+                     * @param PublicIP 外网IP
+                     */
+                    void SetPublicIP(const std::string& _publicIP);
+
+                    /**
+                     * 判断参数 PublicIP 是否已赋值
+                     * @return PublicIP 是否已赋值
+                     */
+                    bool PublicIPHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点唯一ID
+                     * @return NodeUniqueID 超级节点唯一ID
+                     */
+                    std::string GetNodeUniqueID() const;
+
+                    /**
+                     * 设置超级节点唯一ID
+                     * @param NodeUniqueID 超级节点唯一ID
+                     */
+                    void SetNodeUniqueID(const std::string& _nodeUniqueID);
+
+                    /**
+                     * 判断参数 NodeUniqueID 是否已赋值
+                     * @return NodeUniqueID 是否已赋值
+                     */
+                    bool NodeUniqueIDHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点ID
+                     * @return NodeID 超级节点ID
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 设置超级节点ID
+                     * @param NodeID 超级节点ID
+                     */
+                    void SetNodeID(const std::string& _nodeID);
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+                     * @return ClusterID 集群ID
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param ClusterID 集群ID
+                     */
+                    void SetClusterID(const std::string& _clusterID);
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param ClusterName 集群名称
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     */
+                    bool ClusterNameHasBeenSet() const;
 
                 private:
 
@@ -696,7 +804,7 @@ namespace TencentCloud
                     bool m_containerIsolateOperationSrcHasBeenSet;
 
                     /**
-                     * 主机QUUID
+                     * 主机QUUID/超级节点ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qUUID;
@@ -710,11 +818,47 @@ namespace TencentCloud
                     bool m_hostIPHasBeenSet;
 
                     /**
-                     * 主机名称
+                     * 主机名称/超级节点名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
+
+                    /**
+                     * 节点类型[NORMAL:普通节点|SUPER:超级节点]
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 外网IP
+                     */
+                    std::string m_publicIP;
+                    bool m_publicIPHasBeenSet;
+
+                    /**
+                     * 超级节点唯一ID
+                     */
+                    std::string m_nodeUniqueID;
+                    bool m_nodeUniqueIDHasBeenSet;
+
+                    /**
+                     * 超级节点ID
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

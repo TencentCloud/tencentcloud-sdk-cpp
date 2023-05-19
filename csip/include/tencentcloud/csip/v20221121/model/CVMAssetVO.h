@@ -1103,6 +1103,28 @@ namespace TencentCloud
                      */
                     bool OsHasBeenSet() const;
 
+                    /**
+                     * 获取风险服务暴露
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskExposure 风险服务暴露
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRiskExposure() const;
+
+                    /**
+                     * 设置风险服务暴露
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RiskExposure 风险服务暴露
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRiskExposure(const int64_t& _riskExposure);
+
+                    /**
+                     * 判断参数 RiskExposure 是否已赋值
+                     * @return RiskExposure 是否已赋值
+                     */
+                    bool RiskExposureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1440,6 +1462,13 @@ namespace TencentCloud
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
+
+                    /**
+                     * 风险服务暴露
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_riskExposure;
+                    bool m_riskExposureHasBeenSet;
 
                 };
             }

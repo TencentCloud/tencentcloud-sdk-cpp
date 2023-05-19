@@ -438,6 +438,132 @@ namespace TencentCloud
                      */
                     bool IsolateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取超级节点id
+                     * @return NodeID 超级节点id
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 设置超级节点id
+                     * @param NodeID 超级节点id
+                     */
+                    void SetNodeID(const std::string& _nodeID);
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
+                    /**
+                     * 获取podip
+                     * @return PodIP podip
+                     */
+                    std::string GetPodIP() const;
+
+                    /**
+                     * 设置podip
+                     * @param PodIP podip
+                     */
+                    void SetPodIP(const std::string& _podIP);
+
+                    /**
+                     * 判断参数 PodIP 是否已赋值
+                     * @return PodIP 是否已赋值
+                     */
+                    bool PodIPHasBeenSet() const;
+
+                    /**
+                     * 获取pod名称
+                     * @return PodName pod名称
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置pod名称
+                     * @param PodName pod名称
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型:节点类型：NORMAL普通节点、SUPER超级节点
+                     * @return NodeType 节点类型:节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型:节点类型：NORMAL普通节点、SUPER超级节点
+                     * @param NodeType 节点类型:节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点唯一id
+                     * @return NodeUniqueID 超级节点唯一id
+                     */
+                    std::string GetNodeUniqueID() const;
+
+                    /**
+                     * 设置超级节点唯一id
+                     * @param NodeUniqueID 超级节点唯一id
+                     */
+                    void SetNodeUniqueID(const std::string& _nodeUniqueID);
+
+                    /**
+                     * 判断参数 NodeUniqueID 是否已赋值
+                     * @return NodeUniqueID 是否已赋值
+                     */
+                    bool NodeUniqueIDHasBeenSet() const;
+
+                    /**
+                     * 获取所属Pod的CPU
+                     * @return PodCpu 所属Pod的CPU
+                     */
+                    int64_t GetPodCpu() const;
+
+                    /**
+                     * 设置所属Pod的CPU
+                     * @param PodCpu 所属Pod的CPU
+                     */
+                    void SetPodCpu(const int64_t& _podCpu);
+
+                    /**
+                     * 判断参数 PodCpu 是否已赋值
+                     * @return PodCpu 是否已赋值
+                     */
+                    bool PodCpuHasBeenSet() const;
+
+                    /**
+                     * 获取所属Pod的内存
+                     * @return PodMem 所属Pod的内存
+                     */
+                    int64_t GetPodMem() const;
+
+                    /**
+                     * 设置所属Pod的内存
+                     * @param PodMem 所属Pod的内存
+                     */
+                    void SetPodMem(const int64_t& _podMem);
+
+                    /**
+                     * 判断参数 PodMem 是否已赋值
+                     * @return PodMem 是否已赋值
+                     */
+                    bool PodMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +693,48 @@ namespace TencentCloud
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * 超级节点id
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * podip
+                     */
+                    std::string m_podIP;
+                    bool m_podIPHasBeenSet;
+
+                    /**
+                     * pod名称
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * 节点类型:节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 超级节点唯一id
+                     */
+                    std::string m_nodeUniqueID;
+                    bool m_nodeUniqueIDHasBeenSet;
+
+                    /**
+                     * 所属Pod的CPU
+                     */
+                    int64_t m_podCpu;
+                    bool m_podCpuHasBeenSet;
+
+                    /**
+                     * 所属Pod的内存
+                     */
+                    int64_t m_podMem;
+                    bool m_podMemHasBeenSet;
 
                 };
             }

@@ -32,7 +32,12 @@ ProcessInfo::ProcessInfo() :
     m_hostIPHasBeenSet(false),
     m_processNameHasBeenSet(false),
     m_hostNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_nodeIDHasBeenSet(false),
+    m_podIPHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_nodeUniqueIDHasBeenSet(false)
 {
 }
 
@@ -161,6 +166,56 @@ CoreInternalOutcome ProcessInfo::Deserialize(const rapidjson::Value &value)
         m_publicIpHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodIP") && !value["PodIP"].IsNull())
+    {
+        if (!value["PodIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.PodIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIP = string(value["PodIP"].GetString());
+        m_podIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeUniqueID") && !value["NodeUniqueID"].IsNull())
+    {
+        if (!value["NodeUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessInfo.NodeUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeUniqueID = string(value["NodeUniqueID"].GetString());
+        m_nodeUniqueIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +317,46 @@ void ProcessInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PublicIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeUniqueID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +552,85 @@ void ProcessInfo::SetPublicIp(const string& _publicIp)
 bool ProcessInfo::PublicIpHasBeenSet() const
 {
     return m_publicIpHasBeenSet;
+}
+
+string ProcessInfo::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void ProcessInfo::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool ProcessInfo::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
+}
+
+string ProcessInfo::GetPodIP() const
+{
+    return m_podIP;
+}
+
+void ProcessInfo::SetPodIP(const string& _podIP)
+{
+    m_podIP = _podIP;
+    m_podIPHasBeenSet = true;
+}
+
+bool ProcessInfo::PodIPHasBeenSet() const
+{
+    return m_podIPHasBeenSet;
+}
+
+string ProcessInfo::GetPodName() const
+{
+    return m_podName;
+}
+
+void ProcessInfo::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool ProcessInfo::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string ProcessInfo::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void ProcessInfo::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool ProcessInfo::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string ProcessInfo::GetNodeUniqueID() const
+{
+    return m_nodeUniqueID;
+}
+
+void ProcessInfo::SetNodeUniqueID(const string& _nodeUniqueID)
+{
+    m_nodeUniqueID = _nodeUniqueID;
+    m_nodeUniqueIDHasBeenSet = true;
+}
+
+bool ProcessInfo::NodeUniqueIDHasBeenSet() const
+{
+    return m_nodeUniqueIDHasBeenSet;
 }
 

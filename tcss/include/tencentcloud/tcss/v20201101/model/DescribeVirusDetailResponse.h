@@ -352,20 +352,6 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPodName() const;
-
-                    /**
-                     * 判断参数 PodName 是否已赋值
-                     * @return PodName 是否已赋值
-                     */
-                    bool PodNameHasBeenSet() const;
-
-                    /**
                      * 获取标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
@@ -462,6 +448,20 @@ namespace TencentCloud
                      * @return EventType 是否已赋值
                      */
                     bool EventTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodName 集群名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     */
+                    bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取DEAL_NONE:文件待处理
@@ -767,6 +767,126 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool FileModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取节点子网ID
+                     * @return NodeSubNetID 节点子网ID
+                     */
+                    std::string GetNodeSubNetID() const;
+
+                    /**
+                     * 判断参数 NodeSubNetID 是否已赋值
+                     * @return NodeSubNetID 是否已赋值
+                     */
+                    bool NodeSubNetIDHasBeenSet() const;
+
+                    /**
+                     * 获取节点子网名称
+                     * @return NodeSubNetName 节点子网名称
+                     */
+                    std::string GetNodeSubNetName() const;
+
+                    /**
+                     * 判断参数 NodeSubNetName 是否已赋值
+                     * @return NodeSubNetName 是否已赋值
+                     */
+                    bool NodeSubNetNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点子网网段
+                     * @return NodeSubNetCIDR 节点子网网段
+                     */
+                    std::string GetNodeSubNetCIDR() const;
+
+                    /**
+                     * 判断参数 NodeSubNetCIDR 是否已赋值
+                     * @return NodeSubNetCIDR 是否已赋值
+                     */
+                    bool NodeSubNetCIDRHasBeenSet() const;
+
+                    /**
+                     * 获取集群id
+                     * @return ClusterID 集群id
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取pod ip
+                     * @return PodIP pod ip
+                     */
+                    std::string GetPodIP() const;
+
+                    /**
+                     * 判断参数 PodIP 是否已赋值
+                     * @return PodIP 是否已赋值
+                     */
+                    bool PodIPHasBeenSet() const;
+
+                    /**
+                     * 获取pod状态
+                     * @return PodStatus pod状态
+                     */
+                    std::string GetPodStatus() const;
+
+                    /**
+                     * 判断参数 PodStatus 是否已赋值
+                     * @return PodStatus 是否已赋值
+                     */
+                    bool PodStatusHasBeenSet() const;
+
+                    /**
+                     * 获取节点唯一ID
+                     * @return NodeUniqueID 节点唯一ID
+                     */
+                    std::string GetNodeUniqueID() const;
+
+                    /**
+                     * 判断参数 NodeUniqueID 是否已赋值
+                     * @return NodeUniqueID 是否已赋值
+                     */
+                    bool NodeUniqueIDHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型：NORMAL普通节点、SUPER超级节点
+                     * @return NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取节点ID
+                     * @return NodeID 节点ID
+                     */
+                    std::string GetNodeID() const;
+
+                    /**
+                     * 判断参数 NodeID 是否已赋值
+                     * @return NodeID 是否已赋值
+                     */
+                    bool NodeIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -924,13 +1044,6 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_podName;
-                    bool m_podNameHasBeenSet;
-
-                    /**
                      * 标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -978,6 +1091,13 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
+
+                    /**
+                     * 集群名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
 
                     /**
                      * DEAL_NONE:文件待处理
@@ -1130,6 +1250,66 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_fileModifyTime;
                     bool m_fileModifyTimeHasBeenSet;
+
+                    /**
+                     * 节点子网ID
+                     */
+                    std::string m_nodeSubNetID;
+                    bool m_nodeSubNetIDHasBeenSet;
+
+                    /**
+                     * 节点子网名称
+                     */
+                    std::string m_nodeSubNetName;
+                    bool m_nodeSubNetNameHasBeenSet;
+
+                    /**
+                     * 节点子网网段
+                     */
+                    std::string m_nodeSubNetCIDR;
+                    bool m_nodeSubNetCIDRHasBeenSet;
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * pod ip
+                     */
+                    std::string m_podIP;
+                    bool m_podIPHasBeenSet;
+
+                    /**
+                     * pod状态
+                     */
+                    std::string m_podStatus;
+                    bool m_podStatusHasBeenSet;
+
+                    /**
+                     * 节点唯一ID
+                     */
+                    std::string m_nodeUniqueID;
+                    bool m_nodeUniqueIDHasBeenSet;
+
+                    /**
+                     * 节点类型：NORMAL普通节点、SUPER超级节点
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 节点ID
+                     */
+                    std::string m_nodeID;
+                    bool m_nodeIDHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

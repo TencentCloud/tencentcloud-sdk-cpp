@@ -47,17 +47,29 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off CacheKey是否由QueryString组成
+                     * 获取路径保留参数配置开关，取值有：
+on：开启，CacheKey由QueryString组成
+off：关闭，CacheKey不由QueryString组成
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch on | off CacheKey是否由QueryString组成
+                     * @return Switch 路径保留参数配置开关，取值有：
+on：开启，CacheKey由QueryString组成
+off：关闭，CacheKey不由QueryString组成
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off CacheKey是否由QueryString组成
+                     * 设置路径保留参数配置开关，取值有：
+on：开启，CacheKey由QueryString组成
+off：关闭，CacheKey不由QueryString组成
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch on | off CacheKey是否由QueryString组成
+                     * @param Switch 路径保留参数配置开关，取值有：
+on：开启，CacheKey由QueryString组成
+off：关闭，CacheKey不由QueryString组成
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -115,7 +127,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * on | off CacheKey是否由QueryString组成
+                     * 路径保留参数配置开关，取值有：
+on：开启，CacheKey由QueryString组成
+off：关闭，CacheKey不由QueryString组成
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

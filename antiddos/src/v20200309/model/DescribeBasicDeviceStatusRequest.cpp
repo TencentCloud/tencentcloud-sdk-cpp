@@ -23,7 +23,9 @@ using namespace TencentCloud::Antiddos::V20200309::Model;
 using namespace std;
 
 DescribeBasicDeviceStatusRequest::DescribeBasicDeviceStatusRequest() :
-    m_ipListHasBeenSet(false)
+    m_ipListHasBeenSet(false),
+    m_idListHasBeenSet(false),
+    m_filterRegionHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,27 @@ string DescribeBasicDeviceStatusRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_idListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_idList.begin(); itr != m_idList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filterRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterRegion, allocator);
     }
 
 
@@ -69,6 +92,38 @@ void DescribeBasicDeviceStatusRequest::SetIpList(const vector<string>& _ipList)
 bool DescribeBasicDeviceStatusRequest::IpListHasBeenSet() const
 {
     return m_ipListHasBeenSet;
+}
+
+vector<string> DescribeBasicDeviceStatusRequest::GetIdList() const
+{
+    return m_idList;
+}
+
+void DescribeBasicDeviceStatusRequest::SetIdList(const vector<string>& _idList)
+{
+    m_idList = _idList;
+    m_idListHasBeenSet = true;
+}
+
+bool DescribeBasicDeviceStatusRequest::IdListHasBeenSet() const
+{
+    return m_idListHasBeenSet;
+}
+
+uint64_t DescribeBasicDeviceStatusRequest::GetFilterRegion() const
+{
+    return m_filterRegion;
+}
+
+void DescribeBasicDeviceStatusRequest::SetFilterRegion(const uint64_t& _filterRegion)
+{
+    m_filterRegion = _filterRegion;
+    m_filterRegionHasBeenSet = true;
+}
+
+bool DescribeBasicDeviceStatusRequest::FilterRegionHasBeenSet() const
+{
+    return m_filterRegionHasBeenSet;
 }
 
 

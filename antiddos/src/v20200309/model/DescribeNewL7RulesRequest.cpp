@@ -30,7 +30,8 @@ DescribeNewL7RulesRequest::DescribeNewL7RulesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_protocolListHasBeenSet(false),
-    m_cnameHasBeenSet(false)
+    m_cnameHasBeenSet(false),
+    m_exportHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string DescribeNewL7RulesRequest::ToJsonString() const
         string key = "Cname";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Export";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_export, allocator);
     }
 
 
@@ -249,6 +258,22 @@ void DescribeNewL7RulesRequest::SetCname(const string& _cname)
 bool DescribeNewL7RulesRequest::CnameHasBeenSet() const
 {
     return m_cnameHasBeenSet;
+}
+
+bool DescribeNewL7RulesRequest::GetExport() const
+{
+    return m_export;
+}
+
+void DescribeNewL7RulesRequest::SetExport(const bool& _export)
+{
+    m_export = _export;
+    m_exportHasBeenSet = true;
+}
+
+bool DescribeNewL7RulesRequest::ExportHasBeenSet() const
+{
+    return m_exportHasBeenSet;
 }
 
 

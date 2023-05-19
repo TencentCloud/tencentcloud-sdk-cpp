@@ -61,20 +61,20 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取待润色文本的语言类型，支持语言列表
+                     * 获取待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @return SourceLang 待润色文本的语言类型，支持语言列表
+                     * @return SourceLang 待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
                     std::string GetSourceLang() const;
 
                     /**
-                     * 设置待润色文本的语言类型，支持语言列表
+                     * 设置待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @param SourceLang 待润色文本的语言类型，支持语言列表
+                     * @param SourceLang 待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
@@ -109,14 +109,14 @@ en：英文
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取控制润色类型，类型列表
+                     * 获取控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写
 m2a：从现代文改写为古文
 a2m：从古文改写为现代文
 默认为both。
-                     * @return Style 控制润色类型，类型列表
+                     * @return Style 控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写
@@ -127,14 +127,14 @@ a2m：从古文改写为现代文
                     std::string GetStyle() const;
 
                     /**
-                     * 设置控制润色类型，类型列表
+                     * 设置控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写
 m2a：从现代文改写为古文
 a2m：从古文改写为现代文
 默认为both。
-                     * @param Style 控制润色类型，类型列表
+                     * @param Style 控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写
@@ -159,7 +159,7 @@ a2m：从古文改写为现代文
                     bool m_textHasBeenSet;
 
                     /**
-                     * 待润色文本的语言类型，支持语言列表
+                     * 待润色文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
@@ -174,7 +174,7 @@ en：英文
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 控制润色类型，类型列表
+                     * 控制润色类型，类型如下：
 both：同时返回改写和扩写
 expansion：扩写
 rewriting：改写

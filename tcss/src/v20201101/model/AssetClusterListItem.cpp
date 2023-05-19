@@ -25,7 +25,10 @@ AssetClusterListItem::AssetClusterListItem() :
     m_clusterNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_bindRuleNameHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false),
+    m_memLimitHasBeenSet(false),
+    m_cpuLimitHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome AssetClusterListItem::Deserialize(const rapidjson::Value &va
         m_clusterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterVersion") && !value["ClusterVersion"].IsNull())
+    {
+        if (!value["ClusterVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetClusterListItem.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterVersion = string(value["ClusterVersion"].GetString());
+        m_clusterVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemLimit") && !value["MemLimit"].IsNull())
+    {
+        if (!value["MemLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetClusterListItem.MemLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memLimit = value["MemLimit"].GetInt64();
+        m_memLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuLimit") && !value["CpuLimit"].IsNull())
+    {
+        if (!value["CpuLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetClusterListItem.CpuLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuLimit = value["CpuLimit"].GetInt64();
+        m_cpuLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void AssetClusterListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memLimit, allocator);
+    }
+
+    if (m_cpuLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuLimit, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void AssetClusterListItem::SetClusterType(const string& _clusterType)
 bool AssetClusterListItem::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+string AssetClusterListItem::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void AssetClusterListItem::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool AssetClusterListItem::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
+}
+
+int64_t AssetClusterListItem::GetMemLimit() const
+{
+    return m_memLimit;
+}
+
+void AssetClusterListItem::SetMemLimit(const int64_t& _memLimit)
+{
+    m_memLimit = _memLimit;
+    m_memLimitHasBeenSet = true;
+}
+
+bool AssetClusterListItem::MemLimitHasBeenSet() const
+{
+    return m_memLimitHasBeenSet;
+}
+
+int64_t AssetClusterListItem::GetCpuLimit() const
+{
+    return m_cpuLimit;
+}
+
+void AssetClusterListItem::SetCpuLimit(const int64_t& _cpuLimit)
+{
+    m_cpuLimit = _cpuLimit;
+    m_cpuLimitHasBeenSet = true;
+}
+
+bool AssetClusterListItem::CpuLimitHasBeenSet() const
+{
+    return m_cpuLimitHasBeenSet;
 }
 

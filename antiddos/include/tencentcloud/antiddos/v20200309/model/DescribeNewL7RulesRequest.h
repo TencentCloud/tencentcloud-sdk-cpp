@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool CnameHasBeenSet() const;
 
+                    /**
+                     * 获取默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则
+                     * @return Export 默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则
+                     */
+                    bool GetExport() const;
+
+                    /**
+                     * 设置默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则
+                     * @param Export 默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则
+                     */
+                    void SetExport(const bool& _export);
+
+                    /**
+                     * 判断参数 Export 是否已赋值
+                     * @return Export 是否已赋值
+                     */
+                    bool ExportHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
+
+                    /**
+                     * 默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则
+                     */
+                    bool m_export;
+                    bool m_exportHasBeenSet;
 
                 };
             }

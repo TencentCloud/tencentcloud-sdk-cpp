@@ -34,7 +34,8 @@ DescribeClusterSummaryResponse::DescribeClusterSummaryResponse() :
     m_autoCheckClusterCountHasBeenSet(false),
     m_manualCheckClusterCountHasBeenSet(false),
     m_failedClusterCountHasBeenSet(false),
-    m_notImportedClusterCountHasBeenSet(false)
+    m_notImportedClusterCountHasBeenSet(false),
+    m_serverlessClusterCountHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome DescribeClusterSummaryResponse::Deserialize(const string &pa
         m_notImportedClusterCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ServerlessClusterCount") && !rsp["ServerlessClusterCount"].IsNull())
+    {
+        if (!rsp["ServerlessClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessClusterCount = rsp["ServerlessClusterCount"].GetUint64();
+        m_serverlessClusterCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ string DescribeClusterSummaryResponse::ToJsonString() const
         string key = "NotImportedClusterCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notImportedClusterCount, allocator);
+    }
+
+    if (m_serverlessClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serverlessClusterCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +419,16 @@ uint64_t DescribeClusterSummaryResponse::GetNotImportedClusterCount() const
 bool DescribeClusterSummaryResponse::NotImportedClusterCountHasBeenSet() const
 {
     return m_notImportedClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetServerlessClusterCount() const
+{
+    return m_serverlessClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::ServerlessClusterCountHasBeenSet() const
+{
+    return m_serverlessClusterCountHasBeenSet;
 }
 
 

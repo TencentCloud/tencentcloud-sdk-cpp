@@ -47,18 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on 代表开启自定义启发式缓存时间
-off 代表关闭自定义启发式缓存时间
-                     * @return HeuristicCacheTimeSwitch on 代表开启自定义启发式缓存时间
-off 代表关闭自定义启发式缓存时间
+                     * 获取启发式自定义时间缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @return HeuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetHeuristicCacheTimeSwitch() const;
 
                     /**
-                     * 设置on 代表开启自定义启发式缓存时间
-off 代表关闭自定义启发式缓存时间
-                     * @param HeuristicCacheTimeSwitch on 代表开启自定义启发式缓存时间
-off 代表关闭自定义启发式缓存时间
+                     * 设置启发式自定义时间缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @param HeuristicCacheTimeSwitch 启发式自定义时间缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetHeuristicCacheTimeSwitch(const std::string& _heuristicCacheTimeSwitch);
 
@@ -89,8 +93,9 @@ off 代表关闭自定义启发式缓存时间
                 private:
 
                     /**
-                     * on 代表开启自定义启发式缓存时间
-off 代表关闭自定义启发式缓存时间
+                     * 启发式自定义时间缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_heuristicCacheTimeSwitch;
                     bool m_heuristicCacheTimeSwitchHasBeenSet;

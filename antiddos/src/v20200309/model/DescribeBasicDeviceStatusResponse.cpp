@@ -24,7 +24,8 @@ using namespace TencentCloud::Antiddos::V20200309::Model;
 using namespace std;
 
 DescribeBasicDeviceStatusResponse::DescribeBasicDeviceStatusResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_cLBDataHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeBasicDeviceStatusResponse::Deserialize(const string 
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CLBData") && !rsp["CLBData"].IsNull())
+    {
+        if (!rsp["CLBData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CLBData` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CLBData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cLBData.push_back(item);
+        }
+        m_cLBDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeBasicDeviceStatusResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cLBDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLBData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cLBData.begin(); itr != m_cLBData.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<KeyValue> DescribeBasicDeviceStatusResponse::GetData() const
 bool DescribeBasicDeviceStatusResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<KeyValue> DescribeBasicDeviceStatusResponse::GetCLBData() const
+{
+    return m_cLBData;
+}
+
+bool DescribeBasicDeviceStatusResponse::CLBDataHasBeenSet() const
+{
+    return m_cLBDataHasBeenSet;
 }
 
 

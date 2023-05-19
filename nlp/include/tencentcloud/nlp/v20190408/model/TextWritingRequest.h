@@ -61,20 +61,20 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取待续写文本的语言类型，支持语言列表
+                     * 获取待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @return SourceLang 待续写文本的语言类型，支持语言列表
+                     * @return SourceLang 待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
                     std::string GetSourceLang() const;
 
                     /**
-                     * 设置待续写文本的语言类型，支持语言列表
+                     * 设置待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
-                     * @param SourceLang 待续写文本的语言类型，支持语言列表
+                     * @param SourceLang 待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
@@ -109,11 +109,11 @@ en：英文
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取指定续写领域，支持领域列表
+                     * 获取指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
-                     * @return Domain 指定续写领域，支持领域列表
+                     * @return Domain 指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
@@ -121,11 +121,11 @@ academic：学术领域，仅支持英文补全
                     std::string GetDomain() const;
 
                     /**
-                     * 设置指定续写领域，支持领域列表
+                     * 设置指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
-                     * @param Domain 指定续写领域，支持领域列表
+                     * @param Domain 指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
@@ -139,13 +139,13 @@ academic：学术领域，仅支持英文补全
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取指定续写风格，支持风格列表
+                     * 获取指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠
 urban_officialdom：职场
 默认为xuanhuan_wuxia（武侠）。
-                     * @return Style 指定续写风格，支持风格列表
+                     * @return Style 指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠
@@ -155,13 +155,13 @@ urban_officialdom：职场
                     std::string GetStyle() const;
 
                     /**
-                     * 设置指定续写风格，支持风格列表
+                     * 设置指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠
 urban_officialdom：职场
 默认为xuanhuan_wuxia（武侠）。
-                     * @param Style 指定续写风格，支持风格列表
+                     * @param Style 指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠
@@ -185,7 +185,7 @@ urban_officialdom：职场
                     bool m_textHasBeenSet;
 
                     /**
-                     * 待续写文本的语言类型，支持语言列表
+                     * 待续写文本的语言类型，支持语言如下：
 zh：中文
 en：英文
                      */
@@ -200,7 +200,7 @@ en：英文
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 指定续写领域，支持领域列表
+                     * 指定续写领域，支持领域如下：
 general：通用领域，支持中英文补全
 academic：学术领域，仅支持英文补全
 默认为general（通用领域）。
@@ -209,7 +209,7 @@ academic：学术领域，仅支持英文补全
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 指定续写风格，支持风格列表
+                     * 指定续写风格，支持风格如下：
 science_fiction：科幻
 military_history：军事
 xuanhuan_wuxia：武侠

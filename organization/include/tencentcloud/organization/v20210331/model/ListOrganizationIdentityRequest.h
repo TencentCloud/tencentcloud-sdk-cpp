@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @return Offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * 设置偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @param Offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目。最大50
-                     * @return Limit 限制数目。最大50
+                     * 获取限制数目。取值范围：1~50。默认值：10。
+                     * @return Limit 限制数目。取值范围：1~50。默认值：10。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目。最大50
-                     * @param Limit 限制数目。最大50
+                     * 设置限制数目。取值范围：1~50。默认值：10。
+                     * @param Limit 限制数目。取值范围：1~50。默认值：10。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -114,16 +114,34 @@ namespace TencentCloud
                      */
                     bool IdentityIdHasBeenSet() const;
 
+                    /**
+                     * 获取身份类型。取值范围 1-预设, 2-自定义
+                     * @return IdentityType 身份类型。取值范围 1-预设, 2-自定义
+                     */
+                    uint64_t GetIdentityType() const;
+
+                    /**
+                     * 设置身份类型。取值范围 1-预设, 2-自定义
+                     * @param IdentityType 身份类型。取值范围 1-预设, 2-自定义
+                     */
+                    void SetIdentityType(const uint64_t& _identityType);
+
+                    /**
+                     * 判断参数 IdentityType 是否已赋值
+                     * @return IdentityType 是否已赋值
+                     */
+                    bool IdentityTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 偏移量。
+                     * 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目。最大50
+                     * 限制数目。取值范围：1~50。默认值：10。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;
+
+                    /**
+                     * 身份类型。取值范围 1-预设, 2-自定义
+                     */
+                    uint64_t m_identityType;
+                    bool m_identityTypeHasBeenSet;
 
                 };
             }

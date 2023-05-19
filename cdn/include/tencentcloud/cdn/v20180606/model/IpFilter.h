@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP 黑白名单配置开关
+                     * 获取IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
-                     * @return Switch IP 黑白名单配置开关
+                     * @return Switch IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置IP 黑白名单配置开关
+                     * 设置IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
-                     * @param Switch IP 黑白名单配置开关
+                     * @param Switch IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
                      */
@@ -180,7 +180,7 @@ blacklist：黑名单
                 private:
 
                     /**
-                     * IP 黑白名单配置开关
+                     * IP 黑白名单配置开关，取值有
 on：开启
 off：关闭
                      */

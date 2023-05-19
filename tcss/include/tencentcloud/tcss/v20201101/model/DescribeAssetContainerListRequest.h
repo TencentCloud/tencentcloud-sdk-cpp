@@ -88,6 +88,11 @@ namespace TencentCloud
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
 <li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
+<li>PodID - String -是否必填: 否 - PodID筛选</li>
+<li>NodeUniqueID - String -是否必填: 否 - SuperNode筛选</li>
+<li>PodUid - String -是否必填: 否 - Pod筛选</li>
+<li>PodIP - String -是否必填: 否 - PodIP筛选</li>
+<li>NodeType - String -是否必填: 否 - 节点类型筛选:NORMAL:普通节点;SUPER:超级节点</li>
                      * @return Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>
 <li>Status - String - 是否必填：否 - 容器运行状态筛选，0："created",1："running", 2："paused", 3："restarting", 4："removing", 5："exited", 6："dead" </li>
@@ -96,6 +101,11 @@ namespace TencentCloud
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
 <li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
+<li>PodID - String -是否必填: 否 - PodID筛选</li>
+<li>NodeUniqueID - String -是否必填: 否 - SuperNode筛选</li>
+<li>PodUid - String -是否必填: 否 - Pod筛选</li>
+<li>PodIP - String -是否必填: 否 - PodIP筛选</li>
+<li>NodeType - String -是否必填: 否 - 节点类型筛选:NORMAL:普通节点;SUPER:超级节点</li>
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -108,6 +118,11 @@ namespace TencentCloud
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
 <li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
+<li>PodID - String -是否必填: 否 - PodID筛选</li>
+<li>NodeUniqueID - String -是否必填: 否 - SuperNode筛选</li>
+<li>PodUid - String -是否必填: 否 - Pod筛选</li>
+<li>PodIP - String -是否必填: 否 - PodIP筛选</li>
+<li>NodeType - String -是否必填: 否 - 节点类型筛选:NORMAL:普通节点;SUPER:超级节点</li>
                      * @param Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>
 <li>Status - String - 是否必填：否 - 容器运行状态筛选，0："created",1："running", 2："paused", 3："restarting", 4："removing", 5："exited", 6："dead" </li>
@@ -116,6 +131,11 @@ namespace TencentCloud
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
 <li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
+<li>PodID - String -是否必填: 否 - PodID筛选</li>
+<li>NodeUniqueID - String -是否必填: 否 - SuperNode筛选</li>
+<li>PodUid - String -是否必填: 否 - Pod筛选</li>
+<li>PodIP - String -是否必填: 否 - PodIP筛选</li>
+<li>NodeType - String -是否必填: 否 - 节点类型筛选:NORMAL:普通节点;SUPER:超级节点</li>
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
@@ -184,6 +204,11 @@ namespace TencentCloud
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
 <li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
+<li>PodID - String -是否必填: 否 - PodID筛选</li>
+<li>NodeUniqueID - String -是否必填: 否 - SuperNode筛选</li>
+<li>PodUid - String -是否必填: 否 - Pod筛选</li>
+<li>PodIP - String -是否必填: 否 - PodIP筛选</li>
+<li>NodeType - String -是否必填: 否 - 节点类型筛选:NORMAL:普通节点;SUPER:超级节点</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

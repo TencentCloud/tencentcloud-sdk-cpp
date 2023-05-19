@@ -25,7 +25,8 @@ using namespace std;
 DownloadVpnGatewaySslClientCertRequest::DownloadVpnGatewaySslClientCertRequest() :
     m_sslVpnClientIdHasBeenSet(false),
     m_samlTokenHasBeenSet(false),
-    m_isVpnPortalHasBeenSet(false)
+    m_isVpnPortalHasBeenSet(false),
+    m_sslVpnClientIdsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string DownloadVpnGatewaySslClientCertRequest::ToJsonString() const
         string key = "IsVpnPortal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isVpnPortal, allocator);
+    }
+
+    if (m_sslVpnClientIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslVpnClientIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sslVpnClientIds.begin(); itr != m_sslVpnClientIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void DownloadVpnGatewaySslClientCertRequest::SetIsVpnPortal(const bool& _isVpnPo
 bool DownloadVpnGatewaySslClientCertRequest::IsVpnPortalHasBeenSet() const
 {
     return m_isVpnPortalHasBeenSet;
+}
+
+vector<string> DownloadVpnGatewaySslClientCertRequest::GetSslVpnClientIds() const
+{
+    return m_sslVpnClientIds;
+}
+
+void DownloadVpnGatewaySslClientCertRequest::SetSslVpnClientIds(const vector<string>& _sslVpnClientIds)
+{
+    m_sslVpnClientIds = _sslVpnClientIds;
+    m_sslVpnClientIdsHasBeenSet = true;
+}
+
+bool DownloadVpnGatewaySslClientCertRequest::SslVpnClientIdsHasBeenSet() const
+{
+    return m_sslVpnClientIdsHasBeenSet;
 }
 
 

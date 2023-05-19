@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已接入数量
-                     * @return Count 已接入数量
+                     * 获取已接入普通主机数量
+                     * @return Count 已接入普通主机数量
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置已接入数量
-                     * @param Count 已接入数量
+                     * 设置已接入普通主机数量
+                     * @param Count 已接入普通主机数量
                      */
                     void SetCount(const uint64_t& _count);
 
@@ -63,6 +63,24 @@ namespace TencentCloud
                      * @return Count 是否已赋值
                      */
                     bool CountHasBeenSet() const;
+
+                    /**
+                     * 获取已接入超级节点数量
+                     * @return SuperNodeCount 已接入超级节点数量
+                     */
+                    uint64_t GetSuperNodeCount() const;
+
+                    /**
+                     * 设置已接入超级节点数量
+                     * @param SuperNodeCount 已接入超级节点数量
+                     */
+                    void SetSuperNodeCount(const uint64_t& _superNodeCount);
+
+                    /**
+                     * 判断参数 SuperNodeCount 是否已赋值
+                     * @return SuperNodeCount 是否已赋值
+                     */
+                    bool SuperNodeCountHasBeenSet() const;
 
                     /**
                      * 获取是否已接入(true:已接入 false:未接入)
@@ -119,10 +137,16 @@ k8sApi: "k8s_api"
                 private:
 
                     /**
-                     * 已接入数量
+                     * 已接入普通主机数量
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 已接入超级节点数量
+                     */
+                    uint64_t m_superNodeCount;
+                    bool m_superNodeCountHasBeenSet;
 
                     /**
                      * 是否已接入(true:已接入 false:未接入)

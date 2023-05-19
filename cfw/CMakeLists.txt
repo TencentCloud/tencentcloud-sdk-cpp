@@ -20,6 +20,7 @@ set(cfw_public_header
 
 set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatAcRuleResponse.h
@@ -172,6 +173,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/TLogInfo.h
+  include/tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteVpcInstanceRequest.h
   include/tencentcloud/cfw/v20190904/model/SwitchListsData.h
@@ -205,6 +207,7 @@ set(cfw_public_header_model
 set(cfw_src
   src/v20190904/CfwClient.cpp
   src/v20190904/model/DescribeNatFwInstanceRequest.cpp
+  src/v20190904/model/DescribeLogsRequest.cpp
   src/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceWithRegionRequest.cpp
   src/v20190904/model/ModifyNatAcRuleResponse.cpp
@@ -357,6 +360,7 @@ set(cfw_src
   src/v20190904/model/ExpandCfwVerticalResponse.cpp
   src/v20190904/model/DescribeNatAcRuleRequest.cpp
   src/v20190904/model/TLogInfo.cpp
+  src/v20190904/model/DescribeLogsResponse.cpp
   src/v20190904/model/CreateSecurityGroupRulesRequest.cpp
   src/v20190904/model/DeleteVpcInstanceRequest.cpp
   src/v20190904/model/SwitchListsData.cpp

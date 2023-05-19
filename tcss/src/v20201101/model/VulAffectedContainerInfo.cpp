@@ -28,7 +28,13 @@ VulAffectedContainerInfo::VulAffectedContainerInfo() :
     m_podIPHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_hostIDHasBeenSet(false),
-    m_publicIPHasBeenSet(false)
+    m_publicIPHasBeenSet(false),
+    m_clusterIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false),
+    m_nodeUniqueIDHasBeenSet(false),
+    m_nodeIDHasBeenSet(false),
+    m_nodeNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +123,66 @@ CoreInternalOutcome VulAffectedContainerInfo::Deserialize(const rapidjson::Value
         m_publicIPHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterID") && !value["ClusterID"].IsNull())
+    {
+        if (!value["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(value["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeUniqueID") && !value["NodeUniqueID"].IsNull())
+    {
+        if (!value["NodeUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.NodeUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeUniqueID = string(value["NodeUniqueID"].GetString());
+        m_nodeUniqueIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeID") && !value["NodeID"].IsNull())
+    {
+        if (!value["NodeID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.NodeID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeID = string(value["NodeID"].GetString());
+        m_nodeIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +252,54 @@ void VulAffectedContainerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "PublicIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeUniqueID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +431,101 @@ void VulAffectedContainerInfo::SetPublicIP(const string& _publicIP)
 bool VulAffectedContainerInfo::PublicIPHasBeenSet() const
 {
     return m_publicIPHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+void VulAffectedContainerInfo::SetClusterID(const string& _clusterID)
+{
+    m_clusterID = _clusterID;
+    m_clusterIDHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void VulAffectedContainerInfo::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void VulAffectedContainerInfo::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetNodeUniqueID() const
+{
+    return m_nodeUniqueID;
+}
+
+void VulAffectedContainerInfo::SetNodeUniqueID(const string& _nodeUniqueID)
+{
+    m_nodeUniqueID = _nodeUniqueID;
+    m_nodeUniqueIDHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::NodeUniqueIDHasBeenSet() const
+{
+    return m_nodeUniqueIDHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetNodeID() const
+{
+    return m_nodeID;
+}
+
+void VulAffectedContainerInfo::SetNodeID(const string& _nodeID)
+{
+    m_nodeID = _nodeID;
+    m_nodeIDHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::NodeIDHasBeenSet() const
+{
+    return m_nodeIDHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void VulAffectedContainerInfo::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
 }
 

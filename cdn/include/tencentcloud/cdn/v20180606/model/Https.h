@@ -50,11 +50,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取https 配置开关
+                     * 获取https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch https 配置开关
+                     * @return Switch https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -62,11 +62,11 @@ off：关闭
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置https 配置开关
+                     * 设置https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch https 配置开关
+                     * @param Switch https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
@@ -340,7 +340,7 @@ failed：部署失败
                 private:
 
                     /**
-                     * https 配置开关
+                     * https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。

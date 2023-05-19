@@ -73,6 +73,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
@@ -254,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPStatusListResponse> DescribeIPStatusListOutcome;
                 typedef std::future<DescribeIPStatusListOutcome> DescribeIPStatusListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeIPStatusListRequest&, DescribeIPStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStatusListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
+                typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatAcRuleResponse> DescribeNatAcRuleOutcome;
                 typedef std::future<DescribeNatAcRuleOutcome> DescribeNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatAcRuleRequest&, DescribeNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatAcRuleAsyncHandler;
@@ -621,6 +626,15 @@ namespace TencentCloud
                 DescribeIPStatusListOutcome DescribeIPStatusList(const Model::DescribeIPStatusListRequest &request);
                 void DescribeIPStatusListAsync(const Model::DescribeIPStatusListRequest& request, const DescribeIPStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIPStatusListOutcomeCallable DescribeIPStatusListCallable(const Model::DescribeIPStatusListRequest& request);
+
+                /**
+                 *日志审计日志查询
+                 * @param req DescribeLogsRequest
+                 * @return DescribeLogsOutcome
+                 */
+                DescribeLogsOutcome DescribeLogs(const Model::DescribeLogsRequest &request);
+                void DescribeLogsAsync(const Model::DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
 
                 /**
                  *查询NAT访问控制列表

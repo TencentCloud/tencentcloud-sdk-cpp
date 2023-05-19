@@ -1115,6 +1115,49 @@ CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCa
     return task->get_future();
 }
 
+CfwClient::DescribeLogsOutcome CfwClient::DescribeLogs(const DescribeLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogsResponse rsp = DescribeLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogsOutcome(rsp);
+        else
+            return DescribeLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeLogsAsync(const DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeLogsOutcomeCallable CfwClient::DescribeLogsCallable(const DescribeLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeNatAcRuleOutcome CfwClient::DescribeNatAcRule(const DescribeNatAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatAcRule");

@@ -133,6 +133,66 @@ namespace TencentCloud
                      */
                     bool SupportDefenseVulCountHasBeenSet() const;
 
+                    /**
+                     * 获取普通节点个数
+                     * @return HostNodeCount 普通节点个数
+                     */
+                    int64_t GetHostNodeCount() const;
+
+                    /**
+                     * 判断参数 HostNodeCount 是否已赋值
+                     * @return HostNodeCount 是否已赋值
+                     */
+                    bool HostNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点范围
+                     * @return SuperScope 超级节点范围
+                     */
+                    int64_t GetSuperScope() const;
+
+                    /**
+                     * 判断参数 SuperScope 是否已赋值
+                     * @return SuperScope 是否已赋值
+                     */
+                    bool SuperScopeHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点个数
+                     * @return SuperNodeCount 超级节点个数
+                     */
+                    int64_t GetSuperNodeCount() const;
+
+                    /**
+                     * 判断参数 SuperNodeCount 是否已赋值
+                     * @return SuperNodeCount 是否已赋值
+                     */
+                    bool SuperNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点Id列表
+                     * @return SuperNodeIds 超级节点Id列表
+                     */
+                    std::vector<std::string> GetSuperNodeIds() const;
+
+                    /**
+                     * 判断参数 SuperNodeIds 是否已赋值
+                     * @return SuperNodeIds 是否已赋值
+                     */
+                    bool SuperNodeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取开通容器安全的超级结点总数
+                     * @return NodeTotalCount 开通容器安全的超级结点总数
+                     */
+                    int64_t GetNodeTotalCount() const;
+
+                    /**
+                     * 判断参数 NodeTotalCount 是否已赋值
+                     * @return NodeTotalCount 是否已赋值
+                     */
+                    bool NodeTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +239,36 @@ namespace TencentCloud
                      */
                     int64_t m_supportDefenseVulCount;
                     bool m_supportDefenseVulCountHasBeenSet;
+
+                    /**
+                     * 普通节点个数
+                     */
+                    int64_t m_hostNodeCount;
+                    bool m_hostNodeCountHasBeenSet;
+
+                    /**
+                     * 超级节点范围
+                     */
+                    int64_t m_superScope;
+                    bool m_superScopeHasBeenSet;
+
+                    /**
+                     * 超级节点个数
+                     */
+                    int64_t m_superNodeCount;
+                    bool m_superNodeCountHasBeenSet;
+
+                    /**
+                     * 超级节点Id列表
+                     */
+                    std::vector<std::string> m_superNodeIds;
+                    bool m_superNodeIdsHasBeenSet;
+
+                    /**
+                     * 开通容器安全的超级结点总数
+                     */
+                    int64_t m_nodeTotalCount;
+                    bool m_nodeTotalCountHasBeenSet;
 
                 };
             }

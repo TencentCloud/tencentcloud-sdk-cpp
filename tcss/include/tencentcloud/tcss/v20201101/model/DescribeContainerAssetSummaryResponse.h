@@ -175,6 +175,18 @@ namespace TencentCloud
                      */
                     bool HostUnInstallCntHasBeenSet() const;
 
+                    /**
+                     * 获取超级节点个数
+                     * @return HostSuperNodeCnt 超级节点个数
+                     */
+                    uint64_t GetHostSuperNodeCnt() const;
+
+                    /**
+                     * 判断参数 HostSuperNodeCnt 是否已赋值
+                     * @return HostSuperNodeCnt 是否已赋值
+                     */
+                    bool HostSuperNodeCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_hostUnInstallCnt;
                     bool m_hostUnInstallCntHasBeenSet;
+
+                    /**
+                     * 超级节点个数
+                     */
+                    uint64_t m_hostSuperNodeCnt;
+                    bool m_hostSuperNodeCntHasBeenSet;
 
                 };
             }

@@ -62,6 +62,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取域名化资产的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CLBData 域名化资产的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValue> GetCLBData() const;
+
+                    /**
+                     * 判断参数 CLBData 是否已赋值
+                     * @return CLBData 是否已赋值
+                     */
+                    bool CLBDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +86,13 @@ namespace TencentCloud
                      */
                     std::vector<KeyValue> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 域名化资产的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValue> m_cLBData;
+                    bool m_cLBDataHasBeenSet;
 
                 };
             }

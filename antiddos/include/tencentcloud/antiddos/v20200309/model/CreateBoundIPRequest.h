@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool CopyPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取如果该资源实例为域名化资产则，该参数必填
+                     * @return FilterRegion 如果该资源实例为域名化资产则，该参数必填
+                     */
+                    std::string GetFilterRegion() const;
+
+                    /**
+                     * 设置如果该资源实例为域名化资产则，该参数必填
+                     * @param FilterRegion 如果该资源实例为域名化资产则，该参数必填
+                     */
+                    void SetFilterRegion(const std::string& _filterRegion);
+
+                    /**
+                     * 判断参数 FilterRegion 是否已赋值
+                     * @return FilterRegion 是否已赋值
+                     */
+                    bool FilterRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_copyPolicy;
                     bool m_copyPolicyHasBeenSet;
+
+                    /**
+                     * 如果该资源实例为域名化资产则，该参数必填
+                     */
+                    std::string m_filterRegion;
+                    bool m_filterRegionHasBeenSet;
 
                 };
             }

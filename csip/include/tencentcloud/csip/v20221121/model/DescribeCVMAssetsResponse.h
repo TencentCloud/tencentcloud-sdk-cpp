@@ -185,6 +185,20 @@ namespace TencentCloud
                      */
                     bool ZoneListHasBeenSet() const;
 
+                    /**
+                     * 获取os列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OsList os列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> GetOsList() const;
+
+                    /**
+                     * 判断参数 OsList 是否已赋值
+                     * @return OsList 是否已赋值
+                     */
+                    bool OsListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +270,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterDataObject> m_zoneList;
                     bool m_zoneListHasBeenSet;
+
+                    /**
+                     * os列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_osList;
+                    bool m_osListHasBeenSet;
 
                 };
             }

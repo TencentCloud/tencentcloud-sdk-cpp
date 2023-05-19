@@ -27,7 +27,8 @@ CreateBoundIPRequest::CreateBoundIPRequest() :
     m_idHasBeenSet(false),
     m_boundDevListHasBeenSet(false),
     m_unBoundDevListHasBeenSet(false),
-    m_copyPolicyHasBeenSet(false)
+    m_copyPolicyHasBeenSet(false),
+    m_filterRegionHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateBoundIPRequest::ToJsonString() const
         string key = "CopyPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_copyPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -178,6 +187,22 @@ void CreateBoundIPRequest::SetCopyPolicy(const string& _copyPolicy)
 bool CreateBoundIPRequest::CopyPolicyHasBeenSet() const
 {
     return m_copyPolicyHasBeenSet;
+}
+
+string CreateBoundIPRequest::GetFilterRegion() const
+{
+    return m_filterRegion;
+}
+
+void CreateBoundIPRequest::SetFilterRegion(const string& _filterRegion)
+{
+    m_filterRegion = _filterRegion;
+    m_filterRegionHasBeenSet = true;
+}
+
+bool CreateBoundIPRequest::FilterRegionHasBeenSet() const
+{
+    return m_filterRegionHasBeenSet;
 }
 
 

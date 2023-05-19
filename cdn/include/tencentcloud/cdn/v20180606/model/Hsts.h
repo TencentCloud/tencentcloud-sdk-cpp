@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启，on或off。
-                     * @return Switch 是否开启，on或off。
+                     * 获取HSTS 配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch HSTS 配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启，on或off。
-                     * @param Switch 是否开启，on或off。
+                     * 设置HSTS 配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch HSTS 配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -111,7 +119,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启，on或off。
+                     * HSTS 配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

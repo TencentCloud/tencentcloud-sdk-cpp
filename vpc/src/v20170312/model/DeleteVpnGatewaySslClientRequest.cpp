@@ -23,7 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DeleteVpnGatewaySslClientRequest::DeleteVpnGatewaySslClientRequest() :
-    m_sslVpnClientIdHasBeenSet(false)
+    m_sslVpnClientIdHasBeenSet(false),
+    m_sslVpnClientIdsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DeleteVpnGatewaySslClientRequest::ToJsonString() const
         string key = "SslVpnClientId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sslVpnClientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sslVpnClientIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslVpnClientIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sslVpnClientIds.begin(); itr != m_sslVpnClientIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DeleteVpnGatewaySslClientRequest::SetSslVpnClientId(const string& _sslVpnCl
 bool DeleteVpnGatewaySslClientRequest::SslVpnClientIdHasBeenSet() const
 {
     return m_sslVpnClientIdHasBeenSet;
+}
+
+vector<string> DeleteVpnGatewaySslClientRequest::GetSslVpnClientIds() const
+{
+    return m_sslVpnClientIds;
+}
+
+void DeleteVpnGatewaySslClientRequest::SetSslVpnClientIds(const vector<string>& _sslVpnClientIds)
+{
+    m_sslVpnClientIds = _sslVpnClientIds;
+    m_sslVpnClientIdsHasBeenSet = true;
+}
+
+bool DeleteVpnGatewaySslClientRequest::SslVpnClientIdsHasBeenSet() const
+{
+    return m_sslVpnClientIdsHasBeenSet;
 }
 
 

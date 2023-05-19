@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  华为云对象存储回源鉴权
+                * 华为云对象存储回源鉴权
                 */
                 class HwPrivateAccess : public AbstractModel
                 {
@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关 on/off
-                     * @return Switch 开关 on/off
+                     * 获取 华为云对象存储回源鉴权配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch  华为云对象存储回源鉴权配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关 on/off
-                     * @param Switch 开关 on/off
+                     * 设置 华为云对象存储回源鉴权配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch  华为云对象存储回源鉴权配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -133,7 +141,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关 on/off
+                     *  华为云对象存储回源鉴权配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

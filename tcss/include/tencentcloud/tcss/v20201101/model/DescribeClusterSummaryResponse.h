@@ -175,6 +175,18 @@ namespace TencentCloud
                      */
                     bool NotImportedClusterCountHasBeenSet() const;
 
+                    /**
+                     * 获取eks集群数量
+                     * @return ServerlessClusterCount eks集群数量
+                     */
+                    uint64_t GetServerlessClusterCount() const;
+
+                    /**
+                     * 判断参数 ServerlessClusterCount 是否已赋值
+                     * @return ServerlessClusterCount 是否已赋值
+                     */
+                    bool ServerlessClusterCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_notImportedClusterCount;
                     bool m_notImportedClusterCountHasBeenSet;
+
+                    /**
+                     * eks集群数量
+                     */
+                    uint64_t m_serverlessClusterCount;
+                    bool m_serverlessClusterCountHasBeenSet;
 
                 };
             }

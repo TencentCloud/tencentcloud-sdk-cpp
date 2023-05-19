@@ -34,7 +34,8 @@ DescribeContainerAssetSummaryResponse::DescribeContainerAssetSummaryResponse() :
     m_hostOfflineCntHasBeenSet(false),
     m_imageRegistryCntHasBeenSet(false),
     m_imageTotalCntHasBeenSet(false),
-    m_hostUnInstallCntHasBeenSet(false)
+    m_hostUnInstallCntHasBeenSet(false),
+    m_hostSuperNodeCntHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome DescribeContainerAssetSummaryResponse::Deserialize(const str
         m_hostUnInstallCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostSuperNodeCnt") && !rsp["HostSuperNodeCnt"].IsNull())
+    {
+        if (!rsp["HostSuperNodeCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostSuperNodeCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostSuperNodeCnt = rsp["HostSuperNodeCnt"].GetUint64();
+        m_hostSuperNodeCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ string DescribeContainerAssetSummaryResponse::ToJsonString() const
         string key = "HostUnInstallCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostUnInstallCnt, allocator);
+    }
+
+    if (m_hostSuperNodeCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostSuperNodeCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostSuperNodeCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +419,16 @@ uint64_t DescribeContainerAssetSummaryResponse::GetHostUnInstallCnt() const
 bool DescribeContainerAssetSummaryResponse::HostUnInstallCntHasBeenSet() const
 {
     return m_hostUnInstallCntHasBeenSet;
+}
+
+uint64_t DescribeContainerAssetSummaryResponse::GetHostSuperNodeCnt() const
+{
+    return m_hostSuperNodeCnt;
+}
+
+bool DescribeContainerAssetSummaryResponse::HostSuperNodeCntHasBeenSet() const
+{
+    return m_hostSuperNodeCntHasBeenSet;
 }
 
 

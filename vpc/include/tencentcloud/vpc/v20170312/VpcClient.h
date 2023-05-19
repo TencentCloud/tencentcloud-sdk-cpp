@@ -2672,7 +2672,7 @@ namespace TencentCloud
                 DeleteVpnGatewayRoutesOutcomeCallable DeleteVpnGatewayRoutesCallable(const Model::DeleteVpnGatewayRoutesRequest& request);
 
                 /**
-                 *删除SSL-VPN-CLIENT
+                 *本接口（DeleteVpnGatewaySslClient）用于删除SSL-VPN-CLIENT。
                  * @param req DeleteVpnGatewaySslClientRequest
                  * @return DeleteVpnGatewaySslClientOutcome
                  */
@@ -3646,7 +3646,7 @@ LimitTypes取值范围：
                 DownloadCustomerGatewayConfigurationOutcomeCallable DownloadCustomerGatewayConfigurationCallable(const Model::DownloadCustomerGatewayConfigurationRequest& request);
 
                 /**
-                 *下载SSL-VPN-CLIENT 客户端证书
+                 *本接口（DownloadVpnGatewaySslClientCert）用于下载SSL-VPN-CLIENT 客户端证书。
                  * @param req DownloadVpnGatewaySslClientCertRequest
                  * @return DownloadVpnGatewaySslClientCertOutcome
                  */
@@ -3711,7 +3711,7 @@ LimitTypes取值范围：
                 EnableVpcEndPointConnectOutcomeCallable EnableVpcEndPointConnectCallable(const Model::EnableVpcEndPointConnectRequest& request);
 
                 /**
-                 *启用SSL-VPN-CLIENT 证书
+                 *本接口（EnableVpnGatewaySslClientCert）用于启用SSL-VPN-CLIENT 证书。
                  * @param req EnableVpnGatewaySslClientCertRequest
                  * @return EnableVpnGatewaySslClientCertOutcome
                  */

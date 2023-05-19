@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否使用CacheTag作为CacheKey的一部分
+                     * 获取使用CacheTag作为CacheKey的一部分配置开关，取值有
+on：开启，使用CacheTag作为CacheKey的一部分
+off：关闭，不使用CacheTag作为CacheKey的一部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 是否使用CacheTag作为CacheKey的一部分
+                     * @return Switch 使用CacheTag作为CacheKey的一部分配置开关，取值有
+on：开启，使用CacheTag作为CacheKey的一部分
+off：关闭，不使用CacheTag作为CacheKey的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否使用CacheTag作为CacheKey的一部分
+                     * 设置使用CacheTag作为CacheKey的一部分配置开关，取值有
+on：开启，使用CacheTag作为CacheKey的一部分
+off：关闭，不使用CacheTag作为CacheKey的一部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 是否使用CacheTag作为CacheKey的一部分
+                     * @param Switch 使用CacheTag作为CacheKey的一部分配置开关，取值有
+on：开启，使用CacheTag作为CacheKey的一部分
+off：关闭，不使用CacheTag作为CacheKey的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -93,7 +101,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否使用CacheTag作为CacheKey的一部分
+                     * 使用CacheTag作为CacheKey的一部分配置开关，取值有
+on：开启，使用CacheTag作为CacheKey的一部分
+off：关闭，不使用CacheTag作为CacheKey的一部分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

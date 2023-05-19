@@ -22,6 +22,7 @@ using namespace std;
 
 SecLogJoinInfo::SecLogJoinInfo() :
     m_countHasBeenSet(false),
+    m_superNodeCountHasBeenSet(false),
     m_isJoinedHasBeenSet(false),
     m_logTypeHasBeenSet(false)
 {
@@ -40,6 +41,16 @@ CoreInternalOutcome SecLogJoinInfo::Deserialize(const rapidjson::Value &value)
         }
         m_count = value["Count"].GetUint64();
         m_countHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuperNodeCount") && !value["SuperNodeCount"].IsNull())
+    {
+        if (!value["SuperNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogJoinInfo.SuperNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCount = value["SuperNodeCount"].GetUint64();
+        m_superNodeCountHasBeenSet = true;
     }
 
     if (value.HasMember("IsJoined") && !value["IsJoined"].IsNull())
@@ -77,6 +88,14 @@ void SecLogJoinInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_count, allocator);
     }
 
+    if (m_superNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCount, allocator);
+    }
+
     if (m_isJoinedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,22 @@ void SecLogJoinInfo::SetCount(const uint64_t& _count)
 bool SecLogJoinInfo::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+uint64_t SecLogJoinInfo::GetSuperNodeCount() const
+{
+    return m_superNodeCount;
+}
+
+void SecLogJoinInfo::SetSuperNodeCount(const uint64_t& _superNodeCount)
+{
+    m_superNodeCount = _superNodeCount;
+    m_superNodeCountHasBeenSet = true;
+}
+
+bool SecLogJoinInfo::SuperNodeCountHasBeenSet() const
+{
+    return m_superNodeCountHasBeenSet;
 }
 
 bool SecLogJoinInfo::GetIsJoined() const

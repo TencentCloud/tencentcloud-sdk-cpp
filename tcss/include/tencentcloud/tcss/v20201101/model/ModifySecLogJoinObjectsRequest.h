@@ -108,6 +108,36 @@ k8sApi: k8s_api
                      */
                     bool UnBindListHasBeenSet() const;
 
+                    /**
+                     * 获取节点类型:
+NORMAL: 普通节点(默认值)
+SUPER: 超级节点
+
+                     * @return NodeType 节点类型:
+NORMAL: 普通节点(默认值)
+SUPER: 超级节点
+
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型:
+NORMAL: 普通节点(默认值)
+SUPER: 超级节点
+
+                     * @param NodeType 节点类型:
+NORMAL: 普通节点(默认值)
+SUPER: 超级节点
+
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +160,15 @@ k8sApi: k8s_api
                      */
                     std::vector<std::string> m_unBindList;
                     bool m_unBindListHasBeenSet;
+
+                    /**
+                     * 节点类型:
+NORMAL: 普通节点(默认值)
+SUPER: 超级节点
+
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
 
                 };
             }

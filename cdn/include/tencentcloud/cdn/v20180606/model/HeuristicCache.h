@@ -48,18 +48,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on 代表开启启发式缓存
-off 代表关闭启发式缓存
-                     * @return Switch on 代表开启启发式缓存
-off 代表关闭启发式缓存
+                     * 获取启发式缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @return Switch 启发式缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on 代表开启启发式缓存
-off 代表关闭启发式缓存
-                     * @param Switch on 代表开启启发式缓存
-off 代表关闭启发式缓存
+                     * 设置启发式缓存配置开关，取值有：
+on：开启
+off：关闭
+                     * @param Switch 启发式缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -90,8 +94,9 @@ off 代表关闭启发式缓存
                 private:
 
                     /**
-                     * on 代表开启启发式缓存
-off 代表关闭启发式缓存
+                     * 启发式缓存配置开关，取值有：
+on：开启
+off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

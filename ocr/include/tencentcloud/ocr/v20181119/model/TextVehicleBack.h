@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool TotalQuasiMassHasBeenSet() const;
 
+                    /**
+                     * 获取副页编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubPageCode 副页编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubPageCode() const;
+
+                    /**
+                     * 设置副页编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubPageCode 副页编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubPageCode(const std::string& _subPageCode);
+
+                    /**
+                     * 判断参数 SubPageCode 是否已赋值
+                     * @return SubPageCode 是否已赋值
+                     */
+                    bool SubPageCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     std::string m_totalQuasiMass;
                     bool m_totalQuasiMassHasBeenSet;
+
+                    /**
+                     * 副页编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subPageCode;
+                    bool m_subPageCodeHasBeenSet;
 
                 };
             }
