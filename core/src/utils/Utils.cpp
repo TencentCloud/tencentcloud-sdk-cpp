@@ -126,13 +126,13 @@ string Utils::GenerateUuid()
     thread_local static std::mt19937 rg{std::random_device{}()};
     thread_local static std::uniform_int_distribution<std::string::size_type> rnd_pick(0, sizeof(chrs) - 2);
 
-    std::string uuid_like("00000000-0000-0000-0000-000000000000");
-    for (char &i : uuid_like)
+    std::string uuid4_like("00000000-0000-0000-0000-000000000000");
+    for (char &i : uuid4_like)
     {
         if (i == '-')
             continue;
         i = chrs[rnd_pick(rg)];
     }
 
-    return uuid_like;
+    return uuid4_like;
 }
