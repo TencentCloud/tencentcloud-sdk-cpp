@@ -202,17 +202,17 @@ namespace TencentCloud
                     bool WarningsHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤进度，范围为[0-100]
+                     * 获取当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Progress 当前步骤进度，范围为[0-100]
+                     * @return Progress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置当前步骤进度，范围为[0-100]
+                     * 设置当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 当前步骤进度，范围为[0-100]
+                     * @param Progress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProgress(const int64_t& _progress);
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_warningsHasBeenSet;
 
                     /**
-                     * 当前步骤进度，范围为[0-100]
+                     * 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_progress;

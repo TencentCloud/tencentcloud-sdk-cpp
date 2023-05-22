@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/CreateCloudDBInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
-DescribeBackupTablesResponse::DescribeBackupTablesResponse() :
-    m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+CreateCloudDBInstancesResponse::CreateCloudDBInstancesResponse() :
+    m_dealNameHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeBackupTablesResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateCloudDBInstancesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeBackupTablesResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
     {
-        if (!rsp["TotalCount"].IsInt64())
+        if (!rsp["DealName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
-    {
-        if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Items"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TableName item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_items.push_back(item);
-        }
-        m_itemsHasBeenSet = true;
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBackupTablesResponse::ToJsonString() const
+string CreateCloudDBInstancesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_dealNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_itemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Items";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeBackupTablesResponse::ToJsonString() const
 }
 
 
-int64_t DescribeBackupTablesResponse::GetTotalCount() const
+string CreateCloudDBInstancesResponse::GetDealName() const
 {
-    return m_totalCount;
+    return m_dealName;
 }
 
-bool DescribeBackupTablesResponse::TotalCountHasBeenSet() const
+bool CreateCloudDBInstancesResponse::DealNameHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-vector<TableName> DescribeBackupTablesResponse::GetItems() const
-{
-    return m_items;
-}
-
-bool DescribeBackupTablesResponse::ItemsHasBeenSet() const
-{
-    return m_itemsHasBeenSet;
+    return m_dealNameHasBeenSet;
 }
 
 

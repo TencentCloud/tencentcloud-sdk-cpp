@@ -33,7 +33,8 @@ UserNotice::UserNotice() :
     m_phoneCircleIntervalHasBeenSet(false),
     m_needPhoneArriveNoticeHasBeenSet(false),
     m_phoneCallTypeHasBeenSet(false),
-    m_weekdayHasBeenSet(false)
+    m_weekdayHasBeenSet(false),
+    m_onCallFormIDsHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,19 @@ CoreInternalOutcome UserNotice::Deserialize(const rapidjson::Value &value)
         m_weekdayHasBeenSet = true;
     }
 
+    if (value.HasMember("OnCallFormIDs") && !value["OnCallFormIDs"].IsNull())
+    {
+        if (!value["OnCallFormIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserNotice.OnCallFormIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OnCallFormIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_onCallFormIDs.push_back((*itr).GetString());
+        }
+        m_onCallFormIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +334,19 @@ void UserNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_weekday.begin(); itr != m_weekday.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_onCallFormIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnCallFormIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_onCallFormIDs.begin(); itr != m_onCallFormIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -532,5 +559,21 @@ void UserNotice::SetWeekday(const vector<int64_t>& _weekday)
 bool UserNotice::WeekdayHasBeenSet() const
 {
     return m_weekdayHasBeenSet;
+}
+
+vector<string> UserNotice::GetOnCallFormIDs() const
+{
+    return m_onCallFormIDs;
+}
+
+void UserNotice::SetOnCallFormIDs(const vector<string>& _onCallFormIDs)
+{
+    m_onCallFormIDs = _onCallFormIDs;
+    m_onCallFormIDsHasBeenSet = true;
+}
+
+bool UserNotice::OnCallFormIDsHasBeenSet() const
+{
+    return m_onCallFormIDsHasBeenSet;
 }
 

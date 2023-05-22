@@ -311,17 +311,17 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取通知模版的id列表，可查询通知模版列表获取。
+                     * 获取通知模板的id列表，可查询通知模板列表获取。
 可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
-                     * @return NoticeIds 通知模版的id列表，可查询通知模版列表获取。
+                     * @return NoticeIds 通知模板的id列表，可查询通知模板列表获取。
 可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置通知模版的id列表，可查询通知模版列表获取。
+                     * 设置通知模板的id列表，可查询通知模板列表获取。
 可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
-                     * @param NoticeIds 通知模版的id列表，可查询通知模版列表获取。
+                     * @param NoticeIds 通知模板的id列表，可查询通知模板列表获取。
 可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
@@ -459,14 +459,14 @@ namespace TencentCloud
                     bool OneClickPolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
-                     * @return NotBindAll 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     * 获取返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
+                     * @return NotBindAll 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
                      */
                     int64_t GetNotBindAll() const;
 
                     /**
-                     * 设置根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
-                     * @param NotBindAll 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     * 设置返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
+                     * @param NotBindAll 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
                      */
                     void SetNotBindAll(const int64_t& _notBindAll);
 
@@ -477,14 +477,14 @@ namespace TencentCloud
                     bool NotBindAllHasBeenSet() const;
 
                     /**
-                     * 获取根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
-                     * @return NotInstanceGroup 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     * 获取返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
+                     * @return NotInstanceGroup 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
                      */
                     int64_t GetNotInstanceGroup() const;
 
                     /**
-                     * 设置根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
-                     * @param NotInstanceGroup 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     * 设置返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
+                     * @param NotInstanceGroup 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
                      */
                     void SetNotInstanceGroup(const int64_t& _notInstanceGroup);
 
@@ -511,6 +511,42 @@ namespace TencentCloud
                      * @return Tags 是否已赋值
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取prom实例id，自定义指标策略时会用到
+                     * @return PromInsId prom实例id，自定义指标策略时会用到
+                     */
+                    std::string GetPromInsId() const;
+
+                    /**
+                     * 设置prom实例id，自定义指标策略时会用到
+                     * @param PromInsId prom实例id，自定义指标策略时会用到
+                     */
+                    void SetPromInsId(const std::string& _promInsId);
+
+                    /**
+                     * 判断参数 PromInsId 是否已赋值
+                     * @return PromInsId 是否已赋值
+                     */
+                    bool PromInsIdHasBeenSet() const;
+
+                    /**
+                     * 获取根据排班表搜索
+                     * @return ReceiverOnCallFormIDs 根据排班表搜索
+                     */
+                    std::vector<std::string> GetReceiverOnCallFormIDs() const;
+
+                    /**
+                     * 设置根据排班表搜索
+                     * @param ReceiverOnCallFormIDs 根据排班表搜索
+                     */
+                    void SetReceiverOnCallFormIDs(const std::vector<std::string>& _receiverOnCallFormIDs);
+
+                    /**
+                     * 判断参数 ReceiverOnCallFormIDs 是否已赋值
+                     * @return ReceiverOnCallFormIDs 是否已赋值
+                     */
+                    bool ReceiverOnCallFormIDsHasBeenSet() const;
 
                 private:
 
@@ -601,7 +637,7 @@ namespace TencentCloud
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 通知模版的id列表，可查询通知模版列表获取。
+                     * 通知模板的id列表，可查询通知模板列表获取。
 可使用 [查询通知模板列表](https://cloud.tencent.com/document/product/248/51280) 接口查询。
                      */
                     std::vector<std::string> m_noticeIds;
@@ -650,13 +686,13 @@ namespace TencentCloud
                     bool m_oneClickPolicyTypeHasBeenSet;
 
                     /**
-                     * 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     * 返回结果过滤掉绑定全部对象的策略，1代表需要过滤，0则无需过滤
                      */
                     int64_t m_notBindAll;
                     bool m_notBindAllHasBeenSet;
 
                     /**
-                     * 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     * 返回结果过滤掉关联实例为实例分组的策略，1代表需要过滤，0则无需过滤
                      */
                     int64_t m_notInstanceGroup;
                     bool m_notInstanceGroupHasBeenSet;
@@ -666,6 +702,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * prom实例id，自定义指标策略时会用到
+                     */
+                    std::string m_promInsId;
+                    bool m_promInsIdHasBeenSet;
+
+                    /**
+                     * 根据排班表搜索
+                     */
+                    std::vector<std::string> m_receiverOnCallFormIDs;
+                    bool m_receiverOnCallFormIDsHasBeenSet;
 
                 };
             }

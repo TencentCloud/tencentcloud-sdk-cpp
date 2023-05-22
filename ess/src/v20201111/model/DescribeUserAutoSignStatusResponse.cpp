@@ -24,7 +24,9 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 DescribeUserAutoSignStatusResponse::DescribeUserAutoSignStatusResponse() :
-    m_isOpenHasBeenSet(false)
+    m_isOpenHasBeenSet(false),
+    m_licenseFromHasBeenSet(false),
+    m_licenseToHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeUserAutoSignStatusResponse::Deserialize(const string
         m_isOpenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LicenseFrom") && !rsp["LicenseFrom"].IsNull())
+    {
+        if (!rsp["LicenseFrom"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseFrom` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseFrom = rsp["LicenseFrom"].GetInt64();
+        m_licenseFromHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LicenseTo") && !rsp["LicenseTo"].IsNull())
+    {
+        if (!rsp["LicenseTo"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseTo` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseTo = rsp["LicenseTo"].GetInt64();
+        m_licenseToHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeUserAutoSignStatusResponse::ToJsonString() const
         string key = "IsOpen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOpen, allocator);
+    }
+
+    if (m_licenseFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseFrom, allocator);
+    }
+
+    if (m_licenseToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseTo, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ bool DescribeUserAutoSignStatusResponse::GetIsOpen() const
 bool DescribeUserAutoSignStatusResponse::IsOpenHasBeenSet() const
 {
     return m_isOpenHasBeenSet;
+}
+
+int64_t DescribeUserAutoSignStatusResponse::GetLicenseFrom() const
+{
+    return m_licenseFrom;
+}
+
+bool DescribeUserAutoSignStatusResponse::LicenseFromHasBeenSet() const
+{
+    return m_licenseFromHasBeenSet;
+}
+
+int64_t DescribeUserAutoSignStatusResponse::GetLicenseTo() const
+{
+    return m_licenseTo;
+}
+
+bool DescribeUserAutoSignStatusResponse::LicenseToHasBeenSet() const
+{
+    return m_licenseToHasBeenSet;
 }
 
 

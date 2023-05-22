@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移对象类型 Partial(部分对象)，默认为Partial
+                     * 获取迁移对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode 迁移对象类型 Partial(部分对象)，默认为Partial
+                     * @return Mode 迁移对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置迁移对象类型 Partial(部分对象)，默认为Partial
+                     * 设置迁移对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 迁移对象类型 Partial(部分对象)，默认为Partial
+                     * @param Mode 迁移对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMode(const std::string& _mode);
@@ -93,17 +93,17 @@ namespace TencentCloud
                     bool DatabasesHasBeenSet() const;
 
                     /**
-                     * 获取高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full
+                     * 获取高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full
+                     * @return AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
-                     * 设置高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full
+                     * 设置高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full
+                     * @param AdvancedObjects 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移对象类型 Partial(部分对象)，默认为Partial
+                     * 迁移对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_databasesHasBeenSet;
 
                     /**
-                     * 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即Options.InitType字段值为Structure或Full
+                     * 高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_advancedObjects;

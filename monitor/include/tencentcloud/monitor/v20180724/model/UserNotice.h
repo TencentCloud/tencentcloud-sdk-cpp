@@ -332,6 +332,28 @@ namespace TencentCloud
                      */
                     bool WeekdayHasBeenSet() const;
 
+                    /**
+                     * 获取值班表id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnCallFormIDs 值班表id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetOnCallFormIDs() const;
+
+                    /**
+                     * 设置值班表id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OnCallFormIDs 值班表id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOnCallFormIDs(const std::vector<std::string>& _onCallFormIDs);
+
+                    /**
+                     * 判断参数 OnCallFormIDs 是否已赋值
+                     * @return OnCallFormIDs 是否已赋值
+                     */
+                    bool OnCallFormIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +446,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_weekday;
                     bool m_weekdayHasBeenSet;
+
+                    /**
+                     * 值班表id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_onCallFormIDs;
+                    bool m_onCallFormIDsHasBeenSet;
 
                 };
             }

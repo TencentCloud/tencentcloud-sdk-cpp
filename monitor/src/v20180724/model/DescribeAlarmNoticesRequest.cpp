@@ -33,7 +33,8 @@ DescribeAlarmNoticesRequest::DescribeAlarmNoticesRequest() :
     m_userIdsHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_noticeIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_onCallFormIDsHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,19 @@ string DescribeAlarmNoticesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_onCallFormIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnCallFormIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_onCallFormIDs.begin(); itr != m_onCallFormIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -336,6 +350,22 @@ void DescribeAlarmNoticesRequest::SetTags(const vector<Tag>& _tags)
 bool DescribeAlarmNoticesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> DescribeAlarmNoticesRequest::GetOnCallFormIDs() const
+{
+    return m_onCallFormIDs;
+}
+
+void DescribeAlarmNoticesRequest::SetOnCallFormIDs(const vector<string>& _onCallFormIDs)
+{
+    m_onCallFormIDs = _onCallFormIDs;
+    m_onCallFormIDsHasBeenSet = true;
+}
+
+bool DescribeAlarmNoticesRequest::OnCallFormIDsHasBeenSet() const
+{
+    return m_onCallFormIDsHasBeenSet;
 }
 
 

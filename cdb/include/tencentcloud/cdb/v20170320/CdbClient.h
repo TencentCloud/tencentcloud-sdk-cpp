@@ -113,8 +113,6 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h>
@@ -472,9 +470,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupSummariesResponse> DescribeBackupSummariesOutcome;
                 typedef std::future<DescribeBackupSummariesOutcome> DescribeBackupSummariesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupSummariesRequest&, DescribeBackupSummariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSummariesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBackupTablesResponse> DescribeBackupTablesOutcome;
-                typedef std::future<DescribeBackupTablesOutcome> DescribeBackupTablesOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::DescribeBackupTablesRequest&, DescribeBackupTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupsResponse> DescribeBackupsOutcome;
                 typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupsRequest&, DescribeBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
@@ -1217,19 +1212,6 @@ namespace TencentCloud
                 DescribeBackupSummariesOutcome DescribeBackupSummaries(const Model::DescribeBackupSummariesRequest &request);
                 void DescribeBackupSummariesAsync(const Model::DescribeBackupSummariesRequest& request, const DescribeBackupSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupSummariesOutcomeCallable DescribeBackupSummariesCallable(const Model::DescribeBackupSummariesRequest& request);
-
-                /**
-                 *该接口已废弃，需要下线
-
-本接口(DescribeBackupTables)用于查询指定的数据库的备份数据表名 (已废弃)。
-旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。
-新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。
-                 * @param req DescribeBackupTablesRequest
-                 * @return DescribeBackupTablesOutcome
-                 */
-                DescribeBackupTablesOutcome DescribeBackupTables(const Model::DescribeBackupTablesRequest &request);
-                void DescribeBackupTablesAsync(const Model::DescribeBackupTablesRequest& request, const DescribeBackupTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBackupTablesOutcomeCallable DescribeBackupTablesCallable(const Model::DescribeBackupTablesRequest& request);
 
                 /**
                  *本接口(DescribeBackups)用于查询云数据库实例的备份数据。

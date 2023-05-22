@@ -172,14 +172,14 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取手机号码
-                     * @return Mobile 手机号码
+                     * 获取手机号码；当需要开通自动签时，该参数必传
+                     * @return Mobile 手机号码；当需要开通自动签时，该参数必传
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置手机号码
-                     * @param Mobile 手机号码
+                     * 设置手机号码；当需要开通自动签时，该参数必传
+                     * @param Mobile 手机号码；当需要开通自动签时，该参数必传
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -251,7 +251,7 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 手机号码
+                     * 手机号码；当需要开通自动签时，该参数必传
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

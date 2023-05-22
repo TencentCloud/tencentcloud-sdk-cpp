@@ -513,6 +513,92 @@ SqlserverClient::CreateBusinessIntelligenceFileOutcomeCallable SqlserverClient::
     return task->get_future();
 }
 
+SqlserverClient::CreateCloudDBInstancesOutcome SqlserverClient::CreateCloudDBInstances(const CreateCloudDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudDBInstancesResponse rsp = CreateCloudDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudDBInstancesOutcome(rsp);
+        else
+            return CreateCloudDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CreateCloudDBInstancesAsync(const CreateCloudDBInstancesRequest& request, const CreateCloudDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CreateCloudDBInstancesOutcomeCallable SqlserverClient::CreateCloudDBInstancesCallable(const CreateCloudDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::CreateCloudReadOnlyDBInstancesOutcome SqlserverClient::CreateCloudReadOnlyDBInstances(const CreateCloudReadOnlyDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudReadOnlyDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudReadOnlyDBInstancesResponse rsp = CreateCloudReadOnlyDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudReadOnlyDBInstancesOutcome(rsp);
+        else
+            return CreateCloudReadOnlyDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudReadOnlyDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CreateCloudReadOnlyDBInstancesAsync(const CreateCloudReadOnlyDBInstancesRequest& request, const CreateCloudReadOnlyDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudReadOnlyDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CreateCloudReadOnlyDBInstancesOutcomeCallable SqlserverClient::CreateCloudReadOnlyDBInstancesCallable(const CreateCloudReadOnlyDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudReadOnlyDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudReadOnlyDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::CreateDBOutcome SqlserverClient::CreateDB(const CreateDBRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDB");

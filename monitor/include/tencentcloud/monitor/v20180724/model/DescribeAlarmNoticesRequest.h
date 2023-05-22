@@ -241,6 +241,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取值班列表
+                     * @return OnCallFormIDs 值班列表
+                     */
+                    std::vector<std::string> GetOnCallFormIDs() const;
+
+                    /**
+                     * 设置值班列表
+                     * @param OnCallFormIDs 值班列表
+                     */
+                    void SetOnCallFormIDs(const std::vector<std::string>& _onCallFormIDs);
+
+                    /**
+                     * 判断参数 OnCallFormIDs 是否已赋值
+                     * @return OnCallFormIDs 是否已赋值
+                     */
+                    bool OnCallFormIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +326,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 值班列表
+                     */
+                    std::vector<std::string> m_onCallFormIDs;
+                    bool m_onCallFormIDsHasBeenSet;
 
                 };
             }

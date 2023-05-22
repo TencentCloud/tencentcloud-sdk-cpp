@@ -47,7 +47,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressVipAndVPortResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressDescRequest.h
-  include/tencentcloud/cdb/v20170320/model/TableName.h
   include/tencentcloud/cdb/v20170320/model/CdbRegionSellConf.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDecryptionKeyRequest.h
@@ -80,7 +79,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeCDBProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/Rule.h
   include/tencentcloud/cdb/v20170320/model/AuditPolicy.h
-  include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesRequest.h
   include/tencentcloud/cdb/v20170320/model/ProxyNode.h
   include/tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeTablesRequest.h
@@ -273,7 +271,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/AuditFilter.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxySupportParamResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h
-  include/tencentcloud/cdb/v20170320/model/DescribeBackupTablesResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceNetInfo.h
@@ -451,7 +448,6 @@ set(cdb_src
   src/v20170320/model/ModifyCdbProxyAddressVipAndVPortResponse.cpp
   src/v20170320/model/DescribeDBInstancesRequest.cpp
   src/v20170320/model/ModifyCdbProxyAddressDescRequest.cpp
-  src/v20170320/model/TableName.cpp
   src/v20170320/model/CdbRegionSellConf.cpp
   src/v20170320/model/DescribeRoGroupsRequest.cpp
   src/v20170320/model/DescribeBackupDecryptionKeyRequest.cpp
@@ -484,7 +480,6 @@ set(cdb_src
   src/v20170320/model/DescribeCDBProxyResponse.cpp
   src/v20170320/model/Rule.cpp
   src/v20170320/model/AuditPolicy.cpp
-  src/v20170320/model/DescribeBackupTablesRequest.cpp
   src/v20170320/model/ProxyNode.cpp
   src/v20170320/model/DescribeCdbZoneConfigResponse.cpp
   src/v20170320/model/DescribeTablesRequest.cpp
@@ -677,7 +672,6 @@ set(cdb_src
   src/v20170320/model/AuditFilter.cpp
   src/v20170320/model/DescribeProxySupportParamResponse.cpp
   src/v20170320/model/DescribeRollbackTaskDetailRequest.cpp
-  src/v20170320/model/DescribeBackupTablesResponse.cpp
   src/v20170320/model/ModifyParamTemplateResponse.cpp
   src/v20170320/model/BalanceRoGroupLoadResponse.cpp
   src/v20170320/model/DeviceNetInfo.cpp

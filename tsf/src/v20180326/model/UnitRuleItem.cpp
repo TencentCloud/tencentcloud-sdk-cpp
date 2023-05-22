@@ -29,7 +29,10 @@ UnitRuleItem::UnitRuleItem() :
     m_unitRuleIdHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_unitRuleTagListHasBeenSet(false)
+    m_unitRuleTagListHasBeenSet(false),
+    m_itemIndexHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -138,6 +141,36 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
         m_unitRuleTagListHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemIndex") && !value["ItemIndex"].IsNull())
+    {
+        if (!value["ItemIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.ItemIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemIndex = value["ItemIndex"].GetInt64();
+        m_itemIndexHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitRuleItem.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +255,30 @@ void UnitRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_itemIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_itemIndex, allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +426,53 @@ void UnitRuleItem::SetUnitRuleTagList(const vector<UnitRuleTag>& _unitRuleTagLis
 bool UnitRuleItem::UnitRuleTagListHasBeenSet() const
 {
     return m_unitRuleTagListHasBeenSet;
+}
+
+int64_t UnitRuleItem::GetItemIndex() const
+{
+    return m_itemIndex;
+}
+
+void UnitRuleItem::SetItemIndex(const int64_t& _itemIndex)
+{
+    m_itemIndex = _itemIndex;
+    m_itemIndexHasBeenSet = true;
+}
+
+bool UnitRuleItem::ItemIndexHasBeenSet() const
+{
+    return m_itemIndexHasBeenSet;
+}
+
+string UnitRuleItem::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void UnitRuleItem::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool UnitRuleItem::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+string UnitRuleItem::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void UnitRuleItem::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool UnitRuleItem::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

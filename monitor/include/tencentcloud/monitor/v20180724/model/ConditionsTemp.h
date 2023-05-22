@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 告警条件模版
+                * 告警条件模板
                 */
                 class ConditionsTemp : public AbstractModel
                 {
@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版名称
+                     * 获取模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateName 模版名称
+                     * @return TemplateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名称
+                     * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateName 模版名称
+                     * @param TemplateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版名称
+                     * 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;

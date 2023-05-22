@@ -46,7 +46,9 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_oneClickPolicyTypeHasBeenSet(false),
     m_notBindAllHasBeenSet(false),
     m_notInstanceGroupHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_promInsIdHasBeenSet(false),
+    m_receiverOnCallFormIDsHasBeenSet(false)
 {
 }
 
@@ -310,6 +312,27 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_promInsIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromInsId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promInsId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_receiverOnCallFormIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReceiverOnCallFormIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_receiverOnCallFormIDs.begin(); itr != m_receiverOnCallFormIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -703,6 +726,38 @@ void DescribeAlarmPoliciesRequest::SetTags(const vector<Tag>& _tags)
 bool DescribeAlarmPoliciesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string DescribeAlarmPoliciesRequest::GetPromInsId() const
+{
+    return m_promInsId;
+}
+
+void DescribeAlarmPoliciesRequest::SetPromInsId(const string& _promInsId)
+{
+    m_promInsId = _promInsId;
+    m_promInsIdHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::PromInsIdHasBeenSet() const
+{
+    return m_promInsIdHasBeenSet;
+}
+
+vector<string> DescribeAlarmPoliciesRequest::GetReceiverOnCallFormIDs() const
+{
+    return m_receiverOnCallFormIDs;
+}
+
+void DescribeAlarmPoliciesRequest::SetReceiverOnCallFormIDs(const vector<string>& _receiverOnCallFormIDs)
+{
+    m_receiverOnCallFormIDs = _receiverOnCallFormIDs;
+    m_receiverOnCallFormIDsHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::ReceiverOnCallFormIDsHasBeenSet() const
+{
+    return m_receiverOnCallFormIDsHasBeenSet;
 }
 
 

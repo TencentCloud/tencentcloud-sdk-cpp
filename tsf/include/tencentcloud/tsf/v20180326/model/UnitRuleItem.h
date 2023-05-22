@@ -229,6 +229,72 @@ namespace TencentCloud
                      */
                     bool UnitRuleTagListHasBeenSet() const;
 
+                    /**
+                     * 获取项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ItemIndex 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetItemIndex() const;
+
+                    /**
+                     * 设置项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ItemIndex 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetItemIndex(const int64_t& _itemIndex);
+
+                    /**
+                     * 判断参数 ItemIndex 是否已赋值
+                     * @return ItemIndex 是否已赋值
+                     */
+                    bool ItemIndexHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +355,27 @@ namespace TencentCloud
                      */
                     std::vector<UnitRuleTag> m_unitRuleTagList;
                     bool m_unitRuleTagListHasBeenSet;
+
+                    /**
+                     * 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_itemIndex;
+                    bool m_itemIndexHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }
