@@ -101,7 +101,6 @@ target_include_directories(core
     PRIVATE include )
 
 target_link_libraries(core
-    uuid
     ${OPENSSL_LIBRARIES}
     ${CURL_LIBRARIES} )
 
