@@ -15,13 +15,15 @@
  */
 
 #include <tencentcloud/core/utils/Utils.h>
-#include <stdio.h>
-#include <time.h>
+
 #include <openssl/sha.h>
 #include <openssl/hmac.h>
-#include <uuid/uuid.h>
+
+#include <stdio.h>
+#include <time.h>
 #include <iomanip>
 #include <sstream>
+#include <random>
 
 #if _MSC_VER
 #define snprintf _snprintf
@@ -29,7 +31,6 @@
 
 using namespace TencentCloud;
 using namespace std;
-
 
 string Utils::int2str(int64_t n)
 {
@@ -58,7 +59,7 @@ string Utils::HashSha256(const string &str)
     SHA256_Update(&sha256, str.c_str(), str.size());
     SHA256_Final(hash, &sha256);
     std::string NewString = "";
-    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
     {
         snprintf(buf, sizeof(buf), "%02x", hash[i]);
         NewString = NewString + buf;
@@ -68,7 +69,7 @@ string Utils::HashSha256(const string &str)
 
 string Utils::HexEncode(const string &input)
 {
-    static const char* const lut = "0123456789abcdef";
+    static const char *const lut = "0123456789abcdef";
     size_t len = input.length();
 
     std::string output;
@@ -96,7 +97,7 @@ string Utils::HmacSha256(const string &key, const string &input)
 #endif
 
     HMAC_Init_ex(h, &key[0], key.length(), EVP_sha256(), NULL);
-    HMAC_Update(h, ( unsigned char* )&input[0], input.length());
+    HMAC_Update(h, (unsigned char *)&input[0], input.length());
     unsigned int len = 32;
     HMAC_Final(h, hash, &len);
 
@@ -110,17 +111,28 @@ string Utils::HmacSha256(const string &key, const string &input)
     ss << std::setfill('0');
     for (int i = 0; i < len; i++)
     {
-        ss  << hash[i];
+        ss << hash[i];
     }
 
     return (ss.str());
 }
 
+// To minimize dependencies, libuuid is not used
 string Utils::GenerateUuid()
 {
-    uuid_t uu;
-    char buf[50];
-    uuid_generate(uu);
-    uuid_unparse(uu, buf);
-    return buf;
+    static auto &chrs = "0123456789"
+                        "abcdefghijklmnopqrstuvwxyz"
+                        "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    thread_local static std::mt19937 rg{std::random_device{}()};
+    thread_local static std::uniform_int_distribution<std::string::size_type> rnd_pick(0, sizeof(chrs) - 2);
+
+    std::string uuid4_like("00000000-0000-0000-0000-000000000000");
+    for (char &i : uuid4_like)
+    {
+        if (i == '-')
+            continue;
+        i = chrs[rnd_pick(rg)];
+    }
+
+    return uuid4_like;
 }
