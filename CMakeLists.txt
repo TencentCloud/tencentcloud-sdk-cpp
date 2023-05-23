@@ -42,6 +42,7 @@ set(CMAKE_CXX_STANDARD 11)
 # include(ExternalProject)
 include(GNUInstallDirs)
 
+# On some platforms, rapidjson cannot deduce the cpu endianness and needs to be specified manually
 include (TestBigEndian)
 TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
 if(IS_BIG_ENDIAN)
@@ -62,6 +63,7 @@ else ()
   add_compile_options(-Wa,-mbig-obj)
 endif ()
 
+# both core and service require curl include path
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIRS})
 
