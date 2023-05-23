@@ -42,6 +42,29 @@ set(CMAKE_CXX_STANDARD 11)
 # include(ExternalProject)
 include(GNUInstallDirs)
 
+include (TestBigEndian)
+TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
+if(IS_BIG_ENDIAN)
+    add_compile_definitions(RAPIDJSON_ENDIAN=RAPIDJSON_BIGENDIAN)
+else()
+    add_compile_definitions(RAPIDJSON_ENDIAN=RAPIDJSON_LITTLEENDIAN)
+endif()
+
+if (MSVC)
+  # enable big source file
+  add_compile_options(/bigobj)
+  # to generate .lib file
+  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+  # parallel build
+  add_compile_options(/MP)
+else ()
+  # enable big source file
+  add_compile_options(-Wa,-mbig-obj)
+endif ()
+
+find_package(CURL REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
+
 if(BUILD_FUNCTION_TESTS)
     enable_testing()
     add_subdirectory(test/function_test/cvm)

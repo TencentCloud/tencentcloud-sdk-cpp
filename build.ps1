@@ -1,11 +1,9 @@
 function BuildSDK([string]$arg0, [string]$arg1) {
     Remove-Item sdk_build -Force -Recurse -ErrorAction SilentlyContinue
     New-Item sdk_build -ItemType Directory | Out-Null
-    Push-Location sdk_build
-    cmake .. $arg0 $arg1
-    Write-Host 'Building sdk'
-    cmake --build .
-    Pop-Location
+    cmake -B sdk_build $arg0 $arg1
+    Write-Host 'Building sdk' -ForegroundColor Yellow
+    cmake --build sdk_build
 }
 
 function InstallSDK {
@@ -14,9 +12,7 @@ function InstallSDK {
         return
     }
     Write-Host 'Installing sdk, require Administrator privilege' -ForegroundColor Yellow
-    Push-Location sdk_build
-    cmake --build . --target install
-    Pop-Location
+    cmake --build sdk_build --target install
 }
 
 if ($args[0] -eq "build") {

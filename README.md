@@ -283,8 +283,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 如果是安装的静态库，需要修改 `example/cvm/v20170312/CMakeLists.txt`，在链接库的配置代码中，追加链接库：
 
 ```
-target_link_libraries(DescribeInstances tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
-target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
+target_link_libraries(DescribeInstances tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl)
+target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl)
 ```
 
 更多例子请参考 example 目录。
@@ -309,6 +309,11 @@ sudo apt-get install zlib1g-dev
 centos
 yum install -y zlib zlib-devel
 
+macos
+brew install zlib
+
+windows（这里的 cpu 架构请根据实际环境灵活选择）
+vcpkg install zlib:x64-windows
 ```
 
 2. 通过指定编译选项，可以选择压缩模块是否进行编译，默认关闭。如需开启，将对应模块打开即可，如下所示：

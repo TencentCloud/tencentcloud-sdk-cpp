@@ -8,8 +8,10 @@ build_sdk() {
     if ! command -v cmake3 > /dev/null
     then
         cmake .. $1
+        cmake --build . -j
     else
         cmake3 .. $1
+        cmake3 --build . -j
     fi
 }
 
@@ -20,11 +22,16 @@ install_sdk() {
     fi
     echo Installing sdk, require root password...
     cd sdk_build
-    sudo cmake --build . --target install
+    if ! command -v cmake3 > /dev/null
+    then
+        sudo cmake --build . --target install
+    else
+        sudo cmake3 --build . --target install
+    fi
 }
 
 if [ "$1" = "build" ]; then
-    build_sdk
+    build_sdk $2
 elif [ "$1" = "install" ]; then
     install_sdk
 else
