@@ -86,20 +86,20 @@ namespace TencentCloud
                     /**
                      * 获取系统盘类型。
 取值范围： 
-<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+<li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      * @return SystemDiskType 系统盘类型。
 取值范围： 
-<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+<li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     std::string GetSystemDiskType() const;
 
                     /**
                      * 设置系统盘类型。
 取值范围： 
-<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+<li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      * @param SystemDiskType 系统盘类型。
 取值范围： 
-<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+<li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     void SetSystemDiskType(const std::string& _systemDiskType);
 
@@ -110,14 +110,14 @@ namespace TencentCloud
                     bool SystemDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘大小。
-                     * @return SystemDiskSize 系统盘大小。
+                     * 获取系统盘大小。单位GB。
+                     * @return SystemDiskSize 系统盘大小。单位GB。
                      */
                     int64_t GetSystemDiskSize() const;
 
                     /**
-                     * 设置系统盘大小。
-                     * @param SystemDiskSize 系统盘大小。
+                     * 设置系统盘大小。单位GB。
+                     * @param SystemDiskSize 系统盘大小。单位GB。
                      */
                     void SetSystemDiskSize(const int64_t& _systemDiskSize);
 
@@ -128,14 +128,14 @@ namespace TencentCloud
                     bool SystemDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取每月网络流量，单位 Gb。
-                     * @return MonthlyTraffic 每月网络流量，单位 Gb。
+                     * 获取每月网络流量，单位 GB。
+                     * @return MonthlyTraffic 每月网络流量，单位 GB。
                      */
                     int64_t GetMonthlyTraffic() const;
 
                     /**
-                     * 设置每月网络流量，单位 Gb。
-                     * @param MonthlyTraffic 每月网络流量，单位 Gb。
+                     * 设置每月网络流量，单位 GB。
+                     * @param MonthlyTraffic 每月网络流量，单位 GB。
                      */
                     void SetMonthlyTraffic(const int64_t& _monthlyTraffic);
 
@@ -398,19 +398,19 @@ namespace TencentCloud
                     /**
                      * 系统盘类型。
 取值范围： 
-<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
+<li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>
                      */
                     std::string m_systemDiskType;
                     bool m_systemDiskTypeHasBeenSet;
 
                     /**
-                     * 系统盘大小。
+                     * 系统盘大小。单位GB。
                      */
                     int64_t m_systemDiskSize;
                     bool m_systemDiskSizeHasBeenSet;
 
                     /**
-                     * 每月网络流量，单位 Gb。
+                     * 每月网络流量，单位 GB。
                      */
                     int64_t m_monthlyTraffic;
                     bool m_monthlyTrafficHasBeenSet;

@@ -110,17 +110,25 @@ namespace TencentCloud
                     bool FrequencyLimitHasBeenSet() const;
 
                     /**
-                     * 获取IP 惩罚开关，可选on|off
+                     * 获取IP 惩罚配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PunishmentSwitch IP 惩罚开关，可选on|off
+                     * @return PunishmentSwitch IP 惩罚配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPunishmentSwitch() const;
 
                     /**
-                     * 设置IP 惩罚开关，可选on|off
+                     * 设置IP 惩罚配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishmentSwitch IP 惩罚开关，可选on|off
+                     * @param PunishmentSwitch IP 惩罚配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPunishmentSwitch(const std::string& _punishmentSwitch);
@@ -272,7 +280,9 @@ off：关闭
                     bool m_frequencyLimitHasBeenSet;
 
                     /**
-                     * IP 惩罚开关，可选on|off
+                     * IP 惩罚配置开关，取值有：
+on：开启
+off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_punishmentSwitch;

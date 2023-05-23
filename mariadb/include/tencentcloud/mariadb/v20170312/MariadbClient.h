@@ -163,6 +163,8 @@
 #include <tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -387,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeDedicatedDBInstanceResponse> UpgradeDedicatedDBInstanceOutcome;
+                typedef std::future<UpgradeDedicatedDBInstanceOutcome> UpgradeDedicatedDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::UpgradeDedicatedDBInstanceRequest&, UpgradeDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDedicatedDBInstanceAsyncHandler;
 
 
 
@@ -1035,6 +1040,15 @@ namespace TencentCloud
                 UpgradeDBInstanceOutcome UpgradeDBInstance(const Model::UpgradeDBInstanceRequest &request);
                 void UpgradeDBInstanceAsync(const Model::UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDBInstanceOutcomeCallable UpgradeDBInstanceCallable(const Model::UpgradeDBInstanceRequest& request);
+
+                /**
+                 *本接口(UpgradeDedicatedDBInstance)用于扩容独享云数据库实例。
+                 * @param req UpgradeDedicatedDBInstanceRequest
+                 * @return UpgradeDedicatedDBInstanceOutcome
+                 */
+                UpgradeDedicatedDBInstanceOutcome UpgradeDedicatedDBInstance(const Model::UpgradeDedicatedDBInstanceRequest &request);
+                void UpgradeDedicatedDBInstanceAsync(const Model::UpgradeDedicatedDBInstanceRequest& request, const UpgradeDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeDedicatedDBInstanceOutcomeCallable UpgradeDedicatedDBInstanceCallable(const Model::UpgradeDedicatedDBInstanceRequest& request);
 
             };
         }

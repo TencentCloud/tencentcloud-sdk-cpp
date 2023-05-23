@@ -26,7 +26,8 @@ GetEidTokenConfig::GetEidTokenConfig() :
     m_intentionModeHasBeenSet(false),
     m_intentionVerifyTextHasBeenSet(false),
     m_intentionQuestionsHasBeenSet(false),
-    m_intentionRecognitionHasBeenSet(false)
+    m_intentionRecognitionHasBeenSet(false),
+    m_isSupportHMTResidentPermitOCRHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_intentionRecognitionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportHMTResidentPermitOCR") && !value["IsSupportHMTResidentPermitOCR"].IsNull())
+    {
+        if (!value["IsSupportHMTResidentPermitOCR"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IsSupportHMTResidentPermitOCR` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportHMTResidentPermitOCR = value["IsSupportHMTResidentPermitOCR"].GetBool();
+        m_isSupportHMTResidentPermitOCRHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IntentionRecognition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intentionRecognition, allocator);
+    }
+
+    if (m_isSupportHMTResidentPermitOCRHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportHMTResidentPermitOCR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportHMTResidentPermitOCR, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void GetEidTokenConfig::SetIntentionRecognition(const bool& _intentionRecognitio
 bool GetEidTokenConfig::IntentionRecognitionHasBeenSet() const
 {
     return m_intentionRecognitionHasBeenSet;
+}
+
+bool GetEidTokenConfig::GetIsSupportHMTResidentPermitOCR() const
+{
+    return m_isSupportHMTResidentPermitOCR;
+}
+
+void GetEidTokenConfig::SetIsSupportHMTResidentPermitOCR(const bool& _isSupportHMTResidentPermitOCR)
+{
+    m_isSupportHMTResidentPermitOCR = _isSupportHMTResidentPermitOCR;
+    m_isSupportHMTResidentPermitOCRHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IsSupportHMTResidentPermitOCRHasBeenSet() const
+{
+    return m_isSupportHMTResidentPermitOCRHasBeenSet;
 }
 

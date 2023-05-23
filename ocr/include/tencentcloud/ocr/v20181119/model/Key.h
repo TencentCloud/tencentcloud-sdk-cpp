@@ -64,6 +64,28 @@ namespace TencentCloud
                      */
                     bool AutoNameHasBeenSet() const;
 
+                    /**
+                     * 获取定义的字段名称（传key的名称）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigName 定义的字段名称（传key的名称）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConfigName() const;
+
+                    /**
+                     * 设置定义的字段名称（传key的名称）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigName 定义的字段名称（传key的名称）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigName(const std::string& _configName);
+
+                    /**
+                     * 判断参数 ConfigName 是否已赋值
+                     * @return ConfigName 是否已赋值
+                     */
+                    bool ConfigNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +93,13 @@ namespace TencentCloud
                      */
                     std::string m_autoName;
                     bool m_autoNameHasBeenSet;
+
+                    /**
+                     * 定义的字段名称（传key的名称）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_configName;
+                    bool m_configNameHasBeenSet;
 
                 };
             }

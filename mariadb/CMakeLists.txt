@@ -64,6 +64,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseView.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/NodeInfo.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifySyncTaskAttributeResponse.h
@@ -95,6 +96,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesResponse.h
+  include/tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DestroyDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseTable.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceDetailRequest.h
@@ -245,6 +247,7 @@ set(mariadb_src
   src/v20170312/model/ModifyBackupTimeRequest.cpp
   src/v20170312/model/DatabaseView.cpp
   src/v20170312/model/DescribeDBLogFilesRequest.cpp
+  src/v20170312/model/UpgradeDedicatedDBInstanceResponse.cpp
   src/v20170312/model/NodeInfo.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/ModifySyncTaskAttributeResponse.cpp
@@ -276,6 +279,7 @@ set(mariadb_src
   src/v20170312/model/DescribeSaleInfoResponse.cpp
   src/v20170312/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20170312/model/DescribeDBEncryptAttributesResponse.cpp
+  src/v20170312/model/UpgradeDedicatedDBInstanceRequest.cpp
   src/v20170312/model/DestroyDBInstanceRequest.cpp
   src/v20170312/model/DatabaseTable.cpp
   src/v20170312/model/DescribeDBInstanceDetailRequest.cpp

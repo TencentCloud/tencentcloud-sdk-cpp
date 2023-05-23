@@ -362,6 +362,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取集群id
+                     * @return ClusterID 集群id
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 设置集群id
+                     * @param ClusterID 集群id
+                     */
+                    void SetClusterID(const std::string& _clusterID);
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +485,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
 
                 };
             }

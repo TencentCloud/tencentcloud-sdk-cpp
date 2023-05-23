@@ -44,12 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件。
+                     * 获取过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
 <li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
-                     * @return Filters 过滤条件。
+                     * @return Filters 过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
@@ -58,12 +58,12 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
+                     * 设置过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
 <li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
-                     * @param Filters 过滤条件。
+                     * @param Filters 过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
@@ -114,14 +114,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取终端节点服务ID。
-                     * @return EndPointServiceIds 终端节点服务ID。
+                     * 获取终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * @return EndPointServiceIds 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
                      */
                     std::vector<std::string> GetEndPointServiceIds() const;
 
                     /**
-                     * 设置终端节点服务ID。
-                     * @param EndPointServiceIds 终端节点服务ID。
+                     * 设置终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
+                     * @param EndPointServiceIds 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
                      */
                     void SetEndPointServiceIds(const std::vector<std::string>& _endPointServiceIds);
 
@@ -134,7 +134,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件。
+                     * 过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。
 <li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 终端节点服务ID。
+                     * 终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。
                      */
                     std::vector<std::string> m_endPointServiceIds;
                     bool m_endPointServiceIdsHasBeenSet;

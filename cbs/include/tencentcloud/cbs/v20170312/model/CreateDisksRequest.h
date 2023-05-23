@@ -334,6 +334,24 @@ namespace TencentCloud
                      */
                     bool DiskBackupQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取创建云盘时是否开启性能突发
+                     * @return BurstPerformance 创建云盘时是否开启性能突发
+                     */
+                    bool GetBurstPerformance() const;
+
+                    /**
+                     * 设置创建云盘时是否开启性能突发
+                     * @param BurstPerformance 创建云盘时是否开启性能突发
+                     */
+                    void SetBurstPerformance(const bool& _burstPerformance);
+
+                    /**
+                     * 判断参数 BurstPerformance 是否已赋值
+                     * @return BurstPerformance 是否已赋值
+                     */
+                    bool BurstPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +449,12 @@ namespace TencentCloud
                      */
                     uint64_t m_diskBackupQuota;
                     bool m_diskBackupQuotaHasBeenSet;
+
+                    /**
+                     * 创建云盘时是否开启性能突发
+                     */
+                    bool m_burstPerformance;
+                    bool m_burstPerformanceHasBeenSet;
 
                 };
             }
