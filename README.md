@@ -53,18 +53,6 @@ centos
 yum install openssl-devel
 ```
 
-- libuuid
-
-安装例子如下:
-
-```
-ubuntu
-sudo apt-get install uuid-dev
-
-centos
-yum install libuuid-devel
-```
-
 # 从源代码构建 SDK
 
 1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
