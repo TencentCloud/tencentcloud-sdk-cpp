@@ -796,6 +796,28 @@ namespace TencentCloud
                      */
                     bool TargetObjectValueHasBeenSet() const;
 
+                    /**
+                     * 获取源端对应的引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceEngineTypes 源端对应的引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> GetSourceEngineTypes() const;
+
+                    /**
+                     * 设置源端对应的引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceEngineTypes 源端对应的引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
+
+                    /**
+                     * 判断参数 SourceEngineTypes 是否已赋值
+                     * @return SourceEngineTypes 是否已赋值
+                     */
+                    bool SourceEngineTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1035,6 +1057,13 @@ namespace TencentCloud
                      */
                     std::string m_targetObjectValue;
                     bool m_targetObjectValueHasBeenSet;
+
+                    /**
+                     * 源端对应的引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> m_sourceEngineTypes;
+                    bool m_sourceEngineTypesHasBeenSet;
 
                 };
             }

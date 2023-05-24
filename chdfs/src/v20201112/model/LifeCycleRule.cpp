@@ -26,7 +26,9 @@ LifeCycleRule::LifeCycleRule() :
     m_pathHasBeenSet(false),
     m_transitionsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_summaryHasBeenSet(false),
+    m_lastSummaryTimeHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,33 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Summary") && !value["Summary"].IsNull())
+    {
+        if (!value["Summary"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.Summary` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_summary.Deserialize(value["Summary"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_summaryHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastSummaryTime") && !value["LastSummaryTime"].IsNull())
+    {
+        if (!value["LastSummaryTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifeCycleRule.LastSummaryTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastSummaryTime = string(value["LastSummaryTime"].GetString());
+        m_lastSummaryTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +194,23 @@ void LifeCycleRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summary.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lastSummaryTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastSummaryTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastSummaryTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +310,37 @@ void LifeCycleRule::SetCreateTime(const string& _createTime)
 bool LifeCycleRule::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+Summary LifeCycleRule::GetSummary() const
+{
+    return m_summary;
+}
+
+void LifeCycleRule::SetSummary(const Summary& _summary)
+{
+    m_summary = _summary;
+    m_summaryHasBeenSet = true;
+}
+
+bool LifeCycleRule::SummaryHasBeenSet() const
+{
+    return m_summaryHasBeenSet;
+}
+
+string LifeCycleRule::GetLastSummaryTime() const
+{
+    return m_lastSummaryTime;
+}
+
+void LifeCycleRule::SetLastSummaryTime(const string& _lastSummaryTime)
+{
+    m_lastSummaryTime = _lastSummaryTime;
+    m_lastSummaryTimeHasBeenSet = true;
+}
+
+bool LifeCycleRule::LastSummaryTimeHasBeenSet() const
+{
+    return m_lastSummaryTimeHasBeenSet;
 }
 

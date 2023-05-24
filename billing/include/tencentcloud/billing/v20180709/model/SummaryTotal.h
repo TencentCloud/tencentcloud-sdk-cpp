@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
+                     * 获取优惠后总价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RealTotalCost 总数
+                     * @return RealTotalCost 优惠后总价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
-                     * 设置总数
+                     * 设置优惠后总价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RealTotalCost 总数
+                     * @param RealTotalCost 优惠后总价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -93,7 +93,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 优惠后总价
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;

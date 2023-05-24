@@ -23,14 +23,14 @@ using namespace std;
 RegionSummaryOverviewItem::RegionSummaryOverviewItem() :
     m_regionIdHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_realTotalCostHasBeenSet(false),
     m_realTotalCostRatioHasBeenSet(false),
+    m_realTotalCostHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false),
     m_billMonthHasBeenSet(false),
-    m_totalCostHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_totalCostHasBeenSet(false)
 {
 }
 
@@ -59,16 +59,6 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
         m_regionNameHasBeenSet = true;
     }
 
-    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
-    {
-        if (!value["RealTotalCost"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_realTotalCost = string(value["RealTotalCost"].GetString());
-        m_realTotalCostHasBeenSet = true;
-    }
-
     if (value.HasMember("RealTotalCostRatio") && !value["RealTotalCostRatio"].IsNull())
     {
         if (!value["RealTotalCostRatio"].IsString())
@@ -77,6 +67,16 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
         }
         m_realTotalCostRatio = string(value["RealTotalCostRatio"].GetString());
         m_realTotalCostRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
+    {
+        if (!value["RealTotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realTotalCost = string(value["RealTotalCost"].GetString());
+        m_realTotalCostHasBeenSet = true;
     }
 
     if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
@@ -109,6 +109,16 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
         m_voucherPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
     if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
     {
         if (!value["BillMonth"].IsString())
@@ -127,16 +137,6 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
         }
         m_totalCost = string(value["TotalCost"].GetString());
         m_totalCostHasBeenSet = true;
-    }
-
-    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
-    {
-        if (!value["TransferPayAmount"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
-        m_transferPayAmountHasBeenSet = true;
     }
 
 
@@ -162,20 +162,20 @@ void RegionSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_realTotalCostHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RealTotalCost";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_realTotalCostRatioHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCostRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realTotalCostRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cashPayAmountHasBeenSet)
@@ -202,6 +202,14 @@ void RegionSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_billMonthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -216,14 +224,6 @@ void RegionSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_transferPayAmountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TransferPayAmount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -261,22 +261,6 @@ bool RegionSummaryOverviewItem::RegionNameHasBeenSet() const
     return m_regionNameHasBeenSet;
 }
 
-string RegionSummaryOverviewItem::GetRealTotalCost() const
-{
-    return m_realTotalCost;
-}
-
-void RegionSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
-{
-    m_realTotalCost = _realTotalCost;
-    m_realTotalCostHasBeenSet = true;
-}
-
-bool RegionSummaryOverviewItem::RealTotalCostHasBeenSet() const
-{
-    return m_realTotalCostHasBeenSet;
-}
-
 string RegionSummaryOverviewItem::GetRealTotalCostRatio() const
 {
     return m_realTotalCostRatio;
@@ -291,6 +275,22 @@ void RegionSummaryOverviewItem::SetRealTotalCostRatio(const string& _realTotalCo
 bool RegionSummaryOverviewItem::RealTotalCostRatioHasBeenSet() const
 {
     return m_realTotalCostRatioHasBeenSet;
+}
+
+string RegionSummaryOverviewItem::GetRealTotalCost() const
+{
+    return m_realTotalCost;
+}
+
+void RegionSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
+{
+    m_realTotalCost = _realTotalCost;
+    m_realTotalCostHasBeenSet = true;
+}
+
+bool RegionSummaryOverviewItem::RealTotalCostHasBeenSet() const
+{
+    return m_realTotalCostHasBeenSet;
 }
 
 string RegionSummaryOverviewItem::GetCashPayAmount() const
@@ -341,6 +341,22 @@ bool RegionSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
     return m_voucherPayAmountHasBeenSet;
 }
 
+string RegionSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void RegionSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool RegionSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
+}
+
 string RegionSummaryOverviewItem::GetBillMonth() const
 {
     return m_billMonth;
@@ -371,21 +387,5 @@ void RegionSummaryOverviewItem::SetTotalCost(const string& _totalCost)
 bool RegionSummaryOverviewItem::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
-}
-
-string RegionSummaryOverviewItem::GetTransferPayAmount() const
-{
-    return m_transferPayAmount;
-}
-
-void RegionSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
-{
-    m_transferPayAmount = _transferPayAmount;
-    m_transferPayAmountHasBeenSet = true;
-}
-
-bool RegionSummaryOverviewItem::TransferPayAmountHasBeenSet() const
-{
-    return m_transferPayAmountHasBeenSet;
 }
 

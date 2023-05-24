@@ -32,7 +32,9 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_cycleTypeHasBeenSet(false),
     m_delayTimeHasBeenSet(false),
     m_cycleStepHasBeenSet(false),
-    m_taskActionHasBeenSet(false)
+    m_taskActionHasBeenSet(false),
+    m_execEngineTypeHasBeenSet(false),
+    m_execPlanHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_taskActionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecEngineType") && !value["ExecEngineType"].IsNull())
+    {
+        if (!value["ExecEngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.ExecEngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execEngineType = string(value["ExecEngineType"].GetString());
+        m_execEngineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecPlan") && !value["ExecPlan"].IsNull())
+    {
+        if (!value["ExecPlan"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.ExecPlan` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execPlan = string(value["ExecPlan"].GetString());
+        m_execPlanHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +301,22 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TaskAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execEngineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecEngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execEngineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execPlanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecPlan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execPlan.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +512,37 @@ void RuleGroupExecStrategy::SetTaskAction(const string& _taskAction)
 bool RuleGroupExecStrategy::TaskActionHasBeenSet() const
 {
     return m_taskActionHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetExecEngineType() const
+{
+    return m_execEngineType;
+}
+
+void RuleGroupExecStrategy::SetExecEngineType(const string& _execEngineType)
+{
+    m_execEngineType = _execEngineType;
+    m_execEngineTypeHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::ExecEngineTypeHasBeenSet() const
+{
+    return m_execEngineTypeHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetExecPlan() const
+{
+    return m_execPlan;
+}
+
+void RuleGroupExecStrategy::SetExecPlan(const string& _execPlan)
+{
+    m_execPlan = _execPlan;
+    m_execPlanHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::ExecPlanHasBeenSet() const
+{
+    return m_execPlanHasBeenSet;
 }
 

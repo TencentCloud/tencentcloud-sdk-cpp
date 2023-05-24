@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @return EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @param EngineType 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ruleGroupId;
                     bool m_ruleGroupIdHasBeenSet;
+
+                    /**
+                     * 该规则运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

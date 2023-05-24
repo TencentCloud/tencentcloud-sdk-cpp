@@ -22,7 +22,8 @@ using namespace std;
 
 RuleExecConfig::RuleExecConfig() :
     m_queueNameHasBeenSet(false),
-    m_executorGroupIdHasBeenSet(false)
+    m_executorGroupIdHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RuleExecConfig::Deserialize(const rapidjson::Value &value)
         m_executorGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecConfig.EngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = string(value["EngineType"].GetString());
+        m_engineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RuleExecConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExecutorGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executorGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RuleExecConfig::SetExecutorGroupId(const string& _executorGroupId)
 bool RuleExecConfig::ExecutorGroupIdHasBeenSet() const
 {
     return m_executorGroupIdHasBeenSet;
+}
+
+string RuleExecConfig::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void RuleExecConfig::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool RuleExecConfig::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 

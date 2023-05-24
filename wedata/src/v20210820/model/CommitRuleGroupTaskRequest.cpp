@@ -27,7 +27,8 @@ CommitRuleGroupTaskRequest::CommitRuleGroupTaskRequest() :
     m_triggerTypeHasBeenSet(false),
     m_execRuleConfigHasBeenSet(false),
     m_execConfigHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string CommitRuleGroupTaskRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -172,6 +181,22 @@ void CommitRuleGroupTaskRequest::SetProjectId(const string& _projectId)
 bool CommitRuleGroupTaskRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CommitRuleGroupTaskRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void CommitRuleGroupTaskRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool CommitRuleGroupTaskRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 

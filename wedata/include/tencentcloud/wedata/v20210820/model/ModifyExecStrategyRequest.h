@@ -351,6 +351,24 @@ MONTH_CYCLE:M
                      */
                     bool TableIdHasBeenSet() const;
 
+                    /**
+                     * 获取运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @return ExecEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    std::string GetExecEngineType() const;
+
+                    /**
+                     * 设置运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     * @param ExecEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    void SetExecEngineType(const std::string& _execEngineType);
+
+                    /**
+                     * 判断参数 ExecEngineType 是否已赋值
+                     * @return ExecEngineType 是否已赋值
+                     */
+                    bool ExecEngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +471,12 @@ MONTH_CYCLE:M
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
+
+                    /**
+                     * 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+                     */
+                    std::string m_execEngineType;
+                    bool m_execEngineTypeHasBeenSet;
 
                 };
             }

@@ -37,6 +37,7 @@ BillDetailComponent::BillDetailComponent() :
     m_voucherPayAmountHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false),
     m_itemCodeHasBeenSet(false),
     m_componentCodeHasBeenSet(false),
     m_contractPriceHasBeenSet(false),
@@ -213,6 +214,16 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
     }
 
     if (value.HasMember("ItemCode") && !value["ItemCode"].IsNull())
@@ -448,6 +459,14 @@ void BillDetailComponent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IncentivePayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_itemCodeHasBeenSet)
@@ -787,6 +806,22 @@ void BillDetailComponent::SetIncentivePayAmount(const string& _incentivePayAmoun
 bool BillDetailComponent::IncentivePayAmountHasBeenSet() const
 {
     return m_incentivePayAmountHasBeenSet;
+}
+
+string BillDetailComponent::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void BillDetailComponent::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool BillDetailComponent::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 
 string BillDetailComponent::GetItemCode() const

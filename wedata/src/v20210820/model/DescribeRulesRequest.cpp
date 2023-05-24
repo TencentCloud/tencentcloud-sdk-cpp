@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeRulesRequest::DescribeRulesRequest() :
     m_projectIdHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false)
+    m_ruleGroupIdHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeRulesRequest::ToJsonString() const
         string key = "RuleGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleGroupId, allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeRulesRequest::SetRuleGroupId(const uint64_t& _ruleGroupId)
 bool DescribeRulesRequest::RuleGroupIdHasBeenSet() const
 {
     return m_ruleGroupIdHasBeenSet;
+}
+
+string DescribeRulesRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void DescribeRulesRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool DescribeRulesRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 

@@ -281,6 +281,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取快照类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotType 快照类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSnapshotType() const;
+
+                    /**
+                     * 设置快照类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnapshotType 快照类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnapshotType(const std::string& _snapshotType);
+
+                    /**
+                     * 判断参数 SnapshotType 是否已赋值
+                     * @return SnapshotType 是否已赋值
+                     */
+                    bool SnapshotTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +382,13 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 快照类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotType;
+                    bool m_snapshotTypeHasBeenSet;
 
                 };
             }

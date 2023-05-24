@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/chdfs/v20201112/model/Transition.h>
+#include <tencentcloud/chdfs/v20201112/model/Summary.h>
 
 
 namespace TencentCloud
@@ -155,6 +156,42 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期规则当前路径具体存储量
+                     * @return Summary 生命周期规则当前路径具体存储量
+                     */
+                    Summary GetSummary() const;
+
+                    /**
+                     * 设置生命周期规则当前路径具体存储量
+                     * @param Summary 生命周期规则当前路径具体存储量
+                     */
+                    void SetSummary(const Summary& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     */
+                    bool SummaryHasBeenSet() const;
+
+                    /**
+                     * 获取Summary更新时间
+                     * @return LastSummaryTime Summary更新时间
+                     */
+                    std::string GetLastSummaryTime() const;
+
+                    /**
+                     * 设置Summary更新时间
+                     * @param LastSummaryTime Summary更新时间
+                     */
+                    void SetLastSummaryTime(const std::string& _lastSummaryTime);
+
+                    /**
+                     * 判断参数 LastSummaryTime 是否已赋值
+                     * @return LastSummaryTime 是否已赋值
+                     */
+                    bool LastSummaryTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +229,18 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 生命周期规则当前路径具体存储量
+                     */
+                    Summary m_summary;
+                    bool m_summaryHasBeenSet;
+
+                    /**
+                     * Summary更新时间
+                     */
+                    std::string m_lastSummaryTime;
+                    bool m_lastSummaryTimeHasBeenSet;
 
                 };
             }

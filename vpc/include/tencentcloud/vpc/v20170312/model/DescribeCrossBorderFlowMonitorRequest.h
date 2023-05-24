@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CcnUinHasBeenSet() const;
 
                     /**
-                     * 获取时间粒度。
-                     * @return Period 时间粒度。
+                     * 获取时间粒度。单位为:秒，如60为60s的时间粒度
+                     * @return Period 时间粒度。单位为:秒，如60为60s的时间粒度
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置时间粒度。
-                     * @param Period 时间粒度。
+                     * 设置时间粒度。单位为:秒，如60为60s的时间粒度
+                     * @param Period 时间粒度。单位为:秒，如60为60s的时间粒度
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_ccnUinHasBeenSet;
 
                     /**
-                     * 时间粒度。
+                     * 时间粒度。单位为:秒，如60为60s的时间粒度
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

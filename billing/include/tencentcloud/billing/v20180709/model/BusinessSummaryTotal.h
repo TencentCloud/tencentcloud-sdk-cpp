@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总花费
-                     * @return RealTotalCost 总花费
+                     * 获取优惠后总价
+
+                     * @return RealTotalCost 优惠后总价
+
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
-                     * 设置总花费
-                     * @param RealTotalCost 总花费
+                     * 设置优惠后总价
+
+                     * @param RealTotalCost 优惠后总价
+
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
 
@@ -65,14 +69,14 @@ namespace TencentCloud
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
-                     * 获取代金券金额
-                     * @return VoucherPayAmount 代金券金额
+                     * 获取优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
+                     * @return VoucherPayAmount 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
-                     * 设置代金券金额
-                     * @param VoucherPayAmount 代金券金额
+                     * 设置优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
+                     * @param VoucherPayAmount 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
 
@@ -83,14 +87,14 @@ namespace TencentCloud
                     bool VoucherPayAmountHasBeenSet() const;
 
                     /**
-                     * 获取赠送金金额
-                     * @return IncentivePayAmount 赠送金金额
+                     * 获取赠送账户支出：使用赠送金支付的金额
+                     * @return IncentivePayAmount 赠送账户支出：使用赠送金支付的金额
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
-                     * 设置赠送金金额
-                     * @param IncentivePayAmount 赠送金金额
+                     * 设置赠送账户支出：使用赠送金支付的金额
+                     * @param IncentivePayAmount 赠送账户支出：使用赠送金支付的金额
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
 
@@ -101,14 +105,14 @@ namespace TencentCloud
                     bool IncentivePayAmountHasBeenSet() const;
 
                     /**
-                     * 获取现金金额
-                     * @return CashPayAmount 现金金额
+                     * 获取现金账户支出：通过现金账户支付的金额
+                     * @return CashPayAmount 现金账户支出：通过现金账户支付的金额
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
-                     * 设置现金金额
-                     * @param CashPayAmount 现金金额
+                     * 设置现金账户支出：通过现金账户支付的金额
+                     * @param CashPayAmount 现金账户支出：通过现金账户支付的金额
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
 
@@ -117,6 +121,24 @@ namespace TencentCloud
                      * @return CashPayAmount 是否已赋值
                      */
                     bool CashPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分成金账户支出：通过分成金账户支付的金额
+                     * @return TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
+                     */
+                    std::string GetTransferPayAmount() const;
+
+                    /**
+                     * 设置分成金账户支出：通过分成金账户支付的金额
+                     * @param TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
+                     */
+                    void SetTransferPayAmount(const std::string& _transferPayAmount);
+
+                    /**
+                     * 判断参数 TransferPayAmount 是否已赋值
+                     * @return TransferPayAmount 是否已赋值
+                     */
+                    bool TransferPayAmountHasBeenSet() const;
 
                     /**
                      * 获取原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
@@ -136,61 +158,44 @@ namespace TencentCloud
                      */
                     bool TotalCostHasBeenSet() const;
 
-                    /**
-                     * 获取分成金金额
-                     * @return TransferPayAmount 分成金金额
-                     */
-                    std::string GetTransferPayAmount() const;
-
-                    /**
-                     * 设置分成金金额
-                     * @param TransferPayAmount 分成金金额
-                     */
-                    void SetTransferPayAmount(const std::string& _transferPayAmount);
-
-                    /**
-                     * 判断参数 TransferPayAmount 是否已赋值
-                     * @return TransferPayAmount 是否已赋值
-                     */
-                    bool TransferPayAmountHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 总花费
+                     * 优惠后总价
+
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
-                     * 代金券金额
+                     * 优惠券支出：使用各类优惠券（如代金券、现金券等）支付的金额
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
-                     * 赠送金金额
+                     * 赠送账户支出：使用赠送金支付的金额
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
-                     * 现金金额
+                     * 现金账户支出：通过现金账户支付的金额
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
+
+                    /**
+                     * 分成金账户支出：通过分成金账户支付的金额
+                     */
+                    std::string m_transferPayAmount;
+                    bool m_transferPayAmountHasBeenSet;
 
                     /**
                      * 原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回"-"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。
                      */
                     std::string m_totalCost;
                     bool m_totalCostHasBeenSet;
-
-                    /**
-                     * 分成金金额
-                     */
-                    std::string m_transferPayAmount;
-                    bool m_transferPayAmountHasBeenSet;
 
                 };
             }

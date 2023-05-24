@@ -440,6 +440,24 @@ namespace TencentCloud
                      */
                     bool TargetObjectValueHasBeenSet() const;
 
+                    /**
+                     * 获取该规则适配的执行引擎
+                     * @return SourceEngineTypes 该规则适配的执行引擎
+                     */
+                    std::vector<uint64_t> GetSourceEngineTypes() const;
+
+                    /**
+                     * 设置该规则适配的执行引擎
+                     * @param SourceEngineTypes 该规则适配的执行引擎
+                     */
+                    void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
+
+                    /**
+                     * 判断参数 SourceEngineTypes 是否已赋值
+                     * @return SourceEngineTypes 是否已赋值
+                     */
+                    bool SourceEngineTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -573,6 +591,12 @@ namespace TencentCloud
                      */
                     std::string m_targetObjectValue;
                     bool m_targetObjectValueHasBeenSet;
+
+                    /**
+                     * 该规则适配的执行引擎
+                     */
+                    std::vector<uint64_t> m_sourceEngineTypes;
+                    bool m_sourceEngineTypesHasBeenSet;
 
                 };
             }

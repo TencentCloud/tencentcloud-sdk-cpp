@@ -38,7 +38,8 @@ ModifyExecStrategyRequest::ModifyExecStrategyRequest() :
     m_delayTimeHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_tableIdHasBeenSet(false)
+    m_tableIdHasBeenSet(false),
+    m_execEngineTypeHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,14 @@ string ModifyExecStrategyRequest::ToJsonString() const
         string key = "TableId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execEngineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecEngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_execEngineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -446,6 +455,22 @@ void ModifyExecStrategyRequest::SetTableId(const string& _tableId)
 bool ModifyExecStrategyRequest::TableIdHasBeenSet() const
 {
     return m_tableIdHasBeenSet;
+}
+
+string ModifyExecStrategyRequest::GetExecEngineType() const
+{
+    return m_execEngineType;
+}
+
+void ModifyExecStrategyRequest::SetExecEngineType(const string& _execEngineType)
+{
+    m_execEngineType = _execEngineType;
+    m_execEngineTypeHasBeenSet = true;
+}
+
+bool ModifyExecStrategyRequest::ExecEngineTypeHasBeenSet() const
+{
+    return m_execEngineTypeHasBeenSet;
 }
 
 

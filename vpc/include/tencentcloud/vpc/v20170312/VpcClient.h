@@ -2309,7 +2309,7 @@ namespace TencentCloud
                 CreateVpnGatewaySslClientOutcomeCallable CreateVpnGatewaySslClientCallable(const Model::CreateVpnGatewaySslClientRequest& request);
 
                 /**
-                 *创建 Server端
+                 *本接口（CreateVpnGatewaySslServer）用于创建SSL-VPN Server端。
                  * @param req CreateVpnGatewaySslServerRequest
                  * @return CreateVpnGatewaySslServerOutcome
                  */

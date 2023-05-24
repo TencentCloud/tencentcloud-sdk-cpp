@@ -25,8 +25,8 @@ BusinessSummaryTotal::BusinessSummaryTotal() :
     m_voucherPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
-    m_totalCostHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_transferPayAmountHasBeenSet(false),
+    m_totalCostHasBeenSet(false)
 {
 }
 
@@ -75,16 +75,6 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
         m_cashPayAmountHasBeenSet = true;
     }
 
-    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
-    {
-        if (!value["TotalCost"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCost = string(value["TotalCost"].GetString());
-        m_totalCostHasBeenSet = true;
-    }
-
     if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
     {
         if (!value["TransferPayAmount"].IsString())
@@ -93,6 +83,16 @@ CoreInternalOutcome BusinessSummaryTotal::Deserialize(const rapidjson::Value &va
         }
         m_transferPayAmount = string(value["TransferPayAmount"].GetString());
         m_transferPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
+    {
+        if (!value["TotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryTotal.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCost = string(value["TotalCost"].GetString());
+        m_totalCostHasBeenSet = true;
     }
 
 
@@ -134,20 +134,20 @@ void BusinessSummaryTotal::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_totalCostHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCost";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_transferPayAmountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransferPayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -217,22 +217,6 @@ bool BusinessSummaryTotal::CashPayAmountHasBeenSet() const
     return m_cashPayAmountHasBeenSet;
 }
 
-string BusinessSummaryTotal::GetTotalCost() const
-{
-    return m_totalCost;
-}
-
-void BusinessSummaryTotal::SetTotalCost(const string& _totalCost)
-{
-    m_totalCost = _totalCost;
-    m_totalCostHasBeenSet = true;
-}
-
-bool BusinessSummaryTotal::TotalCostHasBeenSet() const
-{
-    return m_totalCostHasBeenSet;
-}
-
 string BusinessSummaryTotal::GetTransferPayAmount() const
 {
     return m_transferPayAmount;
@@ -247,5 +231,21 @@ void BusinessSummaryTotal::SetTransferPayAmount(const string& _transferPayAmount
 bool BusinessSummaryTotal::TransferPayAmountHasBeenSet() const
 {
     return m_transferPayAmountHasBeenSet;
+}
+
+string BusinessSummaryTotal::GetTotalCost() const
+{
+    return m_totalCost;
+}
+
+void BusinessSummaryTotal::SetTotalCost(const string& _totalCost)
+{
+    m_totalCost = _totalCost;
+    m_totalCostHasBeenSet = true;
+}
+
+bool BusinessSummaryTotal::TotalCostHasBeenSet() const
+{
+    return m_totalCostHasBeenSet;
 }
 

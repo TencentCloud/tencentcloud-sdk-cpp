@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool ExecutorGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     std::string m_executorGroupId;
                     bool m_executorGroupIdHasBeenSet;
+
+                    /**
+                     * 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

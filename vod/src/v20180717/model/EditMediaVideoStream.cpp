@@ -23,7 +23,8 @@ using namespace std;
 EditMediaVideoStream::EditMediaVideoStream() :
     m_resolutionAdaptiveHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_fpsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EditMediaVideoStream::Deserialize(const rapidjson::Value &va
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("Fps") && !value["Fps"].IsNull())
+    {
+        if (!value["Fps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaVideoStream.Fps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fps = value["Fps"].GetInt64();
+        m_fpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EditMediaVideoStream::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_fpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Fps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fps, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EditMediaVideoStream::SetHeight(const uint64_t& _height)
 bool EditMediaVideoStream::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+int64_t EditMediaVideoStream::GetFps() const
+{
+    return m_fps;
+}
+
+void EditMediaVideoStream::SetFps(const int64_t& _fps)
+{
+    m_fps = _fps;
+    m_fpsHasBeenSet = true;
+}
+
+bool EditMediaVideoStream::FpsHasBeenSet() const
+{
+    return m_fpsHasBeenSet;
 }
 

@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool SecondNotesHasBeenSet() const;
 
+                    /**
+                     * 获取文件类型
+                     * @return FileType 文件类型
+                     */
+                    uint64_t GetFileType() const;
+
+                    /**
+                     * 设置文件类型
+                     * @param FileType 文件类型
+                     */
+                    void SetFileType(const uint64_t& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     */
+                    bool FileTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_secondNotes;
                     bool m_secondNotesHasBeenSet;
+
+                    /**
+                     * 文件类型
+                     */
+                    uint64_t m_fileType;
+                    bool m_fileTypeHasBeenSet;
 
                 };
             }

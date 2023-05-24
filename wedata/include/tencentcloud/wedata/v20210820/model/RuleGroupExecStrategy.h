@@ -311,6 +311,50 @@ namespace TencentCloud
                      */
                     bool TaskActionHasBeenSet() const;
 
+                    /**
+                     * 获取运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExecEngineType() const;
+
+                    /**
+                     * 设置运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExecEngineType 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExecEngineType(const std::string& _execEngineType);
+
+                    /**
+                     * 判断参数 ExecEngineType 是否已赋值
+                     * @return ExecEngineType 是否已赋值
+                     */
+                    bool ExecEngineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取执行计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecPlan 执行计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExecPlan() const;
+
+                    /**
+                     * 设置执行计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExecPlan 执行计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExecPlan(const std::string& _execPlan);
+
+                    /**
+                     * 判断参数 ExecPlan 是否已赋值
+                     * @return ExecPlan 是否已赋值
+                     */
+                    bool ExecPlanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +440,20 @@ namespace TencentCloud
                      */
                     std::string m_taskAction;
                     bool m_taskActionHasBeenSet;
+
+                    /**
+                     * 运行的执行引擎，不传时会请求该数据源下默认的执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_execEngineType;
+                    bool m_execEngineTypeHasBeenSet;
+
+                    /**
+                     * 执行计划
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_execPlan;
+                    bool m_execPlanHasBeenSet;
 
                 };
             }

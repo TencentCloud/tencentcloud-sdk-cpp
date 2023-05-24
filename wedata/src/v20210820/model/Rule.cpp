@@ -54,7 +54,8 @@ Rule::Rule() :
     m_targetObjectTypeHasBeenSet(false),
     m_targetObjectDataTypeHasBeenSet(false),
     m_targetObjectDataTypeNameHasBeenSet(false),
-    m_targetObjectValueHasBeenSet(false)
+    m_targetObjectValueHasBeenSet(false),
+    m_sourceEngineTypesHasBeenSet(false)
 {
 }
 
@@ -417,6 +418,19 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_targetObjectValueHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceEngineTypes") && !value["SourceEngineTypes"].IsNull())
+    {
+        if (!value["SourceEngineTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Rule.SourceEngineTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SourceEngineTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sourceEngineTypes.push_back((*itr).GetUint64());
+        }
+        m_sourceEngineTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -696,6 +710,19 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TargetObjectValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetObjectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceEngineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceEngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceEngineTypes.begin(); itr != m_sourceEngineTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -1243,5 +1270,21 @@ void Rule::SetTargetObjectValue(const string& _targetObjectValue)
 bool Rule::TargetObjectValueHasBeenSet() const
 {
     return m_targetObjectValueHasBeenSet;
+}
+
+vector<uint64_t> Rule::GetSourceEngineTypes() const
+{
+    return m_sourceEngineTypes;
+}
+
+void Rule::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngineTypes)
+{
+    m_sourceEngineTypes = _sourceEngineTypes;
+    m_sourceEngineTypesHasBeenSet = true;
+}
+
+bool Rule::SourceEngineTypesHasBeenSet() const
+{
+    return m_sourceEngineTypesHasBeenSet;
 }
 

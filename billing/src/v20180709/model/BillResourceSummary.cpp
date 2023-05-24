@@ -44,6 +44,7 @@ BillResourceSummary::BillResourceSummary() :
     m_voucherPayAmountHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false),
     m_extendField3HasBeenSet(false),
     m_extendField4HasBeenSet(false),
     m_extendField5HasBeenSet(false),
@@ -294,6 +295,16 @@ CoreInternalOutcome BillResourceSummary::Deserialize(const rapidjson::Value &val
         }
         m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
         m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillResourceSummary.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
     }
 
     if (value.HasMember("ExtendField3") && !value["ExtendField3"].IsNull())
@@ -635,6 +646,14 @@ void BillResourceSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IncentivePayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extendField3HasBeenSet)
@@ -1125,6 +1144,22 @@ void BillResourceSummary::SetIncentivePayAmount(const string& _incentivePayAmoun
 bool BillResourceSummary::IncentivePayAmountHasBeenSet() const
 {
     return m_incentivePayAmountHasBeenSet;
+}
+
+string BillResourceSummary::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void BillResourceSummary::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool BillResourceSummary::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 
 string BillResourceSummary::GetExtendField3() const
