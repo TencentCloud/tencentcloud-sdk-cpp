@@ -156,6 +156,24 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                      */
                     bool NotifyAddressHasBeenSet() const;
 
+                    /**
+                     * 获取链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     * @return ExpiredTime 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     */
+                    int64_t GetExpiredTime() const;
+
+                    /**
+                     * 设置链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     * @param ExpiredTime 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     */
+                    void SetExpiredTime(const int64_t& _expiredTime);
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +212,12 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                      */
                     std::string m_notifyAddress;
                     bool m_notifyAddressHasBeenSet;
+
+                    /**
+                     * 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     */
+                    int64_t m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

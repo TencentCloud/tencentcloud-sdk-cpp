@@ -27,7 +27,9 @@ RechargeLiveVipRequest::RechargeLiveVipRequest() :
     m_userIdHasBeenSet(false),
     m_tradeSerialNoHasBeenSet(false),
     m_roomIdHasBeenSet(false),
-    m_vipDaysHasBeenSet(false)
+    m_vipDaysHasBeenSet(false),
+    m_giveTypeHasBeenSet(false),
+    m_playSceneHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string RechargeLiveVipRequest::ToJsonString() const
         string key = "VipDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vipDays, allocator);
+    }
+
+    if (m_giveTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GiveType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_giveType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_playScene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void RechargeLiveVipRequest::SetVipDays(const int64_t& _vipDays)
 bool RechargeLiveVipRequest::VipDaysHasBeenSet() const
 {
     return m_vipDaysHasBeenSet;
+}
+
+string RechargeLiveVipRequest::GetGiveType() const
+{
+    return m_giveType;
+}
+
+void RechargeLiveVipRequest::SetGiveType(const string& _giveType)
+{
+    m_giveType = _giveType;
+    m_giveTypeHasBeenSet = true;
+}
+
+bool RechargeLiveVipRequest::GiveTypeHasBeenSet() const
+{
+    return m_giveTypeHasBeenSet;
+}
+
+string RechargeLiveVipRequest::GetPlayScene() const
+{
+    return m_playScene;
+}
+
+void RechargeLiveVipRequest::SetPlayScene(const string& _playScene)
+{
+    m_playScene = _playScene;
+    m_playSceneHasBeenSet = true;
+}
+
+bool RechargeLiveVipRequest::PlaySceneHasBeenSet() const
+{
+    return m_playSceneHasBeenSet;
 }
 
 

@@ -263,6 +263,24 @@ RELIEVED 解除
                      */
                     bool CcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程
+                     * @return NeedCreateReview 是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程
+                     */
+                    bool GetNeedCreateReview() const;
+
+                    /**
+                     * 设置是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程
+                     * @param NeedCreateReview 是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程
+                     */
+                    void SetNeedCreateReview(const bool& _needCreateReview);
+
+                    /**
+                     * 判断参数 NeedCreateReview 是否已赋值
+                     * @return NeedCreateReview 是否已赋值
+                     */
+                    bool NeedCreateReviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +351,12 @@ RELIEVED 解除
                      */
                     std::vector<FlowApproverDetail> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 是否需要发起前审批，当NeedCreateReview为true，表明当前流程是需要发起前审核的合同，可能无法进行查看，签署操作，需要等审核完成后，才可以继续后续流程
+                     */
+                    bool m_needCreateReview;
+                    bool m_needCreateReviewHasBeenSet;
 
                 };
             }

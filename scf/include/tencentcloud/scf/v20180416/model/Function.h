@@ -86,13 +86,17 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Runtime 运行时
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuntime(const std::string& _runtime);
 
@@ -360,6 +364,7 @@ namespace TencentCloud
 
                     /**
                      * 运行时
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;

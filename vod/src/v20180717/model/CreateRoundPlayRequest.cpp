@@ -27,7 +27,8 @@ CreateRoundPlayRequest::CreateRoundPlayRequest() :
     m_roundPlaylistHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_playBackModeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateRoundPlayRequest::ToJsonString() const
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playBackModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayBackMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_playBackMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateRoundPlayRequest::SetDesc(const string& _desc)
 bool CreateRoundPlayRequest::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string CreateRoundPlayRequest::GetPlayBackMode() const
+{
+    return m_playBackMode;
+}
+
+void CreateRoundPlayRequest::SetPlayBackMode(const string& _playBackMode)
+{
+    m_playBackMode = _playBackMode;
+    m_playBackModeHasBeenSet = true;
+}
+
+bool CreateRoundPlayRequest::PlayBackModeHasBeenSet() const
+{
+    return m_playBackModeHasBeenSet;
 }
 
 

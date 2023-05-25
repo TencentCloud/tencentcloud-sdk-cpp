@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool NetDetailsHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用最大值（单位：bit）
-                     * @return MaxValue 查找时间段流量使用最大值（单位：bit）
+                     * 获取查找时间段流量使用最大值（单位：byte）
+                     * @return MaxValue 查找时间段流量使用最大值（单位：byte）
                      */
                     double GetMaxValue() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool MaxValueHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用平均值（单位：bit）
-                     * @return AvgValue 查找时间段流量使用平均值（单位：bit）
+                     * 获取查找时间段流量使用平均值（单位：byte）
+                     * @return AvgValue 查找时间段流量使用平均值（单位：byte）
                      */
                     double GetAvgValue() const;
 
@@ -81,8 +81,8 @@ namespace TencentCloud
                     bool AvgValueHasBeenSet() const;
 
                     /**
-                     * 获取查找时间段流量使用总量（单位：bit）
-                     * @return TotalValue 查找时间段流量使用总量（单位：bit）
+                     * 获取查找时间段流量使用总量（单位：byte）
+                     * @return TotalValue 查找时间段流量使用总量（单位：byte）
                      */
                     double GetTotalValue() const;
 
@@ -101,19 +101,19 @@ namespace TencentCloud
                     bool m_netDetailsHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用最大值（单位：bit）
+                     * 查找时间段流量使用最大值（单位：byte）
                      */
                     double m_maxValue;
                     bool m_maxValueHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用平均值（单位：bit）
+                     * 查找时间段流量使用平均值（单位：byte）
                      */
                     double m_avgValue;
                     bool m_avgValueHasBeenSet;
 
                     /**
-                     * 查找时间段流量使用总量（单位：bit）
+                     * 查找时间段流量使用总量（单位：byte）
                      */
                     double m_totalValue;
                     bool m_totalValueHasBeenSet;

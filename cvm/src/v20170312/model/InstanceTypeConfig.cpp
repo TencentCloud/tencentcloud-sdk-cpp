@@ -27,7 +27,8 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_gPUHasBeenSet(false),
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_fPGAHasBeenSet(false)
+    m_fPGAHasBeenSet(false),
+    m_gpuCountHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome InstanceTypeConfig::Deserialize(const rapidjson::Value &valu
         m_fPGAHasBeenSet = true;
     }
 
+    if (value.HasMember("GpuCount") && !value["GpuCount"].IsNull())
+    {
+        if (!value["GpuCount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceTypeConfig.GpuCount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_gpuCount = value["GpuCount"].GetDouble();
+        m_gpuCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void InstanceTypeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "FPGA";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fPGA, allocator);
+    }
+
+    if (m_gpuCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GpuCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gpuCount, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void InstanceTypeConfig::SetFPGA(const int64_t& _fPGA)
 bool InstanceTypeConfig::FPGAHasBeenSet() const
 {
     return m_fPGAHasBeenSet;
+}
+
+double InstanceTypeConfig::GetGpuCount() const
+{
+    return m_gpuCount;
+}
+
+void InstanceTypeConfig::SetGpuCount(const double& _gpuCount)
+{
+    m_gpuCount = _gpuCount;
+    m_gpuCountHasBeenSet = true;
+}
+
+bool InstanceTypeConfig::GpuCountHasBeenSet() const
+{
+    return m_gpuCountHasBeenSet;
 }
 

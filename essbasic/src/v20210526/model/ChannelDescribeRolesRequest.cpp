@@ -26,8 +26,8 @@ ChannelDescribeRolesRequest::ChannelDescribeRolesRequest() :
     m_agentHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -63,15 +63,6 @@ string ChannelDescribeRolesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +76,15 @@ string ChannelDescribeRolesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -143,22 +143,6 @@ bool ChannelDescribeRolesRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-UserInfo ChannelDescribeRolesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelDescribeRolesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelDescribeRolesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<Filter> ChannelDescribeRolesRequest::GetFilters() const
 {
     return m_filters;
@@ -173,6 +157,22 @@ void ChannelDescribeRolesRequest::SetFilters(const vector<Filter>& _filters)
 bool ChannelDescribeRolesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+UserInfo ChannelDescribeRolesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelDescribeRolesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelDescribeRolesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

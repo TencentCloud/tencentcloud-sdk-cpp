@@ -28,7 +28,8 @@ CreateUserAutoSignEnableUrlRequest::CreateUserAutoSignEnableUrlRequest() :
     m_autoSignConfigHasBeenSet(false),
     m_urlTypeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
-    m_notifyAddressHasBeenSet(false)
+    m_notifyAddressHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string CreateUserAutoSignEnableUrlRequest::ToJsonString() const
         string key = "NotifyAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_notifyAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredTime, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void CreateUserAutoSignEnableUrlRequest::SetNotifyAddress(const string& _notifyA
 bool CreateUserAutoSignEnableUrlRequest::NotifyAddressHasBeenSet() const
 {
     return m_notifyAddressHasBeenSet;
+}
+
+int64_t CreateUserAutoSignEnableUrlRequest::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void CreateUserAutoSignEnableUrlRequest::SetExpiredTime(const int64_t& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool CreateUserAutoSignEnableUrlRequest::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 
 

@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的实例个数。
-                     * @return SslVpnClientSet 符合条件的实例个数。
+                     * 获取SSL-VPN-CLIENT 实例列表。
+                     * @return SslVpnClientSet SSL-VPN-CLIENT 实例列表。
                      */
                     std::vector<SslVpnClient> GetSslVpnClientSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合条件的实例个数。
+                     * SSL-VPN-CLIENT 实例列表。
                      */
                     std::vector<SslVpnClient> m_sslVpnClientSet;
                     bool m_sslVpnClientSetHasBeenSet;

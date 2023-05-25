@@ -118,6 +118,42 @@ namespace TencentCloud
                      */
                     bool PlaySceneHasBeenSet() const;
 
+                    /**
+                     * 获取玩家用户标识
+                     * @return GuestUserId 玩家用户标识
+                     */
+                    std::string GetGuestUserId() const;
+
+                    /**
+                     * 设置玩家用户标识
+                     * @param GuestUserId 玩家用户标识
+                     */
+                    void SetGuestUserId(const std::string& _guestUserId);
+
+                    /**
+                     * 判断参数 GuestUserId 是否已赋值
+                     * @return GuestUserId 是否已赋值
+                     */
+                    bool GuestUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取房间Id
+                     * @return RoomId 房间Id
+                     */
+                    std::string GetRoomId() const;
+
+                    /**
+                     * 设置房间Id
+                     * @param RoomId 房间Id
+                     */
+                    void SetRoomId(const std::string& _roomId);
+
+                    /**
+                     * 判断参数 RoomId 是否已赋值
+                     * @return RoomId 是否已赋值
+                     */
+                    bool RoomIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +180,18 @@ namespace TencentCloud
                      */
                     std::string m_playScene;
                     bool m_playSceneHasBeenSet;
+
+                    /**
+                     * 玩家用户标识
+                     */
+                    std::string m_guestUserId;
+                    bool m_guestUserIdHasBeenSet;
+
+                    /**
+                     * 房间Id
+                     */
+                    std::string m_roomId;
+                    bool m_roomIdHasBeenSet;
 
                 };
             }

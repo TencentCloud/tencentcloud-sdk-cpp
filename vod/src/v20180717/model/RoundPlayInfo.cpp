@@ -25,7 +25,10 @@ RoundPlayInfo::RoundPlayInfo() :
     m_startTimeHasBeenSet(false),
     m_roundPlaylistHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_playBackModeHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome RoundPlayInfo::Deserialize(const rapidjson::Value &value)
         m_descHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoundPlayInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlayBackMode") && !value["PlayBackMode"].IsNull())
+    {
+        if (!value["PlayBackMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoundPlayInfo.PlayBackMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_playBackMode = string(value["PlayBackMode"].GetString());
+        m_playBackModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoundPlayInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +179,30 @@ void RoundPlayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playBackModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayBackMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playBackMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +286,53 @@ void RoundPlayInfo::SetDesc(const string& _desc)
 bool RoundPlayInfo::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string RoundPlayInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void RoundPlayInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool RoundPlayInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string RoundPlayInfo::GetPlayBackMode() const
+{
+    return m_playBackMode;
+}
+
+void RoundPlayInfo::SetPlayBackMode(const string& _playBackMode)
+{
+    m_playBackMode = _playBackMode;
+    m_playBackModeHasBeenSet = true;
+}
+
+bool RoundPlayInfo::PlayBackModeHasBeenSet() const
+{
+    return m_playBackModeHasBeenSet;
+}
+
+string RoundPlayInfo::GetUrl() const
+{
+    return m_url;
+}
+
+void RoundPlayInfo::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool RoundPlayInfo::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

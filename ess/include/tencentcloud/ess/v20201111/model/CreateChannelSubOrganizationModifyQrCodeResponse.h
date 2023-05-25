@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool QrCodeUrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码失效时间 unix 时间戳 精确到秒
-                     * @return ExpiredTime 二维码失效时间 unix 时间戳 精确到秒
+                     * 获取二维码失效时间 UNIX 时间戳 精确到秒
+                     * @return ExpiredTime 二维码失效时间 UNIX 时间戳 精确到秒
                      */
                     int64_t GetExpiredTime() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_qrCodeUrlHasBeenSet;
 
                     /**
-                     * 二维码失效时间 unix 时间戳 精确到秒
+                     * 二维码失效时间 UNIX 时间戳 精确到秒
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
