@@ -22,7 +22,9 @@ using namespace std;
 
 TeoInstanceDetail::TeoInstanceDetail() :
     m_hostHasBeenSet(false),
-    m_certIdHasBeenSet(false)
+    m_certIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome TeoInstanceDetail::Deserialize(const rapidjson::Value &value
         m_certIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TeoInstanceDetail.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TeoInstanceDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void TeoInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void TeoInstanceDetail::SetCertId(const string& _certId)
 bool TeoInstanceDetail::CertIdHasBeenSet() const
 {
     return m_certIdHasBeenSet;
+}
+
+string TeoInstanceDetail::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void TeoInstanceDetail::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool TeoInstanceDetail::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string TeoInstanceDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void TeoInstanceDetail::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TeoInstanceDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

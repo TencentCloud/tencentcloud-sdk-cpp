@@ -486,7 +486,7 @@ namespace TencentCloud
                 DescribeMetricLabelWithValuesOutcomeCallable DescribeMetricLabelWithValuesCallable(const Model::DescribeMetricLabelWithValuesRequest& request);
 
                 /**
-                 *压测过程日志日志包括引擎输出日志及用户输出日志
+                 *压测过程日志包括引擎输出日志及用户输出日志
                  * @param req DescribeNormalLogsRequest
                  * @return DescribeNormalLogsOutcome
                  */

@@ -199,6 +199,30 @@ WARN_COPY_CARD 黑白复印件告警
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取是否为副本。1为是，-1为不是。
+                     * @return IsDuplication 是否为副本。1为是，-1为不是。
+                     */
+                    int64_t GetIsDuplication() const;
+
+                    /**
+                     * 判断参数 IsDuplication 是否已赋值
+                     * @return IsDuplication 是否已赋值
+                     */
+                    bool IsDuplicationHasBeenSet() const;
+
+                    /**
+                     * 获取登记日期
+                     * @return RegistrationDate 登记日期
+                     */
+                    std::string GetRegistrationDate() const;
+
+                    /**
+                     * 判断参数 RegistrationDate 是否已赋值
+                     * @return RegistrationDate 是否已赋值
+                     */
+                    bool RegistrationDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +302,18 @@ WARN_COPY_CARD 黑白复印件告警
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;
+
+                    /**
+                     * 是否为副本。1为是，-1为不是。
+                     */
+                    int64_t m_isDuplication;
+                    bool m_isDuplicationHasBeenSet;
+
+                    /**
+                     * 登记日期
+                     */
+                    std::string m_registrationDate;
+                    bool m_registrationDateHasBeenSet;
 
                 };
             }

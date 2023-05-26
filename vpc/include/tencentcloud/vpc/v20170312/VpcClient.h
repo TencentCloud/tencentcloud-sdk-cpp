@@ -3456,7 +3456,7 @@ LimitTypes取值范围：
                 DescribeVpnGatewaySslClientsOutcomeCallable DescribeVpnGatewaySslClientsCallable(const Model::DescribeVpnGatewaySslClientsRequest& request);
 
                 /**
-                 *查询SSL-VPN SERVER 列表信息
+                 *本接口（DescribeVpnGatewaySslServers）用于查询SSL-VPN SERVER 列表信息。
                  * @param req DescribeVpnGatewaySslServersRequest
                  * @return DescribeVpnGatewaySslServersOutcome
                  */

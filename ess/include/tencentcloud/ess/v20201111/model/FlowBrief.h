@@ -254,6 +254,28 @@ namespace TencentCloud
                      */
                     bool CreatorHasBeenSet() const;
 
+                    /**
+                     * 获取合同过期时间，时间戳，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deadline 合同过期时间，时间戳，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置合同过期时间，时间戳，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Deadline 合同过期时间，时间戳，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +341,13 @@ namespace TencentCloud
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
+
+                    /**
+                     * 合同过期时间，时间戳，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

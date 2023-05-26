@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/sqlserver/v20180328/model/CreateBusinessDBInstancesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEnhanceMediaTemplatesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Sqlserver::V20180328::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-CreateBusinessDBInstancesResponse::CreateBusinessDBInstancesResponse() :
-    m_dealNameHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
-    m_instanceIdSetHasBeenSet(false)
+DescribeEnhanceMediaTemplatesResponse::DescribeEnhanceMediaTemplatesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_rebuildMediaTemplateSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateBusinessDBInstancesResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeEnhanceMediaTemplatesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,75 +63,66 @@ CoreInternalOutcome CreateBusinessDBInstancesResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["DealName"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_dealName = string(rsp["DealName"].GetString());
-        m_dealNameHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    if (rsp.HasMember("RebuildMediaTemplateSet") && !rsp["RebuildMediaTemplateSet"].IsNull())
     {
-        if (!rsp["FlowId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_flowId = rsp["FlowId"].GetInt64();
-        m_flowIdHasBeenSet = true;
-    }
+        if (!rsp["RebuildMediaTemplateSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RebuildMediaTemplateSet` is not array type"));
 
-    if (rsp.HasMember("InstanceIdSet") && !rsp["InstanceIdSet"].IsNull())
-    {
-        if (!rsp["InstanceIdSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceIdSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["InstanceIdSet"];
+        const rapidjson::Value &tmpValue = rsp["RebuildMediaTemplateSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_instanceIdSet.push_back((*itr).GetString());
+            RebuildMediaTemplate item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_rebuildMediaTemplateSet.push_back(item);
         }
-        m_instanceIdSetHasBeenSet = true;
+        m_rebuildMediaTemplateSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateBusinessDBInstancesResponse::ToJsonString() const
+string DescribeEnhanceMediaTemplatesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dealNameHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealName";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_flowIdHasBeenSet)
+    if (m_rebuildMediaTemplateSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_flowId, allocator);
-    }
-
-    if (m_instanceIdSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceIdSet";
+        string key = "RebuildMediaTemplateSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_instanceIdSet.begin(); itr != m_instanceIdSet.end(); ++itr)
+        int i=0;
+        for (auto itr = m_rebuildMediaTemplateSet.begin(); itr != m_rebuildMediaTemplateSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -148,34 +138,24 @@ string CreateBusinessDBInstancesResponse::ToJsonString() const
 }
 
 
-string CreateBusinessDBInstancesResponse::GetDealName() const
+int64_t DescribeEnhanceMediaTemplatesResponse::GetTotalCount() const
 {
-    return m_dealName;
+    return m_totalCount;
 }
 
-bool CreateBusinessDBInstancesResponse::DealNameHasBeenSet() const
+bool DescribeEnhanceMediaTemplatesResponse::TotalCountHasBeenSet() const
 {
-    return m_dealNameHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-int64_t CreateBusinessDBInstancesResponse::GetFlowId() const
+vector<RebuildMediaTemplate> DescribeEnhanceMediaTemplatesResponse::GetRebuildMediaTemplateSet() const
 {
-    return m_flowId;
+    return m_rebuildMediaTemplateSet;
 }
 
-bool CreateBusinessDBInstancesResponse::FlowIdHasBeenSet() const
+bool DescribeEnhanceMediaTemplatesResponse::RebuildMediaTemplateSetHasBeenSet() const
 {
-    return m_flowIdHasBeenSet;
-}
-
-vector<string> CreateBusinessDBInstancesResponse::GetInstanceIdSet() const
-{
-    return m_instanceIdSet;
-}
-
-bool CreateBusinessDBInstancesResponse::InstanceIdSetHasBeenSet() const
-{
-    return m_instanceIdSetHasBeenSet;
+    return m_rebuildMediaTemplateSetHasBeenSet;
 }
 
 
