@@ -78,7 +78,7 @@ include_directories("include/tencentcloud/core/utils/rapidjson")
 find_package(CURL REQUIRED)
 find_package(OpenSSL REQUIRED)
 
-include_directories(${CURL_INCLUDE_DIR})
+include_directories(${CURL_INCLUDE_DIRS})
 include_directories(${OPENSSL_INCLUDE_DIR})
 
 add_library(core ${LIB_TYPE}

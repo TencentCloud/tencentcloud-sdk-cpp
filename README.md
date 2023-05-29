@@ -10,12 +10,11 @@
 
 ## 编译器
 * 安装支持 C++ 11 或更高版本的编译器：GCC 4.8 或以上版本
-* 暂时仅支持 Linux 环境，不支持 Windows 环境
 
 ## 编译工具
 - [cmake](https://cmake.org/)
 
-安装 cmake 3.0 或以上版本，例如：
+安装 cmake 3.0 或以上版本，参照[官方安装文档](https://cmake.org/install/)，或使用包管理器：
 
 ```
 ubuntu
@@ -23,13 +22,26 @@ sudo apt-get install cmake
 
 centos
 yum install cmake3
+
+macos
+brew install cmake
+
+windows chocolatey
+choco install cmake.install
+```
+
+- vcpkg（仅windows平台需要）
+```
+tencentcloud-sdk-cpp 在 windows 平台使用 vcpkg 下载所依赖的程序库，安装说明请参考：
+
+https://vcpkg.io/en/getting-started.html
 ```
 
 ## 依赖库
 
 - [libcurl](https://curl.haxx.se/libcurl/)
 
-安装例子如下:
+安装示例如下:
 
 ```
 ubuntu
@@ -37,13 +49,19 @@ sudo apt-get install libcurl4-openssl-dev
 
 centos
 yum install libcurl-devel
+
+macos（本身自带curl，这一步非必须）
+brew install curl
+
+windows（这里的 cpu 架构请根据实际环境灵活选择）
+vcpkg install curl:x64-windows
 ```
 
 备注：建议安装最新版的 libcurl 库，否则可能存在 libcurl 库内存泄露 bug 问题。
 
 - [openssl](https://www.openssl.org/)
 
-安装例子如下:
+安装示例如下:
 
 ```
 ubuntu
@@ -51,6 +69,12 @@ sudo apt-get install libssl-dev
 
 centos
 yum install openssl-devel
+
+macos
+brew install openssl && brew link openssl
+
+windows（这里的 cpu 架构请根据实际环境灵活选择）
+vcpkg install openssl:x64-windows
 ```
 
 # 从源代码构建 SDK
@@ -58,15 +82,28 @@ yum install openssl-devel
 1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
+- linux / macos
+```bash
+# build
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+./build.sh build -DBUILD_MODULES="cvm;cbs"
+
+# install
+./build.sh install
 ```
-cd <path/to/tencentcloud-sdk-cpp>
-mkdir sdk_build
-cd sdk_build
-# centos 下使用 cmake3 ..
-# 指定产品编译，分号;分隔
-cmake -DBUILD_MODULES="cvm;cbs" ..
-make
-sudo make install
+
+- windows (powershell)
+```bash
+# 允许执行 powershell 脚本
+Set-ExecutionPolicy Bypass -Scope Process
+
+# build
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
+.\build.ps1 build -DBUILD_MODULES="cvm;cbs" .. -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
+
+# install，需要 Administrator 权限
+.\build.ps1 install
 ```
 
 注意：从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
@@ -246,8 +283,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 如果是安装的静态库，需要修改 `example/cvm/v20170312/CMakeLists.txt`，在链接库的配置代码中，追加链接库：
 
 ```
-target_link_libraries(DescribeInstances tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
-target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
+target_link_libraries(DescribeInstances tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl)
+target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl)
 ```
 
 更多例子请参考 example 目录。
@@ -272,6 +309,11 @@ sudo apt-get install zlib1g-dev
 centos
 yum install -y zlib zlib-devel
 
+macos
+brew install zlib
+
+windows（这里的 cpu 架构请根据实际环境灵活选择）
+vcpkg install zlib:x64-windows
 ```
 
 2. 通过指定编译选项，可以选择压缩模块是否进行编译，默认关闭。如需开启，将对应模块打开即可，如下所示：
