@@ -43,6 +43,8 @@
 #include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableRequest.h>
@@ -143,6 +147,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableRequest.h>
@@ -239,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelNotebookSessionStatementBatchResponse> CancelNotebookSessionStatementBatchOutcome;
                 typedef std::future<CancelNotebookSessionStatementBatchOutcome> CancelNotebookSessionStatementBatchOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CancelNotebookSessionStatementBatchRequest&, CancelNotebookSessionStatementBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelNotebookSessionStatementBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelSparkSessionBatchSQLResponse> CancelSparkSessionBatchSQLOutcome;
+                typedef std::future<CancelSparkSessionBatchSQLOutcome> CancelSparkSessionBatchSQLOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CancelSparkSessionBatchSQLRequest&, CancelSparkSessionBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelSparkSessionBatchSQLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -287,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSparkAppTaskResponse> CreateSparkAppTaskOutcome;
                 typedef std::future<CreateSparkAppTaskOutcome> CreateSparkAppTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateSparkAppTaskRequest&, CreateSparkAppTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSparkSessionBatchSQLResponse> CreateSparkSessionBatchSQLOutcome;
+                typedef std::future<CreateSparkSessionBatchSQLOutcome> CreateSparkSessionBatchSQLOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateSparkSessionBatchSQLRequest&, CreateSparkSessionBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkSessionBatchSQLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStoreLocationResponse> CreateStoreLocationOutcome;
                 typedef std::future<CreateStoreLocationOutcome> CreateStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateStoreLocationRequest&, CreateStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreLocationAsyncHandler;
@@ -389,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSparkAppTasksResponse> DescribeSparkAppTasksOutcome;
                 typedef std::future<DescribeSparkAppTasksOutcome> DescribeSparkAppTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppTasksRequest&, DescribeSparkAppTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkSessionBatchSqlLogResponse> DescribeSparkSessionBatchSqlLogOutcome;
+                typedef std::future<DescribeSparkSessionBatchSqlLogOutcome> DescribeSparkSessionBatchSqlLogOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSparkSessionBatchSqlLogRequest&, DescribeSparkSessionBatchSqlLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkSessionBatchSqlLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStoreLocationResponse> DescribeStoreLocationOutcome;
                 typedef std::future<DescribeStoreLocationOutcome> DescribeStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeStoreLocationRequest&, DescribeStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreLocationAsyncHandler;
@@ -561,6 +576,15 @@ namespace TencentCloud
                 CancelNotebookSessionStatementBatchOutcomeCallable CancelNotebookSessionStatementBatchCallable(const Model::CancelNotebookSessionStatementBatchRequest& request);
 
                 /**
+                 *本接口（CancelSparkSessionBatchSQL）用于取消Spark SQL批任务。
+                 * @param req CancelSparkSessionBatchSQLRequest
+                 * @return CancelSparkSessionBatchSQLOutcome
+                 */
+                CancelSparkSessionBatchSQLOutcome CancelSparkSessionBatchSQL(const Model::CancelSparkSessionBatchSQLRequest &request);
+                void CancelSparkSessionBatchSQLAsync(const Model::CancelSparkSessionBatchSQLRequest& request, const CancelSparkSessionBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelSparkSessionBatchSQLOutcomeCallable CancelSparkSessionBatchSQLCallable(const Model::CancelSparkSessionBatchSQLRequest& request);
+
+                /**
                  *本接口（CancelTask），用于取消任务执行
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
@@ -703,6 +727,15 @@ namespace TencentCloud
                 CreateSparkAppTaskOutcome CreateSparkAppTask(const Model::CreateSparkAppTaskRequest &request);
                 void CreateSparkAppTaskAsync(const Model::CreateSparkAppTaskRequest& request, const CreateSparkAppTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSparkAppTaskOutcomeCallable CreateSparkAppTaskCallable(const Model::CreateSparkAppTaskRequest& request);
+
+                /**
+                 *本接口（CreateSparkSessionBatchSQL）用于提交Spark SQL批任务。
+                 * @param req CreateSparkSessionBatchSQLRequest
+                 * @return CreateSparkSessionBatchSQLOutcome
+                 */
+                CreateSparkSessionBatchSQLOutcome CreateSparkSessionBatchSQL(const Model::CreateSparkSessionBatchSQLRequest &request);
+                void CreateSparkSessionBatchSQLAsync(const Model::CreateSparkSessionBatchSQLRequest& request, const CreateSparkSessionBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSparkSessionBatchSQLOutcomeCallable CreateSparkSessionBatchSQLCallable(const Model::CreateSparkSessionBatchSQLRequest& request);
 
                 /**
                  *该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。
@@ -1009,6 +1042,15 @@ namespace TencentCloud
                 DescribeSparkAppTasksOutcome DescribeSparkAppTasks(const Model::DescribeSparkAppTasksRequest &request);
                 void DescribeSparkAppTasksAsync(const Model::DescribeSparkAppTasksRequest& request, const DescribeSparkAppTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSparkAppTasksOutcomeCallable DescribeSparkAppTasksCallable(const Model::DescribeSparkAppTasksRequest& request);
+
+                /**
+                 *本接口（DescribeSparkSessionBatchSqlLog）用于获取SparkSQL批任务日志
+                 * @param req DescribeSparkSessionBatchSqlLogRequest
+                 * @return DescribeSparkSessionBatchSqlLogOutcome
+                 */
+                DescribeSparkSessionBatchSqlLogOutcome DescribeSparkSessionBatchSqlLog(const Model::DescribeSparkSessionBatchSqlLogRequest &request);
+                void DescribeSparkSessionBatchSqlLogAsync(const Model::DescribeSparkSessionBatchSqlLogRequest& request, const DescribeSparkSessionBatchSqlLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkSessionBatchSqlLogOutcomeCallable DescribeSparkSessionBatchSqlLogCallable(const Model::DescribeSparkSessionBatchSqlLogRequest& request);
 
                 /**
                  *查询计算结果存储位置。

@@ -32,7 +32,8 @@ NetworkClusterInfoItem::NetworkClusterInfoItem() :
     m_totalRuleCountHasBeenSet(false),
     m_enableRuleCountHasBeenSet(false),
     m_networkPolicyPluginStatusHasBeenSet(false),
-    m_networkPolicyPluginErrorHasBeenSet(false)
+    m_networkPolicyPluginErrorHasBeenSet(false),
+    m_clusterNetworkSettingsHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome NetworkClusterInfoItem::Deserialize(const rapidjson::Value &
         m_networkPolicyPluginErrorHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterNetworkSettings") && !value["ClusterNetworkSettings"].IsNull())
+    {
+        if (!value["ClusterNetworkSettings"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkClusterInfoItem.ClusterNetworkSettings` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterNetworkSettings = string(value["ClusterNetworkSettings"].GetString());
+        m_clusterNetworkSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void NetworkClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "NetworkPolicyPluginError";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_networkPolicyPluginError.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNetworkSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterNetworkSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterNetworkSettings.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void NetworkClusterInfoItem::SetNetworkPolicyPluginError(const string& _networkP
 bool NetworkClusterInfoItem::NetworkPolicyPluginErrorHasBeenSet() const
 {
     return m_networkPolicyPluginErrorHasBeenSet;
+}
+
+string NetworkClusterInfoItem::GetClusterNetworkSettings() const
+{
+    return m_clusterNetworkSettings;
+}
+
+void NetworkClusterInfoItem::SetClusterNetworkSettings(const string& _clusterNetworkSettings)
+{
+    m_clusterNetworkSettings = _clusterNetworkSettings;
+    m_clusterNetworkSettingsHasBeenSet = true;
+}
+
+bool NetworkClusterInfoItem::ClusterNetworkSettingsHasBeenSet() const
+{
+    return m_clusterNetworkSettingsHasBeenSet;
 }
 

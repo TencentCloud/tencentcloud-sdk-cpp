@@ -28,7 +28,8 @@ DBAccount::DBAccount() :
     m_updateTimeHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_delayThreshHasBeenSet(false),
-    m_slaveConstHasBeenSet(false)
+    m_slaveConstHasBeenSet(false),
+    m_maxUserConnectionsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
         m_slaveConstHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxUserConnections") && !value["MaxUserConnections"].IsNull())
+    {
+        if (!value["MaxUserConnections"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBAccount.MaxUserConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUserConnections = value["MaxUserConnections"].GetInt64();
+        m_maxUserConnectionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void DBAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SlaveConst";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_slaveConst, allocator);
+    }
+
+    if (m_maxUserConnectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUserConnections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxUserConnections, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void DBAccount::SetSlaveConst(const int64_t& _slaveConst)
 bool DBAccount::SlaveConstHasBeenSet() const
 {
     return m_slaveConstHasBeenSet;
+}
+
+int64_t DBAccount::GetMaxUserConnections() const
+{
+    return m_maxUserConnections;
+}
+
+void DBAccount::SetMaxUserConnections(const int64_t& _maxUserConnections)
+{
+    m_maxUserConnections = _maxUserConnections;
+    m_maxUserConnectionsHasBeenSet = true;
+}
+
+bool DBAccount::MaxUserConnectionsHasBeenSet() const
+{
+    return m_maxUserConnectionsHasBeenSet;
 }
 

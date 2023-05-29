@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/Tag.h>
 
 
 namespace TencentCloud
@@ -728,6 +729,28 @@ namespace TencentCloud
                      */
                     bool WorkSpaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取作业标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 作业标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置作业标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 作业标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -946,6 +969,13 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceName;
                     bool m_workSpaceNameHasBeenSet;
+
+                    /**
+                     * 作业标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

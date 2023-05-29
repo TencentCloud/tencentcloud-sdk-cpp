@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool FlowOptionHasBeenSet() const;
 
                     /**
-                     * 获取该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
-                     * @return FlowId 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * 获取通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * @return FlowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
-                     * @param FlowId 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * 设置通过flowid快速获得之前成功通过页面发起的合同生成链接
+                     * @param FlowId 通过flowid快速获得之前成功通过页面发起的合同生成链接
                      */
                     void SetFlowId(const std::string& _flowId);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_flowOptionHasBeenSet;
 
                     /**
-                     * 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
+                     * 通过flowid快速获得之前成功通过页面发起的合同生成链接
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

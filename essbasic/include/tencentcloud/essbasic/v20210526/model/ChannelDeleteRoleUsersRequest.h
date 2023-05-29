@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取角色Id
-                     * @return RoleId 角色Id
+                     * 获取角色Id（非超管或法人角色Id）
+                     * @return RoleId 角色Id（非超管或法人角色Id）
                      */
                     std::string GetRoleId() const;
 
                     /**
-                     * 设置角色Id
-                     * @param RoleId 角色Id
+                     * 设置角色Id（非超管或法人角色Id）
+                     * @param RoleId 角色Id（非超管或法人角色Id）
                      */
                     void SetRoleId(const std::string& _roleId);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 角色Id
+                     * 角色Id（非超管或法人角色Id）
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;

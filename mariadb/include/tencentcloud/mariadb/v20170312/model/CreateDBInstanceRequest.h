@@ -327,14 +327,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否支持IPv6
-                     * @return Ipv6Flag 是否支持IPv6
+                     * 获取是否支持IPv6，0:不支持，1:支持
+                     * @return Ipv6Flag 是否支持IPv6，0:不支持，1:支持
                      */
                     int64_t GetIpv6Flag() const;
 
                     /**
-                     * 设置是否支持IPv6
-                     * @param Ipv6Flag 是否支持IPv6
+                     * 设置是否支持IPv6，0:不支持，1:支持
+                     * @param Ipv6Flag 是否支持IPv6，0:不支持，1:支持
                      */
                     void SetIpv6Flag(const int64_t& _ipv6Flag);
 
@@ -512,7 +512,7 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 是否支持IPv6
+                     * 是否支持IPv6，0:不支持，1:支持
                      */
                     int64_t m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;

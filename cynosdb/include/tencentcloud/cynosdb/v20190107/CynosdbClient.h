@@ -702,7 +702,7 @@ namespace TencentCloud
                 CreateClustersOutcomeCallable CreateClustersCallable(const Model::CreateClustersRequest& request);
 
                 /**
-                 *本接口（CreateParamTemplate）用于创建参数模版
+                 *本接口（CreateParamTemplate）用于创建参数模板
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
@@ -756,7 +756,7 @@ namespace TencentCloud
                 DeleteClusterDatabaseOutcomeCallable DeleteClusterDatabaseCallable(const Model::DeleteClusterDatabaseRequest& request);
 
                 /**
-                 *本接口（DeleteParamTemplate）用于删除用户创建的参数模版。
+                 *本接口（DeleteParamTemplate）用于删除用户创建的参数模板。
                  * @param req DeleteParamTemplateRequest
                  * @return DeleteParamTemplateOutcome
                  */
@@ -1026,7 +1026,7 @@ namespace TencentCloud
                 DescribeMaintainPeriodOutcomeCallable DescribeMaintainPeriodCallable(const Model::DescribeMaintainPeriodRequest& request);
 
                 /**
-                 *本接口（DescribeParamTemplateDetail）用于查询用户参数模版详情
+                 *本接口（DescribeParamTemplateDetail）用于查询用户参数模板详情
                  * @param req DescribeParamTemplateDetailRequest
                  * @return DescribeParamTemplateDetailOutcome
                  */
@@ -1332,7 +1332,7 @@ namespace TencentCloud
                 ModifyMaintainPeriodConfigOutcomeCallable ModifyMaintainPeriodConfigCallable(const Model::ModifyMaintainPeriodConfigRequest& request);
 
                 /**
-                 *本接口（ModifyParamTemplate）用于修改用户参数模版。
+                 *本接口（ModifyParamTemplate）用于修改用户参数模板。
                  * @param req ModifyParamTemplateRequest
                  * @return ModifyParamTemplateOutcome
                  */

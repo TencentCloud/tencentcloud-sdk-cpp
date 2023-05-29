@@ -194,6 +194,24 @@ namespace TencentCloud
                      */
                     bool SlaveConstHasBeenSet() const;
 
+                    /**
+                     * 获取用户最大连接数，0代表无限制	
+                     * @return MaxUserConnections 用户最大连接数，0代表无限制	
+                     */
+                    int64_t GetMaxUserConnections() const;
+
+                    /**
+                     * 设置用户最大连接数，0代表无限制	
+                     * @param MaxUserConnections 用户最大连接数，0代表无限制	
+                     */
+                    void SetMaxUserConnections(const int64_t& _maxUserConnections);
+
+                    /**
+                     * 判断参数 MaxUserConnections 是否已赋值
+                     * @return MaxUserConnections 是否已赋值
+                     */
+                    bool MaxUserConnectionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +262,12 @@ namespace TencentCloud
                      */
                     int64_t m_slaveConst;
                     bool m_slaveConstHasBeenSet;
+
+                    /**
+                     * 用户最大连接数，0代表无限制	
+                     */
+                    int64_t m_maxUserConnections;
+                    bool m_maxUserConnectionsHasBeenSet;
 
                 };
             }

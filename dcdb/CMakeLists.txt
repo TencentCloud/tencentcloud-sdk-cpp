@@ -37,6 +37,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ShardBriefInfo.h
   include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h
@@ -92,6 +93,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ShardZoneChooseInfo.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesResponse.h
+  include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseTable.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/Deal.h
@@ -137,7 +139,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipRequest.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessRequest.h
-  include/tencentcloud/dcdb/v20180411/model/ShardBriefInfo.h
+  include/tencentcloud/dcdb/v20180411/model/ReservedNetResource.h
   include/tencentcloud/dcdb/v20180411/model/DatabasePrivilege.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectRequest.h
@@ -167,10 +169,11 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/UserTaskInfo.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseProcedure.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h
-  include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h
+  include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h
   include/tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/RegionInfo.h
@@ -221,6 +224,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBInstanceDetailRequest.cpp
   src/v20180411/model/ModifyInstanceVipResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
+  src/v20180411/model/ShardBriefInfo.cpp
   src/v20180411/model/TerminateDedicatedDBInstanceResponse.cpp
   src/v20180411/model/FlushBinlogResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsResponse.cpp
@@ -276,6 +280,7 @@ set(dcdb_src
   src/v20180411/model/RenewDCDBInstanceRequest.cpp
   src/v20180411/model/ShardZoneChooseInfo.cpp
   src/v20180411/model/DescribeDBEncryptAttributesResponse.cpp
+  src/v20180411/model/CreateTmpDCDBInstanceRequest.cpp
   src/v20180411/model/DatabaseTable.cpp
   src/v20180411/model/DescribeDBEncryptAttributesRequest.cpp
   src/v20180411/model/Deal.cpp
@@ -321,7 +326,7 @@ set(dcdb_src
   src/v20180411/model/ShardInfo.cpp
   src/v20180411/model/ModifyInstanceVipRequest.cpp
   src/v20180411/model/OpenDBExtranetAccessRequest.cpp
-  src/v20180411/model/ShardBriefInfo.cpp
+  src/v20180411/model/ReservedNetResource.cpp
   src/v20180411/model/DatabasePrivilege.cpp
   src/v20180411/model/DescribeDCDBSaleInfoResponse.cpp
   src/v20180411/model/ModifyDBInstancesProjectRequest.cpp
@@ -351,10 +356,11 @@ set(dcdb_src
   src/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.cpp
   src/v20180411/model/UserTaskInfo.cpp
   src/v20180411/model/DatabaseProcedure.cpp
+  src/v20180411/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20180411/model/AddShardConfig.cpp
   src/v20180411/model/ModifyDBSyncModeRequest.cpp
   src/v20180411/model/DescribeProjectsResponse.cpp
-  src/v20180411/model/ModifyDBEncryptAttributesRequest.cpp
+  src/v20180411/model/CreateTmpDCDBInstanceResponse.cpp
   src/v20180411/model/CreateAccountResponse.cpp
   src/v20180411/model/IsolateDedicatedDBInstanceResponse.cpp
   src/v20180411/model/RegionInfo.cpp

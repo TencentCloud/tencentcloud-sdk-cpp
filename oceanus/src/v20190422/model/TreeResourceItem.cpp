@@ -26,7 +26,8 @@ TreeResourceItem::TreeResourceItem() :
     m_resourceTypeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_fileNameHasBeenSet(false),
-    m_folderIdHasBeenSet(false)
+    m_folderIdHasBeenSet(false),
+    m_refJobStatusCountSetHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,26 @@ CoreInternalOutcome TreeResourceItem::Deserialize(const rapidjson::Value &value)
         m_folderIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RefJobStatusCountSet") && !value["RefJobStatusCountSet"].IsNull())
+    {
+        if (!value["RefJobStatusCountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TreeResourceItem.RefJobStatusCountSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RefJobStatusCountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RefJobStatusCountItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_refJobStatusCountSet.push_back(item);
+        }
+        m_refJobStatusCountSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +169,21 @@ void TreeResourceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FolderId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_refJobStatusCountSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefJobStatusCountSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_refJobStatusCountSet.begin(); itr != m_refJobStatusCountSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -247,5 +283,21 @@ void TreeResourceItem::SetFolderId(const string& _folderId)
 bool TreeResourceItem::FolderIdHasBeenSet() const
 {
     return m_folderIdHasBeenSet;
+}
+
+vector<RefJobStatusCountItem> TreeResourceItem::GetRefJobStatusCountSet() const
+{
+    return m_refJobStatusCountSet;
+}
+
+void TreeResourceItem::SetRefJobStatusCountSet(const vector<RefJobStatusCountItem>& _refJobStatusCountSet)
+{
+    m_refJobStatusCountSet = _refJobStatusCountSet;
+    m_refJobStatusCountSetHasBeenSet = true;
+}
+
+bool TreeResourceItem::RefJobStatusCountSetHasBeenSet() const
+{
+    return m_refJobStatusCountSetHasBeenSet;
 }
 

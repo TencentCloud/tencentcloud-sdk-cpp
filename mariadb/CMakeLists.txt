@@ -139,6 +139,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/CancelDcnJobRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVipRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h
+  include/tencentcloud/mariadb/v20170312/model/ReservedNetResource.h
   include/tencentcloud/mariadb/v20170312/model/DatabasePrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h
@@ -322,6 +323,7 @@ set(mariadb_src
   src/v20170312/model/CancelDcnJobRequest.cpp
   src/v20170312/model/ModifyInstanceVipRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
+  src/v20170312/model/ReservedNetResource.cpp
   src/v20170312/model/DatabasePrivilege.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp

@@ -25,6 +25,7 @@
 #include <tencentcloud/mariadb/v20170312/model/NodeInfo.h>
 #include <tencentcloud/mariadb/v20170312/model/DCNReplicaConfig.h>
 #include <tencentcloud/mariadb/v20170312/model/DCNReplicaStatus.h>
+#include <tencentcloud/mariadb/v20170312/model/ReservedNetResource.h>
 
 
 namespace TencentCloud
@@ -745,6 +746,18 @@ namespace TencentCloud
                      */
                     bool RsAccessStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取尚未回收的网络资源
+                     * @return ReservedNetResources 尚未回收的网络资源
+                     */
+                    std::vector<ReservedNetResource> GetReservedNetResources() const;
+
+                    /**
+                     * 判断参数 ReservedNetResources 是否已赋值
+                     * @return ReservedNetResources 是否已赋值
+                     */
+                    bool ReservedNetResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1095,6 +1108,12 @@ namespace TencentCloud
                      */
                     int64_t m_rsAccessStrategy;
                     bool m_rsAccessStrategyHasBeenSet;
+
+                    /**
+                     * 尚未回收的网络资源
+                     */
+                    std::vector<ReservedNetResource> m_reservedNetResources;
+                    bool m_reservedNetResourcesHasBeenSet;
 
                 };
             }

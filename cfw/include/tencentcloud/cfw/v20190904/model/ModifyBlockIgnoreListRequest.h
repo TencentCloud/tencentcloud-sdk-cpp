@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取IP、Domain二选一，不能同时为空
-                     * @return IOC IP、Domain二选一，不能同时为空
+                     * 获取IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * @return IOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
                      */
                     std::vector<IocListData> GetIOC() const;
 
                     /**
-                     * 设置IP、Domain二选一，不能同时为空
-                     * @param IOC IP、Domain二选一，不能同时为空
+                     * 设置IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
+                     * @param IOC IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
                      */
                     void SetIOC(const std::vector<IocListData>& _iOC);
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * IP、Domain二选一，不能同时为空
+                     * IP、Domain二选一（注：封禁列表，只能填写IP），不能同时为空
                      */
                     std::vector<IocListData> m_iOC;
                     bool m_iOCHasBeenSet;
