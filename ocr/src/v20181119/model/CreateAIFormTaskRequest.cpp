@@ -25,7 +25,8 @@ using namespace std;
 CreateAIFormTaskRequest::CreateAIFormTaskRequest() :
     m_fileListHasBeenSet(false),
     m_firstNotesHasBeenSet(false),
-    m_secondNotesHasBeenSet(false)
+    m_secondNotesHasBeenSet(false),
+    m_fileTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string CreateAIFormTaskRequest::ToJsonString() const
         string key = "SecondNotes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secondNotes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileType, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void CreateAIFormTaskRequest::SetSecondNotes(const string& _secondNotes)
 bool CreateAIFormTaskRequest::SecondNotesHasBeenSet() const
 {
     return m_secondNotesHasBeenSet;
+}
+
+uint64_t CreateAIFormTaskRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void CreateAIFormTaskRequest::SetFileType(const uint64_t& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool CreateAIFormTaskRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
 }
 
 

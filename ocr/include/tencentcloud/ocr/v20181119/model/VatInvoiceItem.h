@@ -226,6 +226,132 @@ namespace TencentCloud
                      */
                     bool TaxClassifyCodeHasBeenSet() const;
 
+                    /**
+                     * 获取运输工具类型
+                     * @return VehicleType 运输工具类型
+                     */
+                    std::string GetVehicleType() const;
+
+                    /**
+                     * 设置运输工具类型
+                     * @param VehicleType 运输工具类型
+                     */
+                    void SetVehicleType(const std::string& _vehicleType);
+
+                    /**
+                     * 判断参数 VehicleType 是否已赋值
+                     * @return VehicleType 是否已赋值
+                     */
+                    bool VehicleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取运输工具牌号
+                     * @return VehicleBrand 运输工具牌号
+                     */
+                    std::string GetVehicleBrand() const;
+
+                    /**
+                     * 设置运输工具牌号
+                     * @param VehicleBrand 运输工具牌号
+                     */
+                    void SetVehicleBrand(const std::string& _vehicleBrand);
+
+                    /**
+                     * 判断参数 VehicleBrand 是否已赋值
+                     * @return VehicleBrand 是否已赋值
+                     */
+                    bool VehicleBrandHasBeenSet() const;
+
+                    /**
+                     * 获取起始地
+                     * @return DeparturePlace 起始地
+                     */
+                    std::string GetDeparturePlace() const;
+
+                    /**
+                     * 设置起始地
+                     * @param DeparturePlace 起始地
+                     */
+                    void SetDeparturePlace(const std::string& _departurePlace);
+
+                    /**
+                     * 判断参数 DeparturePlace 是否已赋值
+                     * @return DeparturePlace 是否已赋值
+                     */
+                    bool DeparturePlaceHasBeenSet() const;
+
+                    /**
+                     * 获取到达地
+                     * @return ArrivalPlace 到达地
+                     */
+                    std::string GetArrivalPlace() const;
+
+                    /**
+                     * 设置到达地
+                     * @param ArrivalPlace 到达地
+                     */
+                    void SetArrivalPlace(const std::string& _arrivalPlace);
+
+                    /**
+                     * 判断参数 ArrivalPlace 是否已赋值
+                     * @return ArrivalPlace 是否已赋值
+                     */
+                    bool ArrivalPlaceHasBeenSet() const;
+
+                    /**
+                     * 获取运输货物名称
+                     * @return TransportItemsName 运输货物名称
+                     */
+                    std::string GetTransportItemsName() const;
+
+                    /**
+                     * 设置运输货物名称
+                     * @param TransportItemsName 运输货物名称
+                     */
+                    void SetTransportItemsName(const std::string& _transportItemsName);
+
+                    /**
+                     * 判断参数 TransportItemsName 是否已赋值
+                     * @return TransportItemsName 是否已赋值
+                     */
+                    bool TransportItemsNameHasBeenSet() const;
+
+                    /**
+                     * 获取建筑服务发生地
+                     * @return ConstructionPlace 建筑服务发生地
+                     */
+                    std::string GetConstructionPlace() const;
+
+                    /**
+                     * 设置建筑服务发生地
+                     * @param ConstructionPlace 建筑服务发生地
+                     */
+                    void SetConstructionPlace(const std::string& _constructionPlace);
+
+                    /**
+                     * 判断参数 ConstructionPlace 是否已赋值
+                     * @return ConstructionPlace 是否已赋值
+                     */
+                    bool ConstructionPlaceHasBeenSet() const;
+
+                    /**
+                     * 获取建筑项目名称
+                     * @return ConstructionName 建筑项目名称
+                     */
+                    std::string GetConstructionName() const;
+
+                    /**
+                     * 设置建筑项目名称
+                     * @param ConstructionName 建筑项目名称
+                     */
+                    void SetConstructionName(const std::string& _constructionName);
+
+                    /**
+                     * 判断参数 ConstructionName 是否已赋值
+                     * @return ConstructionName 是否已赋值
+                     */
+                    bool ConstructionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +413,48 @@ namespace TencentCloud
                      */
                     std::string m_taxClassifyCode;
                     bool m_taxClassifyCodeHasBeenSet;
+
+                    /**
+                     * 运输工具类型
+                     */
+                    std::string m_vehicleType;
+                    bool m_vehicleTypeHasBeenSet;
+
+                    /**
+                     * 运输工具牌号
+                     */
+                    std::string m_vehicleBrand;
+                    bool m_vehicleBrandHasBeenSet;
+
+                    /**
+                     * 起始地
+                     */
+                    std::string m_departurePlace;
+                    bool m_departurePlaceHasBeenSet;
+
+                    /**
+                     * 到达地
+                     */
+                    std::string m_arrivalPlace;
+                    bool m_arrivalPlaceHasBeenSet;
+
+                    /**
+                     * 运输货物名称
+                     */
+                    std::string m_transportItemsName;
+                    bool m_transportItemsNameHasBeenSet;
+
+                    /**
+                     * 建筑服务发生地
+                     */
+                    std::string m_constructionPlace;
+                    bool m_constructionPlaceHasBeenSet;
+
+                    /**
+                     * 建筑项目名称
+                     */
+                    std::string m_constructionName;
+                    bool m_constructionNameHasBeenSet;
 
                 };
             }

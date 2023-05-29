@@ -163,6 +163,8 @@
 #include <tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -387,11 +389,14 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeDedicatedDBInstanceResponse> UpgradeDedicatedDBInstanceOutcome;
+                typedef std::future<UpgradeDedicatedDBInstanceOutcome> UpgradeDedicatedDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::UpgradeDedicatedDBInstanceRequest&, UpgradeDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDedicatedDBInstanceAsyncHandler;
 
 
 
                 /**
-                 *解隔离后付费实例
+                 *解隔离MariaDB按量计费实例
                  * @param req ActivateHourDBInstanceRequest
                  * @return ActivateHourDBInstanceOutcome
                  */
@@ -455,7 +460,7 @@ namespace TencentCloud
                 CreateAccountOutcomeCallable CreateAccountCallable(const Model::CreateAccountRequest& request);
 
                 /**
-                 *本接口（CreateDBInstance）用于创建包年包月的云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。
+                 *本接口（CreateDBInstance）用于创建包年包月的MariaDB云数据库实例，可通过传入实例规格、数据库版本号、购买时长和数量等信息创建云数据库实例。
                  * @param req CreateDBInstanceRequest
                  * @return CreateDBInstanceOutcome
                  */
@@ -464,7 +469,7 @@ namespace TencentCloud
                 CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request);
 
                 /**
-                 *创建独享集群Mariadb实例
+                 *创建Mariadb独享集群实例
                  * @param req CreateDedicatedClusterDBInstanceRequest
                  * @return CreateDedicatedClusterDBInstanceOutcome
                  */
@@ -473,7 +478,7 @@ namespace TencentCloud
                 CreateDedicatedClusterDBInstanceOutcomeCallable CreateDedicatedClusterDBInstanceCallable(const Model::CreateDedicatedClusterDBInstanceRequest& request);
 
                 /**
-                 *创建后付费实例
+                 *创建MariaDB按量计费实例
                  * @param req CreateHourDBInstanceRequest
                  * @return CreateHourDBInstanceOutcome
                  */
@@ -745,7 +750,7 @@ namespace TencentCloud
                 DestroyDBInstanceOutcomeCallable DestroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request);
 
                 /**
-                 *本接口（DestroyHourDBInstance）用于销毁按量计费实例。
+                 *本接口（DestroyHourDBInstance）用于销毁MariaDB按量计费实例。
                  * @param req DestroyHourDBInstanceRequest
                  * @return DestroyHourDBInstanceOutcome
                  */
@@ -791,7 +796,7 @@ namespace TencentCloud
                 InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
 
                 /**
-                 *本接口(IsolateDBInstance)用于隔离云数据库实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。
+                 *本接口(IsolateDBInstance)用于隔离云数据库MariaDB实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。
                  * @param req IsolateDBInstanceRequest
                  * @return IsolateDBInstanceOutcome
                  */
@@ -809,7 +814,7 @@ namespace TencentCloud
                 IsolateDedicatedDBInstanceOutcomeCallable IsolateDedicatedDBInstanceCallable(const Model::IsolateDedicatedDBInstanceRequest& request);
 
                 /**
-                 *隔离后付费实例
+                 *隔离MariaDB按量计费实例
                  * @param req IsolateHourDBInstanceRequest
                  * @return IsolateHourDBInstanceOutcome
                  */
@@ -1035,6 +1040,15 @@ namespace TencentCloud
                 UpgradeDBInstanceOutcome UpgradeDBInstance(const Model::UpgradeDBInstanceRequest &request);
                 void UpgradeDBInstanceAsync(const Model::UpgradeDBInstanceRequest& request, const UpgradeDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDBInstanceOutcomeCallable UpgradeDBInstanceCallable(const Model::UpgradeDBInstanceRequest& request);
+
+                /**
+                 *本接口(UpgradeDedicatedDBInstance)用于扩容独享云数据库实例。
+                 * @param req UpgradeDedicatedDBInstanceRequest
+                 * @return UpgradeDedicatedDBInstanceOutcome
+                 */
+                UpgradeDedicatedDBInstanceOutcome UpgradeDedicatedDBInstance(const Model::UpgradeDedicatedDBInstanceRequest &request);
+                void UpgradeDedicatedDBInstanceAsync(const Model::UpgradeDedicatedDBInstanceRequest& request, const UpgradeDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeDedicatedDBInstanceOutcomeCallable UpgradeDedicatedDBInstanceCallable(const Model::UpgradeDedicatedDBInstanceRequest& request);
 
             };
         }

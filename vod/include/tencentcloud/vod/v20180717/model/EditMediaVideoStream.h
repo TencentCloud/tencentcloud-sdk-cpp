@@ -152,6 +152,32 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取视频帧率，取值范围：[0, 100]，单位：Hz。
+当取值为0，将自动为视频设置帧率。
+默认值为 0。
+                     * @return Fps 视频帧率，取值范围：[0, 100]，单位：Hz。
+当取值为0，将自动为视频设置帧率。
+默认值为 0。
+                     */
+                    int64_t GetFps() const;
+
+                    /**
+                     * 设置视频帧率，取值范围：[0, 100]，单位：Hz。
+当取值为0，将自动为视频设置帧率。
+默认值为 0。
+                     * @param Fps 视频帧率，取值范围：[0, 100]，单位：Hz。
+当取值为0，将自动为视频设置帧率。
+默认值为 0。
+                     */
+                    void SetFps(const int64_t& _fps);
+
+                    /**
+                     * 判断参数 Fps 是否已赋值
+                     * @return Fps 是否已赋值
+                     */
+                    bool FpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +210,14 @@ namespace TencentCloud
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 视频帧率，取值范围：[0, 100]，单位：Hz。
+当取值为0，将自动为视频设置帧率。
+默认值为 0。
+                     */
+                    int64_t m_fps;
+                    bool m_fpsHasBeenSet;
 
                 };
             }

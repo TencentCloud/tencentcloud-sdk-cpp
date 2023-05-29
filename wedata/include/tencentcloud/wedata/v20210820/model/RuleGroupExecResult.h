@@ -354,6 +354,28 @@ namespace TencentCloud
                      */
                     bool ExecDetailHasBeenSet() const;
 
+                    /**
+                     * 获取实际执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 实际执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置实际执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineType 实际执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +475,13 @@ namespace TencentCloud
                      */
                     std::string m_execDetail;
                     bool m_execDetailHasBeenSet;
+
+                    /**
+                     * 实际执行引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

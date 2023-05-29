@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品名称：云产品大类，如云服务器CVM、云数据库MySQL
-                     * @return BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * 获取产品名称：用户所采购的各类云产品，例如：云服务器 CVM
+                     * @return BusinessCodeName 产品名称：用户所采购的各类云产品，例如：云服务器 CVM
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
-                     * 设置产品名称：云产品大类，如云服务器CVM、云数据库MySQL
-                     * @param BusinessCodeName 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * 设置产品名称：用户所采购的各类云产品，例如：云服务器 CVM
+                     * @param BusinessCodeName 产品名称：用户所采购的各类云产品，例如：云服务器 CVM
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool BusinessCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品名称：云产品子类，如云服务器CVM-标准型S1
-                     * @return ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1
+                     * 获取子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+                     * @return ProductCodeName 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
                      */
                     std::string GetProductCodeName() const;
 
                     /**
-                     * 设置子产品名称：云产品子类，如云服务器CVM-标准型S1
-                     * @param ProductCodeName 子产品名称：云产品子类，如云服务器CVM-标准型S1
+                     * 设置子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+                     * @param ProductCodeName 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
 
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool ProductCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取计费模式：包年包月和按量计费
-                     * @return PayModeName 计费模式：包年包月和按量计费
+                     * 获取计费模式：资源的计费模式，区分为包年包月和按量计费
+                     * @return PayModeName 计费模式：资源的计费模式，区分为包年包月和按量计费
                      */
                     std::string GetPayModeName() const;
 
                     /**
-                     * 设置计费模式：包年包月和按量计费
-                     * @param PayModeName 计费模式：包年包月和按量计费
+                     * 设置计费模式：资源的计费模式，区分为包年包月和按量计费
+                     * @param PayModeName 计费模式：资源的计费模式，区分为包年包月和按量计费
                      */
                     void SetPayModeName(const std::string& _payModeName);
 
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool PayModeNameHasBeenSet() const;
 
                     /**
-                     * 获取项目:资源所属项目
-                     * @return ProjectName 项目:资源所属项目
+                     * 获取项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
+                     * @return ProjectName 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目:资源所属项目
-                     * @param ProjectName 项目:资源所属项目
+                     * 设置项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
+                     * @param ProjectName 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
                      */
                     void SetProjectName(const std::string& _projectName);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取区域：资源所属地域，如华南地区（广州）
-                     * @return RegionName 区域：资源所属地域，如华南地区（广州）
+                     * 获取地域：资源所属地域，如华南地区（广州）
+                     * @return RegionName 地域：资源所属地域，如华南地区（广州）
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置区域：资源所属地域，如华南地区（广州）
-                     * @param RegionName 区域：资源所属地域，如华南地区（广州）
+                     * 设置地域：资源所属地域，如华南地区（广州）
+                     * @param RegionName 地域：资源所属地域，如华南地区（广州）
                      */
                     void SetRegionName(const std::string& _regionName);
 
@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取资源实例ID
-                     * @return ResourceId 资源实例ID
+                     * 获取资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * @return ResourceId 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源实例ID
-                     * @param ResourceId 资源实例ID
+                     * 设置资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * @param ResourceId 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return ResourceName 实例名称
+                     * 获取资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空
+                     * @return ResourceName 资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param ResourceName 实例名称
+                     * 设置资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空
+                     * @param ResourceName 资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空
                      */
                     void SetResourceName(const std::string& _resourceName);
 
@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取交易类型
-                     * @return ActionTypeName 交易类型
+                     * 获取交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型
+                     * @return ActionTypeName 交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型
                      */
                     std::string GetActionTypeName() const;
 
                     /**
-                     * 设置交易类型
-                     * @param ActionTypeName 交易类型
+                     * 设置交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型
+                     * @param ActionTypeName 交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
 
@@ -211,14 +211,14 @@ namespace TencentCloud
                     bool ActionTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取订单ID
-                     * @return OrderId 订单ID
+                     * 获取订单ID：包年包月计费模式下订购的订单号
+                     * @return OrderId 订单ID：包年包月计费模式下订购的订单号
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单ID
-                     * @param OrderId 订单ID
+                     * 设置订单ID：包年包月计费模式下订购的订单号
+                     * @param OrderId 订单ID：包年包月计费模式下订购的订单号
                      */
                     void SetOrderId(const std::string& _orderId);
 
@@ -229,14 +229,14 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取交易ID
-                     * @return BillId 交易ID
+                     * 获取交易ID：结算扣费单号
+                     * @return BillId 交易ID：结算扣费单号
                      */
                     std::string GetBillId() const;
 
                     /**
-                     * 设置交易ID
-                     * @param BillId 交易ID
+                     * 设置交易ID：结算扣费单号
+                     * @param BillId 交易ID：结算扣费单号
                      */
                     void SetBillId(const std::string& _billId);
 
@@ -247,14 +247,14 @@ namespace TencentCloud
                     bool BillIdHasBeenSet() const;
 
                     /**
-                     * 获取扣费时间
-                     * @return PayTime 扣费时间
+                     * 获取扣费时间：结算扣费时间
+                     * @return PayTime 扣费时间：结算扣费时间
                      */
                     std::string GetPayTime() const;
 
                     /**
-                     * 设置扣费时间
-                     * @param PayTime 扣费时间
+                     * 设置扣费时间：结算扣费时间
+                     * @param PayTime 扣费时间：结算扣费时间
                      */
                     void SetPayTime(const std::string& _payTime);
 
@@ -265,14 +265,14 @@ namespace TencentCloud
                     bool PayTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始使用时间
-                     * @return FeeBeginTime 开始使用时间
+                     * 获取开始使用时间：产品服务开始使用时间
+                     * @return FeeBeginTime 开始使用时间：产品服务开始使用时间
                      */
                     std::string GetFeeBeginTime() const;
 
                     /**
-                     * 设置开始使用时间
-                     * @param FeeBeginTime 开始使用时间
+                     * 设置开始使用时间：产品服务开始使用时间
+                     * @param FeeBeginTime 开始使用时间：产品服务开始使用时间
                      */
                     void SetFeeBeginTime(const std::string& _feeBeginTime);
 
@@ -283,14 +283,14 @@ namespace TencentCloud
                     bool FeeBeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束使用时间
-                     * @return FeeEndTime 结束使用时间
+                     * 获取结束使用时间：产品服务结束使用时间
+                     * @return FeeEndTime 结束使用时间：产品服务结束使用时间
                      */
                     std::string GetFeeEndTime() const;
 
                     /**
-                     * 设置结束使用时间
-                     * @param FeeEndTime 结束使用时间
+                     * 设置结束使用时间：产品服务结束使用时间
+                     * @param FeeEndTime 结束使用时间：产品服务结束使用时间
                      */
                     void SetFeeEndTime(const std::string& _feeEndTime);
 
@@ -319,14 +319,14 @@ namespace TencentCloud
                     bool ComponentSetHasBeenSet() const;
 
                     /**
-                     * 获取支付者UIN
-                     * @return PayerUin 支付者UIN
+                     * 获取支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+                     * @return PayerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
                      */
                     std::string GetPayerUin() const;
 
                     /**
-                     * 设置支付者UIN
-                     * @param PayerUin 支付者UIN
+                     * 设置支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+                     * @param PayerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
                      */
                     void SetPayerUin(const std::string& _payerUin);
 
@@ -337,14 +337,14 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取使用者UIN
-                     * @return OwnerUin 使用者UIN
+                     * 获取使用者UIN：实际使用资源的账号 ID
+                     * @return OwnerUin 使用者UIN：实际使用资源的账号 ID
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置使用者UIN
-                     * @param OwnerUin 使用者UIN
+                     * 设置使用者UIN：实际使用资源的账号 ID
+                     * @param OwnerUin 使用者UIN：实际使用资源的账号 ID
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
 
@@ -355,14 +355,14 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取操作者UIN
-                     * @return OperateUin 操作者UIN
+                     * 获取操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * @return OperateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
                      */
                     std::string GetOperateUin() const;
 
                     /**
-                     * 设置操作者UIN
-                     * @param OperateUin 操作者UIN
+                     * 设置操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * @param OperateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
                      */
                     void SetOperateUin(const std::string& _operateUin);
 
@@ -373,17 +373,17 @@ namespace TencentCloud
                     bool OperateUinHasBeenSet() const;
 
                     /**
-                     * 获取Tag 信息
+                     * 获取标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags Tag 信息
+                     * @return Tags 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTagInfo> GetTags() const;
 
                     /**
-                     * 设置Tag 信息
+                     * 设置标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags Tag 信息
+                     * @param Tags 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTags(const std::vector<BillTagInfo>& _tags);
@@ -395,17 +395,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取产品名称代码
+                     * 获取产品编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessCode 产品名称代码
+                     * @return BusinessCode 产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置产品名称代码
+                     * 设置产品编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BusinessCode 产品名称代码
+                     * @param BusinessCode 产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -417,17 +417,17 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取子产品名称代码
+                     * 获取子产品编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductCode 子产品名称代码
+                     * @return ProductCode 子产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置子产品名称代码
+                     * 设置子产品编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCode 子产品名称代码
+                     * @param ProductCode 子产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -439,17 +439,17 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取交易类型代码
+                     * 获取交易类型编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActionType 交易类型代码
+                     * @return ActionType 交易类型编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置交易类型代码
+                     * 设置交易类型编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActionType 交易类型代码
+                     * @param ActionType 交易类型编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetActionType(const std::string& _actionType);
@@ -461,17 +461,17 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取区域ID
+                     * 获取地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionId 区域ID
+                     * @return RegionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置区域ID
+                     * 设置地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 区域ID
+                     * @param RegionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -483,14 +483,14 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取项目ID:资源所属项目ID
-                     * @return ProjectId 项目ID:资源所属项目ID
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID:资源所属项目ID
-                     * @param ProjectId 项目ID:资源所属项目ID
+                     * 设置项目ID
+                     * @param ProjectId 项目ID
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -525,31 +525,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品名称：云产品大类，如云服务器CVM、云数据库MySQL
+                     * 产品名称：用户所采购的各类云产品，例如：云服务器 CVM
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
-                     * 子产品名称：云产品子类，如云服务器CVM-标准型S1
+                     * 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
 
                     /**
-                     * 计费模式：包年包月和按量计费
+                     * 计费模式：资源的计费模式，区分为包年包月和按量计费
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;
 
                     /**
-                     * 项目:资源所属项目
+                     * 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 区域：资源所属地域，如华南地区（广州）
+                     * 地域：资源所属地域，如华南地区（广州）
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
@@ -561,49 +561,49 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 资源实例ID
+                     * 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 资源别名：用户在控制台为资源设置的名称，如果未设置，则默认为空
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 交易类型
+                     * 交易类型，如包年包月新购、包年包月续费、按量计费扣费等类型
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;
 
                     /**
-                     * 订单ID
+                     * 订单ID：包年包月计费模式下订购的订单号
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 交易ID
+                     * 交易ID：结算扣费单号
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
-                     * 扣费时间
+                     * 扣费时间：结算扣费时间
                      */
                     std::string m_payTime;
                     bool m_payTimeHasBeenSet;
 
                     /**
-                     * 开始使用时间
+                     * 开始使用时间：产品服务开始使用时间
                      */
                     std::string m_feeBeginTime;
                     bool m_feeBeginTimeHasBeenSet;
 
                     /**
-                     * 结束使用时间
+                     * 结束使用时间：产品服务结束使用时间
                      */
                     std::string m_feeEndTime;
                     bool m_feeEndTimeHasBeenSet;
@@ -615,60 +615,60 @@ namespace TencentCloud
                     bool m_componentSetHasBeenSet;
 
                     /**
-                     * 支付者UIN
+                     * 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 使用者UIN
+                     * 使用者UIN：实际使用资源的账号 ID
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 操作者UIN
+                     * 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
-                     * Tag 信息
+                     * 标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 产品名称代码
+                     * 产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 子产品名称代码
+                     * 子产品编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 交易类型代码
+                     * 交易类型编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 区域ID
+                     * 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 项目ID:资源所属项目ID
+                     * 项目ID
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

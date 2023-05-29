@@ -89,6 +89,7 @@ domain：域名类型
 domainv6：域名解析V6类型
 cos：对象存储源站
 third_party: 第三方存储源站
+igtm: IGTM多活源
 ip：IP 列表作为源站
 ipv6：源站列表为一个单独的 IPv6 地址
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -114,6 +115,7 @@ domain：域名类型
 domainv6：域名解析V6类型
 cos：对象存储源站
 third_party: 第三方存储源站
+igtm: IGTM多活源
 ip：IP 列表作为源站
 ipv6：源站列表为一个单独的 IPv6 地址
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -143,6 +145,7 @@ domain：域名类型
 domainv6：域名解析V6类型
 cos：对象存储源站
 third_party: 第三方存储源站
+igtm: IGTM多活源
 ip：IP 列表作为源站
 ipv6：源站列表为一个单独的 IPv6 地址
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -168,6 +171,7 @@ domain：域名类型
 domainv6：域名解析V6类型
 cos：对象存储源站
 third_party: 第三方存储源站
+igtm: IGTM多活源
 ip：IP 列表作为源站
 ipv6：源站列表为一个单独的 IPv6 地址
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -535,6 +539,7 @@ domain：域名类型
 domainv6：域名解析V6类型
 cos：对象存储源站
 third_party: 第三方存储源站
+igtm: IGTM多活源
 ip：IP 列表作为源站
 ipv6：源站列表为一个单独的 IPv6 地址
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址

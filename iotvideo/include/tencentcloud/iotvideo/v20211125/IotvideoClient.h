@@ -588,7 +588,7 @@ namespace TencentCloud
                 CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
 
                 /**
-                 *判断是否开启的转发的权限
+                 *判断是否开启转发的权限
                  * @param req CheckForwardAuthRequest
                  * @return CheckForwardAuthOutcome
                  */

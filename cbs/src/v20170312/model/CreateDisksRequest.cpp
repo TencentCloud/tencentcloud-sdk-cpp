@@ -38,7 +38,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_diskChargePrepaidHasBeenSet(false),
     m_deleteSnapshotHasBeenSet(false),
     m_autoMountConfigurationHasBeenSet(false),
-    m_diskBackupQuotaHasBeenSet(false)
+    m_diskBackupQuotaHasBeenSet(false),
+    m_burstPerformanceHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string CreateDisksRequest::ToJsonString() const
         string key = "DiskBackupQuota";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskBackupQuota, allocator);
+    }
+
+    if (m_burstPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BurstPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_burstPerformance, allocator);
     }
 
 
@@ -449,6 +458,22 @@ void CreateDisksRequest::SetDiskBackupQuota(const uint64_t& _diskBackupQuota)
 bool CreateDisksRequest::DiskBackupQuotaHasBeenSet() const
 {
     return m_diskBackupQuotaHasBeenSet;
+}
+
+bool CreateDisksRequest::GetBurstPerformance() const
+{
+    return m_burstPerformance;
+}
+
+void CreateDisksRequest::SetBurstPerformance(const bool& _burstPerformance)
+{
+    m_burstPerformance = _burstPerformance;
+    m_burstPerformanceHasBeenSet = true;
+}
+
+bool CreateDisksRequest::BurstPerformanceHasBeenSet() const
+{
+    return m_burstPerformanceHasBeenSet;
 }
 
 

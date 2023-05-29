@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool NetworkPolicyPluginErrorHasBeenSet() const;
 
+                    /**
+                     * 获取容器网络插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterNetworkSettings 容器网络插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterNetworkSettings() const;
+
+                    /**
+                     * 设置容器网络插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterNetworkSettings 容器网络插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterNetworkSettings(const std::string& _clusterNetworkSettings);
+
+                    /**
+                     * 判断参数 ClusterNetworkSettings 是否已赋值
+                     * @return ClusterNetworkSettings 是否已赋值
+                     */
+                    bool ClusterNetworkSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_networkPolicyPluginError;
                     bool m_networkPolicyPluginErrorHasBeenSet;
+
+                    /**
+                     * 容器网络插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterNetworkSettings;
+                    bool m_clusterNetworkSettingsHasBeenSet;
 
                 };
             }

@@ -112,6 +112,50 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取模型类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelType 模型类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetModelType() const;
+
+                    /**
+                     * 设置模型类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelType 模型类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelType(const uint64_t& _modelType);
+
+                    /**
+                     * 判断参数 ModelType 是否已赋值
+                     * @return ModelType 是否已赋值
+                     */
+                    bool ModelTypeHasBeenSet() const;
+
+                    /**
+                     * 获取入参Uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uid 入参Uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUid() const;
+
+                    /**
+                     * 设置入参Uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uid 入参Uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUid(const std::string& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     */
+                    bool UidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +178,20 @@ namespace TencentCloud
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 模型类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_modelType;
+                    bool m_modelTypeHasBeenSet;
+
+                    /**
+                     * 入参Uid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uid;
+                    bool m_uidHasBeenSet;
 
                 };
             }

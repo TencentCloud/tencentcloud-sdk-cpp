@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取开启/关闭云盘性能突发功能
+                     * @return BurstPerformanceOperation 开启/关闭云盘性能突发功能
+                     */
+                    std::string GetBurstPerformanceOperation() const;
+
+                    /**
+                     * 设置开启/关闭云盘性能突发功能
+                     * @param BurstPerformanceOperation 开启/关闭云盘性能突发功能
+                     */
+                    void SetBurstPerformanceOperation(const std::string& _burstPerformanceOperation);
+
+                    /**
+                     * 判断参数 BurstPerformanceOperation 是否已赋值
+                     * @return BurstPerformanceOperation 是否已赋值
+                     */
+                    bool BurstPerformanceOperationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 开启/关闭云盘性能突发功能
+                     */
+                    std::string m_burstPerformanceOperation;
+                    bool m_burstPerformanceOperationHasBeenSet;
 
                 };
             }

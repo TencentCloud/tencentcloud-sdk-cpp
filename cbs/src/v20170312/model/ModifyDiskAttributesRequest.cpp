@@ -28,7 +28,8 @@ ModifyDiskAttributesRequest::ModifyDiskAttributesRequest() :
     m_portableHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_burstPerformanceOperationHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string ModifyDiskAttributesRequest::ToJsonString() const
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_burstPerformanceOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BurstPerformanceOperation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_burstPerformanceOperation.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void ModifyDiskAttributesRequest::SetDiskType(const string& _diskType)
 bool ModifyDiskAttributesRequest::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+string ModifyDiskAttributesRequest::GetBurstPerformanceOperation() const
+{
+    return m_burstPerformanceOperation;
+}
+
+void ModifyDiskAttributesRequest::SetBurstPerformanceOperation(const string& _burstPerformanceOperation)
+{
+    m_burstPerformanceOperation = _burstPerformanceOperation;
+    m_burstPerformanceOperationHasBeenSet = true;
+}
+
+bool ModifyDiskAttributesRequest::BurstPerformanceOperationHasBeenSet() const
+{
+    return m_burstPerformanceOperationHasBeenSet;
 }
 
 

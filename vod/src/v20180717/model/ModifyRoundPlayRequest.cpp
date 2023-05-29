@@ -28,7 +28,9 @@ ModifyRoundPlayRequest::ModifyRoundPlayRequest() :
     m_startTimeHasBeenSet(false),
     m_roundPlaylistHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_playBackModeHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,22 @@ string ModifyRoundPlayRequest::ToJsonString() const
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_playBackModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayBackMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_playBackMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +214,38 @@ void ModifyRoundPlayRequest::SetDesc(const string& _desc)
 bool ModifyRoundPlayRequest::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string ModifyRoundPlayRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyRoundPlayRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyRoundPlayRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ModifyRoundPlayRequest::GetPlayBackMode() const
+{
+    return m_playBackMode;
+}
+
+void ModifyRoundPlayRequest::SetPlayBackMode(const string& _playBackMode)
+{
+    m_playBackMode = _playBackMode;
+    m_playBackModeHasBeenSet = true;
+}
+
+bool ModifyRoundPlayRequest::PlayBackModeHasBeenSet() const
+{
+    return m_playBackModeHasBeenSet;
 }
 
 

@@ -117,7 +117,9 @@ namespace TencentCloud
 
                     /**
                      * 获取函数的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 函数的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuntime() const;
 
@@ -179,6 +181,7 @@ namespace TencentCloud
 
                     /**
                      * 函数的运行环境
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;

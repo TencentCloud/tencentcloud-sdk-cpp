@@ -228,6 +228,24 @@ namespace TencentCloud
                      */
                     bool CcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * @return NeedCreateReview 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     */
+                    bool GetNeedCreateReview() const;
+
+                    /**
+                     * 设置是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * @param NeedCreateReview 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     */
+                    void SetNeedCreateReview(const bool& _needCreateReview);
+
+                    /**
+                     * 判断参数 NeedCreateReview 是否已赋值
+                     * @return NeedCreateReview 是否已赋值
+                     */
+                    bool NeedCreateReviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     */
+                    bool m_needCreateReview;
+                    bool m_needCreateReviewHasBeenSet;
 
                 };
             }

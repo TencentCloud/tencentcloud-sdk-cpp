@@ -45,6 +45,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateHeadTailTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateHeadTailTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageProcessingTemplateRequest.h>
@@ -91,6 +93,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteEnhanceMediaTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteEnhanceMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteImageProcessingTemplateRequest.h>
@@ -153,6 +157,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEnhanceMediaTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEnhanceMediaTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
@@ -217,6 +223,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeWordSamplesResponse.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/EditMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h>
@@ -241,6 +249,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyContentReviewTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyEventConfigRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyEventConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyHeadTailTemplateRequest.h>
@@ -368,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEnhanceMediaTemplateResponse> CreateEnhanceMediaTemplateOutcome;
+                typedef std::future<CreateEnhanceMediaTemplateOutcome> CreateEnhanceMediaTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateEnhanceMediaTemplateRequest&, CreateEnhanceMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnhanceMediaTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHeadTailTemplateResponse> CreateHeadTailTemplateOutcome;
                 typedef std::future<CreateHeadTailTemplateOutcome> CreateHeadTailTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateHeadTailTemplateRequest&, CreateHeadTailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHeadTailTemplateAsyncHandler;
@@ -437,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteContentReviewTemplateResponse> DeleteContentReviewTemplateOutcome;
                 typedef std::future<DeleteContentReviewTemplateOutcome> DeleteContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteContentReviewTemplateRequest&, DeleteContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnhanceMediaTemplateResponse> DeleteEnhanceMediaTemplateOutcome;
+                typedef std::future<DeleteEnhanceMediaTemplateOutcome> DeleteEnhanceMediaTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteEnhanceMediaTemplateRequest&, DeleteEnhanceMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnhanceMediaTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHeadTailTemplateResponse> DeleteHeadTailTemplateOutcome;
                 typedef std::future<DeleteHeadTailTemplateOutcome> DeleteHeadTailTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteHeadTailTemplateRequest&, DeleteHeadTailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHeadTailTemplateAsyncHandler;
@@ -530,6 +546,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDrmKeyProviderInfoResponse> DescribeDrmKeyProviderInfoOutcome;
                 typedef std::future<DescribeDrmKeyProviderInfoOutcome> DescribeDrmKeyProviderInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDrmKeyProviderInfoRequest&, DescribeDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmKeyProviderInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnhanceMediaTemplatesResponse> DescribeEnhanceMediaTemplatesOutcome;
+                typedef std::future<DescribeEnhanceMediaTemplatesOutcome> DescribeEnhanceMediaTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeEnhanceMediaTemplatesRequest&, DescribeEnhanceMediaTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnhanceMediaTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventConfigResponse> DescribeEventConfigOutcome;
                 typedef std::future<DescribeEventConfigOutcome> DescribeEventConfigOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventConfigRequest&, DescribeEventConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventConfigAsyncHandler;
@@ -626,6 +645,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnhanceMediaByTemplateResponse> EnhanceMediaByTemplateOutcome;
+                typedef std::future<EnhanceMediaByTemplateOutcome> EnhanceMediaByTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::EnhanceMediaByTemplateRequest&, EnhanceMediaByTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceMediaByTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
@@ -662,6 +684,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDefaultStorageRegionResponse> ModifyDefaultStorageRegionOutcome;
                 typedef std::future<ModifyDefaultStorageRegionOutcome> ModifyDefaultStorageRegionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyDefaultStorageRegionRequest&, ModifyDefaultStorageRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultStorageRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnhanceMediaTemplateResponse> ModifyEnhanceMediaTemplateOutcome;
+                typedef std::future<ModifyEnhanceMediaTemplateOutcome> ModifyEnhanceMediaTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyEnhanceMediaTemplateRequest&, ModifyEnhanceMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnhanceMediaTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEventConfigResponse> ModifyEventConfigOutcome;
                 typedef std::future<ModifyEventConfigOutcome> ModifyEventConfigOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyEventConfigRequest&, ModifyEventConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEventConfigAsyncHandler;
@@ -904,6 +929,15 @@ namespace TencentCloud
                 CreateContentReviewTemplateOutcomeCallable CreateContentReviewTemplateCallable(const Model::CreateContentReviewTemplateRequest& request);
 
                 /**
+                 *创建音画质重生模板。
+                 * @param req CreateEnhanceMediaTemplateRequest
+                 * @return CreateEnhanceMediaTemplateOutcome
+                 */
+                CreateEnhanceMediaTemplateOutcome CreateEnhanceMediaTemplate(const Model::CreateEnhanceMediaTemplateRequest &request);
+                void CreateEnhanceMediaTemplateAsync(const Model::CreateEnhanceMediaTemplateRequest& request, const CreateEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnhanceMediaTemplateOutcomeCallable CreateEnhanceMediaTemplateCallable(const Model::CreateEnhanceMediaTemplateRequest& request);
+
+                /**
                  *创建片头片尾模板。
                  * @param req CreateHeadTailTemplateRequest
                  * @return CreateHeadTailTemplateOutcome
@@ -1120,6 +1154,15 @@ namespace TencentCloud
                 DeleteContentReviewTemplateOutcome DeleteContentReviewTemplate(const Model::DeleteContentReviewTemplateRequest &request);
                 void DeleteContentReviewTemplateAsync(const Model::DeleteContentReviewTemplateRequest& request, const DeleteContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteContentReviewTemplateOutcomeCallable DeleteContentReviewTemplateCallable(const Model::DeleteContentReviewTemplateRequest& request);
+
+                /**
+                 *删除音画质重生模板。
+                 * @param req DeleteEnhanceMediaTemplateRequest
+                 * @return DeleteEnhanceMediaTemplateOutcome
+                 */
+                DeleteEnhanceMediaTemplateOutcome DeleteEnhanceMediaTemplate(const Model::DeleteEnhanceMediaTemplateRequest &request);
+                void DeleteEnhanceMediaTemplateAsync(const Model::DeleteEnhanceMediaTemplateRequest& request, const DeleteEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnhanceMediaTemplateOutcomeCallable DeleteEnhanceMediaTemplateCallable(const Model::DeleteEnhanceMediaTemplateRequest& request);
 
                 /**
                  *删除片头片尾模板。
@@ -1436,6 +1479,15 @@ namespace TencentCloud
                 DescribeDrmKeyProviderInfoOutcome DescribeDrmKeyProviderInfo(const Model::DescribeDrmKeyProviderInfoRequest &request);
                 void DescribeDrmKeyProviderInfoAsync(const Model::DescribeDrmKeyProviderInfoRequest& request, const DescribeDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDrmKeyProviderInfoOutcomeCallable DescribeDrmKeyProviderInfoCallable(const Model::DescribeDrmKeyProviderInfoRequest& request);
+
+                /**
+                 *获取音画质重生模板列表。
+                 * @param req DescribeEnhanceMediaTemplatesRequest
+                 * @return DescribeEnhanceMediaTemplatesOutcome
+                 */
+                DescribeEnhanceMediaTemplatesOutcome DescribeEnhanceMediaTemplates(const Model::DescribeEnhanceMediaTemplatesRequest &request);
+                void DescribeEnhanceMediaTemplatesAsync(const Model::DescribeEnhanceMediaTemplatesRequest& request, const DescribeEnhanceMediaTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnhanceMediaTemplatesOutcomeCallable DescribeEnhanceMediaTemplatesCallable(const Model::DescribeEnhanceMediaTemplatesRequest& request);
 
                 /**
                  *腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。
@@ -1788,6 +1840,15 @@ namespace TencentCloud
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
 
                 /**
+                 *使用模板发起音画质重生。
+                 * @param req EnhanceMediaByTemplateRequest
+                 * @return EnhanceMediaByTemplateOutcome
+                 */
+                EnhanceMediaByTemplateOutcome EnhanceMediaByTemplate(const Model::EnhanceMediaByTemplateRequest &request);
+                void EnhanceMediaByTemplateAsync(const Model::EnhanceMediaByTemplateRequest& request, const EnhanceMediaByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnhanceMediaByTemplateOutcomeCallable EnhanceMediaByTemplateCallable(const Model::EnhanceMediaByTemplateRequest& request);
+
+                /**
                  *本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。
                  * @param req ExecuteFunctionRequest
                  * @return ExecuteFunctionOutcome
@@ -1922,6 +1983,15 @@ namespace TencentCloud
                 ModifyDefaultStorageRegionOutcome ModifyDefaultStorageRegion(const Model::ModifyDefaultStorageRegionRequest &request);
                 void ModifyDefaultStorageRegionAsync(const Model::ModifyDefaultStorageRegionRequest& request, const ModifyDefaultStorageRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDefaultStorageRegionOutcomeCallable ModifyDefaultStorageRegionCallable(const Model::ModifyDefaultStorageRegionRequest& request);
+
+                /**
+                 *修改音画质重生模板。
+                 * @param req ModifyEnhanceMediaTemplateRequest
+                 * @return ModifyEnhanceMediaTemplateOutcome
+                 */
+                ModifyEnhanceMediaTemplateOutcome ModifyEnhanceMediaTemplate(const Model::ModifyEnhanceMediaTemplateRequest &request);
+                void ModifyEnhanceMediaTemplateAsync(const Model::ModifyEnhanceMediaTemplateRequest& request, const ModifyEnhanceMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnhanceMediaTemplateOutcomeCallable ModifyEnhanceMediaTemplateCallable(const Model::ModifyEnhanceMediaTemplateRequest& request);
 
                 /**
                  *腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。

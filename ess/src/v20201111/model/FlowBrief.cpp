@@ -28,7 +28,8 @@ FlowBrief::FlowBrief() :
     m_flowStatusHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_flowMessageHasBeenSet(false),
-    m_creatorHasBeenSet(false)
+    m_creatorHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome FlowBrief::Deserialize(const rapidjson::Value &value)
         m_creatorHasBeenSet = true;
     }
 
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowBrief.Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = value["Deadline"].GetInt64();
+        m_deadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void FlowBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deadline, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void FlowBrief::SetCreator(const string& _creator)
 bool FlowBrief::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+int64_t FlowBrief::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void FlowBrief::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool FlowBrief::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 

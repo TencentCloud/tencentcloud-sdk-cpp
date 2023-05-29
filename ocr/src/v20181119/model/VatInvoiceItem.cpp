@@ -30,7 +30,14 @@ VatInvoiceItem::VatInvoiceItem() :
     m_amountWithoutTaxHasBeenSet(false),
     m_taxRateHasBeenSet(false),
     m_taxAmountHasBeenSet(false),
-    m_taxClassifyCodeHasBeenSet(false)
+    m_taxClassifyCodeHasBeenSet(false),
+    m_vehicleTypeHasBeenSet(false),
+    m_vehicleBrandHasBeenSet(false),
+    m_departurePlaceHasBeenSet(false),
+    m_arrivalPlaceHasBeenSet(false),
+    m_transportItemsNameHasBeenSet(false),
+    m_constructionPlaceHasBeenSet(false),
+    m_constructionNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +146,76 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
         m_taxClassifyCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("VehicleType") && !value["VehicleType"].IsNull())
+    {
+        if (!value["VehicleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.VehicleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vehicleType = string(value["VehicleType"].GetString());
+        m_vehicleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VehicleBrand") && !value["VehicleBrand"].IsNull())
+    {
+        if (!value["VehicleBrand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.VehicleBrand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vehicleBrand = string(value["VehicleBrand"].GetString());
+        m_vehicleBrandHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeparturePlace") && !value["DeparturePlace"].IsNull())
+    {
+        if (!value["DeparturePlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.DeparturePlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_departurePlace = string(value["DeparturePlace"].GetString());
+        m_departurePlaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArrivalPlace") && !value["ArrivalPlace"].IsNull())
+    {
+        if (!value["ArrivalPlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.ArrivalPlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arrivalPlace = string(value["ArrivalPlace"].GetString());
+        m_arrivalPlaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransportItemsName") && !value["TransportItemsName"].IsNull())
+    {
+        if (!value["TransportItemsName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TransportItemsName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transportItemsName = string(value["TransportItemsName"].GetString());
+        m_transportItemsNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConstructionPlace") && !value["ConstructionPlace"].IsNull())
+    {
+        if (!value["ConstructionPlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.ConstructionPlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_constructionPlace = string(value["ConstructionPlace"].GetString());
+        m_constructionPlaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConstructionName") && !value["ConstructionName"].IsNull())
+    {
+        if (!value["ConstructionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.ConstructionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_constructionName = string(value["ConstructionName"].GetString());
+        m_constructionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +301,62 @@ void VatInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TaxClassifyCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taxClassifyCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vehicleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vehicleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vehicleBrandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleBrand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vehicleBrand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departurePlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeparturePlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_departurePlace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_arrivalPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArrivalPlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrivalPlace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transportItemsNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransportItemsName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transportItemsName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_constructionPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConstructionPlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_constructionPlace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_constructionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConstructionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_constructionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +520,117 @@ void VatInvoiceItem::SetTaxClassifyCode(const string& _taxClassifyCode)
 bool VatInvoiceItem::TaxClassifyCodeHasBeenSet() const
 {
     return m_taxClassifyCodeHasBeenSet;
+}
+
+string VatInvoiceItem::GetVehicleType() const
+{
+    return m_vehicleType;
+}
+
+void VatInvoiceItem::SetVehicleType(const string& _vehicleType)
+{
+    m_vehicleType = _vehicleType;
+    m_vehicleTypeHasBeenSet = true;
+}
+
+bool VatInvoiceItem::VehicleTypeHasBeenSet() const
+{
+    return m_vehicleTypeHasBeenSet;
+}
+
+string VatInvoiceItem::GetVehicleBrand() const
+{
+    return m_vehicleBrand;
+}
+
+void VatInvoiceItem::SetVehicleBrand(const string& _vehicleBrand)
+{
+    m_vehicleBrand = _vehicleBrand;
+    m_vehicleBrandHasBeenSet = true;
+}
+
+bool VatInvoiceItem::VehicleBrandHasBeenSet() const
+{
+    return m_vehicleBrandHasBeenSet;
+}
+
+string VatInvoiceItem::GetDeparturePlace() const
+{
+    return m_departurePlace;
+}
+
+void VatInvoiceItem::SetDeparturePlace(const string& _departurePlace)
+{
+    m_departurePlace = _departurePlace;
+    m_departurePlaceHasBeenSet = true;
+}
+
+bool VatInvoiceItem::DeparturePlaceHasBeenSet() const
+{
+    return m_departurePlaceHasBeenSet;
+}
+
+string VatInvoiceItem::GetArrivalPlace() const
+{
+    return m_arrivalPlace;
+}
+
+void VatInvoiceItem::SetArrivalPlace(const string& _arrivalPlace)
+{
+    m_arrivalPlace = _arrivalPlace;
+    m_arrivalPlaceHasBeenSet = true;
+}
+
+bool VatInvoiceItem::ArrivalPlaceHasBeenSet() const
+{
+    return m_arrivalPlaceHasBeenSet;
+}
+
+string VatInvoiceItem::GetTransportItemsName() const
+{
+    return m_transportItemsName;
+}
+
+void VatInvoiceItem::SetTransportItemsName(const string& _transportItemsName)
+{
+    m_transportItemsName = _transportItemsName;
+    m_transportItemsNameHasBeenSet = true;
+}
+
+bool VatInvoiceItem::TransportItemsNameHasBeenSet() const
+{
+    return m_transportItemsNameHasBeenSet;
+}
+
+string VatInvoiceItem::GetConstructionPlace() const
+{
+    return m_constructionPlace;
+}
+
+void VatInvoiceItem::SetConstructionPlace(const string& _constructionPlace)
+{
+    m_constructionPlace = _constructionPlace;
+    m_constructionPlaceHasBeenSet = true;
+}
+
+bool VatInvoiceItem::ConstructionPlaceHasBeenSet() const
+{
+    return m_constructionPlaceHasBeenSet;
+}
+
+string VatInvoiceItem::GetConstructionName() const
+{
+    return m_constructionName;
+}
+
+void VatInvoiceItem::SetConstructionName(const string& _constructionName)
+{
+    m_constructionName = _constructionName;
+    m_constructionNameHasBeenSet = true;
+}
+
+bool VatInvoiceItem::ConstructionNameHasBeenSet() const
+{
+    return m_constructionNameHasBeenSet;
 }
 

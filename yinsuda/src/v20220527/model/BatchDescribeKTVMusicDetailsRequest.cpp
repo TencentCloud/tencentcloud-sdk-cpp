@@ -26,7 +26,9 @@ BatchDescribeKTVMusicDetailsRequest::BatchDescribeKTVMusicDetailsRequest() :
     m_appNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_musicIdsHasBeenSet(false),
-    m_playSceneHasBeenSet(false)
+    m_playSceneHasBeenSet(false),
+    m_guestUserIdHasBeenSet(false),
+    m_roomIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,22 @@ string BatchDescribeKTVMusicDetailsRequest::ToJsonString() const
         string key = "PlayScene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_playScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_guestUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GuestUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_guestUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +162,38 @@ void BatchDescribeKTVMusicDetailsRequest::SetPlayScene(const string& _playScene)
 bool BatchDescribeKTVMusicDetailsRequest::PlaySceneHasBeenSet() const
 {
     return m_playSceneHasBeenSet;
+}
+
+string BatchDescribeKTVMusicDetailsRequest::GetGuestUserId() const
+{
+    return m_guestUserId;
+}
+
+void BatchDescribeKTVMusicDetailsRequest::SetGuestUserId(const string& _guestUserId)
+{
+    m_guestUserId = _guestUserId;
+    m_guestUserIdHasBeenSet = true;
+}
+
+bool BatchDescribeKTVMusicDetailsRequest::GuestUserIdHasBeenSet() const
+{
+    return m_guestUserIdHasBeenSet;
+}
+
+string BatchDescribeKTVMusicDetailsRequest::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void BatchDescribeKTVMusicDetailsRequest::SetRoomId(const string& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool BatchDescribeKTVMusicDetailsRequest::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
 }
 
 

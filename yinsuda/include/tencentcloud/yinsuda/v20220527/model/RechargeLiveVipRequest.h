@@ -152,6 +152,46 @@ namespace TencentCloud
                      */
                     bool VipDaysHasBeenSet() const;
 
+                    /**
+                     * 获取充值分类。取值有：room_card-包月房卡; 其他-保留。
+                     * @return GiveType 充值分类。取值有：room_card-包月房卡; 其他-保留。
+                     */
+                    std::string GetGiveType() const;
+
+                    /**
+                     * 设置充值分类。取值有：room_card-包月房卡; 其他-保留。
+                     * @param GiveType 充值分类。取值有：room_card-包月房卡; 其他-保留。
+                     */
+                    void SetGiveType(const std::string& _giveType);
+
+                    /**
+                     * 判断参数 GiveType 是否已赋值
+                     * @return GiveType 是否已赋值
+                     */
+                    bool GiveTypeHasBeenSet() const;
+
+                    /**
+                     * 获取播放场景。默认为Live
+<li>Live：直播</li><li>Chat：语聊</li>
+                     * @return PlayScene 播放场景。默认为Live
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    std::string GetPlayScene() const;
+
+                    /**
+                     * 设置播放场景。默认为Live
+<li>Live：直播</li><li>Chat：语聊</li>
+                     * @param PlayScene 播放场景。默认为Live
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    void SetPlayScene(const std::string& _playScene);
+
+                    /**
+                     * 判断参数 PlayScene 是否已赋值
+                     * @return PlayScene 是否已赋值
+                     */
+                    bool PlaySceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +228,19 @@ namespace TencentCloud
                      */
                     int64_t m_vipDays;
                     bool m_vipDaysHasBeenSet;
+
+                    /**
+                     * 充值分类。取值有：room_card-包月房卡; 其他-保留。
+                     */
+                    std::string m_giveType;
+                    bool m_giveTypeHasBeenSet;
+
+                    /**
+                     * 播放场景。默认为Live
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    std::string m_playScene;
+                    bool m_playSceneHasBeenSet;
 
                 };
             }

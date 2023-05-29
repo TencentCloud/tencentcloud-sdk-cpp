@@ -55,6 +55,34 @@ namespace TencentCloud
                      */
                     bool DealNameHasBeenSet() const;
 
+                    /**
+                     * 获取流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowId 流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例ID集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceIdSet 实例ID集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetInstanceIdSet() const;
+
+                    /**
+                     * 判断参数 InstanceIdSet 是否已赋值
+                     * @return InstanceIdSet 是否已赋值
+                     */
+                    bool InstanceIdSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +90,20 @@ namespace TencentCloud
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
+
+                    /**
+                     * 流程ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 实例ID集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_instanceIdSet;
+                    bool m_instanceIdSetHasBeenSet;
 
                 };
             }

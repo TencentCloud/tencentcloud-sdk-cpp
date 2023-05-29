@@ -384,6 +384,49 @@ DcdbClient::CreateDCDBInstanceOutcomeCallable DcdbClient::CreateDCDBInstanceCall
     return task->get_future();
 }
 
+DcdbClient::CreateDedicatedClusterDCDBInstanceOutcome DcdbClient::CreateDedicatedClusterDCDBInstance(const CreateDedicatedClusterDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDedicatedClusterDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDedicatedClusterDCDBInstanceResponse rsp = CreateDedicatedClusterDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDedicatedClusterDCDBInstanceOutcome(rsp);
+        else
+            return CreateDedicatedClusterDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDedicatedClusterDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CreateDedicatedClusterDCDBInstanceAsync(const CreateDedicatedClusterDCDBInstanceRequest& request, const CreateDedicatedClusterDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDedicatedClusterDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CreateDedicatedClusterDCDBInstanceOutcomeCallable DcdbClient::CreateDedicatedClusterDCDBInstanceCallable(const CreateDedicatedClusterDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDedicatedClusterDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDedicatedClusterDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::CreateHourDCDBInstanceOutcome DcdbClient::CreateHourDCDBInstance(const CreateHourDCDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHourDCDBInstance");
@@ -420,6 +463,49 @@ DcdbClient::CreateHourDCDBInstanceOutcomeCallable DcdbClient::CreateHourDCDBInst
         [this, request]()
         {
             return this->CreateHourDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::CreateTmpDCDBInstanceOutcome DcdbClient::CreateTmpDCDBInstance(const CreateTmpDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTmpDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTmpDCDBInstanceResponse rsp = CreateTmpDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTmpDCDBInstanceOutcome(rsp);
+        else
+            return CreateTmpDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTmpDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CreateTmpDCDBInstanceAsync(const CreateTmpDCDBInstanceRequest& request, const CreateTmpDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTmpDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CreateTmpDCDBInstanceOutcomeCallable DcdbClient::CreateTmpDCDBInstanceCallable(const CreateTmpDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTmpDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTmpDCDBInstance(request);
         }
     );
 
@@ -592,6 +678,49 @@ DcdbClient::DescribeBackupFilesOutcomeCallable DcdbClient::DescribeBackupFilesCa
         [this, request]()
         {
             return this->DescribeBackupFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::DescribeDBEncryptAttributesOutcome DcdbClient::DescribeDBEncryptAttributes(const DescribeDBEncryptAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBEncryptAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBEncryptAttributesResponse rsp = DescribeDBEncryptAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBEncryptAttributesOutcome(rsp);
+        else
+            return DescribeDBEncryptAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBEncryptAttributesOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeDBEncryptAttributesAsync(const DescribeDBEncryptAttributesRequest& request, const DescribeDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBEncryptAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeDBEncryptAttributesOutcomeCallable DcdbClient::DescribeDBEncryptAttributesCallable(const DescribeDBEncryptAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBEncryptAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBEncryptAttributes(request);
         }
     );
 
@@ -2828,6 +2957,49 @@ DcdbClient::UpgradeDCDBInstanceOutcomeCallable DcdbClient::UpgradeDCDBInstanceCa
         [this, request]()
         {
             return this->UpgradeDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::UpgradeDedicatedDCDBInstanceOutcome DcdbClient::UpgradeDedicatedDCDBInstance(const UpgradeDedicatedDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDedicatedDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDedicatedDCDBInstanceResponse rsp = UpgradeDedicatedDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDedicatedDCDBInstanceOutcome(rsp);
+        else
+            return UpgradeDedicatedDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDedicatedDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::UpgradeDedicatedDCDBInstanceAsync(const UpgradeDedicatedDCDBInstanceRequest& request, const UpgradeDedicatedDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDedicatedDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::UpgradeDedicatedDCDBInstanceOutcomeCallable DcdbClient::UpgradeDedicatedDCDBInstanceCallable(const UpgradeDedicatedDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDedicatedDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDedicatedDCDBInstance(request);
         }
     );
 

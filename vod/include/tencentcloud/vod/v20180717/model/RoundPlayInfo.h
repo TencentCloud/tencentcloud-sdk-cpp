@@ -137,6 +137,84 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取播放状态，可选值：
+<li>Enabled：启动状态；</li>
+<li>Disabled：停止状态。</li>
+默认值：Enabled。
+                     * @return Status 播放状态，可选值：
+<li>Enabled：启动状态；</li>
+<li>Disabled：停止状态。</li>
+默认值：Enabled。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置播放状态，可选值：
+<li>Enabled：启动状态；</li>
+<li>Disabled：停止状态。</li>
+默认值：Enabled。
+                     * @param Status 播放状态，可选值：
+<li>Enabled：启动状态；</li>
+<li>Disabled：停止状态。</li>
+默认值：Enabled。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     * @return PlayBackMode 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    std::string GetPlayBackMode() const;
+
+                    /**
+                     * 设置播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     * @param PlayBackMode 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    void SetPlayBackMode(const std::string& _playBackMode);
+
+                    /**
+                     * 判断参数 PlayBackMode 是否已赋值
+                     * @return PlayBackMode 是否已赋值
+                     */
+                    bool PlayBackModeHasBeenSet() const;
+
+                    /**
+                     * 获取轮播播放地址。
+                     * @return Url 轮播播放地址。
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置轮播播放地址。
+                     * @param Url 轮播播放地址。
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +246,30 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 播放状态，可选值：
+<li>Enabled：启动状态；</li>
+<li>Disabled：停止状态。</li>
+默认值：Enabled。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    std::string m_playBackMode;
+                    bool m_playBackModeHasBeenSet;
+
+                    /**
+                     * 轮播播放地址。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

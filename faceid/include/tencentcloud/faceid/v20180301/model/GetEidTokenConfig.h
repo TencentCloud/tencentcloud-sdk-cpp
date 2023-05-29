@@ -179,6 +179,24 @@ namespace TencentCloud
                      */
                     bool IntentionRecognitionHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持港澳台居住证识别
+                     * @return IsSupportHMTResidentPermitOCR 是否支持港澳台居住证识别
+                     */
+                    bool GetIsSupportHMTResidentPermitOCR() const;
+
+                    /**
+                     * 设置是否支持港澳台居住证识别
+                     * @param IsSupportHMTResidentPermitOCR 是否支持港澳台居住证识别
+                     */
+                    void SetIsSupportHMTResidentPermitOCR(const bool& _isSupportHMTResidentPermitOCR);
+
+                    /**
+                     * 判断参数 IsSupportHMTResidentPermitOCR 是否已赋值
+                     * @return IsSupportHMTResidentPermitOCR 是否已赋值
+                     */
+                    bool IsSupportHMTResidentPermitOCRHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +240,12 @@ namespace TencentCloud
                      */
                     bool m_intentionRecognition;
                     bool m_intentionRecognitionHasBeenSet;
+
+                    /**
+                     * 是否支持港澳台居住证识别
+                     */
+                    bool m_isSupportHMTResidentPermitOCR;
+                    bool m_isSupportHMTResidentPermitOCRHasBeenSet;
 
                 };
             }

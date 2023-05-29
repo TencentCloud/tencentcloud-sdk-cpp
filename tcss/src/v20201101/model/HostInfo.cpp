@@ -37,7 +37,8 @@ HostInfo::HostInfo() :
     m_instanceIDHasBeenSet(false),
     m_regionIDHasBeenSet(false),
     m_projectHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clusterIDHasBeenSet(false)
 {
 }
 
@@ -233,6 +234,16 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterID") && !value["ClusterID"].IsNull())
+    {
+        if (!value["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(value["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +393,14 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -657,5 +676,21 @@ void HostInfo::SetTags(const vector<TagInfo>& _tags)
 bool HostInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string HostInfo::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+void HostInfo::SetClusterID(const string& _clusterID)
+{
+    m_clusterID = _clusterID;
+    m_clusterIDHasBeenSet = true;
+}
+
+bool HostInfo::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
 }
 

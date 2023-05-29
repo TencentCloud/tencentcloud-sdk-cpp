@@ -23,14 +23,14 @@ using namespace std;
 PayModeSummaryOverviewItem::PayModeSummaryOverviewItem() :
     m_payModeHasBeenSet(false),
     m_payModeNameHasBeenSet(false),
-    m_realTotalCostHasBeenSet(false),
     m_realTotalCostRatioHasBeenSet(false),
-    m_detailHasBeenSet(false),
+    m_realTotalCostHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false),
     m_totalCostHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_detailHasBeenSet(false)
 {
 }
 
@@ -59,16 +59,6 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_payModeNameHasBeenSet = true;
     }
 
-    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
-    {
-        if (!value["RealTotalCost"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_realTotalCost = string(value["RealTotalCost"].GetString());
-        m_realTotalCostHasBeenSet = true;
-    }
-
     if (value.HasMember("RealTotalCostRatio") && !value["RealTotalCostRatio"].IsNull())
     {
         if (!value["RealTotalCostRatio"].IsString())
@@ -79,24 +69,14 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_realTotalCostRatioHasBeenSet = true;
     }
 
-    if (value.HasMember("Detail") && !value["Detail"].IsNull())
+    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
     {
-        if (!value["Detail"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.Detail` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Detail"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["RealTotalCost"].IsString())
         {
-            ActionSummaryOverviewItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_detail.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_detailHasBeenSet = true;
+        m_realTotalCost = string(value["RealTotalCost"].GetString());
+        m_realTotalCostHasBeenSet = true;
     }
 
     if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
@@ -129,6 +109,16 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_voucherPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
     if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
     {
         if (!value["TotalCost"].IsString())
@@ -139,14 +129,24 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_totalCostHasBeenSet = true;
     }
 
-    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    if (value.HasMember("Detail") && !value["Detail"].IsNull())
     {
-        if (!value["TransferPayAmount"].IsString())
+        if (!value["Detail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.Detail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Detail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+            ActionSummaryOverviewItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detail.push_back(item);
         }
-        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
-        m_transferPayAmountHasBeenSet = true;
+        m_detailHasBeenSet = true;
     }
 
 
@@ -172,14 +172,6 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_payModeName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_realTotalCostHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RealTotalCost";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_realTotalCostRatioHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -188,19 +180,12 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_realTotalCostRatio.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_detailHasBeenSet)
+    if (m_realTotalCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Detail";
+        string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_detail.begin(); itr != m_detail.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cashPayAmountHasBeenSet)
@@ -227,6 +212,14 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_totalCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -235,12 +228,19 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_transferPayAmountHasBeenSet)
+    if (m_detailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TransferPayAmount";
+        string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detail.begin(); itr != m_detail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -278,22 +278,6 @@ bool PayModeSummaryOverviewItem::PayModeNameHasBeenSet() const
     return m_payModeNameHasBeenSet;
 }
 
-string PayModeSummaryOverviewItem::GetRealTotalCost() const
-{
-    return m_realTotalCost;
-}
-
-void PayModeSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
-{
-    m_realTotalCost = _realTotalCost;
-    m_realTotalCostHasBeenSet = true;
-}
-
-bool PayModeSummaryOverviewItem::RealTotalCostHasBeenSet() const
-{
-    return m_realTotalCostHasBeenSet;
-}
-
 string PayModeSummaryOverviewItem::GetRealTotalCostRatio() const
 {
     return m_realTotalCostRatio;
@@ -310,20 +294,20 @@ bool PayModeSummaryOverviewItem::RealTotalCostRatioHasBeenSet() const
     return m_realTotalCostRatioHasBeenSet;
 }
 
-vector<ActionSummaryOverviewItem> PayModeSummaryOverviewItem::GetDetail() const
+string PayModeSummaryOverviewItem::GetRealTotalCost() const
 {
-    return m_detail;
+    return m_realTotalCost;
 }
 
-void PayModeSummaryOverviewItem::SetDetail(const vector<ActionSummaryOverviewItem>& _detail)
+void PayModeSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
 {
-    m_detail = _detail;
-    m_detailHasBeenSet = true;
+    m_realTotalCost = _realTotalCost;
+    m_realTotalCostHasBeenSet = true;
 }
 
-bool PayModeSummaryOverviewItem::DetailHasBeenSet() const
+bool PayModeSummaryOverviewItem::RealTotalCostHasBeenSet() const
 {
-    return m_detailHasBeenSet;
+    return m_realTotalCostHasBeenSet;
 }
 
 string PayModeSummaryOverviewItem::GetCashPayAmount() const
@@ -374,6 +358,22 @@ bool PayModeSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
     return m_voucherPayAmountHasBeenSet;
 }
 
+string PayModeSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void PayModeSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
+}
+
 string PayModeSummaryOverviewItem::GetTotalCost() const
 {
     return m_totalCost;
@@ -390,19 +390,19 @@ bool PayModeSummaryOverviewItem::TotalCostHasBeenSet() const
     return m_totalCostHasBeenSet;
 }
 
-string PayModeSummaryOverviewItem::GetTransferPayAmount() const
+vector<ActionSummaryOverviewItem> PayModeSummaryOverviewItem::GetDetail() const
 {
-    return m_transferPayAmount;
+    return m_detail;
 }
 
-void PayModeSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+void PayModeSummaryOverviewItem::SetDetail(const vector<ActionSummaryOverviewItem>& _detail)
 {
-    m_transferPayAmount = _transferPayAmount;
-    m_transferPayAmountHasBeenSet = true;
+    m_detail = _detail;
+    m_detailHasBeenSet = true;
 }
 
-bool PayModeSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+bool PayModeSummaryOverviewItem::DetailHasBeenSet() const
 {
-    return m_transferPayAmountHasBeenSet;
+    return m_detailHasBeenSet;
 }
 

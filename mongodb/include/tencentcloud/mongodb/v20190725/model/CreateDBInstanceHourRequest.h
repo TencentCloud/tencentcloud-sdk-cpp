@@ -254,14 +254,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，如果不设置该参数，则默认选择基础网络。
-                     * @return VpcId 私有网络ID，如果不设置该参数，则默认选择基础网络。
+                     * 获取私有网络ID。如果不设置该参数，则默认选择基础网络。
+                     * @return VpcId 私有网络ID。如果不设置该参数，则默认选择基础网络。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，如果不设置该参数，则默认选择基础网络。
-                     * @param VpcId 私有网络ID，如果不设置该参数，则默认选择基础网络。
+                     * 设置私有网络ID。如果不设置该参数，则默认选择基础网络。
+                     * @param VpcId 私有网络ID。如果不设置该参数，则默认选择基础网络。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -290,22 +290,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例密码。
-- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 
-- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
-                     * @return Password 实例密码。
-- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 
-- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
+                     * 获取实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
+                     * @return Password 实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例密码。
-- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 
-- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
-                     * @param Password 实例密码。
-- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 
-- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
+                     * 设置实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
+                     * @param Password 实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -696,7 +688,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID，如果不设置该参数，则默认选择基础网络。
+                     * 私有网络ID。如果不设置该参数，则默认选择基础网络。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -708,9 +700,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例密码。
-- 不设置该参数，则默认密码格式为：实例ID+@+主账户uin。例如：实例 ID 为cmgo-higv73ed，UIN 为100000001，则默认密码为：cmgo-higv73ed@100000001。 
-- 自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
+                     * 实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

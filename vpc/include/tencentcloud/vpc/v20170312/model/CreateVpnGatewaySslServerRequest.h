@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPN实例ID
-                     * @return VpnGatewayId VPN实例ID
+                     * 获取VPN网关实例ID。
+                     * @return VpnGatewayId VPN网关实例ID。
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置VPN实例ID
-                     * @param VpnGatewayId VPN实例ID
+                     * 设置VPN网关实例ID。
+                     * @param VpnGatewayId VPN网关实例ID。
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL_VPN_SERVER 实例名
-                     * @return SslVpnServerName SSL_VPN_SERVER 实例名
+                     * 获取SSL-VPN-SERVER 实例名称，长度不超过60个字节。
+                     * @return SslVpnServerName SSL-VPN-SERVER 实例名称，长度不超过60个字节。
                      */
                     std::string GetSslVpnServerName() const;
 
                     /**
-                     * 设置SSL_VPN_SERVER 实例名
-                     * @param SslVpnServerName SSL_VPN_SERVER 实例名
+                     * 设置SSL-VPN-SERVER 实例名称，长度不超过60个字节。
+                     * @param SslVpnServerName SSL-VPN-SERVER 实例名称，长度不超过60个字节。
                      */
                     void SetSslVpnServerName(const std::string& _sslVpnServerName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SslVpnServerNameHasBeenSet() const;
 
                     /**
-                     * 获取本端地址网段
-                     * @return LocalAddress 本端地址网段
+                     * 获取云端地址（CIDR）列表。
+                     * @return LocalAddress 云端地址（CIDR）列表。
                      */
                     std::vector<std::string> GetLocalAddress() const;
 
                     /**
-                     * 设置本端地址网段
-                     * @param LocalAddress 本端地址网段
+                     * 设置云端地址（CIDR）列表。
+                     * @param LocalAddress 云端地址（CIDR）列表。
                      */
                     void SetLocalAddress(const std::vector<std::string>& _localAddress);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LocalAddressHasBeenSet() const;
 
                     /**
-                     * 获取客户端地址网段
-                     * @return RemoteAddress 客户端地址网段
+                     * 获取客户端地址网段。
+                     * @return RemoteAddress 客户端地址网段。
                      */
                     std::string GetRemoteAddress() const;
 
                     /**
-                     * 设置客户端地址网段
-                     * @param RemoteAddress 客户端地址网段
+                     * 设置客户端地址网段。
+                     * @param RemoteAddress 客户端地址网段。
                      */
                     void SetRemoteAddress(const std::string& _remoteAddress);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RemoteAddressHasBeenSet() const;
 
                     /**
-                     * 获取SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP
-                     * @return SslVpnProtocol SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP
+                     * 获取SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
+                     * @return SslVpnProtocol SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
                      */
                     std::string GetSslVpnProtocol() const;
 
                     /**
-                     * 设置SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP
-                     * @param SslVpnProtocol SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP
+                     * 设置SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
+                     * @param SslVpnProtocol SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
                      */
                     void SetSslVpnProtocol(const std::string& _sslVpnProtocol);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool SslVpnProtocolHasBeenSet() const;
 
                     /**
-                     * 获取SSL VPN服务端监听协议端口。默认1194。
-                     * @return SslVpnPort SSL VPN服务端监听协议端口。默认1194。
+                     * 获取SSL VPN服务端监听协议端口，默认1194。
+                     * @return SslVpnPort SSL VPN服务端监听协议端口，默认1194。
                      */
                     int64_t GetSslVpnPort() const;
 
                     /**
-                     * 设置SSL VPN服务端监听协议端口。默认1194。
-                     * @param SslVpnPort SSL VPN服务端监听协议端口。默认1194。
+                     * 设置SSL VPN服务端监听协议端口，默认1194。
+                     * @param SslVpnPort SSL VPN服务端监听协议端口，默认1194。
                      */
                     void SetSslVpnPort(const int64_t& _sslVpnPort);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool SslVpnPortHasBeenSet() const;
 
                     /**
-                     * 获取认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
-                     * @return IntegrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 获取认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。
+                     * @return IntegrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。
                      */
                     std::string GetIntegrityAlgorithm() const;
 
                     /**
-                     * 设置认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
-                     * @param IntegrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 设置认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。
+                     * @param IntegrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。
                      */
                     void SetIntegrityAlgorithm(const std::string& _integrityAlgorithm);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool IntegrityAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
-                     * @return EncryptAlgorithm 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 获取加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。
+                     * @return EncryptAlgorithm 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
-                     * 设置加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
-                     * @param EncryptAlgorithm 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 设置加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。
+                     * @param EncryptAlgorithm 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool EncryptAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取是否支持压缩。当前仅支持不支持压缩。默认False
-                     * @return Compress 是否支持压缩。当前仅支持不支持压缩。默认False
+                     * 获取是否支持压缩。当前仅支持不支持压缩，默认False。
+                     * @return Compress 是否支持压缩。当前仅支持不支持压缩，默认False。
                      */
                     bool GetCompress() const;
 
                     /**
-                     * 设置是否支持压缩。当前仅支持不支持压缩。默认False
-                     * @param Compress 是否支持压缩。当前仅支持不支持压缩。默认False
+                     * 设置是否支持压缩。当前仅支持不支持压缩，默认False。
+                     * @param Compress 是否支持压缩。当前仅支持不支持压缩，默认False。
                      */
                     void SetCompress(const bool& _compress);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool CompressHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SSO认证
-                     * @return SsoEnabled 是否开启SSO认证
+                     * 获取是否开启SSO认证。默认为False
+                     * @return SsoEnabled 是否开启SSO认证。默认为False
                      */
                     bool GetSsoEnabled() const;
 
                     /**
-                     * 设置是否开启SSO认证
-                     * @param SsoEnabled 是否开启SSO认证
+                     * 设置是否开启SSO认证。默认为False
+                     * @param SsoEnabled 是否开启SSO认证。默认为False
                      */
                     void SetSsoEnabled(const bool& _ssoEnabled);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool SsoEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否开启策略访问控制
-                     * @return AccessPolicyEnabled 是否开启策略访问控制
+                     * 获取是否开启策略访问控制。默认为False
+                     * @return AccessPolicyEnabled 是否开启策略访问控制。默认为False
                      */
                     bool GetAccessPolicyEnabled() const;
 
                     /**
-                     * 设置是否开启策略访问控制
-                     * @param AccessPolicyEnabled 是否开启策略访问控制
+                     * 设置是否开启策略访问控制。默认为False
+                     * @param AccessPolicyEnabled 是否开启策略访问控制。默认为False
                      */
                     void SetAccessPolicyEnabled(const bool& _accessPolicyEnabled);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool AccessPolicyEnabledHasBeenSet() const;
 
                     /**
-                     * 获取SAML-DATA
-                     * @return SamlData SAML-DATA
+                     * 获取SAML-DATA，开启SSO时传。
+                     * @return SamlData SAML-DATA，开启SSO时传。
                      */
                     std::string GetSamlData() const;
 
                     /**
-                     * 设置SAML-DATA
-                     * @param SamlData SAML-DATA
+                     * 设置SAML-DATA，开启SSO时传。
+                     * @param SamlData SAML-DATA，开启SSO时传。
                      */
                     void SetSamlData(const std::string& _samlData);
 
@@ -261,73 +261,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPN实例ID
+                     * VPN网关实例ID。
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * SSL_VPN_SERVER 实例名
+                     * SSL-VPN-SERVER 实例名称，长度不超过60个字节。
                      */
                     std::string m_sslVpnServerName;
                     bool m_sslVpnServerNameHasBeenSet;
 
                     /**
-                     * 本端地址网段
+                     * 云端地址（CIDR）列表。
                      */
                     std::vector<std::string> m_localAddress;
                     bool m_localAddressHasBeenSet;
 
                     /**
-                     * 客户端地址网段
+                     * 客户端地址网段。
                      */
                     std::string m_remoteAddress;
                     bool m_remoteAddressHasBeenSet;
 
                     /**
-                     * SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP
+                     * SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
                      */
                     std::string m_sslVpnProtocol;
                     bool m_sslVpnProtocolHasBeenSet;
 
                     /**
-                     * SSL VPN服务端监听协议端口。默认1194。
+                     * SSL VPN服务端监听协议端口，默认1194。
                      */
                     int64_t m_sslVpnPort;
                     bool m_sslVpnPortHasBeenSet;
 
                     /**
-                     * 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。
                      */
                     std::string m_integrityAlgorithm;
                     bool m_integrityAlgorithmHasBeenSet;
 
                     /**
-                     * 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
 
                     /**
-                     * 是否支持压缩。当前仅支持不支持压缩。默认False
+                     * 是否支持压缩。当前仅支持不支持压缩，默认False。
                      */
                     bool m_compress;
                     bool m_compressHasBeenSet;
 
                     /**
-                     * 是否开启SSO认证
+                     * 是否开启SSO认证。默认为False
                      */
                     bool m_ssoEnabled;
                     bool m_ssoEnabledHasBeenSet;
 
                     /**
-                     * 是否开启策略访问控制
+                     * 是否开启策略访问控制。默认为False
                      */
                     bool m_accessPolicyEnabled;
                     bool m_accessPolicyEnabledHasBeenSet;
 
                     /**
-                     * SAML-DATA
+                     * SAML-DATA，开启SSO时传。
                      */
                     std::string m_samlData;
                     bool m_samlDataHasBeenSet;

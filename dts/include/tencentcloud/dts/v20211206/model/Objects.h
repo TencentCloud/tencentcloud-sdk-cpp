@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移对象类型 Partial(部分对象)
+                     * 获取同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode 迁移对象类型 Partial(部分对象)
+                     * @return Mode 同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置迁移对象类型 Partial(部分对象)
+                     * 设置同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 迁移对象类型 Partial(部分对象)
+                     * @param Mode 同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMode(const std::string& _mode);
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移对象类型 Partial(部分对象)
+                     * 同步对象类型 Partial(部分对象)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;

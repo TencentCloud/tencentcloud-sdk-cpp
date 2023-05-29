@@ -45,7 +45,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_targetConditionExprHasBeenSet(false),
     m_relConditionExprHasBeenSet(false),
     m_fieldConfigHasBeenSet(false),
-    m_targetObjectValueHasBeenSet(false)
+    m_targetObjectValueHasBeenSet(false),
+    m_sourceEngineTypesHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,19 @@ string CreateRuleRequest::ToJsonString() const
         string key = "TargetObjectValue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_targetObjectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceEngineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceEngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceEngineTypes.begin(); itr != m_sourceEngineTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -616,6 +630,22 @@ void CreateRuleRequest::SetTargetObjectValue(const string& _targetObjectValue)
 bool CreateRuleRequest::TargetObjectValueHasBeenSet() const
 {
     return m_targetObjectValueHasBeenSet;
+}
+
+vector<uint64_t> CreateRuleRequest::GetSourceEngineTypes() const
+{
+    return m_sourceEngineTypes;
+}
+
+void CreateRuleRequest::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngineTypes)
+{
+    m_sourceEngineTypes = _sourceEngineTypes;
+    m_sourceEngineTypesHasBeenSet = true;
+}
+
+bool CreateRuleRequest::SourceEngineTypesHasBeenSet() const
+{
+    return m_sourceEngineTypesHasBeenSet;
 }
 
 

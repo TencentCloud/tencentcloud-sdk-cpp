@@ -57,9 +57,9 @@ namespace TencentCloud
                     bool ResourceSummarySetHasBeenSet() const;
 
                     /**
-                     * 获取资源汇总列表总数
+                     * 获取资源汇总列表总数，入参NeedRecordNum为0时不返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 资源汇总列表总数
+                     * @return Total 资源汇总列表总数，入参NeedRecordNum为0时不返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotal() const;
@@ -79,7 +79,7 @@ namespace TencentCloud
                     bool m_resourceSummarySetHasBeenSet;
 
                     /**
-                     * 资源汇总列表总数
+                     * 资源汇总列表总数，入参NeedRecordNum为0时不返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;

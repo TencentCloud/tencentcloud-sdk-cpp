@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图库ID，不可重复，仅支持字母、数字和下划线。
-                     * @return GroupId 图库ID，不可重复，仅支持字母、数字和下划线。
+                     * 获取图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。
+                     * @return GroupId 图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置图库ID，不可重复，仅支持字母、数字和下划线。
-                     * @param GroupId 图库ID，不可重复，仅支持字母、数字和下划线。
+                     * 设置图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。
+                     * @param GroupId 图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -189,7 +189,7 @@ GroupType不支持修改，若不确定适用的服务类型，建议先对不�
                 private:
 
                     /**
-                     * 图库ID，不可重复，仅支持字母、数字和下划线。
+                     * 图库ID，不可重复，仅支持字母、数字和下划线。图库数量单个用户上限为30。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

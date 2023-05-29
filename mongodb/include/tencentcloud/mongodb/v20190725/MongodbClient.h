@@ -375,7 +375,7 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
-                 *本就口（DescribeSecurityGroup）用于查询实例绑定的安全组。
+                 *本接口（DescribeSecurityGroup）用于查询实例绑定的安全组。
                  * @param req DescribeSecurityGroupRequest
                  * @return DescribeSecurityGroupOutcome
                  */

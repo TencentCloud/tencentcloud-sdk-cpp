@@ -366,10 +366,11 @@ namespace TencentCloud
                 ChannelCreateFlowRemindsOutcomeCallable ChannelCreateFlowRemindsCallable(const Model::ChannelCreateFlowRemindsRequest& request);
 
                 /**
-                 *提交企业签署流程审批结果
+                 *提交企业流程审批结果
+目前存在两种审核操作，签署审核，发起审核
+签署审核：通过接口（CreateFlowsByTemplates或ChannelCreateFlowByFiles或ChannelCreatePrepareFlow）发起签署流程后，若指定了参数 NeedSignReview 为true,则可以调用此接口，指定operate=SignReview，提交企业内部签署审批结果；若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效
 
-在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。
-若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。
+发起审核：通过接口ChannelCreatePrepareFlow指定发起后需要审核，则可以通过调用此接口，指定operate=CreateReview，提交企业内部审批结果，可多次提交，当通过后，后续提交结果无效
                  * @param req ChannelCreateFlowSignReviewRequest
                  * @return ChannelCreateFlowSignReviewOutcome
                  */
@@ -382,6 +383,7 @@ namespace TencentCloud
 该接口用于发起合同后，生成C端签署人的签署链接<br/>
 注意：该接口目前签署人类型仅支持个人签署方（PERSON）<br/>
 注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>
+注意：该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。微信小程序请使用小程序跳转或半屏弹窗的方式<br/>
                  * @param req ChannelCreateFlowSignUrlRequest
                  * @return ChannelCreateFlowSignUrlOutcome
                  */

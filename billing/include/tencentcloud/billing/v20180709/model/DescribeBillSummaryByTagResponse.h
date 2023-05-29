@@ -47,7 +47,9 @@ namespace TencentCloud
 
                     /**
                      * 获取数据是否准备好，0未准备好，1准备好
+Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试
                      * @return Ready 数据是否准备好，0未准备好，1准备好
+Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试
                      */
                     uint64_t GetReady() const;
 
@@ -89,6 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 数据是否准备好，0未准备好，1准备好
+Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟，请于10分钟后重试
                      */
                     uint64_t m_ready;
                     bool m_readyHasBeenSet;

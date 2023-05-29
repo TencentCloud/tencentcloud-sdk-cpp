@@ -174,14 +174,14 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取权重值。
-                     * @return Weight 权重值。
+                     * 获取该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。
+                     * @return Weight 该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重值。
-                     * @param Weight 权重值。
+                     * 设置该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。
+                     * @param Weight 该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -400,7 +400,7 @@ namespace TencentCloud
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 权重值。
+                     * 该字段已经废弃，无意义。查看只读实例的权重，请查看 RoInstances 字段里的 Weight 值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

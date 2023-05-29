@@ -35,7 +35,9 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_composingFormHasBeenSet(false),
     m_setDateHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
-    m_recognizeWarnMsgHasBeenSet(false)
+    m_recognizeWarnMsgHasBeenSet(false),
+    m_isDuplicationHasBeenSet(false),
+    m_registrationDateHasBeenSet(false)
 {
 }
 
@@ -199,6 +201,26 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_recognizeWarnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDuplication") && !rsp["IsDuplication"].IsNull())
+    {
+        if (!rsp["IsDuplication"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDuplication` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDuplication = rsp["IsDuplication"].GetInt64();
+        m_isDuplicationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegistrationDate") && !rsp["RegistrationDate"].IsNull())
+    {
+        if (!rsp["RegistrationDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationDate = string(rsp["RegistrationDate"].GetString());
+        m_registrationDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -313,6 +335,22 @@ string BizLicenseOCRResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isDuplicationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDuplication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDuplication, allocator);
+    }
+
+    if (m_registrationDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrationDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrationDate.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -445,6 +483,26 @@ vector<string> BizLicenseOCRResponse::GetRecognizeWarnMsg() const
 bool BizLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
 {
     return m_recognizeWarnMsgHasBeenSet;
+}
+
+int64_t BizLicenseOCRResponse::GetIsDuplication() const
+{
+    return m_isDuplication;
+}
+
+bool BizLicenseOCRResponse::IsDuplicationHasBeenSet() const
+{
+    return m_isDuplicationHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetRegistrationDate() const
+{
+    return m_registrationDate;
+}
+
+bool BizLicenseOCRResponse::RegistrationDateHasBeenSet() const
+{
+    return m_registrationDateHasBeenSet;
 }
 
 

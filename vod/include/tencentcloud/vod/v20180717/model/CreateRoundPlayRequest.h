@@ -137,6 +137,36 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     * @return PlayBackMode 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    std::string GetPlayBackMode() const;
+
+                    /**
+                     * 设置播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     * @param PlayBackMode 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    void SetPlayBackMode(const std::string& _playBackMode);
+
+                    /**
+                     * 判断参数 PlayBackMode 是否已赋值
+                     * @return PlayBackMode 是否已赋值
+                     */
+                    bool PlayBackModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +199,15 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 播放模式，可选值：
+<li>Loop：循环播放播单；</li>
+<li>Linear：单次播放，播单播放完停止播放。</li>
+默认值：Loop。
+                     */
+                    std::string m_playBackMode;
+                    bool m_playBackModeHasBeenSet;
 
                 };
             }

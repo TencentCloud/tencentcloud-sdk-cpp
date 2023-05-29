@@ -47,22 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
-                     * @return Switch 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * 获取POST请求上传文件流式传输最大限制配置开关，取值有：
+on：开启，平台默认为32MB
+off：关闭
+
+                     * @return Switch POST请求上传文件流式传输最大限制配置开关，取值有：
+on：开启，平台默认为32MB
+off：关闭
+
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
-                     * @param Switch 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * 设置POST请求上传文件流式传输最大限制配置开关，取值有：
+on：开启，平台默认为32MB
+off：关闭
+
+                     * @param Switch POST请求上传文件流式传输最大限制配置开关，取值有：
+on：开启，平台默认为32MB
+off：关闭
+
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -93,9 +97,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * POST请求上传文件流式传输最大限制配置开关，取值有：
+on：开启，平台默认为32MB
+off：关闭
+
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

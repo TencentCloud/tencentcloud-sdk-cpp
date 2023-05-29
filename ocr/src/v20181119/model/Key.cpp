@@ -21,7 +21,8 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
 Key::Key() :
-    m_autoNameHasBeenSet(false)
+    m_autoNameHasBeenSet(false),
+    m_configNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome Key::Deserialize(const rapidjson::Value &value)
         m_autoNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigName") && !value["ConfigName"].IsNull())
+    {
+        if (!value["ConfigName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Key.ConfigName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configName = string(value["ConfigName"].GetString());
+        m_configNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void Key::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "AutoName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void Key::SetAutoName(const string& _autoName)
 bool Key::AutoNameHasBeenSet() const
 {
     return m_autoNameHasBeenSet;
+}
+
+string Key::GetConfigName() const
+{
+    return m_configName;
+}
+
+void Key::SetConfigName(const string& _configName)
+{
+    m_configName = _configName;
+    m_configNameHasBeenSet = true;
+}
+
+bool Key::ConfigNameHasBeenSet() const
+{
+    return m_configNameHasBeenSet;
 }
 

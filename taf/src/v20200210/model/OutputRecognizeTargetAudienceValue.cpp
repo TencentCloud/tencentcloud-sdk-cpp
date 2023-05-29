@@ -23,7 +23,9 @@ using namespace std;
 OutputRecognizeTargetAudienceValue::OutputRecognizeTargetAudienceValue() :
     m_modelIdHasBeenSet(false),
     m_isFoundHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_modelTypeHasBeenSet(false),
+    m_uidHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const rapidj
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelType") && !value["ModelType"].IsNull())
+    {
+        if (!value["ModelType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeTargetAudienceValue.ModelType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelType = value["ModelType"].GetUint64();
+        m_modelTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uid") && !value["Uid"].IsNull())
+    {
+        if (!value["Uid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRecognizeTargetAudienceValue.Uid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uid = string(value["Uid"].GetString());
+        m_uidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void OutputRecognizeTargetAudienceValue::ToJsonObject(rapidjson::Value &value, r
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_modelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modelType, allocator);
+    }
+
+    if (m_uidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void OutputRecognizeTargetAudienceValue::SetScore(const double& _score)
 bool OutputRecognizeTargetAudienceValue::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+uint64_t OutputRecognizeTargetAudienceValue::GetModelType() const
+{
+    return m_modelType;
+}
+
+void OutputRecognizeTargetAudienceValue::SetModelType(const uint64_t& _modelType)
+{
+    m_modelType = _modelType;
+    m_modelTypeHasBeenSet = true;
+}
+
+bool OutputRecognizeTargetAudienceValue::ModelTypeHasBeenSet() const
+{
+    return m_modelTypeHasBeenSet;
+}
+
+string OutputRecognizeTargetAudienceValue::GetUid() const
+{
+    return m_uid;
+}
+
+void OutputRecognizeTargetAudienceValue::SetUid(const string& _uid)
+{
+    m_uid = _uid;
+    m_uidHasBeenSet = true;
+}
+
+bool OutputRecognizeTargetAudienceValue::UidHasBeenSet() const
+{
+    return m_uidHasBeenSet;
 }
 

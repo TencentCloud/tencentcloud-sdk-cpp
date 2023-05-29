@@ -117,14 +117,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     bool WhiteningHasBeenSet() const;
 
                     /**
-                     * 获取磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。
-                     * @return Smoothing 磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。
+                     * 获取磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。
+                     * @return Smoothing 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。
                      */
                     uint64_t GetSmoothing() const;
 
                     /**
-                     * 设置磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。
-                     * @param Smoothing 磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。
+                     * 设置磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。
+                     * @param Smoothing 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。
                      */
                     void SetSmoothing(const uint64_t& _smoothing);
 
@@ -214,7 +214,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     bool m_whiteningHasBeenSet;
 
                     /**
-                     * 磨皮程度，取值范围[0,30]。0不磨皮，30代表最高程度。默认值10。
+                     * 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值10。
                      */
                     uint64_t m_smoothing;
                     bool m_smoothingHasBeenSet;

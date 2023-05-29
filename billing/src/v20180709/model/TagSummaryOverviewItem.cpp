@@ -22,13 +22,13 @@ using namespace std;
 
 TagSummaryOverviewItem::TagSummaryOverviewItem() :
     m_tagValueHasBeenSet(false),
-    m_realTotalCostHasBeenSet(false),
     m_realTotalCostRatioHasBeenSet(false),
-    m_totalCostHasBeenSet(false),
+    m_realTotalCostHasBeenSet(false),
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_transferPayAmountHasBeenSet(false),
+    m_totalCostHasBeenSet(false)
 {
 }
 
@@ -47,16 +47,6 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
         m_tagValueHasBeenSet = true;
     }
 
-    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
-    {
-        if (!value["RealTotalCost"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_realTotalCost = string(value["RealTotalCost"].GetString());
-        m_realTotalCostHasBeenSet = true;
-    }
-
     if (value.HasMember("RealTotalCostRatio") && !value["RealTotalCostRatio"].IsNull())
     {
         if (!value["RealTotalCostRatio"].IsString())
@@ -67,14 +57,14 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
         m_realTotalCostRatioHasBeenSet = true;
     }
 
-    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
+    if (value.HasMember("RealTotalCost") && !value["RealTotalCost"].IsNull())
     {
-        if (!value["TotalCost"].IsString())
+        if (!value["RealTotalCost"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.RealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCost = string(value["TotalCost"].GetString());
-        m_totalCostHasBeenSet = true;
+        m_realTotalCost = string(value["RealTotalCost"].GetString());
+        m_realTotalCostHasBeenSet = true;
     }
 
     if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
@@ -117,6 +107,16 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
         m_transferPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCost") && !value["TotalCost"].IsNull())
+    {
+        if (!value["TotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.TotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCost = string(value["TotalCost"].GetString());
+        m_totalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -132,14 +132,6 @@ void TagSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_tagValue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_realTotalCostHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RealTotalCost";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_realTotalCostRatioHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -148,12 +140,12 @@ void TagSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_realTotalCostRatio.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_totalCostHasBeenSet)
+    if (m_realTotalCostHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCost";
+        string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cashPayAmountHasBeenSet)
@@ -188,6 +180,14 @@ void TagSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_totalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -207,22 +207,6 @@ bool TagSummaryOverviewItem::TagValueHasBeenSet() const
     return m_tagValueHasBeenSet;
 }
 
-string TagSummaryOverviewItem::GetRealTotalCost() const
-{
-    return m_realTotalCost;
-}
-
-void TagSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
-{
-    m_realTotalCost = _realTotalCost;
-    m_realTotalCostHasBeenSet = true;
-}
-
-bool TagSummaryOverviewItem::RealTotalCostHasBeenSet() const
-{
-    return m_realTotalCostHasBeenSet;
-}
-
 string TagSummaryOverviewItem::GetRealTotalCostRatio() const
 {
     return m_realTotalCostRatio;
@@ -239,20 +223,20 @@ bool TagSummaryOverviewItem::RealTotalCostRatioHasBeenSet() const
     return m_realTotalCostRatioHasBeenSet;
 }
 
-string TagSummaryOverviewItem::GetTotalCost() const
+string TagSummaryOverviewItem::GetRealTotalCost() const
 {
-    return m_totalCost;
+    return m_realTotalCost;
 }
 
-void TagSummaryOverviewItem::SetTotalCost(const string& _totalCost)
+void TagSummaryOverviewItem::SetRealTotalCost(const string& _realTotalCost)
 {
-    m_totalCost = _totalCost;
-    m_totalCostHasBeenSet = true;
+    m_realTotalCost = _realTotalCost;
+    m_realTotalCostHasBeenSet = true;
 }
 
-bool TagSummaryOverviewItem::TotalCostHasBeenSet() const
+bool TagSummaryOverviewItem::RealTotalCostHasBeenSet() const
 {
-    return m_totalCostHasBeenSet;
+    return m_realTotalCostHasBeenSet;
 }
 
 string TagSummaryOverviewItem::GetCashPayAmount() const
@@ -317,5 +301,21 @@ void TagSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmou
 bool TagSummaryOverviewItem::TransferPayAmountHasBeenSet() const
 {
     return m_transferPayAmountHasBeenSet;
+}
+
+string TagSummaryOverviewItem::GetTotalCost() const
+{
+    return m_totalCost;
+}
+
+void TagSummaryOverviewItem::SetTotalCost(const string& _totalCost)
+{
+    m_totalCost = _totalCost;
+    m_totalCostHasBeenSet = true;
+}
+
+bool TagSummaryOverviewItem::TotalCostHasBeenSet() const
+{
+    return m_totalCostHasBeenSet;
 }
 

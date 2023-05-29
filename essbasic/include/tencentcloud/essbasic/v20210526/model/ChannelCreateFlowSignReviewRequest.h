@@ -149,6 +149,36 @@ SIGN_REJECT:拒签(流程结束)
                      */
                     bool RecipientIdHasBeenSet() const;
 
+                    /**
+                     * 获取操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+注：接口通过该字段区分操作类型
+该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
+若想使用发起审核，请指定该字段为：CreateReview
+                     * @return OperateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+注：接口通过该字段区分操作类型
+该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
+若想使用发起审核，请指定该字段为：CreateReview
+                     */
+                    std::string GetOperateType() const;
+
+                    /**
+                     * 设置操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+注：接口通过该字段区分操作类型
+该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
+若想使用发起审核，请指定该字段为：CreateReview
+                     * @param OperateType 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+注：接口通过该字段区分操作类型
+该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
+若想使用发起审核，请指定该字段为：CreateReview
+                     */
+                    void SetOperateType(const std::string& _operateType);
+
+                    /**
+                     * 判断参数 OperateType 是否已赋值
+                     * @return OperateType 是否已赋值
+                     */
+                    bool OperateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +214,15 @@ SIGN_REJECT:拒签(流程结束)
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
+
+                    /**
+                     * 操作类型，默认：SignReview；SignReview:签署审核，CreateReview：发起审核
+注：接口通过该字段区分操作类型
+该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
+若想使用发起审核，请指定该字段为：CreateReview
+                     */
+                    std::string m_operateType;
+                    bool m_operateTypeHasBeenSet;
 
                 };
             }

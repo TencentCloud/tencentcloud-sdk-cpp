@@ -82,6 +82,46 @@ namespace TencentCloud
                      */
                     bool CertIdHasBeenSet() const;
 
+                    /**
+                     * 获取区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneId 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取域名状态
+                     * @return Status 域名状态
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置域名状态
+                     * @param Status 域名状态
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +135,19 @@ namespace TencentCloud
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
+
+                    /**
+                     * 区域ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 域名状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

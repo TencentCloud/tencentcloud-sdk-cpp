@@ -24,7 +24,9 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
 CreateBusinessDBInstancesResponse::CreateBusinessDBInstancesResponse() :
-    m_dealNameHasBeenSet(false)
+    m_dealNameHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
+    m_instanceIdSetHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,29 @@ CoreInternalOutcome CreateBusinessDBInstancesResponse::Deserialize(const string 
         m_dealNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceIdSet") && !rsp["InstanceIdSet"].IsNull())
+    {
+        if (!rsp["InstanceIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIdSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIdSet.push_back((*itr).GetString());
+        }
+        m_instanceIdSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +113,27 @@ string CreateBusinessDBInstancesResponse::ToJsonString() const
         string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_instanceIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIdSet.begin(); itr != m_instanceIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +156,26 @@ string CreateBusinessDBInstancesResponse::GetDealName() const
 bool CreateBusinessDBInstancesResponse::DealNameHasBeenSet() const
 {
     return m_dealNameHasBeenSet;
+}
+
+int64_t CreateBusinessDBInstancesResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool CreateBusinessDBInstancesResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
+
+vector<string> CreateBusinessDBInstancesResponse::GetInstanceIdSet() const
+{
+    return m_instanceIdSet;
+}
+
+bool CreateBusinessDBInstancesResponse::InstanceIdSetHasBeenSet() const
+{
+    return m_instanceIdSetHasBeenSet;
 }
 
 

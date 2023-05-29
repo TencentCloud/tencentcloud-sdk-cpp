@@ -27,7 +27,8 @@ ChannelCreateFlowSignReviewRequest::ChannelCreateFlowSignReviewRequest() :
     m_flowIdHasBeenSet(false),
     m_reviewTypeHasBeenSet(false),
     m_reviewMessageHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_operateTypeHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ChannelCreateFlowSignReviewRequest::ToJsonString() const
         string key = "RecipientId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operateType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ChannelCreateFlowSignReviewRequest::SetRecipientId(const string& _recipient
 bool ChannelCreateFlowSignReviewRequest::RecipientIdHasBeenSet() const
 {
     return m_recipientIdHasBeenSet;
+}
+
+string ChannelCreateFlowSignReviewRequest::GetOperateType() const
+{
+    return m_operateType;
+}
+
+void ChannelCreateFlowSignReviewRequest::SetOperateType(const string& _operateType)
+{
+    m_operateType = _operateType;
+    m_operateTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowSignReviewRequest::OperateTypeHasBeenSet() const
+{
+    return m_operateTypeHasBeenSet;
 }
 
 

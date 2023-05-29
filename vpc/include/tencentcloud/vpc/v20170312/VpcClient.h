@@ -2309,7 +2309,7 @@ namespace TencentCloud
                 CreateVpnGatewaySslClientOutcomeCallable CreateVpnGatewaySslClientCallable(const Model::CreateVpnGatewaySslClientRequest& request);
 
                 /**
-                 *创建 Server端
+                 *本接口（CreateVpnGatewaySslServer）用于创建SSL-VPN Server端。
                  * @param req CreateVpnGatewaySslServerRequest
                  * @return CreateVpnGatewaySslServerOutcome
                  */
@@ -3447,7 +3447,7 @@ LimitTypes取值范围：
                 DescribeVpnGatewayRoutesOutcomeCallable DescribeVpnGatewayRoutesCallable(const Model::DescribeVpnGatewayRoutesRequest& request);
 
                 /**
-                 *查询SSL-VPN-CLIENT 列表
+                 *本接口（DescribeVpnGatewaySslClients）用于查询SSL-VPN-CLIENT 列表。
                  * @param req DescribeVpnGatewaySslClientsRequest
                  * @return DescribeVpnGatewaySslClientsOutcome
                  */
@@ -3456,7 +3456,7 @@ LimitTypes取值范围：
                 DescribeVpnGatewaySslClientsOutcomeCallable DescribeVpnGatewaySslClientsCallable(const Model::DescribeVpnGatewaySslClientsRequest& request);
 
                 /**
-                 *查询SSL-VPN SERVER 列表信息
+                 *本接口（DescribeVpnGatewaySslServers）用于查询SSL-VPN SERVER 列表信息。
                  * @param req DescribeVpnGatewaySslServersRequest
                  * @return DescribeVpnGatewaySslServersOutcome
                  */

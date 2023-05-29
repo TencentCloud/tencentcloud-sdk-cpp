@@ -27,7 +27,8 @@ DescribeLogHistogramRequest::DescribeLogHistogramRequest() :
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_syntaxRuleHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeLogHistogramRequest::ToJsonString() const
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_interval, allocator);
+    }
+
+    if (m_syntaxRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyntaxRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syntaxRule, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeLogHistogramRequest::SetInterval(const int64_t& _interval)
 bool DescribeLogHistogramRequest::IntervalHasBeenSet() const
 {
     return m_intervalHasBeenSet;
+}
+
+uint64_t DescribeLogHistogramRequest::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void DescribeLogHistogramRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool DescribeLogHistogramRequest::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
 }
 
 

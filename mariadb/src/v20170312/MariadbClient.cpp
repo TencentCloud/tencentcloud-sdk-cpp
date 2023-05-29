@@ -3050,3 +3050,46 @@ MariadbClient::UpgradeDBInstanceOutcomeCallable MariadbClient::UpgradeDBInstance
     return task->get_future();
 }
 
+MariadbClient::UpgradeDedicatedDBInstanceOutcome MariadbClient::UpgradeDedicatedDBInstance(const UpgradeDedicatedDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDedicatedDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDedicatedDBInstanceResponse rsp = UpgradeDedicatedDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDedicatedDBInstanceOutcome(rsp);
+        else
+            return UpgradeDedicatedDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDedicatedDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::UpgradeDedicatedDBInstanceAsync(const UpgradeDedicatedDBInstanceRequest& request, const UpgradeDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDedicatedDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::UpgradeDedicatedDBInstanceOutcomeCallable MariadbClient::UpgradeDedicatedDBInstanceCallable(const UpgradeDedicatedDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDedicatedDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDedicatedDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
