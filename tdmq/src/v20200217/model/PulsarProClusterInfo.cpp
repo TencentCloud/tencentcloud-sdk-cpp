@@ -28,7 +28,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_statusHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_nodeDistributionHasBeenSet(false),
-    m_maxStorageHasBeenSet(false)
+    m_maxStorageHasBeenSet(false),
+    m_canEditRouteHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_maxStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("CanEditRoute") && !value["CanEditRoute"].IsNull())
+    {
+        if (!value["CanEditRoute"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.CanEditRoute` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canEditRoute = value["CanEditRoute"].GetBool();
+        m_canEditRouteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MaxStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorage, allocator);
+    }
+
+    if (m_canEditRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanEditRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canEditRoute, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void PulsarProClusterInfo::SetMaxStorage(const uint64_t& _maxStorage)
 bool PulsarProClusterInfo::MaxStorageHasBeenSet() const
 {
     return m_maxStorageHasBeenSet;
+}
+
+bool PulsarProClusterInfo::GetCanEditRoute() const
+{
+    return m_canEditRoute;
+}
+
+void PulsarProClusterInfo::SetCanEditRoute(const bool& _canEditRoute)
+{
+    m_canEditRoute = _canEditRoute;
+    m_canEditRouteHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::CanEditRouteHasBeenSet() const
+{
+    return m_canEditRouteHasBeenSet;
 }
 

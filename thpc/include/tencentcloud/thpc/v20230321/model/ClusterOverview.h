@@ -267,6 +267,24 @@ namespace TencentCloud
                     bool LoginNodeCountHasBeenSet() const;
 
                     /**
+                     * 获取弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     * @return AutoScalingType 弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     */
+                    std::string GetAutoScalingType() const;
+
+                    /**
+                     * 设置弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     * @param AutoScalingType 弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     */
+                    void SetAutoScalingType(const std::string& _autoScalingType);
+
+                    /**
+                     * 判断参数 AutoScalingType 是否已赋值
+                     * @return AutoScalingType 是否已赋值
+                     */
+                    bool AutoScalingTypeHasBeenSet() const;
+
+                    /**
                      * 获取集群所属私有网络ID。
                      * @return VpcId 集群所属私有网络ID。
                      */
@@ -357,6 +375,12 @@ namespace TencentCloud
                      */
                     int64_t m_loginNodeCount;
                     bool m_loginNodeCountHasBeenSet;
+
+                    /**
+                     * 弹性伸缩类型。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     */
+                    std::string m_autoScalingType;
+                    bool m_autoScalingTypeHasBeenSet;
 
                     /**
                      * 集群所属私有网络ID。

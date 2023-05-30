@@ -27,7 +27,8 @@ DataConfig::DataConfig() :
     m_cOSSourceHasBeenSet(false),
     m_cFSSourceHasBeenSet(false),
     m_hDFSSourceHasBeenSet(false),
-    m_gooseFSSourceHasBeenSet(false)
+    m_gooseFSSourceHasBeenSet(false),
+    m_cFSTurboSourceHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_gooseFSSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CFSTurboSource") && !value["CFSTurboSource"].IsNull())
+    {
+        if (!value["CFSTurboSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.CFSTurboSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cFSTurboSource.Deserialize(value["CFSTurboSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cFSTurboSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +225,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gooseFSSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cFSTurboSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSTurboSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cFSTurboSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -322,5 +349,21 @@ void DataConfig::SetGooseFSSource(const GooseFS& _gooseFSSource)
 bool DataConfig::GooseFSSourceHasBeenSet() const
 {
     return m_gooseFSSourceHasBeenSet;
+}
+
+CFSTurbo DataConfig::GetCFSTurboSource() const
+{
+    return m_cFSTurboSource;
+}
+
+void DataConfig::SetCFSTurboSource(const CFSTurbo& _cFSTurboSource)
+{
+    m_cFSTurboSource = _cFSTurboSource;
+    m_cFSTurboSourceHasBeenSet = true;
+}
+
+bool DataConfig::CFSTurboSourceHasBeenSet() const
+{
+    return m_cFSTurboSourceHasBeenSet;
 }
 

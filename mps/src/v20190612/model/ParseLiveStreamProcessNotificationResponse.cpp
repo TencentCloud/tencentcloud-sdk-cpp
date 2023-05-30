@@ -29,6 +29,8 @@ ParseLiveStreamProcessNotificationResponse::ParseLiveStreamProcessNotificationRe
     m_processEofInfoHasBeenSet(false),
     m_aiReviewResultInfoHasBeenSet(false),
     m_aiRecognitionResultInfoHasBeenSet(false),
+    m_aiAnalysisResultInfoHasBeenSet(false),
+    m_aiQualityControlResultInfoHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -139,6 +141,40 @@ CoreInternalOutcome ParseLiveStreamProcessNotificationResponse::Deserialize(cons
         m_aiRecognitionResultInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AiAnalysisResultInfo") && !rsp["AiAnalysisResultInfo"].IsNull())
+    {
+        if (!rsp["AiAnalysisResultInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResultInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiAnalysisResultInfo.Deserialize(rsp["AiAnalysisResultInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiAnalysisResultInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AiQualityControlResultInfo") && !rsp["AiQualityControlResultInfo"].IsNull())
+    {
+        if (!rsp["AiQualityControlResultInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiQualityControlResultInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiQualityControlResultInfo.Deserialize(rsp["AiQualityControlResultInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiQualityControlResultInfoHasBeenSet = true;
+    }
+
     if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
         if (!rsp["SessionId"].IsString())
@@ -210,6 +246,24 @@ string ParseLiveStreamProcessNotificationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiRecognitionResultInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiAnalysisResultInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiAnalysisResultInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiAnalysisResultInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiQualityControlResultInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControlResultInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiQualityControlResultInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -288,6 +342,26 @@ LiveStreamAiRecognitionResultInfo ParseLiveStreamProcessNotificationResponse::Ge
 bool ParseLiveStreamProcessNotificationResponse::AiRecognitionResultInfoHasBeenSet() const
 {
     return m_aiRecognitionResultInfoHasBeenSet;
+}
+
+LiveStreamAiAnalysisResultInfo ParseLiveStreamProcessNotificationResponse::GetAiAnalysisResultInfo() const
+{
+    return m_aiAnalysisResultInfo;
+}
+
+bool ParseLiveStreamProcessNotificationResponse::AiAnalysisResultInfoHasBeenSet() const
+{
+    return m_aiAnalysisResultInfoHasBeenSet;
+}
+
+LiveStreamAiQualityControlResultInfo ParseLiveStreamProcessNotificationResponse::GetAiQualityControlResultInfo() const
+{
+    return m_aiQualityControlResultInfo;
+}
+
+bool ParseLiveStreamProcessNotificationResponse::AiQualityControlResultInfoHasBeenSet() const
+{
+    return m_aiQualityControlResultInfoHasBeenSet;
 }
 
 string ParseLiveStreamProcessNotificationResponse::GetSessionId() const

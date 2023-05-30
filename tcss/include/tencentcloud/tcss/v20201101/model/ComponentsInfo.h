@@ -90,6 +90,94 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取可修复版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixedVersion 可修复版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFixedVersion() const;
+
+                    /**
+                     * 设置可修复版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FixedVersion 可修复版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFixedVersion(const std::string& _fixedVersion);
+
+                    /**
+                     * 判断参数 FixedVersion 是否已赋值
+                     * @return FixedVersion 是否已赋值
+                     */
+                    bool FixedVersionHasBeenSet() const;
+
+                    /**
+                     * 获取路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Path 路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Path 路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     */
+                    bool PathHasBeenSet() const;
+
+                    /**
+                     * 获取类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Type 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Name 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +193,34 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 可修复版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fixedVersion;
+                    bool m_fixedVersionHasBeenSet;
+
+                    /**
+                     * 路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
+
+                    /**
+                     * 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

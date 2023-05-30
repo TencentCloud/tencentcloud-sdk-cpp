@@ -24,6 +24,7 @@ DetectInfoText::DetectInfoText() :
     m_errCodeHasBeenSet(false),
     m_errMsgHasBeenSet(false),
     m_idCardHasBeenSet(false),
+    m_useIDTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ocrNationHasBeenSet(false),
     m_ocrAddressHasBeenSet(false),
@@ -85,6 +86,16 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         }
         m_idCard = string(value["IdCard"].GetString());
         m_idCardHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseIDType") && !value["UseIDType"].IsNull())
+    {
+        if (!value["UseIDType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.UseIDType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useIDType = value["UseIDType"].GetUint64();
+        m_useIDTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -381,6 +392,14 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_idCard.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_useIDTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseIDType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useIDType, allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -642,6 +661,22 @@ void DetectInfoText::SetIdCard(const string& _idCard)
 bool DetectInfoText::IdCardHasBeenSet() const
 {
     return m_idCardHasBeenSet;
+}
+
+uint64_t DetectInfoText::GetUseIDType() const
+{
+    return m_useIDType;
+}
+
+void DetectInfoText::SetUseIDType(const uint64_t& _useIDType)
+{
+    m_useIDType = _useIDType;
+    m_useIDTypeHasBeenSet = true;
+}
+
+bool DetectInfoText::UseIDTypeHasBeenSet() const
+{
+    return m_useIDTypeHasBeenSet;
 }
 
 string DetectInfoText::GetName() const

@@ -24,6 +24,8 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamProcessErrorInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiReviewResultInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiRecognitionResultInfo.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultInfo.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAiQualityControlResultInfo.h>
 
 
 namespace TencentCloud
@@ -119,6 +121,34 @@ namespace TencentCloud
                     bool AiRecognitionResultInfoHasBeenSet() const;
 
                     /**
+                     * 获取内容分析结果，当 NotificationType 为 AiAnalysisResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiAnalysisResultInfo 内容分析结果，当 NotificationType 为 AiAnalysisResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamAiAnalysisResultInfo GetAiAnalysisResultInfo() const;
+
+                    /**
+                     * 判断参数 AiAnalysisResultInfo 是否已赋值
+                     * @return AiAnalysisResultInfo 是否已赋值
+                     */
+                    bool AiAnalysisResultInfoHasBeenSet() const;
+
+                    /**
+                     * 获取媒体质检结果，当 NotificationType 为 AiQualityControlResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiQualityControlResultInfo 媒体质检结果，当 NotificationType 为 AiQualityControlResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamAiQualityControlResultInfo GetAiQualityControlResultInfo() const;
+
+                    /**
+                     * 判断参数 AiQualityControlResultInfo 是否已赋值
+                     * @return AiQualityControlResultInfo 是否已赋值
+                     */
+                    bool AiQualityControlResultInfoHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
                      */
@@ -179,6 +209,20 @@ namespace TencentCloud
                      */
                     LiveStreamAiRecognitionResultInfo m_aiRecognitionResultInfo;
                     bool m_aiRecognitionResultInfoHasBeenSet;
+
+                    /**
+                     * 内容分析结果，当 NotificationType 为 AiAnalysisResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamAiAnalysisResultInfo m_aiAnalysisResultInfo;
+                    bool m_aiAnalysisResultInfoHasBeenSet;
+
+                    /**
+                     * 媒体质检结果，当 NotificationType 为 AiQualityControlResult 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LiveStreamAiQualityControlResultInfo m_aiQualityControlResultInfo;
+                    bool m_aiQualityControlResultInfoHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。

@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/CFSConfig.h>
 #include <tencentcloud/tione/v20211111/model/HDFSConfig.h>
 #include <tencentcloud/tione/v20211111/model/GooseFS.h>
+#include <tencentcloud/tione/v20211111/model/CFSTurbo.h>
 
 
 namespace TencentCloud
@@ -180,17 +181,17 @@ namespace TencentCloud
                     bool HDFSSourceHasBeenSet() const;
 
                     /**
-                     * 获取配饰GooseFS的数据
+                     * 获取配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GooseFSSource 配饰GooseFS的数据
+                     * @return GooseFSSource 配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GooseFS GetGooseFSSource() const;
 
                     /**
-                     * 设置配饰GooseFS的数据
+                     * 设置配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GooseFSSource 配饰GooseFS的数据
+                     * @param GooseFSSource 配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGooseFSSource(const GooseFS& _gooseFSSource);
@@ -200,6 +201,28 @@ namespace TencentCloud
                      * @return GooseFSSource 是否已赋值
                      */
                     bool GooseFSSourceHasBeenSet() const;
+
+                    /**
+                     * 获取配置TurboFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CFSTurboSource 配置TurboFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CFSTurbo GetCFSTurboSource() const;
+
+                    /**
+                     * 设置配置TurboFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CFSTurboSource 配置TurboFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCFSTurboSource(const CFSTurbo& _cFSTurboSource);
+
+                    /**
+                     * 判断参数 CFSTurboSource 是否已赋值
+                     * @return CFSTurboSource 是否已赋值
+                     */
+                    bool CFSTurboSourceHasBeenSet() const;
 
                 private:
 
@@ -245,11 +268,18 @@ namespace TencentCloud
                     bool m_hDFSSourceHasBeenSet;
 
                     /**
-                     * 配饰GooseFS的数据
+                     * 配置GooseFS的数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GooseFS m_gooseFSSource;
                     bool m_gooseFSSourceHasBeenSet;
+
+                    /**
+                     * 配置TurboFS的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CFSTurbo m_cFSTurboSource;
+                    bool m_cFSTurboSourceHasBeenSet;
 
                 };
             }

@@ -33,6 +33,7 @@ ClusterOverview::ClusterOverview() :
     m_managerNodeSetHasBeenSet(false),
     m_loginNodeSetHasBeenSet(false),
     m_loginNodeCountHasBeenSet(false),
+    m_autoScalingTypeHasBeenSet(false),
     m_vpcIdHasBeenSet(false)
 {
 }
@@ -199,6 +200,16 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         m_loginNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoScalingType") && !value["AutoScalingType"].IsNull())
+    {
+        if (!value["AutoScalingType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.AutoScalingType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoScalingType = string(value["AutoScalingType"].GetString());
+        m_autoScalingTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
     {
         if (!value["VpcId"].IsString())
@@ -332,6 +343,14 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LoginNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginNodeCount, allocator);
+    }
+
+    if (m_autoScalingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScalingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoScalingType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
@@ -535,6 +554,22 @@ void ClusterOverview::SetLoginNodeCount(const int64_t& _loginNodeCount)
 bool ClusterOverview::LoginNodeCountHasBeenSet() const
 {
     return m_loginNodeCountHasBeenSet;
+}
+
+string ClusterOverview::GetAutoScalingType() const
+{
+    return m_autoScalingType;
+}
+
+void ClusterOverview::SetAutoScalingType(const string& _autoScalingType)
+{
+    m_autoScalingType = _autoScalingType;
+    m_autoScalingTypeHasBeenSet = true;
+}
+
+bool ClusterOverview::AutoScalingTypeHasBeenSet() const
+{
+    return m_autoScalingTypeHasBeenSet;
 }
 
 string ClusterOverview::GetVpcId() const

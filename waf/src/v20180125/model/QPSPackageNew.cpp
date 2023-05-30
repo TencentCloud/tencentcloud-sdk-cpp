@@ -25,7 +25,8 @@ QPSPackageNew::QPSPackageNew() :
     m_validTimeHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_billingItemHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome QPSPackageNew::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingItem") && !value["BillingItem"].IsNull())
+    {
+        if (!value["BillingItem"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QPSPackageNew.BillingItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingItem = string(value["BillingItem"].GetString());
+        m_billingItemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void QPSPackageNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void QPSPackageNew::SetRegion(const string& _region)
 bool QPSPackageNew::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string QPSPackageNew::GetBillingItem() const
+{
+    return m_billingItem;
+}
+
+void QPSPackageNew::SetBillingItem(const string& _billingItem)
+{
+    m_billingItem = _billingItem;
+    m_billingItemHasBeenSet = true;
+}
+
+bool QPSPackageNew::BillingItemHasBeenSet() const
+{
+    return m_billingItemHasBeenSet;
 }
 

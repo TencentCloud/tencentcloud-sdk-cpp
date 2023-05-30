@@ -28,7 +28,8 @@ PostAttackDownloadTaskRequest::PostAttackDownloadTaskRequest() :
     m_endTimeHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_taskNameHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string PostAttackDownloadTaskRequest::ToJsonString() const
         string key = "Sort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_count, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void PostAttackDownloadTaskRequest::SetSort(const string& _sort)
 bool PostAttackDownloadTaskRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+int64_t PostAttackDownloadTaskRequest::GetCount() const
+{
+    return m_count;
+}
+
+void PostAttackDownloadTaskRequest::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool PostAttackDownloadTaskRequest::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 
 

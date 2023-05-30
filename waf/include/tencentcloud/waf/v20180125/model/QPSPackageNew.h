@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取计费项
+                     * @return BillingItem 计费项
+                     */
+                    std::string GetBillingItem() const;
+
+                    /**
+                     * 设置计费项
+                     * @param BillingItem 计费项
+                     */
+                    void SetBillingItem(const std::string& _billingItem);
+
+                    /**
+                     * 判断参数 BillingItem 是否已赋值
+                     * @return BillingItem 是否已赋值
+                     */
+                    bool BillingItemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 计费项
+                     */
+                    std::string m_billingItem;
+                    bool m_billingItemHasBeenSet;
 
                 };
             }

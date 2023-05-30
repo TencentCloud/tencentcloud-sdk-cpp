@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * @return TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * 获取客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串
+                     * @return TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * @param TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * 设置客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串
+                     * @param TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串
                      */
                     void SetTopicId(const std::string& _topicId);
 
@@ -133,14 +133,18 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。
+新版本此字段填空填
+                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。
+新版本此字段填空填
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
-                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。
+新版本此字段填空填
+                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。
+新版本此字段填空填
                      */
                     void SetContext(const std::string& _context);
 
@@ -168,10 +172,28 @@ namespace TencentCloud
                      */
                     bool SortHasBeenSet() const;
 
+                    /**
+                     * 获取第几页，从0开始。新版本接口字段
+                     * @return Page 第几页，从0开始。新版本接口字段
+                     */
+                    int64_t GetPage() const;
+
+                    /**
+                     * 设置第几页，从0开始。新版本接口字段
+                     * @param Page 第几页，从0开始。新版本接口字段
+                     */
+                    void SetPage(const int64_t& _page);
+
+                    /**
+                     * 判断参数 Page 是否已赋值
+                     * @return Page 是否已赋值
+                     */
+                    bool PageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * 客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -201,7 +223,8 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容
+                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。
+新版本此字段填空填
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
@@ -211,6 +234,12 @@ namespace TencentCloud
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * 第几页，从0开始。新版本接口字段
+                     */
+                    int64_t m_page;
+                    bool m_pageHasBeenSet;
 
                 };
             }

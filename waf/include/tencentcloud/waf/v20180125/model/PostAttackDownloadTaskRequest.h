@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool SortHasBeenSet() const;
 
+                    /**
+                     * 获取下载的日志条数
+                     * @return Count 下载的日志条数
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置下载的日志条数
+                     * @param Count 下载的日志条数
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * 下载的日志条数
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

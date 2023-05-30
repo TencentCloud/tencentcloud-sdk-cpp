@@ -29,7 +29,9 @@ UpdateLiveWatermarkRequest::UpdateLiveWatermarkRequest() :
     m_yPositionHasBeenSet(false),
     m_watermarkNameHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_backgroundWidthHasBeenSet(false),
+    m_backgroundHeightHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string UpdateLiveWatermarkRequest::ToJsonString() const
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_backgroundWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundWidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backgroundWidth, allocator);
+    }
+
+    if (m_backgroundHeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundHeight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backgroundHeight, allocator);
     }
 
 
@@ -214,6 +232,38 @@ void UpdateLiveWatermarkRequest::SetHeight(const int64_t& _height)
 bool UpdateLiveWatermarkRequest::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetBackgroundWidth() const
+{
+    return m_backgroundWidth;
+}
+
+void UpdateLiveWatermarkRequest::SetBackgroundWidth(const int64_t& _backgroundWidth)
+{
+    m_backgroundWidth = _backgroundWidth;
+    m_backgroundWidthHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::BackgroundWidthHasBeenSet() const
+{
+    return m_backgroundWidthHasBeenSet;
+}
+
+int64_t UpdateLiveWatermarkRequest::GetBackgroundHeight() const
+{
+    return m_backgroundHeight;
+}
+
+void UpdateLiveWatermarkRequest::SetBackgroundHeight(const int64_t& _backgroundHeight)
+{
+    m_backgroundHeight = _backgroundHeight;
+    m_backgroundHeightHasBeenSet = true;
+}
+
+bool UpdateLiveWatermarkRequest::BackgroundHeightHasBeenSet() const
+{
+    return m_backgroundHeightHasBeenSet;
 }
 
 

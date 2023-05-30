@@ -195,6 +195,28 @@ namespace TencentCloud
                      */
                     bool MaxStorageHasBeenSet() const;
 
+                    /**
+                     * 获取是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanEditRoute 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetCanEditRoute() const;
+
+                    /**
+                     * 设置是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CanEditRoute 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCanEditRoute(const bool& _canEditRoute);
+
+                    /**
+                     * 判断参数 CanEditRoute 是否已赋值
+                     * @return CanEditRoute 是否已赋值
+                     */
+                    bool CanEditRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +267,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
+
+                    /**
+                     * 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canEditRoute;
+                    bool m_canEditRouteHasBeenSet;
 
                 };
             }

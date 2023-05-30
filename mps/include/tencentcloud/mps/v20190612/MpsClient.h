@@ -1255,7 +1255,7 @@ namespace TencentCloud
 
                 /**
                  *从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 直播流处理事件通知的内容。
-该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。
+该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 中的解析实现事件通知的解析。
                  * @param req ParseLiveStreamProcessNotificationRequest
                  * @return ParseLiveStreamProcessNotificationOutcome
                  */
@@ -1265,7 +1265,7 @@ namespace TencentCloud
 
                 /**
                  *从 CMQ 获取到消息后，从消息的 msgBody 字段中解析出 MPS 事件通知的内容。
-该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 的中解析函数的实现事件通知的解析。
+该接口不用于发起网络调用，而是用来帮助生成各个语言平台的 SDK，您可以参考 SDK 中的解析函数，实现事件通知的解析。
                  * @param req ParseNotificationRequest
                  * @return ParseNotificationOutcome
                  */

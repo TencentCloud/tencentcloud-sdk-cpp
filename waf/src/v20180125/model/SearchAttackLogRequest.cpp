@@ -29,7 +29,8 @@ SearchAttackLogRequest::SearchAttackLogRequest() :
     m_contextHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string SearchAttackLogRequest::ToJsonString() const
         string key = "Sort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_page, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void SearchAttackLogRequest::SetSort(const string& _sort)
 bool SearchAttackLogRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+int64_t SearchAttackLogRequest::GetPage() const
+{
+    return m_page;
+}
+
+void SearchAttackLogRequest::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool SearchAttackLogRequest::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 
 

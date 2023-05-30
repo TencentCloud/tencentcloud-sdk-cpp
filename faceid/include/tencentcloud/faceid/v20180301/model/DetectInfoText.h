@@ -114,6 +114,40 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
+                     * 获取用户认证时使用的证件号码类型：
+0：二代身份证的证件号码
+1：港澳台居住证的证件号码
+2：其他（核验使用的证件号码非合法身份号码）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseIDType 用户认证时使用的证件号码类型：
+0：二代身份证的证件号码
+1：港澳台居住证的证件号码
+2：其他（核验使用的证件号码非合法身份号码）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUseIDType() const;
+
+                    /**
+                     * 设置用户认证时使用的证件号码类型：
+0：二代身份证的证件号码
+1：港澳台居住证的证件号码
+2：其他（核验使用的证件号码非合法身份号码）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseIDType 用户认证时使用的证件号码类型：
+0：二代身份证的证件号码
+1：港澳台居住证的证件号码
+2：其他（核验使用的证件号码非合法身份号码）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseIDType(const uint64_t& _useIDType);
+
+                    /**
+                     * 判断参数 UseIDType 是否已赋值
+                     * @return UseIDType 是否已赋值
+                     */
+                    bool UseIDTypeHasBeenSet() const;
+
+                    /**
                      * 获取本次验证使用的姓名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 本次验证使用的姓名。
@@ -725,6 +759,16 @@ namespace TencentCloud
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
+
+                    /**
+                     * 用户认证时使用的证件号码类型：
+0：二代身份证的证件号码
+1：港澳台居住证的证件号码
+2：其他（核验使用的证件号码非合法身份号码）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_useIDType;
+                    bool m_useIDTypeHasBeenSet;
 
                     /**
                      * 本次验证使用的姓名。

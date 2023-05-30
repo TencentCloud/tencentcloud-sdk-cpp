@@ -59,6 +59,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaInputInfo.h
   include/tencentcloud/mps/v20190612/model/CreateWorkflowRequest.h
   include/tencentcloud/mps/v20190612/model/OcrWordsConfigureInfo.h
+  include/tencentcloud/mps/v20190612/model/DiagnoseResult.h
   include/tencentcloud/mps/v20190612/model/RawWatermarkParameter.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPoliticalOcrResult.h
   include/tencentcloud/mps/v20190612/model/ManageTaskRequest.h
@@ -196,6 +197,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaSampleSnapshotItem.h
   include/tencentcloud/mps/v20190612/model/TagConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/DeleteWordSamplesRequest.h
+  include/tencentcloud/mps/v20190612/model/LiveStreamAiQualityControlResultInfo.h
   include/tencentcloud/mps/v20190612/model/EnableScheduleRequest.h
   include/tencentcloud/mps/v20190612/model/RawTranscodeParameter.h
   include/tencentcloud/mps/v20190612/model/LiveStreamTaskNotifyConfig.h
@@ -331,7 +333,9 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightInput.h
   include/tencentcloud/mps/v20190612/model/ProhibitedAsrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/WithdrawsWatermarkResponse.h
+  include/tencentcloud/mps/v20190612/model/SegmentRecognitionItem.h
   include/tencentcloud/mps/v20190612/model/AiReviewPoliticalAsrTaskInput.h
+  include/tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultInfo.h
   include/tencentcloud/mps/v20190612/model/ActionConfigInfo.h
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisTagItem.h
   include/tencentcloud/mps/v20190612/model/TranscodeTemplate.h
@@ -523,6 +527,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCoverInput.h
   include/tencentcloud/mps/v20190612/model/RegionInfo.h
+  include/tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultItem.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResult.h
   include/tencentcloud/mps/v20190612/model/EditMediaTaskOutput.h
   include/tencentcloud/mps/v20190612/model/HighlightSegmentItem.h
@@ -581,6 +586,7 @@ set(mps_src
   src/v20190612/model/MediaInputInfo.cpp
   src/v20190612/model/CreateWorkflowRequest.cpp
   src/v20190612/model/OcrWordsConfigureInfo.cpp
+  src/v20190612/model/DiagnoseResult.cpp
   src/v20190612/model/RawWatermarkParameter.cpp
   src/v20190612/model/AiReviewTaskPoliticalOcrResult.cpp
   src/v20190612/model/ManageTaskRequest.cpp
@@ -718,6 +724,7 @@ set(mps_src
   src/v20190612/model/MediaSampleSnapshotItem.cpp
   src/v20190612/model/TagConfigureInfoForUpdate.cpp
   src/v20190612/model/DeleteWordSamplesRequest.cpp
+  src/v20190612/model/LiveStreamAiQualityControlResultInfo.cpp
   src/v20190612/model/EnableScheduleRequest.cpp
   src/v20190612/model/RawTranscodeParameter.cpp
   src/v20190612/model/LiveStreamTaskNotifyConfig.cpp
@@ -853,7 +860,9 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskHighlightInput.cpp
   src/v20190612/model/ProhibitedAsrReviewTemplateInfo.cpp
   src/v20190612/model/WithdrawsWatermarkResponse.cpp
+  src/v20190612/model/SegmentRecognitionItem.cpp
   src/v20190612/model/AiReviewPoliticalAsrTaskInput.cpp
+  src/v20190612/model/LiveStreamAiAnalysisResultInfo.cpp
   src/v20190612/model/ActionConfigInfo.cpp
   src/v20190612/model/MediaAiAnalysisTagItem.cpp
   src/v20190612/model/TranscodeTemplate.cpp
@@ -1045,6 +1054,7 @@ set(mps_src
   src/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.cpp
   src/v20190612/model/AiAnalysisTaskCoverInput.cpp
   src/v20190612/model/RegionInfo.cpp
+  src/v20190612/model/LiveStreamAiAnalysisResultItem.cpp
   src/v20190612/model/AiRecognitionTaskTransTextResult.cpp
   src/v20190612/model/EditMediaTaskOutput.cpp
   src/v20190612/model/HighlightSegmentItem.cpp

@@ -39,6 +39,8 @@
 #include <tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/CreateMigrationServiceRequest.h>
 #include <tencentcloud/dts/v20211206/model/CreateMigrationServiceResponse.h>
+#include <tencentcloud/dts/v20211206/model/CreateModifyCheckSyncJobRequest.h>
+#include <tencentcloud/dts/v20211206/model/CreateModifyCheckSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/CreateSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/CreateSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/DeleteCompareTaskRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationDetailResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationJobsRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeMigrationJobsResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeModifyCheckSyncJobResultRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeModifyCheckSyncJobResultResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncJobsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DestroyMigrateJobRequest.h>
@@ -77,6 +81,8 @@
 #include <tencentcloud/dts/v20211206/model/ModifyMigrateNameResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigRequest.h>
+#include <tencentcloud/dts/v20211206/model/ModifySyncJobConfigResponse.h>
 #include <tencentcloud/dts/v20211206/model/PauseMigrateJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/PauseMigrateJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h>
@@ -99,6 +105,8 @@
 #include <tencentcloud/dts/v20211206/model/StartCompareResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/StartMigrateJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/StartModifySyncJobRequest.h>
+#include <tencentcloud/dts/v20211206/model/StartModifySyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/StartSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/StopCompareRequest.h>
@@ -145,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMigrationServiceResponse> CreateMigrationServiceOutcome;
                 typedef std::future<CreateMigrationServiceOutcome> CreateMigrationServiceOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateMigrationServiceRequest&, CreateMigrationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMigrationServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModifyCheckSyncJobResponse> CreateModifyCheckSyncJobOutcome;
+                typedef std::future<CreateModifyCheckSyncJobOutcome> CreateModifyCheckSyncJobOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::CreateModifyCheckSyncJobRequest&, CreateModifyCheckSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModifyCheckSyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSyncJobResponse> CreateSyncJobOutcome;
                 typedef std::future<CreateSyncJobOutcome> CreateSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::CreateSyncJobRequest&, CreateSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSyncJobAsyncHandler;
@@ -172,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMigrationJobsResponse> DescribeMigrationJobsOutcome;
                 typedef std::future<DescribeMigrationJobsOutcome> DescribeMigrationJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrationJobsRequest&, DescribeMigrationJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModifyCheckSyncJobResultResponse> DescribeModifyCheckSyncJobResultOutcome;
+                typedef std::future<DescribeModifyCheckSyncJobResultOutcome> DescribeModifyCheckSyncJobResultOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeModifyCheckSyncJobResultRequest&, DescribeModifyCheckSyncJobResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModifyCheckSyncJobResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSyncJobsResponse> DescribeSyncJobsOutcome;
                 typedef std::future<DescribeSyncJobsOutcome> DescribeSyncJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncJobsRequest&, DescribeSyncJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncJobsAsyncHandler;
@@ -202,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMigrationJobResponse> ModifyMigrationJobOutcome;
                 typedef std::future<ModifyMigrationJobOutcome> ModifyMigrationJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrationJobRequest&, ModifyMigrationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySyncJobConfigResponse> ModifySyncJobConfigOutcome;
+                typedef std::future<ModifySyncJobConfigOutcome> ModifySyncJobConfigOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::ModifySyncJobConfigRequest&, ModifySyncJobConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySyncJobConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::PauseMigrateJobResponse> PauseMigrateJobOutcome;
                 typedef std::future<PauseMigrateJobOutcome> PauseMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::PauseMigrateJobRequest&, PauseMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseMigrateJobAsyncHandler;
@@ -235,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartMigrateJobResponse> StartMigrateJobOutcome;
                 typedef std::future<StartMigrateJobOutcome> StartMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartMigrateJobRequest&, StartMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMigrateJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartModifySyncJobResponse> StartModifySyncJobOutcome;
+                typedef std::future<StartModifySyncJobOutcome> StartModifySyncJobOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::StartModifySyncJobRequest&, StartModifySyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartModifySyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartSyncJobResponse> StartSyncJobOutcome;
                 typedef std::future<StartSyncJobOutcome> StartSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartSyncJobRequest&, StartSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartSyncJobAsyncHandler;
@@ -329,6 +349,15 @@ namespace TencentCloud
                 CreateMigrationServiceOutcomeCallable CreateMigrationServiceCallable(const Model::CreateMigrationServiceRequest& request);
 
                 /**
+                 *在修改同步任务的配置后、通过该接口校验当前任务是否支持修改对象操作
+                 * @param req CreateModifyCheckSyncJobRequest
+                 * @return CreateModifyCheckSyncJobOutcome
+                 */
+                CreateModifyCheckSyncJobOutcome CreateModifyCheckSyncJob(const Model::CreateModifyCheckSyncJobRequest &request);
+                void CreateModifyCheckSyncJobAsync(const Model::CreateModifyCheckSyncJobRequest& request, const CreateModifyCheckSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModifyCheckSyncJobOutcomeCallable CreateModifyCheckSyncJobCallable(const Model::CreateModifyCheckSyncJobRequest& request);
+
+                /**
                  *创建一个同步任务
                  * @param req CreateSyncJobRequest
                  * @return CreateSyncJobOutcome
@@ -410,6 +439,15 @@ namespace TencentCloud
                 DescribeMigrationJobsOutcome DescribeMigrationJobs(const Model::DescribeMigrationJobsRequest &request);
                 void DescribeMigrationJobsAsync(const Model::DescribeMigrationJobsRequest& request, const DescribeMigrationJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMigrationJobsOutcomeCallable DescribeMigrationJobsCallable(const Model::DescribeMigrationJobsRequest& request);
+
+                /**
+                 *在创建修改对象的校验任务后、通过该接口查看校验任务的结果
+                 * @param req DescribeModifyCheckSyncJobResultRequest
+                 * @return DescribeModifyCheckSyncJobResultOutcome
+                 */
+                DescribeModifyCheckSyncJobResultOutcome DescribeModifyCheckSyncJobResult(const Model::DescribeModifyCheckSyncJobResultRequest &request);
+                void DescribeModifyCheckSyncJobResultAsync(const Model::DescribeModifyCheckSyncJobResultRequest& request, const DescribeModifyCheckSyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModifyCheckSyncJobResultOutcomeCallable DescribeModifyCheckSyncJobResultCallable(const Model::DescribeModifyCheckSyncJobResultRequest& request);
 
                 /**
                  *查询同步任务信息
@@ -500,6 +538,16 @@ namespace TencentCloud
                 ModifyMigrationJobOutcome ModifyMigrationJob(const Model::ModifyMigrationJobRequest &request);
                 void ModifyMigrationJobAsync(const Model::ModifyMigrationJobRequest& request, const ModifyMigrationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMigrationJobOutcomeCallable ModifyMigrationJobCallable(const Model::ModifyMigrationJobRequest& request);
+
+                /**
+                 *该接口支持在同步任务启动后修改任务的配置
+修改同步配置的完整流程：修改同步任务配置->创建修改同步任务配置的校验任务->查询修改配置的校验任务的结果->启动修改配置任务
+                 * @param req ModifySyncJobConfigRequest
+                 * @return ModifySyncJobConfigOutcome
+                 */
+                ModifySyncJobConfigOutcome ModifySyncJobConfig(const Model::ModifySyncJobConfigRequest &request);
+                void ModifySyncJobConfigAsync(const Model::ModifySyncJobConfigRequest& request, const ModifySyncJobConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySyncJobConfigOutcomeCallable ModifySyncJobConfigCallable(const Model::ModifySyncJobConfigRequest& request);
 
                 /**
                  *暂停一个迁移任务。
@@ -599,6 +647,15 @@ namespace TencentCloud
                 StartMigrateJobOutcome StartMigrateJob(const Model::StartMigrateJobRequest &request);
                 void StartMigrateJobAsync(const Model::StartMigrateJobRequest& request, const StartMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartMigrateJobOutcomeCallable StartMigrateJobCallable(const Model::StartMigrateJobRequest& request);
+
+                /**
+                 *在查询修改对象的校验任务的结果中的status为success后、通过该接口开始修改配置流程
+                 * @param req StartModifySyncJobRequest
+                 * @return StartModifySyncJobOutcome
+                 */
+                StartModifySyncJobOutcome StartModifySyncJob(const Model::StartModifySyncJobRequest &request);
+                void StartModifySyncJobAsync(const Model::StartModifySyncJobRequest& request, const StartModifySyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartModifySyncJobOutcomeCallable StartModifySyncJobCallable(const Model::StartModifySyncJobRequest& request);
 
                 /**
                  *启动同步任务

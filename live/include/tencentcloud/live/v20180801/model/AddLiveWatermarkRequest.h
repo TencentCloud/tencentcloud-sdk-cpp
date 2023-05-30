@@ -162,6 +162,42 @@ URL中禁止包含的字符：
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取背景水印宽度。默认宽度1920。
+                     * @return BackgroundWidth 背景水印宽度。默认宽度1920。
+                     */
+                    int64_t GetBackgroundWidth() const;
+
+                    /**
+                     * 设置背景水印宽度。默认宽度1920。
+                     * @param BackgroundWidth 背景水印宽度。默认宽度1920。
+                     */
+                    void SetBackgroundWidth(const int64_t& _backgroundWidth);
+
+                    /**
+                     * 判断参数 BackgroundWidth 是否已赋值
+                     * @return BackgroundWidth 是否已赋值
+                     */
+                    bool BackgroundWidthHasBeenSet() const;
+
+                    /**
+                     * 获取背景水印高度。默认高度1080。
+                     * @return BackgroundHeight 背景水印高度。默认高度1080。
+                     */
+                    int64_t GetBackgroundHeight() const;
+
+                    /**
+                     * 设置背景水印高度。默认高度1080。
+                     * @param BackgroundHeight 背景水印高度。默认高度1080。
+                     */
+                    void SetBackgroundHeight(const int64_t& _backgroundHeight);
+
+                    /**
+                     * 判断参数 BackgroundHeight 是否已赋值
+                     * @return BackgroundHeight 是否已赋值
+                     */
+                    bool BackgroundHeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +238,18 @@ URL中禁止包含的字符：
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 背景水印宽度。默认宽度1920。
+                     */
+                    int64_t m_backgroundWidth;
+                    bool m_backgroundWidthHasBeenSet;
+
+                    /**
+                     * 背景水印高度。默认高度1080。
+                     */
+                    int64_t m_backgroundHeight;
+                    bool m_backgroundHeightHasBeenSet;
 
                 };
             }

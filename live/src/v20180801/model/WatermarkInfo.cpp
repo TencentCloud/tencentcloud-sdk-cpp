@@ -29,7 +29,9 @@ WatermarkInfo::WatermarkInfo() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_backgroundWidthHasBeenSet(false),
+    m_backgroundHeightHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome WatermarkInfo::Deserialize(const rapidjson::Value &value)
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundWidth") && !value["BackgroundWidth"].IsNull())
+    {
+        if (!value["BackgroundWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WatermarkInfo.BackgroundWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundWidth = value["BackgroundWidth"].GetInt64();
+        m_backgroundWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackgroundHeight") && !value["BackgroundHeight"].IsNull())
+    {
+        if (!value["BackgroundHeight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WatermarkInfo.BackgroundHeight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundHeight = value["BackgroundHeight"].GetInt64();
+        m_backgroundHeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void WatermarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_backgroundWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backgroundWidth, allocator);
+    }
+
+    if (m_backgroundHeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundHeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backgroundHeight, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void WatermarkInfo::SetHeight(const int64_t& _height)
 bool WatermarkInfo::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+int64_t WatermarkInfo::GetBackgroundWidth() const
+{
+    return m_backgroundWidth;
+}
+
+void WatermarkInfo::SetBackgroundWidth(const int64_t& _backgroundWidth)
+{
+    m_backgroundWidth = _backgroundWidth;
+    m_backgroundWidthHasBeenSet = true;
+}
+
+bool WatermarkInfo::BackgroundWidthHasBeenSet() const
+{
+    return m_backgroundWidthHasBeenSet;
+}
+
+int64_t WatermarkInfo::GetBackgroundHeight() const
+{
+    return m_backgroundHeight;
+}
+
+void WatermarkInfo::SetBackgroundHeight(const int64_t& _backgroundHeight)
+{
+    m_backgroundHeight = _backgroundHeight;
+    m_backgroundHeightHasBeenSet = true;
+}
+
+bool WatermarkInfo::BackgroundHeightHasBeenSet() const
+{
+    return m_backgroundHeightHasBeenSet;
 }
 

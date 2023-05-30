@@ -136,6 +136,72 @@ namespace TencentCloud
                      */
                     bool TransHasBeenSet() const;
 
+                    /**
+                     * 获取翻译开始UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 翻译开始UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置翻译开始UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTime 翻译开始UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取翻译结束UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 翻译结束UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置翻译结束UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndTime 翻译结束UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取稳态标记。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SteadyState 稳态标记。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSteadyState() const;
+
+                    /**
+                     * 设置稳态标记。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SteadyState 稳态标记。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSteadyState(const bool& _steadyState);
+
+                    /**
+                     * 判断参数 SteadyState 是否已赋值
+                     * @return SteadyState 是否已赋值
+                     */
+                    bool SteadyStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +233,27 @@ namespace TencentCloud
                      */
                     std::string m_trans;
                     bool m_transHasBeenSet;
+
+                    /**
+                     * 翻译开始UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 翻译结束UTC时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 稳态标记。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_steadyState;
+                    bool m_steadyStateHasBeenSet;
 
                 };
             }
