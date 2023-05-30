@@ -100,7 +100,7 @@ Set-ExecutionPolicy Bypass -Scope Process
 # build
 # 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
 # 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
-.\build.ps1 build -DBUILD_MODULES="cvm;cbs" .. -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
+.\build.ps1 build -DBUILD_MODULES="cvm;cbs" -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
 
 # install，需要 Administrator 权限
 .\build.ps1 install
