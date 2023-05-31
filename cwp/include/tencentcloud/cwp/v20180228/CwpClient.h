@@ -2931,7 +2931,9 @@ namespace TencentCloud
                 DescribeRiskDnsListOutcomeCallable DescribeRiskDnsListCallable(const Model::DescribeRiskDnsListRequest& request);
 
                 /**
-                 *更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )
+                 *下线
+
+更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )
                  * @param req DescribeSaveOrUpdateWarningsRequest
                  * @return DescribeSaveOrUpdateWarningsOutcome
                  */

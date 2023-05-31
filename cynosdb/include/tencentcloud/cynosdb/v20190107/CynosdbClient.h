@@ -31,6 +31,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAccountsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h>
@@ -129,6 +133,12 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageListRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageListResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageSaleSpecRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageSaleSpecResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h>
@@ -193,6 +203,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -209,6 +223,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/OpenWanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/PauseServerlessResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RefundResourcePackageRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RefundResourcePackageResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h>
@@ -233,6 +249,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeClusterVersionRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeClusterVersionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h>
@@ -263,6 +281,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindClusterResourcePackagesResponse> BindClusterResourcePackagesOutcome;
+                typedef std::future<BindClusterResourcePackagesOutcome> BindClusterResourcePackagesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::BindClusterResourcePackagesRequest&, BindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClusterResourcePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -296,6 +317,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourcePackageResponse> CreateResourcePackageOutcome;
+                typedef std::future<CreateResourcePackageOutcome> CreateResourcePackageOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateResourcePackageRequest&, CreateResourcePackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountsResponse> DeleteAccountsOutcome;
                 typedef std::future<DeleteAccountsOutcome> DeleteAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteAccountsRequest&, DeleteAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountsAsyncHandler;
@@ -410,6 +434,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePackageDetailResponse> DescribeResourcePackageDetailOutcome;
+                typedef std::future<DescribeResourcePackageDetailOutcome> DescribeResourcePackageDetailOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcePackageDetailRequest&, DescribeResourcePackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePackageListResponse> DescribeResourcePackageListOutcome;
+                typedef std::future<DescribeResourcePackageListOutcome> DescribeResourcePackageListOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcePackageListRequest&, DescribeResourcePackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePackageSaleSpecResponse> DescribeResourcePackageSaleSpecOutcome;
+                typedef std::future<DescribeResourcePackageSaleSpecOutcome> DescribeResourcePackageSaleSpecOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcePackageSaleSpecRequest&, DescribeResourcePackageSaleSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageSaleSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourcesByDealNameResponse> DescribeResourcesByDealNameOutcome;
                 typedef std::future<DescribeResourcesByDealNameOutcome> DescribeResourcesByDealNameOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcesByDealNameRequest&, DescribeResourcesByDealNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesByDealNameAsyncHandler;
@@ -506,6 +539,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourcePackageClustersResponse> ModifyResourcePackageClustersOutcome;
+                typedef std::future<ModifyResourcePackageClustersOutcome> ModifyResourcePackageClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyResourcePackageClustersRequest&, ModifyResourcePackageClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePackageClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourcePackageNameResponse> ModifyResourcePackageNameOutcome;
+                typedef std::future<ModifyResourcePackageNameOutcome> ModifyResourcePackageNameOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyResourcePackageNameRequest&, ModifyResourcePackageNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePackageNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
                 typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
@@ -530,6 +569,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PauseServerlessResponse> PauseServerlessOutcome;
                 typedef std::future<PauseServerlessOutcome> PauseServerlessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::PauseServerlessRequest&, PauseServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseServerlessAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundResourcePackageResponse> RefundResourcePackageOutcome;
+                typedef std::future<RefundResourcePackageOutcome> RefundResourcePackageOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RefundResourcePackageRequest&, RefundResourcePackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundResourcePackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveClusterSlaveZoneResponse> RemoveClusterSlaveZoneOutcome;
                 typedef std::future<RemoveClusterSlaveZoneOutcome> RemoveClusterSlaveZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RemoveClusterSlaveZoneRequest&, RemoveClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveClusterSlaveZoneAsyncHandler;
@@ -566,6 +608,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchProxyVpcResponse> SwitchProxyVpcOutcome;
                 typedef std::future<SwitchProxyVpcOutcome> SwitchProxyVpcOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SwitchProxyVpcRequest&, SwitchProxyVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindClusterResourcePackagesResponse> UnbindClusterResourcePackagesOutcome;
+                typedef std::future<UnbindClusterResourcePackagesOutcome> UnbindClusterResourcePackagesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::UnbindClusterResourcePackagesRequest&, UnbindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindClusterResourcePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeClusterVersionResponse> UpgradeClusterVersionOutcome;
                 typedef std::future<UpgradeClusterVersionOutcome> UpgradeClusterVersionOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::UpgradeClusterVersionRequest&, UpgradeClusterVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterVersionAsyncHandler;
@@ -610,6 +655,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *为集群绑定资源包
+                 * @param req BindClusterResourcePackagesRequest
+                 * @return BindClusterResourcePackagesOutcome
+                 */
+                BindClusterResourcePackagesOutcome BindClusterResourcePackages(const Model::BindClusterResourcePackagesRequest &request);
+                void BindClusterResourcePackagesAsync(const Model::BindClusterResourcePackagesRequest& request, const BindClusterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindClusterResourcePackagesOutcomeCallable BindClusterResourcePackagesCallable(const Model::BindClusterResourcePackagesRequest& request);
 
                 /**
                  *TDSQL-C for MySQL实例关闭审计服务
@@ -709,6 +763,15 @@ namespace TencentCloud
                 CreateParamTemplateOutcome CreateParamTemplate(const Model::CreateParamTemplateRequest &request);
                 void CreateParamTemplateAsync(const Model::CreateParamTemplateRequest& request, const CreateParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
+
+                /**
+                 *新购资源包
+                 * @param req CreateResourcePackageRequest
+                 * @return CreateResourcePackageOutcome
+                 */
+                CreateResourcePackageOutcome CreateResourcePackage(const Model::CreateResourcePackageRequest &request);
+                void CreateResourcePackageAsync(const Model::CreateResourcePackageRequest& request, const CreateResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourcePackageOutcomeCallable CreateResourcePackageCallable(const Model::CreateResourcePackageRequest& request);
 
                 /**
                  *删除账号
@@ -1053,6 +1116,33 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
 
                 /**
+                 *查询资源包使用详情
+                 * @param req DescribeResourcePackageDetailRequest
+                 * @return DescribeResourcePackageDetailOutcome
+                 */
+                DescribeResourcePackageDetailOutcome DescribeResourcePackageDetail(const Model::DescribeResourcePackageDetailRequest &request);
+                void DescribeResourcePackageDetailAsync(const Model::DescribeResourcePackageDetailRequest& request, const DescribeResourcePackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePackageDetailOutcomeCallable DescribeResourcePackageDetailCallable(const Model::DescribeResourcePackageDetailRequest& request);
+
+                /**
+                 *查询资源包列表
+                 * @param req DescribeResourcePackageListRequest
+                 * @return DescribeResourcePackageListOutcome
+                 */
+                DescribeResourcePackageListOutcome DescribeResourcePackageList(const Model::DescribeResourcePackageListRequest &request);
+                void DescribeResourcePackageListAsync(const Model::DescribeResourcePackageListRequest& request, const DescribeResourcePackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePackageListOutcomeCallable DescribeResourcePackageListCallable(const Model::DescribeResourcePackageListRequest& request);
+
+                /**
+                 *查询资源包规格
+                 * @param req DescribeResourcePackageSaleSpecRequest
+                 * @return DescribeResourcePackageSaleSpecOutcome
+                 */
+                DescribeResourcePackageSaleSpecOutcome DescribeResourcePackageSaleSpec(const Model::DescribeResourcePackageSaleSpecRequest &request);
+                void DescribeResourcePackageSaleSpecAsync(const Model::DescribeResourcePackageSaleSpecRequest& request, const DescribeResourcePackageSaleSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePackageSaleSpecOutcomeCallable DescribeResourcePackageSaleSpecCallable(const Model::DescribeResourcePackageSaleSpecRequest& request);
+
+                /**
                  *根据计费订单id查询资源列表
                  * @param req DescribeResourcesByDealNameRequest
                  * @return DescribeResourcesByDealNameOutcome
@@ -1341,6 +1431,24 @@ namespace TencentCloud
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
 
                 /**
+                 *给资源包绑定集群
+                 * @param req ModifyResourcePackageClustersRequest
+                 * @return ModifyResourcePackageClustersOutcome
+                 */
+                ModifyResourcePackageClustersOutcome ModifyResourcePackageClusters(const Model::ModifyResourcePackageClustersRequest &request);
+                void ModifyResourcePackageClustersAsync(const Model::ModifyResourcePackageClustersRequest& request, const ModifyResourcePackageClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourcePackageClustersOutcomeCallable ModifyResourcePackageClustersCallable(const Model::ModifyResourcePackageClustersRequest& request);
+
+                /**
+                 *修改资源包名称
+                 * @param req ModifyResourcePackageNameRequest
+                 * @return ModifyResourcePackageNameOutcome
+                 */
+                ModifyResourcePackageNameOutcome ModifyResourcePackageName(const Model::ModifyResourcePackageNameRequest &request);
+                void ModifyResourcePackageNameAsync(const Model::ModifyResourcePackageNameRequest& request, const ModifyResourcePackageNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourcePackageNameOutcomeCallable ModifyResourcePackageNameCallable(const Model::ModifyResourcePackageNameRequest& request);
+
+                /**
                  *修改实例组ip，端口
                  * @param req ModifyVipVportRequest
                  * @return ModifyVipVportOutcome
@@ -1411,6 +1519,15 @@ namespace TencentCloud
                 PauseServerlessOutcome PauseServerless(const Model::PauseServerlessRequest &request);
                 void PauseServerlessAsync(const Model::PauseServerlessRequest& request, const PauseServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PauseServerlessOutcomeCallable PauseServerlessCallable(const Model::PauseServerlessRequest& request);
+
+                /**
+                 *退款资源包
+                 * @param req RefundResourcePackageRequest
+                 * @return RefundResourcePackageOutcome
+                 */
+                RefundResourcePackageOutcome RefundResourcePackage(const Model::RefundResourcePackageRequest &request);
+                void RefundResourcePackageAsync(const Model::RefundResourcePackageRequest& request, const RefundResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundResourcePackageOutcomeCallable RefundResourcePackageCallable(const Model::RefundResourcePackageRequest& request);
 
                 /**
                  *删除从可用区
@@ -1519,6 +1636,15 @@ namespace TencentCloud
                 SwitchProxyVpcOutcome SwitchProxyVpc(const Model::SwitchProxyVpcRequest &request);
                 void SwitchProxyVpcAsync(const Model::SwitchProxyVpcRequest& request, const SwitchProxyVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchProxyVpcOutcomeCallable SwitchProxyVpcCallable(const Model::SwitchProxyVpcRequest& request);
+
+                /**
+                 *cynos解绑资源包
+                 * @param req UnbindClusterResourcePackagesRequest
+                 * @return UnbindClusterResourcePackagesOutcome
+                 */
+                UnbindClusterResourcePackagesOutcome UnbindClusterResourcePackages(const Model::UnbindClusterResourcePackagesRequest &request);
+                void UnbindClusterResourcePackagesAsync(const Model::UnbindClusterResourcePackagesRequest& request, const UnbindClusterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindClusterResourcePackagesOutcomeCallable UnbindClusterResourcePackagesCallable(const Model::UnbindClusterResourcePackagesRequest& request);
 
                 /**
                  *更新集群Cynos内核版本

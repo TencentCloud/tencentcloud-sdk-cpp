@@ -47,7 +47,7 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取如果是Component控件类型，则可选的字段为：
+                     * 获取如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -58,7 +58,7 @@ SELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；
 DATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；
 DISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；
 
-如果是SignComponent控件类型，则可选的字段为
+如果是SignComponent签署控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
 SIGN_SIGNATURE - 用户签名控件；
@@ -68,7 +68,7 @@ SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内�
 SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
 
 表单域的控件不能作为印章和签名控件
-                     * @return ComponentType 如果是Component控件类型，则可选的字段为：
+                     * @return ComponentType 如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -79,7 +79,7 @@ SELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；
 DATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；
 DISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；
 
-如果是SignComponent控件类型，则可选的字段为
+如果是SignComponent签署控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
 SIGN_SIGNATURE - 用户签名控件；
@@ -93,7 +93,7 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     std::string GetComponentType() const;
 
                     /**
-                     * 设置如果是Component控件类型，则可选的字段为：
+                     * 设置如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -104,7 +104,7 @@ SELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；
 DATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；
 DISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；
 
-如果是SignComponent控件类型，则可选的字段为
+如果是SignComponent签署控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
 SIGN_SIGNATURE - 用户签名控件；
@@ -114,7 +114,7 @@ SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内�
 SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
 
 表单域的控件不能作为印章和签名控件
-                     * @param ComponentType 如果是Component控件类型，则可选的字段为：
+                     * @param ComponentType 如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -125,7 +125,7 @@ SELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；
 DATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；
 DISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；
 
-如果是SignComponent控件类型，则可选的字段为
+如果是SignComponent签署控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
 SIGN_SIGNATURE - 用户签名控件；
@@ -145,14 +145,14 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     * @return FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
+                     * 获取控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * @return FileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
                      */
                     int64_t GetFileIndex() const;
 
                     /**
-                     * 设置控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     * @param FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
+                     * 设置控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * @param FileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
@@ -253,14 +253,14 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentPosYHasBeenSet() const;
 
                     /**
-                     * 获取GenerateMode==KEYWORD 指定关键字
-                     * @return ComponentId GenerateMode==KEYWORD 指定关键字
+                     * 获取查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * @return ComponentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      */
                     std::string GetComponentId() const;
 
                     /**
-                     * 设置GenerateMode==KEYWORD 指定关键字
-                     * @param ComponentId GenerateMode==KEYWORD 指定关键字
+                     * 设置查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * @param ComponentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      */
                     void SetComponentId(const std::string& _componentId);
 
@@ -271,14 +271,14 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool ComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取GenerateMode==FIELD 指定表单域名称
-                     * @return ComponentName GenerateMode==FIELD 指定表单域名称
+                     * 获取查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * @return ComponentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置GenerateMode==FIELD 指定表单域名称
-                     * @param ComponentName GenerateMode==FIELD 指定表单域名称
+                     * 设置查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * @param ComponentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -443,14 +443,14 @@ ComponentType为SIGN_DATE时，支持以下参数：
                     bool ComponentExtraHasBeenSet() const;
 
                     /**
-                     * 获取是否是表单域类型，默认不存在
-                     * @return IsFormType 是否是表单域类型，默认不存在
+                     * 获取是否是表单域类型，默认不false-不是
+                     * @return IsFormType 是否是表单域类型，默认不false-不是
                      */
                     bool GetIsFormType() const;
 
                     /**
-                     * 设置是否是表单域类型，默认不存在
-                     * @param IsFormType 是否是表单域类型，默认不存在
+                     * 设置是否是表单域类型，默认不false-不是
+                     * @param IsFormType 是否是表单域类型，默认不false-不是
                      */
                     void SetIsFormType(const bool& _isFormType);
 
@@ -823,14 +823,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
-                     * 获取平台模板控件 id 标识
-                     * @return ChannelComponentId 平台模板控件 id 标识
+                     * 获取第三方应用集成平台模板控件 id 标识
+                     * @return ChannelComponentId 第三方应用集成平台模板控件 id 标识
                      */
                     std::string GetChannelComponentId() const;
 
                     /**
-                     * 设置平台模板控件 id 标识
-                     * @param ChannelComponentId 平台模板控件 id 标识
+                     * 设置第三方应用集成平台模板控件 id 标识
+                     * @param ChannelComponentId 第三方应用集成平台模板控件 id 标识
                      */
                     void SetChannelComponentId(const std::string& _channelComponentId);
 
@@ -877,14 +877,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool OffsetYHasBeenSet() const;
 
                     /**
-                     * 获取//子客控件来源。0-平台指定；1-用户自定义
-                     * @return ChannelComponentSource //子客控件来源。0-平台指定；1-用户自定义
+                     * 获取第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * @return ChannelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
                      */
                     uint64_t GetChannelComponentSource() const;
 
                     /**
-                     * 设置//子客控件来源。0-平台指定；1-用户自定义
-                     * @param ChannelComponentSource //子客控件来源。0-平台指定；1-用户自定义
+                     * 设置第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * @param ChannelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
                      */
                     void SetChannelComponentSource(const uint64_t& _channelComponentSource);
 
@@ -973,7 +973,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                 private:
 
                     /**
-                     * 如果是Component控件类型，则可选的字段为：
+                     * 如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -984,7 +984,7 @@ SELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；
 DATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；
 DISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；
 
-如果是SignComponent控件类型，则可选的字段为
+如果是SignComponent签署控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
 SIGN_SIGNATURE - 用户签名控件；
@@ -999,7 +999,7 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
+                     * 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
                      */
                     int64_t m_fileIndex;
                     bool m_fileIndexHasBeenSet;
@@ -1035,13 +1035,13 @@ SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
                     bool m_componentPosYHasBeenSet;
 
                     /**
-                     * GenerateMode==KEYWORD 指定关键字
+                     * 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
-                     * GenerateMode==FIELD 指定表单域名称
+                     * 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
@@ -1090,7 +1090,7 @@ ComponentType为SIGN_DATE时，支持以下参数：
                     bool m_componentExtraHasBeenSet;
 
                     /**
-                     * 是否是表单域类型，默认不存在
+                     * 是否是表单域类型，默认不false-不是
                      */
                     bool m_isFormType;
                     bool m_isFormTypeHasBeenSet;
@@ -1191,7 +1191,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_componentDateFontSizeHasBeenSet;
 
                     /**
-                     * 平台模板控件 id 标识
+                     * 第三方应用集成平台模板控件 id 标识
                      */
                     std::string m_channelComponentId;
                     bool m_channelComponentIdHasBeenSet;
@@ -1209,7 +1209,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_offsetYHasBeenSet;
 
                     /**
-                     * //子客控件来源。0-平台指定；1-用户自定义
+                     * 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
                      */
                     uint64_t m_channelComponentSource;
                     bool m_channelComponentSourceHasBeenSet;

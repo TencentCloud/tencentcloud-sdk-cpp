@@ -27,7 +27,8 @@ LoginNode::LoginNode() :
     m_systemDiskHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome LoginNode::Deserialize(const rapidjson::Value &value)
         m_instanceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginNode.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +219,14 @@ void LoginNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
     }
 
 }
@@ -323,5 +342,21 @@ void LoginNode::SetInstanceName(const string& _instanceName)
 bool LoginNode::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+int64_t LoginNode::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void LoginNode::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool LoginNode::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 

@@ -106,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方存储的access_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      * @return AccessKey 第三方存储的access_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     std::string GetAccessKey() const;
 
                     /**
                      * 设置第三方存储的access_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      * @param AccessKey 第三方存储的access_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     void SetAccessKey(const std::string& _accessKey);
 
@@ -124,13 +128,17 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方存储的secret_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      * @return SecretKey 第三方存储的secret_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置第三方存储的secret_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      * @param SecretKey 第三方存储的secret_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
@@ -181,12 +189,14 @@ namespace TencentCloud
 
                     /**
                      * 第三方存储的access_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
 
                     /**
                      * 第三方存储的secret_key账号信息。
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;

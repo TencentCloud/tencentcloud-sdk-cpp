@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人手机号
-                     * @return Mobile 指定签署人手机号
+                     * 获取指定签署人手机号，11位数字
+                     * @return Mobile 指定签署人手机号，11位数字
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置指定签署人手机号
-                     * @param Mobile 指定签署人手机号
+                     * 设置指定签署人手机号，11位数字
+                     * @param Mobile 指定签署人手机号，11位数字
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人证件类型
-                     * @return IdCardType 指定签署人证件类型
+                     * 获取指定签署人证件类型，ID_CARD-身份证
+                     * @return IdCardType 指定签署人证件类型，ID_CARD-身份证
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置指定签署人证件类型
-                     * @param IdCardType 指定签署人证件类型
+                     * 设置指定签署人证件类型，ID_CARD-身份证
+                     * @param IdCardType 指定签署人证件类型，ID_CARD-身份证
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人证件号码
-                     * @return IdCardNumber 指定签署人证件号码
+                     * 获取指定签署人证件号码，字母大写
+                     * @return IdCardNumber 指定签署人证件号码，字母大写
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置指定签署人证件号码
-                     * @param IdCardNumber 指定签署人证件号码
+                     * 设置指定签署人证件号码，字母大写
+                     * @param IdCardNumber 指定签署人证件号码，字母大写
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -127,19 +127,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 指定签署人手机号
+                     * 指定签署人手机号，11位数字
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 指定签署人证件类型
+                     * 指定签署人证件类型，ID_CARD-身份证
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 指定签署人证件号码
+                     * 指定签署人证件号码，字母大写
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;

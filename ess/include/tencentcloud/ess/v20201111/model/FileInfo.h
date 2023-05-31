@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 二期接口返回的模板中文件的信息结构
+                * 模板中文件的信息结构
                 */
                 class FileInfo : public AbstractModel
                 {

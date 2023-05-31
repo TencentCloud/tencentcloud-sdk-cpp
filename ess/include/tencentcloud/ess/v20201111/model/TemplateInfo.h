@@ -302,6 +302,36 @@ namespace TencentCloud
                     bool PromoterHasBeenSet() const;
 
                     /**
+                     * 获取模板类型
+取值：
+1  静默签,
+3  普通模板
+                     * @return TemplateType 模板类型
+取值：
+1  静默签,
+3  普通模板
+                     */
+                    int64_t GetTemplateType() const;
+
+                    /**
+                     * 设置模板类型
+取值：
+1  静默签,
+3  普通模板
+                     * @param TemplateType 模板类型
+取值：
+1  静默签,
+3  普通模板
+                     */
+                    void SetTemplateType(const int64_t& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
+                    /**
                      * 获取模板可用状态，取值：1启用（默认），2停用
                      * @return Available 模板可用状态，取值：1启用（默认），2停用
                      */
@@ -488,6 +518,15 @@ namespace TencentCloud
                      */
                     Recipient m_promoter;
                     bool m_promoterHasBeenSet;
+
+                    /**
+                     * 模板类型
+取值：
+1  静默签,
+3  普通模板
+                     */
+                    int64_t m_templateType;
+                    bool m_templateTypeHasBeenSet;
 
                     /**
                      * 模板可用状态，取值：1启用（默认），2停用

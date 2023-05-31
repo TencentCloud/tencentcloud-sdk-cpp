@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool UserInfoHasBeenSet() const;
 
                     /**
-                     * 获取回调链接
-                     * @return CallbackUrl 回调链接
+                     * 获取接受自动签开启的回调地址。需要保证post返回200
+                     * @return CallbackUrl 接受自动签开启的回调地址。需要保证post返回200
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调链接
-                     * @param CallbackUrl 回调链接
+                     * 设置接受自动签开启的回调地址。需要保证post返回200
+                     * @param CallbackUrl 接受自动签开启的回调地址。需要保证post返回200
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否回调证书信息
-                     * @return CertInfoCallback 是否回调证书信息
+                     * 获取是否回调证书信息，默认false-不需要
+                     * @return CertInfoCallback 是否回调证书信息，默认false-不需要
                      */
                     bool GetCertInfoCallback() const;
 
                     /**
-                     * 设置是否回调证书信息
-                     * @param CertInfoCallback 是否回调证书信息
+                     * 设置是否回调证书信息，默认false-不需要
+                     * @param CertInfoCallback 是否回调证书信息，默认false-不需要
                      */
                     void SetCertInfoCallback(const bool& _certInfoCallback);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool CertInfoCallbackHasBeenSet() const;
 
                     /**
-                     * 获取是否支持用户自定义签名印章
-                     * @return UserDefineSeal 是否支持用户自定义签名印章
+                     * 获取是否支持用户自定义签名印章，默认false-不需要
+                     * @return UserDefineSeal 是否支持用户自定义签名印章，默认false-不需要
                      */
                     bool GetUserDefineSeal() const;
 
                     /**
-                     * 设置是否支持用户自定义签名印章
-                     * @param UserDefineSeal 是否支持用户自定义签名印章
+                     * 设置是否支持用户自定义签名印章，默认false-不需要
+                     * @param UserDefineSeal 是否支持用户自定义签名印章，默认false-不需要
                      */
                     void SetUserDefineSeal(const bool& _userDefineSeal);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool UserDefineSealHasBeenSet() const;
 
                     /**
-                     * 获取是否需要回调的时候返回印章(签名) 图片的 base64
-                     * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 获取是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
+                     * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
                      */
                     bool GetSealImgCallback() const;
 
                     /**
-                     * 设置是否需要回调的时候返回印章(签名) 图片的 base64
-                     * @param SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 设置是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
+                     * @param SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
                      */
                     void SetSealImgCallback(const bool& _sealImgCallback);
 
@@ -164,25 +164,25 @@ namespace TencentCloud
                     bool m_userInfoHasBeenSet;
 
                     /**
-                     * 回调链接
+                     * 接受自动签开启的回调地址。需要保证post返回200
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 是否回调证书信息
+                     * 是否回调证书信息，默认false-不需要
                      */
                     bool m_certInfoCallback;
                     bool m_certInfoCallbackHasBeenSet;
 
                     /**
-                     * 是否支持用户自定义签名印章
+                     * 是否支持用户自定义签名印章，默认false-不需要
                      */
                     bool m_userDefineSeal;
                     bool m_userDefineSealHasBeenSet;
 
                     /**
-                     * 是否需要回调的时候返回印章(签名) 图片的 base64
+                     * 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
                      */
                     bool m_sealImgCallback;
                     bool m_sealImgCallbackHasBeenSet;

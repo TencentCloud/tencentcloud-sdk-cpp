@@ -24,7 +24,9 @@ TaskInfoPage::TaskInfoPage() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_totalPageHasBeenSet(false)
+    m_totalPageHasBeenSet(false),
+    m_pageCountHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome TaskInfoPage::Deserialize(const rapidjson::Value &value)
         m_totalPageHasBeenSet = true;
     }
 
+    if (value.HasMember("PageCount") && !value["PageCount"].IsNull())
+    {
+        if (!value["PageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoPage.PageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageCount = value["PageCount"].GetUint64();
+        m_pageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoPage.TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +149,22 @@ void TaskInfoPage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TotalPage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalPage, allocator);
+    }
+
+    if (m_pageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageCount, allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
 }
@@ -194,5 +232,37 @@ void TaskInfoPage::SetTotalPage(const uint64_t& _totalPage)
 bool TaskInfoPage::TotalPageHasBeenSet() const
 {
     return m_totalPageHasBeenSet;
+}
+
+uint64_t TaskInfoPage::GetPageCount() const
+{
+    return m_pageCount;
+}
+
+void TaskInfoPage::SetPageCount(const uint64_t& _pageCount)
+{
+    m_pageCount = _pageCount;
+    m_pageCountHasBeenSet = true;
+}
+
+bool TaskInfoPage::PageCountHasBeenSet() const
+{
+    return m_pageCountHasBeenSet;
+}
+
+uint64_t TaskInfoPage::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void TaskInfoPage::SetTotalCount(const uint64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool TaskInfoPage::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 

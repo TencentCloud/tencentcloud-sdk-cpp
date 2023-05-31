@@ -41,7 +41,8 @@ AddNodesRequest::AddNodesRequest() :
     m_queueNameHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false)
+    m_nodeTypeHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string AddNodesRequest::ToJsonString() const
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -532,6 +541,22 @@ void AddNodesRequest::SetNodeType(const string& _nodeType)
 bool AddNodesRequest::NodeTypeHasBeenSet() const
 {
     return m_nodeTypeHasBeenSet;
+}
+
+int64_t AddNodesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void AddNodesRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool AddNodesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

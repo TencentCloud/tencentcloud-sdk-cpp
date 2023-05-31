@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取个人用户名称
-                     * @return UserName 个人用户名称
+                     * 获取个人用户姓名
+                     * @return UserName 个人用户姓名
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置个人用户名称
-                     * @param UserName 个人用户名称
+                     * 设置个人用户姓名
+                     * @param UserName 个人用户姓名
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -80,24 +80,6 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64
-                     * @return SealImage 印章图片的base64
-                     */
-                    std::string GetSealImage() const;
-
-                    /**
-                     * 设置印章图片的base64
-                     * @param SealImage 印章图片的base64
-                     */
-                    void SetSealImage(const std::string& _sealImage);
-
-                    /**
-                     * 判断参数 SealImage 是否已赋值
-                     * @return SealImage 是否已赋值
-                     */
-                    bool SealImageHasBeenSet() const;
-
-                    /**
                      * 获取印章名称
                      * @return SealName 印章名称
                      */
@@ -114,6 +96,24 @@ namespace TencentCloud
                      * @return SealName 是否已赋值
                      */
                     bool SealNameHasBeenSet() const;
+
+                    /**
+                     * 获取印章图片的base64，最大不超过 8M
+                     * @return SealImage 印章图片的base64，最大不超过 8M
+                     */
+                    std::string GetSealImage() const;
+
+                    /**
+                     * 设置印章图片的base64，最大不超过 8M
+                     * @param SealImage 印章图片的base64，最大不超过 8M
+                     */
+                    void SetSealImage(const std::string& _sealImage);
+
+                    /**
+                     * 判断参数 SealImage 是否已赋值
+                     * @return SealImage 是否已赋值
+                     */
+                    bool SealImageHasBeenSet() const;
 
                     /**
                      * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
@@ -172,6 +172,24 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
+                     * 获取是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * @return SealImageCompress 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     */
+                    bool GetSealImageCompress() const;
+
+                    /**
+                     * 设置是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     * @param SealImageCompress 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     */
+                    void SetSealImageCompress(const bool& _sealImageCompress);
+
+                    /**
+                     * 判断参数 SealImageCompress 是否已赋值
+                     * @return SealImageCompress 是否已赋值
+                     */
+                    bool SealImageCompressHasBeenSet() const;
+
+                    /**
                      * 获取手机号码；当需要开通自动签时，该参数必传
                      * @return Mobile 手机号码；当需要开通自动签时，该参数必传
                      */
@@ -207,10 +225,78 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                      */
                     bool EnableAutoSignHasBeenSet() const;
 
+                    /**
+                     * 获取印章颜色（参数ProcessSeal=true时生效）
+默认值：BLACK黑色
+取值: 
+BLACK 黑色,
+RED 红色,
+BLUE 蓝色。
+                     * @return SealColor 印章颜色（参数ProcessSeal=true时生效）
+默认值：BLACK黑色
+取值: 
+BLACK 黑色,
+RED 红色,
+BLUE 蓝色。
+                     */
+                    std::string GetSealColor() const;
+
+                    /**
+                     * 设置印章颜色（参数ProcessSeal=true时生效）
+默认值：BLACK黑色
+取值: 
+BLACK 黑色,
+RED 红色,
+BLUE 蓝色。
+                     * @param SealColor 印章颜色（参数ProcessSeal=true时生效）
+默认值：BLACK黑色
+取值: 
+BLACK 黑色,
+RED 红色,
+BLUE 蓝色。
+                     */
+                    void SetSealColor(const std::string& _sealColor);
+
+                    /**
+                     * 判断参数 SealColor 是否已赋值
+                     * @return SealColor 是否已赋值
+                     */
+                    bool SealColorHasBeenSet() const;
+
+                    /**
+                     * 获取是否处理印章
+默认不做印章处理。
+取值：false：不做任何处理；
+true：做透明化处理和颜色增强。
+                     * @return ProcessSeal 是否处理印章
+默认不做印章处理。
+取值：false：不做任何处理；
+true：做透明化处理和颜色增强。
+                     */
+                    bool GetProcessSeal() const;
+
+                    /**
+                     * 设置是否处理印章
+默认不做印章处理。
+取值：false：不做任何处理；
+true：做透明化处理和颜色增强。
+                     * @param ProcessSeal 是否处理印章
+默认不做印章处理。
+取值：false：不做任何处理；
+true：做透明化处理和颜色增强。
+                     */
+                    void SetProcessSeal(const bool& _processSeal);
+
+                    /**
+                     * 判断参数 ProcessSeal 是否已赋值
+                     * @return ProcessSeal 是否已赋值
+                     */
+                    bool ProcessSealHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 个人用户名称
+                     * 个人用户姓名
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
@@ -222,16 +308,16 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 印章图片的base64
-                     */
-                    std::string m_sealImage;
-                    bool m_sealImageHasBeenSet;
-
-                    /**
                      * 印章名称
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;
+
+                    /**
+                     * 印章图片的base64，最大不超过 8M
+                     */
+                    std::string m_sealImage;
+                    bool m_sealImageHasBeenSet;
 
                     /**
                      * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
@@ -251,6 +337,12 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool m_idCardTypeHasBeenSet;
 
                     /**
+                     * 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
+                     */
+                    bool m_sealImageCompress;
+                    bool m_sealImageCompressHasBeenSet;
+
+                    /**
                      * 手机号码；当需要开通自动签时，该参数必传
                      */
                     std::string m_mobile;
@@ -261,6 +353,26 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;
+
+                    /**
+                     * 印章颜色（参数ProcessSeal=true时生效）
+默认值：BLACK黑色
+取值: 
+BLACK 黑色,
+RED 红色,
+BLUE 蓝色。
+                     */
+                    std::string m_sealColor;
+                    bool m_sealColorHasBeenSet;
+
+                    /**
+                     * 是否处理印章
+默认不做印章处理。
+取值：false：不做任何处理；
+true：做透明化处理和颜色增强。
+                     */
+                    bool m_processSeal;
+                    bool m_processSealHasBeenSet;
 
                 };
             }

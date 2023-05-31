@@ -25,12 +25,15 @@ using namespace std;
 CreatePreparedPersonalEsignRequest::CreatePreparedPersonalEsignRequest() :
     m_userNameHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_sealImageHasBeenSet(false),
     m_sealNameHasBeenSet(false),
+    m_sealImageHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
+    m_sealImageCompressHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_enableAutoSignHasBeenSet(false)
+    m_enableAutoSignHasBeenSet(false),
+    m_sealColorHasBeenSet(false),
+    m_processSealHasBeenSet(false)
 {
 }
 
@@ -57,20 +60,20 @@ string CreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_idCardNumber.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sealImageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SealImage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_sealNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SealName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -90,6 +93,14 @@ string CreatePreparedPersonalEsignRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sealImageCompressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealImageCompress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sealImageCompress, allocator);
+    }
+
     if (m_mobileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,6 +115,22 @@ string CreatePreparedPersonalEsignRequest::ToJsonString() const
         string key = "EnableAutoSign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoSign, allocator);
+    }
+
+    if (m_sealColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealColor";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sealColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processSealHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessSeal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processSeal, allocator);
     }
 
 
@@ -146,22 +173,6 @@ bool CreatePreparedPersonalEsignRequest::IdCardNumberHasBeenSet() const
     return m_idCardNumberHasBeenSet;
 }
 
-string CreatePreparedPersonalEsignRequest::GetSealImage() const
-{
-    return m_sealImage;
-}
-
-void CreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
-{
-    m_sealImage = _sealImage;
-    m_sealImageHasBeenSet = true;
-}
-
-bool CreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
-{
-    return m_sealImageHasBeenSet;
-}
-
 string CreatePreparedPersonalEsignRequest::GetSealName() const
 {
     return m_sealName;
@@ -176,6 +187,22 @@ void CreatePreparedPersonalEsignRequest::SetSealName(const string& _sealName)
 bool CreatePreparedPersonalEsignRequest::SealNameHasBeenSet() const
 {
     return m_sealNameHasBeenSet;
+}
+
+string CreatePreparedPersonalEsignRequest::GetSealImage() const
+{
+    return m_sealImage;
+}
+
+void CreatePreparedPersonalEsignRequest::SetSealImage(const string& _sealImage)
+{
+    m_sealImage = _sealImage;
+    m_sealImageHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::SealImageHasBeenSet() const
+{
+    return m_sealImageHasBeenSet;
 }
 
 UserInfo CreatePreparedPersonalEsignRequest::GetOperator() const
@@ -210,6 +237,22 @@ bool CreatePreparedPersonalEsignRequest::IdCardTypeHasBeenSet() const
     return m_idCardTypeHasBeenSet;
 }
 
+bool CreatePreparedPersonalEsignRequest::GetSealImageCompress() const
+{
+    return m_sealImageCompress;
+}
+
+void CreatePreparedPersonalEsignRequest::SetSealImageCompress(const bool& _sealImageCompress)
+{
+    m_sealImageCompress = _sealImageCompress;
+    m_sealImageCompressHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::SealImageCompressHasBeenSet() const
+{
+    return m_sealImageCompressHasBeenSet;
+}
+
 string CreatePreparedPersonalEsignRequest::GetMobile() const
 {
     return m_mobile;
@@ -240,6 +283,38 @@ void CreatePreparedPersonalEsignRequest::SetEnableAutoSign(const bool& _enableAu
 bool CreatePreparedPersonalEsignRequest::EnableAutoSignHasBeenSet() const
 {
     return m_enableAutoSignHasBeenSet;
+}
+
+string CreatePreparedPersonalEsignRequest::GetSealColor() const
+{
+    return m_sealColor;
+}
+
+void CreatePreparedPersonalEsignRequest::SetSealColor(const string& _sealColor)
+{
+    m_sealColor = _sealColor;
+    m_sealColorHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::SealColorHasBeenSet() const
+{
+    return m_sealColorHasBeenSet;
+}
+
+bool CreatePreparedPersonalEsignRequest::GetProcessSeal() const
+{
+    return m_processSeal;
+}
+
+void CreatePreparedPersonalEsignRequest::SetProcessSeal(const bool& _processSeal)
+{
+    m_processSeal = _processSeal;
+    m_processSealHasBeenSet = true;
+}
+
+bool CreatePreparedPersonalEsignRequest::ProcessSealHasBeenSet() const
+{
+    return m_processSealHasBeenSet;
 }
 
 

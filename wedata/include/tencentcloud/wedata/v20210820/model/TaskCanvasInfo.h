@@ -730,6 +730,204 @@ namespace TencentCloud
                      */
                     bool DelayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取执行开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionStartTime 执行开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExecutionStartTime() const;
+
+                    /**
+                     * 设置执行开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExecutionStartTime 执行开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExecutionStartTime(const std::string& _executionStartTime);
+
+                    /**
+                     * 判断参数 ExecutionStartTime 是否已赋值
+                     * @return ExecutionStartTime 是否已赋值
+                     */
+                    bool ExecutionStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionEndTime 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExecutionEndTime() const;
+
+                    /**
+                     * 设置执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExecutionEndTime 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExecutionEndTime(const std::string& _executionEndTime);
+
+                    /**
+                     * 判断参数 ExecutionEndTime 是否已赋值
+                     * @return ExecutionEndTime 是否已赋值
+                     */
+                    bool ExecutionEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取层级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Layer 层级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLayer() const;
+
+                    /**
+                     * 设置层级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Layer 层级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLayer(const std::string& _layer);
+
+                    /**
+                     * 判断参数 Layer 是否已赋值
+                     * @return Layer 是否已赋值
+                     */
+                    bool LayerHasBeenSet() const;
+
+                    /**
+                     * 获取来源数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceServiceId 来源数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSourceServiceId() const;
+
+                    /**
+                     * 设置来源数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceServiceId 来源数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceServiceId(const std::string& _sourceServiceId);
+
+                    /**
+                     * 判断参数 SourceServiceId 是否已赋值
+                     * @return SourceServiceId 是否已赋值
+                     */
+                    bool SourceServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceServiceType 来源数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSourceServiceType() const;
+
+                    /**
+                     * 设置来源数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceServiceType 来源数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceServiceType(const std::string& _sourceServiceType);
+
+                    /**
+                     * 判断参数 SourceServiceType 是否已赋值
+                     * @return SourceServiceType 是否已赋值
+                     */
+                    bool SourceServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetServiceId 目标数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetServiceId() const;
+
+                    /**
+                     * 设置目标数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetServiceId 目标数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetServiceId(const std::string& _targetServiceId);
+
+                    /**
+                     * 判断参数 TargetServiceId 是否已赋值
+                     * @return TargetServiceId 是否已赋值
+                     */
+                    bool TargetServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取目标数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetServiceType 目标数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetServiceType() const;
+
+                    /**
+                     * 设置目标数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetServiceType 目标数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetServiceType(const std::string& _targetServiceType);
+
+                    /**
+                     * 判断参数 TargetServiceType 是否已赋值
+                     * @return TargetServiceType 是否已赋值
+                     */
+                    bool TargetServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务告警类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmType 任务告警类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlarmType() const;
+
+                    /**
+                     * 设置任务告警类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmType 任务告警类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmType(const std::string& _alarmType);
+
+                    /**
+                     * 判断参数 AlarmType 是否已赋值
+                     * @return AlarmType 是否已赋值
+                     */
+                    bool AlarmTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -935,6 +1133,69 @@ namespace TencentCloud
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
+
+                    /**
+                     * 执行开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executionStartTime;
+                    bool m_executionStartTimeHasBeenSet;
+
+                    /**
+                     * 执行结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executionEndTime;
+                    bool m_executionEndTimeHasBeenSet;
+
+                    /**
+                     * 层级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_layer;
+                    bool m_layerHasBeenSet;
+
+                    /**
+                     * 来源数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceServiceId;
+                    bool m_sourceServiceIdHasBeenSet;
+
+                    /**
+                     * 来源数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceServiceType;
+                    bool m_sourceServiceTypeHasBeenSet;
+
+                    /**
+                     * 目标数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetServiceId;
+                    bool m_targetServiceIdHasBeenSet;
+
+                    /**
+                     * 目标数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetServiceType;
+                    bool m_targetServiceTypeHasBeenSet;
+
+                    /**
+                     * 任务告警类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmType;
+                    bool m_alarmTypeHasBeenSet;
+
+                    /**
+                     * 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

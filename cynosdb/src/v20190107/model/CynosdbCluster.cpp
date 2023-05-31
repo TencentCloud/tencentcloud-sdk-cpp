@@ -62,7 +62,8 @@ CynosdbCluster::CynosdbCluster() :
     m_businessTypeHasBeenSet(false),
     m_isFreezeHasBeenSet(false),
     m_orderSourceHasBeenSet(false),
-    m_abilityHasBeenSet(false)
+    m_abilityHasBeenSet(false),
+    m_resourcePackagesHasBeenSet(false)
 {
 }
 
@@ -531,6 +532,26 @@ CoreInternalOutcome CynosdbCluster::Deserialize(const rapidjson::Value &value)
         m_abilityHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourcePackages") && !value["ResourcePackages"].IsNull())
+    {
+        if (!value["ResourcePackages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbCluster.ResourcePackages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourcePackages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourcePackage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourcePackages.push_back(item);
+        }
+        m_resourcePackagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -899,6 +920,21 @@ void CynosdbCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ability.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resourcePackagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourcePackages.begin(); itr != m_resourcePackages.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1574,5 +1610,21 @@ void CynosdbCluster::SetAbility(const Ability& _ability)
 bool CynosdbCluster::AbilityHasBeenSet() const
 {
     return m_abilityHasBeenSet;
+}
+
+vector<ResourcePackage> CynosdbCluster::GetResourcePackages() const
+{
+    return m_resourcePackages;
+}
+
+void CynosdbCluster::SetResourcePackages(const vector<ResourcePackage>& _resourcePackages)
+{
+    m_resourcePackages = _resourcePackages;
+    m_resourcePackagesHasBeenSet = true;
+}
+
+bool CynosdbCluster::ResourcePackagesHasBeenSet() const
+{
+    return m_resourcePackagesHasBeenSet;
 }
 

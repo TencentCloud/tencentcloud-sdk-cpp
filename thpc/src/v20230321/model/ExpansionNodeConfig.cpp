@@ -25,7 +25,8 @@ ExpansionNodeConfig::ExpansionNodeConfig() :
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_virtualPrivateCloudHasBeenSet(false)
+    m_virtualPrivateCloudHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome ExpansionNodeConfig::Deserialize(const rapidjson::Value &val
         m_virtualPrivateCloudHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpansionNodeConfig.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +164,14 @@ void ExpansionNodeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_virtualPrivateCloud.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
     }
 
 }
@@ -236,5 +255,21 @@ void ExpansionNodeConfig::SetVirtualPrivateCloud(const VirtualPrivateCloud& _vir
 bool ExpansionNodeConfig::VirtualPrivateCloudHasBeenSet() const
 {
     return m_virtualPrivateCloudHasBeenSet;
+}
+
+int64_t ExpansionNodeConfig::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ExpansionNodeConfig::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ExpansionNodeConfig::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 

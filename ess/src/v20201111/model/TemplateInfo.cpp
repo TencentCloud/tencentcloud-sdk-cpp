@@ -35,6 +35,7 @@ TemplateInfo::TemplateInfo() :
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_promoterHasBeenSet(false),
+    m_templateTypeHasBeenSet(false),
     m_availableHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
@@ -242,6 +243,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_promoterHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplateType") && !value["TemplateType"].IsNull())
+    {
+        if (!value["TemplateType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateType = value["TemplateType"].GetInt64();
+        m_templateTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Available") && !value["Available"].IsNull())
@@ -455,6 +466,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_promoter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateType, allocator);
     }
 
     if (m_availableHasBeenSet)
@@ -722,6 +741,22 @@ void TemplateInfo::SetPromoter(const Recipient& _promoter)
 bool TemplateInfo::PromoterHasBeenSet() const
 {
     return m_promoterHasBeenSet;
+}
+
+int64_t TemplateInfo::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void TemplateInfo::SetTemplateType(const int64_t& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
 }
 
 int64_t TemplateInfo::GetAvailable() const

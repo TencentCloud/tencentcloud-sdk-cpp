@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ApproverTypeHasBeenSet() const;
 
                     /**
-                     * 获取本环节需要操作人的名字
-                     * @return ApproverName 本环节需要操作人的名字
+                     * 获取签署人的姓名
+                     * @return ApproverName 签署人的姓名
                      */
                     std::string GetApproverName() const;
 
                     /**
-                     * 设置本环节需要操作人的名字
-                     * @param ApproverName 本环节需要操作人的名字
+                     * 设置签署人的姓名
+                     * @param ApproverName 签署人的姓名
                      */
                     void SetApproverName(const std::string& _approverName);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取本环节需要操作人的手机号
-                     * @return ApproverMobile 本环节需要操作人的手机号
+                     * 获取签署人的手机号，11位数字
+                     * @return ApproverMobile 签署人的手机号，11位数字
                      */
                     std::string GetApproverMobile() const;
 
                     /**
-                     * 设置本环节需要操作人的手机号
-                     * @param ApproverMobile 本环节需要操作人的手机号
+                     * 设置签署人的手机号，11位数字
+                     * @param ApproverMobile 签署人的手机号，11位数字
                      */
                     void SetApproverMobile(const std::string& _approverMobile);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ApproverMobileHasBeenSet() const;
 
                     /**
-                     * 获取本环节操作人签署控件配置
-                     * @return SignComponents 本环节操作人签署控件配置
+                     * 获取签署人的签署控件列表
+                     * @return SignComponents 签署人的签署控件列表
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置本环节操作人签署控件配置
-                     * @param SignComponents 本环节操作人签署控件配置
+                     * 设置签署人的签署控件列表
+                     * @param SignComponents 签署人的签署控件列表
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取如果是企业,则为企业的名字
-                     * @return OrganizationName 如果是企业,则为企业的名字
+                     * 获取如果签署方是企业签署方，则为企业名
+                     * @return OrganizationName 如果签署方是企业签署方，则为企业名
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置如果是企业,则为企业的名字
-                     * @param OrganizationName 如果是企业,则为企业的名字
+                     * 设置如果签署方是企业签署方，则为企业名
+                     * @param OrganizationName 如果签署方是企业签署方，则为企业名
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取身份证号
-                     * @return ApproverIdCardNumber 身份证号
+                     * 获取签署人的身份证号
+                     * @return ApproverIdCardNumber 签署人的身份证号
                      */
                     std::string GetApproverIdCardNumber() const;
 
                     /**
-                     * 设置身份证号
-                     * @param ApproverIdCardNumber 身份证号
+                     * 设置签署人的身份证号
+                     * @param ApproverIdCardNumber 签署人的身份证号
                      */
                     void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
 
@@ -173,11 +173,11 @@ namespace TencentCloud
                     bool ApproverIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取证件类型 
+                     * 获取签署人的身份证件类型 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @return ApproverIdCardType 证件类型 
+                     * @return ApproverIdCardType 签署人的身份证件类型 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
@@ -185,11 +185,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     std::string GetApproverIdCardType() const;
 
                     /**
-                     * 设置证件类型 
+                     * 设置签署人的身份证件类型 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-                     * @param ApproverIdCardType 证件类型 
+                     * @param ApproverIdCardType 签署人的身份证件类型 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
@@ -203,14 +203,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool ApproverIdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取sms--短信，none--不通知
-                     * @return NotifyType sms--短信，none--不通知
+                     * 获取签署通知类型：sms--短信，none--不通知
+                     * @return NotifyType 签署通知类型：sms--短信，none--不通知
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置sms--短信，none--不通知
-                     * @param NotifyType sms--短信，none--不通知
+                     * 设置签署通知类型：sms--短信，none--不通知
+                     * @param NotifyType 签署通知类型：sms--短信，none--不通知
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
@@ -221,14 +221,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取1--收款人、2--开具人、3--见证人
-                     * @return ApproverRole 1--收款人、2--开具人、3--见证人
+                     * 获取签署人角色类型：1--收款人、2--开具人、3--见证人
+                     * @return ApproverRole 签署人角色类型：1--收款人、2--开具人、3--见证人
                      */
                     int64_t GetApproverRole() const;
 
                     /**
-                     * 设置1--收款人、2--开具人、3--见证人
-                     * @param ApproverRole 1--收款人、2--开具人、3--见证人
+                     * 设置签署人角色类型：1--收款人、2--开具人、3--见证人
+                     * @param ApproverRole 签署人角色类型：1--收款人、2--开具人、3--见证人
                      */
                     void SetApproverRole(const int64_t& _approverRole);
 
@@ -239,14 +239,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool ApproverRoleHasBeenSet() const;
 
                     /**
-                     * 获取签署意愿确认渠道,WEIXINAPP:人脸识别
-                     * @return VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 获取签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+                     * @return VerifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
                      */
                     std::vector<std::string> GetVerifyChannel() const;
 
                     /**
-                     * 设置签署意愿确认渠道,WEIXINAPP:人脸识别
-                     * @param VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 设置签署意愿确认渠道，默认为WEIXINAPP:人脸识别
+                     * @param VerifyChannel 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
                      */
                     void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
 
@@ -293,14 +293,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人用户来源,企微侧用户请传入：WEWORKAPP
-                     * @return ApproverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 获取签署人用户来源，企微侧用户请传入：WEWORKAPP
+                     * @return ApproverSource 签署人用户来源，企微侧用户请传入：WEWORKAPP
                      */
                     std::string GetApproverSource() const;
 
                     /**
-                     * 设置签署人用户来源,企微侧用户请传入：WEWORKAPP
-                     * @param ApproverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 设置签署人用户来源，企微侧用户请传入：WEWORKAPP
+                     * @param ApproverSource 签署人用户来源，企微侧用户请传入：WEWORKAPP
                      */
                     void SetApproverSource(const std::string& _approverSource);
 
@@ -411,37 +411,37 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverTypeHasBeenSet;
 
                     /**
-                     * 本环节需要操作人的名字
+                     * 签署人的姓名
                      */
                     std::string m_approverName;
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 本环节需要操作人的手机号
+                     * 签署人的手机号，11位数字
                      */
                     std::string m_approverMobile;
                     bool m_approverMobileHasBeenSet;
 
                     /**
-                     * 本环节操作人签署控件配置
+                     * 签署人的签署控件列表
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 如果是企业,则为企业的名字
+                     * 如果签署方是企业签署方，则为企业名
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 身份证号
+                     * 签署人的身份证号
                      */
                     std::string m_approverIdCardNumber;
                     bool m_approverIdCardNumberHasBeenSet;
 
                     /**
-                     * 证件类型 
+                     * 签署人的身份证件类型 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
@@ -450,19 +450,19 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverIdCardTypeHasBeenSet;
 
                     /**
-                     * sms--短信，none--不通知
+                     * 签署通知类型：sms--短信，none--不通知
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 1--收款人、2--开具人、3--见证人
+                     * 签署人角色类型：1--收款人、2--开具人、3--见证人
                      */
                     int64_t m_approverRole;
                     bool m_approverRoleHasBeenSet;
 
                     /**
-                     * 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 签署意愿确认渠道，默认为WEIXINAPP:人脸识别
                      */
                     std::vector<std::string> m_verifyChannel;
                     bool m_verifyChannelHasBeenSet;
@@ -480,7 +480,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * 签署人用户来源，企微侧用户请传入：WEWORKAPP
                      */
                     std::string m_approverSource;
                     bool m_approverSourceHasBeenSet;

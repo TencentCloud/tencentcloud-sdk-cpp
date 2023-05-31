@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席账号。
-                     * @return SeatUserId 坐席账号。
+                     * 获取座席账号。
+                     * @return SeatUserId 座席账号。
                      */
                     std::string GetSeatUserId() const;
 
                     /**
-                     * 设置坐席账号。
-                     * @param SeatUserId 坐席账号。
+                     * 设置座席账号。
+                     * @param SeatUserId 座席账号。
                      */
                     void SetSeatUserId(const std::string& _seatUserId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 坐席账号。
+                     * 座席账号。
                      */
                     std::string m_seatUserId;
                     bool m_seatUserIdHasBeenSet;

@@ -123,6 +123,36 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                     bool RunModeHasBeenSet() const;
 
                     /**
+                     * 获取应用启动参数。
+如果请求的是多应用共享项目，此参数生效；
+如果请求的是关闭预启动的单应用独享项目，此参数生效；
+如果请求的是开启预启动的单应用独享项目，此参数失效。
+                     * @return ApplicationParameters 应用启动参数。
+如果请求的是多应用共享项目，此参数生效；
+如果请求的是关闭预启动的单应用独享项目，此参数生效；
+如果请求的是开启预启动的单应用独享项目，此参数失效。
+                     */
+                    std::string GetApplicationParameters() const;
+
+                    /**
+                     * 设置应用启动参数。
+如果请求的是多应用共享项目，此参数生效；
+如果请求的是关闭预启动的单应用独享项目，此参数生效；
+如果请求的是开启预启动的单应用独享项目，此参数失效。
+                     * @param ApplicationParameters 应用启动参数。
+如果请求的是多应用共享项目，此参数生效；
+如果请求的是关闭预启动的单应用独享项目，此参数生效；
+如果请求的是开启预启动的单应用独享项目，此参数失效。
+                     */
+                    void SetApplicationParameters(const std::string& _applicationParameters);
+
+                    /**
+                     * 判断参数 ApplicationParameters 是否已赋值
+                     * @return ApplicationParameters 是否已赋值
+                     */
+                    bool ApplicationParametersHasBeenSet() const;
+
+                    /**
                      * 获取【多人互动】房主用户ID，在多人互动模式下为必填字段。
 如果该用户是房主，HostUserId需要和UserId保持一致；
 如果该用户非房主，HostUserId需要填写房主的HostUserId。
@@ -201,6 +231,15 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
+
+                    /**
+                     * 应用启动参数。
+如果请求的是多应用共享项目，此参数生效；
+如果请求的是关闭预启动的单应用独享项目，此参数生效；
+如果请求的是开启预启动的单应用独享项目，此参数失效。
+                     */
+                    std::string m_applicationParameters;
+                    bool m_applicationParametersHasBeenSet;
 
                     /**
                      * 【多人互动】房主用户ID，在多人互动模式下为必填字段。

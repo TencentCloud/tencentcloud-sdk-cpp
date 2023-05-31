@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool PolicyVersionHasBeenSet() const;
 
+                    /**
+                     * 获取网段或IP(互斥)
+                     * @return CidrBlock 网段或IP(互斥)
+                     */
+                    std::string GetCidrBlock() const;
+
+                    /**
+                     * 设置网段或IP(互斥)
+                     * @param CidrBlock 网段或IP(互斥)
+                     */
+                    void SetCidrBlock(const std::string& _cidrBlock);
+
+                    /**
+                     * 判断参数 CidrBlock 是否已赋值
+                     * @return CidrBlock 是否已赋值
+                     */
+                    bool CidrBlockHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_policyVersion;
                     bool m_policyVersionHasBeenSet;
+
+                    /**
+                     * 网段或IP(互斥)
+                     */
+                    std::string m_cidrBlock;
+                    bool m_cidrBlockHasBeenSet;
 
                 };
             }

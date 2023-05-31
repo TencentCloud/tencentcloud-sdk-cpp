@@ -26,7 +26,8 @@ PublicMaterialInfos::PublicMaterialInfos() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_materialFaceListHasBeenSet(false),
-    m_materialNameHasBeenSet(false)
+    m_materialNameHasBeenSet(false),
+    m_auditResultHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &val
         m_materialNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AuditResult") && !value["AuditResult"].IsNull())
+    {
+        if (!value["AuditResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PublicMaterialInfos.AuditResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditResult = string(value["AuditResult"].GetString());
+        m_auditResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void PublicMaterialInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MaterialName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_materialName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_auditResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auditResult.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void PublicMaterialInfos::SetMaterialName(const string& _materialName)
 bool PublicMaterialInfos::MaterialNameHasBeenSet() const
 {
     return m_materialNameHasBeenSet;
+}
+
+string PublicMaterialInfos::GetAuditResult() const
+{
+    return m_auditResult;
+}
+
+void PublicMaterialInfos::SetAuditResult(const string& _auditResult)
+{
+    m_auditResult = _auditResult;
+    m_auditResultHasBeenSet = true;
+}
+
+bool PublicMaterialInfos::AuditResultHasBeenSet() const
+{
+    return m_auditResultHasBeenSet;
 }
 

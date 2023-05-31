@@ -37,7 +37,12 @@ DescribeOperateTasksRequest::DescribeOperateTasksRequest() :
     m_taskTypeIdListHasBeenSet(false),
     m_statusListHasBeenSet(false),
     m_taskCycleUnitListHasBeenSet(false),
-    m_productNameListHasBeenSet(false)
+    m_productNameListHasBeenSet(false),
+    m_sourceServiceIdHasBeenSet(false),
+    m_sourceServiceTypeHasBeenSet(false),
+    m_targetServiceIdHasBeenSet(false),
+    m_targetServiceTypeHasBeenSet(false),
+    m_alarmTypeHasBeenSet(false)
 {
 }
 
@@ -166,6 +171,46 @@ string DescribeOperateTasksRequest::ToJsonString() const
         string key = "ProductNameList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_productNameList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_alarmType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -414,6 +459,86 @@ void DescribeOperateTasksRequest::SetProductNameList(const string& _productNameL
 bool DescribeOperateTasksRequest::ProductNameListHasBeenSet() const
 {
     return m_productNameListHasBeenSet;
+}
+
+string DescribeOperateTasksRequest::GetSourceServiceId() const
+{
+    return m_sourceServiceId;
+}
+
+void DescribeOperateTasksRequest::SetSourceServiceId(const string& _sourceServiceId)
+{
+    m_sourceServiceId = _sourceServiceId;
+    m_sourceServiceIdHasBeenSet = true;
+}
+
+bool DescribeOperateTasksRequest::SourceServiceIdHasBeenSet() const
+{
+    return m_sourceServiceIdHasBeenSet;
+}
+
+string DescribeOperateTasksRequest::GetSourceServiceType() const
+{
+    return m_sourceServiceType;
+}
+
+void DescribeOperateTasksRequest::SetSourceServiceType(const string& _sourceServiceType)
+{
+    m_sourceServiceType = _sourceServiceType;
+    m_sourceServiceTypeHasBeenSet = true;
+}
+
+bool DescribeOperateTasksRequest::SourceServiceTypeHasBeenSet() const
+{
+    return m_sourceServiceTypeHasBeenSet;
+}
+
+string DescribeOperateTasksRequest::GetTargetServiceId() const
+{
+    return m_targetServiceId;
+}
+
+void DescribeOperateTasksRequest::SetTargetServiceId(const string& _targetServiceId)
+{
+    m_targetServiceId = _targetServiceId;
+    m_targetServiceIdHasBeenSet = true;
+}
+
+bool DescribeOperateTasksRequest::TargetServiceIdHasBeenSet() const
+{
+    return m_targetServiceIdHasBeenSet;
+}
+
+string DescribeOperateTasksRequest::GetTargetServiceType() const
+{
+    return m_targetServiceType;
+}
+
+void DescribeOperateTasksRequest::SetTargetServiceType(const string& _targetServiceType)
+{
+    m_targetServiceType = _targetServiceType;
+    m_targetServiceTypeHasBeenSet = true;
+}
+
+bool DescribeOperateTasksRequest::TargetServiceTypeHasBeenSet() const
+{
+    return m_targetServiceTypeHasBeenSet;
+}
+
+string DescribeOperateTasksRequest::GetAlarmType() const
+{
+    return m_alarmType;
+}
+
+void DescribeOperateTasksRequest::SetAlarmType(const string& _alarmType)
+{
+    m_alarmType = _alarmType;
+    m_alarmTypeHasBeenSet = true;
+}
+
+bool DescribeOperateTasksRequest::AlarmTypeHasBeenSet() const
+{
+    return m_alarmTypeHasBeenSet;
 }
 
 

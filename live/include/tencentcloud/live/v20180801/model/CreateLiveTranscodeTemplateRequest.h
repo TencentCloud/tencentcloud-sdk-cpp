@@ -516,17 +516,17 @@ baseline/main/high。默认baseline
 
                     /**
                      * 获取DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      * @return DRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     std::string GetDRMType() const;
 
                     /**
                      * 设置DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      * @param DRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     void SetDRMType(const std::string& _dRMType);
 
@@ -538,17 +538,17 @@ baseline/main/high。默认baseline
 
                     /**
                      * 获取DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      * @return DRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     std::string GetDRMTracks() const;
 
                     /**
                      * 设置DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      * @param DRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     void SetDRMTracks(const std::string& _dRMTracks);
 
@@ -710,14 +710,14 @@ baseline/main/high。默认baseline
 
                     /**
                      * DRM 加密类型，可选值：fairplay、normalaes、widevine。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     std::string m_dRMType;
                     bool m_dRMTypeHasBeenSet;
 
                     /**
                      * DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
-不传递或着为空字符串，清空之前的DRM配置。
+不传递或者为空字符串，清空之前的DRM配置。
                      */
                     std::string m_dRMTracks;
                     bool m_dRMTracksHasBeenSet;

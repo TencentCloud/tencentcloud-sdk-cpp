@@ -31,7 +31,10 @@ AssetSystemPackageInfo::AssetSystemPackageInfo() :
     m_osInfoHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
-    m_isNewHasBeenSet(false)
+    m_isNewHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false),
+    m_quuidHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,43 @@ CoreInternalOutcome AssetSystemPackageInfo::Deserialize(const rapidjson::Value &
         m_isNewHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quuid") && !value["Quuid"].IsNull())
+    {
+        if (!value["Quuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quuid = string(value["Quuid"].GetString());
+        m_quuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetSystemPackageInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +283,31 @@ void AssetSystemPackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IsNew";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNew, allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +487,53 @@ void AssetSystemPackageInfo::SetIsNew(const int64_t& _isNew)
 bool AssetSystemPackageInfo::IsNewHasBeenSet() const
 {
     return m_isNewHasBeenSet;
+}
+
+MachineExtraInfo AssetSystemPackageInfo::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void AssetSystemPackageInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void AssetSystemPackageInfo::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
+}
+
+string AssetSystemPackageInfo::GetUuid() const
+{
+    return m_uuid;
+}
+
+void AssetSystemPackageInfo::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool AssetSystemPackageInfo::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 

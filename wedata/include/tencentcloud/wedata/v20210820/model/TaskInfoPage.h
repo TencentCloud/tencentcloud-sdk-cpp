@@ -119,6 +119,42 @@ namespace TencentCloud
                      */
                     bool TotalPageHasBeenSet() const;
 
+                    /**
+                     * 获取页数
+                     * @return PageCount 页数
+                     */
+                    uint64_t GetPageCount() const;
+
+                    /**
+                     * 设置页数
+                     * @param PageCount 页数
+                     */
+                    void SetPageCount(const uint64_t& _pageCount);
+
+                    /**
+                     * 判断参数 PageCount 是否已赋值
+                     * @return PageCount 是否已赋值
+                     */
+                    bool PageCountHasBeenSet() const;
+
+                    /**
+                     * 获取总条数
+                     * @return TotalCount 总条数
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 设置总条数
+                     * @param TotalCount 总条数
+                     */
+                    void SetTotalCount(const uint64_t& _totalCount);
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +180,18 @@ namespace TencentCloud
                      */
                     uint64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
+
+                    /**
+                     * 页数
+                     */
+                    uint64_t m_pageCount;
+                    bool m_pageCountHasBeenSet;
+
+                    /**
+                     * 总条数
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

@@ -155,6 +155,28 @@ namespace TencentCloud
                      */
                     bool MaterialNameHasBeenSet() const;
 
+                    /**
+                     * 获取审核原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuditResult 审核原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAuditResult() const;
+
+                    /**
+                     * 设置审核原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AuditResult 审核原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAuditResult(const std::string& _auditResult);
+
+                    /**
+                     * 判断参数 AuditResult 是否已赋值
+                     * @return AuditResult 是否已赋值
+                     */
+                    bool AuditResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_materialName;
                     bool m_materialNameHasBeenSet;
+
+                    /**
+                     * 审核原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_auditResult;
+                    bool m_auditResultHasBeenSet;
 
                 };
             }

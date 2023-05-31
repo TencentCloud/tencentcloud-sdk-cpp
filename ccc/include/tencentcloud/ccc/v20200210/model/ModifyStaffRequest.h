@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席账户
-                     * @return Email 坐席账户
+                     * 获取座席账户
+                     * @return Email 座席账户
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置坐席账户
-                     * @param Email 坐席账户
+                     * 设置座席账户
+                     * @param Email 座席账户
                      */
                     void SetEmail(const std::string& _email);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取坐席名称
-                     * @return Name 坐席名称
+                     * 获取座席名称
+                     * @return Name 座席名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置坐席名称
-                     * @param Name 坐席名称
+                     * 设置座席名称
+                     * @param Name 座席名称
                      */
                     void SetName(const std::string& _name);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取坐席手机号（带0086前缀,示例：008618011111111）
-                     * @return Phone 坐席手机号（带0086前缀,示例：008618011111111）
+                     * 获取座席手机号（带0086前缀,示例：008618011111111）
+                     * @return Phone 座席手机号（带0086前缀,示例：008618011111111）
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置坐席手机号（带0086前缀,示例：008618011111111）
-                     * @param Phone 坐席手机号（带0086前缀,示例：008618011111111）
+                     * 设置座席手机号（带0086前缀,示例：008618011111111）
+                     * @param Phone 座席手机号（带0086前缀,示例：008618011111111）
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取坐席昵称
-                     * @return Nick 坐席昵称
+                     * 获取座席昵称
+                     * @return Nick 座席昵称
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置坐席昵称
-                     * @param Nick 坐席昵称
+                     * 设置座席昵称
+                     * @param Nick 座席昵称
                      */
                     void SetNick(const std::string& _nick);
 
@@ -195,25 +195,25 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 坐席账户
+                     * 座席账户
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 坐席名称
+                     * 座席名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 坐席手机号（带0086前缀,示例：008618011111111）
+                     * 座席手机号（带0086前缀,示例：008618011111111）
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 坐席昵称
+                     * 座席昵称
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;

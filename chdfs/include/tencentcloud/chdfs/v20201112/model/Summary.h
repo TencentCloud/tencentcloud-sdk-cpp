@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总存储量（单位byte）
+                     * 获取已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CapacityUsed 总存储量（单位byte）
+                     * @return CapacityUsed 已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCapacityUsed() const;
 
                     /**
-                     * 设置总存储量（单位byte）
+                     * 设置已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CapacityUsed 总存储量（单位byte）
+                     * @param CapacityUsed 已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCapacityUsed(const uint64_t& _capacityUsed);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool CapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取标准存储量（单位byte）
+                     * 获取已使用COS标准存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StandardCapacityUsed 标准存储量（单位byte）
+                     * @return StandardCapacityUsed 已使用COS标准存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetStandardCapacityUsed() const;
 
                     /**
-                     * 设置标准存储量（单位byte）
+                     * 设置已使用COS标准存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StandardCapacityUsed 标准存储量（单位byte）
+                     * @param StandardCapacityUsed 已使用COS标准存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStandardCapacityUsed(const uint64_t& _standardCapacityUsed);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool StandardCapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取低频存储量（单位byte）
+                     * 获取已使用COS低频存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DegradeCapacityUsed 低频存储量（单位byte）
+                     * @return DegradeCapacityUsed 已使用COS低频存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDegradeCapacityUsed() const;
 
                     /**
-                     * 设置低频存储量（单位byte）
+                     * 设置已使用COS低频存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DegradeCapacityUsed 低频存储量（单位byte）
+                     * @param DegradeCapacityUsed 已使用COS低频存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDegradeCapacityUsed(const uint64_t& _degradeCapacityUsed);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool DegradeCapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取归档存储量（单位byte）
+                     * 获取已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ArchiveCapacityUsed 归档存储量（单位byte）
+                     * @return ArchiveCapacityUsed 已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetArchiveCapacityUsed() const;
 
                     /**
-                     * 设置归档存储量（单位byte）
+                     * 设置已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ArchiveCapacityUsed 归档存储量（单位byte）
+                     * @param ArchiveCapacityUsed 已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetArchiveCapacityUsed(const uint64_t& _archiveCapacityUsed);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool ArchiveCapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取深度归档存储量（单位byte）
+                     * 获取已使用COS深度归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeepArchiveCapacityUsed 深度归档存储量（单位byte）
+                     * @return DeepArchiveCapacityUsed 已使用COS深度归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDeepArchiveCapacityUsed() const;
 
                     /**
-                     * 设置深度归档存储量（单位byte）
+                     * 设置已使用COS深度归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeepArchiveCapacityUsed 深度归档存储量（单位byte）
+                     * @param DeepArchiveCapacityUsed 已使用COS深度归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeepArchiveCapacityUsed(const uint64_t& _deepArchiveCapacityUsed);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool DeepArchiveCapacityUsedHasBeenSet() const;
 
                     /**
-                     * 获取智能分层存储量（单位byte）
+                     * 获取已使用COS智能分层存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntelligentCapacityUsed 智能分层存储量（单位byte）
+                     * @return IntelligentCapacityUsed 已使用COS智能分层存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetIntelligentCapacityUsed() const;
 
                     /**
-                     * 设置智能分层存储量（单位byte）
+                     * 设置已使用COS智能分层存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntelligentCapacityUsed 智能分层存储量（单位byte）
+                     * @param IntelligentCapacityUsed 已使用COS智能分层存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIntelligentCapacityUsed(const uint64_t& _intelligentCapacityUsed);
@@ -181,42 +181,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总存储量（单位byte）
+                     * 已使用容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacityUsed;
                     bool m_capacityUsedHasBeenSet;
 
                     /**
-                     * 标准存储量（单位byte）
+                     * 已使用COS标准存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_standardCapacityUsed;
                     bool m_standardCapacityUsedHasBeenSet;
 
                     /**
-                     * 低频存储量（单位byte）
+                     * 已使用COS低频存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_degradeCapacityUsed;
                     bool m_degradeCapacityUsedHasBeenSet;
 
                     /**
-                     * 归档存储量（单位byte）
+                     * 已使用COS归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_archiveCapacityUsed;
                     bool m_archiveCapacityUsedHasBeenSet;
 
                     /**
-                     * 深度归档存储量（单位byte）
+                     * 已使用COS深度归档存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deepArchiveCapacityUsed;
                     bool m_deepArchiveCapacityUsedHasBeenSet;
 
                     /**
-                     * 智能分层存储量（单位byte）
+                     * 已使用COS智能分层存储容量（byte）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_intelligentCapacityUsed;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 批量添加客服时，返回出错客服的像个信息
+                * 批量添加客服时，返回出错客服的信息
                 */
                 class ErrStaffItem : public AbstractModel
                 {

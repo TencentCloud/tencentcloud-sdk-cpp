@@ -28,6 +28,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/NetAddr.h>
 #include <tencentcloud/cynosdb/v20190107/model/Ability.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
 
 
 namespace TencentCloud
@@ -986,6 +987,28 @@ pause
                      */
                     bool AbilityHasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePackages 实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> GetResourcePackages() const;
+
+                    /**
+                     * 设置实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourcePackages 实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourcePackages(const std::vector<ResourcePackage>& _resourcePackages);
+
+                    /**
+                     * 判断参数 ResourcePackages 是否已赋值
+                     * @return ResourcePackages 是否已赋值
+                     */
+                    bool ResourcePackagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1284,6 +1307,13 @@ pause
                      */
                     Ability m_ability;
                     bool m_abilityHasBeenSet;
+
+                    /**
+                     * 实例绑定资源包信息（此处只返回存储资源包，即packageType=DISK）	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> m_resourcePackages;
+                    bool m_resourcePackagesHasBeenSet;
 
                 };
             }

@@ -32,6 +32,7 @@ CynosdbInstance::CynosdbInstance() :
     m_zoneHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
+    m_dbModeHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_dbVersionHasBeenSet(false),
     m_cpuHasBeenSet(false),
@@ -70,7 +71,8 @@ CynosdbInstance::CynosdbInstance() :
     m_resourceTagsHasBeenSet(false),
     m_masterZoneHasBeenSet(false),
     m_slaveZonesHasBeenSet(false),
-    m_instanceNetInfoHasBeenSet(false)
+    m_instanceNetInfoHasBeenSet(false),
+    m_resourcePackagesHasBeenSet(false)
 {
 }
 
@@ -187,6 +189,16 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
     }
 
     if (value.HasMember("DbType") && !value["DbType"].IsNull())
@@ -612,6 +624,26 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_instanceNetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourcePackages") && !value["ResourcePackages"].IsNull())
+    {
+        if (!value["ResourcePackages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.ResourcePackages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourcePackages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourcePackage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourcePackages.push_back(item);
+        }
+        m_resourcePackagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -705,6 +737,14 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dbTypeHasBeenSet)
@@ -1045,6 +1085,21 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         }
     }
 
+    if (m_resourcePackagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourcePackages.begin(); itr != m_resourcePackages.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -1222,6 +1277,22 @@ void CynosdbInstance::SetStatusDesc(const string& _statusDesc)
 bool CynosdbInstance::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string CynosdbInstance::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void CynosdbInstance::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool CynosdbInstance::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
 }
 
 string CynosdbInstance::GetDbType() const
@@ -1846,5 +1917,21 @@ void CynosdbInstance::SetInstanceNetInfo(const vector<InstanceNetInfo>& _instanc
 bool CynosdbInstance::InstanceNetInfoHasBeenSet() const
 {
     return m_instanceNetInfoHasBeenSet;
+}
+
+vector<ResourcePackage> CynosdbInstance::GetResourcePackages() const
+{
+    return m_resourcePackages;
+}
+
+void CynosdbInstance::SetResourcePackages(const vector<ResourcePackage>& _resourcePackages)
+{
+    m_resourcePackages = _resourcePackages;
+    m_resourcePackagesHasBeenSet = true;
+}
+
+bool CynosdbInstance::ResourcePackagesHasBeenSet() const
+{
+    return m_resourcePackagesHasBeenSet;
 }
 

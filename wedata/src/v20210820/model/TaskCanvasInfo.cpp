@@ -42,7 +42,16 @@ TaskCanvasInfo::TaskCanvasInfo() :
     m_topCoordinateHasBeenSet(false),
     m_virtualFlagHasBeenSet(false),
     m_taskActionHasBeenSet(false),
-    m_delayTimeHasBeenSet(false)
+    m_delayTimeHasBeenSet(false),
+    m_executionStartTimeHasBeenSet(false),
+    m_executionEndTimeHasBeenSet(false),
+    m_layerHasBeenSet(false),
+    m_sourceServiceIdHasBeenSet(false),
+    m_sourceServiceTypeHasBeenSet(false),
+    m_targetServiceIdHasBeenSet(false),
+    m_targetServiceTypeHasBeenSet(false),
+    m_alarmTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -271,6 +280,96 @@ CoreInternalOutcome TaskCanvasInfo::Deserialize(const rapidjson::Value &value)
         m_delayTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutionStartTime") && !value["ExecutionStartTime"].IsNull())
+    {
+        if (!value["ExecutionStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.ExecutionStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionStartTime = string(value["ExecutionStartTime"].GetString());
+        m_executionStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionEndTime") && !value["ExecutionEndTime"].IsNull())
+    {
+        if (!value["ExecutionEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.ExecutionEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionEndTime = string(value["ExecutionEndTime"].GetString());
+        m_executionEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Layer") && !value["Layer"].IsNull())
+    {
+        if (!value["Layer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.Layer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_layer = string(value["Layer"].GetString());
+        m_layerHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceServiceId") && !value["SourceServiceId"].IsNull())
+    {
+        if (!value["SourceServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.SourceServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceServiceId = string(value["SourceServiceId"].GetString());
+        m_sourceServiceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceServiceType") && !value["SourceServiceType"].IsNull())
+    {
+        if (!value["SourceServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.SourceServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceServiceType = string(value["SourceServiceType"].GetString());
+        m_sourceServiceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetServiceId") && !value["TargetServiceId"].IsNull())
+    {
+        if (!value["TargetServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.TargetServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetServiceId = string(value["TargetServiceId"].GetString());
+        m_targetServiceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetServiceType") && !value["TargetServiceType"].IsNull())
+    {
+        if (!value["TargetServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.TargetServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetServiceType = string(value["TargetServiceType"].GetString());
+        m_targetServiceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmType") && !value["AlarmType"].IsNull())
+    {
+        if (!value["AlarmType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.AlarmType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmType = string(value["AlarmType"].GetString());
+        m_alarmTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +551,78 @@ void TaskCanvasInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DelayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayTime, allocator);
+    }
+
+    if (m_executionStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_layerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Layer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_layer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetServiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetServiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetServiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +978,149 @@ void TaskCanvasInfo::SetDelayTime(const uint64_t& _delayTime)
 bool TaskCanvasInfo::DelayTimeHasBeenSet() const
 {
     return m_delayTimeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetExecutionStartTime() const
+{
+    return m_executionStartTime;
+}
+
+void TaskCanvasInfo::SetExecutionStartTime(const string& _executionStartTime)
+{
+    m_executionStartTime = _executionStartTime;
+    m_executionStartTimeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::ExecutionStartTimeHasBeenSet() const
+{
+    return m_executionStartTimeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetExecutionEndTime() const
+{
+    return m_executionEndTime;
+}
+
+void TaskCanvasInfo::SetExecutionEndTime(const string& _executionEndTime)
+{
+    m_executionEndTime = _executionEndTime;
+    m_executionEndTimeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::ExecutionEndTimeHasBeenSet() const
+{
+    return m_executionEndTimeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetLayer() const
+{
+    return m_layer;
+}
+
+void TaskCanvasInfo::SetLayer(const string& _layer)
+{
+    m_layer = _layer;
+    m_layerHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::LayerHasBeenSet() const
+{
+    return m_layerHasBeenSet;
+}
+
+string TaskCanvasInfo::GetSourceServiceId() const
+{
+    return m_sourceServiceId;
+}
+
+void TaskCanvasInfo::SetSourceServiceId(const string& _sourceServiceId)
+{
+    m_sourceServiceId = _sourceServiceId;
+    m_sourceServiceIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::SourceServiceIdHasBeenSet() const
+{
+    return m_sourceServiceIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetSourceServiceType() const
+{
+    return m_sourceServiceType;
+}
+
+void TaskCanvasInfo::SetSourceServiceType(const string& _sourceServiceType)
+{
+    m_sourceServiceType = _sourceServiceType;
+    m_sourceServiceTypeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::SourceServiceTypeHasBeenSet() const
+{
+    return m_sourceServiceTypeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetTargetServiceId() const
+{
+    return m_targetServiceId;
+}
+
+void TaskCanvasInfo::SetTargetServiceId(const string& _targetServiceId)
+{
+    m_targetServiceId = _targetServiceId;
+    m_targetServiceIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::TargetServiceIdHasBeenSet() const
+{
+    return m_targetServiceIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetTargetServiceType() const
+{
+    return m_targetServiceType;
+}
+
+void TaskCanvasInfo::SetTargetServiceType(const string& _targetServiceType)
+{
+    m_targetServiceType = _targetServiceType;
+    m_targetServiceTypeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::TargetServiceTypeHasBeenSet() const
+{
+    return m_targetServiceTypeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetAlarmType() const
+{
+    return m_alarmType;
+}
+
+void TaskCanvasInfo::SetAlarmType(const string& _alarmType)
+{
+    m_alarmType = _alarmType;
+    m_alarmTypeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::AlarmTypeHasBeenSet() const
+{
+    return m_alarmTypeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void TaskCanvasInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

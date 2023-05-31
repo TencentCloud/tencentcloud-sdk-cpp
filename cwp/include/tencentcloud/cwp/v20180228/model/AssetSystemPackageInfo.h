@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,60 @@ namespace TencentCloud
                      */
                     bool IsNewHasBeenSet() const;
 
+                    /**
+                     * 获取附加信息
+                     * @return MachineExtraInfo 附加信息
+                     */
+                    MachineExtraInfo GetMachineExtraInfo() const;
+
+                    /**
+                     * 设置附加信息
+                     * @param MachineExtraInfo 附加信息
+                     */
+                    void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
+
+                    /**
+                     * 判断参数 MachineExtraInfo 是否已赋值
+                     * @return MachineExtraInfo 是否已赋值
+                     */
+                    bool MachineExtraInfoHasBeenSet() const;
+
+                    /**
+                     * 获取主机Id
+                     * @return Quuid 主机Id
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置主机Id
+                     * @param Quuid 主机Id
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
+                    /**
+                     * 获取Agent Id
+                     * @return Uuid Agent Id
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置Agent Id
+                     * @param Uuid Agent Id
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +371,24 @@ namespace TencentCloud
                      */
                     int64_t m_isNew;
                     bool m_isNewHasBeenSet;
+
+                    /**
+                     * 附加信息
+                     */
+                    MachineExtraInfo m_machineExtraInfo;
+                    bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 主机Id
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
+
+                    /**
+                     * Agent Id
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }

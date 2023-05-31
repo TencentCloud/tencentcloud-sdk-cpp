@@ -27,6 +27,7 @@ CreateSessionRequest::CreateSessionRequest() :
     m_userIpHasBeenSet(false),
     m_clientSessionHasBeenSet(false),
     m_runModeHasBeenSet(false),
+    m_applicationParametersHasBeenSet(false),
     m_hostUserIdHasBeenSet(false),
     m_roleHasBeenSet(false)
 {
@@ -69,6 +70,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "RunMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_runMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationParameters.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostUserIdHasBeenSet)
@@ -157,6 +166,22 @@ void CreateSessionRequest::SetRunMode(const string& _runMode)
 bool CreateSessionRequest::RunModeHasBeenSet() const
 {
     return m_runModeHasBeenSet;
+}
+
+string CreateSessionRequest::GetApplicationParameters() const
+{
+    return m_applicationParameters;
+}
+
+void CreateSessionRequest::SetApplicationParameters(const string& _applicationParameters)
+{
+    m_applicationParameters = _applicationParameters;
+    m_applicationParametersHasBeenSet = true;
+}
+
+bool CreateSessionRequest::ApplicationParametersHasBeenSet() const
+{
+    return m_applicationParametersHasBeenSet;
 }
 
 string CreateSessionRequest::GetHostUserId() const

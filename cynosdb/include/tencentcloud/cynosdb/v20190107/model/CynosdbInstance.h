@@ -27,6 +27,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,24 @@ namespace TencentCloud
                      * @return StatusDesc 是否已赋值
                      */
                     bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取实例形态，是否为serverless实例
+                     * @return DbMode 实例形态，是否为serverless实例
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置实例形态，是否为serverless实例
+                     * @param DbMode 实例形态，是否为serverless实例
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
 
                     /**
                      * 获取数据库类型
@@ -989,6 +1008,28 @@ pause
                      */
                     bool InstanceNetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePackages 实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> GetResourcePackages() const;
+
+                    /**
+                     * 设置实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourcePackages 实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourcePackages(const std::vector<ResourcePackage>& _resourcePackages);
+
+                    /**
+                     * 判断参数 ResourcePackages 是否已赋值
+                     * @return ResourcePackages 是否已赋值
+                     */
+                    bool ResourcePackagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1056,6 +1097,12 @@ pause
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 实例形态，是否为serverless实例
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
 
                     /**
                      * 数据库类型
@@ -1300,6 +1347,13 @@ pause
                      */
                     std::vector<InstanceNetInfo> m_instanceNetInfo;
                     bool m_instanceNetInfoHasBeenSet;
+
+                    /**
+                     * 实例绑定资源包信息（此处只返回计算资源包，即packageType=CCU）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> m_resourcePackages;
+                    bool m_resourcePackagesHasBeenSet;
 
                 };
             }

@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户OpenId
-                     * @return OpenId 用户OpenId
+                     * 获取员工在第三方平台的openId
+                     * @return OpenId 员工在第三方平台的openId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户OpenId
-                     * @param OpenId 用户OpenId
+                     * 设置员工在第三方平台的openId
+                     * @param OpenId 员工在第三方平台的openId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户OpenId
+                     * 员工在第三方平台的openId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

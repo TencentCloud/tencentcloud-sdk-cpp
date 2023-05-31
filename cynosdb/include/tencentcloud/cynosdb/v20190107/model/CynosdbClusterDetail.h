@@ -25,10 +25,11 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/Addr.h>
-#include <tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h>
-#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/Ability.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+#include <tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h>
+#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,46 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
+                     * 获取可用区
+                     * @return Zone 可用区
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区
+                     * @param Zone 可用区
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhysicalZone() const;
+
+                    /**
+                     * 设置物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhysicalZone(const std::string& _physicalZone);
+
+                    /**
+                     * 判断参数 PhysicalZone 是否已赋值
+                     * @return PhysicalZone 是否已赋值
+                     */
+                    bool PhysicalZoneHasBeenSet() const;
+
+                    /**
                      * 获取状态
                      * @return Status 状态
                      */
@@ -140,6 +181,150 @@ namespace TencentCloud
                      * @return StatusDesc 是否已赋值
                      */
                     bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     * @param ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
+                    /**
+                     * 获取存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageId 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStorageId() const;
+
+                    /**
+                     * 设置存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageId 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageId(const std::string& _storageId);
+
+                    /**
+                     * 判断参数 StorageId 是否已赋值
+                     * @return StorageId 是否已赋值
+                     */
+                    bool StorageIdHasBeenSet() const;
+
+                    /**
+                     * 获取存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Storage 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStorage() const;
+
+                    /**
+                     * 设置存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Storage 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorage(const int64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
+                    /**
+                     * 获取最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxStorageSize 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxStorageSize() const;
+
+                    /**
+                     * 设置最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxStorageSize 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxStorageSize(const int64_t& _maxStorageSize);
+
+                    /**
+                     * 判断参数 MaxStorageSize 是否已赋值
+                     * @return MaxStorageSize 是否已赋值
+                     */
+                    bool MaxStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinStorageSize 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMinStorageSize() const;
+
+                    /**
+                     * 设置最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MinStorageSize 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMinStorageSize(const int64_t& _minStorageSize);
+
+                    /**
+                     * 判断参数 MinStorageSize 是否已赋值
+                     * @return MinStorageSize 是否已赋值
+                     */
+                    bool MinStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StoragePayMode 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStoragePayMode() const;
+
+                    /**
+                     * 设置存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StoragePayMode 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStoragePayMode(const int64_t& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
 
                     /**
                      * 获取VPC名称
@@ -268,6 +453,28 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
+                     * 获取数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbMode 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbMode 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
+
+                    /**
                      * 获取数据库版本
                      * @return DbVersion 数据库版本
                      */
@@ -286,6 +493,28 @@ namespace TencentCloud
                     bool DbVersionHasBeenSet() const;
 
                     /**
+                     * 获取存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageLimit 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStorageLimit() const;
+
+                    /**
+                     * 设置存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageLimit 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageLimit(const int64_t& _storageLimit);
+
+                    /**
+                     * 判断参数 StorageLimit 是否已赋值
+                     * @return StorageLimit 是否已赋值
+                     */
+                    bool StorageLimitHasBeenSet() const;
+
+                    /**
                      * 获取使用容量
                      * @return UsedStorage 使用容量
                      */
@@ -302,78 +531,6 @@ namespace TencentCloud
                      * @return UsedStorage 是否已赋值
                      */
                     bool UsedStorageHasBeenSet() const;
-
-                    /**
-                     * 获取读写分离Vport
-                     * @return RoAddr 读写分离Vport
-                     */
-                    std::vector<Addr> GetRoAddr() const;
-
-                    /**
-                     * 设置读写分离Vport
-                     * @param RoAddr 读写分离Vport
-                     */
-                    void SetRoAddr(const std::vector<Addr>& _roAddr);
-
-                    /**
-                     * 判断参数 RoAddr 是否已赋值
-                     * @return RoAddr 是否已赋值
-                     */
-                    bool RoAddrHasBeenSet() const;
-
-                    /**
-                     * 获取实例信息
-                     * @return InstanceSet 实例信息
-                     */
-                    std::vector<ClusterInstanceDetail> GetInstanceSet() const;
-
-                    /**
-                     * 设置实例信息
-                     * @param InstanceSet 实例信息
-                     */
-                    void SetInstanceSet(const std::vector<ClusterInstanceDetail>& _instanceSet);
-
-                    /**
-                     * 判断参数 InstanceSet 是否已赋值
-                     * @return InstanceSet 是否已赋值
-                     */
-                    bool InstanceSetHasBeenSet() const;
-
-                    /**
-                     * 获取付费模式
-                     * @return PayMode 付费模式
-                     */
-                    int64_t GetPayMode() const;
-
-                    /**
-                     * 设置付费模式
-                     * @param PayMode 付费模式
-                     */
-                    void SetPayMode(const int64_t& _payMode);
-
-                    /**
-                     * 判断参数 PayMode 是否已赋值
-                     * @return PayMode 是否已赋值
-                     */
-                    bool PayModeHasBeenSet() const;
-
-                    /**
-                     * 获取到期时间
-                     * @return PeriodEndTime 到期时间
-                     */
-                    std::string GetPeriodEndTime() const;
-
-                    /**
-                     * 设置到期时间
-                     * @param PeriodEndTime 到期时间
-                     */
-                    void SetPeriodEndTime(const std::string& _periodEndTime);
-
-                    /**
-                     * 判断参数 PeriodEndTime 是否已赋值
-                     * @return PeriodEndTime 是否已赋值
-                     */
-                    bool PeriodEndTimeHasBeenSet() const;
 
                     /**
                      * 获取vip地址
@@ -412,312 +569,22 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectID 项目id
+                     * 获取读写分离Vport
+                     * @return RoAddr 读写分离Vport
                      */
-                    int64_t GetProjectID() const;
+                    std::vector<Addr> GetRoAddr() const;
 
                     /**
-                     * 设置项目id
-                     * @param ProjectID 项目id
+                     * 设置读写分离Vport
+                     * @param RoAddr 读写分离Vport
                      */
-                    void SetProjectID(const int64_t& _projectID);
+                    void SetRoAddr(const std::vector<Addr>& _roAddr);
 
                     /**
-                     * 判断参数 ProjectID 是否已赋值
-                     * @return ProjectID 是否已赋值
+                     * 判断参数 RoAddr 是否已赋值
+                     * @return RoAddr 是否已赋值
                      */
-                    bool ProjectIDHasBeenSet() const;
-
-                    /**
-                     * 获取可用区
-                     * @return Zone 可用区
-                     */
-                    std::string GetZone() const;
-
-                    /**
-                     * 设置可用区
-                     * @param Zone 可用区
-                     */
-                    void SetZone(const std::string& _zone);
-
-                    /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
-                     */
-                    bool ZoneHasBeenSet() const;
-
-                    /**
-                     * 获取实例绑定的tag数组信息
-                     * @return ResourceTags 实例绑定的tag数组信息
-                     */
-                    std::vector<Tag> GetResourceTags() const;
-
-                    /**
-                     * 设置实例绑定的tag数组信息
-                     * @param ResourceTags 实例绑定的tag数组信息
-                     */
-                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
-
-                    /**
-                     * 判断参数 ResourceTags 是否已赋值
-                     * @return ResourceTags 是否已赋值
-                     */
-                    bool ResourceTagsHasBeenSet() const;
-
-                    /**
-                     * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     */
-                    std::string GetServerlessStatus() const;
-
-                    /**
-                     * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     * @param ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     */
-                    void SetServerlessStatus(const std::string& _serverlessStatus);
-
-                    /**
-                     * 判断参数 ServerlessStatus 是否已赋值
-                     * @return ServerlessStatus 是否已赋值
-                     */
-                    bool ServerlessStatusHasBeenSet() const;
-
-                    /**
-                     * 获取binlog开关，可选值：ON, OFF
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogBin binlog开关，可选值：ON, OFF
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetLogBin() const;
-
-                    /**
-                     * 设置binlog开关，可选值：ON, OFF
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogBin binlog开关，可选值：ON, OFF
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetLogBin(const std::string& _logBin);
-
-                    /**
-                     * 判断参数 LogBin 是否已赋值
-                     * @return LogBin 是否已赋值
-                     */
-                    bool LogBinHasBeenSet() const;
-
-                    /**
-                     * 获取pitr类型，可选值：normal, redo_pitr
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PitrType pitr类型，可选值：normal, redo_pitr
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPitrType() const;
-
-                    /**
-                     * 设置pitr类型，可选值：normal, redo_pitr
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PitrType pitr类型，可选值：normal, redo_pitr
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPitrType(const std::string& _pitrType);
-
-                    /**
-                     * 判断参数 PitrType 是否已赋值
-                     * @return PitrType 是否已赋值
-                     */
-                    bool PitrTypeHasBeenSet() const;
-
-                    /**
-                     * 获取物理可用区
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhysicalZone 物理可用区
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPhysicalZone() const;
-
-                    /**
-                     * 设置物理可用区
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhysicalZone 物理可用区
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPhysicalZone(const std::string& _physicalZone);
-
-                    /**
-                     * 判断参数 PhysicalZone 是否已赋值
-                     * @return PhysicalZone 是否已赋值
-                     */
-                    bool PhysicalZoneHasBeenSet() const;
-
-                    /**
-                     * 获取存储Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageId 存储Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetStorageId() const;
-
-                    /**
-                     * 设置存储Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageId 存储Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStorageId(const std::string& _storageId);
-
-                    /**
-                     * 判断参数 StorageId 是否已赋值
-                     * @return StorageId 是否已赋值
-                     */
-                    bool StorageIdHasBeenSet() const;
-
-                    /**
-                     * 获取存储大小，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Storage 存储大小，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetStorage() const;
-
-                    /**
-                     * 设置存储大小，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Storage 存储大小，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStorage(const int64_t& _storage);
-
-                    /**
-                     * 判断参数 Storage 是否已赋值
-                     * @return Storage 是否已赋值
-                     */
-                    bool StorageHasBeenSet() const;
-
-                    /**
-                     * 获取最大存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxStorageSize 最大存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetMaxStorageSize() const;
-
-                    /**
-                     * 设置最大存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxStorageSize 最大存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetMaxStorageSize(const int64_t& _maxStorageSize);
-
-                    /**
-                     * 判断参数 MaxStorageSize 是否已赋值
-                     * @return MaxStorageSize 是否已赋值
-                     */
-                    bool MaxStorageSizeHasBeenSet() const;
-
-                    /**
-                     * 获取最小存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinStorageSize 最小存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetMinStorageSize() const;
-
-                    /**
-                     * 设置最小存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinStorageSize 最小存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetMinStorageSize(const int64_t& _minStorageSize);
-
-                    /**
-                     * 判断参数 MinStorageSize 是否已赋值
-                     * @return MinStorageSize 是否已赋值
-                     */
-                    bool MinStorageSizeHasBeenSet() const;
-
-                    /**
-                     * 获取存储付费类型，1为包年包月，0为按量计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StoragePayMode 存储付费类型，1为包年包月，0为按量计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetStoragePayMode() const;
-
-                    /**
-                     * 设置存储付费类型，1为包年包月，0为按量计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoragePayMode 存储付费类型，1为包年包月，0为按量计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStoragePayMode(const int64_t& _storagePayMode);
-
-                    /**
-                     * 判断参数 StoragePayMode 是否已赋值
-                     * @return StoragePayMode 是否已赋值
-                     */
-                    bool StoragePayModeHasBeenSet() const;
-
-                    /**
-                     * 获取数据库类型，normal，serverless
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DbMode 数据库类型，normal，serverless
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetDbMode() const;
-
-                    /**
-                     * 设置数据库类型，normal，serverless
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbMode 数据库类型，normal，serverless
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetDbMode(const std::string& _dbMode);
-
-                    /**
-                     * 判断参数 DbMode 是否已赋值
-                     * @return DbMode 是否已赋值
-                     */
-                    bool DbModeHasBeenSet() const;
-
-                    /**
-                     * 获取存储空间上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageLimit 存储空间上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetStorageLimit() const;
-
-                    /**
-                     * 设置存储空间上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StorageLimit 存储空间上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStorageLimit(const int64_t& _storageLimit);
-
-                    /**
-                     * 判断参数 StorageLimit 是否已赋值
-                     * @return StorageLimit 是否已赋值
-                     */
-                    bool StorageLimitHasBeenSet() const;
+                    bool RoAddrHasBeenSet() const;
 
                     /**
                      * 获取集群支持的功能
@@ -896,6 +763,96 @@ pausing
                     bool SlaveZonesHasBeenSet() const;
 
                     /**
+                     * 获取实例信息
+                     * @return InstanceSet 实例信息
+                     */
+                    std::vector<ClusterInstanceDetail> GetInstanceSet() const;
+
+                    /**
+                     * 设置实例信息
+                     * @param InstanceSet 实例信息
+                     */
+                    void SetInstanceSet(const std::vector<ClusterInstanceDetail>& _instanceSet);
+
+                    /**
+                     * 判断参数 InstanceSet 是否已赋值
+                     * @return InstanceSet 是否已赋值
+                     */
+                    bool InstanceSetHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式
+                     * @return PayMode 付费模式
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费模式
+                     * @param PayMode 付费模式
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取到期时间
+                     * @return PeriodEndTime 到期时间
+                     */
+                    std::string GetPeriodEndTime() const;
+
+                    /**
+                     * 设置到期时间
+                     * @param PeriodEndTime 到期时间
+                     */
+                    void SetPeriodEndTime(const std::string& _periodEndTime);
+
+                    /**
+                     * 判断参数 PeriodEndTime 是否已赋值
+                     * @return PeriodEndTime 是否已赋值
+                     */
+                    bool PeriodEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取项目id
+                     * @return ProjectID 项目id
+                     */
+                    int64_t GetProjectID() const;
+
+                    /**
+                     * 设置项目id
+                     * @param ProjectID 项目id
+                     */
+                    void SetProjectID(const int64_t& _projectID);
+
+                    /**
+                     * 判断参数 ProjectID 是否已赋值
+                     * @return ProjectID 是否已赋值
+                     */
+                    bool ProjectIDHasBeenSet() const;
+
+                    /**
+                     * 获取实例绑定的tag数组信息
+                     * @return ResourceTags 实例绑定的tag数组信息
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置实例绑定的tag数组信息
+                     * @param ResourceTags 实例绑定的tag数组信息
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
                      * 获取Proxy状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyStatus Proxy状态
@@ -918,6 +875,28 @@ pausing
                     bool ProxyStatusHasBeenSet() const;
 
                     /**
+                     * 获取binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogBin binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogBin() const;
+
+                    /**
+                     * 设置binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogBin binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogBin(const std::string& _logBin);
+
+                    /**
+                     * 判断参数 LogBin 是否已赋值
+                     * @return LogBin 是否已赋值
+                     */
+                    bool LogBinHasBeenSet() const;
+
+                    /**
                      * 获取是否跳过交易
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSkipTrade 是否跳过交易
@@ -938,6 +917,28 @@ pausing
                      * @return IsSkipTrade 是否已赋值
                      */
                     bool IsSkipTradeHasBeenSet() const;
+
+                    /**
+                     * 获取pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PitrType pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPitrType() const;
+
+                    /**
+                     * 设置pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PitrType pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPitrType(const std::string& _pitrType);
+
+                    /**
+                     * 判断参数 PitrType 是否已赋值
+                     * @return PitrType 是否已赋值
+                     */
+                    bool PitrTypeHasBeenSet() const;
 
                     /**
                      * 获取是否打开密码复杂度
@@ -983,6 +984,28 @@ pausing
                      */
                     bool NetworkStatusHasBeenSet() const;
 
+                    /**
+                     * 获取集群绑定的资源包信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePackages 集群绑定的资源包信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> GetResourcePackages() const;
+
+                    /**
+                     * 设置集群绑定的资源包信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourcePackages 集群绑定的资源包信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourcePackages(const std::vector<ResourcePackage>& _resourcePackages);
+
+                    /**
+                     * 判断参数 ResourcePackages 是否已赋值
+                     * @return ResourcePackages 是否已赋值
+                     */
+                    bool ResourcePackagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1004,6 +1027,19 @@ pausing
                     bool m_regionHasBeenSet;
 
                     /**
+                     * 可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_physicalZone;
+                    bool m_physicalZoneHasBeenSet;
+
+                    /**
                      * 状态
                      */
                     std::string m_status;
@@ -1014,6 +1050,51 @@ pausing
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
+
+                    /**
+                     * 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageId;
+                    bool m_storageIdHasBeenSet;
+
+                    /**
+                     * 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storage;
+                    bool m_storageHasBeenSet;
+
+                    /**
+                     * 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxStorageSize;
+                    bool m_maxStorageSizeHasBeenSet;
+
+                    /**
+                     * 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_minStorageSize;
+                    bool m_minStorageSizeHasBeenSet;
+
+                    /**
+                     * 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
 
                     /**
                      * VPC名称
@@ -1058,40 +1139,30 @@ pausing
                     bool m_dbTypeHasBeenSet;
 
                     /**
+                     * 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
+
+                    /**
                      * 数据库版本
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
 
                     /**
+                     * 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storageLimit;
+                    bool m_storageLimitHasBeenSet;
+
+                    /**
                      * 使用容量
                      */
                     int64_t m_usedStorage;
                     bool m_usedStorageHasBeenSet;
-
-                    /**
-                     * 读写分离Vport
-                     */
-                    std::vector<Addr> m_roAddr;
-                    bool m_roAddrHasBeenSet;
-
-                    /**
-                     * 实例信息
-                     */
-                    std::vector<ClusterInstanceDetail> m_instanceSet;
-                    bool m_instanceSetHasBeenSet;
-
-                    /**
-                     * 付费模式
-                     */
-                    int64_t m_payMode;
-                    bool m_payModeHasBeenSet;
-
-                    /**
-                     * 到期时间
-                     */
-                    std::string m_periodEndTime;
-                    bool m_periodEndTimeHasBeenSet;
 
                     /**
                      * vip地址
@@ -1106,102 +1177,10 @@ pausing
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 项目id
+                     * 读写分离Vport
                      */
-                    int64_t m_projectID;
-                    bool m_projectIDHasBeenSet;
-
-                    /**
-                     * 可用区
-                     */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
-
-                    /**
-                     * 实例绑定的tag数组信息
-                     */
-                    std::vector<Tag> m_resourceTags;
-                    bool m_resourceTagsHasBeenSet;
-
-                    /**
-                     * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     */
-                    std::string m_serverlessStatus;
-                    bool m_serverlessStatusHasBeenSet;
-
-                    /**
-                     * binlog开关，可选值：ON, OFF
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_logBin;
-                    bool m_logBinHasBeenSet;
-
-                    /**
-                     * pitr类型，可选值：normal, redo_pitr
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_pitrType;
-                    bool m_pitrTypeHasBeenSet;
-
-                    /**
-                     * 物理可用区
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_physicalZone;
-                    bool m_physicalZoneHasBeenSet;
-
-                    /**
-                     * 存储Id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_storageId;
-                    bool m_storageIdHasBeenSet;
-
-                    /**
-                     * 存储大小，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_storage;
-                    bool m_storageHasBeenSet;
-
-                    /**
-                     * 最大存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_maxStorageSize;
-                    bool m_maxStorageSizeHasBeenSet;
-
-                    /**
-                     * 最小存储规格，单位为G
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_minStorageSize;
-                    bool m_minStorageSizeHasBeenSet;
-
-                    /**
-                     * 存储付费类型，1为包年包月，0为按量计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_storagePayMode;
-                    bool m_storagePayModeHasBeenSet;
-
-                    /**
-                     * 数据库类型，normal，serverless
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_dbMode;
-                    bool m_dbModeHasBeenSet;
-
-                    /**
-                     * 存储空间上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_storageLimit;
-                    bool m_storageLimitHasBeenSet;
+                    std::vector<Addr> m_roAddr;
+                    bool m_roAddrHasBeenSet;
 
                     /**
                      * 集群支持的功能
@@ -1260,6 +1239,36 @@ pausing
                     bool m_slaveZonesHasBeenSet;
 
                     /**
+                     * 实例信息
+                     */
+                    std::vector<ClusterInstanceDetail> m_instanceSet;
+                    bool m_instanceSetHasBeenSet;
+
+                    /**
+                     * 付费模式
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 到期时间
+                     */
+                    std::string m_periodEndTime;
+                    bool m_periodEndTimeHasBeenSet;
+
+                    /**
+                     * 项目id
+                     */
+                    int64_t m_projectID;
+                    bool m_projectIDHasBeenSet;
+
+                    /**
+                     * 实例绑定的tag数组信息
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
                      * Proxy状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -1267,11 +1276,25 @@ pausing
                     bool m_proxyStatusHasBeenSet;
 
                     /**
+                     * binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logBin;
+                    bool m_logBinHasBeenSet;
+
+                    /**
                      * 是否跳过交易
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSkipTrade;
                     bool m_isSkipTradeHasBeenSet;
+
+                    /**
+                     * pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pitrType;
+                    bool m_pitrTypeHasBeenSet;
 
                     /**
                      * 是否打开密码复杂度
@@ -1286,6 +1309,13 @@ pausing
                      */
                     std::string m_networkStatus;
                     bool m_networkStatusHasBeenSet;
+
+                    /**
+                     * 集群绑定的资源包信息	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ResourcePackage> m_resourcePackages;
+                    bool m_resourcePackagesHasBeenSet;
 
                 };
             }

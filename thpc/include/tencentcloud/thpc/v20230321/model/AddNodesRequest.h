@@ -419,6 +419,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool NodeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * @return ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * @param ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +559,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

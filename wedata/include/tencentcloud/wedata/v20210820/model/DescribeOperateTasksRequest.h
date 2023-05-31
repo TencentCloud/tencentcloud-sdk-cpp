@@ -312,6 +312,96 @@ namespace TencentCloud
                      */
                     bool ProductNameListHasBeenSet() const;
 
+                    /**
+                     * 获取数据源id或（仅针对离线同步任务）来源数据源id
+                     * @return SourceServiceId 数据源id或（仅针对离线同步任务）来源数据源id
+                     */
+                    std::string GetSourceServiceId() const;
+
+                    /**
+                     * 设置数据源id或（仅针对离线同步任务）来源数据源id
+                     * @param SourceServiceId 数据源id或（仅针对离线同步任务）来源数据源id
+                     */
+                    void SetSourceServiceId(const std::string& _sourceServiceId);
+
+                    /**
+                     * 判断参数 SourceServiceId 是否已赋值
+                     * @return SourceServiceId 是否已赋值
+                     */
+                    bool SourceServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型或（仅针对离线同步任务）来源数据源类型
+                     * @return SourceServiceType 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     */
+                    std::string GetSourceServiceType() const;
+
+                    /**
+                     * 设置数据源类型或（仅针对离线同步任务）来源数据源类型
+                     * @param SourceServiceType 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     */
+                    void SetSourceServiceType(const std::string& _sourceServiceType);
+
+                    /**
+                     * 判断参数 SourceServiceType 是否已赋值
+                     * @return SourceServiceType 是否已赋值
+                     */
+                    bool SourceServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取（仅针对离线同步任务）目标数据源id
+                     * @return TargetServiceId （仅针对离线同步任务）目标数据源id
+                     */
+                    std::string GetTargetServiceId() const;
+
+                    /**
+                     * 设置（仅针对离线同步任务）目标数据源id
+                     * @param TargetServiceId （仅针对离线同步任务）目标数据源id
+                     */
+                    void SetTargetServiceId(const std::string& _targetServiceId);
+
+                    /**
+                     * 判断参数 TargetServiceId 是否已赋值
+                     * @return TargetServiceId 是否已赋值
+                     */
+                    bool TargetServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取（仅针对离线同步任务）目标数据源类型
+                     * @return TargetServiceType （仅针对离线同步任务）目标数据源类型
+                     */
+                    std::string GetTargetServiceType() const;
+
+                    /**
+                     * 设置（仅针对离线同步任务）目标数据源类型
+                     * @param TargetServiceType （仅针对离线同步任务）目标数据源类型
+                     */
+                    void SetTargetServiceType(const std::string& _targetServiceType);
+
+                    /**
+                     * 判断参数 TargetServiceType 是否已赋值
+                     * @return TargetServiceType 是否已赋值
+                     */
+                    bool TargetServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取告警类型，多个类型以逗号分隔
+                     * @return AlarmType 告警类型，多个类型以逗号分隔
+                     */
+                    std::string GetAlarmType() const;
+
+                    /**
+                     * 设置告警类型，多个类型以逗号分隔
+                     * @param AlarmType 告警类型，多个类型以逗号分隔
+                     */
+                    void SetAlarmType(const std::string& _alarmType);
+
+                    /**
+                     * 判断参数 AlarmType 是否已赋值
+                     * @return AlarmType 是否已赋值
+                     */
+                    bool AlarmTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +493,36 @@ namespace TencentCloud
                      */
                     std::string m_productNameList;
                     bool m_productNameListHasBeenSet;
+
+                    /**
+                     * 数据源id或（仅针对离线同步任务）来源数据源id
+                     */
+                    std::string m_sourceServiceId;
+                    bool m_sourceServiceIdHasBeenSet;
+
+                    /**
+                     * 数据源类型或（仅针对离线同步任务）来源数据源类型
+                     */
+                    std::string m_sourceServiceType;
+                    bool m_sourceServiceTypeHasBeenSet;
+
+                    /**
+                     * （仅针对离线同步任务）目标数据源id
+                     */
+                    std::string m_targetServiceId;
+                    bool m_targetServiceIdHasBeenSet;
+
+                    /**
+                     * （仅针对离线同步任务）目标数据源类型
+                     */
+                    std::string m_targetServiceType;
+                    bool m_targetServiceTypeHasBeenSet;
+
+                    /**
+                     * 告警类型，多个类型以逗号分隔
+                     */
+                    std::string m_alarmType;
+                    bool m_alarmTypeHasBeenSet;
 
                 };
             }
