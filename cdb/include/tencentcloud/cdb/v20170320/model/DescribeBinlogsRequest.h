@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37
+                     * @return MinStartTime binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    std::string GetMinStartTime() const;
+
+                    /**
+                     * 设置binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37
+                     * @param MinStartTime binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    void SetMinStartTime(const std::string& _minStartTime);
+
+                    /**
+                     * 判断参数 MinStartTime 是否已赋值
+                     * @return MinStartTime 是否已赋值
+                     */
+                    bool MinStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37
+                     * @return MaxStartTime binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    std::string GetMaxStartTime() const;
+
+                    /**
+                     * 设置binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37
+                     * @param MaxStartTime binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    void SetMaxStartTime(const std::string& _maxStartTime);
+
+                    /**
+                     * 判断参数 MaxStartTime 是否已赋值
+                     * @return MaxStartTime 是否已赋值
+                     */
+                    bool MaxStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * binlog开始时间，筛选大于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    std::string m_minStartTime;
+                    bool m_minStartTimeHasBeenSet;
+
+                    /**
+                     * binlog开始时间，筛选小于等于此值，时间格式：2016-03-17 02:10:37
+                     */
+                    std::string m_maxStartTime;
+                    bool m_maxStartTimeHasBeenSet;
 
                 };
             }

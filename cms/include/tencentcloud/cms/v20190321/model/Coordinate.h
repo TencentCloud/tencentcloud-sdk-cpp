@@ -47,32 +47,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取左上角横坐标
-                     * @return Cx 左上角横坐标
+                     * 获取宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Width 宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetCx() const;
+                    int64_t GetWidth() const;
 
                     /**
-                     * 设置左上角横坐标
-                     * @param Cx 左上角横坐标
+                     * 设置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Width 宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetCx(const int64_t& _cx);
+                    void SetWidth(const int64_t& _width);
 
                     /**
-                     * 判断参数 Cx 是否已赋值
-                     * @return Cx 是否已赋值
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
                      */
-                    bool CxHasBeenSet() const;
+                    bool WidthHasBeenSet() const;
 
                     /**
                      * 获取左上角纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cy 左上角纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCy() const;
 
                     /**
                      * 设置左上角纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Cy 左上角纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCy(const int64_t& _cy);
 
@@ -83,14 +91,40 @@ namespace TencentCloud
                     bool CyHasBeenSet() const;
 
                     /**
+                     * 获取左上角横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cx 左上角横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCx() const;
+
+                    /**
+                     * 设置左上角横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Cx 左上角横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCx(const int64_t& _cx);
+
+                    /**
+                     * 判断参数 Cx 是否已赋值
+                     * @return Cx 是否已赋值
+                     */
+                    bool CxHasBeenSet() const;
+
+                    /**
                      * 获取高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -100,49 +134,35 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
-                    /**
-                     * 获取宽度
-                     * @return Width 宽度
-                     */
-                    int64_t GetWidth() const;
-
-                    /**
-                     * 设置宽度
-                     * @param Width 宽度
-                     */
-                    void SetWidth(const int64_t& _width);
-
-                    /**
-                     * 判断参数 Width 是否已赋值
-                     * @return Width 是否已赋值
-                     */
-                    bool WidthHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 左上角横坐标
+                     * 宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_cx;
-                    bool m_cxHasBeenSet;
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
 
                     /**
                      * 左上角纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cy;
                     bool m_cyHasBeenSet;
 
                     /**
+                     * 左上角横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cx;
+                    bool m_cxHasBeenSet;
+
+                    /**
                      * 高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
-
-                    /**
-                     * 宽度
-                     */
-                    int64_t m_width;
-                    bool m_widthHasBeenSet;
 
                 };
             }

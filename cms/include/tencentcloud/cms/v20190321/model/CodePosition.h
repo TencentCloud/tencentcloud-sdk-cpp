@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取二维码边界点X轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FloatX 二维码边界点X轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetFloatX() const;
 
                     /**
                      * 设置二维码边界点X轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param FloatX 二维码边界点X轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFloatX(const double& _floatX);
 
@@ -66,13 +70,17 @@ namespace TencentCloud
 
                     /**
                      * 获取二维码边界点Y轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FloatY 二维码边界点Y轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetFloatY() const;
 
                     /**
                      * 设置二维码边界点Y轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param FloatY 二维码边界点Y轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFloatY(const double& _floatY);
 
@@ -86,12 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 二维码边界点X轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_floatX;
                     bool m_floatXHasBeenSet;
 
                     /**
                      * 二维码边界点Y轴坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_floatY;
                     bool m_floatYHasBeenSet;

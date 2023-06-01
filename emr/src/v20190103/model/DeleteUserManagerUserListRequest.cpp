@@ -24,7 +24,10 @@ using namespace std;
 
 DeleteUserManagerUserListRequest::DeleteUserManagerUserListRequest() :
     m_instanceIdHasBeenSet(false),
-    m_userNameListHasBeenSet(false)
+    m_userNameListHasBeenSet(false),
+    m_tkeClusterIdHasBeenSet(false),
+    m_displayStrategyHasBeenSet(false),
+    m_userGroupListHasBeenSet(false)
 {
 }
 
@@ -53,6 +56,37 @@ string DeleteUserManagerUserListRequest::ToJsonString() const
         for (auto itr = m_userNameList.begin(); itr != m_userNameList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tkeClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tkeClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_displayStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userGroupListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userGroupList.begin(); itr != m_userGroupList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +128,54 @@ void DeleteUserManagerUserListRequest::SetUserNameList(const vector<string>& _us
 bool DeleteUserManagerUserListRequest::UserNameListHasBeenSet() const
 {
     return m_userNameListHasBeenSet;
+}
+
+string DeleteUserManagerUserListRequest::GetTkeClusterId() const
+{
+    return m_tkeClusterId;
+}
+
+void DeleteUserManagerUserListRequest::SetTkeClusterId(const string& _tkeClusterId)
+{
+    m_tkeClusterId = _tkeClusterId;
+    m_tkeClusterIdHasBeenSet = true;
+}
+
+bool DeleteUserManagerUserListRequest::TkeClusterIdHasBeenSet() const
+{
+    return m_tkeClusterIdHasBeenSet;
+}
+
+string DeleteUserManagerUserListRequest::GetDisplayStrategy() const
+{
+    return m_displayStrategy;
+}
+
+void DeleteUserManagerUserListRequest::SetDisplayStrategy(const string& _displayStrategy)
+{
+    m_displayStrategy = _displayStrategy;
+    m_displayStrategyHasBeenSet = true;
+}
+
+bool DeleteUserManagerUserListRequest::DisplayStrategyHasBeenSet() const
+{
+    return m_displayStrategyHasBeenSet;
+}
+
+vector<UserAndGroup> DeleteUserManagerUserListRequest::GetUserGroupList() const
+{
+    return m_userGroupList;
+}
+
+void DeleteUserManagerUserListRequest::SetUserGroupList(const vector<UserAndGroup>& _userGroupList)
+{
+    m_userGroupList = _userGroupList;
+    m_userGroupListHasBeenSet = true;
+}
+
+bool DeleteUserManagerUserListRequest::UserGroupListHasBeenSet() const
+{
+    return m_userGroupListHasBeenSet;
 }
 
 

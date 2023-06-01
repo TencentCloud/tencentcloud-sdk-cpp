@@ -45,18 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别结果
-                     * @return Data 识别结果
-                     */
-                    TextData GetData() const;
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     */
-                    bool DataHasBeenSet() const;
-
-                    /**
                      * 获取业务返回码
                      * @return BusinessCode 业务返回码
                      */
@@ -68,19 +56,34 @@ namespace TencentCloud
                      */
                     bool BusinessCodeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextData GetData() const;
 
                     /**
-                     * 识别结果
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    TextData m_data;
-                    bool m_dataHasBeenSet;
+                    bool DataHasBeenSet() const;
+
+                private:
 
                     /**
                      * 业务返回码
                      */
                     int64_t m_businessCode;
                     bool m_businessCodeHasBeenSet;
+
+                    /**
+                     * 识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

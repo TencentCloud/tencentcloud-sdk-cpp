@@ -21,13 +21,13 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 Device::Device() :
-    m_deviceIdHasBeenSet(false),
-    m_iDFAHasBeenSet(false),
     m_iDFVHasBeenSet(false),
-    m_iMEIHasBeenSet(false),
+    m_tokenIdHasBeenSet(false),
     m_iPHasBeenSet(false),
     m_macHasBeenSet(false),
-    m_tokenIdHasBeenSet(false)
+    m_iDFAHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
+    m_iMEIHasBeenSet(false)
 {
 }
 
@@ -35,26 +35,6 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
-    {
-        if (!value["DeviceId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Device.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_deviceId = string(value["DeviceId"].GetString());
-        m_deviceIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("IDFA") && !value["IDFA"].IsNull())
-    {
-        if (!value["IDFA"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Device.IDFA` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_iDFA = string(value["IDFA"].GetString());
-        m_iDFAHasBeenSet = true;
-    }
 
     if (value.HasMember("IDFV") && !value["IDFV"].IsNull())
     {
@@ -66,14 +46,14 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_iDFVHasBeenSet = true;
     }
 
-    if (value.HasMember("IMEI") && !value["IMEI"].IsNull())
+    if (value.HasMember("TokenId") && !value["TokenId"].IsNull())
     {
-        if (!value["IMEI"].IsString())
+        if (!value["TokenId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Device.IMEI` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.TokenId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_iMEI = string(value["IMEI"].GetString());
-        m_iMEIHasBeenSet = true;
+        m_tokenId = string(value["TokenId"].GetString());
+        m_tokenIdHasBeenSet = true;
     }
 
     if (value.HasMember("IP") && !value["IP"].IsNull())
@@ -96,14 +76,34 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_macHasBeenSet = true;
     }
 
-    if (value.HasMember("TokenId") && !value["TokenId"].IsNull())
+    if (value.HasMember("IDFA") && !value["IDFA"].IsNull())
     {
-        if (!value["TokenId"].IsString())
+        if (!value["IDFA"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Device.TokenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Device.IDFA` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_tokenId = string(value["TokenId"].GetString());
-        m_tokenIdHasBeenSet = true;
+        m_iDFA = string(value["IDFA"].GetString());
+        m_iDFAHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
+    {
+        if (!value["DeviceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceId = string(value["DeviceId"].GetString());
+        m_deviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IMEI") && !value["IMEI"].IsNull())
+    {
+        if (!value["IMEI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.IMEI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iMEI = string(value["IMEI"].GetString());
+        m_iMEIHasBeenSet = true;
     }
 
 
@@ -113,22 +113,6 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
 void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_deviceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_iDFAHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IDFA";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_iDFA.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_iDFVHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,12 +121,12 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_iDFV.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_iMEIHasBeenSet)
+    if (m_tokenIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IMEI";
+        string key = "TokenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_iMEI.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iPHasBeenSet)
@@ -161,48 +145,32 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_mac.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_tokenIdHasBeenSet)
+    if (m_iDFAHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TokenId";
+        string key = "IDFA";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDFA.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iMEIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IMEI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iMEI.c_str(), allocator).Move(), allocator);
     }
 
 }
 
-
-string Device::GetDeviceId() const
-{
-    return m_deviceId;
-}
-
-void Device::SetDeviceId(const string& _deviceId)
-{
-    m_deviceId = _deviceId;
-    m_deviceIdHasBeenSet = true;
-}
-
-bool Device::DeviceIdHasBeenSet() const
-{
-    return m_deviceIdHasBeenSet;
-}
-
-string Device::GetIDFA() const
-{
-    return m_iDFA;
-}
-
-void Device::SetIDFA(const string& _iDFA)
-{
-    m_iDFA = _iDFA;
-    m_iDFAHasBeenSet = true;
-}
-
-bool Device::IDFAHasBeenSet() const
-{
-    return m_iDFAHasBeenSet;
-}
 
 string Device::GetIDFV() const
 {
@@ -220,20 +188,20 @@ bool Device::IDFVHasBeenSet() const
     return m_iDFVHasBeenSet;
 }
 
-string Device::GetIMEI() const
+string Device::GetTokenId() const
 {
-    return m_iMEI;
+    return m_tokenId;
 }
 
-void Device::SetIMEI(const string& _iMEI)
+void Device::SetTokenId(const string& _tokenId)
 {
-    m_iMEI = _iMEI;
-    m_iMEIHasBeenSet = true;
+    m_tokenId = _tokenId;
+    m_tokenIdHasBeenSet = true;
 }
 
-bool Device::IMEIHasBeenSet() const
+bool Device::TokenIdHasBeenSet() const
 {
-    return m_iMEIHasBeenSet;
+    return m_tokenIdHasBeenSet;
 }
 
 string Device::GetIP() const
@@ -268,19 +236,51 @@ bool Device::MacHasBeenSet() const
     return m_macHasBeenSet;
 }
 
-string Device::GetTokenId() const
+string Device::GetIDFA() const
 {
-    return m_tokenId;
+    return m_iDFA;
 }
 
-void Device::SetTokenId(const string& _tokenId)
+void Device::SetIDFA(const string& _iDFA)
 {
-    m_tokenId = _tokenId;
-    m_tokenIdHasBeenSet = true;
+    m_iDFA = _iDFA;
+    m_iDFAHasBeenSet = true;
 }
 
-bool Device::TokenIdHasBeenSet() const
+bool Device::IDFAHasBeenSet() const
 {
-    return m_tokenIdHasBeenSet;
+    return m_iDFAHasBeenSet;
+}
+
+string Device::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void Device::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool Device::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+string Device::GetIMEI() const
+{
+    return m_iMEI;
+}
+
+void Device::SetIMEI(const string& _iMEI)
+{
+    m_iMEI = _iMEI;
+    m_iMEIHasBeenSet = true;
+}
+
+bool Device::IMEIHasBeenSet() const
+{
+    return m_iMEIHasBeenSet;
 }
 

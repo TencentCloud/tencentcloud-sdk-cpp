@@ -21,11 +21,11 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 ImageTerrorDetect::ImageTerrorDetect() :
-    m_evilTypeHasBeenSet(false),
-    m_hitFlagHasBeenSet(false),
     m_keywordsHasBeenSet(false),
+    m_evilTypeHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_hitFlagHasBeenSet(false)
 {
 }
 
@@ -33,26 +33,6 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
 {
     string requestId = "";
 
-
-    if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
-    {
-        if (!value["EvilType"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilType = value["EvilType"].GetInt64();
-        m_evilTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("HitFlag") && !value["HitFlag"].IsNull())
-    {
-        if (!value["HitFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_hitFlag = value["HitFlag"].GetInt64();
-        m_hitFlagHasBeenSet = true;
-    }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
@@ -65,6 +45,16 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
             m_keywords.push_back((*itr).GetString());
         }
         m_keywordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
+    {
+        if (!value["EvilType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.EvilType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilType = value["EvilType"].GetInt64();
+        m_evilTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
@@ -90,28 +80,22 @@ CoreInternalOutcome ImageTerrorDetect::Deserialize(const rapidjson::Value &value
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("HitFlag") && !value["HitFlag"].IsNull())
+    {
+        if (!value["HitFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTerrorDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitFlag = value["HitFlag"].GetInt64();
+        m_hitFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ImageTerrorDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_evilTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_evilType, allocator);
-    }
-
-    if (m_hitFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HitFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_hitFlag, allocator);
-    }
 
     if (m_keywordsHasBeenSet)
     {
@@ -124,6 +108,14 @@ void ImageTerrorDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_evilTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evilType, allocator);
     }
 
     if (m_labelsHasBeenSet)
@@ -147,40 +139,16 @@ void ImageTerrorDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_score, allocator);
     }
 
+    if (m_hitFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitFlag, allocator);
+    }
+
 }
 
-
-int64_t ImageTerrorDetect::GetEvilType() const
-{
-    return m_evilType;
-}
-
-void ImageTerrorDetect::SetEvilType(const int64_t& _evilType)
-{
-    m_evilType = _evilType;
-    m_evilTypeHasBeenSet = true;
-}
-
-bool ImageTerrorDetect::EvilTypeHasBeenSet() const
-{
-    return m_evilTypeHasBeenSet;
-}
-
-int64_t ImageTerrorDetect::GetHitFlag() const
-{
-    return m_hitFlag;
-}
-
-void ImageTerrorDetect::SetHitFlag(const int64_t& _hitFlag)
-{
-    m_hitFlag = _hitFlag;
-    m_hitFlagHasBeenSet = true;
-}
-
-bool ImageTerrorDetect::HitFlagHasBeenSet() const
-{
-    return m_hitFlagHasBeenSet;
-}
 
 vector<string> ImageTerrorDetect::GetKeywords() const
 {
@@ -196,6 +164,22 @@ void ImageTerrorDetect::SetKeywords(const vector<string>& _keywords)
 bool ImageTerrorDetect::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+int64_t ImageTerrorDetect::GetEvilType() const
+{
+    return m_evilType;
+}
+
+void ImageTerrorDetect::SetEvilType(const int64_t& _evilType)
+{
+    m_evilType = _evilType;
+    m_evilTypeHasBeenSet = true;
+}
+
+bool ImageTerrorDetect::EvilTypeHasBeenSet() const
+{
+    return m_evilTypeHasBeenSet;
 }
 
 vector<string> ImageTerrorDetect::GetLabels() const
@@ -228,5 +212,21 @@ void ImageTerrorDetect::SetScore(const int64_t& _score)
 bool ImageTerrorDetect::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+int64_t ImageTerrorDetect::GetHitFlag() const
+{
+    return m_hitFlag;
+}
+
+void ImageTerrorDetect::SetHitFlag(const int64_t& _hitFlag)
+{
+    m_hitFlag = _hitFlag;
+    m_hitFlagHasBeenSet = true;
+}
+
+bool ImageTerrorDetect::HitFlagHasBeenSet() const
+{
+    return m_hitFlagHasBeenSet;
 }
 

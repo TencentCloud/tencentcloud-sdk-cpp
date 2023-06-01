@@ -21,10 +21,10 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 Coordinate::Coordinate() :
-    m_cxHasBeenSet(false),
+    m_widthHasBeenSet(false),
     m_cyHasBeenSet(false),
-    m_heightHasBeenSet(false),
-    m_widthHasBeenSet(false)
+    m_cxHasBeenSet(false),
+    m_heightHasBeenSet(false)
 {
 }
 
@@ -33,14 +33,14 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("Cx") && !value["Cx"].IsNull())
+    if (value.HasMember("Width") && !value["Width"].IsNull())
     {
-        if (!value["Cx"].IsInt64())
+        if (!value["Width"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Coordinate.Cx` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Width` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_cx = value["Cx"].GetInt64();
-        m_cxHasBeenSet = true;
+        m_width = value["Width"].GetInt64();
+        m_widthHasBeenSet = true;
     }
 
     if (value.HasMember("Cy") && !value["Cy"].IsNull())
@@ -53,6 +53,16 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
         m_cyHasBeenSet = true;
     }
 
+    if (value.HasMember("Cx") && !value["Cx"].IsNull())
+    {
+        if (!value["Cx"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coordinate.Cx` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cx = value["Cx"].GetInt64();
+        m_cxHasBeenSet = true;
+    }
+
     if (value.HasMember("Height") && !value["Height"].IsNull())
     {
         if (!value["Height"].IsInt64())
@@ -63,16 +73,6 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
         m_heightHasBeenSet = true;
     }
 
-    if (value.HasMember("Width") && !value["Width"].IsNull())
-    {
-        if (!value["Width"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Coordinate.Width` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_width = value["Width"].GetInt64();
-        m_widthHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -80,12 +80,12 @@ CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
 void Coordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_cxHasBeenSet)
+    if (m_widthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cx";
+        string key = "Width";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cx, allocator);
+        value.AddMember(iKey, m_width, allocator);
     }
 
     if (m_cyHasBeenSet)
@@ -96,6 +96,14 @@ void Coordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_cy, allocator);
     }
 
+    if (m_cxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cx, allocator);
+    }
+
     if (m_heightHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,31 +112,23 @@ void Coordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_height, allocator);
     }
 
-    if (m_widthHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Width";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_width, allocator);
-    }
-
 }
 
 
-int64_t Coordinate::GetCx() const
+int64_t Coordinate::GetWidth() const
 {
-    return m_cx;
+    return m_width;
 }
 
-void Coordinate::SetCx(const int64_t& _cx)
+void Coordinate::SetWidth(const int64_t& _width)
 {
-    m_cx = _cx;
-    m_cxHasBeenSet = true;
+    m_width = _width;
+    m_widthHasBeenSet = true;
 }
 
-bool Coordinate::CxHasBeenSet() const
+bool Coordinate::WidthHasBeenSet() const
 {
-    return m_cxHasBeenSet;
+    return m_widthHasBeenSet;
 }
 
 int64_t Coordinate::GetCy() const
@@ -147,6 +147,22 @@ bool Coordinate::CyHasBeenSet() const
     return m_cyHasBeenSet;
 }
 
+int64_t Coordinate::GetCx() const
+{
+    return m_cx;
+}
+
+void Coordinate::SetCx(const int64_t& _cx)
+{
+    m_cx = _cx;
+    m_cxHasBeenSet = true;
+}
+
+bool Coordinate::CxHasBeenSet() const
+{
+    return m_cxHasBeenSet;
+}
+
 int64_t Coordinate::GetHeight() const
 {
     return m_height;
@@ -161,21 +177,5 @@ void Coordinate::SetHeight(const int64_t& _height)
 bool Coordinate::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
-}
-
-int64_t Coordinate::GetWidth() const
-{
-    return m_width;
-}
-
-void Coordinate::SetWidth(const int64_t& _width)
-{
-    m_width = _width;
-    m_widthHasBeenSet = true;
-}
-
-bool Coordinate::WidthHasBeenSet() const
-{
-    return m_widthHasBeenSet;
 }
 

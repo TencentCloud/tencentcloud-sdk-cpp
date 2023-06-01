@@ -21,21 +21,21 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 TextData::TextData() :
-    m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
-    m_commonHasBeenSet(false),
-    m_customResultHasBeenSet(false),
-    m_detailResultHasBeenSet(false),
-    m_iDHasBeenSet(false),
+    m_evilFlagHasBeenSet(false),
+    m_dataIdHasBeenSet(false),
+    m_extraHasBeenSet(false),
+    m_bizTypeHasBeenSet(false),
     m_resHasBeenSet(false),
     m_riskDetailsHasBeenSet(false),
-    m_bizTypeHasBeenSet(false),
-    m_dataIdHasBeenSet(false),
-    m_evilLabelHasBeenSet(false),
-    m_extraHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
+    m_iDHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_suggestionHasBeenSet(false)
+    m_commonHasBeenSet(false),
+    m_suggestionHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
+    m_detailResultHasBeenSet(false),
+    m_customResultHasBeenSet(false),
+    m_evilLabelHasBeenSet(false)
 {
 }
 
@@ -43,16 +43,6 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("EvilFlag") && !value["EvilFlag"].IsNull())
-    {
-        if (!value["EvilFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TextData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilFlag = value["EvilFlag"].GetInt64();
-        m_evilFlagHasBeenSet = true;
-    }
 
     if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
     {
@@ -64,78 +54,44 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
         m_evilTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("Common") && !value["Common"].IsNull())
+    if (value.HasMember("EvilFlag") && !value["EvilFlag"].IsNull())
     {
-        if (!value["Common"].IsObject())
+        if (!value["EvilFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.Common` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_common.Deserialize(value["Common"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_commonHasBeenSet = true;
+        m_evilFlag = value["EvilFlag"].GetInt64();
+        m_evilFlagHasBeenSet = true;
     }
 
-    if (value.HasMember("CustomResult") && !value["CustomResult"].IsNull())
+    if (value.HasMember("DataId") && !value["DataId"].IsNull())
     {
-        if (!value["CustomResult"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TextData.CustomResult` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["CustomResult"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["DataId"].IsString())
         {
-            CustomResult item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_customResult.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TextData.DataId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_customResultHasBeenSet = true;
+        m_dataId = string(value["DataId"].GetString());
+        m_dataIdHasBeenSet = true;
     }
 
-    if (value.HasMember("DetailResult") && !value["DetailResult"].IsNull())
+    if (value.HasMember("Extra") && !value["Extra"].IsNull())
     {
-        if (!value["DetailResult"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TextData.DetailResult` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["DetailResult"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Extra"].IsString())
         {
-            DetailResult item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_detailResult.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TextData.Extra` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_detailResultHasBeenSet = true;
+        m_extra = string(value["Extra"].GetString());
+        m_extraHasBeenSet = true;
     }
 
-    if (value.HasMember("ID") && !value["ID"].IsNull())
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
     {
-        if (!value["ID"].IsObject())
+        if (!value["BizType"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.ID` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_iD.Deserialize(value["ID"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_iDHasBeenSet = true;
+        m_bizType = value["BizType"].GetUint64();
+        m_bizTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Res") && !value["Res"].IsNull())
@@ -175,44 +131,58 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
         m_riskDetailsHasBeenSet = true;
     }
 
-    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    if (value.HasMember("ID") && !value["ID"].IsNull())
     {
-        if (!value["BizType"].IsUint64())
+        if (!value["ID"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.ID` is not object type").SetRequestId(requestId));
         }
-        m_bizType = value["BizType"].GetUint64();
-        m_bizTypeHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_iD.Deserialize(value["ID"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iDHasBeenSet = true;
     }
 
-    if (value.HasMember("DataId") && !value["DataId"].IsNull())
+    if (value.HasMember("Score") && !value["Score"].IsNull())
     {
-        if (!value["DataId"].IsString())
+        if (!value["Score"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.DataId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Score` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_dataId = string(value["DataId"].GetString());
-        m_dataIdHasBeenSet = true;
+        m_score = value["Score"].GetUint64();
+        m_scoreHasBeenSet = true;
     }
 
-    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
+    if (value.HasMember("Common") && !value["Common"].IsNull())
     {
-        if (!value["EvilLabel"].IsString())
+        if (!value["Common"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Common` is not object type").SetRequestId(requestId));
         }
-        m_evilLabel = string(value["EvilLabel"].GetString());
-        m_evilLabelHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_common.Deserialize(value["Common"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_commonHasBeenSet = true;
     }
 
-    if (value.HasMember("Extra") && !value["Extra"].IsNull())
+    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
     {
-        if (!value["Extra"].IsString())
+        if (!value["Suggestion"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.Extra` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TextData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_extra = string(value["Extra"].GetString());
-        m_extraHasBeenSet = true;
+        m_suggestion = string(value["Suggestion"].GetString());
+        m_suggestionHasBeenSet = true;
     }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
@@ -228,24 +198,54 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
         m_keywordsHasBeenSet = true;
     }
 
-    if (value.HasMember("Score") && !value["Score"].IsNull())
+    if (value.HasMember("DetailResult") && !value["DetailResult"].IsNull())
     {
-        if (!value["Score"].IsUint64())
+        if (!value["DetailResult"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TextData.DetailResult` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetailResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.Score` IsUint64=false incorrectly").SetRequestId(requestId));
+            DetailResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailResult.push_back(item);
         }
-        m_score = value["Score"].GetUint64();
-        m_scoreHasBeenSet = true;
+        m_detailResultHasBeenSet = true;
     }
 
-    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
+    if (value.HasMember("CustomResult") && !value["CustomResult"].IsNull())
     {
-        if (!value["Suggestion"].IsString())
+        if (!value["CustomResult"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TextData.CustomResult` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TextData.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+            CustomResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customResult.push_back(item);
         }
-        m_suggestion = string(value["Suggestion"].GetString());
-        m_suggestionHasBeenSet = true;
+        m_customResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
+    {
+        if (!value["EvilLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextData.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilLabel = string(value["EvilLabel"].GetString());
+        m_evilLabelHasBeenSet = true;
     }
 
 
@@ -255,14 +255,6 @@ CoreInternalOutcome TextData::Deserialize(const rapidjson::Value &value)
 void TextData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_evilFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_evilFlag, allocator);
-    }
-
     if (m_evilTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -271,52 +263,36 @@ void TextData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, m_evilType, allocator);
     }
 
-    if (m_commonHasBeenSet)
+    if (m_evilFlagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Common";
+        string key = "EvilFlag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_common.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_evilFlag, allocator);
     }
 
-    if (m_customResultHasBeenSet)
+    if (m_dataIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomResult";
+        string key = "DataId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_customResult.begin(); itr != m_customResult.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_dataId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_detailResultHasBeenSet)
+    if (m_extraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DetailResult";
+        string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_detailResult.begin(); itr != m_detailResult.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_iDHasBeenSet)
+    if (m_bizTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ID";
+        string key = "BizType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_iD.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_bizType, allocator);
     }
 
     if (m_resHasBeenSet)
@@ -343,36 +319,38 @@ void TextData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
-    if (m_bizTypeHasBeenSet)
+    if (m_iDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BizType";
+        string key = "ID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_bizType, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iD.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_dataIdHasBeenSet)
+    if (m_scoreHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DataId";
+        string key = "Score";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dataId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_score, allocator);
     }
 
-    if (m_evilLabelHasBeenSet)
+    if (m_commonHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilLabel";
+        string key = "Common";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_common.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_extraHasBeenSet)
+    if (m_suggestionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Extra";
+        string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordsHasBeenSet)
@@ -388,40 +366,46 @@ void TextData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
-    if (m_scoreHasBeenSet)
+    if (m_detailResultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Score";
+        string key = "DetailResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_score, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailResult.begin(); itr != m_detailResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
-    if (m_suggestionHasBeenSet)
+    if (m_customResultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Suggestion";
+        string key = "CustomResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customResult.begin(); itr != m_customResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_evilLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
 
-
-int64_t TextData::GetEvilFlag() const
-{
-    return m_evilFlag;
-}
-
-void TextData::SetEvilFlag(const int64_t& _evilFlag)
-{
-    m_evilFlag = _evilFlag;
-    m_evilFlagHasBeenSet = true;
-}
-
-bool TextData::EvilFlagHasBeenSet() const
-{
-    return m_evilFlagHasBeenSet;
-}
 
 int64_t TextData::GetEvilType() const
 {
@@ -439,68 +423,68 @@ bool TextData::EvilTypeHasBeenSet() const
     return m_evilTypeHasBeenSet;
 }
 
-TextOutputComm TextData::GetCommon() const
+int64_t TextData::GetEvilFlag() const
 {
-    return m_common;
+    return m_evilFlag;
 }
 
-void TextData::SetCommon(const TextOutputComm& _common)
+void TextData::SetEvilFlag(const int64_t& _evilFlag)
 {
-    m_common = _common;
-    m_commonHasBeenSet = true;
+    m_evilFlag = _evilFlag;
+    m_evilFlagHasBeenSet = true;
 }
 
-bool TextData::CommonHasBeenSet() const
+bool TextData::EvilFlagHasBeenSet() const
 {
-    return m_commonHasBeenSet;
+    return m_evilFlagHasBeenSet;
 }
 
-vector<CustomResult> TextData::GetCustomResult() const
+string TextData::GetDataId() const
 {
-    return m_customResult;
+    return m_dataId;
 }
 
-void TextData::SetCustomResult(const vector<CustomResult>& _customResult)
+void TextData::SetDataId(const string& _dataId)
 {
-    m_customResult = _customResult;
-    m_customResultHasBeenSet = true;
+    m_dataId = _dataId;
+    m_dataIdHasBeenSet = true;
 }
 
-bool TextData::CustomResultHasBeenSet() const
+bool TextData::DataIdHasBeenSet() const
 {
-    return m_customResultHasBeenSet;
+    return m_dataIdHasBeenSet;
 }
 
-vector<DetailResult> TextData::GetDetailResult() const
+string TextData::GetExtra() const
 {
-    return m_detailResult;
+    return m_extra;
 }
 
-void TextData::SetDetailResult(const vector<DetailResult>& _detailResult)
+void TextData::SetExtra(const string& _extra)
 {
-    m_detailResult = _detailResult;
-    m_detailResultHasBeenSet = true;
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
 }
 
-bool TextData::DetailResultHasBeenSet() const
+bool TextData::ExtraHasBeenSet() const
 {
-    return m_detailResultHasBeenSet;
+    return m_extraHasBeenSet;
 }
 
-TextOutputID TextData::GetID() const
+uint64_t TextData::GetBizType() const
 {
-    return m_iD;
+    return m_bizType;
 }
 
-void TextData::SetID(const TextOutputID& _iD)
+void TextData::SetBizType(const uint64_t& _bizType)
 {
-    m_iD = _iD;
-    m_iDHasBeenSet = true;
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
 }
 
-bool TextData::IDHasBeenSet() const
+bool TextData::BizTypeHasBeenSet() const
 {
-    return m_iDHasBeenSet;
+    return m_bizTypeHasBeenSet;
 }
 
 TextOutputRes TextData::GetRes() const
@@ -535,84 +519,20 @@ bool TextData::RiskDetailsHasBeenSet() const
     return m_riskDetailsHasBeenSet;
 }
 
-uint64_t TextData::GetBizType() const
+TextOutputID TextData::GetID() const
 {
-    return m_bizType;
+    return m_iD;
 }
 
-void TextData::SetBizType(const uint64_t& _bizType)
+void TextData::SetID(const TextOutputID& _iD)
 {
-    m_bizType = _bizType;
-    m_bizTypeHasBeenSet = true;
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
 }
 
-bool TextData::BizTypeHasBeenSet() const
+bool TextData::IDHasBeenSet() const
 {
-    return m_bizTypeHasBeenSet;
-}
-
-string TextData::GetDataId() const
-{
-    return m_dataId;
-}
-
-void TextData::SetDataId(const string& _dataId)
-{
-    m_dataId = _dataId;
-    m_dataIdHasBeenSet = true;
-}
-
-bool TextData::DataIdHasBeenSet() const
-{
-    return m_dataIdHasBeenSet;
-}
-
-string TextData::GetEvilLabel() const
-{
-    return m_evilLabel;
-}
-
-void TextData::SetEvilLabel(const string& _evilLabel)
-{
-    m_evilLabel = _evilLabel;
-    m_evilLabelHasBeenSet = true;
-}
-
-bool TextData::EvilLabelHasBeenSet() const
-{
-    return m_evilLabelHasBeenSet;
-}
-
-string TextData::GetExtra() const
-{
-    return m_extra;
-}
-
-void TextData::SetExtra(const string& _extra)
-{
-    m_extra = _extra;
-    m_extraHasBeenSet = true;
-}
-
-bool TextData::ExtraHasBeenSet() const
-{
-    return m_extraHasBeenSet;
-}
-
-vector<string> TextData::GetKeywords() const
-{
-    return m_keywords;
-}
-
-void TextData::SetKeywords(const vector<string>& _keywords)
-{
-    m_keywords = _keywords;
-    m_keywordsHasBeenSet = true;
-}
-
-bool TextData::KeywordsHasBeenSet() const
-{
-    return m_keywordsHasBeenSet;
+    return m_iDHasBeenSet;
 }
 
 uint64_t TextData::GetScore() const
@@ -631,6 +551,22 @@ bool TextData::ScoreHasBeenSet() const
     return m_scoreHasBeenSet;
 }
 
+TextOutputComm TextData::GetCommon() const
+{
+    return m_common;
+}
+
+void TextData::SetCommon(const TextOutputComm& _common)
+{
+    m_common = _common;
+    m_commonHasBeenSet = true;
+}
+
+bool TextData::CommonHasBeenSet() const
+{
+    return m_commonHasBeenSet;
+}
+
 string TextData::GetSuggestion() const
 {
     return m_suggestion;
@@ -645,5 +581,69 @@ void TextData::SetSuggestion(const string& _suggestion)
 bool TextData::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+vector<string> TextData::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void TextData::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool TextData::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
+}
+
+vector<DetailResult> TextData::GetDetailResult() const
+{
+    return m_detailResult;
+}
+
+void TextData::SetDetailResult(const vector<DetailResult>& _detailResult)
+{
+    m_detailResult = _detailResult;
+    m_detailResultHasBeenSet = true;
+}
+
+bool TextData::DetailResultHasBeenSet() const
+{
+    return m_detailResultHasBeenSet;
+}
+
+vector<CustomResult> TextData::GetCustomResult() const
+{
+    return m_customResult;
+}
+
+void TextData::SetCustomResult(const vector<CustomResult>& _customResult)
+{
+    m_customResult = _customResult;
+    m_customResultHasBeenSet = true;
+}
+
+bool TextData::CustomResultHasBeenSet() const
+{
+    return m_customResultHasBeenSet;
+}
+
+string TextData::GetEvilLabel() const
+{
+    return m_evilLabel;
+}
+
+void TextData::SetEvilLabel(const string& _evilLabel)
+{
+    m_evilLabel = _evilLabel;
+    m_evilLabelHasBeenSet = true;
+}
+
+bool TextData::EvilLabelHasBeenSet() const
+{
+    return m_evilLabelHasBeenSet;
 }
 

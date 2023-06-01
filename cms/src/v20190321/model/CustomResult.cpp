@@ -22,8 +22,8 @@ using namespace std;
 
 CustomResult::CustomResult() :
     m_keywordsHasBeenSet(false),
-    m_libIdHasBeenSet(false),
     m_libNameHasBeenSet(false),
+    m_libIdHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
 }
@@ -46,16 +46,6 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
         m_keywordsHasBeenSet = true;
     }
 
-    if (value.HasMember("LibId") && !value["LibId"].IsNull())
-    {
-        if (!value["LibId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CustomResult.LibId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_libId = string(value["LibId"].GetString());
-        m_libIdHasBeenSet = true;
-    }
-
     if (value.HasMember("LibName") && !value["LibName"].IsNull())
     {
         if (!value["LibName"].IsString())
@@ -64,6 +54,16 @@ CoreInternalOutcome CustomResult::Deserialize(const rapidjson::Value &value)
         }
         m_libName = string(value["LibName"].GetString());
         m_libNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LibId") && !value["LibId"].IsNull())
+    {
+        if (!value["LibId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomResult.LibId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_libId = string(value["LibId"].GetString());
+        m_libIdHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -96,20 +96,20 @@ void CustomResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_libIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LibId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_libNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_libName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_libIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -139,22 +139,6 @@ bool CustomResult::KeywordsHasBeenSet() const
     return m_keywordsHasBeenSet;
 }
 
-string CustomResult::GetLibId() const
-{
-    return m_libId;
-}
-
-void CustomResult::SetLibId(const string& _libId)
-{
-    m_libId = _libId;
-    m_libIdHasBeenSet = true;
-}
-
-bool CustomResult::LibIdHasBeenSet() const
-{
-    return m_libIdHasBeenSet;
-}
-
 string CustomResult::GetLibName() const
 {
     return m_libName;
@@ -169,6 +153,22 @@ void CustomResult::SetLibName(const string& _libName)
 bool CustomResult::LibNameHasBeenSet() const
 {
     return m_libNameHasBeenSet;
+}
+
+string CustomResult::GetLibId() const
+{
+    return m_libId;
+}
+
+void CustomResult::SetLibId(const string& _libId)
+{
+    m_libId = _libId;
+    m_libIdHasBeenSet = true;
+}
+
+bool CustomResult::LibIdHasBeenSet() const
+{
+    return m_libIdHasBeenSet;
 }
 
 string CustomResult::GetType() const

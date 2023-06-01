@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cms/v20190321/model/Device.h>
 #include <tencentcloud/cms/v20190321/model/User.h>
+#include <tencentcloud/cms/v20190321/model/Device.h>
 
 
 namespace TencentCloud
@@ -63,40 +63,22 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取设备相关信息
-                     * @return Device 设备相关信息
+                     * 获取数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @return DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
                      */
-                    Device GetDevice() const;
+                    std::string GetDataId() const;
 
                     /**
-                     * 设置设备相关信息
-                     * @param Device 设备相关信息
+                     * 设置数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * @param DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
                      */
-                    void SetDevice(const Device& _device);
+                    void SetDataId(const std::string& _dataId);
 
                     /**
-                     * 判断参数 Device 是否已赋值
-                     * @return Device 是否已赋值
+                     * 判断参数 DataId 是否已赋值
+                     * @return DataId 是否已赋值
                      */
-                    bool DeviceHasBeenSet() const;
-
-                    /**
-                     * 获取用户相关信息
-                     * @return User 用户相关信息
-                     */
-                    User GetUser() const;
-
-                    /**
-                     * 设置用户相关信息
-                     * @param User 用户相关信息
-                     */
-                    void SetUser(const User& _user);
-
-                    /**
-                     * 判断参数 User 是否已赋值
-                     * @return User 是否已赋值
-                     */
-                    bool UserHasBeenSet() const;
+                    bool DataIdHasBeenSet() const;
 
                     /**
                      * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
@@ -117,22 +99,22 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据ID，英文字母、下划线、-组成，不超过64个字符
-                     * @return DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * 获取用户相关信息
+                     * @return User 用户相关信息
                      */
-                    std::string GetDataId() const;
+                    User GetUser() const;
 
                     /**
-                     * 设置数据ID，英文字母、下划线、-组成，不超过64个字符
-                     * @param DataId 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * 设置用户相关信息
+                     * @param User 用户相关信息
                      */
-                    void SetDataId(const std::string& _dataId);
+                    void SetUser(const User& _user);
 
                     /**
-                     * 判断参数 DataId 是否已赋值
-                     * @return DataId 是否已赋值
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
                      */
-                    bool DataIdHasBeenSet() const;
+                    bool UserHasBeenSet() const;
 
                     /**
                      * 获取业务应用ID
@@ -152,6 +134,24 @@ namespace TencentCloud
                      */
                     bool SdkAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取设备相关信息
+                     * @return Device 设备相关信息
+                     */
+                    Device GetDevice() const;
+
+                    /**
+                     * 设置设备相关信息
+                     * @param Device 设备相关信息
+                     */
+                    void SetDevice(const Device& _device);
+
+                    /**
+                     * 判断参数 Device 是否已赋值
+                     * @return Device 是否已赋值
+                     */
+                    bool DeviceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,16 +161,10 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 设备相关信息
+                     * 数据ID，英文字母、下划线、-组成，不超过64个字符
                      */
-                    Device m_device;
-                    bool m_deviceHasBeenSet;
-
-                    /**
-                     * 用户相关信息
-                     */
-                    User m_user;
-                    bool m_userHasBeenSet;
+                    std::string m_dataId;
+                    bool m_dataIdHasBeenSet;
 
                     /**
                      * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
@@ -179,16 +173,22 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 数据ID，英文字母、下划线、-组成，不超过64个字符
+                     * 用户相关信息
                      */
-                    std::string m_dataId;
-                    bool m_dataIdHasBeenSet;
+                    User m_user;
+                    bool m_userHasBeenSet;
 
                     /**
                      * 业务应用ID
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 设备相关信息
+                     */
+                    Device m_device;
+                    bool m_deviceHasBeenSet;
 
                 };
             }

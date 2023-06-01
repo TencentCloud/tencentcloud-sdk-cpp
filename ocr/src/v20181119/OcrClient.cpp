@@ -2405,6 +2405,49 @@ OcrClient::RecognizePhilippinesTinIDOCROutcomeCallable OcrClient::RecognizePhili
     return task->get_future();
 }
 
+OcrClient::RecognizePhilippinesUMIDOCROutcome OcrClient::RecognizePhilippinesUMIDOCR(const RecognizePhilippinesUMIDOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizePhilippinesUMIDOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizePhilippinesUMIDOCRResponse rsp = RecognizePhilippinesUMIDOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizePhilippinesUMIDOCROutcome(rsp);
+        else
+            return RecognizePhilippinesUMIDOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizePhilippinesUMIDOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizePhilippinesUMIDOCRAsync(const RecognizePhilippinesUMIDOCRRequest& request, const RecognizePhilippinesUMIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizePhilippinesUMIDOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizePhilippinesUMIDOCROutcomeCallable OcrClient::RecognizePhilippinesUMIDOCRCallable(const RecognizePhilippinesUMIDOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizePhilippinesUMIDOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizePhilippinesUMIDOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizePhilippinesVoteIDOCROutcome OcrClient::RecognizePhilippinesVoteIDOCR(const RecognizePhilippinesVoteIDOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizePhilippinesVoteIDOCR");

@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入业务的唯一ID
-                     * @return AppID 接入业务的唯一ID
-                     */
-                    int64_t GetAppID() const;
-
-                    /**
-                     * 设置接入业务的唯一ID
-                     * @param AppID 接入业务的唯一ID
-                     */
-                    void SetAppID(const int64_t& _appID);
-
-                    /**
-                     * 判断参数 AppID 是否已赋值
-                     * @return AppID 是否已赋值
-                     */
-                    bool AppIDHasBeenSet() const;
-
-                    /**
                      * 获取接口唯一ID，旁路调用接口返回有该字段，标识唯一接口
                      * @return BUCtrlID 接口唯一ID，旁路调用接口返回有该字段，标识唯一接口
                      */
@@ -101,6 +83,24 @@ namespace TencentCloud
                     bool SendTimeHasBeenSet() const;
 
                     /**
+                     * 获取接入业务的唯一ID
+                     * @return AppID 接入业务的唯一ID
+                     */
+                    int64_t GetAppID() const;
+
+                    /**
+                     * 设置接入业务的唯一ID
+                     * @param AppID 接入业务的唯一ID
+                     */
+                    void SetAppID(const int64_t& _appID);
+
+                    /**
+                     * 判断参数 AppID 是否已赋值
+                     * @return AppID 是否已赋值
+                     */
+                    bool AppIDHasBeenSet() const;
+
+                    /**
                      * 获取请求字段里的Common.Uin
                      * @return Uin 请求字段里的Common.Uin
                      */
@@ -121,12 +121,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入业务的唯一ID
-                     */
-                    int64_t m_appID;
-                    bool m_appIDHasBeenSet;
-
-                    /**
                      * 接口唯一ID，旁路调用接口返回有该字段，标识唯一接口
                      */
                     int64_t m_bUCtrlID;
@@ -137,6 +131,12 @@ namespace TencentCloud
                      */
                     int64_t m_sendTime;
                     bool m_sendTimeHasBeenSet;
+
+                    /**
+                     * 接入业务的唯一ID
+                     */
+                    int64_t m_appID;
+                    bool m_appIDHasBeenSet;
 
                     /**
                      * 请求字段里的Common.Uin

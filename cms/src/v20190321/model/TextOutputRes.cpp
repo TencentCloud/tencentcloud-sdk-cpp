@@ -22,9 +22,9 @@ using namespace std;
 
 TextOutputRes::TextOutputRes() :
     m_operatorHasBeenSet(false),
+    m_resultTypeHasBeenSet(false),
     m_resultCodeHasBeenSet(false),
-    m_resultMsgHasBeenSet(false),
-    m_resultTypeHasBeenSet(false)
+    m_resultMsgHasBeenSet(false)
 {
 }
 
@@ -41,6 +41,16 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
         }
         m_operator = string(value["Operator"].GetString());
         m_operatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultType") && !value["ResultType"].IsNull())
+    {
+        if (!value["ResultType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextOutputRes.ResultType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultType = value["ResultType"].GetInt64();
+        m_resultTypeHasBeenSet = true;
     }
 
     if (value.HasMember("ResultCode") && !value["ResultCode"].IsNull())
@@ -63,16 +73,6 @@ CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
         m_resultMsgHasBeenSet = true;
     }
 
-    if (value.HasMember("ResultType") && !value["ResultType"].IsNull())
-    {
-        if (!value["ResultType"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TextOutputRes.ResultType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_resultType = value["ResultType"].GetInt64();
-        m_resultTypeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +86,14 @@ void TextOutputRes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resultType, allocator);
     }
 
     if (m_resultCodeHasBeenSet)
@@ -102,14 +110,6 @@ void TextOutputRes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ResultMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultMsg.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resultTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResultType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_resultType, allocator);
     }
 
 }
@@ -129,6 +129,22 @@ void TextOutputRes::SetOperator(const string& _operator)
 bool TextOutputRes::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+int64_t TextOutputRes::GetResultType() const
+{
+    return m_resultType;
+}
+
+void TextOutputRes::SetResultType(const int64_t& _resultType)
+{
+    m_resultType = _resultType;
+    m_resultTypeHasBeenSet = true;
+}
+
+bool TextOutputRes::ResultTypeHasBeenSet() const
+{
+    return m_resultTypeHasBeenSet;
 }
 
 int64_t TextOutputRes::GetResultCode() const
@@ -161,21 +177,5 @@ void TextOutputRes::SetResultMsg(const string& _resultMsg)
 bool TextOutputRes::ResultMsgHasBeenSet() const
 {
     return m_resultMsgHasBeenSet;
-}
-
-int64_t TextOutputRes::GetResultType() const
-{
-    return m_resultType;
-}
-
-void TextOutputRes::SetResultType(const int64_t& _resultType)
-{
-    m_resultType = _resultType;
-    m_resultTypeHasBeenSet = true;
-}
-
-bool TextOutputRes::ResultTypeHasBeenSet() const
-{
-    return m_resultTypeHasBeenSet;
 }
 

@@ -24,11 +24,11 @@ using namespace std;
 
 TextModerationRequest::TextModerationRequest() :
     m_contentHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_bizTypeHasBeenSet(false),
     m_dataIdHasBeenSet(false),
-    m_sdkAppIdHasBeenSet(false)
+    m_bizTypeHasBeenSet(false),
+    m_userHasBeenSet(false),
+    m_sdkAppIdHasBeenSet(false),
+    m_deviceHasBeenSet(false)
 {
 }
 
@@ -47,13 +47,20 @@ string TextModerationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_deviceHasBeenSet)
+    if (m_dataIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Device";
+        string key = "DataId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_device.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bizType, allocator);
     }
 
     if (m_userHasBeenSet)
@@ -65,28 +72,21 @@ string TextModerationRequest::ToJsonString() const
         m_user.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_bizTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BizType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bizType, allocator);
-    }
-
-    if (m_dataIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DataId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dataId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_sdkAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_deviceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Device";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_device.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -113,36 +113,20 @@ bool TextModerationRequest::ContentHasBeenSet() const
     return m_contentHasBeenSet;
 }
 
-Device TextModerationRequest::GetDevice() const
+string TextModerationRequest::GetDataId() const
 {
-    return m_device;
+    return m_dataId;
 }
 
-void TextModerationRequest::SetDevice(const Device& _device)
+void TextModerationRequest::SetDataId(const string& _dataId)
 {
-    m_device = _device;
-    m_deviceHasBeenSet = true;
+    m_dataId = _dataId;
+    m_dataIdHasBeenSet = true;
 }
 
-bool TextModerationRequest::DeviceHasBeenSet() const
+bool TextModerationRequest::DataIdHasBeenSet() const
 {
-    return m_deviceHasBeenSet;
-}
-
-User TextModerationRequest::GetUser() const
-{
-    return m_user;
-}
-
-void TextModerationRequest::SetUser(const User& _user)
-{
-    m_user = _user;
-    m_userHasBeenSet = true;
-}
-
-bool TextModerationRequest::UserHasBeenSet() const
-{
-    return m_userHasBeenSet;
+    return m_dataIdHasBeenSet;
 }
 
 uint64_t TextModerationRequest::GetBizType() const
@@ -161,20 +145,20 @@ bool TextModerationRequest::BizTypeHasBeenSet() const
     return m_bizTypeHasBeenSet;
 }
 
-string TextModerationRequest::GetDataId() const
+User TextModerationRequest::GetUser() const
 {
-    return m_dataId;
+    return m_user;
 }
 
-void TextModerationRequest::SetDataId(const string& _dataId)
+void TextModerationRequest::SetUser(const User& _user)
 {
-    m_dataId = _dataId;
-    m_dataIdHasBeenSet = true;
+    m_user = _user;
+    m_userHasBeenSet = true;
 }
 
-bool TextModerationRequest::DataIdHasBeenSet() const
+bool TextModerationRequest::UserHasBeenSet() const
 {
-    return m_dataIdHasBeenSet;
+    return m_userHasBeenSet;
 }
 
 uint64_t TextModerationRequest::GetSdkAppId() const
@@ -191,6 +175,22 @@ void TextModerationRequest::SetSdkAppId(const uint64_t& _sdkAppId)
 bool TextModerationRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+Device TextModerationRequest::GetDevice() const
+{
+    return m_device;
+}
+
+void TextModerationRequest::SetDevice(const Device& _device)
+{
+    m_device = _device;
+    m_deviceHasBeenSet = true;
+}
+
+bool TextModerationRequest::DeviceHasBeenSet() const
+{
+    return m_deviceHasBeenSet;
 }
 
 

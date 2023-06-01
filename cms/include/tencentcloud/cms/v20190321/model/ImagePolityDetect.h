@@ -92,24 +92,6 @@ namespace TencentCloud
                     bool HitFlagHasBeenSet() const;
 
                     /**
-                     * 获取命中的logo标签信息
-                     * @return PolityLogoDetail 命中的logo标签信息
-                     */
-                    std::vector<Logo> GetPolityLogoDetail() const;
-
-                    /**
-                     * 设置命中的logo标签信息
-                     * @param PolityLogoDetail 命中的logo标签信息
-                     */
-                    void SetPolityLogoDetail(const std::vector<Logo>& _polityLogoDetail);
-
-                    /**
-                     * 判断参数 PolityLogoDetail 是否已赋值
-                     * @return PolityLogoDetail 是否已赋值
-                     */
-                    bool PolityLogoDetailHasBeenSet() const;
-
-                    /**
                      * 获取命中的人脸名称
                      * @return FaceNames 命中的人脸名称
                      */
@@ -128,32 +110,40 @@ namespace TencentCloud
                     bool FaceNamesHasBeenSet() const;
 
                     /**
-                     * 获取关键词明细
-                     * @return Keywords 关键词明细
+                     * 获取命中的logo标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolityLogoDetail 命中的logo标签信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> GetKeywords() const;
+                    std::vector<Logo> GetPolityLogoDetail() const;
 
                     /**
-                     * 设置关键词明细
-                     * @param Keywords 关键词明细
+                     * 设置命中的logo标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PolityLogoDetail 命中的logo标签信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetKeywords(const std::vector<std::string>& _keywords);
+                    void SetPolityLogoDetail(const std::vector<Logo>& _polityLogoDetail);
 
                     /**
-                     * 判断参数 Keywords 是否已赋值
-                     * @return Keywords 是否已赋值
+                     * 判断参数 PolityLogoDetail 是否已赋值
+                     * @return PolityLogoDetail 是否已赋值
                      */
-                    bool KeywordsHasBeenSet() const;
+                    bool PolityLogoDetailHasBeenSet() const;
 
                     /**
                      * 获取命中的政治物品名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolityItems 命中的政治物品名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetPolityItems() const;
 
                     /**
                      * 设置命中的政治物品名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param PolityItems 命中的政治物品名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolityItems(const std::vector<std::string>& _polityItems);
 
@@ -181,6 +171,24 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取关键词明细
+                     * @return Keywords 关键词明细
+                     */
+                    std::vector<std::string> GetKeywords() const;
+
+                    /**
+                     * 设置关键词明细
+                     * @param Keywords 关键词明细
+                     */
+                    void SetKeywords(const std::vector<std::string>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     */
+                    bool KeywordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,25 +206,21 @@ namespace TencentCloud
                     bool m_hitFlagHasBeenSet;
 
                     /**
-                     * 命中的logo标签信息
-                     */
-                    std::vector<Logo> m_polityLogoDetail;
-                    bool m_polityLogoDetailHasBeenSet;
-
-                    /**
                      * 命中的人脸名称
                      */
                     std::vector<std::string> m_faceNames;
                     bool m_faceNamesHasBeenSet;
 
                     /**
-                     * 关键词明细
+                     * 命中的logo标签信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> m_keywords;
-                    bool m_keywordsHasBeenSet;
+                    std::vector<Logo> m_polityLogoDetail;
+                    bool m_polityLogoDetailHasBeenSet;
 
                     /**
                      * 命中的政治物品名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_polityItems;
                     bool m_polityItemsHasBeenSet;
@@ -226,6 +230,12 @@ namespace TencentCloud
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 关键词明细
+                     */
+                    std::vector<std::string> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                 };
             }

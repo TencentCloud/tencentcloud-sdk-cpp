@@ -22,11 +22,11 @@ using namespace std;
 
 OCRItem::OCRItem() :
     m_textPositionHasBeenSet(false),
-    m_evilLabelHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
+    m_textContentHasBeenSet(false),
     m_rateHasBeenSet(false),
-    m_textContentHasBeenSet(false)
+    m_evilLabelHasBeenSet(false),
+    m_keywordsHasBeenSet(false)
 {
 }
 
@@ -52,16 +52,6 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
         m_textPositionHasBeenSet = true;
     }
 
-    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
-    {
-        if (!value["EvilLabel"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OCRItem.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilLabel = string(value["EvilLabel"].GetString());
-        m_evilLabelHasBeenSet = true;
-    }
-
     if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
     {
         if (!value["EvilType"].IsInt64())
@@ -70,6 +60,36 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TextContent") && !value["TextContent"].IsNull())
+    {
+        if (!value["TextContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRItem.TextContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_textContent = string(value["TextContent"].GetString());
+        m_textContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Rate") && !value["Rate"].IsNull())
+    {
+        if (!value["Rate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRItem.Rate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rate = value["Rate"].GetInt64();
+        m_rateHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
+    {
+        if (!value["EvilLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OCRItem.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilLabel = string(value["EvilLabel"].GetString());
+        m_evilLabelHasBeenSet = true;
     }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
@@ -83,26 +103,6 @@ CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
             m_keywords.push_back((*itr).GetString());
         }
         m_keywordsHasBeenSet = true;
-    }
-
-    if (value.HasMember("Rate") && !value["Rate"].IsNull())
-    {
-        if (!value["Rate"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `OCRItem.Rate` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_rate = value["Rate"].GetInt64();
-        m_rateHasBeenSet = true;
-    }
-
-    if (value.HasMember("TextContent") && !value["TextContent"].IsNull())
-    {
-        if (!value["TextContent"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OCRItem.TextContent` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_textContent = string(value["TextContent"].GetString());
-        m_textContentHasBeenSet = true;
     }
 
 
@@ -121,20 +121,36 @@ void OCRItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         m_textPosition.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_evilLabelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilLabel";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_evilTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
+    }
+
+    if (m_textContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rate, allocator);
+    }
+
+    if (m_evilLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordsHasBeenSet)
@@ -148,22 +164,6 @@ void OCRItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_rateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rate";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_rate, allocator);
-    }
-
-    if (m_textContentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TextContent";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,22 +185,6 @@ bool OCRItem::TextPositionHasBeenSet() const
     return m_textPositionHasBeenSet;
 }
 
-string OCRItem::GetEvilLabel() const
-{
-    return m_evilLabel;
-}
-
-void OCRItem::SetEvilLabel(const string& _evilLabel)
-{
-    m_evilLabel = _evilLabel;
-    m_evilLabelHasBeenSet = true;
-}
-
-bool OCRItem::EvilLabelHasBeenSet() const
-{
-    return m_evilLabelHasBeenSet;
-}
-
 int64_t OCRItem::GetEvilType() const
 {
     return m_evilType;
@@ -217,20 +201,20 @@ bool OCRItem::EvilTypeHasBeenSet() const
     return m_evilTypeHasBeenSet;
 }
 
-vector<string> OCRItem::GetKeywords() const
+string OCRItem::GetTextContent() const
 {
-    return m_keywords;
+    return m_textContent;
 }
 
-void OCRItem::SetKeywords(const vector<string>& _keywords)
+void OCRItem::SetTextContent(const string& _textContent)
 {
-    m_keywords = _keywords;
-    m_keywordsHasBeenSet = true;
+    m_textContent = _textContent;
+    m_textContentHasBeenSet = true;
 }
 
-bool OCRItem::KeywordsHasBeenSet() const
+bool OCRItem::TextContentHasBeenSet() const
 {
-    return m_keywordsHasBeenSet;
+    return m_textContentHasBeenSet;
 }
 
 int64_t OCRItem::GetRate() const
@@ -249,19 +233,35 @@ bool OCRItem::RateHasBeenSet() const
     return m_rateHasBeenSet;
 }
 
-string OCRItem::GetTextContent() const
+string OCRItem::GetEvilLabel() const
 {
-    return m_textContent;
+    return m_evilLabel;
 }
 
-void OCRItem::SetTextContent(const string& _textContent)
+void OCRItem::SetEvilLabel(const string& _evilLabel)
 {
-    m_textContent = _textContent;
-    m_textContentHasBeenSet = true;
+    m_evilLabel = _evilLabel;
+    m_evilLabelHasBeenSet = true;
 }
 
-bool OCRItem::TextContentHasBeenSet() const
+bool OCRItem::EvilLabelHasBeenSet() const
 {
-    return m_textContentHasBeenSet;
+    return m_evilLabelHasBeenSet;
+}
+
+vector<string> OCRItem::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void OCRItem::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool OCRItem::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 

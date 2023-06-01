@@ -215,7 +215,6 @@ namespace TencentCloud
 
                 /**
                  *删除用户列表（用户管理）
-
                  * @param req DeleteUserManagerUserListRequest
                  * @return DeleteUserManagerUserListOutcome
                  */

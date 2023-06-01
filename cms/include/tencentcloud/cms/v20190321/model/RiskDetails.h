@@ -65,24 +65,6 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
-                     */
-                    std::string GetLabel() const;
-
-                    /**
-                     * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
-                     */
-                    void SetLabel(const std::string& _label);
-
-                    /**
-                     * 判断参数 Label 是否已赋值
-                     * @return Label 是否已赋值
-                     */
-                    bool LabelHasBeenSet() const;
-
-                    /**
                      * 获取预留字段，暂时不用
                      * @return Lable 预留字段，暂时不用
                      */
@@ -99,6 +81,24 @@ namespace TencentCloud
                      * @return Lable 是否已赋值
                      */
                     bool LableHasBeenSet() const;
+
+                    /**
+                     * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
 
                     /**
                      * 获取风险等级，1:疑似，2：恶意
@@ -127,16 +127,16 @@ namespace TencentCloud
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * 风险类别，RiskAccount，RiskIP, RiskIMEI
-                     */
-                    std::string m_label;
-                    bool m_labelHasBeenSet;
-
-                    /**
                      * 预留字段，暂时不用
                      */
                     std::string m_lable;
                     bool m_lableHasBeenSet;
+
+                    /**
+                     * 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                     /**
                      * 风险等级，1:疑似，2：恶意

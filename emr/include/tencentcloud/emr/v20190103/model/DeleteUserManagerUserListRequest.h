@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/UserAndGroup.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,60 @@ namespace TencentCloud
                      */
                     bool UserNameListHasBeenSet() const;
 
+                    /**
+                     * 获取tke/eks集群id，容器集群传
+                     * @return TkeClusterId tke/eks集群id，容器集群传
+                     */
+                    std::string GetTkeClusterId() const;
+
+                    /**
+                     * 设置tke/eks集群id，容器集群传
+                     * @param TkeClusterId tke/eks集群id，容器集群传
+                     */
+                    void SetTkeClusterId(const std::string& _tkeClusterId);
+
+                    /**
+                     * 判断参数 TkeClusterId 是否已赋值
+                     * @return TkeClusterId 是否已赋值
+                     */
+                    bool TkeClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取默认空，容器版传"native"
+                     * @return DisplayStrategy 默认空，容器版传"native"
+                     */
+                    std::string GetDisplayStrategy() const;
+
+                    /**
+                     * 设置默认空，容器版传"native"
+                     * @param DisplayStrategy 默认空，容器版传"native"
+                     */
+                    void SetDisplayStrategy(const std::string& _displayStrategy);
+
+                    /**
+                     * 判断参数 DisplayStrategy 是否已赋值
+                     * @return DisplayStrategy 是否已赋值
+                     */
+                    bool DisplayStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取用户组
+                     * @return UserGroupList 用户组
+                     */
+                    std::vector<UserAndGroup> GetUserGroupList() const;
+
+                    /**
+                     * 设置用户组
+                     * @param UserGroupList 用户组
+                     */
+                    void SetUserGroupList(const std::vector<UserAndGroup>& _userGroupList);
+
+                    /**
+                     * 判断参数 UserGroupList 是否已赋值
+                     * @return UserGroupList 是否已赋值
+                     */
+                    bool UserGroupListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +146,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_userNameList;
                     bool m_userNameListHasBeenSet;
+
+                    /**
+                     * tke/eks集群id，容器集群传
+                     */
+                    std::string m_tkeClusterId;
+                    bool m_tkeClusterIdHasBeenSet;
+
+                    /**
+                     * 默认空，容器版传"native"
+                     */
+                    std::string m_displayStrategy;
+                    bool m_displayStrategyHasBeenSet;
+
+                    /**
+                     * 用户组
+                     */
+                    std::vector<UserAndGroup> m_userGroupList;
+                    bool m_userGroupListHasBeenSet;
 
                 };
             }

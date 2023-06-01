@@ -48,32 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取从图片中检测到的二维码，可能为多个
-                     * @return ModerationDetail 从图片中检测到的二维码，可能为多个
-                     */
-                    std::vector<CodeDetail> GetModerationDetail() const;
-
-                    /**
-                     * 设置从图片中检测到的二维码，可能为多个
-                     * @param ModerationDetail 从图片中检测到的二维码，可能为多个
-                     */
-                    void SetModerationDetail(const std::vector<CodeDetail>& _moderationDetail);
-
-                    /**
-                     * 判断参数 ModerationDetail 是否已赋值
-                     * @return ModerationDetail 是否已赋值
-                     */
-                    bool ModerationDetailHasBeenSet() const;
-
-                    /**
                      * 获取检测是否成功，0：成功，-1：出错
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModerationCode 检测是否成功，0：成功，-1：出错
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetModerationCode() const;
 
                     /**
                      * 设置检测是否成功，0：成功，-1：出错
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ModerationCode 检测是否成功，0：成功，-1：出错
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetModerationCode(const int64_t& _moderationCode);
 
@@ -83,19 +69,43 @@ namespace TencentCloud
                      */
                     bool ModerationCodeHasBeenSet() const;
 
+                    /**
+                     * 获取从图片中检测到的二维码，可能为多个
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModerationDetail 从图片中检测到的二维码，可能为多个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodeDetail> GetModerationDetail() const;
+
+                    /**
+                     * 设置从图片中检测到的二维码，可能为多个
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModerationDetail 从图片中检测到的二维码，可能为多个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModerationDetail(const std::vector<CodeDetail>& _moderationDetail);
+
+                    /**
+                     * 判断参数 ModerationDetail 是否已赋值
+                     * @return ModerationDetail 是否已赋值
+                     */
+                    bool ModerationDetailHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 从图片中检测到的二维码，可能为多个
-                     */
-                    std::vector<CodeDetail> m_moderationDetail;
-                    bool m_moderationDetailHasBeenSet;
-
-                    /**
                      * 检测是否成功，0：成功，-1：出错
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_moderationCode;
                     bool m_moderationCodeHasBeenSet;
+
+                    /**
+                     * 从图片中检测到的二维码，可能为多个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodeDetail> m_moderationDetail;
+                    bool m_moderationDetailHasBeenSet;
 
                 };
             }

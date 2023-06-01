@@ -21,8 +21,8 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 Logo::Logo() :
-    m_rrectFHasBeenSet(false),
     m_confidenceHasBeenSet(false),
+    m_rrectFHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -31,6 +31,16 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
+    {
+        if (!value["Confidence"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Logo.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_confidence = value["Confidence"].GetDouble();
+        m_confidenceHasBeenSet = true;
+    }
 
     if (value.HasMember("RrectF") && !value["RrectF"].IsNull())
     {
@@ -47,16 +57,6 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
         }
 
         m_rrectFHasBeenSet = true;
-    }
-
-    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
-    {
-        if (!value["Confidence"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `Logo.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_confidence = value["Confidence"].GetDouble();
-        m_confidenceHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -76,6 +76,14 @@ CoreInternalOutcome Logo::Deserialize(const rapidjson::Value &value)
 void Logo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_confidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Confidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_confidence, allocator);
+    }
+
     if (m_rrectFHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -83,14 +91,6 @@ void Logo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rrectF.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_confidenceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Confidence";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_confidence, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -103,22 +103,6 @@ void Logo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
 
 }
 
-
-RrectF Logo::GetRrectF() const
-{
-    return m_rrectF;
-}
-
-void Logo::SetRrectF(const RrectF& _rrectF)
-{
-    m_rrectF = _rrectF;
-    m_rrectFHasBeenSet = true;
-}
-
-bool Logo::RrectFHasBeenSet() const
-{
-    return m_rrectFHasBeenSet;
-}
 
 double Logo::GetConfidence() const
 {
@@ -134,6 +118,22 @@ void Logo::SetConfidence(const double& _confidence)
 bool Logo::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+RrectF Logo::GetRrectF() const
+{
+    return m_rrectF;
+}
+
+void Logo::SetRrectF(const RrectF& _rrectF)
+{
+    m_rrectF = _rrectF;
+    m_rrectFHasBeenSet = true;
+}
+
+bool Logo::RrectFHasBeenSet() const
+{
+    return m_rrectFHasBeenSet;
 }
 
 string Logo::GetName() const

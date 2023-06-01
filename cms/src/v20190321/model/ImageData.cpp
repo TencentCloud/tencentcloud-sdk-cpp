@@ -21,18 +21,18 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 ImageData::ImageData() :
-    m_evilFlagHasBeenSet(false),
     m_evilTypeHasBeenSet(false),
-    m_codeDetectHasBeenSet(false),
     m_hotDetectHasBeenSet(false),
-    m_illegalDetectHasBeenSet(false),
-    m_logoDetectHasBeenSet(false),
-    m_oCRDetectHasBeenSet(false),
-    m_phoneDetectHasBeenSet(false),
+    m_evilFlagHasBeenSet(false),
+    m_codeDetectHasBeenSet(false),
     m_polityDetectHasBeenSet(false),
+    m_illegalDetectHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
+    m_terrorDetectHasBeenSet(false),
+    m_oCRDetectHasBeenSet(false),
+    m_logoDetectHasBeenSet(false),
     m_similarHasBeenSet(false),
-    m_terrorDetectHasBeenSet(false)
+    m_phoneDetectHasBeenSet(false)
 {
 }
 
@@ -40,16 +40,6 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("EvilFlag") && !value["EvilFlag"].IsNull())
-    {
-        if (!value["EvilFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilFlag = value["EvilFlag"].GetInt64();
-        m_evilFlagHasBeenSet = true;
-    }
 
     if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
     {
@@ -59,23 +49,6 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("CodeDetect") && !value["CodeDetect"].IsNull())
-    {
-        if (!value["CodeDetect"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageData.CodeDetect` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_codeDetect.Deserialize(value["CodeDetect"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_codeDetectHasBeenSet = true;
     }
 
     if (value.HasMember("HotDetect") && !value["HotDetect"].IsNull())
@@ -95,72 +68,31 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
         m_hotDetectHasBeenSet = true;
     }
 
-    if (value.HasMember("IllegalDetect") && !value["IllegalDetect"].IsNull())
+    if (value.HasMember("EvilFlag") && !value["EvilFlag"].IsNull())
     {
-        if (!value["IllegalDetect"].IsObject())
+        if (!value["EvilFlag"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ImageData.IllegalDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.EvilFlag` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_illegalDetect.Deserialize(value["IllegalDetect"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_illegalDetectHasBeenSet = true;
+        m_evilFlag = value["EvilFlag"].GetInt64();
+        m_evilFlagHasBeenSet = true;
     }
 
-    if (value.HasMember("LogoDetect") && !value["LogoDetect"].IsNull())
+    if (value.HasMember("CodeDetect") && !value["CodeDetect"].IsNull())
     {
-        if (!value["LogoDetect"].IsObject())
+        if (!value["CodeDetect"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ImageData.LogoDetect` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ImageData.CodeDetect` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_logoDetect.Deserialize(value["LogoDetect"]);
+        CoreInternalOutcome outcome = m_codeDetect.Deserialize(value["CodeDetect"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_logoDetectHasBeenSet = true;
-    }
-
-    if (value.HasMember("OCRDetect") && !value["OCRDetect"].IsNull())
-    {
-        if (!value["OCRDetect"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageData.OCRDetect` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_oCRDetect.Deserialize(value["OCRDetect"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_oCRDetectHasBeenSet = true;
-    }
-
-    if (value.HasMember("PhoneDetect") && !value["PhoneDetect"].IsNull())
-    {
-        if (!value["PhoneDetect"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageData.PhoneDetect` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_phoneDetect.Deserialize(value["PhoneDetect"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_phoneDetectHasBeenSet = true;
+        m_codeDetectHasBeenSet = true;
     }
 
     if (value.HasMember("PolityDetect") && !value["PolityDetect"].IsNull())
@@ -180,6 +112,23 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
         m_polityDetectHasBeenSet = true;
     }
 
+    if (value.HasMember("IllegalDetect") && !value["IllegalDetect"].IsNull())
+    {
+        if (!value["IllegalDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageData.IllegalDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_illegalDetect.Deserialize(value["IllegalDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_illegalDetectHasBeenSet = true;
+    }
+
     if (value.HasMember("PornDetect") && !value["PornDetect"].IsNull())
     {
         if (!value["PornDetect"].IsObject())
@@ -195,23 +144,6 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
         }
 
         m_pornDetectHasBeenSet = true;
-    }
-
-    if (value.HasMember("Similar") && !value["Similar"].IsNull())
-    {
-        if (!value["Similar"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageData.Similar` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_similar.Deserialize(value["Similar"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_similarHasBeenSet = true;
     }
 
     if (value.HasMember("TerrorDetect") && !value["TerrorDetect"].IsNull())
@@ -231,6 +163,74 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
         m_terrorDetectHasBeenSet = true;
     }
 
+    if (value.HasMember("OCRDetect") && !value["OCRDetect"].IsNull())
+    {
+        if (!value["OCRDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageData.OCRDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oCRDetect.Deserialize(value["OCRDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oCRDetectHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogoDetect") && !value["LogoDetect"].IsNull())
+    {
+        if (!value["LogoDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageData.LogoDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logoDetect.Deserialize(value["LogoDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logoDetectHasBeenSet = true;
+    }
+
+    if (value.HasMember("Similar") && !value["Similar"].IsNull())
+    {
+        if (!value["Similar"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageData.Similar` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_similar.Deserialize(value["Similar"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_similarHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneDetect") && !value["PhoneDetect"].IsNull())
+    {
+        if (!value["PhoneDetect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageData.PhoneDetect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_phoneDetect.Deserialize(value["PhoneDetect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_phoneDetectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,29 +238,12 @@ CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
 void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_evilFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_evilFlag, allocator);
-    }
-
     if (m_evilTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
-    }
-
-    if (m_codeDetectHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CodeDetect";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_codeDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hotDetectHasBeenSet)
@@ -272,40 +255,21 @@ void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         m_hotDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_illegalDetectHasBeenSet)
+    if (m_evilFlagHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IllegalDetect";
+        string key = "EvilFlag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_illegalDetect.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_evilFlag, allocator);
     }
 
-    if (m_logoDetectHasBeenSet)
+    if (m_codeDetectHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogoDetect";
+        string key = "CodeDetect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_logoDetect.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_oCRDetectHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OCRDetect";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_oCRDetect.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_phoneDetectHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PhoneDetect";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_phoneDetect.ToJsonObject(value[key.c_str()], allocator);
+        m_codeDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_polityDetectHasBeenSet)
@@ -317,6 +281,15 @@ void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         m_polityDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_illegalDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IllegalDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_illegalDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_pornDetectHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -324,15 +297,6 @@ void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pornDetect.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_similarHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Similar";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_similar.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_terrorDetectHasBeenSet)
@@ -344,24 +308,44 @@ void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         m_terrorDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_oCRDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OCRDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oCRDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logoDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logoDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_similarHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Similar";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_similar.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_phoneDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneDetect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_phoneDetect.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
-
-int64_t ImageData::GetEvilFlag() const
-{
-    return m_evilFlag;
-}
-
-void ImageData::SetEvilFlag(const int64_t& _evilFlag)
-{
-    m_evilFlag = _evilFlag;
-    m_evilFlagHasBeenSet = true;
-}
-
-bool ImageData::EvilFlagHasBeenSet() const
-{
-    return m_evilFlagHasBeenSet;
-}
 
 int64_t ImageData::GetEvilType() const
 {
@@ -377,22 +361,6 @@ void ImageData::SetEvilType(const int64_t& _evilType)
 bool ImageData::EvilTypeHasBeenSet() const
 {
     return m_evilTypeHasBeenSet;
-}
-
-CodeDetect ImageData::GetCodeDetect() const
-{
-    return m_codeDetect;
-}
-
-void ImageData::SetCodeDetect(const CodeDetect& _codeDetect)
-{
-    m_codeDetect = _codeDetect;
-    m_codeDetectHasBeenSet = true;
-}
-
-bool ImageData::CodeDetectHasBeenSet() const
-{
-    return m_codeDetectHasBeenSet;
 }
 
 ImageHotDetect ImageData::GetHotDetect() const
@@ -411,68 +379,36 @@ bool ImageData::HotDetectHasBeenSet() const
     return m_hotDetectHasBeenSet;
 }
 
-ImageIllegalDetect ImageData::GetIllegalDetect() const
+int64_t ImageData::GetEvilFlag() const
 {
-    return m_illegalDetect;
+    return m_evilFlag;
 }
 
-void ImageData::SetIllegalDetect(const ImageIllegalDetect& _illegalDetect)
+void ImageData::SetEvilFlag(const int64_t& _evilFlag)
 {
-    m_illegalDetect = _illegalDetect;
-    m_illegalDetectHasBeenSet = true;
+    m_evilFlag = _evilFlag;
+    m_evilFlagHasBeenSet = true;
 }
 
-bool ImageData::IllegalDetectHasBeenSet() const
+bool ImageData::EvilFlagHasBeenSet() const
 {
-    return m_illegalDetectHasBeenSet;
+    return m_evilFlagHasBeenSet;
 }
 
-LogoDetail ImageData::GetLogoDetect() const
+CodeDetect ImageData::GetCodeDetect() const
 {
-    return m_logoDetect;
+    return m_codeDetect;
 }
 
-void ImageData::SetLogoDetect(const LogoDetail& _logoDetect)
+void ImageData::SetCodeDetect(const CodeDetect& _codeDetect)
 {
-    m_logoDetect = _logoDetect;
-    m_logoDetectHasBeenSet = true;
+    m_codeDetect = _codeDetect;
+    m_codeDetectHasBeenSet = true;
 }
 
-bool ImageData::LogoDetectHasBeenSet() const
+bool ImageData::CodeDetectHasBeenSet() const
 {
-    return m_logoDetectHasBeenSet;
-}
-
-OCRDetect ImageData::GetOCRDetect() const
-{
-    return m_oCRDetect;
-}
-
-void ImageData::SetOCRDetect(const OCRDetect& _oCRDetect)
-{
-    m_oCRDetect = _oCRDetect;
-    m_oCRDetectHasBeenSet = true;
-}
-
-bool ImageData::OCRDetectHasBeenSet() const
-{
-    return m_oCRDetectHasBeenSet;
-}
-
-PhoneDetect ImageData::GetPhoneDetect() const
-{
-    return m_phoneDetect;
-}
-
-void ImageData::SetPhoneDetect(const PhoneDetect& _phoneDetect)
-{
-    m_phoneDetect = _phoneDetect;
-    m_phoneDetectHasBeenSet = true;
-}
-
-bool ImageData::PhoneDetectHasBeenSet() const
-{
-    return m_phoneDetectHasBeenSet;
+    return m_codeDetectHasBeenSet;
 }
 
 ImagePolityDetect ImageData::GetPolityDetect() const
@@ -491,6 +427,22 @@ bool ImageData::PolityDetectHasBeenSet() const
     return m_polityDetectHasBeenSet;
 }
 
+ImageIllegalDetect ImageData::GetIllegalDetect() const
+{
+    return m_illegalDetect;
+}
+
+void ImageData::SetIllegalDetect(const ImageIllegalDetect& _illegalDetect)
+{
+    m_illegalDetect = _illegalDetect;
+    m_illegalDetectHasBeenSet = true;
+}
+
+bool ImageData::IllegalDetectHasBeenSet() const
+{
+    return m_illegalDetectHasBeenSet;
+}
+
 ImagePornDetect ImageData::GetPornDetect() const
 {
     return m_pornDetect;
@@ -505,6 +457,54 @@ void ImageData::SetPornDetect(const ImagePornDetect& _pornDetect)
 bool ImageData::PornDetectHasBeenSet() const
 {
     return m_pornDetectHasBeenSet;
+}
+
+ImageTerrorDetect ImageData::GetTerrorDetect() const
+{
+    return m_terrorDetect;
+}
+
+void ImageData::SetTerrorDetect(const ImageTerrorDetect& _terrorDetect)
+{
+    m_terrorDetect = _terrorDetect;
+    m_terrorDetectHasBeenSet = true;
+}
+
+bool ImageData::TerrorDetectHasBeenSet() const
+{
+    return m_terrorDetectHasBeenSet;
+}
+
+OCRDetect ImageData::GetOCRDetect() const
+{
+    return m_oCRDetect;
+}
+
+void ImageData::SetOCRDetect(const OCRDetect& _oCRDetect)
+{
+    m_oCRDetect = _oCRDetect;
+    m_oCRDetectHasBeenSet = true;
+}
+
+bool ImageData::OCRDetectHasBeenSet() const
+{
+    return m_oCRDetectHasBeenSet;
+}
+
+LogoDetail ImageData::GetLogoDetect() const
+{
+    return m_logoDetect;
+}
+
+void ImageData::SetLogoDetect(const LogoDetail& _logoDetect)
+{
+    m_logoDetect = _logoDetect;
+    m_logoDetectHasBeenSet = true;
+}
+
+bool ImageData::LogoDetectHasBeenSet() const
+{
+    return m_logoDetectHasBeenSet;
 }
 
 Similar ImageData::GetSimilar() const
@@ -523,19 +523,19 @@ bool ImageData::SimilarHasBeenSet() const
     return m_similarHasBeenSet;
 }
 
-ImageTerrorDetect ImageData::GetTerrorDetect() const
+PhoneDetect ImageData::GetPhoneDetect() const
 {
-    return m_terrorDetect;
+    return m_phoneDetect;
 }
 
-void ImageData::SetTerrorDetect(const ImageTerrorDetect& _terrorDetect)
+void ImageData::SetPhoneDetect(const PhoneDetect& _phoneDetect)
 {
-    m_terrorDetect = _terrorDetect;
-    m_terrorDetectHasBeenSet = true;
+    m_phoneDetect = _phoneDetect;
+    m_phoneDetectHasBeenSet = true;
 }
 
-bool ImageData::TerrorDetectHasBeenSet() const
+bool ImageData::PhoneDetectHasBeenSet() const
 {
-    return m_terrorDetectHasBeenSet;
+    return m_phoneDetectHasBeenSet;
 }
 

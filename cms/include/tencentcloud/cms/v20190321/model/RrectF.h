@@ -47,32 +47,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取logo横坐标
-                     * @return Cx logo横坐标
+                     * 获取logo图标宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Width logo图标宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double GetCx() const;
+                    double GetWidth() const;
 
                     /**
-                     * 设置logo横坐标
-                     * @param Cx logo横坐标
+                     * 设置logo图标宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Width logo图标宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetCx(const double& _cx);
+                    void SetWidth(const double& _width);
 
                     /**
-                     * 判断参数 Cx 是否已赋值
-                     * @return Cx 是否已赋值
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
                      */
-                    bool CxHasBeenSet() const;
+                    bool WidthHasBeenSet() const;
 
                     /**
                      * 获取logo纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cy logo纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetCy() const;
 
                     /**
                      * 设置logo纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Cy logo纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCy(const double& _cy);
 
@@ -83,32 +91,40 @@ namespace TencentCloud
                     bool CyHasBeenSet() const;
 
                     /**
-                     * 获取logo图标高度
-                     * @return Height logo图标高度
+                     * 获取logo横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cx logo横坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double GetHeight() const;
+                    double GetCx() const;
 
                     /**
-                     * 设置logo图标高度
-                     * @param Height logo图标高度
+                     * 设置logo横坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Cx logo横坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetHeight(const double& _height);
+                    void SetCx(const double& _cx);
 
                     /**
-                     * 判断参数 Height 是否已赋值
-                     * @return Height 是否已赋值
+                     * 判断参数 Cx 是否已赋值
+                     * @return Cx 是否已赋值
                      */
-                    bool HeightHasBeenSet() const;
+                    bool CxHasBeenSet() const;
 
                     /**
                      * 获取logo图标中心旋转度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rotate logo图标中心旋转度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetRotate() const;
 
                     /**
                      * 设置logo图标中心旋转度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Rotate logo图标中心旋转度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRotate(const double& _rotate);
 
@@ -119,54 +135,63 @@ namespace TencentCloud
                     bool RotateHasBeenSet() const;
 
                     /**
-                     * 获取logo图标宽度
-                     * @return Width logo图标宽度
+                     * 获取logo图标高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Height logo图标高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double GetWidth() const;
+                    double GetHeight() const;
 
                     /**
-                     * 设置logo图标宽度
-                     * @param Width logo图标宽度
+                     * 设置logo图标高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Height logo图标高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetWidth(const double& _width);
+                    void SetHeight(const double& _height);
 
                     /**
-                     * 判断参数 Width 是否已赋值
-                     * @return Width 是否已赋值
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
                      */
-                    bool WidthHasBeenSet() const;
+                    bool HeightHasBeenSet() const;
 
                 private:
 
                     /**
-                     * logo横坐标
+                     * logo图标宽度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double m_cx;
-                    bool m_cxHasBeenSet;
+                    double m_width;
+                    bool m_widthHasBeenSet;
 
                     /**
                      * logo纵坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cy;
                     bool m_cyHasBeenSet;
 
                     /**
-                     * logo图标高度
+                     * logo横坐标
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double m_height;
-                    bool m_heightHasBeenSet;
+                    double m_cx;
+                    bool m_cxHasBeenSet;
 
                     /**
                      * logo图标中心旋转度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_rotate;
                     bool m_rotateHasBeenSet;
 
                     /**
-                     * logo图标宽度
+                     * logo图标高度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    double m_width;
-                    bool m_widthHasBeenSet;
+                    double m_height;
+                    bool m_heightHasBeenSet;
 
                 };
             }

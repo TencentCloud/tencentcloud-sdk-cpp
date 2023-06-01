@@ -2190,6 +2190,49 @@ DcdbClient::KillSessionOutcomeCallable DcdbClient::KillSessionCallable(const Kil
     return task->get_future();
 }
 
+DcdbClient::ModifyAccountConfigOutcome DcdbClient::ModifyAccountConfig(const ModifyAccountConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountConfigResponse rsp = ModifyAccountConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountConfigOutcome(rsp);
+        else
+            return ModifyAccountConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountConfigOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::ModifyAccountConfigAsync(const ModifyAccountConfigRequest& request, const ModifyAccountConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::ModifyAccountConfigOutcomeCallable DcdbClient::ModifyAccountConfigCallable(const ModifyAccountConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::ModifyAccountDescriptionOutcome DcdbClient::ModifyAccountDescription(const ModifyAccountDescriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccountDescription");

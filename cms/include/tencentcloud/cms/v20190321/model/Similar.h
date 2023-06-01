@@ -108,13 +108,17 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的种子url
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeedUrl 返回的种子url
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSeedUrl() const;
 
                     /**
                      * 设置返回的种子url
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SeedUrl 返回的种子url
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSeedUrl(const std::string& _seedUrl);
 
@@ -146,6 +150,7 @@ namespace TencentCloud
 
                     /**
                      * 返回的种子url
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_seedUrl;
                     bool m_seedUrlHasBeenSet;

@@ -24,8 +24,8 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 TextModerationResponse::TextModerationResponse() :
-    m_dataHasBeenSet(false),
-    m_businessCodeHasBeenSet(false)
+    m_businessCodeHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("BusinessCode") && !rsp["BusinessCode"].IsNull())
+    {
+        if (!rsp["BusinessCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessCode = rsp["BusinessCode"].GetInt64();
+        m_businessCodeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsObject())
@@ -80,16 +90,6 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
-    if (rsp.HasMember("BusinessCode") && !rsp["BusinessCode"].IsNull())
-    {
-        if (!rsp["BusinessCode"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BusinessCode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_businessCode = rsp["BusinessCode"].GetInt64();
-        m_businessCodeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -100,6 +100,14 @@ string TextModerationResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_businessCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessCode, allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,14 +115,6 @@ string TextModerationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_businessCodeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BusinessCode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_businessCode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,16 +129,6 @@ string TextModerationResponse::ToJsonString() const
 }
 
 
-TextData TextModerationResponse::GetData() const
-{
-    return m_data;
-}
-
-bool TextModerationResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
-
 int64_t TextModerationResponse::GetBusinessCode() const
 {
     return m_businessCode;
@@ -147,6 +137,16 @@ int64_t TextModerationResponse::GetBusinessCode() const
 bool TextModerationResponse::BusinessCodeHasBeenSet() const
 {
     return m_businessCodeHasBeenSet;
+}
+
+TextData TextModerationResponse::GetData() const
+{
+    return m_data;
+}
+
+bool TextModerationResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

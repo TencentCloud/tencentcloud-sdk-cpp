@@ -92,6 +92,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/SubnetInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h
   include/tencentcloud/emr/v20190103/model/CreateClusterRequest.h
+  include/tencentcloud/emr/v20190103/model/UserAndGroup.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
@@ -230,6 +231,7 @@ set(emr_src
   src/v20190103/model/SubnetInfo.cpp
   src/v20190103/model/DescribeCvmQuotaResponse.cpp
   src/v20190103/model/CreateClusterRequest.cpp
+  src/v20190103/model/UserAndGroup.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/DescribeCvmQuotaRequest.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp

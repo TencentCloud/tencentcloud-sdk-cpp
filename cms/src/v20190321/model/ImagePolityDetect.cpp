@@ -23,11 +23,11 @@ using namespace std;
 ImagePolityDetect::ImagePolityDetect() :
     m_evilTypeHasBeenSet(false),
     m_hitFlagHasBeenSet(false),
-    m_polityLogoDetailHasBeenSet(false),
     m_faceNamesHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
+    m_polityLogoDetailHasBeenSet(false),
     m_polityItemsHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_keywordsHasBeenSet(false)
 {
 }
 
@@ -56,6 +56,19 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
         m_hitFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("FaceNames") && !value["FaceNames"].IsNull())
+    {
+        if (!value["FaceNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.FaceNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FaceNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_faceNames.push_back((*itr).GetString());
+        }
+        m_faceNamesHasBeenSet = true;
+    }
+
     if (value.HasMember("PolityLogoDetail") && !value["PolityLogoDetail"].IsNull())
     {
         if (!value["PolityLogoDetail"].IsArray())
@@ -74,32 +87,6 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
             m_polityLogoDetail.push_back(item);
         }
         m_polityLogoDetailHasBeenSet = true;
-    }
-
-    if (value.HasMember("FaceNames") && !value["FaceNames"].IsNull())
-    {
-        if (!value["FaceNames"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.FaceNames` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["FaceNames"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_faceNames.push_back((*itr).GetString());
-        }
-        m_faceNamesHasBeenSet = true;
-    }
-
-    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
-    {
-        if (!value["Keywords"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.Keywords` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Keywords"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_keywords.push_back((*itr).GetString());
-        }
-        m_keywordsHasBeenSet = true;
     }
 
     if (value.HasMember("PolityItems") && !value["PolityItems"].IsNull())
@@ -125,6 +112,19 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImagePolityDetect.Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywords.push_back((*itr).GetString());
+        }
+        m_keywordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,21 +148,6 @@ void ImagePolityDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_hitFlag, allocator);
     }
 
-    if (m_polityLogoDetailHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PolityLogoDetail";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_polityLogoDetail.begin(); itr != m_polityLogoDetail.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_faceNamesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,16 +161,18 @@ void ImagePolityDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         }
     }
 
-    if (m_keywordsHasBeenSet)
+    if (m_polityLogoDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Keywords";
+        string key = "PolityLogoDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        int i=0;
+        for (auto itr = m_polityLogoDetail.begin(); itr != m_polityLogoDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -208,6 +195,19 @@ void ImagePolityDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -245,22 +245,6 @@ bool ImagePolityDetect::HitFlagHasBeenSet() const
     return m_hitFlagHasBeenSet;
 }
 
-vector<Logo> ImagePolityDetect::GetPolityLogoDetail() const
-{
-    return m_polityLogoDetail;
-}
-
-void ImagePolityDetect::SetPolityLogoDetail(const vector<Logo>& _polityLogoDetail)
-{
-    m_polityLogoDetail = _polityLogoDetail;
-    m_polityLogoDetailHasBeenSet = true;
-}
-
-bool ImagePolityDetect::PolityLogoDetailHasBeenSet() const
-{
-    return m_polityLogoDetailHasBeenSet;
-}
-
 vector<string> ImagePolityDetect::GetFaceNames() const
 {
     return m_faceNames;
@@ -277,20 +261,20 @@ bool ImagePolityDetect::FaceNamesHasBeenSet() const
     return m_faceNamesHasBeenSet;
 }
 
-vector<string> ImagePolityDetect::GetKeywords() const
+vector<Logo> ImagePolityDetect::GetPolityLogoDetail() const
 {
-    return m_keywords;
+    return m_polityLogoDetail;
 }
 
-void ImagePolityDetect::SetKeywords(const vector<string>& _keywords)
+void ImagePolityDetect::SetPolityLogoDetail(const vector<Logo>& _polityLogoDetail)
 {
-    m_keywords = _keywords;
-    m_keywordsHasBeenSet = true;
+    m_polityLogoDetail = _polityLogoDetail;
+    m_polityLogoDetailHasBeenSet = true;
 }
 
-bool ImagePolityDetect::KeywordsHasBeenSet() const
+bool ImagePolityDetect::PolityLogoDetailHasBeenSet() const
 {
-    return m_keywordsHasBeenSet;
+    return m_polityLogoDetailHasBeenSet;
 }
 
 vector<string> ImagePolityDetect::GetPolityItems() const
@@ -323,5 +307,21 @@ void ImagePolityDetect::SetScore(const int64_t& _score)
 bool ImagePolityDetect::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+vector<string> ImagePolityDetect::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void ImagePolityDetect::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool ImagePolityDetect::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 

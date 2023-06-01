@@ -21,10 +21,10 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 DetailResult::DetailResult() :
-    m_evilLabelHasBeenSet(false),
-    m_evilTypeHasBeenSet(false),
     m_keywordsHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_evilTypeHasBeenSet(false),
+    m_scoreHasBeenSet(false),
+    m_evilLabelHasBeenSet(false)
 {
 }
 
@@ -32,26 +32,6 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
-    {
-        if (!value["EvilLabel"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilLabel = string(value["EvilLabel"].GetString());
-        m_evilLabelHasBeenSet = true;
-    }
-
-    if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
-    {
-        if (!value["EvilType"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_evilType = value["EvilType"].GetUint64();
-        m_evilTypeHasBeenSet = true;
-    }
 
     if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
     {
@@ -66,6 +46,16 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
         m_keywordsHasBeenSet = true;
     }
 
+    if (value.HasMember("EvilType") && !value["EvilType"].IsNull())
+    {
+        if (!value["EvilType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilType = value["EvilType"].GetUint64();
+        m_evilTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("Score") && !value["Score"].IsNull())
     {
         if (!value["Score"].IsUint64())
@@ -76,28 +66,22 @@ CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("EvilLabel") && !value["EvilLabel"].IsNull())
+    {
+        if (!value["EvilLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailResult.EvilLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilLabel = string(value["EvilLabel"].GetString());
+        m_evilLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DetailResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_evilLabelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilLabel";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_evilTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_evilType, allocator);
-    }
 
     if (m_keywordsHasBeenSet)
     {
@@ -112,6 +96,14 @@ void DetailResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
+    if (m_evilTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evilType, allocator);
+    }
+
     if (m_scoreHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,23 +112,31 @@ void DetailResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_score, allocator);
     }
 
+    if (m_evilLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string DetailResult::GetEvilLabel() const
+vector<string> DetailResult::GetKeywords() const
 {
-    return m_evilLabel;
+    return m_keywords;
 }
 
-void DetailResult::SetEvilLabel(const string& _evilLabel)
+void DetailResult::SetKeywords(const vector<string>& _keywords)
 {
-    m_evilLabel = _evilLabel;
-    m_evilLabelHasBeenSet = true;
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
 }
 
-bool DetailResult::EvilLabelHasBeenSet() const
+bool DetailResult::KeywordsHasBeenSet() const
 {
-    return m_evilLabelHasBeenSet;
+    return m_keywordsHasBeenSet;
 }
 
 uint64_t DetailResult::GetEvilType() const
@@ -155,22 +155,6 @@ bool DetailResult::EvilTypeHasBeenSet() const
     return m_evilTypeHasBeenSet;
 }
 
-vector<string> DetailResult::GetKeywords() const
-{
-    return m_keywords;
-}
-
-void DetailResult::SetKeywords(const vector<string>& _keywords)
-{
-    m_keywords = _keywords;
-    m_keywordsHasBeenSet = true;
-}
-
-bool DetailResult::KeywordsHasBeenSet() const
-{
-    return m_keywordsHasBeenSet;
-}
-
 uint64_t DetailResult::GetScore() const
 {
     return m_score;
@@ -185,5 +169,21 @@ void DetailResult::SetScore(const uint64_t& _score)
 bool DetailResult::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string DetailResult::GetEvilLabel() const
+{
+    return m_evilLabel;
+}
+
+void DetailResult::SetEvilLabel(const string& _evilLabel)
+{
+    m_evilLabel = _evilLabel;
+    m_evilLabelHasBeenSet = true;
+}
+
+bool DetailResult::EvilLabelHasBeenSet() const
+{
+    return m_evilLabelHasBeenSet;
 }
 

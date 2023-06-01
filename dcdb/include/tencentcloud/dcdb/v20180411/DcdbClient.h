@@ -123,6 +123,8 @@
 #include <tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/KillSessionRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/KillSessionResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyAccountConfigRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyAccountConfigResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesRequest.h>
@@ -327,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillSessionResponse> KillSessionOutcome;
                 typedef std::future<KillSessionOutcome> KillSessionOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::KillSessionRequest&, KillSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccountConfigResponse> ModifyAccountConfigOutcome;
+                typedef std::future<ModifyAccountConfigOutcome> ModifyAccountConfigOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyAccountConfigRequest&, ModifyAccountConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
@@ -845,6 +850,15 @@ namespace TencentCloud
                 KillSessionOutcome KillSession(const Model::KillSessionRequest &request);
                 void KillSessionAsync(const Model::KillSessionRequest& request, const KillSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 KillSessionOutcomeCallable KillSessionCallable(const Model::KillSessionRequest& request);
+
+                /**
+                 *修改账号的一些配置，比如 max_user_connections
+                 * @param req ModifyAccountConfigRequest
+                 * @return ModifyAccountConfigOutcome
+                 */
+                ModifyAccountConfigOutcome ModifyAccountConfig(const Model::ModifyAccountConfigRequest &request);
+                void ModifyAccountConfigAsync(const Model::ModifyAccountConfigRequest& request, const ModifyAccountConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountConfigOutcomeCallable ModifyAccountConfigCallable(const Model::ModifyAccountConfigRequest& request);
 
                 /**
                  *本接口（ModifyAccountDescription）用于修改云数据库账号备注。

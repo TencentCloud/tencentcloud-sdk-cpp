@@ -40,42 +40,42 @@ CmsClient::CmsClient(const Credential &credential, const string &region, const C
 }
 
 
-CmsClient::CreateFileSampleOutcome CmsClient::CreateFileSample(const CreateFileSampleRequest &request)
+CmsClient::CreateKeywordsSamplesOutcome CmsClient::CreateKeywordsSamples(const CreateKeywordsSamplesRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateFileSample");
+    auto outcome = MakeRequest(request, "CreateKeywordsSamples");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateFileSampleResponse rsp = CreateFileSampleResponse();
+        CreateKeywordsSamplesResponse rsp = CreateKeywordsSamplesResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateFileSampleOutcome(rsp);
+            return CreateKeywordsSamplesOutcome(rsp);
         else
-            return CreateFileSampleOutcome(o.GetError());
+            return CreateKeywordsSamplesOutcome(o.GetError());
     }
     else
     {
-        return CreateFileSampleOutcome(outcome.GetError());
+        return CreateKeywordsSamplesOutcome(outcome.GetError());
     }
 }
 
-void CmsClient::CreateFileSampleAsync(const CreateFileSampleRequest& request, const CreateFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CmsClient::CreateKeywordsSamplesAsync(const CreateKeywordsSamplesRequest& request, const CreateKeywordsSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateFileSample(request), context);
+        handler(this, request, this->CreateKeywordsSamples(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CmsClient::CreateFileSampleOutcomeCallable CmsClient::CreateFileSampleCallable(const CreateFileSampleRequest &request)
+CmsClient::CreateKeywordsSamplesOutcomeCallable CmsClient::CreateKeywordsSamplesCallable(const CreateKeywordsSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateFileSampleOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateKeywordsSamplesOutcome()>>(
         [this, request]()
         {
-            return this->CreateFileSample(request);
+            return this->CreateKeywordsSamples(request);
         }
     );
 
@@ -83,42 +83,42 @@ CmsClient::CreateFileSampleOutcomeCallable CmsClient::CreateFileSampleCallable(c
     return task->get_future();
 }
 
-CmsClient::CreateTextSampleOutcome CmsClient::CreateTextSample(const CreateTextSampleRequest &request)
+CmsClient::DeleteLibSamplesOutcome CmsClient::DeleteLibSamples(const DeleteLibSamplesRequest &request)
 {
-    auto outcome = MakeRequest(request, "CreateTextSample");
+    auto outcome = MakeRequest(request, "DeleteLibSamples");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CreateTextSampleResponse rsp = CreateTextSampleResponse();
+        DeleteLibSamplesResponse rsp = DeleteLibSamplesResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CreateTextSampleOutcome(rsp);
+            return DeleteLibSamplesOutcome(rsp);
         else
-            return CreateTextSampleOutcome(o.GetError());
+            return DeleteLibSamplesOutcome(o.GetError());
     }
     else
     {
-        return CreateTextSampleOutcome(outcome.GetError());
+        return DeleteLibSamplesOutcome(outcome.GetError());
     }
 }
 
-void CmsClient::CreateTextSampleAsync(const CreateTextSampleRequest& request, const CreateTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CmsClient::DeleteLibSamplesAsync(const DeleteLibSamplesRequest& request, const DeleteLibSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CreateTextSample(request), context);
+        handler(this, request, this->DeleteLibSamples(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CmsClient::CreateTextSampleOutcomeCallable CmsClient::CreateTextSampleCallable(const CreateTextSampleRequest &request)
+CmsClient::DeleteLibSamplesOutcomeCallable CmsClient::DeleteLibSamplesCallable(const DeleteLibSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CreateTextSampleOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DeleteLibSamplesOutcome()>>(
         [this, request]()
         {
-            return this->CreateTextSample(request);
+            return this->DeleteLibSamples(request);
         }
     );
 
@@ -126,42 +126,42 @@ CmsClient::CreateTextSampleOutcomeCallable CmsClient::CreateTextSampleCallable(c
     return task->get_future();
 }
 
-CmsClient::DeleteFileSampleOutcome CmsClient::DeleteFileSample(const DeleteFileSampleRequest &request)
+CmsClient::DescribeKeywordsLibsOutcome CmsClient::DescribeKeywordsLibs(const DescribeKeywordsLibsRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteFileSample");
+    auto outcome = MakeRequest(request, "DescribeKeywordsLibs");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteFileSampleResponse rsp = DeleteFileSampleResponse();
+        DescribeKeywordsLibsResponse rsp = DescribeKeywordsLibsResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteFileSampleOutcome(rsp);
+            return DescribeKeywordsLibsOutcome(rsp);
         else
-            return DeleteFileSampleOutcome(o.GetError());
+            return DescribeKeywordsLibsOutcome(o.GetError());
     }
     else
     {
-        return DeleteFileSampleOutcome(outcome.GetError());
+        return DescribeKeywordsLibsOutcome(outcome.GetError());
     }
 }
 
-void CmsClient::DeleteFileSampleAsync(const DeleteFileSampleRequest& request, const DeleteFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CmsClient::DescribeKeywordsLibsAsync(const DescribeKeywordsLibsRequest& request, const DescribeKeywordsLibsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteFileSample(request), context);
+        handler(this, request, this->DescribeKeywordsLibs(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CmsClient::DeleteFileSampleOutcomeCallable CmsClient::DeleteFileSampleCallable(const DeleteFileSampleRequest &request)
+CmsClient::DescribeKeywordsLibsOutcomeCallable CmsClient::DescribeKeywordsLibsCallable(const DescribeKeywordsLibsRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteFileSampleOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeKeywordsLibsOutcome()>>(
         [this, request]()
         {
-            return this->DeleteFileSample(request);
+            return this->DescribeKeywordsLibs(request);
         }
     );
 
@@ -169,128 +169,42 @@ CmsClient::DeleteFileSampleOutcomeCallable CmsClient::DeleteFileSampleCallable(c
     return task->get_future();
 }
 
-CmsClient::DeleteTextSampleOutcome CmsClient::DeleteTextSample(const DeleteTextSampleRequest &request)
+CmsClient::DescribeLibSamplesOutcome CmsClient::DescribeLibSamples(const DescribeLibSamplesRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteTextSample");
+    auto outcome = MakeRequest(request, "DescribeLibSamples");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteTextSampleResponse rsp = DeleteTextSampleResponse();
+        DescribeLibSamplesResponse rsp = DescribeLibSamplesResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteTextSampleOutcome(rsp);
+            return DescribeLibSamplesOutcome(rsp);
         else
-            return DeleteTextSampleOutcome(o.GetError());
+            return DescribeLibSamplesOutcome(o.GetError());
     }
     else
     {
-        return DeleteTextSampleOutcome(outcome.GetError());
+        return DescribeLibSamplesOutcome(outcome.GetError());
     }
 }
 
-void CmsClient::DeleteTextSampleAsync(const DeleteTextSampleRequest& request, const DeleteTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CmsClient::DescribeLibSamplesAsync(const DescribeLibSamplesRequest& request, const DescribeLibSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteTextSample(request), context);
+        handler(this, request, this->DescribeLibSamples(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CmsClient::DeleteTextSampleOutcomeCallable CmsClient::DeleteTextSampleCallable(const DeleteTextSampleRequest &request)
+CmsClient::DescribeLibSamplesOutcomeCallable CmsClient::DescribeLibSamplesCallable(const DescribeLibSamplesRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteTextSampleOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<DescribeLibSamplesOutcome()>>(
         [this, request]()
         {
-            return this->DeleteTextSample(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CmsClient::DescribeFileSampleOutcome CmsClient::DescribeFileSample(const DescribeFileSampleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeFileSample");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeFileSampleResponse rsp = DescribeFileSampleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeFileSampleOutcome(rsp);
-        else
-            return DescribeFileSampleOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeFileSampleOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::DescribeFileSampleAsync(const DescribeFileSampleRequest& request, const DescribeFileSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeFileSample(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::DescribeFileSampleOutcomeCallable CmsClient::DescribeFileSampleCallable(const DescribeFileSampleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeFileSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeFileSample(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CmsClient::DescribeTextSampleOutcome CmsClient::DescribeTextSample(const DescribeTextSampleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTextSample");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTextSampleResponse rsp = DescribeTextSampleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTextSampleOutcome(rsp);
-        else
-            return DescribeTextSampleOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTextSampleOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::DescribeTextSampleAsync(const DescribeTextSampleRequest& request, const DescribeTextSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTextSample(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::DescribeTextSampleOutcomeCallable CmsClient::DescribeTextSampleCallable(const DescribeTextSampleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeTextSampleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTextSample(request);
+            return this->DescribeLibSamples(request);
         }
     );
 
@@ -334,49 +248,6 @@ CmsClient::ImageModerationOutcomeCallable CmsClient::ImageModerationCallable(con
         [this, request]()
         {
             return this->ImageModeration(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CmsClient::ManualReviewOutcome CmsClient::ManualReview(const ManualReviewRequest &request)
-{
-    auto outcome = MakeRequest(request, "ManualReview");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ManualReviewResponse rsp = ManualReviewResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ManualReviewOutcome(rsp);
-        else
-            return ManualReviewOutcome(o.GetError());
-    }
-    else
-    {
-        return ManualReviewOutcome(outcome.GetError());
-    }
-}
-
-void CmsClient::ManualReviewAsync(const ManualReviewRequest& request, const ManualReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ManualReview(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CmsClient::ManualReviewOutcomeCallable CmsClient::ManualReviewCallable(const ManualReviewRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ManualReviewOutcome()>>(
-        [this, request]()
-        {
-            return this->ManualReview(request);
         }
     );
 

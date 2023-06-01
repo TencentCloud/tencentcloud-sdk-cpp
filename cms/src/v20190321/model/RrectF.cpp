@@ -21,11 +21,11 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 RrectF::RrectF() :
-    m_cxHasBeenSet(false),
+    m_widthHasBeenSet(false),
     m_cyHasBeenSet(false),
-    m_heightHasBeenSet(false),
+    m_cxHasBeenSet(false),
     m_rotateHasBeenSet(false),
-    m_widthHasBeenSet(false)
+    m_heightHasBeenSet(false)
 {
 }
 
@@ -34,14 +34,14 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("Cx") && !value["Cx"].IsNull())
+    if (value.HasMember("Width") && !value["Width"].IsNull())
     {
-        if (!value["Cx"].IsLosslessDouble())
+        if (!value["Width"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `RrectF.Cx` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_cx = value["Cx"].GetDouble();
-        m_cxHasBeenSet = true;
+        m_width = value["Width"].GetDouble();
+        m_widthHasBeenSet = true;
     }
 
     if (value.HasMember("Cy") && !value["Cy"].IsNull())
@@ -54,14 +54,14 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
         m_cyHasBeenSet = true;
     }
 
-    if (value.HasMember("Height") && !value["Height"].IsNull())
+    if (value.HasMember("Cx") && !value["Cx"].IsNull())
     {
-        if (!value["Height"].IsLosslessDouble())
+        if (!value["Cx"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `RrectF.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Cx` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_height = value["Height"].GetDouble();
-        m_heightHasBeenSet = true;
+        m_cx = value["Cx"].GetDouble();
+        m_cxHasBeenSet = true;
     }
 
     if (value.HasMember("Rotate") && !value["Rotate"].IsNull())
@@ -74,14 +74,14 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
         m_rotateHasBeenSet = true;
     }
 
-    if (value.HasMember("Width") && !value["Width"].IsNull())
+    if (value.HasMember("Height") && !value["Height"].IsNull())
     {
-        if (!value["Width"].IsLosslessDouble())
+        if (!value["Height"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `RrectF.Width` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RrectF.Height` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_width = value["Width"].GetDouble();
-        m_widthHasBeenSet = true;
+        m_height = value["Height"].GetDouble();
+        m_heightHasBeenSet = true;
     }
 
 
@@ -91,12 +91,12 @@ CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
 void RrectF::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_cxHasBeenSet)
+    if (m_widthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cx";
+        string key = "Width";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cx, allocator);
+        value.AddMember(iKey, m_width, allocator);
     }
 
     if (m_cyHasBeenSet)
@@ -107,12 +107,12 @@ void RrectF::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_cy, allocator);
     }
 
-    if (m_heightHasBeenSet)
+    if (m_cxHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Height";
+        string key = "Cx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_height, allocator);
+        value.AddMember(iKey, m_cx, allocator);
     }
 
     if (m_rotateHasBeenSet)
@@ -123,31 +123,31 @@ void RrectF::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_rotate, allocator);
     }
 
-    if (m_widthHasBeenSet)
+    if (m_heightHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Width";
+        string key = "Height";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_width, allocator);
+        value.AddMember(iKey, m_height, allocator);
     }
 
 }
 
 
-double RrectF::GetCx() const
+double RrectF::GetWidth() const
 {
-    return m_cx;
+    return m_width;
 }
 
-void RrectF::SetCx(const double& _cx)
+void RrectF::SetWidth(const double& _width)
 {
-    m_cx = _cx;
-    m_cxHasBeenSet = true;
+    m_width = _width;
+    m_widthHasBeenSet = true;
 }
 
-bool RrectF::CxHasBeenSet() const
+bool RrectF::WidthHasBeenSet() const
 {
-    return m_cxHasBeenSet;
+    return m_widthHasBeenSet;
 }
 
 double RrectF::GetCy() const
@@ -166,20 +166,20 @@ bool RrectF::CyHasBeenSet() const
     return m_cyHasBeenSet;
 }
 
-double RrectF::GetHeight() const
+double RrectF::GetCx() const
 {
-    return m_height;
+    return m_cx;
 }
 
-void RrectF::SetHeight(const double& _height)
+void RrectF::SetCx(const double& _cx)
 {
-    m_height = _height;
-    m_heightHasBeenSet = true;
+    m_cx = _cx;
+    m_cxHasBeenSet = true;
 }
 
-bool RrectF::HeightHasBeenSet() const
+bool RrectF::CxHasBeenSet() const
 {
-    return m_heightHasBeenSet;
+    return m_cxHasBeenSet;
 }
 
 double RrectF::GetRotate() const
@@ -198,19 +198,19 @@ bool RrectF::RotateHasBeenSet() const
     return m_rotateHasBeenSet;
 }
 
-double RrectF::GetWidth() const
+double RrectF::GetHeight() const
 {
-    return m_width;
+    return m_height;
 }
 
-void RrectF::SetWidth(const double& _width)
+void RrectF::SetHeight(const double& _height)
 {
-    m_width = _width;
-    m_widthHasBeenSet = true;
+    m_height = _height;
+    m_heightHasBeenSet = true;
 }
 
-bool RrectF::WidthHasBeenSet() const
+bool RrectF::HeightHasBeenSet() const
 {
-    return m_widthHasBeenSet;
+    return m_heightHasBeenSet;
 }
 

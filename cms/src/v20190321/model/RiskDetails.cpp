@@ -22,8 +22,8 @@ using namespace std;
 
 RiskDetails::RiskDetails() :
     m_keywordsHasBeenSet(false),
-    m_labelHasBeenSet(false),
     m_lableHasBeenSet(false),
+    m_labelHasBeenSet(false),
     m_levelHasBeenSet(false)
 {
 }
@@ -46,16 +46,6 @@ CoreInternalOutcome RiskDetails::Deserialize(const rapidjson::Value &value)
         m_keywordsHasBeenSet = true;
     }
 
-    if (value.HasMember("Label") && !value["Label"].IsNull())
-    {
-        if (!value["Label"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RiskDetails.Label` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_label = string(value["Label"].GetString());
-        m_labelHasBeenSet = true;
-    }
-
     if (value.HasMember("Lable") && !value["Lable"].IsNull())
     {
         if (!value["Lable"].IsString())
@@ -64,6 +54,16 @@ CoreInternalOutcome RiskDetails::Deserialize(const rapidjson::Value &value)
         }
         m_lable = string(value["Lable"].GetString());
         m_lableHasBeenSet = true;
+    }
+
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDetails.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
     }
 
     if (value.HasMember("Level") && !value["Level"].IsNull())
@@ -96,20 +96,20 @@ void RiskDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         }
     }
 
-    if (m_labelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Label";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_lableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Lable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_levelHasBeenSet)
@@ -139,22 +139,6 @@ bool RiskDetails::KeywordsHasBeenSet() const
     return m_keywordsHasBeenSet;
 }
 
-string RiskDetails::GetLabel() const
-{
-    return m_label;
-}
-
-void RiskDetails::SetLabel(const string& _label)
-{
-    m_label = _label;
-    m_labelHasBeenSet = true;
-}
-
-bool RiskDetails::LabelHasBeenSet() const
-{
-    return m_labelHasBeenSet;
-}
-
 string RiskDetails::GetLable() const
 {
     return m_lable;
@@ -169,6 +153,22 @@ void RiskDetails::SetLable(const string& _lable)
 bool RiskDetails::LableHasBeenSet() const
 {
     return m_lableHasBeenSet;
+}
+
+string RiskDetails::GetLabel() const
+{
+    return m_label;
+}
+
+void RiskDetails::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool RiskDetails::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 
 int64_t RiskDetails::GetLevel() const

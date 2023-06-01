@@ -47,42 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备指纹ID
-                     * @return DeviceId 设备指纹ID
-                     */
-                    std::string GetDeviceId() const;
-
-                    /**
-                     * 设置设备指纹ID
-                     * @param DeviceId 设备指纹ID
-                     */
-                    void SetDeviceId(const std::string& _deviceId);
-
-                    /**
-                     * 判断参数 DeviceId 是否已赋值
-                     * @return DeviceId 是否已赋值
-                     */
-                    bool DeviceIdHasBeenSet() const;
-
-                    /**
-                     * 获取IOS设备，Identifier For Advertising（广告标识符）
-                     * @return IDFA IOS设备，Identifier For Advertising（广告标识符）
-                     */
-                    std::string GetIDFA() const;
-
-                    /**
-                     * 设置IOS设备，Identifier For Advertising（广告标识符）
-                     * @param IDFA IOS设备，Identifier For Advertising（广告标识符）
-                     */
-                    void SetIDFA(const std::string& _iDFA);
-
-                    /**
-                     * 判断参数 IDFA 是否已赋值
-                     * @return IDFA 是否已赋值
-                     */
-                    bool IDFAHasBeenSet() const;
-
-                    /**
                      * 获取IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
                      * @return IDFV IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
                      */
@@ -101,22 +65,22 @@ namespace TencentCloud
                     bool IDFVHasBeenSet() const;
 
                     /**
-                     * 获取设备序列号
-                     * @return IMEI 设备序列号
+                     * 获取设备指纹Token
+                     * @return TokenId 设备指纹Token
                      */
-                    std::string GetIMEI() const;
+                    std::string GetTokenId() const;
 
                     /**
-                     * 设置设备序列号
-                     * @param IMEI 设备序列号
+                     * 设置设备指纹Token
+                     * @param TokenId 设备指纹Token
                      */
-                    void SetIMEI(const std::string& _iMEI);
+                    void SetTokenId(const std::string& _tokenId);
 
                     /**
-                     * 判断参数 IMEI 是否已赋值
-                     * @return IMEI 是否已赋值
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
                      */
-                    bool IMEIHasBeenSet() const;
+                    bool TokenIdHasBeenSet() const;
 
                     /**
                      * 获取用户IP
@@ -155,36 +119,60 @@ namespace TencentCloud
                     bool MacHasBeenSet() const;
 
                     /**
-                     * 获取设备指纹Token
-                     * @return TokenId 设备指纹Token
+                     * 获取IOS设备，Identifier For Advertising（广告标识符）
+                     * @return IDFA IOS设备，Identifier For Advertising（广告标识符）
                      */
-                    std::string GetTokenId() const;
+                    std::string GetIDFA() const;
 
                     /**
-                     * 设置设备指纹Token
-                     * @param TokenId 设备指纹Token
+                     * 设置IOS设备，Identifier For Advertising（广告标识符）
+                     * @param IDFA IOS设备，Identifier For Advertising（广告标识符）
                      */
-                    void SetTokenId(const std::string& _tokenId);
+                    void SetIDFA(const std::string& _iDFA);
 
                     /**
-                     * 判断参数 TokenId 是否已赋值
-                     * @return TokenId 是否已赋值
+                     * 判断参数 IDFA 是否已赋值
+                     * @return IDFA 是否已赋值
                      */
-                    bool TokenIdHasBeenSet() const;
+                    bool IDFAHasBeenSet() const;
+
+                    /**
+                     * 获取设备指纹ID
+                     * @return DeviceId 设备指纹ID
+                     */
+                    std::string GetDeviceId() const;
+
+                    /**
+                     * 设置设备指纹ID
+                     * @param DeviceId 设备指纹ID
+                     */
+                    void SetDeviceId(const std::string& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备序列号
+                     * @return IMEI 设备序列号
+                     */
+                    std::string GetIMEI() const;
+
+                    /**
+                     * 设置设备序列号
+                     * @param IMEI 设备序列号
+                     */
+                    void SetIMEI(const std::string& _iMEI);
+
+                    /**
+                     * 判断参数 IMEI 是否已赋值
+                     * @return IMEI 是否已赋值
+                     */
+                    bool IMEIHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 设备指纹ID
-                     */
-                    std::string m_deviceId;
-                    bool m_deviceIdHasBeenSet;
-
-                    /**
-                     * IOS设备，Identifier For Advertising（广告标识符）
-                     */
-                    std::string m_iDFA;
-                    bool m_iDFAHasBeenSet;
 
                     /**
                      * IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）
@@ -193,10 +181,10 @@ namespace TencentCloud
                     bool m_iDFVHasBeenSet;
 
                     /**
-                     * 设备序列号
+                     * 设备指纹Token
                      */
-                    std::string m_iMEI;
-                    bool m_iMEIHasBeenSet;
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
 
                     /**
                      * 用户IP
@@ -211,10 +199,22 @@ namespace TencentCloud
                     bool m_macHasBeenSet;
 
                     /**
-                     * 设备指纹Token
+                     * IOS设备，Identifier For Advertising（广告标识符）
                      */
-                    std::string m_tokenId;
-                    bool m_tokenIdHasBeenSet;
+                    std::string m_iDFA;
+                    bool m_iDFAHasBeenSet;
+
+                    /**
+                     * 设备指纹ID
+                     */
+                    std::string m_deviceId;
+                    bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 设备序列号
+                     */
+                    std::string m_iMEI;
+                    bool m_iMEIHasBeenSet;
 
                 };
             }

@@ -22,9 +22,9 @@ using namespace std;
 
 PhoneDetect::PhoneDetect() :
     m_evilTypeHasBeenSet(false),
-    m_hitFlagHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_hitFlagHasBeenSet(false)
 {
 }
 
@@ -41,16 +41,6 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
         }
         m_evilType = value["EvilType"].GetInt64();
         m_evilTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("HitFlag") && !value["HitFlag"].IsNull())
-    {
-        if (!value["HitFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `PhoneDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_hitFlag = value["HitFlag"].GetInt64();
-        m_hitFlagHasBeenSet = true;
     }
 
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
@@ -76,6 +66,16 @@ CoreInternalOutcome PhoneDetect::Deserialize(const rapidjson::Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("HitFlag") && !value["HitFlag"].IsNull())
+    {
+        if (!value["HitFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PhoneDetect.HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitFlag = value["HitFlag"].GetInt64();
+        m_hitFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,14 +89,6 @@ void PhoneDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
-    }
-
-    if (m_hitFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HitFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_hitFlag, allocator);
     }
 
     if (m_labelsHasBeenSet)
@@ -120,6 +112,14 @@ void PhoneDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_score, allocator);
     }
 
+    if (m_hitFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitFlag, allocator);
+    }
+
 }
 
 
@@ -137,22 +137,6 @@ void PhoneDetect::SetEvilType(const int64_t& _evilType)
 bool PhoneDetect::EvilTypeHasBeenSet() const
 {
     return m_evilTypeHasBeenSet;
-}
-
-int64_t PhoneDetect::GetHitFlag() const
-{
-    return m_hitFlag;
-}
-
-void PhoneDetect::SetHitFlag(const int64_t& _hitFlag)
-{
-    m_hitFlag = _hitFlag;
-    m_hitFlagHasBeenSet = true;
-}
-
-bool PhoneDetect::HitFlagHasBeenSet() const
-{
-    return m_hitFlagHasBeenSet;
 }
 
 vector<string> PhoneDetect::GetLabels() const
@@ -185,5 +169,21 @@ void PhoneDetect::SetScore(const int64_t& _score)
 bool PhoneDetect::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+int64_t PhoneDetect::GetHitFlag() const
+{
+    return m_hitFlag;
+}
+
+void PhoneDetect::SetHitFlag(const int64_t& _hitFlag)
+{
+    m_hitFlag = _hitFlag;
+    m_hitFlagHasBeenSet = true;
+}
+
+bool PhoneDetect::HitFlagHasBeenSet() const
+{
+    return m_hitFlagHasBeenSet;
 }
 

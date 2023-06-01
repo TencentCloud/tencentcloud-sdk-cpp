@@ -66,6 +66,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseView.h
+  include/tencentcloud/dcdb/v20180411/model/ConfigValue.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h
   include/tencentcloud/dcdb/v20180411/model/NodeInfo.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h
@@ -90,8 +91,9 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyRequest.h
   include/tencentcloud/dcdb/v20180411/model/ExpandShardConfig.h
-  include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyAccountConfigRequest.h
   include/tencentcloud/dcdb/v20180411/model/ShardZoneChooseInfo.h
+  include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseTable.h
@@ -172,6 +174,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyAccountConfigResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h
@@ -253,6 +256,7 @@ set(dcdb_src
   src/v20180411/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.cpp
   src/v20180411/model/DatabaseView.cpp
+  src/v20180411/model/ConfigValue.cpp
   src/v20180411/model/DescribeDBLogFilesRequest.cpp
   src/v20180411/model/NodeInfo.cpp
   src/v20180411/model/DescribeOrdersResponse.cpp
@@ -277,8 +281,9 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBSaleInfoRequest.cpp
   src/v20180411/model/ModifyRealServerAccessStrategyRequest.cpp
   src/v20180411/model/ExpandShardConfig.cpp
-  src/v20180411/model/RenewDCDBInstanceRequest.cpp
+  src/v20180411/model/ModifyAccountConfigRequest.cpp
   src/v20180411/model/ShardZoneChooseInfo.cpp
+  src/v20180411/model/RenewDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeDBEncryptAttributesResponse.cpp
   src/v20180411/model/CreateTmpDCDBInstanceRequest.cpp
   src/v20180411/model/DatabaseTable.cpp
@@ -359,6 +364,7 @@ set(dcdb_src
   src/v20180411/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20180411/model/AddShardConfig.cpp
   src/v20180411/model/ModifyDBSyncModeRequest.cpp
+  src/v20180411/model/ModifyAccountConfigResponse.cpp
   src/v20180411/model/DescribeProjectsResponse.cpp
   src/v20180411/model/CreateTmpDCDBInstanceResponse.cpp
   src/v20180411/model/CreateAccountResponse.cpp

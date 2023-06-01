@@ -21,8 +21,8 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 CodeDetect::CodeDetect() :
-    m_moderationDetailHasBeenSet(false),
-    m_moderationCodeHasBeenSet(false)
+    m_moderationCodeHasBeenSet(false),
+    m_moderationDetailHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,16 @@ CoreInternalOutcome CodeDetect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ModerationCode") && !value["ModerationCode"].IsNull())
+    {
+        if (!value["ModerationCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeDetect.ModerationCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_moderationCode = value["ModerationCode"].GetInt64();
+        m_moderationCodeHasBeenSet = true;
+    }
 
     if (value.HasMember("ModerationDetail") && !value["ModerationDetail"].IsNull())
     {
@@ -51,22 +61,20 @@ CoreInternalOutcome CodeDetect::Deserialize(const rapidjson::Value &value)
         m_moderationDetailHasBeenSet = true;
     }
 
-    if (value.HasMember("ModerationCode") && !value["ModerationCode"].IsNull())
-    {
-        if (!value["ModerationCode"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `CodeDetect.ModerationCode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_moderationCode = value["ModerationCode"].GetInt64();
-        m_moderationCodeHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void CodeDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_moderationCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModerationCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_moderationCode, allocator);
+    }
 
     if (m_moderationDetailHasBeenSet)
     {
@@ -83,32 +91,8 @@ void CodeDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
-    if (m_moderationCodeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModerationCode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_moderationCode, allocator);
-    }
-
 }
 
-
-vector<CodeDetail> CodeDetect::GetModerationDetail() const
-{
-    return m_moderationDetail;
-}
-
-void CodeDetect::SetModerationDetail(const vector<CodeDetail>& _moderationDetail)
-{
-    m_moderationDetail = _moderationDetail;
-    m_moderationDetailHasBeenSet = true;
-}
-
-bool CodeDetect::ModerationDetailHasBeenSet() const
-{
-    return m_moderationDetailHasBeenSet;
-}
 
 int64_t CodeDetect::GetModerationCode() const
 {
@@ -124,5 +108,21 @@ void CodeDetect::SetModerationCode(const int64_t& _moderationCode)
 bool CodeDetect::ModerationCodeHasBeenSet() const
 {
     return m_moderationCodeHasBeenSet;
+}
+
+vector<CodeDetail> CodeDetect::GetModerationDetail() const
+{
+    return m_moderationDetail;
+}
+
+void CodeDetect::SetModerationDetail(const vector<CodeDetail>& _moderationDetail)
+{
+    m_moderationDetail = _moderationDetail;
+    m_moderationDetailHasBeenSet = true;
+}
+
+bool CodeDetect::ModerationDetailHasBeenSet() const
+{
+    return m_moderationDetailHasBeenSet;
 }
 

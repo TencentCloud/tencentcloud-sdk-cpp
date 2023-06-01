@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * LogoDetail
+                * Logo命中详情
                 */
                 class LogoDetail : public AbstractModel
                 {
@@ -49,13 +49,17 @@ namespace TencentCloud
 
                     /**
                      * 获取命中的Applogo详情
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppLogoDetail 命中的Applogo详情
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Logo> GetAppLogoDetail() const;
 
                     /**
                      * 设置命中的Applogo详情
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AppLogoDetail 命中的Applogo详情
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAppLogoDetail(const std::vector<Logo>& _appLogoDetail);
 
@@ -69,6 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 命中的Applogo详情
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Logo> m_appLogoDetail;
                     bool m_appLogoDetailHasBeenSet;

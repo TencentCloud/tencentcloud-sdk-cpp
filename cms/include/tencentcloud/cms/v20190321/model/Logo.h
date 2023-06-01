@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Logo
+                * Logo审核结果
                 */
                 class Logo : public AbstractModel
                 {
@@ -48,32 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取logo图标坐标信息
-                     * @return RrectF logo图标坐标信息
-                     */
-                    RrectF GetRrectF() const;
-
-                    /**
-                     * 设置logo图标坐标信息
-                     * @param RrectF logo图标坐标信息
-                     */
-                    void SetRrectF(const RrectF& _rrectF);
-
-                    /**
-                     * 判断参数 RrectF 是否已赋值
-                     * @return RrectF 是否已赋值
-                     */
-                    bool RrectFHasBeenSet() const;
-
-                    /**
                      * 获取logo图标置信度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence logo图标置信度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置logo图标置信度
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Confidence logo图标置信度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -84,14 +70,40 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
+                     * 获取logo图标坐标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RrectF logo图标坐标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RrectF GetRrectF() const;
+
+                    /**
+                     * 设置logo图标坐标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RrectF logo图标坐标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRrectF(const RrectF& _rrectF);
+
+                    /**
+                     * 判断参数 RrectF 是否已赋值
+                     * @return RrectF 是否已赋值
+                     */
+                    bool RrectFHasBeenSet() const;
+
+                    /**
                      * 获取logo图标名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name logo图标名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置logo图标名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name logo图标名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -104,19 +116,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * logo图标坐标信息
-                     */
-                    RrectF m_rrectF;
-                    bool m_rrectFHasBeenSet;
-
-                    /**
                      * logo图标置信度
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
+                     * logo图标坐标信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RrectF m_rrectF;
+                    bool m_rrectFHasBeenSet;
+
+                    /**
                      * logo图标名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

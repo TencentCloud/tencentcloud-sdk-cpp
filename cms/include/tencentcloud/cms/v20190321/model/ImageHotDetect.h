@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取关键词明细
+                     * @return Keywords 关键词明细
+                     */
+                    std::vector<std::string> GetKeywords() const;
+
+                    /**
+                     * 设置关键词明细
+                     * @param Keywords 关键词明细
+                     */
+                    void SetKeywords(const std::vector<std::string>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
                      * 获取恶意类型
 100：正常
 20103：性感
@@ -71,42 +89,6 @@ namespace TencentCloud
                      * @return EvilType 是否已赋值
                      */
                     bool EvilTypeHasBeenSet() const;
-
-                    /**
-                     * 获取处置判定 0：正常 1：可疑
-                     * @return HitFlag 处置判定 0：正常 1：可疑
-                     */
-                    int64_t GetHitFlag() const;
-
-                    /**
-                     * 设置处置判定 0：正常 1：可疑
-                     * @param HitFlag 处置判定 0：正常 1：可疑
-                     */
-                    void SetHitFlag(const int64_t& _hitFlag);
-
-                    /**
-                     * 判断参数 HitFlag 是否已赋值
-                     * @return HitFlag 是否已赋值
-                     */
-                    bool HitFlagHasBeenSet() const;
-
-                    /**
-                     * 获取关键词明细
-                     * @return Keywords 关键词明细
-                     */
-                    std::vector<std::string> GetKeywords() const;
-
-                    /**
-                     * 设置关键词明细
-                     * @param Keywords 关键词明细
-                     */
-                    void SetKeywords(const std::vector<std::string>& _keywords);
-
-                    /**
-                     * 判断参数 Keywords 是否已赋值
-                     * @return Keywords 是否已赋值
-                     */
-                    bool KeywordsHasBeenSet() const;
 
                     /**
                      * 获取性感标签：性感特征中文描述
@@ -144,7 +126,31 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取处置判定 0：正常 1：可疑
+                     * @return HitFlag 处置判定 0：正常 1：可疑
+                     */
+                    int64_t GetHitFlag() const;
+
+                    /**
+                     * 设置处置判定 0：正常 1：可疑
+                     * @param HitFlag 处置判定 0：正常 1：可疑
+                     */
+                    void SetHitFlag(const int64_t& _hitFlag);
+
+                    /**
+                     * 判断参数 HitFlag 是否已赋值
+                     * @return HitFlag 是否已赋值
+                     */
+                    bool HitFlagHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 关键词明细
+                     */
+                    std::vector<std::string> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                     /**
                      * 恶意类型
@@ -153,18 +159,6 @@ namespace TencentCloud
                      */
                     int64_t m_evilType;
                     bool m_evilTypeHasBeenSet;
-
-                    /**
-                     * 处置判定 0：正常 1：可疑
-                     */
-                    int64_t m_hitFlag;
-                    bool m_hitFlagHasBeenSet;
-
-                    /**
-                     * 关键词明细
-                     */
-                    std::vector<std::string> m_keywords;
-                    bool m_keywordsHasBeenSet;
 
                     /**
                      * 性感标签：性感特征中文描述
@@ -177,6 +171,12 @@ namespace TencentCloud
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 处置判定 0：正常 1：可疑
+                     */
+                    int64_t m_hitFlag;
+                    bool m_hitFlagHasBeenSet;
 
                 };
             }

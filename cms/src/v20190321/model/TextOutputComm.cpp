@@ -21,9 +21,9 @@ using namespace TencentCloud::Cms::V20190321::Model;
 using namespace std;
 
 TextOutputComm::TextOutputComm() :
-    m_appIDHasBeenSet(false),
     m_bUCtrlIDHasBeenSet(false),
     m_sendTimeHasBeenSet(false),
+    m_appIDHasBeenSet(false),
     m_uinHasBeenSet(false)
 {
 }
@@ -32,16 +32,6 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("AppID") && !value["AppID"].IsNull())
-    {
-        if (!value["AppID"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TextOutputComm.AppID` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appID = value["AppID"].GetInt64();
-        m_appIDHasBeenSet = true;
-    }
 
     if (value.HasMember("BUCtrlID") && !value["BUCtrlID"].IsNull())
     {
@@ -63,6 +53,16 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
         m_sendTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppID") && !value["AppID"].IsNull())
+    {
+        if (!value["AppID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextOutputComm.AppID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appID = value["AppID"].GetInt64();
+        m_appIDHasBeenSet = true;
+    }
+
     if (value.HasMember("Uin") && !value["Uin"].IsNull())
     {
         if (!value["Uin"].IsInt64())
@@ -80,14 +80,6 @@ CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
 void TextOutputComm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_appIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appID, allocator);
-    }
-
     if (m_bUCtrlIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,6 +96,14 @@ void TextOutputComm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_sendTime, allocator);
     }
 
+    if (m_appIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appID, allocator);
+    }
+
     if (m_uinHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,22 +114,6 @@ void TextOutputComm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
 }
 
-
-int64_t TextOutputComm::GetAppID() const
-{
-    return m_appID;
-}
-
-void TextOutputComm::SetAppID(const int64_t& _appID)
-{
-    m_appID = _appID;
-    m_appIDHasBeenSet = true;
-}
-
-bool TextOutputComm::AppIDHasBeenSet() const
-{
-    return m_appIDHasBeenSet;
-}
 
 int64_t TextOutputComm::GetBUCtrlID() const
 {
@@ -161,6 +145,22 @@ void TextOutputComm::SetSendTime(const int64_t& _sendTime)
 bool TextOutputComm::SendTimeHasBeenSet() const
 {
     return m_sendTimeHasBeenSet;
+}
+
+int64_t TextOutputComm::GetAppID() const
+{
+    return m_appID;
+}
+
+void TextOutputComm::SetAppID(const int64_t& _appID)
+{
+    m_appID = _appID;
+    m_appIDHasBeenSet = true;
+}
+
+bool TextOutputComm::AppIDHasBeenSet() const
+{
+    return m_appIDHasBeenSet;
 }
 
 int64_t TextOutputComm::GetUin() const

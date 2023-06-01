@@ -49,13 +49,17 @@ namespace TencentCloud
 
                     /**
                      * 获取识别到的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 识别到的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OCRItem> GetItem() const;
 
                     /**
                      * 设置识别到的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Item 识别到的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetItem(const std::vector<OCRItem>& _item);
 
@@ -67,13 +71,17 @@ namespace TencentCloud
 
                     /**
                      * 获取识别到的文本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextInfo 识别到的文本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTextInfo() const;
 
                     /**
                      * 设置识别到的文本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param TextInfo 识别到的文本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTextInfo(const std::string& _textInfo);
 
@@ -87,12 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 识别到的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OCRItem> m_item;
                     bool m_itemHasBeenSet;
 
                     /**
                      * 识别到的文本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textInfo;
                     bool m_textInfoHasBeenSet;
