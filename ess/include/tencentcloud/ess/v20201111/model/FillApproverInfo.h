@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人签署Id
-                     * @return RecipientId 签署人签署Id
+                     * 获取对应模板中的参与方ID
+                     * @return RecipientId 对应模板中的参与方ID
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署人签署Id
-                     * @param RecipientId 签署人签署Id
+                     * 设置对应模板中的参与方ID
+                     * @param RecipientId 对应模板中的参与方ID
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
@@ -87,17 +87,17 @@ WEWORKAPP: 企业微信
                     bool ApproverSourceHasBeenSet() const;
 
                     /**
-                     * 获取企业自定义账号Id
+                     * 获取企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
-                     * @return CustomUserId 企业自定义账号Id
+                     * @return CustomUserId 企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      */
                     std::string GetCustomUserId() const;
 
                     /**
-                     * 设置企业自定义账号Id
+                     * 设置企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
-                     * @param CustomUserId 企业自定义账号Id
+                     * @param CustomUserId 企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      */
                     void SetCustomUserId(const std::string& _customUserId);
@@ -111,7 +111,7 @@ WEWORKAPP场景下指企业自有应用获取企微明文的userid
                 private:
 
                     /**
-                     * 签署人签署Id
+                     * 对应模板中的参与方ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -124,7 +124,7 @@ WEWORKAPP: 企业微信
                     bool m_approverSourceHasBeenSet;
 
                     /**
-                     * 企业自定义账号Id
+                     * 企业自定义账号ID
 WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      */
                     std::string m_customUserId;

@@ -23,7 +23,8 @@ using namespace std;
 Resource::Resource() :
     m_typeHasBeenSet(false),
     m_ispHasBeenSet(false),
-    m_availabilitySetHasBeenSet(false)
+    m_availabilitySetHasBeenSet(false),
+    m_typeSetHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_availabilitySetHasBeenSet = true;
     }
 
+    if (value.HasMember("TypeSet") && !value["TypeSet"].IsNull())
+    {
+        if (!value["TypeSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.TypeSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TypeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TypeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_typeSet.push_back(item);
+        }
+        m_typeSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -112,6 +133,21 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 
         int i=0;
         for (auto itr = m_availabilitySet.begin(); itr != m_availabilitySet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_typeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_typeSet.begin(); itr != m_typeSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -167,5 +203,21 @@ void Resource::SetAvailabilitySet(const vector<ResourceAvailability>& _availabil
 bool Resource::AvailabilitySetHasBeenSet() const
 {
     return m_availabilitySetHasBeenSet;
+}
+
+vector<TypeInfo> Resource::GetTypeSet() const
+{
+    return m_typeSet;
+}
+
+void Resource::SetTypeSet(const vector<TypeInfo>& _typeSet)
+{
+    m_typeSet = _typeSet;
+    m_typeSetHasBeenSet = true;
+}
+
+bool Resource::TypeSetHasBeenSet() const
+{
+    return m_typeSetHasBeenSet;
 }
 

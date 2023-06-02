@@ -456,6 +456,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ScanComplianceAssetsRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRuleDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyVirusFileStatusRequest.h
+  include/tencentcloud/tcss/v20201101/model/VulAffectedRegistryImageInfo.h
   include/tencentcloud/tcss/v20201101/model/CreateVulContainerExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryListExportRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalRuleInfoResponse.h
@@ -562,6 +563,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/VulDefenceEventDetail.h
   include/tencentcloud/tcss/v20201101/model/UpdateNetworkFirewallPolicyYamlDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleInfoRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListRequest.h
   include/tencentcloud/tcss/v20201101/model/RunTimeEventBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeSystemVulListResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyIgnoreVul.h
@@ -666,6 +668,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/RaspInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallClusterListRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateVulDefenceEventExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/AutoAuthorizedRuleHostInfo.h
   include/tencentcloud/tcss/v20201101/model/CreateExportComplianceStatusListJobRequest.h
@@ -1271,6 +1274,7 @@ set(tcss_src
   src/v20201101/model/ScanComplianceAssetsRequest.cpp
   src/v20201101/model/DescribeAbnormalProcessRuleDetailResponse.cpp
   src/v20201101/model/ModifyVirusFileStatusRequest.cpp
+  src/v20201101/model/VulAffectedRegistryImageInfo.cpp
   src/v20201101/model/CreateVulContainerExportJobResponse.cpp
   src/v20201101/model/DescribeAssetImageRegistryListExportRequest.cpp
   src/v20201101/model/CreateK8sApiAbnormalRuleInfoResponse.cpp
@@ -1377,6 +1381,7 @@ set(tcss_src
   src/v20201101/model/VulDefenceEventDetail.cpp
   src/v20201101/model/UpdateNetworkFirewallPolicyYamlDetailRequest.cpp
   src/v20201101/model/DescribeK8sApiAbnormalRuleInfoRequest.cpp
+  src/v20201101/model/DescribeVulRegistryImageListRequest.cpp
   src/v20201101/model/RunTimeEventBaseInfo.cpp
   src/v20201101/model/DescribeSystemVulListResponse.cpp
   src/v20201101/model/ModifyIgnoreVul.cpp
@@ -1481,6 +1486,7 @@ set(tcss_src
   src/v20201101/model/CreateClusterCheckTaskRequest.cpp
   src/v20201101/model/RaspInfo.cpp
   src/v20201101/model/DescribeNetworkFirewallClusterListRequest.cpp
+  src/v20201101/model/DescribeVulRegistryImageListResponse.cpp
   src/v20201101/model/CreateVulDefenceEventExportJobResponse.cpp
   src/v20201101/model/AutoAuthorizedRuleHostInfo.cpp
   src/v20201101/model/CreateExportComplianceStatusListJobRequest.cpp

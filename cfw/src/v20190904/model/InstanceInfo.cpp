@@ -34,7 +34,8 @@ InstanceInfo::InstanceInfo() :
     m_portNumHasBeenSet(false),
     m_leakNumHasBeenSet(false),
     m_insSourceHasBeenSet(false),
-    m_resourcePathHasBeenSet(false)
+    m_resourcePathHasBeenSet(false),
+    m_serverHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,19 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_resourcePathHasBeenSet = true;
     }
 
+    if (value.HasMember("Server") && !value["Server"].IsNull())
+    {
+        if (!value["Server"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Server` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Server"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_server.push_back((*itr).GetString());
+        }
+        m_serverHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +319,19 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_resourcePath.begin(); itr != m_resourcePath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_serverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Server";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_server.begin(); itr != m_server.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -535,5 +562,21 @@ void InstanceInfo::SetResourcePath(const vector<string>& _resourcePath)
 bool InstanceInfo::ResourcePathHasBeenSet() const
 {
     return m_resourcePathHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetServer() const
+{
+    return m_server;
+}
+
+void InstanceInfo::SetServer(const vector<string>& _server)
+{
+    m_server = _server;
+    m_serverHasBeenSet = true;
+}
+
+bool InstanceInfo::ServerHasBeenSet() const
+{
+    return m_serverHasBeenSet;
 }
 

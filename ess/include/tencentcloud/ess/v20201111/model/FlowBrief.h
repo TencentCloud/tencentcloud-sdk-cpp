@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程的编号
-                     * @return FlowId 流程的编号
+                     * 获取流程的编号ID
+                     * @return FlowId 流程的编号ID
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置流程的编号
-                     * @param FlowId 流程的编号
+                     * 设置流程的编号ID
+                     * @param FlowId 流程的编号ID
                      */
                     void SetFlowId(const std::string& _flowId);
 
@@ -83,17 +83,17 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取流程的描述
+                     * 获取流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowDescription 流程的描述
+                     * @return FlowDescription 流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFlowDescription() const;
 
                     /**
-                     * 设置流程的描述
+                     * 设置流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowDescription 流程的描述
+                     * @param FlowDescription 流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -124,60 +124,64 @@ namespace TencentCloud
 
                     /**
                      * 获取流程状态
-- `0`  还没有发起
-- `1`  未签署
-- `2`  部分签署
-- `3`  已退回
-- `4`  完成签署
-- `5`  已过期
-- `6`  已取消
-- `7`  还没有预发起
-- `8`  等待填写
-- `9`  部分填写
-- `10`  拒填
+- 0 还没有发起
+- 1 待签署
+- 2 部分签署
+- 3 已拒签
+- 4 已签署
+- 5 已过期
+- 6 已撤销
+- 7 还没有预发起
+- 8 等待填写
+- 9 部分填写
+- 10 拒填
+- 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowStatus 流程状态
-- `0`  还没有发起
-- `1`  未签署
-- `2`  部分签署
-- `3`  已退回
-- `4`  完成签署
-- `5`  已过期
-- `6`  已取消
-- `7`  还没有预发起
-- `8`  等待填写
-- `9`  部分填写
-- `10`  拒填
+- 0 还没有发起
+- 1 待签署
+- 2 部分签署
+- 3 已拒签
+- 4 已签署
+- 5 已过期
+- 6 已撤销
+- 7 还没有预发起
+- 8 等待填写
+- 9 部分填写
+- 10 拒填
+- 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetFlowStatus() const;
 
                     /**
                      * 设置流程状态
-- `0`  还没有发起
-- `1`  未签署
-- `2`  部分签署
-- `3`  已退回
-- `4`  完成签署
-- `5`  已过期
-- `6`  已取消
-- `7`  还没有预发起
-- `8`  等待填写
-- `9`  部分填写
-- `10`  拒填
+- 0 还没有发起
+- 1 待签署
+- 2 部分签署
+- 3 已拒签
+- 4 已签署
+- 5 已过期
+- 6 已撤销
+- 7 还没有预发起
+- 8 等待填写
+- 9 部分填写
+- 10 拒填
+- 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param FlowStatus 流程状态
-- `0`  还没有发起
-- `1`  未签署
-- `2`  部分签署
-- `3`  已退回
-- `4`  完成签署
-- `5`  已过期
-- `6`  已取消
-- `7`  还没有预发起
-- `8`  等待填写
-- `9`  部分填写
-- `10`  拒填
+- 0 还没有发起
+- 1 待签署
+- 2 部分签署
+- 3 已拒签
+- 4 已签署
+- 5 已过期
+- 6 已撤销
+- 7 还没有预发起
+- 8 等待填写
+- 9 部分填写
+- 10 拒填
+- 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
@@ -189,17 +193,17 @@ namespace TencentCloud
                     bool FlowStatusHasBeenSet() const;
 
                     /**
-                     * 获取流程创建的时间戳
+                     * 获取流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedOn 流程创建的时间戳
+                     * @return CreatedOn 流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置流程创建的时间戳
+                     * 设置流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedOn 流程创建的时间戳
+                     * @param CreatedOn 流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -279,7 +283,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程的编号
+                     * 流程的编号ID
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -291,7 +295,7 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 流程的描述
+                     * 流程的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDescription;
@@ -305,24 +309,25 @@ namespace TencentCloud
 
                     /**
                      * 流程状态
-- `0`  还没有发起
-- `1`  未签署
-- `2`  部分签署
-- `3`  已退回
-- `4`  完成签署
-- `5`  已过期
-- `6`  已取消
-- `7`  还没有预发起
-- `8`  等待填写
-- `9`  部分填写
-- `10`  拒填
+- 0 还没有发起
+- 1 待签署
+- 2 部分签署
+- 3 已拒签
+- 4 已签署
+- 5 已过期
+- 6 已撤销
+- 7 还没有预发起
+- 8 等待填写
+- 9 部分填写
+- 10 拒填
+- 21 已解除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowStatus;
                     bool m_flowStatusHasBeenSet;
 
                     /**
-                     * 流程创建的时间戳
+                     * 流程创建的时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createdOn;

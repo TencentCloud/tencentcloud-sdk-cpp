@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同(流程)的Id
-                     * @return FlowId 合同(流程)的Id
+                     * 获取合同(流程)的ID
+                     * @return FlowId 合同(流程)的ID
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同(流程)的Id
-                     * @param FlowId 合同(流程)的Id
+                     * 设置合同(流程)的ID
+                     * @param FlowId 合同(流程)的ID
                      */
                     void SetFlowId(const std::string& _flowId);
 
@@ -108,56 +108,60 @@ namespace TencentCloud
                     /**
                      * 获取流程状态
 - 0 还没有发起
-- 1 未签署
+- 1 待签署
 - 2 部分签署
-- 3 已退回
-- 4 完成签署
+- 3 已拒签
+- 4 已签署
 - 5 已过期
-- 6 已取消
+- 6 已撤销
 - 7 还没有预发起
 - 8 等待填写
 - 9 部分填写
 - 10 拒填
+- 21 已解除
                      * @return FlowStatus 流程状态
 - 0 还没有发起
-- 1 未签署
+- 1 待签署
 - 2 部分签署
-- 3 已退回
-- 4 完成签署
+- 3 已拒签
+- 4 已签署
 - 5 已过期
-- 6 已取消
+- 6 已撤销
 - 7 还没有预发起
 - 8 等待填写
 - 9 部分填写
 - 10 拒填
+- 21 已解除
                      */
                     int64_t GetFlowStatus() const;
 
                     /**
                      * 设置流程状态
 - 0 还没有发起
-- 1 未签署
+- 1 待签署
 - 2 部分签署
-- 3 已退回
-- 4 完成签署
+- 3 已拒签
+- 4 已签署
 - 5 已过期
-- 6 已取消
+- 6 已撤销
 - 7 还没有预发起
 - 8 等待填写
 - 9 部分填写
 - 10 拒填
+- 21 已解除
                      * @param FlowStatus 流程状态
 - 0 还没有发起
-- 1 未签署
+- 1 待签署
 - 2 部分签署
-- 3 已退回
-- 4 完成签署
+- 3 已拒签
+- 4 已签署
 - 5 已过期
-- 6 已取消
+- 6 已撤销
 - 7 还没有预发起
 - 8 等待填写
 - 9 部分填写
 - 10 拒填
+- 21 已解除
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
 
@@ -212,14 +216,14 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的创建时间戳
-                     * @return CreatedOn 合同(流程)的创建时间戳
+                     * 获取合同(流程)的创建时间戳，单位秒
+                     * @return CreatedOn 合同(流程)的创建时间戳，单位秒
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置合同(流程)的创建时间戳
-                     * @param CreatedOn 合同(流程)的创建时间戳
+                     * 设置合同(流程)的创建时间戳，单位秒
+                     * @param CreatedOn 合同(流程)的创建时间戳，单位秒
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
@@ -230,14 +234,14 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的签署人数组
-                     * @return FlowApproverInfos 合同(流程)的签署人数组
+                     * 获取合同(流程)的签署方数组
+                     * @return FlowApproverInfos 合同(流程)的签署方数组
                      */
                     std::vector<FlowApproverDetail> GetFlowApproverInfos() const;
 
                     /**
-                     * 设置合同(流程)的签署人数组
-                     * @param FlowApproverInfos 合同(流程)的签署人数组
+                     * 设置合同(流程)的签署方数组
+                     * @param FlowApproverInfos 合同(流程)的签署方数组
                      */
                     void SetFlowApproverInfos(const std::vector<FlowApproverDetail>& _flowApproverInfos);
 
@@ -290,7 +294,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同(流程)的Id
+                     * 合同(流程)的ID
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -311,16 +315,17 @@ namespace TencentCloud
                     /**
                      * 流程状态
 - 0 还没有发起
-- 1 未签署
+- 1 待签署
 - 2 部分签署
-- 3 已退回
-- 4 完成签署
+- 3 已拒签
+- 4 已签署
 - 5 已过期
-- 6 已取消
+- 6 已撤销
 - 7 还没有预发起
 - 8 等待填写
 - 9 部分填写
 - 10 拒填
+- 21 已解除
                      */
                     int64_t m_flowStatus;
                     bool m_flowStatusHasBeenSet;
@@ -340,13 +345,13 @@ namespace TencentCloud
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 合同(流程)的创建时间戳
+                     * 合同(流程)的创建时间戳，单位秒
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 合同(流程)的签署人数组
+                     * 合同(流程)的签署方数组
                      */
                     std::vector<FlowApproverDetail> m_flowApproverInfos;
                     bool m_flowApproverInfosHasBeenSet;

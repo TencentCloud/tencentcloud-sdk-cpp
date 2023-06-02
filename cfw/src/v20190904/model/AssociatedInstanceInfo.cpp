@@ -28,7 +28,9 @@ AssociatedInstanceInfo::AssociatedInstanceInfo() :
     m_vpcNameHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_securityGroupCountHasBeenSet(false)
+    m_securityGroupCountHasBeenSet(false),
+    m_securityGroupRuleCountHasBeenSet(false),
+    m_cdbIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome AssociatedInstanceInfo::Deserialize(const rapidjson::Value &
         m_securityGroupCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupRuleCount") && !value["SecurityGroupRuleCount"].IsNull())
+    {
+        if (!value["SecurityGroupRuleCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.SecurityGroupRuleCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupRuleCount = value["SecurityGroupRuleCount"].GetUint64();
+        m_securityGroupRuleCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdbId") && !value["CdbId"].IsNull())
+    {
+        if (!value["CdbId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssociatedInstanceInfo.CdbId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdbId = string(value["CdbId"].GetString());
+        m_cdbIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void AssociatedInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SecurityGroupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityGroupCount, allocator);
+    }
+
+    if (m_securityGroupRuleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupRuleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityGroupRuleCount, allocator);
+    }
+
+    if (m_cdbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdbId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void AssociatedInstanceInfo::SetSecurityGroupCount(const uint64_t& _securityGrou
 bool AssociatedInstanceInfo::SecurityGroupCountHasBeenSet() const
 {
     return m_securityGroupCountHasBeenSet;
+}
+
+uint64_t AssociatedInstanceInfo::GetSecurityGroupRuleCount() const
+{
+    return m_securityGroupRuleCount;
+}
+
+void AssociatedInstanceInfo::SetSecurityGroupRuleCount(const uint64_t& _securityGroupRuleCount)
+{
+    m_securityGroupRuleCount = _securityGroupRuleCount;
+    m_securityGroupRuleCountHasBeenSet = true;
+}
+
+bool AssociatedInstanceInfo::SecurityGroupRuleCountHasBeenSet() const
+{
+    return m_securityGroupRuleCountHasBeenSet;
+}
+
+string AssociatedInstanceInfo::GetCdbId() const
+{
+    return m_cdbId;
+}
+
+void AssociatedInstanceInfo::SetCdbId(const string& _cdbId)
+{
+    m_cdbId = _cdbId;
+    m_cdbIdHasBeenSet = true;
+}
+
+bool AssociatedInstanceInfo::CdbIdHasBeenSet() const
+{
+    return m_cdbIdHasBeenSet;
 }
 

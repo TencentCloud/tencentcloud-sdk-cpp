@@ -53,12 +53,12 @@ namespace TencentCloud
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。
                      * @return ApproverType 参与者类型：
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。
                      */
                     int64_t GetApproverType() const;
 
@@ -67,12 +67,12 @@ namespace TencentCloud
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。
                      * @param ApproverType 参与者类型：
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。
                      */
                     void SetApproverType(const int64_t& _approverType);
 
@@ -181,14 +181,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool ApproverIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人在模板中的角色ID
-                     * @return RecipientId 签署方经办人在模板中的角色ID
+                     * 获取签署方经办人在模板中的参与方ID
+                     * @return RecipientId 签署方经办人在模板中的参与方ID
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署方经办人在模板中的角色ID
-                     * @param RecipientId 签署方经办人在模板中的角色ID
+                     * 设置签署方经办人在模板中的参与方ID
+                     * @param RecipientId 签署方经办人在模板中的参与方ID
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
@@ -403,7 +403,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
+注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。
                      */
                     int64_t m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -441,7 +441,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverIdCardNumberHasBeenSet;
 
                     /**
-                     * 签署方经办人在模板中的角色ID
+                     * 签署方经办人在模板中的参与方ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;

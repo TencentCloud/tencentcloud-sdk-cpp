@@ -36,7 +36,8 @@ AssetWebFrameBaseInfo::AssetWebFrameBaseInfo() :
     m_updateTimeHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
     m_isNewHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,16 @@ CoreInternalOutcome AssetWebFrameBaseInfo::Deserialize(const rapidjson::Value &v
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetWebFrameBaseInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +374,14 @@ void AssetWebFrameBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -622,5 +641,21 @@ void AssetWebFrameBaseInfo::SetMachineExtraInfo(const MachineExtraInfo& _machine
 bool AssetWebFrameBaseInfo::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string AssetWebFrameBaseInfo::GetPath() const
+{
+    return m_path;
+}
+
+void AssetWebFrameBaseInfo::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool AssetWebFrameBaseInfo::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
 }
 

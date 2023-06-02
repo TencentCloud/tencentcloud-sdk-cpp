@@ -559,6 +559,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeVulLevelImageSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulLevelSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulLevelSummaryResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulScanAuthorizedImageSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulScanAuthorizedImageSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulScanInfoRequest.h>
@@ -1501,6 +1503,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulLevelSummaryResponse> DescribeVulLevelSummaryOutcome;
                 typedef std::future<DescribeVulLevelSummaryOutcome> DescribeVulLevelSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVulLevelSummaryRequest&, DescribeVulLevelSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulLevelSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulRegistryImageListResponse> DescribeVulRegistryImageListOutcome;
+                typedef std::future<DescribeVulRegistryImageListOutcome> DescribeVulRegistryImageListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeVulRegistryImageListRequest&, DescribeVulRegistryImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulRegistryImageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulScanAuthorizedImageSummaryResponse> DescribeVulScanAuthorizedImageSummaryOutcome;
                 typedef std::future<DescribeVulScanAuthorizedImageSummaryOutcome> DescribeVulScanAuthorizedImageSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVulScanAuthorizedImageSummaryRequest&, DescribeVulScanAuthorizedImageSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulScanAuthorizedImageSummaryAsyncHandler;
@@ -4104,6 +4109,15 @@ namespace TencentCloud
                 DescribeVulLevelSummaryOutcome DescribeVulLevelSummary(const Model::DescribeVulLevelSummaryRequest &request);
                 void DescribeVulLevelSummaryAsync(const Model::DescribeVulLevelSummaryRequest& request, const DescribeVulLevelSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulLevelSummaryOutcomeCallable DescribeVulLevelSummaryCallable(const Model::DescribeVulLevelSummaryRequest& request);
+
+                /**
+                 *查询漏洞影响的仓库镜像列表
+                 * @param req DescribeVulRegistryImageListRequest
+                 * @return DescribeVulRegistryImageListOutcome
+                 */
+                DescribeVulRegistryImageListOutcome DescribeVulRegistryImageList(const Model::DescribeVulRegistryImageListRequest &request);
+                void DescribeVulRegistryImageListAsync(const Model::DescribeVulRegistryImageListRequest& request, const DescribeVulRegistryImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulRegistryImageListOutcomeCallable DescribeVulRegistryImageListCallable(const Model::DescribeVulRegistryImageListRequest& request);
 
                 /**
                  *统计漏洞扫描页已授权和未扫描镜像数

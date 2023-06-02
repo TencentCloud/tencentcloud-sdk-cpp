@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/ResourceAvailability.h>
+#include <tencentcloud/clb/v20180317/model/TypeInfo.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,28 @@ namespace TencentCloud
                      */
                     bool AvailabilitySetHasBeenSet() const;
 
+                    /**
+                     * 获取运营商类型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TypeSet 运营商类型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TypeInfo> GetTypeSet() const;
+
+                    /**
+                     * 设置运营商类型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TypeSet 运营商类型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTypeSet(const std::vector<TypeInfo>& _typeSet);
+
+                    /**
+                     * 判断参数 TypeSet 是否已赋值
+                     * @return TypeSet 是否已赋值
+                     */
+                    bool TypeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +148,13 @@ namespace TencentCloud
                      */
                     std::vector<ResourceAvailability> m_availabilitySet;
                     bool m_availabilitySetHasBeenSet;
+
+                    /**
+                     * 运营商类型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TypeInfo> m_typeSet;
+                    bool m_typeSetHasBeenSet;
 
                 };
             }

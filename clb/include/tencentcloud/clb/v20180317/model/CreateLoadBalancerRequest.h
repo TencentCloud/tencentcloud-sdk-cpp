@@ -239,14 +239,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取仅适用于公网负载均衡。负载均衡的网络计费模式。
-                     * @return InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费模式。
+                     * 获取仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * @return InternetAccessible 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置仅适用于公网负载均衡。负载均衡的网络计费模式。
-                     * @param InternetAccessible 仅适用于公网负载均衡。负载均衡的网络计费模式。
+                     * 设置仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * @param InternetAccessible 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
@@ -353,11 +353,11 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 获取创建性能容量型实例。
 <ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。
-<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>
+<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。
 <li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
                      * @return SlaType 创建性能容量型实例。
 <ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。
-<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>
+<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。
 <li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
                      */
                     std::string GetSlaType() const;
@@ -365,11 +365,11 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 设置创建性能容量型实例。
 <ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。
-<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>
+<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。
 <li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
                      * @param SlaType 创建性能容量型实例。
 <ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。
-<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>
+<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。
 <li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -510,6 +510,24 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 
+                    /**
+                     * 获取创建域名化负载均衡。
+                     * @return DynamicVip 创建域名化负载均衡。
+                     */
+                    bool GetDynamicVip() const;
+
+                    /**
+                     * 设置创建域名化负载均衡。
+                     * @param DynamicVip 创建域名化负载均衡。
+                     */
+                    void SetDynamicVip(const bool& _dynamicVip);
+
+                    /**
+                     * 判断参数 DynamicVip 是否已赋值
+                     * @return DynamicVip 是否已赋值
+                     */
+                    bool DynamicVipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -576,7 +594,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 仅适用于公网负载均衡。负载均衡的网络计费模式。
+                     * 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
@@ -615,7 +633,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     /**
                      * 创建性能容量型实例。
 <ul><li>若需要创建性能容量型实例，则此参数必填，且取值为：SLA，表示创建按量计费模式下的默认规格的性能容量型实例。
-<ul><li>当您开通了普通规格的性能容量型时，SLA对应超强型1规格。普通规格的性能容量型正在内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/hf45esx99lf)。</li>
+<ul><li>默认为普通规格的性能容量型实例，SLA对应超强型1规格。
 <li>当您开通了超大型规格的性能容量型时，SLA对应超强型4规格。超大型规格的性能容量型正在内测中，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。</li></ul></li><li>若需要创建共享型实例，则无需填写此参数。</li></ul>
                      */
                     std::string m_slaType;
@@ -663,6 +681,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
+
+                    /**
+                     * 创建域名化负载均衡。
+                     */
+                    bool m_dynamicVip;
+                    bool m_dynamicVipHasBeenSet;
 
                 };
             }

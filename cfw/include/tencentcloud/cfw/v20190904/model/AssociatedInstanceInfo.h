@@ -222,6 +222,50 @@ namespace TencentCloud
                      */
                     bool SecurityGroupCountHasBeenSet() const;
 
+                    /**
+                     * 获取关联安全组规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupRuleCount 关联安全组规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSecurityGroupRuleCount() const;
+
+                    /**
+                     * 设置关联安全组规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroupRuleCount 关联安全组规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroupRuleCount(const uint64_t& _securityGroupRuleCount);
+
+                    /**
+                     * 判断参数 SecurityGroupRuleCount 是否已赋值
+                     * @return SecurityGroupRuleCount 是否已赋值
+                     */
+                    bool SecurityGroupRuleCountHasBeenSet() const;
+
+                    /**
+                     * 获取关联数据库代理Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdbId 关联数据库代理Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCdbId() const;
+
+                    /**
+                     * 设置关联数据库代理Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CdbId 关联数据库代理Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCdbId(const std::string& _cdbId);
+
+                    /**
+                     * 判断参数 CdbId 是否已赋值
+                     * @return CdbId 是否已赋值
+                     */
+                    bool CdbIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +323,20 @@ namespace TencentCloud
                      */
                     uint64_t m_securityGroupCount;
                     bool m_securityGroupCountHasBeenSet;
+
+                    /**
+                     * 关联安全组规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_securityGroupRuleCount;
+                    bool m_securityGroupRuleCountHasBeenSet;
+
+                    /**
+                     * 关联数据库代理Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdbId;
+                    bool m_cdbIdHasBeenSet;
 
                 };
             }

@@ -298,6 +298,49 @@ SslClient::CreateCertificateOutcomeCallable SslClient::CreateCertificateCallable
     return task->get_future();
 }
 
+SslClient::CreateCertificateByPackageOutcome SslClient::CreateCertificateByPackage(const CreateCertificateByPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCertificateByPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCertificateByPackageResponse rsp = CreateCertificateByPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCertificateByPackageOutcome(rsp);
+        else
+            return CreateCertificateByPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCertificateByPackageOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CreateCertificateByPackageAsync(const CreateCertificateByPackageRequest& request, const CreateCertificateByPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCertificateByPackage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CreateCertificateByPackageOutcomeCallable SslClient::CreateCertificateByPackageCallable(const CreateCertificateByPackageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCertificateByPackageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCertificateByPackage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DeleteCertificateOutcome SslClient::DeleteCertificate(const DeleteCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCertificate");

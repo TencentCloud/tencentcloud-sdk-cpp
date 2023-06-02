@@ -11564,6 +11564,49 @@ TcssClient::DescribeVulLevelSummaryOutcomeCallable TcssClient::DescribeVulLevelS
     return task->get_future();
 }
 
+TcssClient::DescribeVulRegistryImageListOutcome TcssClient::DescribeVulRegistryImageList(const DescribeVulRegistryImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulRegistryImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulRegistryImageListResponse rsp = DescribeVulRegistryImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulRegistryImageListOutcome(rsp);
+        else
+            return DescribeVulRegistryImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulRegistryImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulRegistryImageListAsync(const DescribeVulRegistryImageListRequest& request, const DescribeVulRegistryImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulRegistryImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulRegistryImageListOutcomeCallable TcssClient::DescribeVulRegistryImageListCallable(const DescribeVulRegistryImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulRegistryImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulRegistryImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeVulScanAuthorizedImageSummaryOutcome TcssClient::DescribeVulScanAuthorizedImageSummary(const DescribeVulScanAuthorizedImageSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVulScanAuthorizedImageSummary");

@@ -54,7 +54,6 @@ type InstanceInfo struct {
 	ResourceGroupNum int    `json:"ResourceGroupNum"`
 	VPCName          string `json:"VPCName" gorm:"column:VPCName"`
 }
-
                 */
                 class InstanceInfo : public AbstractModel
                 {
@@ -325,6 +324,28 @@ type InstanceInfo struct {
                      */
                     bool ResourcePathHasBeenSet() const;
 
+                    /**
+                     * 获取扫描结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Server 扫描结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetServer() const;
+
+                    /**
+                     * 设置扫描结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Server 扫描结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServer(const std::vector<std::string>& _server);
+
+                    /**
+                     * 判断参数 Server 是否已赋值
+                     * @return Server 是否已赋值
+                     */
+                    bool ServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +433,13 @@ type InstanceInfo struct {
                      */
                     std::vector<std::string> m_resourcePath;
                     bool m_resourcePathHasBeenSet;
+
+                    /**
+                     * 扫描结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_server;
+                    bool m_serverHasBeenSet;
 
                 };
             }

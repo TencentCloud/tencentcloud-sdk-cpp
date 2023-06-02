@@ -46,7 +46,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_clusterTagHasBeenSet(false),
     m_slaveZoneIdHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
-    m_loadBalancerPassToTargetHasBeenSet(false)
+    m_loadBalancerPassToTargetHasBeenSet(false),
+    m_dynamicVipHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,14 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "LoadBalancerPassToTarget";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_dynamicVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicVip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dynamicVip, allocator);
     }
 
 
@@ -655,6 +664,22 @@ void CreateLoadBalancerRequest::SetLoadBalancerPassToTarget(const bool& _loadBal
 bool CreateLoadBalancerRequest::LoadBalancerPassToTargetHasBeenSet() const
 {
     return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+bool CreateLoadBalancerRequest::GetDynamicVip() const
+{
+    return m_dynamicVip;
+}
+
+void CreateLoadBalancerRequest::SetDynamicVip(const bool& _dynamicVip)
+{
+    m_dynamicVip = _dynamicVip;
+    m_dynamicVipHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::DynamicVipHasBeenSet() const
+{
+    return m_dynamicVipHasBeenSet;
 }
 
 

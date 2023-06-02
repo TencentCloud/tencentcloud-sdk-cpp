@@ -270,17 +270,13 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -347,6 +343,24 @@ namespace TencentCloud
                      * @return MachineExtraInfo 是否已赋值
                      */
                     bool MachineExtraInfoHasBeenSet() const;
+
+                    /**
+                     * 获取应用路径
+                     * @return Path 应用路径
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置应用路径
+                     * @param Path 应用路径
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     */
+                    bool PathHasBeenSet() const;
 
                 private:
 
@@ -425,7 +439,6 @@ namespace TencentCloud
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -448,6 +461,12 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 应用路径
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

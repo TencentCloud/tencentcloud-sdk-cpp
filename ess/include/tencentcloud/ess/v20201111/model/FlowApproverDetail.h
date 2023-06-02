@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人信息
+                     * 获取签署时的相关信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveMessage 签署人信息
+                     * @return ApproveMessage 签署时的相关信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApproveMessage() const;
 
                     /**
-                     * 设置签署人信息
+                     * 设置签署时的相关信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApproveMessage 签署人信息
+                     * @param ApproveMessage 签署时的相关信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApproveMessage(const std::string& _approveMessage);
@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool ApproveMessageHasBeenSet() const;
 
                     /**
-                     * 获取签署人名字
-                     * @return ApproveName 签署人名字
+                     * 获取签署方姓名
+                     * @return ApproveName 签署方姓名
                      */
                     std::string GetApproveName() const;
 
                     /**
-                     * 设置签署人名字
-                     * @param ApproveName 签署人名字
+                     * 设置签署方姓名
+                     * @param ApproveName 签署方姓名
                      */
                     void SetApproveName(const std::string& _approveName);
 
@@ -87,54 +87,66 @@ namespace TencentCloud
                     bool ApproveNameHasBeenSet() const;
 
                     /**
-                     * 获取签署人的状态
+                     * 获取签署方的签署状态
 0：还没有发起
 1：流程中 没有开始处理
-2：待处理
-3：签署态
-4：拒绝态
-5：过期没人处理
-6：取消态
+2：待签署
+3：已签署
+4：已拒绝
+5：已过期
+6：已撤销
 7：还没有预发起
 8：待填写
 9：因为各种原因而终止
-                     * @return ApproveStatus 签署人的状态
+10：填写完成
+15：已解除
+19：转他人处理
+                     * @return ApproveStatus 签署方的签署状态
 0：还没有发起
 1：流程中 没有开始处理
-2：待处理
-3：签署态
-4：拒绝态
-5：过期没人处理
-6：取消态
+2：待签署
+3：已签署
+4：已拒绝
+5：已过期
+6：已撤销
 7：还没有预发起
 8：待填写
 9：因为各种原因而终止
+10：填写完成
+15：已解除
+19：转他人处理
                      */
                     int64_t GetApproveStatus() const;
 
                     /**
-                     * 设置签署人的状态
+                     * 设置签署方的签署状态
 0：还没有发起
 1：流程中 没有开始处理
-2：待处理
-3：签署态
-4：拒绝态
-5：过期没人处理
-6：取消态
+2：待签署
+3：已签署
+4：已拒绝
+5：已过期
+6：已撤销
 7：还没有预发起
 8：待填写
 9：因为各种原因而终止
-                     * @param ApproveStatus 签署人的状态
+10：填写完成
+15：已解除
+19：转他人处理
+                     * @param ApproveStatus 签署方的签署状态
 0：还没有发起
 1：流程中 没有开始处理
-2：待处理
-3：签署态
-4：拒绝态
-5：过期没人处理
-6：取消态
+2：待签署
+3：已签署
+4：已拒绝
+5：已过期
+6：已撤销
 7：还没有预发起
 8：待填写
 9：因为各种原因而终止
+10：填写完成
+15：已解除
+19：转他人处理
                      */
                     void SetApproveStatus(const int64_t& _approveStatus);
 
@@ -145,14 +157,14 @@ namespace TencentCloud
                     bool ApproveStatusHasBeenSet() const;
 
                     /**
-                     * 获取模板配置时候的签署人id,与控件绑定
-                     * @return ReceiptId 模板配置时候的签署人id,与控件绑定
+                     * 获取模板配置中的参与方ID,与控件绑定
+                     * @return ReceiptId 模板配置中的参与方ID,与控件绑定
                      */
                     std::string GetReceiptId() const;
 
                     /**
-                     * 设置模板配置时候的签署人id,与控件绑定
-                     * @param ReceiptId 模板配置时候的签署人id,与控件绑定
+                     * 设置模板配置中的参与方ID,与控件绑定
+                     * @param ReceiptId 模板配置中的参与方ID,与控件绑定
                      */
                     void SetReceiptId(const std::string& _receiptId);
 
@@ -163,17 +175,17 @@ namespace TencentCloud
                     bool ReceiptIdHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义userId
+                     * 获取客户自定义的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomUserId 客户自定义userId
+                     * @return CustomUserId 客户自定义的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCustomUserId() const;
 
                     /**
-                     * 设置客户自定义userId
+                     * 设置客户自定义的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomUserId 客户自定义userId
+                     * @param CustomUserId 客户自定义的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCustomUserId(const std::string& _customUserId);
@@ -203,14 +215,14 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取签署顺序
-                     * @return SignOrder 签署顺序
+                     * 获取签署顺序，如果是有序签署，签署顺序从小到大
+                     * @return SignOrder 签署顺序，如果是有序签署，签署顺序从小到大
                      */
                     int64_t GetSignOrder() const;
 
                     /**
-                     * 设置签署顺序
-                     * @param SignOrder 签署顺序
+                     * 设置签署顺序，如果是有序签署，签署顺序从小到大
+                     * @param SignOrder 签署顺序，如果是有序签署，签署顺序从小到大
                      */
                     void SetSignOrder(const int64_t& _signOrder);
 
@@ -221,14 +233,14 @@ namespace TencentCloud
                     bool SignOrderHasBeenSet() const;
 
                     /**
-                     * 获取签署人签署时间
-                     * @return ApproveTime 签署人签署时间
+                     * 获取签署人签署时间，时间戳，单位秒
+                     * @return ApproveTime 签署人签署时间，时间戳，单位秒
                      */
                     int64_t GetApproveTime() const;
 
                     /**
-                     * 设置签署人签署时间
-                     * @param ApproveTime 签署人签署时间
+                     * 设置签署人签署时间，时间戳，单位秒
+                     * @param ApproveTime 签署人签署时间，时间戳，单位秒
                      */
                     void SetApproveTime(const int64_t& _approveTime);
 
@@ -239,17 +251,17 @@ namespace TencentCloud
                     bool ApproveTimeHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型
+                     * 获取签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveType 参与者类型
+                     * @return ApproveType 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApproveType() const;
 
                     /**
-                     * 设置参与者类型
+                     * 设置签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApproveType 参与者类型
+                     * @param ApproveType 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApproveType(const std::string& _approveType);
@@ -261,17 +273,17 @@ namespace TencentCloud
                     bool ApproveTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人侧用户来源
+                     * 获取签署方侧用户来源，如WEWORKAPP-企业微信等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverSource 签署人侧用户来源
+                     * @return ApproverSource 签署方侧用户来源，如WEWORKAPP-企业微信等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApproverSource() const;
 
                     /**
-                     * 设置签署人侧用户来源
+                     * 设置签署方侧用户来源，如WEWORKAPP-企业微信等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApproverSource 签署人侧用户来源
+                     * @param ApproverSource 签署方侧用户来源，如WEWORKAPP-企业微信等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApproverSource(const std::string& _approverSource);
@@ -283,17 +295,17 @@ namespace TencentCloud
                     bool ApproverSourceHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义签署人标识
+                     * 获取客户自定义签署方标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomApproverTag 客户自定义签署人标识
+                     * @return CustomApproverTag 客户自定义签署方标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCustomApproverTag() const;
 
                     /**
-                     * 设置客户自定义签署人标识
+                     * 设置客户自定义签署方标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomApproverTag 客户自定义签署人标识
+                     * @param CustomApproverTag 客户自定义签署方标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCustomApproverTag(const std::string& _customApproverTag);
@@ -305,17 +317,17 @@ namespace TencentCloud
                     bool CustomApproverTagHasBeenSet() const;
 
                     /**
-                     * 获取签署人企业Id
+                     * 获取签署方企业Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationId 签署人企业Id
+                     * @return OrganizationId 签署方企业Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置签署人企业Id
+                     * 设置签署方企业Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrganizationId 签署人企业Id
+                     * @param OrganizationId 签署方企业Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -327,17 +339,17 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人企业名称
+                     * 获取签署方企业名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationName 签署人企业名称
+                     * @return OrganizationName 签署方企业名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置签署人企业名称
+                     * 设置签署方企业名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrganizationName 签署人企业名称
+                     * @param OrganizationName 签署方企业名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -351,42 +363,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署人信息
+                     * 签署时的相关信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveMessage;
                     bool m_approveMessageHasBeenSet;
 
                     /**
-                     * 签署人名字
+                     * 签署方姓名
                      */
                     std::string m_approveName;
                     bool m_approveNameHasBeenSet;
 
                     /**
-                     * 签署人的状态
+                     * 签署方的签署状态
 0：还没有发起
 1：流程中 没有开始处理
-2：待处理
-3：签署态
-4：拒绝态
-5：过期没人处理
-6：取消态
+2：待签署
+3：已签署
+4：已拒绝
+5：已过期
+6：已撤销
 7：还没有预发起
 8：待填写
 9：因为各种原因而终止
+10：填写完成
+15：已解除
+19：转他人处理
                      */
                     int64_t m_approveStatus;
                     bool m_approveStatusHasBeenSet;
 
                     /**
-                     * 模板配置时候的签署人id,与控件绑定
+                     * 模板配置中的参与方ID,与控件绑定
                      */
                     std::string m_receiptId;
                     bool m_receiptIdHasBeenSet;
 
                     /**
-                     * 客户自定义userId
+                     * 客户自定义的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customUserId;
@@ -399,47 +414,47 @@ namespace TencentCloud
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 签署顺序
+                     * 签署顺序，如果是有序签署，签署顺序从小到大
                      */
                     int64_t m_signOrder;
                     bool m_signOrderHasBeenSet;
 
                     /**
-                     * 签署人签署时间
+                     * 签署人签署时间，时间戳，单位秒
                      */
                     int64_t m_approveTime;
                     bool m_approveTimeHasBeenSet;
 
                     /**
-                     * 参与者类型
+                     * 签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveType;
                     bool m_approveTypeHasBeenSet;
 
                     /**
-                     * 签署人侧用户来源
+                     * 签署方侧用户来源，如WEWORKAPP-企业微信等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverSource;
                     bool m_approverSourceHasBeenSet;
 
                     /**
-                     * 客户自定义签署人标识
+                     * 客户自定义签署方标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customApproverTag;
                     bool m_customApproverTagHasBeenSet;
 
                     /**
-                     * 签署人企业Id
+                     * 签署方企业Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 签署人企业名称
+                     * 签署方企业名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;

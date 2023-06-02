@@ -35,6 +35,8 @@
 #include <tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCertificateByPackageRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCertificateByPackageResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h>
@@ -157,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCertificateResponse> CreateCertificateOutcome;
                 typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CreateCertificateRequest&, CreateCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCertificateByPackageResponse> CreateCertificateByPackageOutcome;
+                typedef std::future<CreateCertificateByPackageOutcome> CreateCertificateByPackageOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CreateCertificateByPackageRequest&, CreateCertificateByPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateByPackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCertificateResponse> DeleteCertificateOutcome;
                 typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteCertificateRequest&, DeleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificateAsyncHandler;
@@ -348,6 +353,15 @@ namespace TencentCloud
                 CreateCertificateOutcome CreateCertificate(const Model::CreateCertificateRequest &request);
                 void CreateCertificateAsync(const Model::CreateCertificateRequest& request, const CreateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request);
+
+                /**
+                 *使用权益点创建证书
+                 * @param req CreateCertificateByPackageRequest
+                 * @return CreateCertificateByPackageOutcome
+                 */
+                CreateCertificateByPackageOutcome CreateCertificateByPackage(const Model::CreateCertificateByPackageRequest &request);
+                void CreateCertificateByPackageAsync(const Model::CreateCertificateByPackageRequest& request, const CreateCertificateByPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCertificateByPackageOutcomeCallable CreateCertificateByPackageCallable(const Model::CreateCertificateByPackageRequest& request);
 
                 /**
                  *本接口（DeleteCertificate）用于删除证书。

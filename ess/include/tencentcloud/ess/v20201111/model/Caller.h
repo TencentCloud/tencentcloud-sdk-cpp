@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取经办人的用户ID
-                     * @return OperatorId 经办人的用户ID
+                     * 获取经办人的用户ID，同UserId
+                     * @return OperatorId 经办人的用户ID，同UserId
                      */
                     std::string GetOperatorId() const;
 
                     /**
-                     * 设置经办人的用户ID
-                     * @param OperatorId 经办人的用户ID
+                     * 设置经办人的用户ID，同UserId
+                     * @param OperatorId 经办人的用户ID，同UserId
                      */
                     void SetOperatorId(const std::string& _operatorId);
 
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 经办人的用户ID
+                     * 经办人的用户ID，同UserId
                      */
                     std::string m_operatorId;
                     bool m_operatorIdHasBeenSet;
