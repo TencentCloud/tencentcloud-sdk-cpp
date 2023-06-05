@@ -25,12 +25,12 @@ using namespace std;
 DescribeFlowTemplatesRequest::DescribeFlowTemplatesRequest() :
     m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_isChannelHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
     m_organizationHasBeenSet(false),
     m_generateSourceHasBeenSet(false)
 {
@@ -61,20 +61,12 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_offsetHasBeenSet)
+    if (m_contentTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, m_contentType, allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -92,6 +84,22 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
     if (m_applicationIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -106,14 +114,6 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         string key = "IsChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isChannel, allocator);
-    }
-
-    if (m_contentTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ContentType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_contentType, allocator);
     }
 
     if (m_organizationHasBeenSet)
@@ -173,6 +173,38 @@ bool DescribeFlowTemplatesRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
+int64_t DescribeFlowTemplatesRequest::GetContentType() const
+{
+    return m_contentType;
+}
+
+void DescribeFlowTemplatesRequest::SetContentType(const int64_t& _contentType)
+{
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
+}
+
+vector<Filter> DescribeFlowTemplatesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeFlowTemplatesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
 uint64_t DescribeFlowTemplatesRequest::GetOffset() const
 {
     return m_offset;
@@ -205,22 +237,6 @@ bool DescribeFlowTemplatesRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-vector<Filter> DescribeFlowTemplatesRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeFlowTemplatesRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeFlowTemplatesRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 string DescribeFlowTemplatesRequest::GetApplicationId() const
 {
     return m_applicationId;
@@ -251,22 +267,6 @@ void DescribeFlowTemplatesRequest::SetIsChannel(const bool& _isChannel)
 bool DescribeFlowTemplatesRequest::IsChannelHasBeenSet() const
 {
     return m_isChannelHasBeenSet;
-}
-
-int64_t DescribeFlowTemplatesRequest::GetContentType() const
-{
-    return m_contentType;
-}
-
-void DescribeFlowTemplatesRequest::SetContentType(const int64_t& _contentType)
-{
-    m_contentType = _contentType;
-    m_contentTypeHasBeenSet = true;
-}
-
-bool DescribeFlowTemplatesRequest::ContentTypeHasBeenSet() const
-{
-    return m_contentTypeHasBeenSet;
 }
 
 OrganizationInfo DescribeFlowTemplatesRequest::GetOrganization() const

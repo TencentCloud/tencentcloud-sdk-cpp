@@ -98,24 +98,6 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取印章图片的base64，最大不超过 8M
-                     * @return SealImage 印章图片的base64，最大不超过 8M
-                     */
-                    std::string GetSealImage() const;
-
-                    /**
-                     * 设置印章图片的base64，最大不超过 8M
-                     * @param SealImage 印章图片的base64，最大不超过 8M
-                     */
-                    void SetSealImage(const std::string& _sealImage);
-
-                    /**
-                     * 判断参数 SealImage 是否已赋值
-                     * @return SealImage 是否已赋值
-                     */
-                    bool SealImageHasBeenSet() const;
-
-                    /**
                      * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
                      * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
                      */
@@ -170,6 +152,32 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                      * @return IdCardType 是否已赋值
                      */
                     bool IdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取印章图片的base64
+注：已废弃
+请先通过UploadFiles接口上传文件，获取 FileId
+                     * @return SealImage 印章图片的base64
+注：已废弃
+请先通过UploadFiles接口上传文件，获取 FileId
+                     */
+                    std::string GetSealImage() const;
+
+                    /**
+                     * 设置印章图片的base64
+注：已废弃
+请先通过UploadFiles接口上传文件，获取 FileId
+                     * @param SealImage 印章图片的base64
+注：已废弃
+请先通过UploadFiles接口上传文件，获取 FileId
+                     */
+                    void SetSealImage(const std::string& _sealImage);
+
+                    /**
+                     * 判断参数 SealImage 是否已赋值
+                     * @return SealImage 是否已赋值
+                     */
+                    bool SealImageHasBeenSet() const;
 
                     /**
                      * 获取是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
@@ -293,6 +301,32 @@ true：做透明化处理和颜色增强。
                      */
                     bool ProcessSealHasBeenSet() const;
 
+                    /**
+                     * 获取印章图片文件 id
+取值：
+填写的FileId通过UploadFiles接口上传文件获取。
+                     * @return FileId 印章图片文件 id
+取值：
+填写的FileId通过UploadFiles接口上传文件获取。
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置印章图片文件 id
+取值：
+填写的FileId通过UploadFiles接口上传文件获取。
+                     * @param FileId 印章图片文件 id
+取值：
+填写的FileId通过UploadFiles接口上传文件获取。
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,12 +348,6 @@ true：做透明化处理和颜色增强。
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * 印章图片的base64，最大不超过 8M
-                     */
-                    std::string m_sealImage;
-                    bool m_sealImageHasBeenSet;
-
-                    /**
                      * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
                      */
                     UserInfo m_operator;
@@ -335,6 +363,14 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
+
+                    /**
+                     * 印章图片的base64
+注：已废弃
+请先通过UploadFiles接口上传文件，获取 FileId
+                     */
+                    std::string m_sealImage;
+                    bool m_sealImageHasBeenSet;
 
                     /**
                      * 是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。
@@ -373,6 +409,14 @@ true：做透明化处理和颜色增强。
                      */
                     bool m_processSeal;
                     bool m_processSealHasBeenSet;
+
+                    /**
+                     * 印章图片文件 id
+取值：
+填写的FileId通过UploadFiles接口上传文件获取。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信息
-                     * @return Operator 用户信息
+                     * 获取用户信息，其中UserId为必填参数
+                     * @return Operator 用户信息，其中UserId为必填参数
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置用户信息
-                     * @param Operator 用户信息
+                     * 设置用户信息，其中UserId为必填参数
+                     * @param Operator 用户信息，其中UserId为必填参数
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -258,7 +258,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信息
+                     * 用户信息，其中UserId为必填参数
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

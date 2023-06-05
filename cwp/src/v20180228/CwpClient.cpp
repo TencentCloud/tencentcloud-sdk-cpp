@@ -7264,49 +7264,6 @@ CwpClient::DescribeRiskDnsListOutcomeCallable CwpClient::DescribeRiskDnsListCall
     return task->get_future();
 }
 
-CwpClient::DescribeSaveOrUpdateWarningsOutcome CwpClient::DescribeSaveOrUpdateWarnings(const DescribeSaveOrUpdateWarningsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSaveOrUpdateWarnings");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSaveOrUpdateWarningsResponse rsp = DescribeSaveOrUpdateWarningsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSaveOrUpdateWarningsOutcome(rsp);
-        else
-            return DescribeSaveOrUpdateWarningsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSaveOrUpdateWarningsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeSaveOrUpdateWarningsAsync(const DescribeSaveOrUpdateWarningsRequest& request, const DescribeSaveOrUpdateWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSaveOrUpdateWarnings(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeSaveOrUpdateWarningsOutcomeCallable CwpClient::DescribeSaveOrUpdateWarningsCallable(const DescribeSaveOrUpdateWarningsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSaveOrUpdateWarningsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSaveOrUpdateWarnings(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeScanMalwareScheduleOutcome CwpClient::DescribeScanMalwareSchedule(const DescribeScanMalwareScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanMalwareSchedule");
@@ -8547,6 +8504,49 @@ CwpClient::DescribeVulListOutcomeCallable CwpClient::DescribeVulListCallable(con
         [this, request]()
         {
             return this->DescribeVulList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeVulStoreListOutcome CwpClient::DescribeVulStoreList(const DescribeVulStoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulStoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulStoreListResponse rsp = DescribeVulStoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulStoreListOutcome(rsp);
+        else
+            return DescribeVulStoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulStoreListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVulStoreListAsync(const DescribeVulStoreListRequest& request, const DescribeVulStoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulStoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeVulStoreListOutcomeCallable CwpClient::DescribeVulStoreListCallable(const DescribeVulStoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulStoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulStoreList(request);
         }
     );
 

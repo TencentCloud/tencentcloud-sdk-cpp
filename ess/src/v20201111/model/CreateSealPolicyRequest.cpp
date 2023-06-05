@@ -27,9 +27,9 @@ CreateSealPolicyRequest::CreateSealPolicyRequest() :
     m_usersHasBeenSet(false),
     m_sealIdHasBeenSet(false),
     m_expiredHasBeenSet(false),
+    m_userIdsHasBeenSet(false),
     m_policyHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -80,6 +80,19 @@ string CreateSealPolicyRequest::ToJsonString() const
         d.AddMember(iKey, m_expired, allocator);
     }
 
+    if (m_userIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_policyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,19 +108,6 @@ string CreateSealPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_userIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
 
@@ -182,6 +182,22 @@ bool CreateSealPolicyRequest::ExpiredHasBeenSet() const
     return m_expiredHasBeenSet;
 }
 
+vector<string> CreateSealPolicyRequest::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void CreateSealPolicyRequest::SetUserIds(const vector<string>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool CreateSealPolicyRequest::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
+}
+
 string CreateSealPolicyRequest::GetPolicy() const
 {
     return m_policy;
@@ -212,22 +228,6 @@ void CreateSealPolicyRequest::SetAgent(const Agent& _agent)
 bool CreateSealPolicyRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
-}
-
-vector<string> CreateSealPolicyRequest::GetUserIds() const
-{
-    return m_userIds;
-}
-
-void CreateSealPolicyRequest::SetUserIds(const vector<string>& _userIds)
-{
-    m_userIds = _userIds;
-    m_userIdsHasBeenSet = true;
-}
-
-bool CreateSealPolicyRequest::UserIdsHasBeenSet() const
-{
-    return m_userIdsHasBeenSet;
 }
 
 

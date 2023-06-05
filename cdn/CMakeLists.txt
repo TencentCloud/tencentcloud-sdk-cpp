@@ -161,6 +161,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RefererRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h
   include/tencentcloud/cdn/v20180606/model/IpFreqLimit.h
+  include/tencentcloud/cdn/v20180606/model/OriginSni.h
   include/tencentcloud/cdn/v20180606/model/EdgePackTaskFilter.h
   include/tencentcloud/cdn/v20180606/model/TopDetailDataMore.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
@@ -519,6 +520,7 @@ set(cdn_src
   src/v20180606/model/RefererRule.cpp
   src/v20180606/model/DescribeScdnIpStrategyRequest.cpp
   src/v20180606/model/IpFreqLimit.cpp
+  src/v20180606/model/OriginSni.cpp
   src/v20180606/model/EdgePackTaskFilter.cpp
   src/v20180606/model/TopDetailDataMore.cpp
   src/v20180606/model/DescribeIpVisitRequest.cpp

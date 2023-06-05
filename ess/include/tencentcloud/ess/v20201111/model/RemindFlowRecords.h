@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否能够催办
-                     * @return CanRemind 是否能够催办
+                     * 获取是否能够催办，true-是，false-否
+                     * @return CanRemind 是否能够催办，true-是，false-否
                      */
                     bool GetCanRemind() const;
 
                     /**
-                     * 设置是否能够催办
-                     * @param CanRemind 是否能够催办
+                     * 设置是否能够催办，true-是，false-否
+                     * @param CanRemind 是否能够催办，true-是，false-否
                      */
                     void SetCanRemind(const bool& _canRemind);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取催办详情
-                     * @return RemindMessage 催办详情
+                     * 获取催办详情信息
+                     * @return RemindMessage 催办详情信息
                      */
                     std::string GetRemindMessage() const;
 
                     /**
-                     * 设置催办详情
-                     * @param RemindMessage 催办详情
+                     * 设置催办详情信息
+                     * @param RemindMessage 催办详情信息
                      */
                     void SetRemindMessage(const std::string& _remindMessage);
 
@@ -103,7 +103,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否能够催办
+                     * 是否能够催办，true-是，false-否
                      */
                     bool m_canRemind;
                     bool m_canRemindHasBeenSet;
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 催办详情
+                     * 催办详情信息
                      */
                     std::string m_remindMessage;
                     bool m_remindMessageHasBeenSet;

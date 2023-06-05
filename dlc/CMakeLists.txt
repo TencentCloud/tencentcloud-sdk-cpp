@@ -179,6 +179,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableRequest.h
+  include/tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h
   include/tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h
@@ -419,6 +420,7 @@ set(dlc_src
   src/v20210125/model/DeleteWorkGroupResponse.cpp
   src/v20210125/model/DropDMSTableResponse.cpp
   src/v20210125/model/DescribeTableRequest.cpp
+  src/v20210125/model/SessionResourceTemplate.cpp
   src/v20210125/model/CreateWorkGroupResponse.cpp
   src/v20210125/model/DescribeEngineUsageInfoResponse.cpp
   src/v20210125/model/DescribeTablesRequest.cpp

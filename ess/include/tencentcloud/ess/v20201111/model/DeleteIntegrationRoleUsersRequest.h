@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人
-                     * @return Operator 操作人
+                     * 获取操作人信息，userId必填
+                     * @return Operator 操作人信息，userId必填
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人
-                     * @param Operator 操作人
+                     * 设置操作人信息，userId必填
+                     * @param Operator 操作人信息，userId必填
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool UsersHasBeenSet() const;
 
                     /**
-                     * 获取代理信息
-                     * @return Agent 代理信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理信息
-                     * @param Agent 代理信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -119,7 +119,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人
+                     * 操作人信息，userId必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_usersHasBeenSet;
 
                     /**
-                     * 代理信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

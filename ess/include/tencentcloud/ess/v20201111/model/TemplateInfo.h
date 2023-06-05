@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 二期接口返回的模板的信息结构
+                * 企业模板的信息结构
                 */
                 class TemplateInfo : public AbstractModel
                 {
@@ -104,14 +104,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模板关联的资源IDs
-                     * @return DocumentResourceIds 模板关联的资源IDs
+                     * 获取模板关联的资源ID列表
+                     * @return DocumentResourceIds 模板关联的资源ID列表
                      */
                     std::vector<std::string> GetDocumentResourceIds() const;
 
                     /**
-                     * 设置模板关联的资源IDs
-                     * @param DocumentResourceIds 模板关联的资源IDs
+                     * 设置模板关联的资源ID列表
+                     * @param DocumentResourceIds 模板关联的资源ID列表
                      */
                     void SetDocumentResourceIds(const std::vector<std::string>& _documentResourceIds);
 
@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取附件关联的资源ID是
-                     * @return AttachmentResourceIds 附件关联的资源ID是
+                     * 获取附件关联的资源ID
+                     * @return AttachmentResourceIds 附件关联的资源ID
                      */
                     std::vector<std::string> GetAttachmentResourceIds() const;
 
                     /**
-                     * 设置附件关联的资源ID是
-                     * @param AttachmentResourceIds 附件关联的资源ID是
+                     * 设置附件关联的资源ID
+                     * @param AttachmentResourceIds 附件关联的资源ID
                      */
                     void SetAttachmentResourceIds(const std::vector<std::string>& _attachmentResourceIds);
 
@@ -248,14 +248,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取模板的创建人
-                     * @return Creator 模板的创建人
+                     * 获取模板的创建人UserId
+                     * @return Creator 模板的创建人UserId
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置模板的创建人
-                     * @param Creator 模板的创建人
+                     * 设置模板的创建人UserId
+                     * @param Creator 模板的创建人UserId
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -266,14 +266,14 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取模板创建的时间戳（精确到秒）
-                     * @return CreatedOn 模板创建的时间戳（精确到秒）
+                     * 获取模板创建的时间戳，单位秒
+                     * @return CreatedOn 模板创建的时间戳，单位秒
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置模板创建的时间戳（精确到秒）
-                     * @param CreatedOn 模板创建的时间戳（精确到秒）
+                     * 设置模板创建的时间戳，单位秒
+                     * @param CreatedOn 模板创建的时间戳，单位秒
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
@@ -350,14 +350,14 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取模板创建组织id
-                     * @return OrganizationId 模板创建组织id
+                     * 获取创建模板的机构id
+                     * @return OrganizationId 创建模板的机构id
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置模板创建组织id
-                     * @param OrganizationId 模板创建组织id
+                     * 设置创建模板的机构id
+                     * @param OrganizationId 创建模板的机构id
                      */
                     void SetOrganizationId(const std::string& _organizationId);
 
@@ -368,17 +368,17 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取模板预览链接
+                     * 获取模板预览链接，有效时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 模板预览链接
+                     * @return PreviewUrl 模板预览链接，有效时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板预览链接
+                     * 设置模板预览链接，有效时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreviewUrl 模板预览链接
+                     * @param PreviewUrl 模板预览链接，有效时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -454,7 +454,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模板关联的资源IDs
+                     * 模板关联的资源ID列表
                      */
                     std::vector<std::string> m_documentResourceIds;
                     bool m_documentResourceIdsHasBeenSet;
@@ -466,7 +466,7 @@ namespace TencentCloud
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 附件关联的资源ID是
+                     * 附件关联的资源ID
                      */
                     std::vector<std::string> m_attachmentResourceIds;
                     bool m_attachmentResourceIdsHasBeenSet;
@@ -502,13 +502,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 模板的创建人
+                     * 模板的创建人UserId
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 模板创建的时间戳（精确到秒）
+                     * 模板创建的时间戳，单位秒
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
@@ -535,13 +535,13 @@ namespace TencentCloud
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 模板创建组织id
+                     * 创建模板的机构id
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 模板预览链接
+                     * 模板预览链接，有效时间5分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;

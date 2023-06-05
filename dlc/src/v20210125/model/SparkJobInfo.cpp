@@ -59,7 +59,8 @@ SparkJobInfo::SparkJobInfo() :
     m_sparkImageVersionHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_dataEngineClusterTypeHasBeenSet(false),
-    m_dataEngineImageVersionHasBeenSet(false)
+    m_dataEngineImageVersionHasBeenSet(false),
+    m_isInheritHasBeenSet(false)
 {
 }
 
@@ -465,6 +466,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_dataEngineImageVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInherit") && !value["IsInherit"].IsNull())
+    {
+        if (!value["IsInherit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.IsInherit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInherit = value["IsInherit"].GetUint64();
+        m_isInheritHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -783,6 +794,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DataEngineImageVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataEngineImageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInheritHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInherit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInherit, allocator);
     }
 
 }
@@ -1410,5 +1429,21 @@ void SparkJobInfo::SetDataEngineImageVersion(const string& _dataEngineImageVersi
 bool SparkJobInfo::DataEngineImageVersionHasBeenSet() const
 {
     return m_dataEngineImageVersionHasBeenSet;
+}
+
+uint64_t SparkJobInfo::GetIsInherit() const
+{
+    return m_isInherit;
+}
+
+void SparkJobInfo::SetIsInherit(const uint64_t& _isInherit)
+{
+    m_isInherit = _isInherit;
+    m_isInheritHasBeenSet = true;
+}
+
+bool SparkJobInfo::IsInheritHasBeenSet() const
+{
+    return m_isInheritHasBeenSet;
 }
 

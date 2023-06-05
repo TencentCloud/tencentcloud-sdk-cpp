@@ -83,6 +83,42 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
+                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    int64_t GetContentType() const;
+
+                    /**
+                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    void SetContentType(const int64_t& _contentType);
+
+                    /**
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
+                     */
+                    bool ContentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * @param Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取查询偏移位置，默认0
                      * @return Offset 查询偏移位置，默认0
                      */
@@ -117,24 +153,6 @@ namespace TencentCloud
                      * @return Limit 是否已赋值
                      */
                     bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     */
-                    std::vector<Filter> GetFilters() const;
-
-                    /**
-                     * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @param Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     */
-                    void SetFilters(const std::vector<Filter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     */
-                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取这个参数跟下面的IsChannel参数配合使用。
@@ -189,24 +207,6 @@ ApplicationId为空，查询所有应用下的模板列表
                     bool IsChannelHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     */
-                    int64_t GetContentType() const;
-
-                    /**
-                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     */
-                    void SetContentType(const int64_t& _contentType);
-
-                    /**
-                     * 判断参数 ContentType 是否已赋值
-                     * @return ContentType 是否已赋值
-                     */
-                    bool ContentTypeHasBeenSet() const;
-
-                    /**
                      * 获取暂未开放
                      * @return Organization 暂未开放
                      */
@@ -257,6 +257,18 @@ ApplicationId为空，查询所有应用下的模板列表
                     bool m_agentHasBeenSet;
 
                     /**
+                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    int64_t m_contentType;
+                    bool m_contentTypeHasBeenSet;
+
+                    /**
+                     * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
                      * 查询偏移位置，默认0
                      */
                     uint64_t m_offset;
@@ -267,12 +279,6 @@ ApplicationId为空，查询所有应用下的模板列表
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
 
                     /**
                      * 这个参数跟下面的IsChannel参数配合使用。
@@ -289,12 +295,6 @@ ApplicationId为空，查询所有应用下的模板列表
                      */
                     bool m_isChannel;
                     bool m_isChannelHasBeenSet;
-
-                    /**
-                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     */
-                    int64_t m_contentType;
-                    bool m_contentTypeHasBeenSet;
 
                     /**
                      * 暂未开放

@@ -243,17 +243,17 @@ namespace TencentCloud
                     bool GovernPolicyHasBeenSet() const;
 
                     /**
-                     * 获取数据库ID
+                     * 获取数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatabaseId 数据库ID
+                     * @return DatabaseId 数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDatabaseId() const;
 
                     /**
-                     * 设置数据库ID
+                     * 设置数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseId 数据库ID
+                     * @param DatabaseId 数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDatabaseId(const std::string& _databaseId);
@@ -329,7 +329,7 @@ namespace TencentCloud
                     bool m_governPolicyHasBeenSet;
 
                     /**
-                     * 数据库ID
+                     * 数据库ID（无效字段）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseId;

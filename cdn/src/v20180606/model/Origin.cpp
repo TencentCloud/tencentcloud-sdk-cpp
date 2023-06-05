@@ -32,6 +32,7 @@ Origin::Origin() :
     m_basePathHasBeenSet(false),
     m_pathRulesHasBeenSet(false),
     m_pathBasedOriginHasBeenSet(false),
+    m_sniHasBeenSet(false),
     m_advanceHttpsHasBeenSet(false),
     m_originCompanyHasBeenSet(false)
 {
@@ -178,6 +179,23 @@ CoreInternalOutcome Origin::Deserialize(const rapidjson::Value &value)
         m_pathBasedOriginHasBeenSet = true;
     }
 
+    if (value.HasMember("Sni") && !value["Sni"].IsNull())
+    {
+        if (!value["Sni"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Origin.Sni` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sni.Deserialize(value["Sni"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sniHasBeenSet = true;
+    }
+
     if (value.HasMember("AdvanceHttps") && !value["AdvanceHttps"].IsNull())
     {
         if (!value["AdvanceHttps"].IsObject())
@@ -322,6 +340,15 @@ void Origin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sniHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sni";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sni.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_advanceHttpsHasBeenSet)
@@ -518,6 +545,22 @@ void Origin::SetPathBasedOrigin(const vector<PathBasedOriginRule>& _pathBasedOri
 bool Origin::PathBasedOriginHasBeenSet() const
 {
     return m_pathBasedOriginHasBeenSet;
+}
+
+OriginSni Origin::GetSni() const
+{
+    return m_sni;
+}
+
+void Origin::SetSni(const OriginSni& _sni)
+{
+    m_sni = _sni;
+    m_sniHasBeenSet = true;
+}
+
+bool Origin::SniHasBeenSet() const
+{
+    return m_sniHasBeenSet;
 }
 
 AdvanceHttps Origin::GetAdvanceHttps() const

@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取电子印章授权时间戳
-                     * @return CreateOn 电子印章授权时间戳
+                     * 获取电子印章授权时间戳，单位秒
+                     * @return CreateOn 电子印章授权时间戳，单位秒
                      */
                     int64_t GetCreateOn() const;
 
                     /**
-                     * 设置电子印章授权时间戳
-                     * @param CreateOn 电子印章授权时间戳
+                     * 设置电子印章授权时间戳，单位秒
+                     * @param CreateOn 电子印章授权时间戳，单位秒
                      */
                     void SetCreateOn(const int64_t& _createOn);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool CreateOnHasBeenSet() const;
 
                     /**
-                     * 获取电子印章授权人
-                     * @return Creator 电子印章授权人
+                     * 获取电子印章授权人的UserId
+                     * @return Creator 电子印章授权人的UserId
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置电子印章授权人
-                     * @param Creator 电子印章授权人
+                     * 设置电子印章授权人的UserId
+                     * @param Creator 电子印章授权人的UserId
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -196,14 +196,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取印章类型
-                     * @return SealType 印章类型
+                     * 获取印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章
+                     * @return SealType 印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章
                      */
                     std::string GetSealType() const;
 
                     /**
-                     * 设置印章类型
-                     * @param SealType 印章类型
+                     * 设置印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章
+                     * @param SealType 印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章
                      */
                     void SetSealType(const std::string& _sealType);
 
@@ -214,14 +214,14 @@ namespace TencentCloud
                     bool SealTypeHasBeenSet() const;
 
                     /**
-                     * 获取用印申请是否为永久授权
-                     * @return IsAllTime 用印申请是否为永久授权
+                     * 获取用印申请是否为永久授权，true-是，false-否
+                     * @return IsAllTime 用印申请是否为永久授权，true-是，false-否
                      */
                     bool GetIsAllTime() const;
 
                     /**
-                     * 设置用印申请是否为永久授权
-                     * @param IsAllTime 用印申请是否为永久授权
+                     * 设置用印申请是否为永久授权，true-是，false-否
+                     * @param IsAllTime 用印申请是否为永久授权，true-是，false-否
                      */
                     void SetIsAllTime(const bool& _isAllTime);
 
@@ -268,13 +268,13 @@ namespace TencentCloud
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * 电子印章授权时间戳
+                     * 电子印章授权时间戳，单位秒
                      */
                     int64_t m_createOn;
                     bool m_createOnHasBeenSet;
 
                     /**
-                     * 电子印章授权人
+                     * 电子印章授权人的UserId
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
@@ -305,13 +305,13 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 印章类型
+                     * 印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;
 
                     /**
-                     * 用印申请是否为永久授权
+                     * 用印申请是否为永久授权，true-是，false-否
                      */
                     bool m_isAllTime;
                     bool m_isAllTimeHasBeenSet;

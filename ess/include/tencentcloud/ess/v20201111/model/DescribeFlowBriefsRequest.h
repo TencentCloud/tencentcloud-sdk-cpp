@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取需要查询的流程ID列表，限制最大20个
-                     * @return FlowIds 需要查询的流程ID列表，限制最大20个
+                     * 获取需要查询的流程ID列表，限制最大100个
+                     * @return FlowIds 需要查询的流程ID列表，限制最大100个
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置需要查询的流程ID列表，限制最大20个
-                     * @param FlowIds 需要查询的流程ID列表，限制最大20个
+                     * 设置需要查询的流程ID列表，限制最大100个
+                     * @param FlowIds 需要查询的流程ID列表，限制最大100个
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -107,13 +107,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 需要查询的流程ID列表，限制最大20个
+                     * 需要查询的流程ID列表，限制最大100个
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

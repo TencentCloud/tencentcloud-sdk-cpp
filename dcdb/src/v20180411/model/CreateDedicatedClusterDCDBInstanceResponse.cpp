@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
 using namespace std;
 
-CreateDedicatedClusterDCDBInstanceResponse::CreateDedicatedClusterDCDBInstanceResponse()
+CreateDedicatedClusterDCDBInstanceResponse::CreateDedicatedClusterDCDBInstanceResponse() :
+    m_instanceIdsHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,29 @@ CoreInternalOutcome CreateDedicatedClusterDCDBInstanceResponse::Deserialize(cons
     }
 
 
+    if (rsp.HasMember("InstanceIds") && !rsp["InstanceIds"].IsNull())
+    {
+        if (!rsp["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +95,27 @@ string CreateDedicatedClusterDCDBInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +128,25 @@ string CreateDedicatedClusterDCDBInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateDedicatedClusterDCDBInstanceResponse::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+bool CreateDedicatedClusterDCDBInstanceResponse::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+int64_t CreateDedicatedClusterDCDBInstanceResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool CreateDedicatedClusterDCDBInstanceResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

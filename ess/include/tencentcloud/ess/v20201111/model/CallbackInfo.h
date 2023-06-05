@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取回调加密token
-                     * @return Token 回调加密token
+                     * 获取回调加密key，已废弃
+                     * @return Token 回调加密key，已废弃
                      */
                     std::string GetToken() const;
 
                     /**
-                     * 设置回调加密token
-                     * @param Token 回调加密token
+                     * 设置回调加密key，已废弃
+                     * @param Token 回调加密key，已废弃
                      */
                     void SetToken(const std::string& _token);
 
@@ -81,6 +81,42 @@ namespace TencentCloud
                      * @return Token 是否已赋值
                      */
                     bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取回调加密key
+                     * @return CallbackKey 回调加密key
+                     */
+                    std::string GetCallbackKey() const;
+
+                    /**
+                     * 设置回调加密key
+                     * @param CallbackKey 回调加密key
+                     */
+                    void SetCallbackKey(const std::string& _callbackKey);
+
+                    /**
+                     * 判断参数 CallbackKey 是否已赋值
+                     * @return CallbackKey 是否已赋值
+                     */
+                    bool CallbackKeyHasBeenSet() const;
+
+                    /**
+                     * 获取回调验签token
+                     * @return CallbackToken 回调验签token
+                     */
+                    std::string GetCallbackToken() const;
+
+                    /**
+                     * 设置回调验签token
+                     * @param CallbackToken 回调验签token
+                     */
+                    void SetCallbackToken(const std::string& _callbackToken);
+
+                    /**
+                     * 判断参数 CallbackToken 是否已赋值
+                     * @return CallbackToken 是否已赋值
+                     */
+                    bool CallbackTokenHasBeenSet() const;
 
                 private:
 
@@ -91,10 +127,22 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 回调加密token
+                     * 回调加密key，已废弃
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
+
+                    /**
+                     * 回调加密key
+                     */
+                    std::string m_callbackKey;
+                    bool m_callbackKeyHasBeenSet;
+
+                    /**
+                     * 回调验签token
+                     */
+                    std::string m_callbackToken;
+                    bool m_callbackTokenHasBeenSet;
 
                 };
             }

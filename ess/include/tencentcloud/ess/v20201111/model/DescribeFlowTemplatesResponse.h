@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TemplatesHasBeenSet() const;
 
                     /**
-                     * 获取查询到的总个数
-                     * @return TotalCount 查询到的总个数
+                     * 获取查询到的总数
+                     * @return TotalCount 查询到的总数
                      */
                     int64_t GetTotalCount() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_templatesHasBeenSet;
 
                     /**
-                     * 查询到的总个数
+                     * 查询到的总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

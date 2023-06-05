@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RequireSignHasBeenSet() const;
 
                     /**
-                     * 获取添加序列
-                     * @return RoutingOrder 添加序列
+                     * 获取添加序列，0～N
+                     * @return RoutingOrder 添加序列，0～N
                      */
                     int64_t GetRoutingOrder() const;
 
                     /**
-                     * 设置添加序列
-                     * @param RoutingOrder 添加序列
+                     * 设置添加序列，0～N
+                     * @param RoutingOrder 添加序列，0～N
                      */
                     void SetRoutingOrder(const int64_t& _routingOrder);
 
@@ -319,7 +319,7 @@ namespace TencentCloud
                     bool m_requireSignHasBeenSet;
 
                     /**
-                     * 添加序列
+                     * 添加序列，0～N
                      */
                     int64_t m_routingOrder;
                     bool m_routingOrderHasBeenSet;

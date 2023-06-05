@@ -27,6 +27,7 @@
 #include <tencentcloud/dlc/v20210125/model/TagInfo.h>
 #include <tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h>
 #include <tencentcloud/dlc/v20210125/model/NetworkConnection.h>
+#include <tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h>
 
 
 namespace TencentCloud
@@ -855,6 +856,138 @@ namespace TencentCloud
                      */
                     bool ElasticLimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否为默认引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultHouse 是否为默认引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDefaultHouse() const;
+
+                    /**
+                     * 设置是否为默认引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultHouse 是否为默认引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultHouse(const bool& _defaultHouse);
+
+                    /**
+                     * 判断参数 DefaultHouse 是否已赋值
+                     * @return DefaultHouse 是否已赋值
+                     */
+                    bool DefaultHouseHasBeenSet() const;
+
+                    /**
+                     * 获取单个集群任务最大并发数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxConcurrency 单个集群任务最大并发数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxConcurrency() const;
+
+                    /**
+                     * 设置单个集群任务最大并发数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxConcurrency 单个集群任务最大并发数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxConcurrency(const int64_t& _maxConcurrency);
+
+                    /**
+                     * 判断参数 MaxConcurrency 是否已赋值
+                     * @return MaxConcurrency 是否已赋值
+                     */
+                    bool MaxConcurrencyHasBeenSet() const;
+
+                    /**
+                     * 获取任务排队上限时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TolerableQueueTime 任务排队上限时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTolerableQueueTime() const;
+
+                    /**
+                     * 设置任务排队上限时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TolerableQueueTime 任务排队上限时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTolerableQueueTime(const int64_t& _tolerableQueueTime);
+
+                    /**
+                     * 判断参数 TolerableQueueTime 是否已赋值
+                     * @return TolerableQueueTime 是否已赋值
+                     */
+                    bool TolerableQueueTimeHasBeenSet() const;
+
+                    /**
+                     * 获取用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAppId 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUserAppId() const;
+
+                    /**
+                     * 设置用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAppId 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAppId(const int64_t& _userAppId);
+
+                    /**
+                     * 判断参数 UserAppId 是否已赋值
+                     * @return UserAppId 是否已赋值
+                     */
+                    bool UserAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserUin 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserUin() const;
+
+                    /**
+                     * 设置用户uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserUin 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserUin(const std::string& _userUin);
+
+                    /**
+                     * 判断参数 UserUin 是否已赋值
+                     * @return UserUin 是否已赋值
+                     */
+                    bool UserUinHasBeenSet() const;
+
+                    /**
+                     * 获取SessionResourceTemplate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionResourceTemplate SessionResourceTemplate
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SessionResourceTemplate GetSessionResourceTemplate() const;
+
+                    /**
+                     * 设置SessionResourceTemplate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionResourceTemplate SessionResourceTemplate
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate);
+
+                    /**
+                     * 判断参数 SessionResourceTemplate 是否已赋值
+                     * @return SessionResourceTemplate 是否已赋值
+                     */
+                    bool SessionResourceTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1116,6 +1249,48 @@ namespace TencentCloud
                      */
                     int64_t m_elasticLimit;
                     bool m_elasticLimitHasBeenSet;
+
+                    /**
+                     * 是否为默认引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_defaultHouse;
+                    bool m_defaultHouseHasBeenSet;
+
+                    /**
+                     * 单个集群任务最大并发数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxConcurrency;
+                    bool m_maxConcurrencyHasBeenSet;
+
+                    /**
+                     * 任务排队上限时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tolerableQueueTime;
+                    bool m_tolerableQueueTimeHasBeenSet;
+
+                    /**
+                     * 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_userAppId;
+                    bool m_userAppIdHasBeenSet;
+
+                    /**
+                     * 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userUin;
+                    bool m_userUinHasBeenSet;
+
+                    /**
+                     * SessionResourceTemplate
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SessionResourceTemplate m_sessionResourceTemplate;
+                    bool m_sessionResourceTemplateHasBeenSet;
 
                 };
             }

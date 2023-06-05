@@ -157,6 +157,20 @@ namespace TencentCloud
                      */
                     bool ResultTypeHasBeenSet() const;
 
+                    /**
+                     * 获取机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseText 机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResponseText() const;
+
+                    /**
+                     * 判断参数 ResponseText 是否已赋值
+                     * @return ResponseText 是否已赋值
+                     */
+                    bool ResponseTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +228,13 @@ namespace TencentCloud
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;
+
+                    /**
+                     * 机器人对话的应答文本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_responseText;
+                    bool m_responseTextHasBeenSet;
 
                 };
             }

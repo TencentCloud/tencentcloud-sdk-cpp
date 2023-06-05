@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/PathRule.h>
 #include <tencentcloud/cdn/v20180606/model/PathBasedOriginRule.h>
+#include <tencentcloud/cdn/v20180606/model/OriginSni.h>
 #include <tencentcloud/cdn/v20180606/model/AdvanceHttps.h>
 
 
@@ -459,6 +460,28 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                     bool PathBasedOriginHasBeenSet() const;
 
                     /**
+                     * 获取HTTPS回源SNI配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Sni HTTPS回源SNI配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginSni GetSni() const;
+
+                    /**
+                     * 设置HTTPS回源SNI配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Sni HTTPS回源SNI配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSni(const OriginSni& _sni);
+
+                    /**
+                     * 判断参数 Sni 是否已赋值
+                     * @return Sni 是否已赋值
+                     */
+                    bool SniHasBeenSet() const;
+
+                    /**
                      * 获取HTTPS回源高级配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvanceHttps HTTPS回源高级配置
@@ -640,6 +663,13 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                      */
                     std::vector<PathBasedOriginRule> m_pathBasedOrigin;
                     bool m_pathBasedOriginHasBeenSet;
+
+                    /**
+                     * HTTPS回源SNI配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OriginSni m_sni;
+                    bool m_sniHasBeenSet;
 
                     /**
                      * HTTPS回源高级配置

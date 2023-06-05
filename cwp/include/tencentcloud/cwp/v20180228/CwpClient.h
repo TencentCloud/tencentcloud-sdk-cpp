@@ -359,8 +359,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSaveOrUpdateWarningsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSaveOrUpdateWarningsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanScheduleRequest.h>
@@ -419,6 +417,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulLevelCountResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulStoreListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulStoreListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulTopRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWarningListRequest.h>
@@ -1091,9 +1091,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRiskDnsListResponse> DescribeRiskDnsListOutcome;
                 typedef std::future<DescribeRiskDnsListOutcome> DescribeRiskDnsListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsListRequest&, DescribeRiskDnsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSaveOrUpdateWarningsResponse> DescribeSaveOrUpdateWarningsOutcome;
-                typedef std::future<DescribeSaveOrUpdateWarningsOutcome> DescribeSaveOrUpdateWarningsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeSaveOrUpdateWarningsRequest&, DescribeSaveOrUpdateWarningsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaveOrUpdateWarningsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanMalwareScheduleResponse> DescribeScanMalwareScheduleOutcome;
                 typedef std::future<DescribeScanMalwareScheduleOutcome> DescribeScanMalwareScheduleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanMalwareScheduleRequest&, DescribeScanMalwareScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanMalwareScheduleAsyncHandler;
@@ -1181,6 +1178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulListResponse> DescribeVulListOutcome;
                 typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulListRequest&, DescribeVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulStoreListResponse> DescribeVulStoreListOutcome;
+                typedef std::future<DescribeVulStoreListOutcome> DescribeVulStoreListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulStoreListRequest&, DescribeVulStoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulStoreListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulTopResponse> DescribeVulTopOutcome;
                 typedef std::future<DescribeVulTopOutcome> DescribeVulTopOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulTopRequest&, DescribeVulTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulTopAsyncHandler;
@@ -2931,17 +2931,6 @@ namespace TencentCloud
                 DescribeRiskDnsListOutcomeCallable DescribeRiskDnsListCallable(const Model::DescribeRiskDnsListRequest& request);
 
                 /**
-                 *下线
-
-更新或者插入用户告警设置(该接口废弃,请调用 ModifyWarningSetting )
-                 * @param req DescribeSaveOrUpdateWarningsRequest
-                 * @return DescribeSaveOrUpdateWarningsOutcome
-                 */
-                DescribeSaveOrUpdateWarningsOutcome DescribeSaveOrUpdateWarnings(const Model::DescribeSaveOrUpdateWarningsRequest &request);
-                void DescribeSaveOrUpdateWarningsAsync(const Model::DescribeSaveOrUpdateWarningsRequest& request, const DescribeSaveOrUpdateWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSaveOrUpdateWarningsOutcomeCallable DescribeSaveOrUpdateWarningsCallable(const Model::DescribeSaveOrUpdateWarningsRequest& request);
-
-                /**
                  *查询木马扫描进度
                  * @param req DescribeScanMalwareScheduleRequest
                  * @return DescribeScanMalwareScheduleOutcome
@@ -3203,6 +3192,15 @@ namespace TencentCloud
                 DescribeVulListOutcome DescribeVulList(const Model::DescribeVulListRequest &request);
                 void DescribeVulListAsync(const Model::DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulListOutcomeCallable DescribeVulListCallable(const Model::DescribeVulListRequest& request);
+
+                /**
+                 *获取漏洞库列表
+                 * @param req DescribeVulStoreListRequest
+                 * @return DescribeVulStoreListOutcome
+                 */
+                DescribeVulStoreListOutcome DescribeVulStoreList(const Model::DescribeVulStoreListRequest &request);
+                void DescribeVulStoreListAsync(const Model::DescribeVulStoreListRequest& request, const DescribeVulStoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulStoreListOutcomeCallable DescribeVulStoreListCallable(const Model::DescribeVulStoreListRequest& request);
 
                 /**
                  *漏洞top统计

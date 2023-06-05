@@ -25,9 +25,9 @@ using namespace std;
 DeleteSealPoliciesRequest::DeleteSealPoliciesRequest() :
     m_operatorHasBeenSet(false),
     m_policyIdsHasBeenSet(false),
-    m_agentHasBeenSet(false),
     m_sealIdHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+    m_userIdsHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -60,15 +60,6 @@ string DeleteSealPoliciesRequest::ToJsonString() const
         }
     }
 
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_sealIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -88,6 +79,15 @@ string DeleteSealPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -130,22 +130,6 @@ bool DeleteSealPoliciesRequest::PolicyIdsHasBeenSet() const
     return m_policyIdsHasBeenSet;
 }
 
-Agent DeleteSealPoliciesRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void DeleteSealPoliciesRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool DeleteSealPoliciesRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
-}
-
 string DeleteSealPoliciesRequest::GetSealId() const
 {
     return m_sealId;
@@ -176,6 +160,22 @@ void DeleteSealPoliciesRequest::SetUserIds(const vector<string>& _userIds)
 bool DeleteSealPoliciesRequest::UserIdsHasBeenSet() const
 {
     return m_userIdsHasBeenSet;
+}
+
+Agent DeleteSealPoliciesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DeleteSealPoliciesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DeleteSealPoliciesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

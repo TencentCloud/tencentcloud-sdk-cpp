@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool RoleStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否是集团角色
+                     * 获取是否是集团角色，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsGroupRole 是否是集团角色
+                     * @return IsGroupRole 是否是集团角色，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetIsGroupRole() const;
 
                     /**
-                     * 设置是否是集团角色
+                     * 设置是否是集团角色，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsGroupRole 是否是集团角色
+                     * @param IsGroupRole 是否是集团角色，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsGroupRole(const bool& _isGroupRole);
@@ -180,7 +180,7 @@ namespace TencentCloud
                     bool m_roleStatusHasBeenSet;
 
                     /**
-                     * 是否是集团角色
+                     * 是否是集团角色，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isGroupRole;

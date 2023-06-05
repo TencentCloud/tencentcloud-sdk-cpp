@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取更新时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime 更新时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置更新时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param UpdateTime 更新时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -246,17 +246,17 @@ namespace TencentCloud
                     bool LicenseHasBeenSet() const;
 
                     /**
-                     * 获取企业许可证过期时间
+                     * 获取企业许可证过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LicenseExpireTime 企业许可证过期时间
+                     * @return LicenseExpireTime 企业许可证过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLicenseExpireTime() const;
 
                     /**
-                     * 设置企业许可证过期时间
+                     * 设置企业许可证过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LicenseExpireTime 企业许可证过期时间
+                     * @param LicenseExpireTime 企业许可证过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLicenseExpireTime(const uint64_t& _licenseExpireTime);
@@ -268,17 +268,17 @@ namespace TencentCloud
                     bool LicenseExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员企业加入集团时间
+                     * 获取成员企业加入集团时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JoinTime 成员企业加入集团时间
+                     * @return JoinTime 成员企业加入集团时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetJoinTime() const;
 
                     /**
-                     * 设置成员企业加入集团时间
+                     * 设置成员企业加入集团时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JoinTime 成员企业加入集团时间
+                     * @param JoinTime 成员企业加入集团时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetJoinTime(const uint64_t& _joinTime);
@@ -290,17 +290,17 @@ namespace TencentCloud
                     bool JoinTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否可以使用审批流引擎
+                     * 获取是否使用审批流引擎，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowEngineEnable 是否可以使用审批流引擎
+                     * @return FlowEngineEnable 是否使用审批流引擎，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetFlowEngineEnable() const;
 
                     /**
-                     * 设置是否可以使用审批流引擎
+                     * 设置是否使用审批流引擎，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowEngineEnable 是否可以使用审批流引擎
+                     * @param FlowEngineEnable 是否使用审批流引擎，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowEngineEnable(const bool& _flowEngineEnable);
@@ -335,7 +335,7 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_updateTime;
@@ -377,21 +377,21 @@ namespace TencentCloud
                     bool m_licenseHasBeenSet;
 
                     /**
-                     * 企业许可证过期时间
+                     * 企业许可证过期时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_licenseExpireTime;
                     bool m_licenseExpireTimeHasBeenSet;
 
                     /**
-                     * 成员企业加入集团时间
+                     * 成员企业加入集团时间，时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_joinTime;
                     bool m_joinTimeHasBeenSet;
 
                     /**
-                     * 是否可以使用审批流引擎
+                     * 是否使用审批流引擎，true-是，false-否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_flowEngineEnable;

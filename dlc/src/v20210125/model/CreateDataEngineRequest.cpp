@@ -51,7 +51,8 @@ CreateDataEngineRequest::CreateDataEngineRequest() :
     m_imageVersionNameHasBeenSet(false),
     m_mainClusterNameHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
-    m_elasticLimitHasBeenSet(false)
+    m_elasticLimitHasBeenSet(false),
+    m_sessionResourceTemplateHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,15 @@ string CreateDataEngineRequest::ToJsonString() const
         string key = "ElasticLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_elasticLimit, allocator);
+    }
+
+    if (m_sessionResourceTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionResourceTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sessionResourceTemplate.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -779,6 +789,22 @@ void CreateDataEngineRequest::SetElasticLimit(const int64_t& _elasticLimit)
 bool CreateDataEngineRequest::ElasticLimitHasBeenSet() const
 {
     return m_elasticLimitHasBeenSet;
+}
+
+SessionResourceTemplate CreateDataEngineRequest::GetSessionResourceTemplate() const
+{
+    return m_sessionResourceTemplate;
+}
+
+void CreateDataEngineRequest::SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate)
+{
+    m_sessionResourceTemplate = _sessionResourceTemplate;
+    m_sessionResourceTemplateHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::SessionResourceTemplateHasBeenSet() const
+{
+    return m_sessionResourceTemplateHasBeenSet;
 }
 
 

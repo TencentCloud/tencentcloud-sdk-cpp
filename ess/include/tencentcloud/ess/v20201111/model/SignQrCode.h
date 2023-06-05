@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool QrCodeUrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码过期时间
-                     * @return ExpiredTime 二维码过期时间
+                     * 获取二维码过期时间戳，单位秒
+                     * @return ExpiredTime 二维码过期时间戳，单位秒
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
-                     * 设置二维码过期时间
-                     * @param ExpiredTime 二维码过期时间
+                     * 设置二维码过期时间戳，单位秒
+                     * @param ExpiredTime 二维码过期时间戳，单位秒
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_qrCodeUrlHasBeenSet;
 
                     /**
-                     * 二维码过期时间
+                     * 二维码过期时间戳，单位秒
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

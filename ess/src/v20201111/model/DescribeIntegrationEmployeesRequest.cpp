@@ -25,6 +25,7 @@ using namespace std;
 DescribeIntegrationEmployeesRequest::DescribeIntegrationEmployeesRequest() :
     m_operatorHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false)
 {
@@ -52,6 +53,15 @@ string DescribeIntegrationEmployeesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -115,6 +125,22 @@ void DescribeIntegrationEmployeesRequest::SetLimit(const int64_t& _limit)
 bool DescribeIntegrationEmployeesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+Agent DescribeIntegrationEmployeesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeIntegrationEmployeesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeIntegrationEmployeesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 vector<Filter> DescribeIntegrationEmployeesRequest::GetFilters() const

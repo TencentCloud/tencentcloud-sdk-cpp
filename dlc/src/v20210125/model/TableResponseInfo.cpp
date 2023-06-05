@@ -30,7 +30,8 @@ TableResponseInfo::TableResponseInfo() :
     m_createTimeHasBeenSet(false),
     m_inputFormatHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
-    m_recordCountHasBeenSet(false)
+    m_recordCountHasBeenSet(false),
+    m_mapMaterializedViewNameHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,16 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
         m_recordCountHasBeenSet = true;
     }
 
+    if (value.HasMember("MapMaterializedViewName") && !value["MapMaterializedViewName"].IsNull())
+    {
+        if (!value["MapMaterializedViewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.MapMaterializedViewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mapMaterializedViewName = string(value["MapMaterializedViewName"].GetString());
+        m_mapMaterializedViewNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -283,6 +294,14 @@ void TableResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RecordCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordCount, allocator);
+    }
+
+    if (m_mapMaterializedViewNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MapMaterializedViewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mapMaterializedViewName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +465,21 @@ void TableResponseInfo::SetRecordCount(const int64_t& _recordCount)
 bool TableResponseInfo::RecordCountHasBeenSet() const
 {
     return m_recordCountHasBeenSet;
+}
+
+string TableResponseInfo::GetMapMaterializedViewName() const
+{
+    return m_mapMaterializedViewName;
+}
+
+void TableResponseInfo::SetMapMaterializedViewName(const string& _mapMaterializedViewName)
+{
+    m_mapMaterializedViewName = _mapMaterializedViewName;
+    m_mapMaterializedViewNameHasBeenSet = true;
+}
+
+bool TableResponseInfo::MapMaterializedViewNameHasBeenSet() const
+{
+    return m_mapMaterializedViewNameHasBeenSet;
 }
 

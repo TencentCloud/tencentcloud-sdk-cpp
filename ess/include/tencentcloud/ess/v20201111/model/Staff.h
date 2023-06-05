@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool VerifiedHasBeenSet() const;
 
                     /**
-                     * 获取员工创建时间戳
-                     * @return CreatedOn 员工创建时间戳
+                     * 获取员工创建时间戳，单位秒
+                     * @return CreatedOn 员工创建时间戳，单位秒
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置员工创建时间戳
-                     * @param CreatedOn 员工创建时间戳
+                     * 设置员工创建时间戳，单位秒
+                     * @param CreatedOn 员工创建时间戳，单位秒
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
@@ -227,17 +227,17 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取员工实名时间戳
+                     * 获取员工实名时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VerifiedOn 员工实名时间戳
+                     * @return VerifiedOn 员工实名时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetVerifiedOn() const;
 
                     /**
-                     * 设置员工实名时间戳
+                     * 设置员工实名时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifiedOn 员工实名时间戳
+                     * @param VerifiedOn 员工实名时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVerifiedOn(const int64_t& _verifiedOn);
@@ -361,13 +361,13 @@ namespace TencentCloud
                     bool m_verifiedHasBeenSet;
 
                     /**
-                     * 员工创建时间戳
+                     * 员工创建时间戳，单位秒
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 员工实名时间戳
+                     * 员工实名时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_verifiedOn;

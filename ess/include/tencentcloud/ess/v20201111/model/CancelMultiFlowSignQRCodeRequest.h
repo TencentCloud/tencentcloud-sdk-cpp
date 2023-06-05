@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户信息
-                     * @return Operator 用户信息
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置用户信息
-                     * @param Operator 用户信息
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool QrCodeIdHasBeenSet() const;
 
                     /**
-                     * 获取应用信息
-                     * @return Agent 应用信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用信息
-                     * @param Agent 应用信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -101,7 +101,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户信息
+                     * 调用方用户信息，userId 必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool m_qrCodeIdHasBeenSet;
 
                     /**
-                     * 应用信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

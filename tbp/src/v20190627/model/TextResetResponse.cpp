@@ -31,7 +31,8 @@ TextResetResponse::TextResetResponse() :
     m_inputTextHasBeenSet(false),
     m_responseMessageHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
-    m_resultTypeHasBeenSet(false)
+    m_resultTypeHasBeenSet(false),
+    m_responseTextHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,16 @@ CoreInternalOutcome TextResetResponse::Deserialize(const string &payload)
         m_resultTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResponseText") && !rsp["ResponseText"].IsNull())
+    {
+        if (!rsp["ResponseText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResponseText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseText = string(rsp["ResponseText"].GetString());
+        m_responseTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -246,6 +257,14 @@ string TextResetResponse::ToJsonString() const
         string key = "ResultType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseText.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -338,6 +357,16 @@ string TextResetResponse::GetResultType() const
 bool TextResetResponse::ResultTypeHasBeenSet() const
 {
     return m_resultTypeHasBeenSet;
+}
+
+string TextResetResponse::GetResponseText() const
+{
+    return m_responseText;
+}
+
+bool TextResetResponse::ResponseTextHasBeenSet() const
+{
+    return m_responseTextHasBeenSet;
 }
 
 

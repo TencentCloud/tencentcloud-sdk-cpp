@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool RecordCountHasBeenSet() const;
 
+                    /**
+                     * 获取xxxx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MapMaterializedViewName xxxx
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMapMaterializedViewName() const;
+
+                    /**
+                     * 设置xxxx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MapMaterializedViewName xxxx
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMapMaterializedViewName(const std::string& _mapMaterializedViewName);
+
+                    /**
+                     * 判断参数 MapMaterializedViewName 是否已赋值
+                     * @return MapMaterializedViewName 是否已赋值
+                     */
+                    bool MapMaterializedViewNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +358,13 @@ namespace TencentCloud
                      */
                     int64_t m_recordCount;
                     bool m_recordCountHasBeenSet;
+
+                    /**
+                     * xxxx
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mapMaterializedViewName;
+                    bool m_mapMaterializedViewNameHasBeenSet;
 
                 };
             }

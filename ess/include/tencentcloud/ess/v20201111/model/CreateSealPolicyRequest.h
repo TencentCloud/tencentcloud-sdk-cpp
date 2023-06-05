@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权发起人在平台信息，具体参考UserInfo结构体
-                     * @return Operator 授权发起人在平台信息，具体参考UserInfo结构体
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置授权发起人在平台信息，具体参考UserInfo结构体
-                     * @param Operator 授权发起人在平台信息，具体参考UserInfo结构体
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -117,6 +117,24 @@ namespace TencentCloud
                     bool ExpiredHasBeenSet() const;
 
                     /**
+                     * 获取需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     * @return UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     */
+                    std::vector<std::string> GetUserIds() const;
+
+                    /**
+                     * 设置需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     * @param UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     */
+                    void SetUserIds(const std::vector<std::string>& _userIds);
+
+                    /**
+                     * 判断参数 UserIds 是否已赋值
+                     * @return UserIds 是否已赋值
+                     */
+                    bool UserIdsHasBeenSet() const;
+
+                    /**
                      * 获取印章授权内容
                      * @return Policy 印章授权内容
                      */
@@ -135,14 +153,14 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取应用相关
-                     * @return Agent 应用相关
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关
-                     * @param Agent 应用相关
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -152,28 +170,10 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
-                    /**
-                     * 获取需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     * @return UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     */
-                    std::vector<std::string> GetUserIds() const;
-
-                    /**
-                     * 设置需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     * @param UserIds 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     */
-                    void SetUserIds(const std::vector<std::string>& _userIds);
-
-                    /**
-                     * 判断参数 UserIds 是否已赋值
-                     * @return UserIds 是否已赋值
-                     */
-                    bool UserIdsHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 授权发起人在平台信息，具体参考UserInfo结构体
+                     * 调用方用户信息，userId 必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -197,22 +197,22 @@ namespace TencentCloud
                     bool m_expiredHasBeenSet;
 
                     /**
+                     * 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
+                     */
+                    std::vector<std::string> m_userIds;
+                    bool m_userIdsHasBeenSet;
+
+                    /**
                      * 印章授权内容
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 应用相关
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
-
-                    /**
-                     * 需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用
-                     */
-                    std::vector<std::string> m_userIds;
-                    bool m_userIdsHasBeenSet;
 
                 };
             }

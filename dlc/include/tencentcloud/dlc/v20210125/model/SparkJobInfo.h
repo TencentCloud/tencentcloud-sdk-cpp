@@ -809,6 +809,28 @@ namespace TencentCloud
                      */
                     bool DataEngineImageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsInherit 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsInherit() const;
+
+                    /**
+                     * 设置任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsInherit 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsInherit(const uint64_t& _isInherit);
+
+                    /**
+                     * 判断参数 IsInherit 是否已赋值
+                     * @return IsInherit 是否已赋值
+                     */
+                    bool IsInheritHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1059,6 +1081,13 @@ namespace TencentCloud
                      */
                     std::string m_dataEngineImageVersion;
                     bool m_dataEngineImageVersionHasBeenSet;
+
+                    /**
+                     * 任务资源配置是否继承集群模板，0（默认）不继承，1：继承
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isInherit;
+                    bool m_isInheritHasBeenSet;
 
                 };
             }

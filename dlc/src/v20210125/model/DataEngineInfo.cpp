@@ -59,7 +59,13 @@ DataEngineInfo::DataEngineInfo() :
     m_imageVersionNameHasBeenSet(false),
     m_startStandbyClusterHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
-    m_elasticLimitHasBeenSet(false)
+    m_elasticLimitHasBeenSet(false),
+    m_defaultHouseHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_tolerableQueueTimeHasBeenSet(false),
+    m_userAppIdHasBeenSet(false),
+    m_userUinHasBeenSet(false),
+    m_sessionResourceTemplateHasBeenSet(false)
 {
 }
 
@@ -488,6 +494,73 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_elasticLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultHouse") && !value["DefaultHouse"].IsNull())
+    {
+        if (!value["DefaultHouse"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.DefaultHouse` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultHouse = value["DefaultHouse"].GetBool();
+        m_defaultHouseHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxConcurrency") && !value["MaxConcurrency"].IsNull())
+    {
+        if (!value["MaxConcurrency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.MaxConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConcurrency = value["MaxConcurrency"].GetInt64();
+        m_maxConcurrencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("TolerableQueueTime") && !value["TolerableQueueTime"].IsNull())
+    {
+        if (!value["TolerableQueueTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.TolerableQueueTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tolerableQueueTime = value["TolerableQueueTime"].GetInt64();
+        m_tolerableQueueTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAppId") && !value["UserAppId"].IsNull())
+    {
+        if (!value["UserAppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.UserAppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAppId = value["UserAppId"].GetInt64();
+        m_userAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserUin") && !value["UserUin"].IsNull())
+    {
+        if (!value["UserUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.UserUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userUin = string(value["UserUin"].GetString());
+        m_userUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionResourceTemplate") && !value["SessionResourceTemplate"].IsNull())
+    {
+        if (!value["SessionResourceTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.SessionResourceTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sessionResourceTemplate.Deserialize(value["SessionResourceTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sessionResourceTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -825,6 +898,55 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ElasticLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticLimit, allocator);
+    }
+
+    if (m_defaultHouseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultHouse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultHouse, allocator);
+    }
+
+    if (m_maxConcurrencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConcurrency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConcurrency, allocator);
+    }
+
+    if (m_tolerableQueueTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TolerableQueueTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tolerableQueueTime, allocator);
+    }
+
+    if (m_userAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userAppId, allocator);
+    }
+
+    if (m_userUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionResourceTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionResourceTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sessionResourceTemplate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1452,5 +1574,101 @@ void DataEngineInfo::SetElasticLimit(const int64_t& _elasticLimit)
 bool DataEngineInfo::ElasticLimitHasBeenSet() const
 {
     return m_elasticLimitHasBeenSet;
+}
+
+bool DataEngineInfo::GetDefaultHouse() const
+{
+    return m_defaultHouse;
+}
+
+void DataEngineInfo::SetDefaultHouse(const bool& _defaultHouse)
+{
+    m_defaultHouse = _defaultHouse;
+    m_defaultHouseHasBeenSet = true;
+}
+
+bool DataEngineInfo::DefaultHouseHasBeenSet() const
+{
+    return m_defaultHouseHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetMaxConcurrency() const
+{
+    return m_maxConcurrency;
+}
+
+void DataEngineInfo::SetMaxConcurrency(const int64_t& _maxConcurrency)
+{
+    m_maxConcurrency = _maxConcurrency;
+    m_maxConcurrencyHasBeenSet = true;
+}
+
+bool DataEngineInfo::MaxConcurrencyHasBeenSet() const
+{
+    return m_maxConcurrencyHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetTolerableQueueTime() const
+{
+    return m_tolerableQueueTime;
+}
+
+void DataEngineInfo::SetTolerableQueueTime(const int64_t& _tolerableQueueTime)
+{
+    m_tolerableQueueTime = _tolerableQueueTime;
+    m_tolerableQueueTimeHasBeenSet = true;
+}
+
+bool DataEngineInfo::TolerableQueueTimeHasBeenSet() const
+{
+    return m_tolerableQueueTimeHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetUserAppId() const
+{
+    return m_userAppId;
+}
+
+void DataEngineInfo::SetUserAppId(const int64_t& _userAppId)
+{
+    m_userAppId = _userAppId;
+    m_userAppIdHasBeenSet = true;
+}
+
+bool DataEngineInfo::UserAppIdHasBeenSet() const
+{
+    return m_userAppIdHasBeenSet;
+}
+
+string DataEngineInfo::GetUserUin() const
+{
+    return m_userUin;
+}
+
+void DataEngineInfo::SetUserUin(const string& _userUin)
+{
+    m_userUin = _userUin;
+    m_userUinHasBeenSet = true;
+}
+
+bool DataEngineInfo::UserUinHasBeenSet() const
+{
+    return m_userUinHasBeenSet;
+}
+
+SessionResourceTemplate DataEngineInfo::GetSessionResourceTemplate() const
+{
+    return m_sessionResourceTemplate;
+}
+
+void DataEngineInfo::SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate)
+{
+    m_sessionResourceTemplate = _sessionResourceTemplate;
+    m_sessionResourceTemplateHasBeenSet = true;
+}
+
+bool DataEngineInfo::SessionResourceTemplateHasBeenSet() const
+{
+    return m_sessionResourceTemplateHasBeenSet;
 }
 
