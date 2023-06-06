@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeInstanceLogResponse::DescribeInstanceLogResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_instanceLogInfoHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,23 @@ CoreInternalOutcome DescribeInstanceLogResponse::Deserialize(const string &paylo
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceLogInfo") && !rsp["InstanceLogInfo"].IsNull())
+    {
+        if (!rsp["InstanceLogInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceLogInfo.Deserialize(rsp["InstanceLogInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceLogInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ string DescribeInstanceLogResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceLogInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceLogInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceLogInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string DescribeInstanceLogResponse::GetData() const
 bool DescribeInstanceLogResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+IntegrationInstanceLog DescribeInstanceLogResponse::GetInstanceLogInfo() const
+{
+    return m_instanceLogInfo;
+}
+
+bool DescribeInstanceLogResponse::InstanceLogInfoHasBeenSet() const
+{
+    return m_instanceLogInfoHasBeenSet;
 }
 
 

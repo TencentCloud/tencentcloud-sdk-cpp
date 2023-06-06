@@ -384,6 +384,28 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取告警规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegularId 告警规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegularId() const;
+
+                    /**
+                     * 设置告警规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegularId 告警规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegularId(const std::string& _regularId);
+
+                    /**
+                     * 判断参数 RegularId 是否已赋值
+                     * @return RegularId 是否已赋值
+                     */
+                    bool RegularIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +517,13 @@ namespace TencentCloud
                      */
                     int64_t m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 告警规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regularId;
+                    bool m_regularIdHasBeenSet;
 
                 };
             }

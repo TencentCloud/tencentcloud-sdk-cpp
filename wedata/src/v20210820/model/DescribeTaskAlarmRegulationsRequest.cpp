@@ -23,13 +23,13 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTaskAlarmRegulationsRequest::DescribeTaskAlarmRegulationsRequest() :
-    m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_taskTypeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_orderFieldsHasBeenSet(false)
+    m_orderFieldsHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -40,28 +40,12 @@ string DescribeTaskAlarmRegulationsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_taskTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_taskType, allocator);
     }
 
     if (m_pageNumberHasBeenSet)
@@ -110,6 +94,22 @@ string DescribeTaskAlarmRegulationsRequest::ToJsonString() const
         }
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -117,22 +117,6 @@ string DescribeTaskAlarmRegulationsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeTaskAlarmRegulationsRequest::GetTaskId() const
-{
-    return m_taskId;
-}
-
-void DescribeTaskAlarmRegulationsRequest::SetTaskId(const string& _taskId)
-{
-    m_taskId = _taskId;
-    m_taskIdHasBeenSet = true;
-}
-
-bool DescribeTaskAlarmRegulationsRequest::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
 
 string DescribeTaskAlarmRegulationsRequest::GetProjectId() const
 {
@@ -148,22 +132,6 @@ void DescribeTaskAlarmRegulationsRequest::SetProjectId(const string& _projectId)
 bool DescribeTaskAlarmRegulationsRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
-}
-
-int64_t DescribeTaskAlarmRegulationsRequest::GetTaskType() const
-{
-    return m_taskType;
-}
-
-void DescribeTaskAlarmRegulationsRequest::SetTaskType(const int64_t& _taskType)
-{
-    m_taskType = _taskType;
-    m_taskTypeHasBeenSet = true;
-}
-
-bool DescribeTaskAlarmRegulationsRequest::TaskTypeHasBeenSet() const
-{
-    return m_taskTypeHasBeenSet;
 }
 
 int64_t DescribeTaskAlarmRegulationsRequest::GetPageNumber() const
@@ -228,6 +196,38 @@ void DescribeTaskAlarmRegulationsRequest::SetOrderFields(const vector<OrderField
 bool DescribeTaskAlarmRegulationsRequest::OrderFieldsHasBeenSet() const
 {
     return m_orderFieldsHasBeenSet;
+}
+
+string DescribeTaskAlarmRegulationsRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribeTaskAlarmRegulationsRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribeTaskAlarmRegulationsRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+int64_t DescribeTaskAlarmRegulationsRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeTaskAlarmRegulationsRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeTaskAlarmRegulationsRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

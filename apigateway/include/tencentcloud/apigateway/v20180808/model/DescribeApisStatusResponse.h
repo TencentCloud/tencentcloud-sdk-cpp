@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/ApisStatus.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeApisStatusResultInfo.h>
 
 
 namespace TencentCloud
@@ -48,7 +48,7 @@ namespace TencentCloud
                      * 获取API 详情列表。
                      * @return Result API 详情列表。
                      */
-                    ApisStatus GetResult() const;
+                    DescribeApisStatusResultInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -61,7 +61,7 @@ namespace TencentCloud
                     /**
                      * API 详情列表。
                      */
-                    ApisStatus m_result;
+                    DescribeApisStatusResultInfo m_result;
                     bool m_resultHasBeenSet;
 
                 };

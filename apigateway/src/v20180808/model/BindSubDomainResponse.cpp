@@ -23,8 +23,7 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
 using namespace std;
 
-BindSubDomainResponse::BindSubDomainResponse() :
-    m_resultHasBeenSet(false)
+BindSubDomainResponse::BindSubDomainResponse()
 {
 }
 
@@ -62,16 +61,6 @@ CoreInternalOutcome BindSubDomainResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
-    {
-        if (!rsp["Result"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_result = rsp["Result"].GetBool();
-        m_resultHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -81,14 +70,6 @@ string BindSubDomainResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_resultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_result, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string BindSubDomainResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-bool BindSubDomainResponse::GetResult() const
-{
-    return m_result;
-}
-
-bool BindSubDomainResponse::ResultHasBeenSet() const
-{
-    return m_resultHasBeenSet;
-}
 
 

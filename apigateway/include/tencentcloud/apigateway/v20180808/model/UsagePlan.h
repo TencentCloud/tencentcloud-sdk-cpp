@@ -102,13 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取使用计划描述。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePlanDesc 使用计划描述。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUsagePlanDesc() const;
 
                     /**
                      * 设置使用计划描述。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param UsagePlanDesc 使用计划描述。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUsagePlanDesc(const std::string& _usagePlanDesc);
 
@@ -194,6 +198,7 @@ namespace TencentCloud
 
                     /**
                      * 使用计划描述。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_usagePlanDesc;
                     bool m_usagePlanDescHasBeenSet;

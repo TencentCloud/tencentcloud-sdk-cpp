@@ -110,7 +110,7 @@ string CreateApiResponse::ToJsonString() const
 }
 
 
-CreateApiRsp CreateApiResponse::GetResult() const
+CreateApiResultInfo CreateApiResponse::GetResult() const
 {
     return m_result;
 }

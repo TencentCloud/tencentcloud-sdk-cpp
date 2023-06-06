@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-TieringDetailInfo::TieringDetailInfo()
+TieringDetailInfo::TieringDetailInfo() :
+    m_tieringSizeInBytesHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome TieringDetailInfo::Deserialize(const rapidjson::Value &value
     string requestId = "";
 
 
+    if (value.HasMember("TieringSizeInBytes") && !value["TieringSizeInBytes"].IsNull())
+    {
+        if (!value["TieringSizeInBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TieringDetailInfo.TieringSizeInBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tieringSizeInBytes = value["TieringSizeInBytes"].GetInt64();
+        m_tieringSizeInBytesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome TieringDetailInfo::Deserialize(const rapidjson::Value &value
 void TieringDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_tieringSizeInBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TieringSizeInBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tieringSizeInBytes, allocator);
+    }
+
 }
 
+
+int64_t TieringDetailInfo::GetTieringSizeInBytes() const
+{
+    return m_tieringSizeInBytes;
+}
+
+void TieringDetailInfo::SetTieringSizeInBytes(const int64_t& _tieringSizeInBytes)
+{
+    m_tieringSizeInBytes = _tieringSizeInBytes;
+    m_tieringSizeInBytesHasBeenSet = true;
+}
+
+bool TieringDetailInfo::TieringSizeInBytesHasBeenSet() const
+{
+    return m_tieringSizeInBytesHasBeenSet;
+}
 

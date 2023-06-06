@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool IsEnableHasBeenSet() const;
 
                     /**
-                     * 获取生效惊现id，空数组代表全部镜像
-                     * @return ImageIds 生效惊现id，空数组代表全部镜像
+                     * 获取生效镜像id，空数组代表全部镜像
+                     * @return ImageIds 生效镜像id，空数组代表全部镜像
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
-                     * 设置生效惊现id，空数组代表全部镜像
-                     * @param ImageIds 生效惊现id，空数组代表全部镜像
+                     * 设置生效镜像id，空数组代表全部镜像
+                     * @param ImageIds 生效镜像id，空数组代表全部镜像
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_isEnableHasBeenSet;
 
                     /**
-                     * 生效惊现id，空数组代表全部镜像
+                     * 生效镜像id，空数组代表全部镜像
                      */
                     std::vector<std::string> m_imageIds;
                     bool m_imageIdsHasBeenSet;

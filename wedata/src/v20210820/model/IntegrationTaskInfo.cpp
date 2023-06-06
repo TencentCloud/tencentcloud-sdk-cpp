@@ -49,7 +49,22 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_inLongStreamIdHasBeenSet(false),
     m_inLongManagerVersionHasBeenSet(false),
     m_dataProxyUrlHasBeenSet(false),
-    m_submitHasBeenSet(false)
+    m_submitHasBeenSet(false),
+    m_inputDatasourceTypeHasBeenSet(false),
+    m_outputDatasourceTypeHasBeenSet(false),
+    m_numRecordsInHasBeenSet(false),
+    m_numRecordsOutHasBeenSet(false),
+    m_readerDelayHasBeenSet(false),
+    m_numRestartsHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_lastRunTimeHasBeenSet(false),
+    m_stopTimeHasBeenSet(false),
+    m_hasVersionHasBeenSet(false),
+    m_lockedHasBeenSet(false),
+    m_lockerHasBeenSet(false),
+    m_runningCuHasBeenSet(false),
+    m_taskAlarmRegularListHasBeenSet(false)
 {
 }
 
@@ -408,6 +423,159 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_submitHasBeenSet = true;
     }
 
+    if (value.HasMember("InputDatasourceType") && !value["InputDatasourceType"].IsNull())
+    {
+        if (!value["InputDatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.InputDatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputDatasourceType = string(value["InputDatasourceType"].GetString());
+        m_inputDatasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputDatasourceType") && !value["OutputDatasourceType"].IsNull())
+    {
+        if (!value["OutputDatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.OutputDatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputDatasourceType = string(value["OutputDatasourceType"].GetString());
+        m_outputDatasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NumRecordsIn") && !value["NumRecordsIn"].IsNull())
+    {
+        if (!value["NumRecordsIn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.NumRecordsIn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numRecordsIn = value["NumRecordsIn"].GetInt64();
+        m_numRecordsInHasBeenSet = true;
+    }
+
+    if (value.HasMember("NumRecordsOut") && !value["NumRecordsOut"].IsNull())
+    {
+        if (!value["NumRecordsOut"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.NumRecordsOut` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numRecordsOut = value["NumRecordsOut"].GetInt64();
+        m_numRecordsOutHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReaderDelay") && !value["ReaderDelay"].IsNull())
+    {
+        if (!value["ReaderDelay"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.ReaderDelay` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_readerDelay = value["ReaderDelay"].GetDouble();
+        m_readerDelayHasBeenSet = true;
+    }
+
+    if (value.HasMember("NumRestarts") && !value["NumRestarts"].IsNull())
+    {
+        if (!value["NumRestarts"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.NumRestarts` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numRestarts = value["NumRestarts"].GetInt64();
+        m_numRestartsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastRunTime") && !value["LastRunTime"].IsNull())
+    {
+        if (!value["LastRunTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.LastRunTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastRunTime = string(value["LastRunTime"].GetString());
+        m_lastRunTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StopTime") && !value["StopTime"].IsNull())
+    {
+        if (!value["StopTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.StopTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopTime = string(value["StopTime"].GetString());
+        m_stopTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasVersion") && !value["HasVersion"].IsNull())
+    {
+        if (!value["HasVersion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.HasVersion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasVersion = value["HasVersion"].GetBool();
+        m_hasVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Locked") && !value["Locked"].IsNull())
+    {
+        if (!value["Locked"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.Locked` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_locked = value["Locked"].GetBool();
+        m_lockedHasBeenSet = true;
+    }
+
+    if (value.HasMember("Locker") && !value["Locker"].IsNull())
+    {
+        if (!value["Locker"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.Locker` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_locker = string(value["Locker"].GetString());
+        m_lockerHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCu") && !value["RunningCu"].IsNull())
+    {
+        if (!value["RunningCu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.RunningCu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCu = value["RunningCu"].GetDouble();
+        m_runningCuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskAlarmRegularList") && !value["TaskAlarmRegularList"].IsNull())
+    {
+        if (!value["TaskAlarmRegularList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.TaskAlarmRegularList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskAlarmRegularList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskAlarmRegularList.push_back((*itr).GetString());
+        }
+        m_taskAlarmRegularListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -686,6 +854,131 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Submit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_submit, allocator);
+    }
+
+    if (m_inputDatasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputDatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputDatasourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputDatasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputDatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputDatasourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numRecordsInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumRecordsIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numRecordsIn, allocator);
+    }
+
+    if (m_numRecordsOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumRecordsOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numRecordsOut, allocator);
+    }
+
+    if (m_readerDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReaderDelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readerDelay, allocator);
+    }
+
+    if (m_numRestartsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumRestarts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numRestarts, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastRunTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastRunTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastRunTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stopTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stopTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasVersion, allocator);
+    }
+
+    if (m_lockedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Locked";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_locked, allocator);
+    }
+
+    if (m_lockerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Locker";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_locker.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runningCuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCu, allocator);
+    }
+
+    if (m_taskAlarmRegularListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskAlarmRegularList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskAlarmRegularList.begin(); itr != m_taskAlarmRegularList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1153,5 +1446,245 @@ void IntegrationTaskInfo::SetSubmit(const bool& _submit)
 bool IntegrationTaskInfo::SubmitHasBeenSet() const
 {
     return m_submitHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetInputDatasourceType() const
+{
+    return m_inputDatasourceType;
+}
+
+void IntegrationTaskInfo::SetInputDatasourceType(const string& _inputDatasourceType)
+{
+    m_inputDatasourceType = _inputDatasourceType;
+    m_inputDatasourceTypeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::InputDatasourceTypeHasBeenSet() const
+{
+    return m_inputDatasourceTypeHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetOutputDatasourceType() const
+{
+    return m_outputDatasourceType;
+}
+
+void IntegrationTaskInfo::SetOutputDatasourceType(const string& _outputDatasourceType)
+{
+    m_outputDatasourceType = _outputDatasourceType;
+    m_outputDatasourceTypeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::OutputDatasourceTypeHasBeenSet() const
+{
+    return m_outputDatasourceTypeHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetNumRecordsIn() const
+{
+    return m_numRecordsIn;
+}
+
+void IntegrationTaskInfo::SetNumRecordsIn(const int64_t& _numRecordsIn)
+{
+    m_numRecordsIn = _numRecordsIn;
+    m_numRecordsInHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::NumRecordsInHasBeenSet() const
+{
+    return m_numRecordsInHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetNumRecordsOut() const
+{
+    return m_numRecordsOut;
+}
+
+void IntegrationTaskInfo::SetNumRecordsOut(const int64_t& _numRecordsOut)
+{
+    m_numRecordsOut = _numRecordsOut;
+    m_numRecordsOutHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::NumRecordsOutHasBeenSet() const
+{
+    return m_numRecordsOutHasBeenSet;
+}
+
+double IntegrationTaskInfo::GetReaderDelay() const
+{
+    return m_readerDelay;
+}
+
+void IntegrationTaskInfo::SetReaderDelay(const double& _readerDelay)
+{
+    m_readerDelay = _readerDelay;
+    m_readerDelayHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::ReaderDelayHasBeenSet() const
+{
+    return m_readerDelayHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetNumRestarts() const
+{
+    return m_numRestarts;
+}
+
+void IntegrationTaskInfo::SetNumRestarts(const int64_t& _numRestarts)
+{
+    m_numRestarts = _numRestarts;
+    m_numRestartsHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::NumRestartsHasBeenSet() const
+{
+    return m_numRestartsHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void IntegrationTaskInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void IntegrationTaskInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetLastRunTime() const
+{
+    return m_lastRunTime;
+}
+
+void IntegrationTaskInfo::SetLastRunTime(const string& _lastRunTime)
+{
+    m_lastRunTime = _lastRunTime;
+    m_lastRunTimeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::LastRunTimeHasBeenSet() const
+{
+    return m_lastRunTimeHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetStopTime() const
+{
+    return m_stopTime;
+}
+
+void IntegrationTaskInfo::SetStopTime(const string& _stopTime)
+{
+    m_stopTime = _stopTime;
+    m_stopTimeHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::StopTimeHasBeenSet() const
+{
+    return m_stopTimeHasBeenSet;
+}
+
+bool IntegrationTaskInfo::GetHasVersion() const
+{
+    return m_hasVersion;
+}
+
+void IntegrationTaskInfo::SetHasVersion(const bool& _hasVersion)
+{
+    m_hasVersion = _hasVersion;
+    m_hasVersionHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::HasVersionHasBeenSet() const
+{
+    return m_hasVersionHasBeenSet;
+}
+
+bool IntegrationTaskInfo::GetLocked() const
+{
+    return m_locked;
+}
+
+void IntegrationTaskInfo::SetLocked(const bool& _locked)
+{
+    m_locked = _locked;
+    m_lockedHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::LockedHasBeenSet() const
+{
+    return m_lockedHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetLocker() const
+{
+    return m_locker;
+}
+
+void IntegrationTaskInfo::SetLocker(const string& _locker)
+{
+    m_locker = _locker;
+    m_lockerHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::LockerHasBeenSet() const
+{
+    return m_lockerHasBeenSet;
+}
+
+double IntegrationTaskInfo::GetRunningCu() const
+{
+    return m_runningCu;
+}
+
+void IntegrationTaskInfo::SetRunningCu(const double& _runningCu)
+{
+    m_runningCu = _runningCu;
+    m_runningCuHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::RunningCuHasBeenSet() const
+{
+    return m_runningCuHasBeenSet;
+}
+
+vector<string> IntegrationTaskInfo::GetTaskAlarmRegularList() const
+{
+    return m_taskAlarmRegularList;
+}
+
+void IntegrationTaskInfo::SetTaskAlarmRegularList(const vector<string>& _taskAlarmRegularList)
+{
+    m_taskAlarmRegularList = _taskAlarmRegularList;
+    m_taskAlarmRegularListHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::TaskAlarmRegularListHasBeenSet() const
+{
+    return m_taskAlarmRegularListHasBeenSet;
 }
 

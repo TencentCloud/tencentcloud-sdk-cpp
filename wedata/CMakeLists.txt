@@ -184,6 +184,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DeleteCustomFunctionRequest.h
   include/tencentcloud/wedata/v20210820/model/TaskInfoDataPage.h
   include/tencentcloud/wedata/v20210820/model/TaskLockStatus.h
+  include/tencentcloud/wedata/v20210820/model/InstanceList.h
   include/tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
   include/tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h
@@ -308,6 +309,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DimensionCount.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteInLongAgentResponse.h
+  include/tencentcloud/wedata/v20210820/model/InstanceLogList.h
   include/tencentcloud/wedata/v20210820/model/ModifyMonitorStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTaskRequest.h
@@ -395,6 +397,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/SubscribeWebHook.h
   include/tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h
+  include/tencentcloud/wedata/v20210820/model/IntegrationInstanceLog.h
   include/tencentcloud/wedata/v20210820/model/TaskScriptContent.h
   include/tencentcloud/wedata/v20210820/model/IntegrationStatisticsTrendResult.h
   include/tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaRequest.h
@@ -723,6 +726,7 @@ set(wedata_src
   src/v20210820/model/DeleteCustomFunctionRequest.cpp
   src/v20210820/model/TaskInfoDataPage.cpp
   src/v20210820/model/TaskLockStatus.cpp
+  src/v20210820/model/InstanceList.cpp
   src/v20210820/model/BatchCreateIntegrationTaskAlarmsRequest.cpp
   src/v20210820/model/DescribeTaskInstancesData.cpp
   src/v20210820/model/DryRunDIOfflineTaskRequest.cpp
@@ -847,6 +851,7 @@ set(wedata_src
   src/v20210820/model/DimensionCount.cpp
   src/v20210820/model/DescribeInstanceLogResponse.cpp
   src/v20210820/model/DeleteInLongAgentResponse.cpp
+  src/v20210820/model/InstanceLogList.cpp
   src/v20210820/model/ModifyMonitorStatusRequest.cpp
   src/v20210820/model/DeleteFolderRequest.cpp
   src/v20210820/model/DescribeIntegrationTaskRequest.cpp
@@ -934,6 +939,7 @@ set(wedata_src
   src/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.cpp
   src/v20210820/model/SubscribeWebHook.cpp
   src/v20210820/model/DeleteOfflineTaskResponse.cpp
+  src/v20210820/model/IntegrationInstanceLog.cpp
   src/v20210820/model/TaskScriptContent.cpp
   src/v20210820/model/IntegrationStatisticsTrendResult.cpp
   src/v20210820/model/GetIntegrationNodeColumnSchemaRequest.cpp

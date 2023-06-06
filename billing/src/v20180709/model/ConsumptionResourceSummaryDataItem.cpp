@@ -33,7 +33,16 @@ ConsumptionResourceSummaryDataItem::ConsumptionResourceSummaryDataItem() :
     m_payModeNameHasBeenSet(false),
     m_businessCodeHasBeenSet(false),
     m_businessCodeNameHasBeenSet(false),
-    m_consumptionTypeNameHasBeenSet(false)
+    m_consumptionTypeNameHasBeenSet(false),
+    m_realCostHasBeenSet(false),
+    m_feeBeginTimeHasBeenSet(false),
+    m_feeEndTimeHasBeenSet(false),
+    m_dayDiffHasBeenSet(false),
+    m_dailyTotalCostHasBeenSet(false),
+    m_orderIdHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -172,6 +181,96 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
         m_consumptionTypeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RealCost") && !value["RealCost"].IsNull())
+    {
+        if (!value["RealCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RealCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realCost = string(value["RealCost"].GetString());
+        m_realCostHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeeBeginTime") && !value["FeeBeginTime"].IsNull())
+    {
+        if (!value["FeeBeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.FeeBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeBeginTime = string(value["FeeBeginTime"].GetString());
+        m_feeBeginTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeeEndTime") && !value["FeeEndTime"].IsNull())
+    {
+        if (!value["FeeEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.FeeEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeEndTime = string(value["FeeEndTime"].GetString());
+        m_feeEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DayDiff") && !value["DayDiff"].IsNull())
+    {
+        if (!value["DayDiff"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.DayDiff` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dayDiff = string(value["DayDiff"].GetString());
+        m_dayDiffHasBeenSet = true;
+    }
+
+    if (value.HasMember("DailyTotalCost") && !value["DailyTotalCost"].IsNull())
+    {
+        if (!value["DailyTotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.DailyTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dailyTotalCost = string(value["DailyTotalCost"].GetString());
+        m_dailyTotalCostHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderId") && !value["OrderId"].IsNull())
+    {
+        if (!value["OrderId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.OrderId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderId = string(value["OrderId"].GetString());
+        m_orderIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +380,78 @@ void ConsumptionResourceSummaryDataItem::ToJsonObject(rapidjson::Value &value, r
         string key = "ConsumptionTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_consumptionTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_feeBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_feeBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_feeEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_feeEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dayDiffHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayDiff";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dayDiff.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dailyTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DailyTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dailyTotalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +663,149 @@ void ConsumptionResourceSummaryDataItem::SetConsumptionTypeName(const string& _c
 bool ConsumptionResourceSummaryDataItem::ConsumptionTypeNameHasBeenSet() const
 {
     return m_consumptionTypeNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetRealCost() const
+{
+    return m_realCost;
+}
+
+void ConsumptionResourceSummaryDataItem::SetRealCost(const string& _realCost)
+{
+    m_realCost = _realCost;
+    m_realCostHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::RealCostHasBeenSet() const
+{
+    return m_realCostHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetFeeBeginTime() const
+{
+    return m_feeBeginTime;
+}
+
+void ConsumptionResourceSummaryDataItem::SetFeeBeginTime(const string& _feeBeginTime)
+{
+    m_feeBeginTime = _feeBeginTime;
+    m_feeBeginTimeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::FeeBeginTimeHasBeenSet() const
+{
+    return m_feeBeginTimeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetFeeEndTime() const
+{
+    return m_feeEndTime;
+}
+
+void ConsumptionResourceSummaryDataItem::SetFeeEndTime(const string& _feeEndTime)
+{
+    m_feeEndTime = _feeEndTime;
+    m_feeEndTimeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::FeeEndTimeHasBeenSet() const
+{
+    return m_feeEndTimeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetDayDiff() const
+{
+    return m_dayDiff;
+}
+
+void ConsumptionResourceSummaryDataItem::SetDayDiff(const string& _dayDiff)
+{
+    m_dayDiff = _dayDiff;
+    m_dayDiffHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::DayDiffHasBeenSet() const
+{
+    return m_dayDiffHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetDailyTotalCost() const
+{
+    return m_dailyTotalCost;
+}
+
+void ConsumptionResourceSummaryDataItem::SetDailyTotalCost(const string& _dailyTotalCost)
+{
+    m_dailyTotalCost = _dailyTotalCost;
+    m_dailyTotalCostHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::DailyTotalCostHasBeenSet() const
+{
+    return m_dailyTotalCostHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetOrderId() const
+{
+    return m_orderId;
+}
+
+void ConsumptionResourceSummaryDataItem::SetOrderId(const string& _orderId)
+{
+    m_orderId = _orderId;
+    m_orderIdHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::OrderIdHasBeenSet() const
+{
+    return m_orderIdHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void ConsumptionResourceSummaryDataItem::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void ConsumptionResourceSummaryDataItem::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void ConsumptionResourceSummaryDataItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

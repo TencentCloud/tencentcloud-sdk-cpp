@@ -110,7 +110,7 @@ string DescribeApisStatusResponse::ToJsonString() const
 }
 
 
-ApisStatus DescribeApisStatusResponse::GetResult() const
+DescribeApisStatusResultInfo DescribeApisStatusResponse::GetResult() const
 {
     return m_result;
 }

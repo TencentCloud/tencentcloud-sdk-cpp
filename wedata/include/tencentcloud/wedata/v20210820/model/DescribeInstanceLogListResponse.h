@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceLogList.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取日志列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceLogList 日志列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceLogList> GetInstanceLogList() const;
+
+                    /**
+                     * 判断参数 InstanceLogList 是否已赋值
+                     * @return InstanceLogList 是否已赋值
+                     */
+                    bool InstanceLogListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +77,13 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 日志列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceLogList> m_instanceLogList;
+                    bool m_instanceLogListHasBeenSet;
 
                 };
             }

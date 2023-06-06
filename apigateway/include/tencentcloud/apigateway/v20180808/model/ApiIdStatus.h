@@ -85,13 +85,17 @@ namespace TencentCloud
 
                     /**
                      * 获取API描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiDesc API描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetApiDesc() const;
 
                     /**
                      * 设置API描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ApiDesc API描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApiDesc(const std::string& _apiDesc);
 
@@ -431,6 +435,7 @@ namespace TencentCloud
 
                     /**
                      * API描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiDesc;
                     bool m_apiDescHasBeenSet;

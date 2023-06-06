@@ -37,7 +37,8 @@ AlarmEventInfo::AlarmEventInfo() :
     m_taskNameHasBeenSet(false),
     m_isSendSuccessHasBeenSet(false),
     m_messageIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_regularIdHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_operatorHasBeenSet = true;
     }
 
+    if (value.HasMember("RegularId") && !value["RegularId"].IsNull())
+    {
+        if (!value["RegularId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.RegularId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regularId = string(value["RegularId"].GetString());
+        m_regularIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operator, allocator);
+    }
+
+    if (m_regularIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegularId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regularId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void AlarmEventInfo::SetOperator(const int64_t& _operator)
 bool AlarmEventInfo::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string AlarmEventInfo::GetRegularId() const
+{
+    return m_regularId;
+}
+
+void AlarmEventInfo::SetRegularId(const string& _regularId)
+{
+    m_regularId = _regularId;
+    m_regularIdHasBeenSet = true;
+}
+
+bool AlarmEventInfo::RegularIdHasBeenSet() const
+{
+    return m_regularIdHasBeenSet;
 }
 

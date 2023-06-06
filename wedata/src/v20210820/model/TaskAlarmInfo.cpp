@@ -42,7 +42,15 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_nodeNameHasBeenSet(false),
     m_alarmIndicatorInfosHasBeenSet(false),
     m_alarmRecipientTypeHasBeenSet(false),
-    m_weComHookHasBeenSet(false)
+    m_weComHookHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_operatorUinHasBeenSet(false),
+    m_taskCountHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false),
+    m_monitorObjectIdsHasBeenSet(false),
+    m_latestAlarmInstanceIdHasBeenSet(false),
+    m_latestAlarmTimeHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -281,6 +289,89 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_weComHookHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperatorUin") && !value["OperatorUin"].IsNull())
+    {
+        if (!value["OperatorUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.OperatorUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorUin = string(value["OperatorUin"].GetString());
+        m_operatorUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskCount") && !value["TaskCount"].IsNull())
+    {
+        if (!value["TaskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.TaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskCount = value["TaskCount"].GetInt64();
+        m_taskCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorType") && !value["MonitorType"].IsNull())
+    {
+        if (!value["MonitorType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.MonitorType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorType = value["MonitorType"].GetInt64();
+        m_monitorTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorObjectIds") && !value["MonitorObjectIds"].IsNull())
+    {
+        if (!value["MonitorObjectIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.MonitorObjectIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MonitorObjectIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_monitorObjectIds.push_back((*itr).GetString());
+        }
+        m_monitorObjectIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestAlarmInstanceId") && !value["LatestAlarmInstanceId"].IsNull())
+    {
+        if (!value["LatestAlarmInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.LatestAlarmInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestAlarmInstanceId = string(value["LatestAlarmInstanceId"].GetString());
+        m_latestAlarmInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestAlarmTime") && !value["LatestAlarmTime"].IsNull())
+    {
+        if (!value["LatestAlarmTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.LatestAlarmTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestAlarmTime = string(value["LatestAlarmTime"].GetString());
+        m_latestAlarmTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +560,75 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "WeComHook";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_weComHook.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operatorUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskCount, allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorType, allocator);
+    }
+
+    if (m_monitorObjectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorObjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_monitorObjectIds.begin(); itr != m_monitorObjectIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_latestAlarmInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestAlarmInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestAlarmInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestAlarmTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestAlarmTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestAlarmTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -824,5 +984,133 @@ void TaskAlarmInfo::SetWeComHook(const string& _weComHook)
 bool TaskAlarmInfo::WeComHookHasBeenSet() const
 {
     return m_weComHookHasBeenSet;
+}
+
+string TaskAlarmInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void TaskAlarmInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string TaskAlarmInfo::GetOperatorUin() const
+{
+    return m_operatorUin;
+}
+
+void TaskAlarmInfo::SetOperatorUin(const string& _operatorUin)
+{
+    m_operatorUin = _operatorUin;
+    m_operatorUinHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::OperatorUinHasBeenSet() const
+{
+    return m_operatorUinHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetTaskCount() const
+{
+    return m_taskCount;
+}
+
+void TaskAlarmInfo::SetTaskCount(const int64_t& _taskCount)
+{
+    m_taskCount = _taskCount;
+    m_taskCountHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::TaskCountHasBeenSet() const
+{
+    return m_taskCountHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void TaskAlarmInfo::SetMonitorType(const int64_t& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
+}
+
+vector<string> TaskAlarmInfo::GetMonitorObjectIds() const
+{
+    return m_monitorObjectIds;
+}
+
+void TaskAlarmInfo::SetMonitorObjectIds(const vector<string>& _monitorObjectIds)
+{
+    m_monitorObjectIds = _monitorObjectIds;
+    m_monitorObjectIdsHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::MonitorObjectIdsHasBeenSet() const
+{
+    return m_monitorObjectIdsHasBeenSet;
+}
+
+string TaskAlarmInfo::GetLatestAlarmInstanceId() const
+{
+    return m_latestAlarmInstanceId;
+}
+
+void TaskAlarmInfo::SetLatestAlarmInstanceId(const string& _latestAlarmInstanceId)
+{
+    m_latestAlarmInstanceId = _latestAlarmInstanceId;
+    m_latestAlarmInstanceIdHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::LatestAlarmInstanceIdHasBeenSet() const
+{
+    return m_latestAlarmInstanceIdHasBeenSet;
+}
+
+string TaskAlarmInfo::GetLatestAlarmTime() const
+{
+    return m_latestAlarmTime;
+}
+
+void TaskAlarmInfo::SetLatestAlarmTime(const string& _latestAlarmTime)
+{
+    m_latestAlarmTime = _latestAlarmTime;
+    m_latestAlarmTimeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::LatestAlarmTimeHasBeenSet() const
+{
+    return m_latestAlarmTimeHasBeenSet;
+}
+
+string TaskAlarmInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void TaskAlarmInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

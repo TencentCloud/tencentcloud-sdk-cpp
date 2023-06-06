@@ -27,6 +27,8 @@ SendEmailRequest::SendEmailRequest() :
     m_destinationHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_replyToAddressesHasBeenSet(false),
+    m_ccHasBeenSet(false),
+    m_bccHasBeenSet(false),
     m_templateHasBeenSet(false),
     m_simpleHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
@@ -77,6 +79,32 @@ string SendEmailRequest::ToJsonString() const
         string key = "ReplyToAddresses";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_replyToAddresses.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ccHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cc.begin(); itr != m_cc.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_bccHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bcc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bcc.begin(); itr != m_bcc.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_templateHasBeenSet)
@@ -198,6 +226,38 @@ void SendEmailRequest::SetReplyToAddresses(const string& _replyToAddresses)
 bool SendEmailRequest::ReplyToAddressesHasBeenSet() const
 {
     return m_replyToAddressesHasBeenSet;
+}
+
+vector<string> SendEmailRequest::GetCc() const
+{
+    return m_cc;
+}
+
+void SendEmailRequest::SetCc(const vector<string>& _cc)
+{
+    m_cc = _cc;
+    m_ccHasBeenSet = true;
+}
+
+bool SendEmailRequest::CcHasBeenSet() const
+{
+    return m_ccHasBeenSet;
+}
+
+vector<string> SendEmailRequest::GetBcc() const
+{
+    return m_bcc;
+}
+
+void SendEmailRequest::SetBcc(const vector<string>& _bcc)
+{
+    m_bcc = _bcc;
+    m_bccHasBeenSet = true;
+}
+
+bool SendEmailRequest::BccHasBeenSet() const
+{
+    return m_bccHasBeenSet;
 }
 
 Template SendEmailRequest::GetTemplate() const

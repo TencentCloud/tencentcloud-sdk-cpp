@@ -369,7 +369,7 @@ CoreInternalOutcome ApiInfo::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["ServiceParameters"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ServiceParameter item;
+            DescribeApiResultServiceParametersInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -1567,12 +1567,12 @@ bool ApiInfo::ServiceConfigHasBeenSet() const
     return m_serviceConfigHasBeenSet;
 }
 
-vector<ServiceParameter> ApiInfo::GetServiceParameters() const
+vector<DescribeApiResultServiceParametersInfo> ApiInfo::GetServiceParameters() const
 {
     return m_serviceParameters;
 }
 
-void ApiInfo::SetServiceParameters(const vector<ServiceParameter>& _serviceParameters)
+void ApiInfo::SetServiceParameters(const vector<DescribeApiResultServiceParametersInfo>& _serviceParameters)
 {
     m_serviceParameters = _serviceParameters;
     m_serviceParametersHasBeenSet = true;

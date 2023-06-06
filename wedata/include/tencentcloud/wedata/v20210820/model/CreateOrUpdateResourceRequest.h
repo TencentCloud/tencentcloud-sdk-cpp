@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目ID，必填项
+                     * @return ProjectId 项目ID，必填项
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * 设置项目ID，必填项
+                     * @param ProjectId 项目ID，必填项
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名
-                     * @return Files 文件名
+                     * 获取文件名，必填项
+                     * @return Files 文件名，必填项
                      */
                     std::vector<std::string> GetFiles() const;
 
                     /**
-                     * 设置文件名
-                     * @param Files 文件名
+                     * 设置文件名，必填项
+                     * @param Files 文件名，必填项
                      */
                     void SetFiles(const std::vector<std::string>& _files);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool FilesHasBeenSet() const;
 
                     /**
-                     * 获取文件所属路径，资源管理根路径为 /datastudio/resouce
-                     * @return FilePath 文件所属路径，资源管理根路径为 /datastudio/resouce
+                     * 获取必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
+                     * @return FilePath 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
                      */
                     std::string GetFilePath() const;
 
                     /**
-                     * 设置文件所属路径，资源管理根路径为 /datastudio/resouce
-                     * @param FilePath 文件所属路径，资源管理根路径为 /datastudio/resouce
+                     * 设置必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
+                     * @param FilePath 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
                      */
                     void SetFilePath(const std::string& _filePath);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool NewFileHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
-                     * @return FilesSize 文件大小
+                     * 获取必填项，文件大小，与 Files 字段对应
+                     * @return FilesSize 必填项，文件大小，与 Files 字段对应
                      */
                     std::vector<std::string> GetFilesSize() const;
 
                     /**
-                     * 设置文件大小
-                     * @param FilesSize 文件大小
+                     * 设置必填项，文件大小，与 Files 字段对应
+                     * @param FilesSize 必填项，文件大小，与 Files 字段对应
                      */
                     void SetFilesSize(const std::vector<std::string>& _filesSize);
 
@@ -171,19 +171,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * 项目ID，必填项
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 文件名
+                     * 文件名，必填项
                      */
                     std::vector<std::string> m_files;
                     bool m_filesHasBeenSet;
 
                     /**
-                     * 文件所属路径，资源管理根路径为 /datastudio/resouce
+                     * 必填项，文件所属路径，资源管理根路径为 /datastudio/resource/项目ID/文件夹名
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_newFileHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * 必填项，文件大小，与 Files 字段对应
                      */
                     std::vector<std::string> m_filesSize;
                     bool m_filesSizeHasBeenSet;

@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/UpstreamInfo.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyUpstreamResultInfo.h>
 
 
 namespace TencentCloud
@@ -50,7 +50,7 @@ namespace TencentCloud
                      * @return Result 返回修改后的后端通道信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    UpstreamInfo GetResult() const;
+                    ModifyUpstreamResultInfo GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -64,7 +64,7 @@ namespace TencentCloud
                      * 返回修改后的后端通道信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    UpstreamInfo m_result;
+                    ModifyUpstreamResultInfo m_result;
                     bool m_resultHasBeenSet;
 
                 };

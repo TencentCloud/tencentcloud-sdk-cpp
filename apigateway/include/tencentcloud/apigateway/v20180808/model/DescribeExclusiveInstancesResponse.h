@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/InstanceInfo.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesResult.h>
 
 
 namespace TencentCloud
@@ -48,7 +48,7 @@ namespace TencentCloud
                      * 获取独享实例列表查询结果
                      * @return Result 独享实例列表查询结果
                      */
-                    InstanceInfo GetResult() const;
+                    DescribeExclusiveInstancesResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -61,7 +61,7 @@ namespace TencentCloud
                     /**
                      * 独享实例列表查询结果
                      */
-                    InstanceInfo m_result;
+                    DescribeExclusiveInstancesResult m_result;
                     bool m_resultHasBeenSet;
 
                 };

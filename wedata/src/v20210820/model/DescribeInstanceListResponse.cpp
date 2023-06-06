@@ -24,7 +24,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeInstanceListResponse::DescribeInstanceListResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_instanceListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,36 @@ CoreInternalOutcome DescribeInstanceListResponse::Deserialize(const string &payl
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceList") && !rsp["InstanceList"].IsNull())
+    {
+        if (!rsp["InstanceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceList.push_back(item);
+        }
+        m_instanceListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +120,29 @@ string DescribeInstanceListResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceList.begin(); itr != m_instanceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +165,26 @@ string DescribeInstanceListResponse::GetData() const
 bool DescribeInstanceListResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<InstanceList> DescribeInstanceListResponse::GetInstanceList() const
+{
+    return m_instanceList;
+}
+
+bool DescribeInstanceListResponse::InstanceListHasBeenSet() const
+{
+    return m_instanceListHasBeenSet;
+}
+
+int64_t DescribeInstanceListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeInstanceListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

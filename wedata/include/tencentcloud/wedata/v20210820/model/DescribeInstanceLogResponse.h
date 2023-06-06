@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/IntegrationInstanceLog.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceLogInfo 返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntegrationInstanceLog GetInstanceLogInfo() const;
+
+                    /**
+                     * 判断参数 InstanceLogInfo 是否已赋值
+                     * @return InstanceLogInfo 是否已赋值
+                     */
+                    bool InstanceLogInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +77,13 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 返回结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntegrationInstanceLog m_instanceLogInfo;
+                    bool m_instanceLogInfoHasBeenSet;
 
                 };
             }

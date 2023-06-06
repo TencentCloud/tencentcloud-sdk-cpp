@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务告警规则信息
+                     * 获取告警规则信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskAlarmInfos 任务告警规则信息
+                     * @return TaskAlarmInfos 告警规则信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskAlarmInfo> GetTaskAlarmInfos() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务告警规则信息
+                     * 告警规则信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskAlarmInfo> m_taskAlarmInfos;

@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取过滤的 bundle
+                     * @return Bundle 过滤的 bundle
+                     */
+                    std::string GetBundle() const;
+
+                    /**
+                     * 设置过滤的 bundle
+                     * @param Bundle 过滤的 bundle
+                     */
+                    void SetBundle(const std::string& _bundle);
+
+                    /**
+                     * 判断参数 Bundle 是否已赋值
+                     * @return Bundle 是否已赋值
+                     */
+                    bool BundleHasBeenSet() const;
+
+                    /**
+                     * 获取bundle 所属的 broker ip 地址，支持模糊查询
+                     * @return OwnerBroker bundle 所属的 broker ip 地址，支持模糊查询
+                     */
+                    std::string GetOwnerBroker() const;
+
+                    /**
+                     * 设置bundle 所属的 broker ip 地址，支持模糊查询
+                     * @param OwnerBroker bundle 所属的 broker ip 地址，支持模糊查询
+                     */
+                    void SetOwnerBroker(const std::string& _ownerBroker);
+
+                    /**
+                     * 判断参数 OwnerBroker 是否已赋值
+                     * @return OwnerBroker 是否已赋值
+                     */
+                    bool OwnerBrokerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 过滤的 bundle
+                     */
+                    std::string m_bundle;
+                    bool m_bundleHasBeenSet;
+
+                    /**
+                     * bundle 所属的 broker ip 地址，支持模糊查询
+                     */
+                    std::string m_ownerBroker;
+                    bool m_ownerBrokerHasBeenSet;
 
                 };
             }

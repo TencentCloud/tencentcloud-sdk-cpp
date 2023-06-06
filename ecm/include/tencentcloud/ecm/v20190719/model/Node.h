@@ -197,6 +197,24 @@ namespace TencentCloud
                      */
                     bool ISPNumHasBeenSet() const;
 
+                    /**
+                     * 获取节点是否支持LB
+                     * @return LBSupported 节点是否支持LB
+                     */
+                    bool GetLBSupported() const;
+
+                    /**
+                     * 设置节点是否支持LB
+                     * @param LBSupported 节点是否支持LB
+                     */
+                    void SetLBSupported(const bool& _lBSupported);
+
+                    /**
+                     * 判断参数 LBSupported 是否已赋值
+                     * @return LBSupported 是否已赋值
+                     */
+                    bool LBSupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +264,12 @@ namespace TencentCloud
                      */
                     int64_t m_iSPNum;
                     bool m_iSPNumHasBeenSet;
+
+                    /**
+                     * 节点是否支持LB
+                     */
+                    bool m_lBSupported;
+                    bool m_lBSupportedHasBeenSet;
 
                 };
             }

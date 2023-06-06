@@ -114,28 +114,6 @@ namespace TencentCloud
                     bool UsagePlanDescHasBeenSet() const;
 
                     /**
-                     * 获取初始化调用次数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InitQuota 初始化调用次数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetInitQuota() const;
-
-                    /**
-                     * 设置初始化调用次数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InitQuota 初始化调用次数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetInitQuota(const int64_t& _initQuota);
-
-                    /**
-                     * 判断参数 InitQuota 是否已赋值
-                     * @return InitQuota 是否已赋值
-                     */
-                    bool InitQuotaHasBeenSet() const;
-
-                    /**
                      * 获取每秒请求限制数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestNumPreSec 每秒请求限制数。
@@ -178,28 +156,6 @@ namespace TencentCloud
                      * @return MaxRequestNum 是否已赋值
                      */
                     bool MaxRequestNumHasBeenSet() const;
-
-                    /**
-                     * 获取是否隐藏。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsHide 是否隐藏。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetIsHide() const;
-
-                    /**
-                     * 设置是否隐藏。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsHide 是否隐藏。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetIsHide(const int64_t& _isHide);
-
-                    /**
-                     * 判断参数 IsHide 是否已赋值
-                     * @return IsHide 是否已赋值
-                     */
-                    bool IsHideHasBeenSet() const;
 
                     /**
                      * 获取创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
@@ -357,13 +313,6 @@ namespace TencentCloud
                     bool m_usagePlanDescHasBeenSet;
 
                     /**
-                     * 初始化调用次数。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_initQuota;
-                    bool m_initQuotaHasBeenSet;
-
-                    /**
                      * 每秒请求限制数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -376,13 +325,6 @@ namespace TencentCloud
                      */
                     int64_t m_maxRequestNum;
                     bool m_maxRequestNumHasBeenSet;
-
-                    /**
-                     * 是否隐藏。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_isHide;
-                    bool m_isHideHasBeenSet;
 
                     /**
                      * 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。

@@ -28,7 +28,9 @@ DescribeNamespaceBundlesOptRequest::DescribeNamespaceBundlesOptRequest() :
     m_namespaceNameHasBeenSet(false),
     m_needMetricsHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_bundleHasBeenSet(false),
+    m_ownerBrokerHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeNamespaceBundlesOptRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_bundleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bundle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bundle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerBrokerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerBroker";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ownerBroker.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeNamespaceBundlesOptRequest::SetOffset(const int64_t& _offset)
 bool DescribeNamespaceBundlesOptRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeNamespaceBundlesOptRequest::GetBundle() const
+{
+    return m_bundle;
+}
+
+void DescribeNamespaceBundlesOptRequest::SetBundle(const string& _bundle)
+{
+    m_bundle = _bundle;
+    m_bundleHasBeenSet = true;
+}
+
+bool DescribeNamespaceBundlesOptRequest::BundleHasBeenSet() const
+{
+    return m_bundleHasBeenSet;
+}
+
+string DescribeNamespaceBundlesOptRequest::GetOwnerBroker() const
+{
+    return m_ownerBroker;
+}
+
+void DescribeNamespaceBundlesOptRequest::SetOwnerBroker(const string& _ownerBroker)
+{
+    m_ownerBroker = _ownerBroker;
+    m_ownerBrokerHasBeenSet = true;
+}
+
+bool DescribeNamespaceBundlesOptRequest::OwnerBrokerHasBeenSet() const
+{
+    return m_ownerBrokerHasBeenSet;
 }
 
 

@@ -126,6 +126,42 @@ namespace TencentCloud
                     bool ReplyToAddressesHasBeenSet() const;
 
                     /**
+                     * 获取抄送人邮箱地址，最多支持抄送20人。
+                     * @return Cc 抄送人邮箱地址，最多支持抄送20人。
+                     */
+                    std::vector<std::string> GetCc() const;
+
+                    /**
+                     * 设置抄送人邮箱地址，最多支持抄送20人。
+                     * @param Cc 抄送人邮箱地址，最多支持抄送20人。
+                     */
+                    void SetCc(const std::vector<std::string>& _cc);
+
+                    /**
+                     * 判断参数 Cc 是否已赋值
+                     * @return Cc 是否已赋值
+                     */
+                    bool CcHasBeenSet() const;
+
+                    /**
+                     * 获取密送人邮箱地址，最多支持抄送20人。
+                     * @return Bcc 密送人邮箱地址，最多支持抄送20人。
+                     */
+                    std::vector<std::string> GetBcc() const;
+
+                    /**
+                     * 设置密送人邮箱地址，最多支持抄送20人。
+                     * @param Bcc 密送人邮箱地址，最多支持抄送20人。
+                     */
+                    void SetBcc(const std::vector<std::string>& _bcc);
+
+                    /**
+                     * 判断参数 Bcc 是否已赋值
+                     * @return Bcc 是否已赋值
+                     */
+                    bool BccHasBeenSet() const;
+
+                    /**
                      * 获取使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      * @return Template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      */
@@ -242,6 +278,18 @@ namespace TencentCloud
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
+
+                    /**
+                     * 抄送人邮箱地址，最多支持抄送20人。
+                     */
+                    std::vector<std::string> m_cc;
+                    bool m_ccHasBeenSet;
+
+                    /**
+                     * 密送人邮箱地址，最多支持抄送20人。
+                     */
+                    std::vector<std::string> m_bcc;
+                    bool m_bccHasBeenSet;
 
                     /**
                      * 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项

@@ -100,6 +100,46 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否随实例删除。
+                     * @return DeleteWithInstance 是否随实例删除。
+                     */
+                    bool GetDeleteWithInstance() const;
+
+                    /**
+                     * 设置是否随实例删除。
+                     * @param DeleteWithInstance 是否随实例删除。
+                     */
+                    void SetDeleteWithInstance(const bool& _deleteWithInstance);
+
+                    /**
+                     * 判断参数 DeleteWithInstance 是否已赋值
+                     * @return DeleteWithInstance 是否已赋值
+                     */
+                    bool DeleteWithInstanceHasBeenSet() const;
+
+                    /**
+                     * 获取快照ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotId 快照ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置快照ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnapshotId 快照ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +159,19 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 是否随实例删除。
+                     */
+                    bool m_deleteWithInstance;
+                    bool m_deleteWithInstanceHasBeenSet;
+
+                    /**
+                     * 快照ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                 };
             }

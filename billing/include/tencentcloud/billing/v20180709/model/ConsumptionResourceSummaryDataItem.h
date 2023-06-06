@@ -280,6 +280,204 @@ namespace TencentCloud
                      */
                     bool ConsumptionTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取折前价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealCost 折前价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRealCost() const;
+
+                    /**
+                     * 设置折前价
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RealCost 折前价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRealCost(const std::string& _realCost);
+
+                    /**
+                     * 判断参数 RealCost 是否已赋值
+                     * @return RealCost 是否已赋值
+                     */
+                    bool RealCostHasBeenSet() const;
+
+                    /**
+                     * 获取费用起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeBeginTime 费用起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFeeBeginTime() const;
+
+                    /**
+                     * 设置费用起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeeBeginTime 费用起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeeBeginTime(const std::string& _feeBeginTime);
+
+                    /**
+                     * 判断参数 FeeBeginTime 是否已赋值
+                     * @return FeeBeginTime 是否已赋值
+                     */
+                    bool FeeBeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取费用结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeEndTime 费用结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFeeEndTime() const;
+
+                    /**
+                     * 设置费用结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeeEndTime 费用结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeeEndTime(const std::string& _feeEndTime);
+
+                    /**
+                     * 判断参数 FeeEndTime 是否已赋值
+                     * @return FeeEndTime 是否已赋值
+                     */
+                    bool FeeEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DayDiff 天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDayDiff() const;
+
+                    /**
+                     * 设置天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DayDiff 天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDayDiff(const std::string& _dayDiff);
+
+                    /**
+                     * 判断参数 DayDiff 是否已赋值
+                     * @return DayDiff 是否已赋值
+                     */
+                    bool DayDiffHasBeenSet() const;
+
+                    /**
+                     * 获取每日消耗
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DailyTotalCost 每日消耗
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDailyTotalCost() const;
+
+                    /**
+                     * 设置每日消耗
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DailyTotalCost 每日消耗
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDailyTotalCost(const std::string& _dailyTotalCost);
+
+                    /**
+                     * 判断参数 DailyTotalCost 是否已赋值
+                     * @return DailyTotalCost 是否已赋值
+                     */
+                    bool DailyTotalCostHasBeenSet() const;
+
+                    /**
+                     * 获取订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrderId 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrderId() const;
+
+                    /**
+                     * 设置订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrderId 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrderId(const std::string& _orderId);
+
+                    /**
+                     * 判断参数 OrderId 是否已赋值
+                     * @return OrderId 是否已赋值
+                     */
+                    bool OrderIdHasBeenSet() const;
+
+                    /**
+                     * 获取代金券
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoucherPayAmount 代金券
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVoucherPayAmount() const;
+
+                    /**
+                     * 设置代金券
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VoucherPayAmount 代金券
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVoucherPayAmount(const std::string& _voucherPayAmount);
+
+                    /**
+                     * 判断参数 VoucherPayAmount 是否已赋值
+                     * @return VoucherPayAmount 是否已赋值
+                     */
+                    bool VoucherPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取赠送金
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IncentivePayAmount 赠送金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIncentivePayAmount() const;
+
+                    /**
+                     * 设置赠送金
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IncentivePayAmount 赠送金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIncentivePayAmount(const std::string& _incentivePayAmount);
+
+                    /**
+                     * 判断参数 IncentivePayAmount 是否已赋值
+                     * @return IncentivePayAmount 是否已赋值
+                     */
+                    bool IncentivePayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分成金
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransferPayAmount 分成金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTransferPayAmount() const;
+
+                    /**
+                     * 设置分成金
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TransferPayAmount 分成金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransferPayAmount(const std::string& _transferPayAmount);
+
+                    /**
+                     * 判断参数 TransferPayAmount 是否已赋值
+                     * @return TransferPayAmount 是否已赋值
+                     */
+                    bool TransferPayAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +557,69 @@ namespace TencentCloud
                      */
                     std::string m_consumptionTypeName;
                     bool m_consumptionTypeNameHasBeenSet;
+
+                    /**
+                     * 折前价
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_realCost;
+                    bool m_realCostHasBeenSet;
+
+                    /**
+                     * 费用起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_feeBeginTime;
+                    bool m_feeBeginTimeHasBeenSet;
+
+                    /**
+                     * 费用结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_feeEndTime;
+                    bool m_feeEndTimeHasBeenSet;
+
+                    /**
+                     * 天数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dayDiff;
+                    bool m_dayDiffHasBeenSet;
+
+                    /**
+                     * 每日消耗
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dailyTotalCost;
+                    bool m_dailyTotalCostHasBeenSet;
+
+                    /**
+                     * 订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orderId;
+                    bool m_orderIdHasBeenSet;
+
+                    /**
+                     * 代金券
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voucherPayAmount;
+                    bool m_voucherPayAmountHasBeenSet;
+
+                    /**
+                     * 赠送金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_incentivePayAmount;
+                    bool m_incentivePayAmountHasBeenSet;
+
+                    /**
+                     * 分成金
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_transferPayAmount;
+                    bool m_transferPayAmountHasBeenSet;
 
                 };
             }

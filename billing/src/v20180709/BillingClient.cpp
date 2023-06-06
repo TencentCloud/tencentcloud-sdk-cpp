@@ -212,6 +212,49 @@ BillingClient::DescribeBillResourceSummaryOutcomeCallable BillingClient::Describ
     return task->get_future();
 }
 
+BillingClient::DescribeBillSummaryOutcome BillingClient::DescribeBillSummary(const DescribeBillSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillSummaryResponse rsp = DescribeBillSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillSummaryOutcome(rsp);
+        else
+            return DescribeBillSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillSummaryOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillSummaryAsync(const DescribeBillSummaryRequest& request, const DescribeBillSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillSummaryOutcomeCallable BillingClient::DescribeBillSummaryCallable(const DescribeBillSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeBillSummaryByPayModeOutcome BillingClient::DescribeBillSummaryByPayMode(const DescribeBillSummaryByPayModeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillSummaryByPayMode");

@@ -110,7 +110,7 @@ string DescribeExclusiveInstancesResponse::ToJsonString() const
 }
 
 
-InstanceInfo DescribeExclusiveInstancesResponse::GetResult() const
+DescribeExclusiveInstancesResult DescribeExclusiveInstancesResponse::GetResult() const
 {
     return m_result;
 }

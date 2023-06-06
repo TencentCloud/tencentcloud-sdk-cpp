@@ -23,7 +23,9 @@ using namespace std;
 DiskInfo::DiskInfo() :
     m_diskTypeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_deleteWithInstanceHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome DiskInfo::Deserialize(const rapidjson::Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeleteWithInstance") && !value["DeleteWithInstance"].IsNull())
+    {
+        if (!value["DeleteWithInstance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiskInfo.DeleteWithInstance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteWithInstance = value["DeleteWithInstance"].GetBool();
+        m_deleteWithInstanceHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapshotId") && !value["SnapshotId"].IsNull())
+    {
+        if (!value["SnapshotId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiskInfo.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotId = string(value["SnapshotId"].GetString());
+        m_snapshotIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void DiskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_deleteWithInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteWithInstance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteWithInstance, allocator);
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void DiskInfo::SetDiskSize(const int64_t& _diskSize)
 bool DiskInfo::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+bool DiskInfo::GetDeleteWithInstance() const
+{
+    return m_deleteWithInstance;
+}
+
+void DiskInfo::SetDeleteWithInstance(const bool& _deleteWithInstance)
+{
+    m_deleteWithInstance = _deleteWithInstance;
+    m_deleteWithInstanceHasBeenSet = true;
+}
+
+bool DiskInfo::DeleteWithInstanceHasBeenSet() const
+{
+    return m_deleteWithInstanceHasBeenSet;
+}
+
+string DiskInfo::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void DiskInfo::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool DiskInfo::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
 }
 

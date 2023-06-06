@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeInstanceLogListResponse::DescribeInstanceLogListResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_instanceLogListHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome DescribeInstanceLogListResponse::Deserialize(const string &p
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceLogList") && !rsp["InstanceLogList"].IsNull())
+    {
+        if (!rsp["InstanceLogList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceLogList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceLogList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceLogList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceLogList.push_back(item);
+        }
+        m_instanceLogListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string DescribeInstanceLogListResponse::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceLogListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceLogList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceLogList.begin(); itr != m_instanceLogList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string DescribeInstanceLogListResponse::GetData() const
 bool DescribeInstanceLogListResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<InstanceLogList> DescribeInstanceLogListResponse::GetInstanceLogList() const
+{
+    return m_instanceLogList;
+}
+
+bool DescribeInstanceLogListResponse::InstanceLogListHasBeenSet() const
+{
+    return m_instanceLogListHasBeenSet;
 }
 
 

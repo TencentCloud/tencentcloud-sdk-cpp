@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APISSTATUS_H_
-#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APISSTATUS_H_
+#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_DESCRIBEAPISSTATUSRESULTINFO_H_
+#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_DESCRIBEAPISSTATUSRESULTINFO_H_
 
 #include <string>
 #include <vector>
@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/DesApisStatus.h>
 
 
 namespace TencentCloud
@@ -38,11 +37,11 @@ namespace TencentCloud
                 /**
                 * 描述api列表状态
                 */
-                class ApisStatus : public AbstractModel
+                class DescribeApisStatusResultInfo : public AbstractModel
                 {
                 public:
-                    ApisStatus();
-                    ~ApisStatus() = default;
+                    DescribeApisStatusResultInfo();
+                    ~DescribeApisStatusResultInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -65,24 +64,6 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                    /**
-                     * 获取API 接口列表。
-                     * @return ApiIdStatusSet API 接口列表。
-                     */
-                    std::vector<DesApisStatus> GetApiIdStatusSet() const;
-
-                    /**
-                     * 设置API 接口列表。
-                     * @param ApiIdStatusSet API 接口列表。
-                     */
-                    void SetApiIdStatusSet(const std::vector<DesApisStatus>& _apiIdStatusSet);
-
-                    /**
-                     * 判断参数 ApiIdStatusSet 是否已赋值
-                     * @return ApiIdStatusSet 是否已赋值
-                     */
-                    bool ApiIdStatusSetHasBeenSet() const;
-
                 private:
 
                     /**
@@ -91,16 +72,10 @@ namespace TencentCloud
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
-                    /**
-                     * API 接口列表。
-                     */
-                    std::vector<DesApisStatus> m_apiIdStatusSet;
-                    bool m_apiIdStatusSetHasBeenSet;
-
                 };
             }
         }
     }
 }
 
-#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APISSTATUS_H_
+#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_DESCRIBEAPISSTATUSRESULTINFO_H_

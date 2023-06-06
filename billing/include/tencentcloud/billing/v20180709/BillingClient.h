@@ -31,6 +31,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeBillListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillSummaryResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByPayModeResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h>
@@ -89,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillResourceSummaryResponse> DescribeBillResourceSummaryOutcome;
                 typedef std::future<DescribeBillResourceSummaryOutcome> DescribeBillResourceSummaryOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillResourceSummaryRequest&, DescribeBillResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillResourceSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillSummaryResponse> DescribeBillSummaryOutcome;
+                typedef std::future<DescribeBillSummaryOutcome> DescribeBillSummaryOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryRequest&, DescribeBillSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillSummaryByPayModeResponse> DescribeBillSummaryByPayModeOutcome;
                 typedef std::future<DescribeBillSummaryByPayModeOutcome> DescribeBillSummaryByPayModeOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillSummaryByPayModeRequest&, DescribeBillSummaryByPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillSummaryByPayModeAsyncHandler;
@@ -178,6 +183,15 @@ namespace TencentCloud
                 DescribeBillResourceSummaryOutcome DescribeBillResourceSummary(const Model::DescribeBillResourceSummaryRequest &request);
                 void DescribeBillResourceSummaryAsync(const Model::DescribeBillResourceSummaryRequest& request, const DescribeBillResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillResourceSummaryOutcomeCallable DescribeBillResourceSummaryCallable(const Model::DescribeBillResourceSummaryRequest& request);
+
+                /**
+                 *该接口支持通过传参，按照产品、项目、地域、计费模式和标签五个维度获取账单费用明细。
+                 * @param req DescribeBillSummaryRequest
+                 * @return DescribeBillSummaryOutcome
+                 */
+                DescribeBillSummaryOutcome DescribeBillSummary(const Model::DescribeBillSummaryRequest &request);
+                void DescribeBillSummaryAsync(const Model::DescribeBillSummaryRequest& request, const DescribeBillSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillSummaryOutcomeCallable DescribeBillSummaryCallable(const Model::DescribeBillSummaryRequest& request);
 
                 /**
                  *获取按计费模式汇总费用分布

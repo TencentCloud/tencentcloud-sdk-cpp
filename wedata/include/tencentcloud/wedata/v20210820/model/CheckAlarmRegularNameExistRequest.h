@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
-                     */
-                    std::string GetTaskId() const;
-
-                    /**
-                     * 设置任务ID
-                     * @param TaskId 任务ID
-                     */
-                    void SetTaskId(const std::string& _taskId);
-
-                    /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
-                     */
-                    bool TaskIdHasBeenSet() const;
-
-                    /**
                      * 获取规则名称
                      * @return AlarmRegularName 规则名称
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return AlarmRegularName 是否已赋值
                      */
                     bool AlarmRegularNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务ID
+                     * @return TaskId 任务ID
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务ID
+                     * @param TaskId 任务ID
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取主键ID
@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型:201.实时,202.离线
+                     * @return TaskType 任务类型:201.实时,202.离线
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型:201.实时,202.离线
+                     * @param TaskType 任务类型:201.实时,202.离线
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,22 +141,28 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务ID
-                     */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
-
-                    /**
                      * 规则名称
                      */
                     std::string m_alarmRegularName;
                     bool m_alarmRegularNameHasBeenSet;
 
                     /**
+                     * 任务ID
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
                      * 主键ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 任务类型:201.实时,202.离线
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

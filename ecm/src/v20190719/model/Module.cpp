@@ -36,7 +36,8 @@ Module::Module() :
     m_defaultBandwidthInHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
-    m_dataDisksHasBeenSet(false)
+    m_dataDisksHasBeenSet(false),
+    m_disableWanIpHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
         m_dataDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableWanIp") && !value["DisableWanIp"].IsNull())
+    {
+        if (!value["DisableWanIp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Module.DisableWanIp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableWanIp = value["DisableWanIp"].GetInt64();
+        m_disableWanIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -404,6 +415,14 @@ void Module::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_disableWanIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableWanIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableWanIp, allocator);
     }
 
 }
@@ -663,5 +682,21 @@ void Module::SetDataDisks(const vector<DataDisk>& _dataDisks)
 bool Module::DataDisksHasBeenSet() const
 {
     return m_dataDisksHasBeenSet;
+}
+
+int64_t Module::GetDisableWanIp() const
+{
+    return m_disableWanIp;
+}
+
+void Module::SetDisableWanIp(const int64_t& _disableWanIp)
+{
+    m_disableWanIp = _disableWanIp;
+    m_disableWanIpHasBeenSet = true;
+}
+
+bool Module::DisableWanIpHasBeenSet() const
+{
+    return m_disableWanIpHasBeenSet;
 }
 

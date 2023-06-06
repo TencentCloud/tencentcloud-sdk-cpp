@@ -499,6 +499,182 @@ namespace TencentCloud
                      */
                     bool WeComHookHasBeenSet() const;
 
+                    /**
+                     * 获取最近操作时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 最近操作时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置最近操作时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 最近操作时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作人Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperatorUin 最近操作人Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperatorUin() const;
+
+                    /**
+                     * 设置最近操作人Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperatorUin 最近操作人Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperatorUin(const std::string& _operatorUin);
+
+                    /**
+                     * 判断参数 OperatorUin 是否已赋值
+                     * @return OperatorUin 是否已赋值
+                     */
+                    bool OperatorUinHasBeenSet() const;
+
+                    /**
+                     * 获取关联任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskCount 关联任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskCount() const;
+
+                    /**
+                     * 设置关联任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskCount 关联任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskCount(const int64_t& _taskCount);
+
+                    /**
+                     * 判断参数 TaskCount 是否已赋值
+                     * @return TaskCount 是否已赋值
+                     */
+                    bool TaskCountHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象类型,1:所有任务,2:指定任务,3:指定责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorType 监控对象类型,1:所有任务,2:指定任务,3:指定责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMonitorType() const;
+
+                    /**
+                     * 设置监控对象类型,1:所有任务,2:指定任务,3:指定责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MonitorType 监控对象类型,1:所有任务,2:指定任务,3:指定责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMonitorType(const int64_t& _monitorType);
+
+                    /**
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
+                     */
+                    bool MonitorTypeHasBeenSet() const;
+
+                    /**
+                     * 获取监控对象列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorObjectIds 监控对象列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetMonitorObjectIds() const;
+
+                    /**
+                     * 设置监控对象列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MonitorObjectIds 监控对象列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMonitorObjectIds(const std::vector<std::string>& _monitorObjectIds);
+
+                    /**
+                     * 判断参数 MonitorObjectIds 是否已赋值
+                     * @return MonitorObjectIds 是否已赋值
+                     */
+                    bool MonitorObjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次告警的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestAlarmInstanceId 最近一次告警的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestAlarmInstanceId() const;
+
+                    /**
+                     * 设置最近一次告警的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestAlarmInstanceId 最近一次告警的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestAlarmInstanceId(const std::string& _latestAlarmInstanceId);
+
+                    /**
+                     * 判断参数 LatestAlarmInstanceId 是否已赋值
+                     * @return LatestAlarmInstanceId 是否已赋值
+                     */
+                    bool LatestAlarmInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次告警时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestAlarmTime 最近一次告警时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestAlarmTime() const;
+
+                    /**
+                     * 设置最近一次告警时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestAlarmTime 最近一次告警时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestAlarmTime(const std::string& _latestAlarmTime);
+
+                    /**
+                     * 判断参数 LatestAlarmTime 是否已赋值
+                     * @return LatestAlarmTime 是否已赋值
+                     */
+                    bool LatestAlarmTimeHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -646,6 +822,62 @@ namespace TencentCloud
                      */
                     std::string m_weComHook;
                     bool m_weComHookHasBeenSet;
+
+                    /**
+                     * 最近操作时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 最近操作人Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operatorUin;
+                    bool m_operatorUinHasBeenSet;
+
+                    /**
+                     * 关联任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskCount;
+                    bool m_taskCountHasBeenSet;
+
+                    /**
+                     * 监控对象类型,1:所有任务,2:指定任务,3:指定责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
+
+                    /**
+                     * 监控对象列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_monitorObjectIds;
+                    bool m_monitorObjectIdsHasBeenSet;
+
+                    /**
+                     * 最近一次告警的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestAlarmInstanceId;
+                    bool m_latestAlarmInstanceIdHasBeenSet;
+
+                    /**
+                     * 最近一次告警时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestAlarmTime;
+                    bool m_latestAlarmTimeHasBeenSet;
+
+                    /**
+                     * 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

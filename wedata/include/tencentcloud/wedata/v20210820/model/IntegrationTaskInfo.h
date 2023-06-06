@@ -676,6 +676,336 @@ namespace TencentCloud
                      */
                     bool SubmitHasBeenSet() const;
 
+                    /**
+                     * 获取MYSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputDatasourceType MYSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInputDatasourceType() const;
+
+                    /**
+                     * 设置MYSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InputDatasourceType MYSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInputDatasourceType(const std::string& _inputDatasourceType);
+
+                    /**
+                     * 判断参数 InputDatasourceType 是否已赋值
+                     * @return InputDatasourceType 是否已赋值
+                     */
+                    bool InputDatasourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputDatasourceType DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOutputDatasourceType() const;
+
+                    /**
+                     * 设置DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OutputDatasourceType DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOutputDatasourceType(const std::string& _outputDatasourceType);
+
+                    /**
+                     * 判断参数 OutputDatasourceType 是否已赋值
+                     * @return OutputDatasourceType 是否已赋值
+                     */
+                    bool OutputDatasourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取读取条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumRecordsIn 读取条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNumRecordsIn() const;
+
+                    /**
+                     * 设置读取条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NumRecordsIn 读取条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNumRecordsIn(const int64_t& _numRecordsIn);
+
+                    /**
+                     * 判断参数 NumRecordsIn 是否已赋值
+                     * @return NumRecordsIn 是否已赋值
+                     */
+                    bool NumRecordsInHasBeenSet() const;
+
+                    /**
+                     * 获取写入条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumRecordsOut 写入条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNumRecordsOut() const;
+
+                    /**
+                     * 设置写入条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NumRecordsOut 写入条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNumRecordsOut(const int64_t& _numRecordsOut);
+
+                    /**
+                     * 判断参数 NumRecordsOut 是否已赋值
+                     * @return NumRecordsOut 是否已赋值
+                     */
+                    bool NumRecordsOutHasBeenSet() const;
+
+                    /**
+                     * 获取读取延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReaderDelay 读取延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetReaderDelay() const;
+
+                    /**
+                     * 设置读取延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReaderDelay 读取延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReaderDelay(const double& _readerDelay);
+
+                    /**
+                     * 判断参数 ReaderDelay 是否已赋值
+                     * @return ReaderDelay 是否已赋值
+                     */
+                    bool ReaderDelayHasBeenSet() const;
+
+                    /**
+                     * 获取重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumRestarts 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNumRestarts() const;
+
+                    /**
+                     * 设置重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NumRestarts 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNumRestarts(const int64_t& _numRestarts);
+
+                    /**
+                     * 判断参数 NumRestarts 是否已赋值
+                     * @return NumRestarts 是否已赋值
+                     */
+                    bool NumRestartsHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 任务更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置任务更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 任务更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务最后一次运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastRunTime 任务最后一次运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLastRunTime() const;
+
+                    /**
+                     * 设置任务最后一次运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastRunTime 任务最后一次运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastRunTime(const std::string& _lastRunTime);
+
+                    /**
+                     * 判断参数 LastRunTime 是否已赋值
+                     * @return LastRunTime 是否已赋值
+                     */
+                    bool LastRunTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务停止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StopTime 任务停止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStopTime() const;
+
+                    /**
+                     * 设置任务停止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StopTime 任务停止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStopTime(const std::string& _stopTime);
+
+                    /**
+                     * 判断参数 StopTime 是否已赋值
+                     * @return StopTime 是否已赋值
+                     */
+                    bool StopTimeHasBeenSet() const;
+
+                    /**
+                     * 获取作业是否已提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasVersion 作业是否已提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetHasVersion() const;
+
+                    /**
+                     * 设置作业是否已提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HasVersion 作业是否已提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHasVersion(const bool& _hasVersion);
+
+                    /**
+                     * 判断参数 HasVersion 是否已赋值
+                     * @return HasVersion 是否已赋值
+                     */
+                    bool HasVersionHasBeenSet() const;
+
+                    /**
+                     * 获取任务是否被锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Locked 任务是否被锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLocked() const;
+
+                    /**
+                     * 设置任务是否被锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Locked 任务是否被锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocked(const bool& _locked);
+
+                    /**
+                     * 判断参数 Locked 是否已赋值
+                     * @return Locked 是否已赋值
+                     */
+                    bool LockedHasBeenSet() const;
+
+                    /**
+                     * 获取任务锁定人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Locker 任务锁定人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocker() const;
+
+                    /**
+                     * 设置任务锁定人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Locker 任务锁定人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocker(const std::string& _locker);
+
+                    /**
+                     * 判断参数 Locker 是否已赋值
+                     * @return Locker 是否已赋值
+                     */
+                    bool LockerHasBeenSet() const;
+
+                    /**
+                     * 获取耗费资源量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunningCu 耗费资源量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetRunningCu() const;
+
+                    /**
+                     * 设置耗费资源量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RunningCu 耗费资源量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRunningCu(const double& _runningCu);
+
+                    /**
+                     * 判断参数 RunningCu 是否已赋值
+                     * @return RunningCu 是否已赋值
+                     */
+                    bool RunningCuHasBeenSet() const;
+
+                    /**
+                     * 获取该任务关联的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskAlarmRegularList 该任务关联的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTaskAlarmRegularList() const;
+
+                    /**
+                     * 设置该任务关联的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskAlarmRegularList 该任务关联的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskAlarmRegularList(const std::vector<std::string>& _taskAlarmRegularList);
+
+                    /**
+                     * 判断参数 TaskAlarmRegularList 是否已赋值
+                     * @return TaskAlarmRegularList 是否已赋值
+                     */
+                    bool TaskAlarmRegularListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -877,6 +1207,111 @@ namespace TencentCloud
                      */
                     bool m_submit;
                     bool m_submitHasBeenSet;
+
+                    /**
+                     * MYSQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inputDatasourceType;
+                    bool m_inputDatasourceTypeHasBeenSet;
+
+                    /**
+                     * DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_outputDatasourceType;
+                    bool m_outputDatasourceTypeHasBeenSet;
+
+                    /**
+                     * 读取条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_numRecordsIn;
+                    bool m_numRecordsInHasBeenSet;
+
+                    /**
+                     * 写入条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_numRecordsOut;
+                    bool m_numRecordsOutHasBeenSet;
+
+                    /**
+                     * 读取延迟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_readerDelay;
+                    bool m_readerDelayHasBeenSet;
+
+                    /**
+                     * 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_numRestarts;
+                    bool m_numRestartsHasBeenSet;
+
+                    /**
+                     * 任务创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 任务更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 任务最后一次运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastRunTime;
+                    bool m_lastRunTimeHasBeenSet;
+
+                    /**
+                     * 任务停止时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stopTime;
+                    bool m_stopTimeHasBeenSet;
+
+                    /**
+                     * 作业是否已提交
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasVersion;
+                    bool m_hasVersionHasBeenSet;
+
+                    /**
+                     * 任务是否被锁定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_locked;
+                    bool m_lockedHasBeenSet;
+
+                    /**
+                     * 任务锁定人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_locker;
+                    bool m_lockerHasBeenSet;
+
+                    /**
+                     * 耗费资源量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_runningCu;
+                    bool m_runningCuHasBeenSet;
+
+                    /**
+                     * 该任务关联的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_taskAlarmRegularList;
+                    bool m_taskAlarmRegularListHasBeenSet;
 
                 };
             }

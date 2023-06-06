@@ -110,7 +110,7 @@ string ModifyUpstreamResponse::ToJsonString() const
 }
 
 
-UpstreamInfo ModifyUpstreamResponse::GetResult() const
+ModifyUpstreamResultInfo ModifyUpstreamResponse::GetResult() const
 {
     return m_result;
 }

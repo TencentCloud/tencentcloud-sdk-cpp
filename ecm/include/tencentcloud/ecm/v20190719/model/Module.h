@@ -355,6 +355,24 @@ DELETEFAILED：删除失败。
                      */
                     bool DataDisksHasBeenSet() const;
 
+                    /**
+                     * 获取是否禁止外网ip
+                     * @return DisableWanIp 是否禁止外网ip
+                     */
+                    int64_t GetDisableWanIp() const;
+
+                    /**
+                     * 设置是否禁止外网ip
+                     * @param DisableWanIp 是否禁止外网ip
+                     */
+                    void SetDisableWanIp(const int64_t& _disableWanIp);
+
+                    /**
+                     * 判断参数 DisableWanIp 是否已赋值
+                     * @return DisableWanIp 是否已赋值
+                     */
+                    bool DisableWanIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +474,12 @@ DELETEFAILED：删除失败。
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 是否禁止外网ip
+                     */
+                    int64_t m_disableWanIp;
+                    bool m_disableWanIpHasBeenSet;
 
                 };
             }

@@ -45,24 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
-                     */
-                    std::string GetTaskId() const;
-
-                    /**
-                     * 设置任务ID
-                     * @param TaskId 任务ID
-                     */
-                    void SetTaskId(const std::string& _taskId);
-
-                    /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
-                     */
-                    bool TaskIdHasBeenSet() const;
-
-                    /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
                      */
@@ -79,24 +61,6 @@ namespace TencentCloud
                      * @return ProjectId 是否已赋值
                      */
                     bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取任务类型(201代表实时任务，202代表离线任务)
-                     * @return TaskType 任务类型(201代表实时任务，202代表离线任务)
-                     */
-                    int64_t GetTaskType() const;
-
-                    /**
-                     * 设置任务类型(201代表实时任务，202代表离线任务)
-                     * @param TaskType 任务类型(201代表实时任务，202代表离线任务)
-                     */
-                    void SetTaskType(const int64_t& _taskType);
-
-                    /**
-                     * 判断参数 TaskType 是否已赋值
-                     * @return TaskType 是否已赋值
-                     */
-                    bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取当前页
@@ -170,25 +134,49 @@ namespace TencentCloud
                      */
                     bool OrderFieldsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取任务ID
+                     * @return TaskId 任务ID
+                     */
+                    std::string GetTaskId() const;
 
                     /**
-                     * 任务ID
+                     * 设置任务ID
+                     * @param TaskId 任务ID
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型(201代表实时任务，202代表离线任务)
+                     * @return TaskType 任务类型(201代表实时任务，202代表离线任务)
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型(201代表实时任务，202代表离线任务)
+                     * @param TaskType 任务类型(201代表实时任务，202代表离线任务)
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                private:
 
                     /**
                      * 项目ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 任务类型(201代表实时任务，202代表离线任务)
-                     */
-                    int64_t m_taskType;
-                    bool m_taskTypeHasBeenSet;
 
                     /**
                      * 当前页
@@ -213,6 +201,18 @@ namespace TencentCloud
                      */
                     std::vector<OrderField> m_orderFields;
                     bool m_orderFieldsHasBeenSet;
+
+                    /**
+                     * 任务ID
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 任务类型(201代表实时任务，202代表离线任务)
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

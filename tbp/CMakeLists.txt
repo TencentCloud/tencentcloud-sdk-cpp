@@ -21,10 +21,12 @@ set(tbp_public_header
 
 set(tbp_public_header_model
   include/tencentcloud/tbp/v20190311/model/TextProcessResponse.h
+  include/tencentcloud/tbp/v20190311/model/Group.h
   include/tencentcloud/tbp/v20190311/model/SlotInfo.h
   include/tencentcloud/tbp/v20190311/model/TextResetRequest.h
   include/tencentcloud/tbp/v20190311/model/ResetRequest.h
   include/tencentcloud/tbp/v20190311/model/TextResetResponse.h
+  include/tencentcloud/tbp/v20190311/model/ResponseMessage.h
   include/tencentcloud/tbp/v20190311/model/CreateBotResponse.h
   include/tencentcloud/tbp/v20190311/model/ResetResponse.h
   include/tencentcloud/tbp/v20190311/model/CreateBotRequest.h
@@ -42,10 +44,12 @@ set(tbp_src
   src/v20190311/TbpClient.cpp
   src/v20190627/TbpClient.cpp
   src/v20190311/model/TextProcessResponse.cpp
+  src/v20190311/model/Group.cpp
   src/v20190311/model/SlotInfo.cpp
   src/v20190311/model/TextResetRequest.cpp
   src/v20190311/model/ResetRequest.cpp
   src/v20190311/model/TextResetResponse.cpp
+  src/v20190311/model/ResponseMessage.cpp
   src/v20190311/model/CreateBotResponse.cpp
   src/v20190311/model/ResetResponse.cpp
   src/v20190311/model/CreateBotRequest.cpp

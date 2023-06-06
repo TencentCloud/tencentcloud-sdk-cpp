@@ -24,10 +24,8 @@ UsagePlanInfo::UsagePlanInfo() :
     m_usagePlanIdHasBeenSet(false),
     m_usagePlanNameHasBeenSet(false),
     m_usagePlanDescHasBeenSet(false),
-    m_initQuotaHasBeenSet(false),
     m_maxRequestNumPreSecHasBeenSet(false),
     m_maxRequestNumHasBeenSet(false),
-    m_isHideHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
     m_bindSecretIdTotalCountHasBeenSet(false),
@@ -72,16 +70,6 @@ CoreInternalOutcome UsagePlanInfo::Deserialize(const rapidjson::Value &value)
         m_usagePlanDescHasBeenSet = true;
     }
 
-    if (value.HasMember("InitQuota") && !value["InitQuota"].IsNull())
-    {
-        if (!value["InitQuota"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `UsagePlanInfo.InitQuota` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_initQuota = value["InitQuota"].GetInt64();
-        m_initQuotaHasBeenSet = true;
-    }
-
     if (value.HasMember("MaxRequestNumPreSec") && !value["MaxRequestNumPreSec"].IsNull())
     {
         if (!value["MaxRequestNumPreSec"].IsInt64())
@@ -100,16 +88,6 @@ CoreInternalOutcome UsagePlanInfo::Deserialize(const rapidjson::Value &value)
         }
         m_maxRequestNum = value["MaxRequestNum"].GetInt64();
         m_maxRequestNumHasBeenSet = true;
-    }
-
-    if (value.HasMember("IsHide") && !value["IsHide"].IsNull())
-    {
-        if (!value["IsHide"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `UsagePlanInfo.IsHide` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isHide = value["IsHide"].GetInt64();
-        m_isHideHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
@@ -216,14 +194,6 @@ void UsagePlanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_usagePlanDesc.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_initQuotaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InitQuota";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_initQuota, allocator);
-    }
-
     if (m_maxRequestNumPreSecHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -238,14 +208,6 @@ void UsagePlanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MaxRequestNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRequestNum, allocator);
-    }
-
-    if (m_isHideHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsHide";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isHide, allocator);
     }
 
     if (m_createdTimeHasBeenSet)
@@ -359,22 +321,6 @@ bool UsagePlanInfo::UsagePlanDescHasBeenSet() const
     return m_usagePlanDescHasBeenSet;
 }
 
-int64_t UsagePlanInfo::GetInitQuota() const
-{
-    return m_initQuota;
-}
-
-void UsagePlanInfo::SetInitQuota(const int64_t& _initQuota)
-{
-    m_initQuota = _initQuota;
-    m_initQuotaHasBeenSet = true;
-}
-
-bool UsagePlanInfo::InitQuotaHasBeenSet() const
-{
-    return m_initQuotaHasBeenSet;
-}
-
 int64_t UsagePlanInfo::GetMaxRequestNumPreSec() const
 {
     return m_maxRequestNumPreSec;
@@ -405,22 +351,6 @@ void UsagePlanInfo::SetMaxRequestNum(const int64_t& _maxRequestNum)
 bool UsagePlanInfo::MaxRequestNumHasBeenSet() const
 {
     return m_maxRequestNumHasBeenSet;
-}
-
-int64_t UsagePlanInfo::GetIsHide() const
-{
-    return m_isHide;
-}
-
-void UsagePlanInfo::SetIsHide(const int64_t& _isHide)
-{
-    m_isHide = _isHide;
-    m_isHideHasBeenSet = true;
-}
-
-bool UsagePlanInfo::IsHideHasBeenSet() const
-{
-    return m_isHideHasBeenSet;
 }
 
 string UsagePlanInfo::GetCreatedTime() const

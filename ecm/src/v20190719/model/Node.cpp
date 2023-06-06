@@ -28,7 +28,8 @@ Node::Node() :
     m_cityHasBeenSet(false),
     m_regionInfoHasBeenSet(false),
     m_iSPSetHasBeenSet(false),
-    m_iSPNumHasBeenSet(false)
+    m_iSPNumHasBeenSet(false),
+    m_lBSupportedHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,16 @@ CoreInternalOutcome Node::Deserialize(const rapidjson::Value &value)
         m_iSPNumHasBeenSet = true;
     }
 
+    if (value.HasMember("LBSupported") && !value["LBSupported"].IsNull())
+    {
+        if (!value["LBSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Node.LBSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_lBSupported = value["LBSupported"].GetBool();
+        m_lBSupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void Node::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ISPNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iSPNum, allocator);
+    }
+
+    if (m_lBSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LBSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lBSupported, allocator);
     }
 
 }
@@ -382,5 +401,21 @@ void Node::SetISPNum(const int64_t& _iSPNum)
 bool Node::ISPNumHasBeenSet() const
 {
     return m_iSPNumHasBeenSet;
+}
+
+bool Node::GetLBSupported() const
+{
+    return m_lBSupported;
+}
+
+void Node::SetLBSupported(const bool& _lBSupported)
+{
+    m_lBSupported = _lBSupported;
+    m_lBSupportedHasBeenSet = true;
+}
+
+bool Node::LBSupportedHasBeenSet() const
+{
+    return m_lBSupportedHasBeenSet;
 }
 

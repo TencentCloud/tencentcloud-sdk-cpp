@@ -24,9 +24,10 @@ using namespace std;
 
 CheckAlarmRegularNameExistRequest::CheckAlarmRegularNameExistRequest() :
     m_projectIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
     m_alarmRegularNameHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -45,14 +46,6 @@ string CheckAlarmRegularNameExistRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_alarmRegularNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,12 +54,28 @@ string CheckAlarmRegularNameExistRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_alarmRegularName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
     }
 
 
@@ -93,22 +102,6 @@ bool CheckAlarmRegularNameExistRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
-string CheckAlarmRegularNameExistRequest::GetTaskId() const
-{
-    return m_taskId;
-}
-
-void CheckAlarmRegularNameExistRequest::SetTaskId(const string& _taskId)
-{
-    m_taskId = _taskId;
-    m_taskIdHasBeenSet = true;
-}
-
-bool CheckAlarmRegularNameExistRequest::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
-
 string CheckAlarmRegularNameExistRequest::GetAlarmRegularName() const
 {
     return m_alarmRegularName;
@@ -125,6 +118,22 @@ bool CheckAlarmRegularNameExistRequest::AlarmRegularNameHasBeenSet() const
     return m_alarmRegularNameHasBeenSet;
 }
 
+string CheckAlarmRegularNameExistRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void CheckAlarmRegularNameExistRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool CheckAlarmRegularNameExistRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
 string CheckAlarmRegularNameExistRequest::GetId() const
 {
     return m_id;
@@ -139,6 +148,22 @@ void CheckAlarmRegularNameExistRequest::SetId(const string& _id)
 bool CheckAlarmRegularNameExistRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+int64_t CheckAlarmRegularNameExistRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void CheckAlarmRegularNameExistRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool CheckAlarmRegularNameExistRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

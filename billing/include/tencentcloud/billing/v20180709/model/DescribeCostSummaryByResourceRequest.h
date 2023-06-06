@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取每次获取数据量
-                     * @return Limit 每次获取数据量
+                     * 获取每次获取数据量，最大值为100
+                     * @return Limit 每次获取数据量，最大值为100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每次获取数据量
-                     * @param Limit 每次获取数据量
+                     * 设置每次获取数据量，最大值为100
+                     * @param Limit 每次获取数据量，最大值为100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量,默认从0开始
+                     * @return Offset 偏移量,默认从0开始
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量,默认从0开始
+                     * @param Offset 偏移量,默认从0开始
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -202,13 +202,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 每次获取数据量
+                     * 每次获取数据量，最大值为100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量,默认从0开始
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

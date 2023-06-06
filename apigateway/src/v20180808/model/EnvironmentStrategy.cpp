@@ -22,8 +22,7 @@ using namespace std;
 
 EnvironmentStrategy::EnvironmentStrategy() :
     m_environmentNameHasBeenSet(false),
-    m_quotaHasBeenSet(false),
-    m_maxQuotaHasBeenSet(false)
+    m_quotaHasBeenSet(false)
 {
 }
 
@@ -52,16 +51,6 @@ CoreInternalOutcome EnvironmentStrategy::Deserialize(const rapidjson::Value &val
         m_quotaHasBeenSet = true;
     }
 
-    if (value.HasMember("MaxQuota") && !value["MaxQuota"].IsNull())
-    {
-        if (!value["MaxQuota"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `EnvironmentStrategy.MaxQuota` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_maxQuota = value["MaxQuota"].GetInt64();
-        m_maxQuotaHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -83,14 +72,6 @@ void EnvironmentStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Quota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quota, allocator);
-    }
-
-    if (m_maxQuotaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxQuota";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_maxQuota, allocator);
     }
 
 }
@@ -126,21 +107,5 @@ void EnvironmentStrategy::SetQuota(const int64_t& _quota)
 bool EnvironmentStrategy::QuotaHasBeenSet() const
 {
     return m_quotaHasBeenSet;
-}
-
-int64_t EnvironmentStrategy::GetMaxQuota() const
-{
-    return m_maxQuota;
-}
-
-void EnvironmentStrategy::SetMaxQuota(const int64_t& _maxQuota)
-{
-    m_maxQuota = _maxQuota;
-    m_maxQuotaHasBeenSet = true;
-}
-
-bool EnvironmentStrategy::MaxQuotaHasBeenSet() const
-{
-    return m_maxQuotaHasBeenSet;
 }
 
