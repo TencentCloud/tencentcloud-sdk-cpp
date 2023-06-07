@@ -27,7 +27,8 @@ DescribeAgentDaemonSetCmdRequest::DescribeAgentDaemonSetCmdRequest() :
     m_netTypeHasBeenSet(false),
     m_regionCodeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_expireDateHasBeenSet(false)
+    m_expireDateHasBeenSet(false),
+    m_clusterCustomParametersHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string DescribeAgentDaemonSetCmdRequest::ToJsonString() const
         string key = "ExpireDate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expireDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterCustomParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterCustomParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterCustomParameters.begin(); itr != m_clusterCustomParameters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void DescribeAgentDaemonSetCmdRequest::SetExpireDate(const string& _expireDate)
 bool DescribeAgentDaemonSetCmdRequest::ExpireDateHasBeenSet() const
 {
     return m_expireDateHasBeenSet;
+}
+
+vector<ClusterCustomParameters> DescribeAgentDaemonSetCmdRequest::GetClusterCustomParameters() const
+{
+    return m_clusterCustomParameters;
+}
+
+void DescribeAgentDaemonSetCmdRequest::SetClusterCustomParameters(const vector<ClusterCustomParameters>& _clusterCustomParameters)
+{
+    m_clusterCustomParameters = _clusterCustomParameters;
+    m_clusterCustomParametersHasBeenSet = true;
+}
+
+bool DescribeAgentDaemonSetCmdRequest::ClusterCustomParametersHasBeenSet() const
+{
+    return m_clusterCustomParametersHasBeenSet;
 }
 
 

@@ -281,14 +281,14 @@ RELIEVED 已经解除
                     bool ApproveMessageHasBeenSet() const;
 
                     /**
-                     * 获取签署人签署时间
-                     * @return ApproveTime 签署人签署时间
+                     * 获取签署人签署时间戳，单位秒
+                     * @return ApproveTime 签署人签署时间戳，单位秒
                      */
                     int64_t GetApproveTime() const;
 
                     /**
-                     * 设置签署人签署时间
-                     * @param ApproveTime 签署人签署时间
+                     * 设置签署人签署时间戳，单位秒
+                     * @param ApproveTime 签署人签署时间戳，单位秒
                      */
                     void SetApproveTime(const int64_t& _approveTime);
 
@@ -395,7 +395,7 @@ RELIEVED 已经解除
                     bool m_approveMessageHasBeenSet;
 
                     /**
-                     * 签署人签署时间
+                     * 签署人签署时间戳，单位秒
                      */
                     int64_t m_approveTime;
                     bool m_approveTimeHasBeenSet;

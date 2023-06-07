@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 此结构 (FormField) 用于描述内容控件填充结构。
-
                 */
                 class FormField : public AbstractModel
                 {
@@ -54,14 +53,14 @@ MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
                      * @return ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
                      */
                     std::string GetComponentValue() const;
 
@@ -72,14 +71,14 @@ MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
                      * @param ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
@@ -146,7 +145,7 @@ MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;

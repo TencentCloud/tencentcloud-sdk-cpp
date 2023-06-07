@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取路由id
+                     * @return RouteId 路由id
+                     */
+                    int64_t GetRouteId() const;
+
+                    /**
+                     * 设置路由id
+                     * @param RouteId 路由id
+                     */
+                    void SetRouteId(const int64_t& _routeId);
+
+                    /**
+                     * 判断参数 RouteId 是否已赋值
+                     * @return RouteId 是否已赋值
+                     */
+                    bool RouteIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 路由id
+                     */
+                    int64_t m_routeId;
+                    bool m_routeIdHasBeenSet;
 
                 };
             }

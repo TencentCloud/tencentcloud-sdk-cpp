@@ -81,6 +81,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h
+  include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/KVPair.h
   include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
@@ -110,6 +111,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/WorkGroupIdSetOfUserId.h
   include/tencentcloud/dlc/v20210125/model/Partition.h
   include/tencentcloud/dlc/v20210125/model/CreateDataEngineRequest.h
+  include/tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/CSV.h
@@ -322,6 +324,7 @@ set(dlc_src
   src/v20210125/model/CreateDatabaseResponse.cpp
   src/v20210125/model/DescribeTasksRequest.cpp
   src/v20210125/model/CreateSparkAppTaskRequest.cpp
+  src/v20210125/model/ModifySparkAppBatchResponse.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
   src/v20210125/model/KVPair.cpp
   src/v20210125/model/TableBaseInfo.cpp
@@ -351,6 +354,7 @@ set(dlc_src
   src/v20210125/model/WorkGroupIdSetOfUserId.cpp
   src/v20210125/model/Partition.cpp
   src/v20210125/model/CreateDataEngineRequest.cpp
+  src/v20210125/model/ModifySparkAppBatchRequest.cpp
   src/v20210125/model/CreateTaskRequest.cpp
   src/v20210125/model/DescribeNotebookSessionRequest.cpp
   src/v20210125/model/CSV.cpp

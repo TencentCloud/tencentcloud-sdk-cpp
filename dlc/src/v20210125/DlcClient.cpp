@@ -3523,6 +3523,49 @@ DlcClient::ModifySparkAppOutcomeCallable DlcClient::ModifySparkAppCallable(const
     return task->get_future();
 }
 
+DlcClient::ModifySparkAppBatchOutcome DlcClient::ModifySparkAppBatch(const ModifySparkAppBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySparkAppBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySparkAppBatchResponse rsp = ModifySparkAppBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySparkAppBatchOutcome(rsp);
+        else
+            return ModifySparkAppBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySparkAppBatchOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifySparkAppBatchAsync(const ModifySparkAppBatchRequest& request, const ModifySparkAppBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySparkAppBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifySparkAppBatchOutcomeCallable DlcClient::ModifySparkAppBatchCallable(const ModifySparkAppBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySparkAppBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySparkAppBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ModifyUserOutcome DlcClient::ModifyUser(const ModifyUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUser");

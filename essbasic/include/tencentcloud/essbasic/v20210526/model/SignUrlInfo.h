@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取合同过期时间
+                     * 获取合同过期时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deadline 合同过期时间
+                     * @return Deadline 合同过期时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置合同过期时间
+                     * 设置合同过期时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deadline 合同过期时间
+                     * @param Deadline 合同过期时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -350,7 +350,7 @@ PERSON 自然人
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 合同过期时间
+                     * 合同过期时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;

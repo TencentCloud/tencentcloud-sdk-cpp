@@ -26,6 +26,7 @@ Outbound::Outbound() :
     m_portRangeHasBeenSet(false),
     m_ipProtocolHasBeenSet(false),
     m_dirHasBeenSet(false),
+    m_addressModuleHasBeenSet(false),
     m_descHasBeenSet(false)
 {
 }
@@ -85,6 +86,16 @@ CoreInternalOutcome Outbound::Deserialize(const rapidjson::Value &value)
         m_dirHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressModule") && !value["AddressModule"].IsNull())
+    {
+        if (!value["AddressModule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Outbound.AddressModule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressModule = string(value["AddressModule"].GetString());
+        m_addressModuleHasBeenSet = true;
+    }
+
     if (value.HasMember("Desc") && !value["Desc"].IsNull())
     {
         if (!value["Desc"].IsString())
@@ -140,6 +151,14 @@ void Outbound::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Dir";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressModuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressModule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressModule.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descHasBeenSet)
@@ -231,6 +250,22 @@ void Outbound::SetDir(const string& _dir)
 bool Outbound::DirHasBeenSet() const
 {
     return m_dirHasBeenSet;
+}
+
+string Outbound::GetAddressModule() const
+{
+    return m_addressModule;
+}
+
+void Outbound::SetAddressModule(const string& _addressModule)
+{
+    m_addressModule = _addressModule;
+    m_addressModuleHasBeenSet = true;
+}
+
+bool Outbound::AddressModuleHasBeenSet() const
+{
+    return m_addressModuleHasBeenSet;
 }
 
 string Outbound::GetDesc() const

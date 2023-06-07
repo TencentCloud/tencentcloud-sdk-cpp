@@ -185,6 +185,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppBatchRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppBatchResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h>
@@ -458,6 +460,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
                 typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySparkAppBatchResponse> ModifySparkAppBatchOutcome;
+                typedef std::future<ModifySparkAppBatchOutcome> ModifySparkAppBatchOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifySparkAppBatchRequest&, ModifySparkAppBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
@@ -1213,6 +1218,15 @@ namespace TencentCloud
                 ModifySparkAppOutcome ModifySparkApp(const Model::ModifySparkAppRequest &request);
                 void ModifySparkAppAsync(const Model::ModifySparkAppRequest& request, const ModifySparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySparkAppOutcomeCallable ModifySparkAppCallable(const Model::ModifySparkAppRequest& request);
+
+                /**
+                 *本接口（ModifySparkAppBatch）用于批量修改Spark作业参数配置
+                 * @param req ModifySparkAppBatchRequest
+                 * @return ModifySparkAppBatchOutcome
+                 */
+                ModifySparkAppBatchOutcome ModifySparkAppBatch(const Model::ModifySparkAppBatchRequest &request);
+                void ModifySparkAppBatchAsync(const Model::ModifySparkAppBatchRequest& request, const ModifySparkAppBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySparkAppBatchOutcomeCallable ModifySparkAppBatchCallable(const Model::ModifySparkAppBatchRequest& request);
 
                 /**
                  *修改用户信息

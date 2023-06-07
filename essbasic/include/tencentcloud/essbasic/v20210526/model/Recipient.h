@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人唯一标识
-                     * @return RecipientId 签署人唯一标识
+                     * 获取签署人唯一标识，在通过模板发起合同的时候对应签署方Id
+                     * @return RecipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署人唯一标识
-                     * @param RecipientId 签署人唯一标识
+                     * 设置签署人唯一标识，在通过模板发起合同的时候对应签署方Id
+                     * @param RecipientId 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
                      */
                     void SetRecipientId(const std::string& _recipientId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取签署方备注信息
-                     * @return RoleName 签署方备注信息
+                     * 获取签署方备注角色名
+                     * @return RoleName 签署方备注角色名
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置签署方备注信息
-                     * @param RoleName 签署方备注信息
+                     * 设置签署方备注角色名
+                     * @param RoleName 签署方备注角色名
                      */
                     void SetRoleName(const std::string& _roleName);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要校验
-                     * @return RequireValidation 是否需要校验
+                     * 获取是否需要校验，true-是，false-否
+                     * @return RequireValidation 是否需要校验，true-是，false-否
                      */
                     bool GetRequireValidation() const;
 
                     /**
-                     * 设置是否需要校验
-                     * @param RequireValidation 是否需要校验
+                     * 设置是否需要校验，true-是，false-否
+                     * @param RequireValidation 是否需要校验，true-是，false-否
                      */
                     void SetRequireValidation(const bool& _requireValidation);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool RequireValidationHasBeenSet() const;
 
                     /**
-                     * 获取是否必须填写
-                     * @return RequireSign 是否必须填写
+                     * 获取是否必须填写，true-是，false-否
+                     * @return RequireSign 是否必须填写，true-是，false-否
                      */
                     bool GetRequireSign() const;
 
                     /**
-                     * 设置是否必须填写
-                     * @param RequireSign 是否必须填写
+                     * 设置是否必须填写，true-是，false-否
+                     * @param RequireSign 是否必须填写，true-是，false-否
                      */
                     void SetRequireSign(const bool& _requireSign);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署人唯一标识
+                     * 签署人唯一标识，在通过模板发起合同的时候对应签署方Id
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
@@ -229,19 +229,19 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 签署方备注信息
+                     * 签署方备注角色名
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 是否需要校验
+                     * 是否需要校验，true-是，false-否
                      */
                     bool m_requireValidation;
                     bool m_requireValidationHasBeenSet;
 
                     /**
-                     * 是否必须填写
+                     * 是否必须填写，true-是，false-否
                      */
                     bool m_requireSign;
                     bool m_requireSignHasBeenSet;

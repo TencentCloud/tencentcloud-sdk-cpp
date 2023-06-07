@@ -174,14 +174,14 @@ RELIEVED 解除
                     bool FlowMessageHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的创建时间戳
-                     * @return CreateOn 合同(流程)的创建时间戳
+                     * 获取合同(流程)的创建时间戳，单位秒
+                     * @return CreateOn 合同(流程)的创建时间戳，单位秒
                      */
                     int64_t GetCreateOn() const;
 
                     /**
-                     * 设置合同(流程)的创建时间戳
-                     * @param CreateOn 合同(流程)的创建时间戳
+                     * 设置合同(流程)的创建时间戳，单位秒
+                     * @param CreateOn 合同(流程)的创建时间戳，单位秒
                      */
                     void SetCreateOn(const int64_t& _createOn);
 
@@ -192,14 +192,14 @@ RELIEVED 解除
                     bool CreateOnHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的签署截止时间戳
-                     * @return DeadLine 合同(流程)的签署截止时间戳
+                     * 获取合同(流程)的签署截止时间戳，单位秒
+                     * @return DeadLine 合同(流程)的签署截止时间戳，单位秒
                      */
                     int64_t GetDeadLine() const;
 
                     /**
-                     * 设置合同(流程)的签署截止时间戳
-                     * @param DeadLine 合同(流程)的签署截止时间戳
+                     * 设置合同(流程)的签署截止时间戳，单位秒
+                     * @param DeadLine 合同(流程)的签署截止时间戳，单位秒
                      */
                     void SetDeadLine(const int64_t& _deadLine);
 
@@ -323,13 +323,13 @@ RELIEVED 解除
                     bool m_flowMessageHasBeenSet;
 
                     /**
-                     * 合同(流程)的创建时间戳
+                     * 合同(流程)的创建时间戳，单位秒
                      */
                     int64_t m_createOn;
                     bool m_createOnHasBeenSet;
 
                     /**
-                     * 合同(流程)的签署截止时间戳
+                     * 合同(流程)的签署截止时间戳，单位秒
                      */
                     int64_t m_deadLine;
                     bool m_deadLineHasBeenSet;

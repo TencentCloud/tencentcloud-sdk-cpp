@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合作企业Id
-                     * @return ProxyOrganizationOpenId 合作企业Id
+                     * 获取第三方应用平台的子客企业OpenId
+                     * @return ProxyOrganizationOpenId 第三方应用平台的子客企业OpenId
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
-                     * 设置合作企业Id
-                     * @param ProxyOrganizationOpenId 合作企业Id
+                     * 设置第三方应用平台的子客企业OpenId
+                     * @param ProxyOrganizationOpenId 第三方应用平台的子客企业OpenId
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取出错信息
-                     * @return Message 出错信息
+                     * 获取错误信息
+                     * @return Message 错误信息
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置出错信息
-                     * @param Message 出错信息
+                     * 设置错误信息
+                     * @param Message 错误信息
                      */
                     void SetMessage(const std::string& _message);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合作企业Id
+                     * 第三方应用平台的子客企业OpenId
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
-                     * 出错信息
+                     * 错误信息
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

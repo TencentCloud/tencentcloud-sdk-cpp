@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取员工在电子签平台的id
-                     * @return UserId 员工在电子签平台的id
+                     * 获取员工在电子签平台的用户ID
+                     * @return UserId 员工在电子签平台的用户ID
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置员工在电子签平台的id
-                     * @param UserId 员工在电子签平台的id
+                     * 设置员工在电子签平台的用户ID
+                     * @param UserId 员工在电子签平台的用户ID
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -125,17 +125,17 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取员工在第三方平台id
+                     * 获取员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenId 员工在第三方平台id
+                     * @return OpenId 员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置员工在第三方平台id
+                     * 设置员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId 员工在第三方平台id
+                     * @param OpenId 员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOpenId(const std::string& _openId);
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool VerifiedHasBeenSet() const;
 
                     /**
-                     * 获取员工创建时间戳
-                     * @return CreatedOn 员工创建时间戳
+                     * 获取员工创建时间戳，单位秒
+                     * @return CreatedOn 员工创建时间戳，单位秒
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置员工创建时间戳
-                     * @param CreatedOn 员工创建时间戳
+                     * 设置员工创建时间戳，单位秒
+                     * @param CreatedOn 员工创建时间戳，单位秒
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取员工实名时间戳
-                     * @return VerifiedOn 员工实名时间戳
+                     * 获取员工实名时间戳，单位秒
+                     * @return VerifiedOn 员工实名时间戳，单位秒
                      */
                     int64_t GetVerifiedOn() const;
 
                     /**
-                     * 设置员工实名时间戳
-                     * @param VerifiedOn 员工实名时间戳
+                     * 设置员工实名时间戳，单位秒
+                     * @param VerifiedOn 员工实名时间戳，单位秒
                      */
                     void SetVerifiedOn(const int64_t& _verifiedOn);
 
@@ -265,7 +265,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 员工在电子签平台的id
+                     * 员工在电子签平台的用户ID
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 员工在第三方平台id
+                     * 员工在第三方应用平台的用户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
@@ -317,13 +317,13 @@ namespace TencentCloud
                     bool m_verifiedHasBeenSet;
 
                     /**
-                     * 员工创建时间戳
+                     * 员工创建时间戳，单位秒
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 员工实名时间戳
+                     * 员工实名时间戳，单位秒
                      */
                     int64_t m_verifiedOn;
                     bool m_verifiedOnHasBeenSet;

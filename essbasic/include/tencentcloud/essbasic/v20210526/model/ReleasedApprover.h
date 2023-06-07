@@ -92,16 +92,20 @@ ApproverNumber, OrganizationName, ApproverType必传。
                     /**
                      * 获取签署人类型，目前仅支持
 ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
                      * @return ApproverType 签署人类型，目前仅支持
 ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
                      */
                     std::string GetApproverType() const;
 
                     /**
                      * 设置签署人类型，目前仅支持
 ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
                      * @param ApproverType 签署人类型，目前仅支持
 ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
                      */
                     void SetApproverType(const std::string& _approverType);
 
@@ -252,6 +256,7 @@ ORGANIZATION-企业
                     /**
                      * 签署人类型，目前仅支持
 ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;

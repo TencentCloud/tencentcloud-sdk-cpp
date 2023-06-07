@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否允许修改合同信息
-                     * @return CanEditFlow 是否允许修改合同信息
+                     * 获取是否允许修改合同信息，true-是，false-否
+                     * @return CanEditFlow 是否允许修改合同信息，true-是，false-否
                      */
                     bool GetCanEditFlow() const;
 
                     /**
-                     * 设置是否允许修改合同信息
-                     * @param CanEditFlow 是否允许修改合同信息
+                     * 设置是否允许修改合同信息，true-是，false-否
+                     * @param CanEditFlow 是否允许修改合同信息，true-是，false-否
                      */
                     void SetCanEditFlow(const bool& _canEditFlow);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否允许修改合同信息
+                     * 是否允许修改合同信息，true-是，false-否
                      */
                     bool m_canEditFlow;
                     bool m_canEditFlowHasBeenSet;

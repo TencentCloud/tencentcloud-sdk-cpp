@@ -30,6 +30,7 @@ ProcessLiveStreamRequest::ProcessLiveStreamRequest() :
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
+    m_aiQualityControlTaskHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -101,6 +102,15 @@ string ProcessLiveStreamRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aiQualityControlTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControlTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiQualityControlTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -237,6 +247,22 @@ void ProcessLiveStreamRequest::SetAiAnalysisTask(const AiAnalysisTaskInput& _aiA
 bool ProcessLiveStreamRequest::AiAnalysisTaskHasBeenSet() const
 {
     return m_aiAnalysisTaskHasBeenSet;
+}
+
+AiQualityControlTaskInput ProcessLiveStreamRequest::GetAiQualityControlTask() const
+{
+    return m_aiQualityControlTask;
+}
+
+void ProcessLiveStreamRequest::SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask)
+{
+    m_aiQualityControlTask = _aiQualityControlTask;
+    m_aiQualityControlTaskHasBeenSet = true;
+}
+
+bool ProcessLiveStreamRequest::AiQualityControlTaskHasBeenSet() const
+{
+    return m_aiQualityControlTaskHasBeenSet;
 }
 
 string ProcessLiveStreamRequest::GetSessionId() const

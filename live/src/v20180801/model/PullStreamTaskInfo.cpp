@@ -47,7 +47,8 @@ PullStreamTaskInfo::PullStreamTaskInfo() :
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
-    m_vodLocalModeHasBeenSet(false)
+    m_vodLocalModeHasBeenSet(false),
+    m_recordTemplateIdHasBeenSet(false)
 {
 }
 
@@ -349,6 +350,16 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
         m_vodLocalModeHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordTemplateId") && !value["RecordTemplateId"].IsNull())
+    {
+        if (!value["RecordTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.RecordTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordTemplateId = string(value["RecordTemplateId"].GetString());
+        m_recordTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -588,6 +599,14 @@ void PullStreamTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "VodLocalMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vodLocalMode, allocator);
+    }
+
+    if (m_recordTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1023,5 +1042,21 @@ void PullStreamTaskInfo::SetVodLocalMode(const int64_t& _vodLocalMode)
 bool PullStreamTaskInfo::VodLocalModeHasBeenSet() const
 {
     return m_vodLocalModeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetRecordTemplateId() const
+{
+    return m_recordTemplateId;
+}
+
+void PullStreamTaskInfo::SetRecordTemplateId(const string& _recordTemplateId)
+{
+    m_recordTemplateId = _recordTemplateId;
+    m_recordTemplateIdHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::RecordTemplateIdHasBeenSet() const
+{
+    return m_recordTemplateIdHasBeenSet;
 }
 

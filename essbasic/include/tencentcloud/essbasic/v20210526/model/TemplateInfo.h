@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模板控件信息结构
-                     * @return Components 模板控件信息结构
+                     * 获取模板的填充控件信息结构
+                     * @return Components 模板的填充控件信息结构
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置模板控件信息结构
-                     * @param Components 模板控件信息结构
+                     * 设置模板的填充控件信息结构
+                     * @param Components 模板的填充控件信息结构
                      */
                     void SetComponents(const std::vector<Component>& _components);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool RecipientsHasBeenSet() const;
 
                     /**
-                     * 获取签署区模板信息结构
-                     * @return SignComponents 签署区模板信息结构
+                     * 获取模板中的签署控件信息结构
+                     * @return SignComponents 模板中的签署控件信息结构
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置签署区模板信息结构
-                     * @param SignComponents 签署区模板信息结构
+                     * 设置模板中的签署控件信息结构
+                     * @param SignComponents 模板中的签署控件信息结构
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
 
@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool IsPromoterHasBeenSet() const;
 
                     /**
-                     * 获取模板的创建者信息
-                     * @return Creator 模板的创建者信息
+                     * 获取模板的创建者信息，电子签系统用户ID
+                     * @return Creator 模板的创建者信息，电子签系统用户ID
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置模板的创建者信息
-                     * @param Creator 模板的创建者信息
+                     * 设置模板的创建者信息，电子签系统用户ID
+                     * @param Creator 模板的创建者信息，电子签系统用户ID
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -211,14 +211,14 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取模板创建的时间戳（精确到秒）
-                     * @return CreatedOn 模板创建的时间戳（精确到秒）
+                     * 获取模板创建的时间戳，单位秒
+                     * @return CreatedOn 模板创建的时间戳，单位秒
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
-                     * 设置模板创建的时间戳（精确到秒）
-                     * @param CreatedOn 模板创建的时间戳（精确到秒）
+                     * 设置模板创建的时间戳，单位秒
+                     * @param CreatedOn 模板创建的时间戳，单位秒
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
 
@@ -229,17 +229,17 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 获取模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * @return PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 设置模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * @param PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -251,17 +251,17 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用集成-模板PDF文件链接
+                     * 获取第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PdfUrl 第三方应用集成-模板PDF文件链接
+                     * @return PdfUrl 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPdfUrl() const;
 
                     /**
-                     * 设置第三方应用集成-模板PDF文件链接
+                     * 设置第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PdfUrl 第三方应用集成-模板PDF文件链接
+                     * @param PdfUrl 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPdfUrl(const std::string& _pdfUrl);
@@ -273,14 +273,14 @@ namespace TencentCloud
                     bool PdfUrlHasBeenSet() const;
 
                     /**
-                     * 获取关联的平台企业模板ID
-                     * @return ChannelTemplateId 关联的平台企业模板ID
+                     * 获取关联的第三方应用平台企业模板ID
+                     * @return ChannelTemplateId 关联的第三方应用平台企业模板ID
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
-                     * 设置关联的平台企业模板ID
-                     * @param ChannelTemplateId 关联的平台企业模板ID
+                     * 设置关联的第三方应用平台企业模板ID
+                     * @param ChannelTemplateId 关联的第三方应用平台企业模板ID
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
@@ -291,17 +291,17 @@ namespace TencentCloud
                     bool ChannelTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取关联的平台企业模板名称
+                     * 获取关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelTemplateName 关联的平台企业模板名称
+                     * @return ChannelTemplateName 关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChannelTemplateName() const;
 
                     /**
-                     * 设置关联的平台企业模板名称
+                     * 设置关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelTemplateName 关联的平台企业模板名称
+                     * @param ChannelTemplateName 关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChannelTemplateName(const std::string& _channelTemplateName);
@@ -399,7 +399,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模板控件信息结构
+                     * 模板的填充控件信息结构
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
@@ -411,7 +411,7 @@ namespace TencentCloud
                     bool m_recipientsHasBeenSet;
 
                     /**
-                     * 签署区模板信息结构
+                     * 模板中的签署控件信息结构
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
@@ -429,39 +429,39 @@ namespace TencentCloud
                     bool m_isPromoterHasBeenSet;
 
                     /**
-                     * 模板的创建者信息
+                     * 模板的创建者信息，电子签系统用户ID
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 模板创建的时间戳（精确到秒）
+                     * 模板创建的时间戳，单位秒
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。请求参数WithPreviewUrl=true时返回，有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
 
                     /**
-                     * 第三方应用集成-模板PDF文件链接
+                     * 第三方应用集成-模板PDF文件链接。请求参数WithPdfUrl=true时返回（此功能开放需要联系客户经理），有效期5分钟。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
 
                     /**
-                     * 关联的平台企业模板ID
+                     * 关联的第三方应用平台企业模板ID
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;
 
                     /**
-                     * 关联的平台企业模板名称
+                     * 关联的三方应用平台平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelTemplateName;

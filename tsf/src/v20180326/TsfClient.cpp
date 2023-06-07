@@ -3695,6 +3695,49 @@ TsfClient::DescribeContainerEventsOutcomeCallable TsfClient::DescribeContainerEv
     return task->get_future();
 }
 
+TsfClient::DescribeContainerGroupAttributeOutcome TsfClient::DescribeContainerGroupAttribute(const DescribeContainerGroupAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContainerGroupAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContainerGroupAttributeResponse rsp = DescribeContainerGroupAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContainerGroupAttributeOutcome(rsp);
+        else
+            return DescribeContainerGroupAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContainerGroupAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeContainerGroupAttributeAsync(const DescribeContainerGroupAttributeRequest& request, const DescribeContainerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContainerGroupAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeContainerGroupAttributeOutcomeCallable TsfClient::DescribeContainerGroupAttributeCallable(const DescribeContainerGroupAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContainerGroupAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContainerGroupAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeContainerGroupDeployInfoOutcome TsfClient::DescribeContainerGroupDeployInfo(const DescribeContainerGroupDeployInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContainerGroupDeployInfo");

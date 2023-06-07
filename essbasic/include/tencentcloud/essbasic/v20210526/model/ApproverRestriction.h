@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定签署人名字
-                     * @return Name 指定签署人名字
+                     * 获取指定签署人姓名
+                     * @return Name 指定签署人姓名
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置指定签署人名字
-                     * @param Name 指定签署人名字
+                     * 设置指定签署人姓名
+                     * @param Name 指定签署人姓名
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人手机号
-                     * @return Mobile 指定签署人手机号
+                     * 获取指定签署人手机号，11位数字
+                     * @return Mobile 指定签署人手机号，11位数字
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置指定签署人手机号
-                     * @param Mobile 指定签署人手机号
+                     * 设置指定签署人手机号，11位数字
+                     * @param Mobile 指定签署人手机号，11位数字
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人证件类型
-                     * @return IdCardType 指定签署人证件类型
+                     * 获取指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证
+                     * @return IdCardType 指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证
                      */
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置指定签署人证件类型
-                     * @param IdCardType 指定签署人证件类型
+                     * 设置指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证
+                     * @param IdCardType 指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定签署人证件号码
-                     * @return IdCardNumber 指定签署人证件号码
+                     * 获取指定签署人证件号码，其中字母大写
+                     * @return IdCardNumber 指定签署人证件号码，其中字母大写
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置指定签署人证件号码
-                     * @param IdCardNumber 指定签署人证件号码
+                     * 设置指定签署人证件号码，其中字母大写
+                     * @param IdCardNumber 指定签署人证件号码，其中字母大写
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定签署人名字
+                     * 指定签署人姓名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 指定签署人手机号
+                     * 指定签署人手机号，11位数字
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 指定签署人证件类型
+                     * 指定签署人证件类型，ID_CARD-身份证，HONGKONG_AND_MACAO-港澳居民来往内地通行证，HONGKONG_MACAO_AND_TAIWAN-港澳台居民居住证
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 指定签署人证件号码
+                     * 指定签署人证件号码，其中字母大写
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;

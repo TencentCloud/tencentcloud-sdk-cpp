@@ -23,7 +23,8 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 DescribeRouteRequest::DescribeRouteRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_routeIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeRouteRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_routeId, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeRouteRequest::SetInstanceId(const string& _instanceId)
 bool DescribeRouteRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeRouteRequest::GetRouteId() const
+{
+    return m_routeId;
+}
+
+void DescribeRouteRequest::SetRouteId(const int64_t& _routeId)
+{
+    m_routeId = _routeId;
+    m_routeIdHasBeenSet = true;
+}
+
+bool DescribeRouteRequest::RouteIdHasBeenSet() const
+{
+    return m_routeIdHasBeenSet;
 }
 
 

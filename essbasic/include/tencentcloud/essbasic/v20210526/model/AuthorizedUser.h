@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户openid
-                     * @return OpenId 用户openid
+                     * 获取第三方应用平台的用户openid
+                     * @return OpenId 第三方应用平台的用户openid
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户openid
-                     * @param OpenId 用户openid
+                     * 设置第三方应用平台的用户openid
+                     * @param OpenId 第三方应用平台的用户openid
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户openid
+                     * 第三方应用平台的用户openid
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

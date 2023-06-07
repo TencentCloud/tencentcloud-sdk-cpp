@@ -52,13 +52,13 @@ namespace TencentCloud
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
-  DOWNLOAD_FLOW         授权渠道下载合同 
+  DOWNLOAD_FLOW         授权平台企业下载合同 
                      * @return Type 扩展服务类型
   AUTO_SIGN             企业静默签（自动签署）
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
-  DOWNLOAD_FLOW         授权渠道下载合同 
+  DOWNLOAD_FLOW         授权平台企业下载合同 
                      */
                     std::string GetType() const;
 
@@ -68,13 +68,13 @@ namespace TencentCloud
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
-  DOWNLOAD_FLOW         授权渠道下载合同 
+  DOWNLOAD_FLOW         授权平台企业下载合同 
                      * @param Type 扩展服务类型
   AUTO_SIGN             企业静默签（自动签署）
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
-  DOWNLOAD_FLOW         授权渠道下载合同 
+  DOWNLOAD_FLOW         授权平台企业下载合同 
                      */
                     void SetType(const std::string& _type);
 
@@ -129,17 +129,17 @@ DISABLE 关闭
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取最近操作人openid（经办人openid）
+                     * 获取最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorOpenId 最近操作人openid（经办人openid）
+                     * @return OperatorOpenId 最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOperatorOpenId() const;
 
                     /**
-                     * 设置最近操作人openid（经办人openid）
+                     * 设置最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorOpenId 最近操作人openid（经办人openid）
+                     * @param OperatorOpenId 最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperatorOpenId(const std::string& _operatorOpenId);
@@ -151,17 +151,17 @@ DISABLE 关闭
                     bool OperatorOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取最近操作时间
+                     * 获取最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateOn 最近操作时间
+                     * @return OperateOn 最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetOperateOn() const;
 
                     /**
-                     * 设置最近操作时间
+                     * 设置最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperateOn 最近操作时间
+                     * @param OperateOn 最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperateOn(const int64_t& _operateOn);
@@ -180,7 +180,7 @@ DISABLE 关闭
   OVERSEA_SIGN          企业与港澳台居民*签署合同
   MOBILE_CHECK_APPROVER 使用手机号验证签署方身份
   PAGING_SEAL           骑缝章
-  DOWNLOAD_FLOW         授权渠道下载合同 
+  DOWNLOAD_FLOW         授权平台企业下载合同 
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -200,14 +200,14 @@ DISABLE 关闭
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 最近操作人openid（经办人openid）
+                     * 最近操作人第三方应用平台的用户openid
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorOpenId;
                     bool m_operatorOpenIdHasBeenSet;
 
                     /**
-                     * 最近操作时间
+                     * 最近操作时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateOn;

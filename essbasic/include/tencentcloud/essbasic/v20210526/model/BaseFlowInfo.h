@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取合同流程截止时间，unix时间戳
-                     * @return Deadline 合同流程截止时间，unix时间戳
+                     * 获取合同流程截止时间，unix时间戳，单位秒
+                     * @return Deadline 合同流程截止时间，unix时间戳，单位秒
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置合同流程截止时间，unix时间戳
-                     * @param Deadline 合同流程截止时间，unix时间戳
+                     * 设置合同流程截止时间，unix时间戳，单位秒
+                     * @param Deadline 合同流程截止时间，unix时间戳，单位秒
                      */
                     void SetDeadline(const int64_t& _deadline);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool UnorderedHasBeenSet() const;
 
                     /**
-                     * 获取打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-                     * @return IntelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 获取是否打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * @return IntelligentStatus 是否打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
                      */
                     std::string GetIntelligentStatus() const;
 
                     /**
-                     * 设置打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-                     * @param IntelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 设置是否打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * @param IntelligentStatus 是否打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
                      */
                     void SetIntelligentStatus(const std::string& _intelligentStatus);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-                     * @return NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
+                     * 获取本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * @return NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      */
                     bool GetNeedSignReview() const;
 
                     /**
-                     * 设置本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-                     * @param NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
+                     * 设置本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * @param NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 合同流程截止时间，unix时间戳
+                     * 合同流程截止时间，unix时间戳，单位秒
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_unorderedHasBeenSet;
 
                     /**
-                     * 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
+                     * 是否打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
                      */
                     std::string m_intelligentStatus;
                     bool m_intelligentStatusHasBeenSet;
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
+                     * 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;

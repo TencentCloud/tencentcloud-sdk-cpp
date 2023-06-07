@@ -26,6 +26,7 @@
 #include <tencentcloud/mps/v20190612/model/AiContentReviewTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,24 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
+                     * 获取视频内容质检类型任务参数。
+                     * @return AiQualityControlTask 视频内容质检类型任务参数。
+                     */
+                    AiQualityControlTaskInput GetAiQualityControlTask() const;
+
+                    /**
+                     * 设置视频内容质检类型任务参数。
+                     * @param AiQualityControlTask 视频内容质检类型任务参数。
+                     */
+                    void SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask);
+
+                    /**
+                     * 判断参数 AiQualityControlTask 是否已赋值
+                     * @return AiQualityControlTask 是否已赋值
+                     */
+                    bool AiQualityControlTaskHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
@@ -252,6 +271,12 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
+
+                    /**
+                     * 视频内容质检类型任务参数。
+                     */
+                    AiQualityControlTaskInput m_aiQualityControlTask;
+                    bool m_aiQualityControlTaskHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。

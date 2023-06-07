@@ -424,14 +424,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
-                     * @return InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * 获取实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * @return InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
-                     * @param InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * 设置实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * @param InstanceName 实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -532,14 +532,14 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
-                     * @return AlarmPolicyList 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
+                     * 获取告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。
+                     * @return AlarmPolicyList 告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。
                      */
                     std::vector<int64_t> GetAlarmPolicyList() const;
 
                     /**
-                     * 设置告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
-                     * @param AlarmPolicyList 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
+                     * 设置告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。
+                     * @param AlarmPolicyList 告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。
                      */
                     void SetAlarmPolicyList(const std::vector<int64_t>& _alarmPolicyList);
 
@@ -840,7 +840,7 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
+                     * 实例名称。一次购买多个实例命名会用后缀数字区分，例instanceName=db，goodsNum=3，实例命名分别为db1，db2，db3。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -876,7 +876,7 @@ namespace TencentCloud
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
+                     * 告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。
                      */
                     std::vector<int64_t> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;

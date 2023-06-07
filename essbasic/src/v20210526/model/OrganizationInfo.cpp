@@ -22,10 +22,10 @@ using namespace std;
 
 OrganizationInfo::OrganizationInfo() :
     m_organizationOpenIdHasBeenSet(false),
-    m_clientIpHasBeenSet(false),
-    m_proxyIpHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_clientIpHasBeenSet(false),
+    m_proxyIpHasBeenSet(false)
 {
 }
 
@@ -42,26 +42,6 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
         }
         m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
         m_organizationOpenIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("ClientIp") && !value["ClientIp"].IsNull())
-    {
-        if (!value["ClientIp"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_clientIp = string(value["ClientIp"].GetString());
-        m_clientIpHasBeenSet = true;
-    }
-
-    if (value.HasMember("ProxyIp") && !value["ProxyIp"].IsNull())
-    {
-        if (!value["ProxyIp"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.ProxyIp` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_proxyIp = string(value["ProxyIp"].GetString());
-        m_proxyIpHasBeenSet = true;
     }
 
     if (value.HasMember("OrganizationId") && !value["OrganizationId"].IsNull())
@@ -84,6 +64,26 @@ CoreInternalOutcome OrganizationInfo::Deserialize(const rapidjson::Value &value)
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIp") && !value["ClientIp"].IsNull())
+    {
+        if (!value["ClientIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIp = string(value["ClientIp"].GetString());
+        m_clientIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyIp") && !value["ProxyIp"].IsNull())
+    {
+        if (!value["ProxyIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationInfo.ProxyIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyIp = string(value["ProxyIp"].GetString());
+        m_proxyIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,22 +97,6 @@ void OrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OrganizationOpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_clientIpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientIp";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_proxyIpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyIp";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proxyIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_organizationIdHasBeenSet)
@@ -129,6 +113,22 @@ void OrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -148,38 +148,6 @@ void OrganizationInfo::SetOrganizationOpenId(const string& _organizationOpenId)
 bool OrganizationInfo::OrganizationOpenIdHasBeenSet() const
 {
     return m_organizationOpenIdHasBeenSet;
-}
-
-string OrganizationInfo::GetClientIp() const
-{
-    return m_clientIp;
-}
-
-void OrganizationInfo::SetClientIp(const string& _clientIp)
-{
-    m_clientIp = _clientIp;
-    m_clientIpHasBeenSet = true;
-}
-
-bool OrganizationInfo::ClientIpHasBeenSet() const
-{
-    return m_clientIpHasBeenSet;
-}
-
-string OrganizationInfo::GetProxyIp() const
-{
-    return m_proxyIp;
-}
-
-void OrganizationInfo::SetProxyIp(const string& _proxyIp)
-{
-    m_proxyIp = _proxyIp;
-    m_proxyIpHasBeenSet = true;
-}
-
-bool OrganizationInfo::ProxyIpHasBeenSet() const
-{
-    return m_proxyIpHasBeenSet;
 }
 
 string OrganizationInfo::GetOrganizationId() const
@@ -212,5 +180,37 @@ void OrganizationInfo::SetChannel(const string& _channel)
 bool OrganizationInfo::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string OrganizationInfo::GetClientIp() const
+{
+    return m_clientIp;
+}
+
+void OrganizationInfo::SetClientIp(const string& _clientIp)
+{
+    m_clientIp = _clientIp;
+    m_clientIpHasBeenSet = true;
+}
+
+bool OrganizationInfo::ClientIpHasBeenSet() const
+{
+    return m_clientIpHasBeenSet;
+}
+
+string OrganizationInfo::GetProxyIp() const
+{
+    return m_proxyIp;
+}
+
+void OrganizationInfo::SetProxyIp(const string& _proxyIp)
+{
+    m_proxyIp = _proxyIp;
+    m_proxyIpHasBeenSet = true;
+}
+
+bool OrganizationInfo::ProxyIpHasBeenSet() const
+{
+    return m_proxyIpHasBeenSet;
 }
 

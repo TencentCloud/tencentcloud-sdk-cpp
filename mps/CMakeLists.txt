@@ -62,7 +62,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DiagnoseResult.h
   include/tencentcloud/mps/v20190612/model/RawWatermarkParameter.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPoliticalOcrResult.h
-  include/tencentcloud/mps/v20190612/model/ManageTaskRequest.h
+  include/tencentcloud/mps/v20190612/model/AiSampleWord.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimePicInfoItem.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfo.h
@@ -236,7 +236,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeSchedulesResponse.h
   include/tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h
-  include/tencentcloud/mps/v20190612/model/AiSampleWord.h
+  include/tencentcloud/mps/v20190612/model/ManageTaskRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrWordsResultOutput.h
   include/tencentcloud/mps/v20190612/model/LiveStreamOcrWordsRecognitionResult.h
@@ -273,6 +273,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/ScheduleAnalysisTaskResult.h
+  include/tencentcloud/mps/v20190612/model/CreateStreamLinkInputRequest.h
   include/tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h
   include/tencentcloud/mps/v20190612/model/TerrorismConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/EnableScheduleResponse.h
@@ -527,6 +528,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCoverInput.h
   include/tencentcloud/mps/v20190612/model/RegionInfo.h
+  include/tencentcloud/mps/v20190612/model/CreateStreamLinkInputResponse.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultItem.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResult.h
   include/tencentcloud/mps/v20190612/model/EditMediaTaskOutput.h
@@ -589,7 +591,7 @@ set(mps_src
   src/v20190612/model/DiagnoseResult.cpp
   src/v20190612/model/RawWatermarkParameter.cpp
   src/v20190612/model/AiReviewTaskPoliticalOcrResult.cpp
-  src/v20190612/model/ManageTaskRequest.cpp
+  src/v20190612/model/AiSampleWord.cpp
   src/v20190612/model/CreateImageSpriteTemplateRequest.cpp
   src/v20190612/model/MediaSnapshotByTimePicInfoItem.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfo.cpp
@@ -763,7 +765,7 @@ set(mps_src
   src/v20190612/model/DescribeSchedulesResponse.cpp
   src/v20190612/model/ImageQualityEnhanceConfig.cpp
   src/v20190612/model/DescribeStreamLinkRegionsResponse.cpp
-  src/v20190612/model/AiSampleWord.cpp
+  src/v20190612/model/ManageTaskRequest.cpp
   src/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.cpp
   src/v20190612/model/AiRecognitionTaskAsrWordsResultOutput.cpp
   src/v20190612/model/LiveStreamOcrWordsRecognitionResult.cpp
@@ -800,6 +802,7 @@ set(mps_src
   src/v20190612/model/ModifyImageSpriteTemplateResponse.cpp
   src/v20190612/model/CreateWatermarkTemplateRequest.cpp
   src/v20190612/model/ScheduleAnalysisTaskResult.cpp
+  src/v20190612/model/CreateStreamLinkInputRequest.cpp
   src/v20190612/model/ScheduleQualityControlTaskResult.cpp
   src/v20190612/model/TerrorismConfigureInfoForUpdate.cpp
   src/v20190612/model/EnableScheduleResponse.cpp
@@ -1054,6 +1057,7 @@ set(mps_src
   src/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.cpp
   src/v20190612/model/AiAnalysisTaskCoverInput.cpp
   src/v20190612/model/RegionInfo.cpp
+  src/v20190612/model/CreateStreamLinkInputResponse.cpp
   src/v20190612/model/LiveStreamAiAnalysisResultItem.cpp
   src/v20190612/model/AiRecognitionTaskTransTextResult.cpp
   src/v20190612/model/EditMediaTaskOutput.cpp

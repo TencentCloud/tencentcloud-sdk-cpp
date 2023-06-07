@@ -246,14 +246,14 @@ namespace TencentCloud
                     bool SpecificationsTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算
-                     * @return DiskSize 磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算
+                     * 获取磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return DiskSize 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算
-                     * @param DiskSize 磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算
+                     * 设置磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param DiskSize 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
@@ -264,14 +264,14 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算
-                     * @return BandWidth 带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算
+                     * 获取带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return BandWidth 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算
-                     * @param BandWidth 带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算
+                     * 设置带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param BandWidth 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
 
@@ -282,14 +282,14 @@ namespace TencentCloud
                     bool BandWidthHasBeenSet() const;
 
                     /**
-                     * 获取分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算
-                     * @return Partition 分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算
+                     * 获取分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return Partition 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算
-                     * @param Partition 分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算
+                     * 设置分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param Partition 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     void SetPartition(const int64_t& _partition);
 
@@ -441,19 +441,19 @@ namespace TencentCloud
                     bool m_specificationsTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小,专业版不填写默认最小磁盘,填写后根据磁盘带宽分区数弹性计算
+                     * 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 带宽,专业版不填写默认最小带宽,填写后根据磁盘带宽分区数弹性计算
+                     * 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
-                     * 分区大小,专业版不填写默认最小分区数,填写后根据磁盘带宽分区数弹性计算
+                     * 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;

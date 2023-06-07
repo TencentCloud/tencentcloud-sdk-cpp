@@ -65,42 +65,6 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户真实的IP
-                     * @return ClientIp 用户真实的IP
-                     */
-                    std::string GetClientIp() const;
-
-                    /**
-                     * 设置用户真实的IP
-                     * @param ClientIp 用户真实的IP
-                     */
-                    void SetClientIp(const std::string& _clientIp);
-
-                    /**
-                     * 判断参数 ClientIp 是否已赋值
-                     * @return ClientIp 是否已赋值
-                     */
-                    bool ClientIpHasBeenSet() const;
-
-                    /**
-                     * 获取机构的代理IP
-                     * @return ProxyIp 机构的代理IP
-                     */
-                    std::string GetProxyIp() const;
-
-                    /**
-                     * 设置机构的代理IP
-                     * @param ProxyIp 机构的代理IP
-                     */
-                    void SetProxyIp(const std::string& _proxyIp);
-
-                    /**
-                     * 判断参数 ProxyIp 是否已赋值
-                     * @return ProxyIp 是否已赋值
-                     */
-                    bool ProxyIpHasBeenSet() const;
-
-                    /**
                      * 获取机构在平台的编号
                      * @return OrganizationId 机构在平台的编号
                      */
@@ -136,6 +100,42 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取用户真实的IP
+                     * @return ClientIp 用户真实的IP
+                     */
+                    std::string GetClientIp() const;
+
+                    /**
+                     * 设置用户真实的IP
+                     * @param ClientIp 用户真实的IP
+                     */
+                    void SetClientIp(const std::string& _clientIp);
+
+                    /**
+                     * 判断参数 ClientIp 是否已赋值
+                     * @return ClientIp 是否已赋值
+                     */
+                    bool ClientIpHasBeenSet() const;
+
+                    /**
+                     * 获取机构的代理IP
+                     * @return ProxyIp 机构的代理IP
+                     */
+                    std::string GetProxyIp() const;
+
+                    /**
+                     * 设置机构的代理IP
+                     * @param ProxyIp 机构的代理IP
+                     */
+                    void SetProxyIp(const std::string& _proxyIp);
+
+                    /**
+                     * 判断参数 ProxyIp 是否已赋值
+                     * @return ProxyIp 是否已赋值
+                     */
+                    bool ProxyIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,18 +143,6 @@ namespace TencentCloud
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
-
-                    /**
-                     * 用户真实的IP
-                     */
-                    std::string m_clientIp;
-                    bool m_clientIpHasBeenSet;
-
-                    /**
-                     * 机构的代理IP
-                     */
-                    std::string m_proxyIp;
-                    bool m_proxyIpHasBeenSet;
 
                     /**
                      * 机构在平台的编号
@@ -167,6 +155,18 @@ namespace TencentCloud
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 用户真实的IP
+                     */
+                    std::string m_clientIp;
+                    bool m_clientIpHasBeenSet;
+
+                    /**
+                     * 机构的代理IP
+                     */
+                    std::string m_proxyIp;
+                    bool m_proxyIpHasBeenSet;
 
                 };
             }

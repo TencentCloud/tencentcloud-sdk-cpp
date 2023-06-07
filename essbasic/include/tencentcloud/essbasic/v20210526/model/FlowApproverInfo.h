@@ -275,14 +275,14 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取签署截止时间，默认一年
-                     * @return Deadline 签署截止时间，默认一年
+                     * 获取签署截止时间戳，默认一年
+                     * @return Deadline 签署截止时间戳，默认一年
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署截止时间，默认一年
-                     * @param Deadline 签署截止时间，默认一年
+                     * 设置签署截止时间戳，默认一年
+                     * @param Deadline 签署截止时间戳，默认一年
                      */
                     void SetDeadline(const int64_t& _deadline);
 
@@ -369,14 +369,14 @@ HANDWRITE -手写签名
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取签署完前端跳转的url，暂未使用
-                     * @return JumpUrl 签署完前端跳转的url，暂未使用
+                     * 获取签署完前端跳转的url，此字段的用法场景请联系客户经理确认
+                     * @return JumpUrl 签署完前端跳转的url，此字段的用法场景请联系客户经理确认
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置签署完前端跳转的url，暂未使用
-                     * @param JumpUrl 签署完前端跳转的url，暂未使用
+                     * 设置签署完前端跳转的url，此字段的用法场景请联系客户经理确认
+                     * @param JumpUrl 签署完前端跳转的url，此字段的用法场景请联系客户经理确认
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
@@ -538,7 +538,7 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 签署截止时间，默认一年
+                     * 签署截止时间戳，默认一年
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
@@ -569,7 +569,7 @@ HANDWRITE -手写签名
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 签署完前端跳转的url，暂未使用
+                     * 签署完前端跳转的url，此字段的用法场景请联系客户经理确认
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;

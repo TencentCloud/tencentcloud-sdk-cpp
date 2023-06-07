@@ -105,6 +105,32 @@ namespace TencentCloud
                      */
                     bool RelievedApproverReceiptIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定签署人类型，目前仅支持
+ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
+                     * @return ApproverType 指定签署人类型，目前仅支持
+ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
+                     */
+                    std::string GetApproverType() const;
+
+                    /**
+                     * 设置指定签署人类型，目前仅支持
+ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
+                     * @param ApproverType 指定签署人类型，目前仅支持
+ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
+                     */
+                    void SetApproverType(const std::string& _approverType);
+
+                    /**
+                     * 判断参数 ApproverType 是否已赋值
+                     * @return ApproverType 是否已赋值
+                     */
+                    bool ApproverTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +151,14 @@ namespace TencentCloud
                      */
                     std::string m_relievedApproverReceiptId;
                     bool m_relievedApproverReceiptIdHasBeenSet;
+
+                    /**
+                     * 指定签署人类型，目前仅支持
+ORGANIZATION-企业
+ENTERPRISESERVER-企业静默签
+                     */
+                    std::string m_approverType;
+                    bool m_approverTypeHasBeenSet;
 
                 };
             }

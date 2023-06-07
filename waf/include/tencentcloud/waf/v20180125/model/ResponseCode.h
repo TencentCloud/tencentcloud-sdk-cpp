@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取如果成功则返回Success，失败则返回yunapi定义的错误码
-                     * @return Code 如果成功则返回Success，失败则返回yunapi定义的错误码
+                     * 获取如果成功则返回Success，失败则返回云api定义的错误码
+                     * @return Code 如果成功则返回Success，失败则返回云api定义的错误码
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置如果成功则返回Success，失败则返回yunapi定义的错误码
-                     * @param Code 如果成功则返回Success，失败则返回yunapi定义的错误码
+                     * 设置如果成功则返回Success，失败则返回云api定义的错误码
+                     * @param Code 如果成功则返回Success，失败则返回云api定义的错误码
                      */
                     void SetCode(const std::string& _code);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 如果成功则返回Success，失败则返回yunapi定义的错误码
+                     * 如果成功则返回Success，失败则返回云api定义的错误码
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

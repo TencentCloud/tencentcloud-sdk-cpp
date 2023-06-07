@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异地备份保留天时间，单位为天
-                     * @return ExpireDays 异地备份保留天时间，单位为天
+                     * 获取异地备份保留时间，单位为天
+                     * @return ExpireDays 异地备份保留时间，单位为天
                      */
                     int64_t GetExpireDays() const;
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异地备份保留天时间，单位为天
+                     * 异地备份保留时间，单位为天
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;

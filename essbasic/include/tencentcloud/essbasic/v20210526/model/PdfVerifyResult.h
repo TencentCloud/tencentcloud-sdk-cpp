@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool SignerNameHasBeenSet() const;
 
                     /**
-                     * 获取签署时间
-                     * @return SignTime 签署时间
+                     * 获取签署时间戳，单位秒
+                     * @return SignTime 签署时间戳，单位秒
                      */
                     int64_t GetSignTime() const;
 
                     /**
-                     * 设置签署时间
-                     * @param SignTime 签署时间
+                     * 设置签署时间戳，单位秒
+                     * @param SignTime 签署时间戳，单位秒
                      */
                     void SetSignTime(const int64_t& _signTime);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool CertSnHasBeenSet() const;
 
                     /**
-                     * 获取证书起始时间
-                     * @return CertNotBefore 证书起始时间
+                     * 获取证书起始时间戳，单位秒
+                     * @return CertNotBefore 证书起始时间戳，单位秒
                      */
                     int64_t GetCertNotBefore() const;
 
                     /**
-                     * 设置证书起始时间
-                     * @param CertNotBefore 证书起始时间
+                     * 设置证书起始时间戳，单位秒
+                     * @param CertNotBefore 证书起始时间戳，单位秒
                      */
                     void SetCertNotBefore(const int64_t& _certNotBefore);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool CertNotBeforeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间
-                     * @return CertNotAfter 证书过期时间
+                     * 获取证书过期时间戳，单位秒
+                     * @return CertNotAfter 证书过期时间戳，单位秒
                      */
                     int64_t GetCertNotAfter() const;
 
                     /**
-                     * 设置证书过期时间
-                     * @param CertNotAfter 证书过期时间
+                     * 设置证书过期时间戳，单位秒
+                     * @param CertNotAfter 证书过期时间戳，单位秒
                      */
                     void SetCertNotAfter(const int64_t& _certNotAfter);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool SignTypeHasBeenSet() const;
 
                     /**
-                     * 获取签名域横坐标
-                     * @return ComponentPosX 签名域横坐标
+                     * 获取签名域横坐标，单位px
+                     * @return ComponentPosX 签名域横坐标，单位px
                      */
                     double GetComponentPosX() const;
 
                     /**
-                     * 设置签名域横坐标
-                     * @param ComponentPosX 签名域横坐标
+                     * 设置签名域横坐标，单位px
+                     * @param ComponentPosX 签名域横坐标，单位px
                      */
                     void SetComponentPosX(const double& _componentPosX);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool ComponentPosXHasBeenSet() const;
 
                     /**
-                     * 获取签名域纵坐标
-                     * @return ComponentPosY 签名域纵坐标
+                     * 获取签名域纵坐标，单位px
+                     * @return ComponentPosY 签名域纵坐标，单位px
                      */
                     double GetComponentPosY() const;
 
                     /**
-                     * 设置签名域纵坐标
-                     * @param ComponentPosY 签名域纵坐标
+                     * 设置签名域纵坐标，单位px
+                     * @param ComponentPosY 签名域纵坐标，单位px
                      */
                     void SetComponentPosY(const double& _componentPosY);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool ComponentPosYHasBeenSet() const;
 
                     /**
-                     * 获取签名域宽度
-                     * @return ComponentWidth 签名域宽度
+                     * 获取签名域宽度，单位px
+                     * @return ComponentWidth 签名域宽度，单位px
                      */
                     double GetComponentWidth() const;
 
                     /**
-                     * 设置签名域宽度
-                     * @param ComponentWidth 签名域宽度
+                     * 设置签名域宽度，单位px
+                     * @param ComponentWidth 签名域宽度，单位px
                      */
                     void SetComponentWidth(const double& _componentWidth);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool ComponentWidthHasBeenSet() const;
 
                     /**
-                     * 获取签名域高度
-                     * @return ComponentHeight 签名域高度
+                     * 获取签名域高度，单位px
+                     * @return ComponentHeight 签名域高度，单位px
                      */
                     double GetComponentHeight() const;
 
                     /**
-                     * 设置签名域高度
-                     * @param ComponentHeight 签名域高度
+                     * 设置签名域高度，单位px
+                     * @param ComponentHeight 签名域高度，单位px
                      */
                     void SetComponentHeight(const double& _componentHeight);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool ComponentHeightHasBeenSet() const;
 
                     /**
-                     * 获取签名域所在页码
-                     * @return ComponentPage 签名域所在页码
+                     * 获取签名域所在页码，1～N
+                     * @return ComponentPage 签名域所在页码，1～N
                      */
                     int64_t GetComponentPage() const;
 
                     /**
-                     * 设置签名域所在页码
-                     * @param ComponentPage 签名域所在页码
+                     * 设置签名域所在页码，1～N
+                     * @param ComponentPage 签名域所在页码，1～N
                      */
                     void SetComponentPage(const int64_t& _componentPage);
 
@@ -319,7 +319,7 @@ namespace TencentCloud
                     bool m_signerNameHasBeenSet;
 
                     /**
-                     * 签署时间
+                     * 签署时间戳，单位秒
                      */
                     int64_t m_signTime;
                     bool m_signTimeHasBeenSet;
@@ -337,13 +337,13 @@ namespace TencentCloud
                     bool m_certSnHasBeenSet;
 
                     /**
-                     * 证书起始时间
+                     * 证书起始时间戳，单位秒
                      */
                     int64_t m_certNotBefore;
                     bool m_certNotBeforeHasBeenSet;
 
                     /**
-                     * 证书过期时间
+                     * 证书过期时间戳，单位秒
                      */
                     int64_t m_certNotAfter;
                     bool m_certNotAfterHasBeenSet;
@@ -355,31 +355,31 @@ namespace TencentCloud
                     bool m_signTypeHasBeenSet;
 
                     /**
-                     * 签名域横坐标
+                     * 签名域横坐标，单位px
                      */
                     double m_componentPosX;
                     bool m_componentPosXHasBeenSet;
 
                     /**
-                     * 签名域纵坐标
+                     * 签名域纵坐标，单位px
                      */
                     double m_componentPosY;
                     bool m_componentPosYHasBeenSet;
 
                     /**
-                     * 签名域宽度
+                     * 签名域宽度，单位px
                      */
                     double m_componentWidth;
                     bool m_componentWidthHasBeenSet;
 
                     /**
-                     * 签名域高度
+                     * 签名域高度，单位px
                      */
                     double m_componentHeight;
                     bool m_componentHeightHasBeenSet;
 
                     /**
-                     * 签名域所在页码
+                     * 签名域所在页码，1～N
                      */
                     int64_t m_componentPage;
                     bool m_componentPageHasBeenSet;

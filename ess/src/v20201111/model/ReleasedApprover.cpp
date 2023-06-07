@@ -23,7 +23,8 @@ using namespace std;
 ReleasedApprover::ReleasedApprover() :
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_relievedApproverReceiptIdHasBeenSet(false)
+    m_relievedApproverReceiptIdHasBeenSet(false),
+    m_approverTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_relievedApproverReceiptIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
+    {
+        if (!value["ApproverType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverType = string(value["ApproverType"].GetString());
+        m_approverTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RelievedApproverReceiptId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_relievedApproverReceiptId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ReleasedApprover::SetRelievedApproverReceiptId(const string& _relievedAppro
 bool ReleasedApprover::RelievedApproverReceiptIdHasBeenSet() const
 {
     return m_relievedApproverReceiptIdHasBeenSet;
+}
+
+string ReleasedApprover::GetApproverType() const
+{
+    return m_approverType;
+}
+
+void ReleasedApprover::SetApproverType(const string& _approverType)
+{
+    m_approverType = _approverType;
+    m_approverTypeHasBeenSet = true;
+}
+
+bool ReleasedApprover::ApproverTypeHasBeenSet() const
+{
+    return m_approverTypeHasBeenSet;
 }
 

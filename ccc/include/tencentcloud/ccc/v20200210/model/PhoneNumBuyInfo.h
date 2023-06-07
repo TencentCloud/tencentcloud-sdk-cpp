@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool BuyTimeHasBeenSet() const;
 
                     /**
-                     * 获取截至时间戳
-                     * @return EndTime 截至时间戳
+                     * 获取截止时间戳
+                     * @return EndTime 截止时间戳
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置截至时间戳
-                     * @param EndTime 截至时间戳
+                     * 设置截止时间戳
+                     * @param EndTime 截止时间戳
                      */
                     void SetEndTime(const int64_t& _endTime);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_buyTimeHasBeenSet;
 
                     /**
-                     * 截至时间戳
+                     * 截止时间戳
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

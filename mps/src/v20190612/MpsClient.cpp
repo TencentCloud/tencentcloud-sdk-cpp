@@ -513,6 +513,49 @@ MpsClient::CreateStreamLinkFlowOutcomeCallable MpsClient::CreateStreamLinkFlowCa
     return task->get_future();
 }
 
+MpsClient::CreateStreamLinkInputOutcome MpsClient::CreateStreamLinkInput(const CreateStreamLinkInputRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStreamLinkInput");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStreamLinkInputResponse rsp = CreateStreamLinkInputResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStreamLinkInputOutcome(rsp);
+        else
+            return CreateStreamLinkInputOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStreamLinkInputOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateStreamLinkInputAsync(const CreateStreamLinkInputRequest& request, const CreateStreamLinkInputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStreamLinkInput(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateStreamLinkInputOutcomeCallable MpsClient::CreateStreamLinkInputCallable(const CreateStreamLinkInputRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStreamLinkInputOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStreamLinkInput(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateStreamLinkOutputInfoOutcome MpsClient::CreateStreamLinkOutputInfo(const CreateStreamLinkOutputInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStreamLinkOutputInfo");

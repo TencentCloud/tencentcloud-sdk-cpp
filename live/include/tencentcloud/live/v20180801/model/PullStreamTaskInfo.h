@@ -786,6 +786,28 @@ PullVodPushLive -点播。
                      */
                     bool VodLocalModeHasBeenSet() const;
 
+                    /**
+                     * 获取录制模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordTemplateId 录制模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecordTemplateId() const;
+
+                    /**
+                     * 设置录制模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecordTemplateId 录制模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordTemplateId(const std::string& _recordTemplateId);
+
+                    /**
+                     * 判断参数 RecordTemplateId 是否已赋值
+                     * @return RecordTemplateId 是否已赋值
+                     */
+                    bool RecordTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1012,6 +1034,13 @@ PullVodPushLive -点播。
                      */
                     int64_t m_vodLocalMode;
                     bool m_vodLocalModeHasBeenSet;
+
+                    /**
+                     * 录制模板 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordTemplateId;
+                    bool m_recordTemplateIdHasBeenSet;
 
                 };
             }

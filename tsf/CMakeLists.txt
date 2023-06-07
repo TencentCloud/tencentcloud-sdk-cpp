@@ -176,6 +176,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DeployContainerGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateApiRateLimitRuleWithDetailRespRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateUnitRuleWithDetailRespRequest.h
+  include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupAttributeRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeSimpleApplicationsRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeDeliveryConfigByGroupIdResponse.h
   include/tencentcloud/tsf/v20180326/model/ModifyContainerGroupRequest.h
@@ -253,6 +254,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ShrinkInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiRateLimitRulesResponse.h
+  include/tencentcloud/tsf/v20180326/model/ContainerGroupOther.h
   include/tencentcloud/tsf/v20180326/model/AddClusterInstancesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupUseDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/ContainerGroupDeploy.h
@@ -475,6 +477,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateFileConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/GroupApiUseStatistics.h
   include/tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusResponse.h
+  include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupAttributeResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateFileConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/VolumeMountInfo.h
   include/tencentcloud/tsf/v20180326/model/PagedProgram.h
@@ -793,6 +796,7 @@ set(tsf_src
   src/v20180326/model/DeployContainerGroupRequest.cpp
   src/v20180326/model/CreateApiRateLimitRuleWithDetailRespRequest.cpp
   src/v20180326/model/CreateUnitRuleWithDetailRespRequest.cpp
+  src/v20180326/model/DescribeContainerGroupAttributeRequest.cpp
   src/v20180326/model/DescribeSimpleApplicationsRequest.cpp
   src/v20180326/model/DescribeDeliveryConfigByGroupIdResponse.cpp
   src/v20180326/model/ModifyContainerGroupRequest.cpp
@@ -870,6 +874,7 @@ set(tsf_src
   src/v20180326/model/ShrinkInstancesResponse.cpp
   src/v20180326/model/DeleteLaneRuleResponse.cpp
   src/v20180326/model/DescribeApiRateLimitRulesResponse.cpp
+  src/v20180326/model/ContainerGroupOther.cpp
   src/v20180326/model/AddClusterInstancesRequest.cpp
   src/v20180326/model/DescribeGroupUseDetailResponse.cpp
   src/v20180326/model/ContainerGroupDeploy.cpp
@@ -1092,6 +1097,7 @@ set(tsf_src
   src/v20180326/model/CreateFileConfigRequest.cpp
   src/v20180326/model/GroupApiUseStatistics.cpp
   src/v20180326/model/ChangeApiUsableStatusResponse.cpp
+  src/v20180326/model/DescribeContainerGroupAttributeResponse.cpp
   src/v20180326/model/CreateFileConfigResponse.cpp
   src/v20180326/model/VolumeMountInfo.cpp
   src/v20180326/model/PagedProgram.cpp

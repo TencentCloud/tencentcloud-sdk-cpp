@@ -46,11 +46,11 @@ namespace TencentCloud
                     /**
                      * 获取拉流源的类型：
 PullLivePushLive -直播，
-PullVodPushLive -点播。
+PullVodPushLive -点播，
 PullPicPushLive -图片。
                      * @return SourceType 拉流源的类型：
 PullLivePushLive -直播，
-PullVodPushLive -点播。
+PullVodPushLive -点播，
 PullPicPushLive -图片。
                      */
                     std::string GetSourceType() const;
@@ -58,11 +58,11 @@ PullPicPushLive -图片。
                     /**
                      * 设置拉流源的类型：
 PullLivePushLive -直播，
-PullVodPushLive -点播。
+PullVodPushLive -点播，
 PullPicPushLive -图片。
                      * @param SourceType 拉流源的类型：
 PullLivePushLive -直播，
-PullVodPushLive -点播。
+PullVodPushLive -点播，
 PullPicPushLive -图片。
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -684,7 +684,7 @@ PullVodPushLive -点播。
                     /**
                      * 拉流源的类型：
 PullLivePushLive -直播，
-PullVodPushLive -点播。
+PullVodPushLive -点播，
 PullPicPushLive -图片。
                      */
                     std::string m_sourceType;
