@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeTrainingTaskPodsResponse::DescribeTrainingTaskPodsResponse() :
     m_podNamesHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_podInfoListHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,23 @@ CoreInternalOutcome DescribeTrainingTaskPodsResponse::Deserialize(const string &
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PodInfoList") && !rsp["PodInfoList"].IsNull())
+    {
+        if (!rsp["PodInfoList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodInfoList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podInfoList.Deserialize(rsp["PodInfoList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ string DescribeTrainingTaskPodsResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_podInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podInfoList.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +174,16 @@ uint64_t DescribeTrainingTaskPodsResponse::GetTotalCount() const
 bool DescribeTrainingTaskPodsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+PodInfo DescribeTrainingTaskPodsResponse::GetPodInfoList() const
+{
+    return m_podInfoList;
+}
+
+bool DescribeTrainingTaskPodsResponse::PodInfoListHasBeenSet() const
+{
+    return m_podInfoListHasBeenSet;
 }
 
 

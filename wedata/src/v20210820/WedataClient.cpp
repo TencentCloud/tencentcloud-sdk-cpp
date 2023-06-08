@@ -8468,3 +8468,46 @@ WedataClient::UpdateInLongAgentOutcomeCallable WedataClient::UpdateInLongAgentCa
     return task->get_future();
 }
 
+WedataClient::UploadContentOutcome WedataClient::UploadContent(const UploadContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadContentResponse rsp = UploadContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadContentOutcome(rsp);
+        else
+            return UploadContentOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadContentOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UploadContentAsync(const UploadContentRequest& request, const UploadContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UploadContentOutcomeCallable WedataClient::UploadContentCallable(const UploadContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadContentOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

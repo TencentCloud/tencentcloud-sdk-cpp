@@ -396,6 +396,32 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool JumpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取签署ID
+- 发起流程时系统自动补充
+- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息
+                     * @return SignId 签署ID
+- 发起流程时系统自动补充
+- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息
+                     */
+                    std::string GetSignId() const;
+
+                    /**
+                     * 设置签署ID
+- 发起流程时系统自动补充
+- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息
+                     * @param SignId 签署ID
+- 发起流程时系统自动补充
+- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息
+                     */
+                    void SetSignId(const std::string& _signId);
+
+                    /**
+                     * 判断参数 SignId 是否已赋值
+                     * @return SignId 是否已赋值
+                     */
+                    bool SignIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +537,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
+
+                    /**
+                     * 签署ID
+- 发起流程时系统自动补充
+- 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息
+                     */
+                    std::string m_signId;
+                    bool m_signIdHasBeenSet;
 
                 };
             }

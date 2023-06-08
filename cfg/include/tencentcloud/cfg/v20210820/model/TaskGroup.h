@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfg/v20210820/model/TaskGroupAction.h>
+#include <tencentcloud/cfg/v20210820/model/TaskGroupInstancesExecuteRules.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,68 @@ namespace TencentCloud
                      */
                     bool TaskGroupModeHasBeenSet() const;
 
+                    /**
+                     * 获取不参演的实例列表
+                     * @return TaskGroupDiscardInstanceList 不参演的实例列表
+                     */
+                    std::vector<std::string> GetTaskGroupDiscardInstanceList() const;
+
+                    /**
+                     * 设置不参演的实例列表
+                     * @param TaskGroupDiscardInstanceList 不参演的实例列表
+                     */
+                    void SetTaskGroupDiscardInstanceList(const std::vector<std::string>& _taskGroupDiscardInstanceList);
+
+                    /**
+                     * 判断参数 TaskGroupDiscardInstanceList 是否已赋值
+                     * @return TaskGroupDiscardInstanceList 是否已赋值
+                     */
+                    bool TaskGroupDiscardInstanceListHasBeenSet() const;
+
+                    /**
+                     * 获取参演实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupSelectedInstanceList 参演实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTaskGroupSelectedInstanceList() const;
+
+                    /**
+                     * 设置参演实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskGroupSelectedInstanceList 参演实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskGroupSelectedInstanceList(const std::vector<std::string>& _taskGroupSelectedInstanceList);
+
+                    /**
+                     * 判断参数 TaskGroupSelectedInstanceList 是否已赋值
+                     * @return TaskGroupSelectedInstanceList 是否已赋值
+                     */
+                    bool TaskGroupSelectedInstanceListHasBeenSet() const;
+
+                    /**
+                     * 获取机器选取规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupInstancesExecuteRule 机器选取规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskGroupInstancesExecuteRules> GetTaskGroupInstancesExecuteRule() const;
+
+                    /**
+                     * 设置机器选取规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskGroupInstancesExecuteRule 机器选取规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskGroupInstancesExecuteRule(const std::vector<TaskGroupInstancesExecuteRules>& _taskGroupInstancesExecuteRule);
+
+                    /**
+                     * 判断参数 TaskGroupInstancesExecuteRule 是否已赋值
+                     * @return TaskGroupInstancesExecuteRule 是否已赋值
+                     */
+                    bool TaskGroupInstancesExecuteRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +356,26 @@ namespace TencentCloud
                      */
                     int64_t m_taskGroupMode;
                     bool m_taskGroupModeHasBeenSet;
+
+                    /**
+                     * 不参演的实例列表
+                     */
+                    std::vector<std::string> m_taskGroupDiscardInstanceList;
+                    bool m_taskGroupDiscardInstanceListHasBeenSet;
+
+                    /**
+                     * 参演实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_taskGroupSelectedInstanceList;
+                    bool m_taskGroupSelectedInstanceListHasBeenSet;
+
+                    /**
+                     * 机器选取规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskGroupInstancesExecuteRules> m_taskGroupInstancesExecuteRule;
+                    bool m_taskGroupInstancesExecuteRuleHasBeenSet;
 
                 };
             }

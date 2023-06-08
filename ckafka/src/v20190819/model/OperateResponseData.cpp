@@ -21,7 +21,8 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 OperateResponseData::OperateResponseData() :
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_routeDTOHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,23 @@ CoreInternalOutcome OperateResponseData::Deserialize(const rapidjson::Value &val
         m_flowIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteDTO") && !value["RouteDTO"].IsNull())
+    {
+        if (!value["RouteDTO"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperateResponseData.RouteDTO` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_routeDTO.Deserialize(value["RouteDTO"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_routeDTOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +71,15 @@ void OperateResponseData::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_routeDTOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteDTO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_routeDTO.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -72,5 +99,21 @@ void OperateResponseData::SetFlowId(const int64_t& _flowId)
 bool OperateResponseData::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+RouteDTO OperateResponseData::GetRouteDTO() const
+{
+    return m_routeDTO;
+}
+
+void OperateResponseData::SetRouteDTO(const RouteDTO& _routeDTO)
+{
+    m_routeDTO = _routeDTO;
+    m_routeDTOHasBeenSet = true;
+}
+
+bool OperateResponseData::RouteDTOHasBeenSet() const
+{
+    return m_routeDTOHasBeenSet;
 }
 

@@ -83,6 +83,49 @@ CsipClient::AddNewBindRoleUserOutcomeCallable CsipClient::AddNewBindRoleUserCall
     return task->get_future();
 }
 
+CsipClient::CreateDomainAndIpOutcome CsipClient::CreateDomainAndIp(const CreateDomainAndIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainAndIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainAndIpResponse rsp = CreateDomainAndIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainAndIpOutcome(rsp);
+        else
+            return CreateDomainAndIpOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainAndIpOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateDomainAndIpAsync(const CreateDomainAndIpRequest& request, const CreateDomainAndIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainAndIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::CreateDomainAndIpOutcomeCallable CsipClient::CreateDomainAndIpCallable(const CreateDomainAndIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainAndIpOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainAndIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");

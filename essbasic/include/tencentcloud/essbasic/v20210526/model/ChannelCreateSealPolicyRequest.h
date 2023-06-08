@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
-#include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取指定待授权的用户ID数组
-                     * @return UserIds 指定待授权的用户ID数组
+                     * 获取指定待授权的用户ID数组,电子签的用户ID
+                     * @return UserIds 指定待授权的用户ID数组,电子签的用户ID
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置指定待授权的用户ID数组
-                     * @param UserIds 指定待授权的用户ID数组
+                     * 设置指定待授权的用户ID数组,电子签的用户ID
+                     * @param UserIds 指定待授权的用户ID数组,电子签的用户ID
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -98,24 +98,6 @@ namespace TencentCloud
                      * @return UserIds 是否已赋值
                      */
                     bool UserIdsHasBeenSet() const;
-
-                    /**
-                     * 获取企业机构信息，不用传
-                     * @return Organization 企业机构信息，不用传
-                     */
-                    OrganizationInfo GetOrganization() const;
-
-                    /**
-                     * 设置企业机构信息，不用传
-                     * @param Organization 企业机构信息，不用传
-                     */
-                    void SetOrganization(const OrganizationInfo& _organization);
-
-                    /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
-                     */
-                    bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取操作人（用户）信息，不用传
@@ -135,6 +117,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取企业机构信息，不用传
+                     * @return Organization 企业机构信息，不用传
+                     */
+                    OrganizationInfo GetOrganization() const;
+
+                    /**
+                     * 设置企业机构信息，不用传
+                     * @param Organization 企业机构信息，不用传
+                     */
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,22 +150,22 @@ namespace TencentCloud
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 指定待授权的用户ID数组
+                     * 指定待授权的用户ID数组,电子签的用户ID
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
-
-                    /**
-                     * 企业机构信息，不用传
-                     */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
 
                     /**
                      * 操作人（用户）信息，不用传
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 企业机构信息，不用传
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                 };
             }

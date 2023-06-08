@@ -67,6 +67,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAliasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainGroupListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListRequest.h>
@@ -233,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAnalyticsResponse> DescribeDomainAnalyticsOutcome;
                 typedef std::future<DescribeDomainAnalyticsOutcome> DescribeDomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainAnalyticsRequest&, DescribeDomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAnalyticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainFilterListResponse> DescribeDomainFilterListOutcome;
+                typedef std::future<DescribeDomainFilterListOutcome> DescribeDomainFilterListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainFilterListRequest&, DescribeDomainFilterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainFilterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainGroupListResponse> DescribeDomainGroupListOutcome;
                 typedef std::future<DescribeDomainGroupListOutcome> DescribeDomainGroupListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainGroupListRequest&, DescribeDomainGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainGroupListAsyncHandler;
@@ -562,6 +567,15 @@ namespace TencentCloud
                 DescribeDomainAnalyticsOutcome DescribeDomainAnalytics(const Model::DescribeDomainAnalyticsRequest &request);
                 void DescribeDomainAnalyticsAsync(const Model::DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAnalyticsOutcomeCallable DescribeDomainAnalyticsCallable(const Model::DescribeDomainAnalyticsRequest& request);
+
+                /**
+                 *获取域名筛选列表
+                 * @param req DescribeDomainFilterListRequest
+                 * @return DescribeDomainFilterListOutcome
+                 */
+                DescribeDomainFilterListOutcome DescribeDomainFilterList(const Model::DescribeDomainFilterListRequest &request);
+                void DescribeDomainFilterListAsync(const Model::DescribeDomainFilterListRequest& request, const DescribeDomainFilterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainFilterListOutcomeCallable DescribeDomainFilterListCallable(const Model::DescribeDomainFilterListRequest& request);
 
                 /**
                  *获取域名分组列表

@@ -26,8 +26,8 @@ ChannelCreateSealPolicyRequest::ChannelCreateSealPolicyRequest() :
     m_agentHasBeenSet(false),
     m_sealIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_organizationHasBeenSet(false)
 {
 }
 
@@ -68,15 +68,6 @@ string ChannelCreateSealPolicyRequest::ToJsonString() const
         }
     }
 
-    if (m_organizationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Organization";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_organization.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -84,6 +75,15 @@ string ChannelCreateSealPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_organizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Organization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organization.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -142,22 +142,6 @@ bool ChannelCreateSealPolicyRequest::UserIdsHasBeenSet() const
     return m_userIdsHasBeenSet;
 }
 
-OrganizationInfo ChannelCreateSealPolicyRequest::GetOrganization() const
-{
-    return m_organization;
-}
-
-void ChannelCreateSealPolicyRequest::SetOrganization(const OrganizationInfo& _organization)
-{
-    m_organization = _organization;
-    m_organizationHasBeenSet = true;
-}
-
-bool ChannelCreateSealPolicyRequest::OrganizationHasBeenSet() const
-{
-    return m_organizationHasBeenSet;
-}
-
 UserInfo ChannelCreateSealPolicyRequest::GetOperator() const
 {
     return m_operator;
@@ -172,6 +156,22 @@ void ChannelCreateSealPolicyRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreateSealPolicyRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+OrganizationInfo ChannelCreateSealPolicyRequest::GetOrganization() const
+{
+    return m_organization;
+}
+
+void ChannelCreateSealPolicyRequest::SetOrganization(const OrganizationInfo& _organization)
+{
+    m_organization = _organization;
+    m_organizationHasBeenSet = true;
+}
+
+bool ChannelCreateSealPolicyRequest::OrganizationHasBeenSet() const
+{
+    return m_organizationHasBeenSet;
 }
 
 

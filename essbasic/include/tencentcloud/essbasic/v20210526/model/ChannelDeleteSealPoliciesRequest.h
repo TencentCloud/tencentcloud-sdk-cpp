@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取指定用户ID数组
-                     * @return UserIds 指定用户ID数组
+                     * 获取指定用户ID数组，电子签系统用户ID
+                     * @return UserIds 指定用户ID数组，电子签系统用户ID
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置指定用户ID数组
-                     * @param UserIds 指定用户ID数组
+                     * 设置指定用户ID数组，电子签系统用户ID
+                     * @param UserIds 指定用户ID数组，电子签系统用户ID
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -150,7 +150,7 @@ namespace TencentCloud
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 指定用户ID数组
+                     * 指定用户ID数组，电子签系统用户ID
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

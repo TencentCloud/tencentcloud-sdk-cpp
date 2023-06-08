@@ -45,24 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     * @return EmbedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     */
-                    std::string GetEmbedType() const;
-
-                    /**
-                     * 设置WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     * @param EmbedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     */
-                    void SetEmbedType(const std::string& _embedType);
-
-                    /**
-                     * 判断参数 EmbedType 是否已赋值
-                     * @return EmbedType 是否已赋值
-                     */
-                    bool EmbedTypeHasBeenSet() const;
-
-                    /**
                      * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
                      * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
                      */
@@ -81,22 +63,22 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取渠道操作者信息
-                     * @return Operator 渠道操作者信息
+                     * 获取WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * @return EmbedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
                      */
-                    UserInfo GetOperator() const;
+                    std::string GetEmbedType() const;
 
                     /**
-                     * 设置渠道操作者信息
-                     * @param Operator 渠道操作者信息
+                     * 设置WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * @param EmbedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetEmbedType(const std::string& _embedType);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 EmbedType 是否已赋值
+                     * @return EmbedType 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool EmbedTypeHasBeenSet() const;
 
                     /**
                      * 获取WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
@@ -134,13 +116,25 @@ namespace TencentCloud
                      */
                     bool HiddenComponentsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取渠道操作者信息
+                     * @return Operator 渠道操作者信息
+                     */
+                    UserInfo GetOperator() const;
 
                     /**
-                     * WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * 设置渠道操作者信息
+                     * @param Operator 渠道操作者信息
                      */
-                    std::string m_embedType;
-                    bool m_embedTypeHasBeenSet;
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                private:
 
                     /**
                      * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
@@ -149,10 +143,10 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 渠道操作者信息
+                     * WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    std::string m_embedType;
+                    bool m_embedTypeHasBeenSet;
 
                     /**
                      * WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
@@ -165,6 +159,12 @@ namespace TencentCloud
                      */
                     bool m_hiddenComponents;
                     bool m_hiddenComponentsHasBeenSet;
+
+                    /**
+                     * 渠道操作者信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

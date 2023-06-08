@@ -45,6 +45,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSnapshotListRequest.h
   include/tencentcloud/dnspod/v20210323/model/DescribePackageDetailResponse.h
+  include/tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordLineListResponse.h
   include/tencentcloud/dnspod/v20210323/model/SnapshotPageInfo.h
   include/tencentcloud/dnspod/v20210323/model/DomainInfo.h
@@ -108,6 +109,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h
   include/tencentcloud/dnspod/v20210323/model/WhoisContactAddress.h
   include/tencentcloud/dnspod/v20210323/model/SnapshotConfig.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsResponse.h
   include/tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h
   include/tencentcloud/dnspod/v20210323/model/CreateRecordBatchRecord.h
   include/tencentcloud/dnspod/v20210323/model/CreateDomainResponse.h
@@ -160,7 +162,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/SnapshotInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSRequest.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListRequest.h
-  include/tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsResponse.h
+  include/tencentcloud/dnspod/v20210323/model/DescribeDomainFilterListRequest.h
   include/tencentcloud/dnspod/v20210323/model/PurviewInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkRequest.h
   include/tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigResponse.h
@@ -221,6 +223,7 @@ set(dnspod_src
   src/v20210323/model/DescribeDomainResponse.cpp
   src/v20210323/model/DescribeSnapshotListRequest.cpp
   src/v20210323/model/DescribePackageDetailResponse.cpp
+  src/v20210323/model/DescribeDomainFilterListResponse.cpp
   src/v20210323/model/DescribeRecordLineListResponse.cpp
   src/v20210323/model/SnapshotPageInfo.cpp
   src/v20210323/model/DomainInfo.cpp
@@ -284,6 +287,7 @@ set(dnspod_src
   src/v20210323/model/ModifyRecordBatchRequest.cpp
   src/v20210323/model/WhoisContactAddress.cpp
   src/v20210323/model/SnapshotConfig.cpp
+  src/v20210323/model/ModifyRecordFieldsResponse.cpp
   src/v20210323/model/DeleteRecordResponse.cpp
   src/v20210323/model/CreateRecordBatchRecord.cpp
   src/v20210323/model/CreateDomainResponse.cpp
@@ -336,7 +340,7 @@ set(dnspod_src
   src/v20210323/model/SnapshotInfo.cpp
   src/v20210323/model/ModifyDynamicDNSRequest.cpp
   src/v20210323/model/DescribeRecordGroupListRequest.cpp
-  src/v20210323/model/ModifyRecordFieldsResponse.cpp
+  src/v20210323/model/DescribeDomainFilterListRequest.cpp
   src/v20210323/model/PurviewInfo.cpp
   src/v20210323/model/ModifyRecordRemarkRequest.cpp
   src/v20210323/model/ModifySnapshotConfigResponse.cpp

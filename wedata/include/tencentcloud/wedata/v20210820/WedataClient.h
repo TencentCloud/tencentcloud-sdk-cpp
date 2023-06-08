@@ -415,6 +415,8 @@
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateInLongAgentRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateInLongAgentResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UploadContentResponse.h>
 
 
 namespace TencentCloud
@@ -1017,6 +1019,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateInLongAgentResponse> UpdateInLongAgentOutcome;
                 typedef std::future<UpdateInLongAgentOutcome> UpdateInLongAgentOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateInLongAgentRequest&, UpdateInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInLongAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadContentResponse> UploadContentOutcome;
+                typedef std::future<UploadContentOutcome> UploadContentOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UploadContentRequest&, UploadContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadContentAsyncHandler;
 
 
 
@@ -2831,6 +2836,15 @@ namespace TencentCloud
                 UpdateInLongAgentOutcome UpdateInLongAgent(const Model::UpdateInLongAgentRequest &request);
                 void UpdateInLongAgentAsync(const Model::UpdateInLongAgentRequest& request, const UpdateInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInLongAgentOutcomeCallable UpdateInLongAgentCallable(const Model::UpdateInLongAgentRequest& request);
+
+                /**
+                 *保存任务信息
+                 * @param req UploadContentRequest
+                 * @return UploadContentOutcome
+                 */
+                UploadContentOutcome UploadContent(const Model::UploadContentRequest &request);
+                void UploadContentAsync(const Model::UploadContentRequest& request, const UploadContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadContentOutcomeCallable UploadContentCallable(const Model::UploadContentRequest& request);
 
             };
         }

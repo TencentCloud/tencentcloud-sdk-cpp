@@ -23,11 +23,11 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelCreateEmbedWebUrlRequest::ChannelCreateEmbedWebUrlRequest() :
-    m_embedTypeHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false),
+    m_embedTypeHasBeenSet(false),
     m_businessIdHasBeenSet(false),
-    m_hiddenComponentsHasBeenSet(false)
+    m_hiddenComponentsHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -38,14 +38,6 @@ string ChannelCreateEmbedWebUrlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_embedTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EmbedType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_embedType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -55,13 +47,12 @@ string ChannelCreateEmbedWebUrlRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_embedTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "EmbedType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_embedType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessIdHasBeenSet)
@@ -80,6 +71,15 @@ string ChannelCreateEmbedWebUrlRequest::ToJsonString() const
         d.AddMember(iKey, m_hiddenComponents, allocator);
     }
 
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -87,22 +87,6 @@ string ChannelCreateEmbedWebUrlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ChannelCreateEmbedWebUrlRequest::GetEmbedType() const
-{
-    return m_embedType;
-}
-
-void ChannelCreateEmbedWebUrlRequest::SetEmbedType(const string& _embedType)
-{
-    m_embedType = _embedType;
-    m_embedTypeHasBeenSet = true;
-}
-
-bool ChannelCreateEmbedWebUrlRequest::EmbedTypeHasBeenSet() const
-{
-    return m_embedTypeHasBeenSet;
-}
 
 Agent ChannelCreateEmbedWebUrlRequest::GetAgent() const
 {
@@ -120,20 +104,20 @@ bool ChannelCreateEmbedWebUrlRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-UserInfo ChannelCreateEmbedWebUrlRequest::GetOperator() const
+string ChannelCreateEmbedWebUrlRequest::GetEmbedType() const
 {
-    return m_operator;
+    return m_embedType;
 }
 
-void ChannelCreateEmbedWebUrlRequest::SetOperator(const UserInfo& _operator)
+void ChannelCreateEmbedWebUrlRequest::SetEmbedType(const string& _embedType)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_embedType = _embedType;
+    m_embedTypeHasBeenSet = true;
 }
 
-bool ChannelCreateEmbedWebUrlRequest::OperatorHasBeenSet() const
+bool ChannelCreateEmbedWebUrlRequest::EmbedTypeHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_embedTypeHasBeenSet;
 }
 
 string ChannelCreateEmbedWebUrlRequest::GetBusinessId() const
@@ -166,6 +150,22 @@ void ChannelCreateEmbedWebUrlRequest::SetHiddenComponents(const bool& _hiddenCom
 bool ChannelCreateEmbedWebUrlRequest::HiddenComponentsHasBeenSet() const
 {
     return m_hiddenComponentsHasBeenSet;
+}
+
+UserInfo ChannelCreateEmbedWebUrlRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateEmbedWebUrlRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateEmbedWebUrlRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

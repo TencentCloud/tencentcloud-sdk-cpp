@@ -21,7 +21,7 @@ set(cfg_public_header
 set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h
   include/tencentcloud/cfg/v20210820/model/TaskGroupAction.h
-  include/tencentcloud/cfg/v20210820/model/TaskMonitor.h
+  include/tencentcloud/cfg/v20210820/model/TaskGroupInstancesExecuteRules.h
   include/tencentcloud/cfg/v20210820/model/TaskConfig.h
   include/tencentcloud/cfg/v20210820/model/DeleteTaskRequest.h
   include/tencentcloud/cfg/v20210820/model/TaskGroup.h
@@ -40,6 +40,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/DescribeTaskListResponse.h
   include/tencentcloud/cfg/v20210820/model/TemplateGroupAction.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateListResponse.h
+  include/tencentcloud/cfg/v20210820/model/TaskMonitor.h
   include/tencentcloud/cfg/v20210820/model/TagWithDescribe.h
   include/tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateResponse.h
   include/tencentcloud/cfg/v20210820/model/DeleteTaskResponse.h
@@ -64,7 +65,7 @@ set(cfg_src
   src/v20210820/CfgClient.cpp
   src/v20210820/model/ModifyTaskRunStatusResponse.cpp
   src/v20210820/model/TaskGroupAction.cpp
-  src/v20210820/model/TaskMonitor.cpp
+  src/v20210820/model/TaskGroupInstancesExecuteRules.cpp
   src/v20210820/model/TaskConfig.cpp
   src/v20210820/model/DeleteTaskRequest.cpp
   src/v20210820/model/TaskGroup.cpp
@@ -83,6 +84,7 @@ set(cfg_src
   src/v20210820/model/DescribeTaskListResponse.cpp
   src/v20210820/model/TemplateGroupAction.cpp
   src/v20210820/model/DescribeTemplateListResponse.cpp
+  src/v20210820/model/TaskMonitor.cpp
   src/v20210820/model/TagWithDescribe.cpp
   src/v20210820/model/CreateTaskFromTemplateResponse.cpp
   src/v20210820/model/DeleteTaskResponse.cpp

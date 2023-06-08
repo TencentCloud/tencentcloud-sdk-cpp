@@ -38,10 +38,10 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_needSignReviewHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
     m_ccNotifyTypeHasBeenSet(false),
-    m_autoSignSceneHasBeenSet(false)
+    m_autoSignSceneHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -192,15 +192,6 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_signBeanTag, allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_ccInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -230,6 +221,15 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "AutoSignScene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -480,22 +480,6 @@ bool ChannelCreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
     return m_signBeanTagHasBeenSet;
 }
 
-UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<CcInfo> ChannelCreateFlowByFilesRequest::GetCcInfos() const
 {
     return m_ccInfos;
@@ -542,6 +526,22 @@ void ChannelCreateFlowByFilesRequest::SetAutoSignScene(const string& _autoSignSc
 bool ChannelCreateFlowByFilesRequest::AutoSignSceneHasBeenSet() const
 {
     return m_autoSignSceneHasBeenSet;
+}
+
+UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

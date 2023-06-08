@@ -27,7 +27,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_msgTTLHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_retentionPolicyHasBeenSet(false)
+    m_retentionPolicyHasBeenSet(false),
+    m_autoSubscriptionCreationHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateEnvironmentRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retentionPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoSubscriptionCreationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSubscriptionCreation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoSubscriptionCreation, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateEnvironmentRequest::SetRetentionPolicy(const RetentionPolicy& _retent
 bool CreateEnvironmentRequest::RetentionPolicyHasBeenSet() const
 {
     return m_retentionPolicyHasBeenSet;
+}
+
+bool CreateEnvironmentRequest::GetAutoSubscriptionCreation() const
+{
+    return m_autoSubscriptionCreation;
+}
+
+void CreateEnvironmentRequest::SetAutoSubscriptionCreation(const bool& _autoSubscriptionCreation)
+{
+    m_autoSubscriptionCreation = _autoSubscriptionCreation;
+    m_autoSubscriptionCreationHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::AutoSubscriptionCreationHasBeenSet() const
+{
+    return m_autoSubscriptionCreationHasBeenSet;
 }
 
 

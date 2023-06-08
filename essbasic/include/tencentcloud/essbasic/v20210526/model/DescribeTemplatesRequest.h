@@ -171,24 +171,6 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取是否获取模板预览链接
                      * @return WithPreviewUrl 是否获取模板预览链接
                      */
@@ -225,14 +207,14 @@ namespace TencentCloud
                     bool WithPdfUrlHasBeenSet() const;
 
                     /**
-                     * 获取模板ID
-                     * @return ChannelTemplateId 模板ID
+                     * 获取对应第三方应用平台企业的模板ID
+                     * @return ChannelTemplateId 对应第三方应用平台企业的模板ID
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
-                     * 设置模板ID
-                     * @param ChannelTemplateId 模板ID
+                     * 设置对应第三方应用平台企业的模板ID
+                     * @param ChannelTemplateId 对应第三方应用平台企业的模板ID
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
@@ -241,6 +223,24 @@ namespace TencentCloud
                      * @return ChannelTemplateId 是否已赋值
                      */
                     bool ChannelTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
@@ -287,12 +287,6 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 是否获取模板预览链接
                      */
                     bool m_withPreviewUrl;
@@ -305,10 +299,16 @@ namespace TencentCloud
                     bool m_withPdfUrlHasBeenSet;
 
                     /**
-                     * 模板ID
+                     * 对应第三方应用平台企业的模板ID
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;
+
+                    /**
+                     * 操作者的信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

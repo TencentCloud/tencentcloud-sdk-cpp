@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最终授权成功的用户ID数组。其他的跳过的是已经授权了的
-                     * @return UserIds 最终授权成功的用户ID数组。其他的跳过的是已经授权了的
+                     * 获取最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的
+                     * @return UserIds 最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的
                      */
                     std::vector<std::string> GetUserIds() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 最终授权成功的用户ID数组。其他的跳过的是已经授权了的
+                     * 最终授权成功的电子签系统用户ID数组。其他的跳过的是已经授权了的
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

@@ -26,6 +26,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoMember.h
   include/tencentcloud/ckafka/v20190819/model/RowParam.h
+  include/tencentcloud/ckafka/v20190819/model/RouteDTO.h
   include/tencentcloud/ckafka/v20190819/model/EsConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskResponse.h
@@ -344,6 +345,7 @@ set(ckafka_src
   src/v20190819/model/PostgreSQLModifyConnectParam.cpp
   src/v20190819/model/GroupInfoMember.cpp
   src/v20190819/model/RowParam.cpp
+  src/v20190819/model/RouteDTO.cpp
   src/v20190819/model/EsConnectParam.cpp
   src/v20190819/model/BatchCreateAclRequest.cpp
   src/v20190819/model/DescribeDatahubTaskResponse.cpp

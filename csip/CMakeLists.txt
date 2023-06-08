@@ -22,6 +22,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h
+  include/tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h
   include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
   include/tencentcloud/csip/v20221121/model/FilterDataObject.h
   include/tencentcloud/csip/v20221121/model/CVMAssetVO.h
@@ -42,6 +43,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/AssetBaseInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h
@@ -53,6 +55,7 @@ set(csip_src
   src/v20221121/model/DescribeDbAssetInfoResponse.cpp
   src/v20221121/model/DescribeDbAssetsRequest.cpp
   src/v20221121/model/DescribeScanReportListRequest.cpp
+  src/v20221121/model/CreateDomainAndIpRequest.cpp
   src/v20221121/model/ScanTaskInfo.cpp
   src/v20221121/model/FilterDataObject.cpp
   src/v20221121/model/CVMAssetVO.cpp
@@ -73,6 +76,7 @@ set(csip_src
   src/v20221121/model/DescribeSubnetAssetsRequest.cpp
   src/v20221121/model/AssetBaseInfoResponse.cpp
   src/v20221121/model/DescribeCVMAssetsResponse.cpp
+  src/v20221121/model/CreateDomainAndIpResponse.cpp
   src/v20221121/model/DescribeDbAssetsResponse.cpp
   src/v20221121/model/AddNewBindRoleUserResponse.cpp
   src/v20221121/model/DescribeCVMAssetInfoRequest.cpp

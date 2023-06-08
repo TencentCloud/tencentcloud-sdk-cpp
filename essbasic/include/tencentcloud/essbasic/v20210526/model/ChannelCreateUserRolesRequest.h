@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取绑定角色的员工id列表
-                     * @return UserIds 绑定角色的员工id列表
+                     * 获取绑定角色的员工id列表，电子签的UserId
+                     * @return UserIds 绑定角色的员工id列表，电子签的UserId
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置绑定角色的员工id列表
-                     * @param UserIds 绑定角色的员工id列表
+                     * 设置绑定角色的员工id列表，电子签的UserId
+                     * @param UserIds 绑定角色的员工id列表，电子签的UserId
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 绑定角色的员工id列表
+                     * 绑定角色的员工id列表，电子签的UserId
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;

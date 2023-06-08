@@ -24,8 +24,8 @@
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -330,24 +330,6 @@ MobileCheck：手机号验证
                     bool SignBeanTagHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息，不用传
-                     * @return Operator 操作者的信息，不用传
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息，不用传
-                     * @param Operator 操作者的信息，不用传
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取被抄送人信息列表
                      * @return CcInfos 被抄送人信息列表
                      */
@@ -400,6 +382,24 @@ MobileCheck：手机号验证
                      * @return AutoSignScene 是否已赋值
                      */
                     bool AutoSignSceneHasBeenSet() const;
+
+                    /**
+                     * 获取操作者的信息，不用传
+                     * @return Operator 操作者的信息，不用传
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息，不用传
+                     * @param Operator 操作者的信息，不用传
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
@@ -497,12 +497,6 @@ MobileCheck：手机号验证
                     bool m_signBeanTagHasBeenSet;
 
                     /**
-                     * 操作者的信息，不用传
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 被抄送人信息列表
                      */
                     std::vector<CcInfo> m_ccInfos;
@@ -519,6 +513,12 @@ MobileCheck：手机号验证
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;
+
+                    /**
+                     * 操作者的信息，不用传
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

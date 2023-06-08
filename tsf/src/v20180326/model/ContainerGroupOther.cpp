@@ -142,21 +142,18 @@ CoreInternalOutcome ContainerGroupOther::Deserialize(const rapidjson::Value &val
 
     if (value.HasMember("HealthCheckSettings") && !value["HealthCheckSettings"].IsNull())
     {
-        if (!value["HealthCheckSettings"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ContainerGroupOther.HealthCheckSettings` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["HealthCheckSettings"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["HealthCheckSettings"].IsObject())
         {
-            HealthCheckSetting item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_healthCheckSettings.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupOther.HealthCheckSettings` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_healthCheckSettings.Deserialize(value["HealthCheckSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_healthCheckSettingsHasBeenSet = true;
     }
 
@@ -261,14 +258,8 @@ void ContainerGroupOther::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheckSettings";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_healthCheckSettings.begin(); itr != m_healthCheckSettings.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_isNotEqualServiceConfigHasBeenSet)
@@ -426,12 +417,12 @@ bool ContainerGroupOther::SubnetIdHasBeenSet() const
     return m_subnetIdHasBeenSet;
 }
 
-vector<HealthCheckSetting> ContainerGroupOther::GetHealthCheckSettings() const
+HealthCheckSettings ContainerGroupOther::GetHealthCheckSettings() const
 {
     return m_healthCheckSettings;
 }
 
-void ContainerGroupOther::SetHealthCheckSettings(const vector<HealthCheckSetting>& _healthCheckSettings)
+void ContainerGroupOther::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
 {
     m_healthCheckSettings = _healthCheckSettings;
     m_healthCheckSettingsHasBeenSet = true;

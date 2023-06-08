@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool CalleeHasBeenSet() const;
 
                     /**
-                     * 获取主叫号码，须带 0086 前缀
-                     * @return Caller 主叫号码，须带 0086 前缀
+                     * 获取主叫号码（废弃，使用Callers），须带 0086 前缀
+                     * @return Caller 主叫号码（废弃，使用Callers），须带 0086 前缀
                      */
                     std::string GetCaller() const;
 
                     /**
-                     * 设置主叫号码，须带 0086 前缀
-                     * @param Caller 主叫号码，须带 0086 前缀
+                     * 设置主叫号码（废弃，使用Callers），须带 0086 前缀
+                     * @param Caller 主叫号码（废弃，使用Callers），须带 0086 前缀
                      */
                     void SetCaller(const std::string& _caller);
 
@@ -113,6 +113,24 @@ namespace TencentCloud
                      * @return Caller 是否已赋值
                      */
                     bool CallerHasBeenSet() const;
+
+                    /**
+                     * 获取指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     * @return Callers 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     */
+                    std::vector<std::string> GetCallers() const;
+
+                    /**
+                     * 设置指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     * @param Callers 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     */
+                    void SetCallers(const std::vector<std::string>& _callers);
+
+                    /**
+                     * 判断参数 Callers 是否已赋值
+                     * @return Callers 是否已赋值
+                     */
+                    bool CallersHasBeenSet() const;
 
                     /**
                      * 获取是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单
@@ -171,10 +189,16 @@ namespace TencentCloud
                     bool m_calleeHasBeenSet;
 
                     /**
-                     * 主叫号码，须带 0086 前缀
+                     * 主叫号码（废弃，使用Callers），须带 0086 前缀
                      */
                     std::string m_caller;
                     bool m_callerHasBeenSet;
+
+                    /**
+                     * 指定主叫号码列表，如果前面的号码失败了会自动换成下一个号码，须带 0086 前缀
+                     */
+                    std::vector<std::string> m_callers;
+                    bool m_callersHasBeenSet;
 
                     /**
                      * 是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单

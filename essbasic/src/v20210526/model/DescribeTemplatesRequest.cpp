@@ -30,10 +30,10 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_offsetHasBeenSet(false),
     m_queryAllComponentsHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_withPreviewUrlHasBeenSet(false),
     m_withPdfUrlHasBeenSet(false),
-    m_channelTemplateIdHasBeenSet(false)
+    m_channelTemplateIdHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -101,15 +101,6 @@ string DescribeTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_withPreviewUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -132,6 +123,15 @@ string DescribeTemplatesRequest::ToJsonString() const
         string key = "ChannelTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -254,22 +254,6 @@ bool DescribeTemplatesRequest::TemplateNameHasBeenSet() const
     return m_templateNameHasBeenSet;
 }
 
-UserInfo DescribeTemplatesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool DescribeTemplatesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 bool DescribeTemplatesRequest::GetWithPreviewUrl() const
 {
     return m_withPreviewUrl;
@@ -316,6 +300,22 @@ void DescribeTemplatesRequest::SetChannelTemplateId(const string& _channelTempla
 bool DescribeTemplatesRequest::ChannelTemplateIdHasBeenSet() const
 {
     return m_channelTemplateIdHasBeenSet;
+}
+
+UserInfo DescribeTemplatesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

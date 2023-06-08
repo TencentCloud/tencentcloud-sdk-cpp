@@ -66,8 +66,8 @@ namespace TencentCloud
                     bool ConsoleUrlHasBeenSet() const;
 
                     /**
-                     * 获取子客企业是否已开通腾讯电子签
-                     * @return IsActivated 子客企业是否已开通腾讯电子签
+                     * 获取子客企业是否已开通腾讯电子签，true-是，false-否
+                     * @return IsActivated 子客企业是否已开通腾讯电子签，true-是，false-否
                      */
                     bool GetIsActivated() const;
 
@@ -103,7 +103,7 @@ namespace TencentCloud
                     bool m_consoleUrlHasBeenSet;
 
                     /**
-                     * 子客企业是否已开通腾讯电子签
+                     * 子客企业是否已开通腾讯电子签，true-是，false-否
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;

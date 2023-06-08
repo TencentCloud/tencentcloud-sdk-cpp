@@ -29,7 +29,8 @@ Environment::Environment() :
     m_namespaceIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_topicNumHasBeenSet(false),
-    m_retentionPolicyHasBeenSet(false)
+    m_retentionPolicyHasBeenSet(false),
+    m_autoSubscriptionCreationHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         m_retentionPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoSubscriptionCreation") && !value["AutoSubscriptionCreation"].IsNull())
+    {
+        if (!value["AutoSubscriptionCreation"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.AutoSubscriptionCreation` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSubscriptionCreation = value["AutoSubscriptionCreation"].GetBool();
+        m_autoSubscriptionCreationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retentionPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoSubscriptionCreationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSubscriptionCreation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoSubscriptionCreation, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void Environment::SetRetentionPolicy(const RetentionPolicy& _retentionPolicy)
 bool Environment::RetentionPolicyHasBeenSet() const
 {
     return m_retentionPolicyHasBeenSet;
+}
+
+bool Environment::GetAutoSubscriptionCreation() const
+{
+    return m_autoSubscriptionCreation;
+}
+
+void Environment::SetAutoSubscriptionCreation(const bool& _autoSubscriptionCreation)
+{
+    m_autoSubscriptionCreation = _autoSubscriptionCreation;
+    m_autoSubscriptionCreationHasBeenSet = true;
+}
+
+bool Environment::AutoSubscriptionCreationHasBeenSet() const
+{
+    return m_autoSubscriptionCreationHasBeenSet;
 }
 

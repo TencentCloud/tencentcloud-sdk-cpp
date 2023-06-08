@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/PodInfo.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,18 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取pod详细信息
+                     * @return PodInfoList pod详细信息
+                     */
+                    PodInfo GetPodInfoList() const;
+
+                    /**
+                     * 判断参数 PodInfoList 是否已赋值
+                     * @return PodInfoList 是否已赋值
+                     */
+                    bool PodInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +93,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * pod详细信息
+                     */
+                    PodInfo m_podInfoList;
+                    bool m_podInfoListHasBeenSet;
 
                 };
             }

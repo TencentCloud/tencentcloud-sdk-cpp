@@ -26,8 +26,8 @@ ChannelUpdateSealStatusRequest::ChannelUpdateSealStatusRequest() :
     m_agentHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_sealIdHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,14 @@ string ChannelUpdateSealStatusRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,14 +78,6 @@ string ChannelUpdateSealStatusRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_reasonHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Reason";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -136,22 +136,6 @@ bool ChannelUpdateSealStatusRequest::SealIdHasBeenSet() const
     return m_sealIdHasBeenSet;
 }
 
-UserInfo ChannelUpdateSealStatusRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelUpdateSealStatusRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelUpdateSealStatusRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 string ChannelUpdateSealStatusRequest::GetReason() const
 {
     return m_reason;
@@ -166,6 +150,22 @@ void ChannelUpdateSealStatusRequest::SetReason(const string& _reason)
 bool ChannelUpdateSealStatusRequest::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+UserInfo ChannelUpdateSealStatusRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelUpdateSealStatusRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelUpdateSealStatusRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

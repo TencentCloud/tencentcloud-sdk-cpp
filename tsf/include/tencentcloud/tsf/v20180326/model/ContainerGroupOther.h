@@ -25,7 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/Env.h>
-#include <tencentcloud/tsf/v20180326/model/HealthCheckSetting.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 
 
 namespace TencentCloud
@@ -224,7 +224,7 @@ namespace TencentCloud
                      * @return HealthCheckSettings 健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<HealthCheckSetting> GetHealthCheckSettings() const;
+                    HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
                      * 设置健康检查相关字段
@@ -232,7 +232,7 @@ namespace TencentCloud
                      * @param HealthCheckSettings 健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetHealthCheckSettings(const std::vector<HealthCheckSetting>& _healthCheckSettings);
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
 
                     /**
                      * 判断参数 HealthCheckSettings 是否已赋值
@@ -324,7 +324,7 @@ namespace TencentCloud
                      * 健康检查相关字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<HealthCheckSetting> m_healthCheckSettings;
+                    HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
 
                     /**

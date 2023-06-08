@@ -2061,6 +2061,49 @@ DcdbClient::InitDCDBInstancesOutcomeCallable DcdbClient::InitDCDBInstancesCallab
     return task->get_future();
 }
 
+DcdbClient::IsolateDCDBInstanceOutcome DcdbClient::IsolateDCDBInstance(const IsolateDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateDCDBInstanceResponse rsp = IsolateDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateDCDBInstanceOutcome(rsp);
+        else
+            return IsolateDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::IsolateDCDBInstanceAsync(const IsolateDCDBInstanceRequest& request, const IsolateDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::IsolateDCDBInstanceOutcomeCallable DcdbClient::IsolateDCDBInstanceCallable(const IsolateDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::IsolateDedicatedDBInstanceOutcome DcdbClient::IsolateDedicatedDBInstance(const IsolateDedicatedDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateDedicatedDBInstance");

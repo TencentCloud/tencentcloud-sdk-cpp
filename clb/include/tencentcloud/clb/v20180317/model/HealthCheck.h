@@ -88,17 +88,21 @@ namespace TencentCloud
                     bool TimeOutHasBeenSet() const;
 
                     /**
-                     * 获取健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * 获取健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
+说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntervalTime 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * @return IntervalTime 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
+说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIntervalTime() const;
 
                     /**
-                     * 设置健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * 设置健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
+说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntervalTime 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * @param IntervalTime 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
+说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIntervalTime(const int64_t& _intervalTime);
@@ -437,7 +441,8 @@ namespace TencentCloud
                     bool m_timeOutHasBeenSet;
 
                     /**
-                     * 健康检查探测间隔时间，默认值：5，可选值：5~300，单位：秒。
+                     * 健康检查探测间隔时间，默认值：5，IPv4 CLB实例的取值范围为：2-300，IPv6 CLB 实例的取值范围为：5-300。单位：秒。
+说明：部分老旧 IPv4 CLB实例的取值范围为：5-300。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intervalTime;

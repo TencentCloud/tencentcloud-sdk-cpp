@@ -117,6 +117,8 @@
 #include <tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/InitDCDBInstancesResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/IsolateDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/IsolateDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h>
@@ -320,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitDCDBInstancesResponse> InitDCDBInstancesOutcome;
                 typedef std::future<InitDCDBInstancesOutcome> InitDCDBInstancesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::InitDCDBInstancesRequest&, InitDCDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDCDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateDCDBInstanceResponse> IsolateDCDBInstanceOutcome;
+                typedef std::future<IsolateDCDBInstanceOutcome> IsolateDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::IsolateDCDBInstanceRequest&, IsolateDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDCDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateDedicatedDBInstanceResponse> IsolateDedicatedDBInstanceOutcome;
                 typedef std::future<IsolateDedicatedDBInstanceOutcome> IsolateDedicatedDBInstanceOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::IsolateDedicatedDBInstanceRequest&, IsolateDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDedicatedDBInstanceAsyncHandler;
@@ -823,6 +828,15 @@ namespace TencentCloud
                 InitDCDBInstancesOutcome InitDCDBInstances(const Model::InitDCDBInstancesRequest &request);
                 void InitDCDBInstancesAsync(const Model::InitDCDBInstancesRequest& request, const InitDCDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitDCDBInstancesOutcomeCallable InitDCDBInstancesCallable(const Model::InitDCDBInstancesRequest& request);
+
+                /**
+                 *本接口(IsolateDCDBInstance)用于隔离分布式数据库TDSQL实例（包年包月），隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。
+                 * @param req IsolateDCDBInstanceRequest
+                 * @return IsolateDCDBInstanceOutcome
+                 */
+                IsolateDCDBInstanceOutcome IsolateDCDBInstance(const Model::IsolateDCDBInstanceRequest &request);
+                void IsolateDCDBInstanceAsync(const Model::IsolateDCDBInstanceRequest& request, const IsolateDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateDCDBInstanceOutcomeCallable IsolateDCDBInstanceCallable(const Model::IsolateDCDBInstanceRequest& request);
 
                 /**
                  *本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。

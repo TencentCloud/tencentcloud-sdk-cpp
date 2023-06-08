@@ -212,6 +212,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/BatchModelAccTask.h
   include/tencentcloud/tione/v20211111/model/Filter.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h
+  include/tencentcloud/tione/v20211111/model/PodInfo.h
   include/tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/EngineVersion.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTasksRequest.h
@@ -481,6 +482,7 @@ set(tione_src
   src/v20211111/model/BatchModelAccTask.cpp
   src/v20211111/model/Filter.cpp
   src/v20211111/model/ModifyModelServiceResponse.cpp
+  src/v20211111/model/PodInfo.cpp
   src/v20211111/model/DeleteBatchTaskResponse.cpp
   src/v20211111/model/EngineVersion.cpp
   src/v20211111/model/DescribeBatchTasksRequest.cpp

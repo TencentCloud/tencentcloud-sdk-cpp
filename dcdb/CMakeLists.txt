@@ -56,6 +56,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
   include/tencentcloud/dcdb/v20180411/model/UpgradeHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/CloneAccountResponse.h
+  include/tencentcloud/dcdb/v20180411/model/IsolateDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceRequest.h
@@ -175,6 +176,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountConfigResponse.h
+  include/tencentcloud/dcdb/v20180411/model/IsolateDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateTmpDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h
@@ -246,6 +248,7 @@ set(dcdb_src
   src/v20180411/model/DescribeFlowResponse.cpp
   src/v20180411/model/UpgradeHourDCDBInstanceRequest.cpp
   src/v20180411/model/CloneAccountResponse.cpp
+  src/v20180411/model/IsolateDCDBInstanceRequest.cpp
   src/v20180411/model/IsolateDedicatedDBInstanceRequest.cpp
   src/v20180411/model/ModifyAccountDescriptionResponse.cpp
   src/v20180411/model/DestroyDCDBInstanceRequest.cpp
@@ -365,6 +368,7 @@ set(dcdb_src
   src/v20180411/model/AddShardConfig.cpp
   src/v20180411/model/ModifyDBSyncModeRequest.cpp
   src/v20180411/model/ModifyAccountConfigResponse.cpp
+  src/v20180411/model/IsolateDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeProjectsResponse.cpp
   src/v20180411/model/CreateTmpDCDBInstanceResponse.cpp
   src/v20180411/model/CreateAccountResponse.cpp

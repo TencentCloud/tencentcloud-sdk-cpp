@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传
-                     * @return OrganizationOpenId 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传
+                     * 获取企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传
+                     * @return OrganizationOpenId 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传
-                     * @param OrganizationOpenId 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传
+                     * 设置企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传
+                     * @param OrganizationOpenId 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -324,7 +324,7 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同毕传
+                     * 企业OpenId，第三方应用集成非静默签子客企业签署人发起合同必传
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;

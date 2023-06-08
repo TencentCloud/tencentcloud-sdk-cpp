@@ -30,7 +30,10 @@ TaskGroup::TaskGroup() :
     m_taskGroupUpdateTimeHasBeenSet(false),
     m_taskGroupActionsHasBeenSet(false),
     m_taskGroupInstanceListHasBeenSet(false),
-    m_taskGroupModeHasBeenSet(false)
+    m_taskGroupModeHasBeenSet(false),
+    m_taskGroupDiscardInstanceListHasBeenSet(false),
+    m_taskGroupSelectedInstanceListHasBeenSet(false),
+    m_taskGroupInstancesExecuteRuleHasBeenSet(false)
 {
 }
 
@@ -152,6 +155,52 @@ CoreInternalOutcome TaskGroup::Deserialize(const rapidjson::Value &value)
         m_taskGroupModeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskGroupDiscardInstanceList") && !value["TaskGroupDiscardInstanceList"].IsNull())
+    {
+        if (!value["TaskGroupDiscardInstanceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskGroup.TaskGroupDiscardInstanceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskGroupDiscardInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskGroupDiscardInstanceList.push_back((*itr).GetString());
+        }
+        m_taskGroupDiscardInstanceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskGroupSelectedInstanceList") && !value["TaskGroupSelectedInstanceList"].IsNull())
+    {
+        if (!value["TaskGroupSelectedInstanceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskGroup.TaskGroupSelectedInstanceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskGroupSelectedInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskGroupSelectedInstanceList.push_back((*itr).GetString());
+        }
+        m_taskGroupSelectedInstanceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskGroupInstancesExecuteRule") && !value["TaskGroupInstancesExecuteRule"].IsNull())
+    {
+        if (!value["TaskGroupInstancesExecuteRule"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskGroup.TaskGroupInstancesExecuteRule` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskGroupInstancesExecuteRule"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskGroupInstancesExecuteRules item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskGroupInstancesExecuteRule.push_back(item);
+        }
+        m_taskGroupInstancesExecuteRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +298,47 @@ void TaskGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TaskGroupMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskGroupMode, allocator);
+    }
+
+    if (m_taskGroupDiscardInstanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupDiscardInstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskGroupDiscardInstanceList.begin(); itr != m_taskGroupDiscardInstanceList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskGroupSelectedInstanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupSelectedInstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskGroupSelectedInstanceList.begin(); itr != m_taskGroupSelectedInstanceList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskGroupInstancesExecuteRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupInstancesExecuteRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskGroupInstancesExecuteRule.begin(); itr != m_taskGroupInstancesExecuteRule.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -412,5 +502,53 @@ void TaskGroup::SetTaskGroupMode(const int64_t& _taskGroupMode)
 bool TaskGroup::TaskGroupModeHasBeenSet() const
 {
     return m_taskGroupModeHasBeenSet;
+}
+
+vector<string> TaskGroup::GetTaskGroupDiscardInstanceList() const
+{
+    return m_taskGroupDiscardInstanceList;
+}
+
+void TaskGroup::SetTaskGroupDiscardInstanceList(const vector<string>& _taskGroupDiscardInstanceList)
+{
+    m_taskGroupDiscardInstanceList = _taskGroupDiscardInstanceList;
+    m_taskGroupDiscardInstanceListHasBeenSet = true;
+}
+
+bool TaskGroup::TaskGroupDiscardInstanceListHasBeenSet() const
+{
+    return m_taskGroupDiscardInstanceListHasBeenSet;
+}
+
+vector<string> TaskGroup::GetTaskGroupSelectedInstanceList() const
+{
+    return m_taskGroupSelectedInstanceList;
+}
+
+void TaskGroup::SetTaskGroupSelectedInstanceList(const vector<string>& _taskGroupSelectedInstanceList)
+{
+    m_taskGroupSelectedInstanceList = _taskGroupSelectedInstanceList;
+    m_taskGroupSelectedInstanceListHasBeenSet = true;
+}
+
+bool TaskGroup::TaskGroupSelectedInstanceListHasBeenSet() const
+{
+    return m_taskGroupSelectedInstanceListHasBeenSet;
+}
+
+vector<TaskGroupInstancesExecuteRules> TaskGroup::GetTaskGroupInstancesExecuteRule() const
+{
+    return m_taskGroupInstancesExecuteRule;
+}
+
+void TaskGroup::SetTaskGroupInstancesExecuteRule(const vector<TaskGroupInstancesExecuteRules>& _taskGroupInstancesExecuteRule)
+{
+    m_taskGroupInstancesExecuteRule = _taskGroupInstancesExecuteRule;
+    m_taskGroupInstancesExecuteRuleHasBeenSet = true;
+}
+
+bool TaskGroup::TaskGroupInstancesExecuteRuleHasBeenSet() const
+{
+    return m_taskGroupInstancesExecuteRuleHasBeenSet;
 }
 

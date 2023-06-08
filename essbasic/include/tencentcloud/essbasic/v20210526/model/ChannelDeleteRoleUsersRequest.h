@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取用户列表
-                     * @return UserIds 用户列表
+                     * 获取用户列表，电子签系统的UserId
+                     * @return UserIds 用户列表，电子签系统的UserId
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置用户列表
-                     * @param UserIds 用户列表
+                     * 设置用户列表，电子签系统的UserId
+                     * @param UserIds 用户列表，电子签系统的UserId
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 用户列表
+                     * 用户列表，电子签系统的UserId
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
