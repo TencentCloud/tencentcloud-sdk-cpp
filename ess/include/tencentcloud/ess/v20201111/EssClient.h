@@ -51,6 +51,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersRequest.h>
@@ -85,6 +89,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.h>
@@ -105,6 +111,8 @@
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h>
@@ -171,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowSignUrlResponse> CreateFlowSignUrlOutcome;
                 typedef std::future<CreateFlowSignUrlOutcome> CreateFlowSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignUrlRequest&, CreateFlowSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIntegrationDepartmentResponse> CreateIntegrationDepartmentOutcome;
+                typedef std::future<CreateIntegrationDepartmentOutcome> CreateIntegrationDepartmentOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateIntegrationDepartmentRequest&, CreateIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationDepartmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationEmployeesResponse> CreateIntegrationEmployeesOutcome;
                 typedef std::future<CreateIntegrationEmployeesOutcome> CreateIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationEmployeesRequest&, CreateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationEmployeesAsyncHandler;
@@ -198,6 +209,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignEnableUrlResponse> CreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<CreateUserAutoSignEnableUrlOutcome> CreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignEnableUrlRequest&, CreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIntegrationDepartmentResponse> DeleteIntegrationDepartmentOutcome;
+                typedef std::future<DeleteIntegrationDepartmentOutcome> DeleteIntegrationDepartmentOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteIntegrationDepartmentRequest&, DeleteIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationDepartmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIntegrationEmployeesResponse> DeleteIntegrationEmployeesOutcome;
                 typedef std::future<DeleteIntegrationEmployeesOutcome> DeleteIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteIntegrationEmployeesRequest&, DeleteIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationEmployeesAsyncHandler;
@@ -222,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
                 typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntegrationDepartmentsResponse> DescribeIntegrationDepartmentsOutcome;
+                typedef std::future<DescribeIntegrationDepartmentsOutcome> DescribeIntegrationDepartmentsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeIntegrationDepartmentsRequest&, DescribeIntegrationDepartmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationDepartmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationEmployeesResponse> DescribeIntegrationEmployeesOutcome;
                 typedef std::future<DescribeIntegrationEmployeesOutcome> DescribeIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationEmployeesRequest&, DescribeIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationEmployeesAsyncHandler;
@@ -252,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationCallbackInfoResponse> ModifyApplicationCallbackInfoOutcome;
                 typedef std::future<ModifyApplicationCallbackInfoOutcome> ModifyApplicationCallbackInfoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyApplicationCallbackInfoRequest&, ModifyApplicationCallbackInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationCallbackInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIntegrationDepartmentResponse> ModifyIntegrationDepartmentOutcome;
+                typedef std::future<ModifyIntegrationDepartmentOutcome> ModifyIntegrationDepartmentOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifyIntegrationDepartmentRequest&, ModifyIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationDepartmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
@@ -425,6 +445,15 @@ namespace TencentCloud
                 CreateFlowSignUrlOutcomeCallable CreateFlowSignUrlCallable(const Model::CreateFlowSignUrlRequest& request);
 
                 /**
+                 *通过此接口，创建企业的部门，支持绑定客户系统部门ID。
+                 * @param req CreateIntegrationDepartmentRequest
+                 * @return CreateIntegrationDepartmentOutcome
+                 */
+                CreateIntegrationDepartmentOutcome CreateIntegrationDepartment(const Model::CreateIntegrationDepartmentRequest &request);
+                void CreateIntegrationDepartmentAsync(const Model::CreateIntegrationDepartmentRequest& request, const CreateIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIntegrationDepartmentOutcomeCallable CreateIntegrationDepartmentCallable(const Model::CreateIntegrationDepartmentRequest& request);
+
+                /**
                  *创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传
                  * @param req CreateIntegrationEmployeesRequest
                  * @return CreateIntegrationEmployeesOutcome
@@ -526,6 +555,15 @@ namespace TencentCloud
                 CreateUserAutoSignEnableUrlOutcomeCallable CreateUserAutoSignEnableUrlCallable(const Model::CreateUserAutoSignEnableUrlRequest& request);
 
                 /**
+                 *通过此接口，删除企业的部门。
+                 * @param req DeleteIntegrationDepartmentRequest
+                 * @return DeleteIntegrationDepartmentOutcome
+                 */
+                DeleteIntegrationDepartmentOutcome DeleteIntegrationDepartment(const Model::DeleteIntegrationDepartmentRequest &request);
+                void DeleteIntegrationDepartmentAsync(const Model::DeleteIntegrationDepartmentRequest& request, const DeleteIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIntegrationDepartmentOutcomeCallable DeleteIntegrationDepartmentCallable(const Model::DeleteIntegrationDepartmentRequest& request);
+
+                /**
                  *移除员工
                  * @param req DeleteIntegrationEmployeesRequest
                  * @return DeleteIntegrationEmployeesOutcome
@@ -601,6 +639,15 @@ namespace TencentCloud
                 DescribeFlowTemplatesOutcome DescribeFlowTemplates(const Model::DescribeFlowTemplatesRequest &request);
                 void DescribeFlowTemplatesAsync(const Model::DescribeFlowTemplatesRequest& request, const DescribeFlowTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowTemplatesOutcomeCallable DescribeFlowTemplatesCallable(const Model::DescribeFlowTemplatesRequest& request);
+
+                /**
+                 *通过此接口，查询企业的部门，支持查询单个部门节点或单个部门节点及一级子节点部门列表。
+                 * @param req DescribeIntegrationDepartmentsRequest
+                 * @return DescribeIntegrationDepartmentsOutcome
+                 */
+                DescribeIntegrationDepartmentsOutcome DescribeIntegrationDepartments(const Model::DescribeIntegrationDepartmentsRequest &request);
+                void DescribeIntegrationDepartmentsAsync(const Model::DescribeIntegrationDepartmentsRequest& request, const DescribeIntegrationDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntegrationDepartmentsOutcomeCallable DescribeIntegrationDepartmentsCallable(const Model::DescribeIntegrationDepartmentsRequest& request);
 
                 /**
                  *查询企业员工列表，每次返回的数据量最大为20
@@ -695,6 +742,15 @@ callbackinfo包含： 回调地址和签名key
                 ModifyApplicationCallbackInfoOutcome ModifyApplicationCallbackInfo(const Model::ModifyApplicationCallbackInfoRequest &request);
                 void ModifyApplicationCallbackInfoAsync(const Model::ModifyApplicationCallbackInfoRequest& request, const ModifyApplicationCallbackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationCallbackInfoOutcomeCallable ModifyApplicationCallbackInfoCallable(const Model::ModifyApplicationCallbackInfoRequest& request);
+
+                /**
+                 *通过此接口，更新企业的部门信息，支持更新部门名、客户系统部门ID、部门序列号。
+                 * @param req ModifyIntegrationDepartmentRequest
+                 * @return ModifyIntegrationDepartmentOutcome
+                 */
+                ModifyIntegrationDepartmentOutcome ModifyIntegrationDepartment(const Model::ModifyIntegrationDepartmentRequest &request);
+                void ModifyIntegrationDepartmentAsync(const Model::ModifyIntegrationDepartmentRequest& request, const ModifyIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIntegrationDepartmentOutcomeCallable ModifyIntegrationDepartmentCallable(const Model::ModifyIntegrationDepartmentRequest& request);
 
                 /**
                  *此接口用于发起流程

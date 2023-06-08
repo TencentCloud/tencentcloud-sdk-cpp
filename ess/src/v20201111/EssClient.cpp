@@ -642,6 +642,49 @@ EssClient::CreateFlowSignUrlOutcomeCallable EssClient::CreateFlowSignUrlCallable
     return task->get_future();
 }
 
+EssClient::CreateIntegrationDepartmentOutcome EssClient::CreateIntegrationDepartment(const CreateIntegrationDepartmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIntegrationDepartment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIntegrationDepartmentResponse rsp = CreateIntegrationDepartmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIntegrationDepartmentOutcome(rsp);
+        else
+            return CreateIntegrationDepartmentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIntegrationDepartmentOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateIntegrationDepartmentAsync(const CreateIntegrationDepartmentRequest& request, const CreateIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIntegrationDepartment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateIntegrationDepartmentOutcomeCallable EssClient::CreateIntegrationDepartmentCallable(const CreateIntegrationDepartmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIntegrationDepartmentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIntegrationDepartment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateIntegrationEmployeesOutcome EssClient::CreateIntegrationEmployees(const CreateIntegrationEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationEmployees");
@@ -1029,6 +1072,49 @@ EssClient::CreateUserAutoSignEnableUrlOutcomeCallable EssClient::CreateUserAutoS
     return task->get_future();
 }
 
+EssClient::DeleteIntegrationDepartmentOutcome EssClient::DeleteIntegrationDepartment(const DeleteIntegrationDepartmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIntegrationDepartment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIntegrationDepartmentResponse rsp = DeleteIntegrationDepartmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIntegrationDepartmentOutcome(rsp);
+        else
+            return DeleteIntegrationDepartmentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIntegrationDepartmentOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteIntegrationDepartmentAsync(const DeleteIntegrationDepartmentRequest& request, const DeleteIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIntegrationDepartment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteIntegrationDepartmentOutcomeCallable EssClient::DeleteIntegrationDepartmentCallable(const DeleteIntegrationDepartmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIntegrationDepartmentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIntegrationDepartment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DeleteIntegrationEmployeesOutcome EssClient::DeleteIntegrationEmployees(const DeleteIntegrationEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIntegrationEmployees");
@@ -1366,6 +1452,49 @@ EssClient::DescribeFlowTemplatesOutcomeCallable EssClient::DescribeFlowTemplates
         [this, request]()
         {
             return this->DescribeFlowTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeIntegrationDepartmentsOutcome EssClient::DescribeIntegrationDepartments(const DescribeIntegrationDepartmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIntegrationDepartments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIntegrationDepartmentsResponse rsp = DescribeIntegrationDepartmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIntegrationDepartmentsOutcome(rsp);
+        else
+            return DescribeIntegrationDepartmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIntegrationDepartmentsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeIntegrationDepartmentsAsync(const DescribeIntegrationDepartmentsRequest& request, const DescribeIntegrationDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIntegrationDepartments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeIntegrationDepartmentsOutcomeCallable EssClient::DescribeIntegrationDepartmentsCallable(const DescribeIntegrationDepartmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIntegrationDepartmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIntegrationDepartments(request);
         }
     );
 
@@ -1796,6 +1925,49 @@ EssClient::ModifyApplicationCallbackInfoOutcomeCallable EssClient::ModifyApplica
         [this, request]()
         {
             return this->ModifyApplicationCallbackInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::ModifyIntegrationDepartmentOutcome EssClient::ModifyIntegrationDepartment(const ModifyIntegrationDepartmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIntegrationDepartment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIntegrationDepartmentResponse rsp = ModifyIntegrationDepartmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIntegrationDepartmentOutcome(rsp);
+        else
+            return ModifyIntegrationDepartmentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIntegrationDepartmentOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyIntegrationDepartmentAsync(const ModifyIntegrationDepartmentRequest& request, const ModifyIntegrationDepartmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIntegrationDepartment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifyIntegrationDepartmentOutcomeCallable EssClient::ModifyIntegrationDepartmentCallable(const ModifyIntegrationDepartmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIntegrationDepartmentOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIntegrationDepartment(request);
         }
     );
 

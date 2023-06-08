@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeApisStatusResultApiIdStatusSetInfo.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,24 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取API 接口列表。
+                     * @return ApiIdStatusSet API 接口列表。
+                     */
+                    std::vector<DescribeApisStatusResultApiIdStatusSetInfo> GetApiIdStatusSet() const;
+
+                    /**
+                     * 设置API 接口列表。
+                     * @param ApiIdStatusSet API 接口列表。
+                     */
+                    void SetApiIdStatusSet(const std::vector<DescribeApisStatusResultApiIdStatusSetInfo>& _apiIdStatusSet);
+
+                    /**
+                     * 判断参数 ApiIdStatusSet 是否已赋值
+                     * @return ApiIdStatusSet 是否已赋值
+                     */
+                    bool ApiIdStatusSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +90,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * API 接口列表。
+                     */
+                    std::vector<DescribeApisStatusResultApiIdStatusSetInfo> m_apiIdStatusSet;
+                    bool m_apiIdStatusSetHasBeenSet;
 
                 };
             }

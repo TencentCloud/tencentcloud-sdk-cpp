@@ -21,7 +21,8 @@ using namespace TencentCloud::Apigateway::V20180808::Model;
 using namespace std;
 
 DescribeApisStatusResultInfo::DescribeApisStatusResultInfo() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_apiIdStatusSetHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,26 @@ CoreInternalOutcome DescribeApisStatusResultInfo::Deserialize(const rapidjson::V
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiIdStatusSet") && !value["ApiIdStatusSet"].IsNull())
+    {
+        if (!value["ApiIdStatusSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeApisStatusResultInfo.ApiIdStatusSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApiIdStatusSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DescribeApisStatusResultApiIdStatusSetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apiIdStatusSet.push_back(item);
+        }
+        m_apiIdStatusSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +74,21 @@ void DescribeApisStatusResultInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_apiIdStatusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiIdStatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiIdStatusSet.begin(); itr != m_apiIdStatusSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +108,21 @@ void DescribeApisStatusResultInfo::SetTotalCount(const int64_t& _totalCount)
 bool DescribeApisStatusResultInfo::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<DescribeApisStatusResultApiIdStatusSetInfo> DescribeApisStatusResultInfo::GetApiIdStatusSet() const
+{
+    return m_apiIdStatusSet;
+}
+
+void DescribeApisStatusResultInfo::SetApiIdStatusSet(const vector<DescribeApisStatusResultApiIdStatusSetInfo>& _apiIdStatusSet)
+{
+    m_apiIdStatusSet = _apiIdStatusSet;
+    m_apiIdStatusSetHasBeenSet = true;
+}
+
+bool DescribeApisStatusResultInfo::ApiIdStatusSetHasBeenSet() const
+{
+    return m_apiIdStatusSetHasBeenSet;
 }
 

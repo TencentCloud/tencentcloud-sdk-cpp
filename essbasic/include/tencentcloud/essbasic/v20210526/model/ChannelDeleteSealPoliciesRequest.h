@@ -83,13 +83,17 @@ namespace TencentCloud
 
                     /**
                      * 获取指定用户ID数组，电子签系统用户ID
+可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。
                      * @return UserIds 指定用户ID数组，电子签系统用户ID
+可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置指定用户ID数组，电子签系统用户ID
+可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。
                      * @param UserIds 指定用户ID数组，电子签系统用户ID
+可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -151,6 +155,7 @@ namespace TencentCloud
 
                     /**
                      * 指定用户ID数组，电子签系统用户ID
+可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
