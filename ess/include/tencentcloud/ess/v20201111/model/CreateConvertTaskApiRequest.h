@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型 取值范围doc,docx,html,xls,xlsx之一
-                     * @return ResourceType 资源类型 取值范围doc,docx,html,xls,xlsx之一
+                     * 获取资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
+                     * @return ResourceType 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型 取值范围doc,docx,html,xls,xlsx之一
-                     * @param ResourceType 资源类型 取值范围doc,docx,html,xls,xlsx之一
+                     * 设置资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
+                     * @param ResourceType 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -156,7 +156,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型 取值范围doc,docx,html,xls,xlsx之一
+                     * 资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

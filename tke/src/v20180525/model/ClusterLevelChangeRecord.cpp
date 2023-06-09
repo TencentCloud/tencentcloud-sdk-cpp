@@ -28,6 +28,7 @@ ClusterLevelChangeRecord::ClusterLevelChangeRecord() :
     m_oldLevelHasBeenSet(false),
     m_newLevelHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_endedAtHasBeenSet(false)
 {
@@ -106,6 +107,16 @@ CoreInternalOutcome ClusterLevelChangeRecord::Deserialize(const rapidjson::Value
         }
         m_triggerType = string(value["TriggerType"].GetString());
         m_triggerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterLevelChangeRecord.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
     }
 
     if (value.HasMember("StartedAt") && !value["StartedAt"].IsNull())
@@ -189,6 +200,14 @@ void ClusterLevelChangeRecord::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "TriggerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startedAtHasBeenSet)
@@ -320,6 +339,22 @@ void ClusterLevelChangeRecord::SetTriggerType(const string& _triggerType)
 bool ClusterLevelChangeRecord::TriggerTypeHasBeenSet() const
 {
     return m_triggerTypeHasBeenSet;
+}
+
+string ClusterLevelChangeRecord::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void ClusterLevelChangeRecord::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool ClusterLevelChangeRecord::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
 }
 
 string ClusterLevelChangeRecord::GetStartedAt() const

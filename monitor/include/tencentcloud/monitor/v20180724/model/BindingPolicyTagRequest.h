@@ -169,6 +169,42 @@ namespace TencentCloud
                      */
                     bool BatchTagHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步eb
+                     * @return EbEventFlag 是否同步eb
+                     */
+                    int64_t GetEbEventFlag() const;
+
+                    /**
+                     * 设置是否同步eb
+                     * @param EbEventFlag 是否同步eb
+                     */
+                    void SetEbEventFlag(const int64_t& _ebEventFlag);
+
+                    /**
+                     * 判断参数 EbEventFlag 是否已赋值
+                     * @return EbEventFlag 是否已赋值
+                     */
+                    bool EbEventFlagHasBeenSet() const;
+
+                    /**
+                     * 获取事件配置的告警
+                     * @return EbSubject 事件配置的告警
+                     */
+                    std::string GetEbSubject() const;
+
+                    /**
+                     * 设置事件配置的告警
+                     * @param EbSubject 事件配置的告警
+                     */
+                    void SetEbSubject(const std::string& _ebSubject);
+
+                    /**
+                     * 判断参数 EbSubject 是否已赋值
+                     * @return EbSubject 是否已赋值
+                     */
+                    bool EbSubjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +248,18 @@ namespace TencentCloud
                      */
                     std::vector<PolicyTag> m_batchTag;
                     bool m_batchTagHasBeenSet;
+
+                    /**
+                     * 是否同步eb
+                     */
+                    int64_t m_ebEventFlag;
+                    bool m_ebEventFlagHasBeenSet;
+
+                    /**
+                     * 事件配置的告警
+                     */
+                    std::string m_ebSubject;
+                    bool m_ebSubjectHasBeenSet;
 
                 };
             }

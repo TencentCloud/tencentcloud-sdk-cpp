@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取基础备份集ID
+                     * @return BaseBackupId 基础备份集ID
+                     */
+                    std::string GetBaseBackupId() const;
+
+                    /**
+                     * 判断参数 BaseBackupId 是否已赋值
+                     * @return BaseBackupId 是否已赋值
+                     */
+                    bool BaseBackupIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 基础备份集ID
+                     */
+                    std::string m_baseBackupId;
+                    bool m_baseBackupIdHasBeenSet;
 
                 };
             }

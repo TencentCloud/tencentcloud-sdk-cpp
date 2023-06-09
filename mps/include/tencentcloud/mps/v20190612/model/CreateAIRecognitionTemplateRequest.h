@@ -26,6 +26,7 @@
 #include <tencentcloud/mps/v20190612/model/OcrWordsConfigureInfo.h>
 #include <tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfo.h>
 #include <tencentcloud/mps/v20190612/model/AsrWordsConfigureInfo.h>
+#include <tencentcloud/mps/v20190612/model/TranslateConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,24 @@ namespace TencentCloud
                      */
                     bool AsrWordsConfigureHasBeenSet() const;
 
+                    /**
+                     * 获取语音翻译控制参数。
+                     * @return TranslateConfigure 语音翻译控制参数。
+                     */
+                    TranslateConfigureInfo GetTranslateConfigure() const;
+
+                    /**
+                     * 设置语音翻译控制参数。
+                     * @param TranslateConfigure 语音翻译控制参数。
+                     */
+                    void SetTranslateConfigure(const TranslateConfigureInfo& _translateConfigure);
+
+                    /**
+                     * 判断参数 TranslateConfigure 是否已赋值
+                     * @return TranslateConfigure 是否已赋值
+                     */
+                    bool TranslateConfigureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +235,12 @@ namespace TencentCloud
                      */
                     AsrWordsConfigureInfo m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
+
+                    /**
+                     * 语音翻译控制参数。
+                     */
+                    TranslateConfigureInfo m_translateConfigure;
+                    bool m_translateConfigureHasBeenSet;
 
                 };
             }

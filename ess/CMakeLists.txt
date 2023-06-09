@@ -34,6 +34,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
+  include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h
@@ -124,6 +125,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h
   include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
+  include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
@@ -163,13 +165,13 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
-  include/tencentcloud/ess/v20201111/model/CcInfo.h
+  include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h
   include/tencentcloud/ess/v20201111/model/ReleasedApprover.h
   include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h
-  include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
+  include/tencentcloud/ess/v20201111/model/CcInfo.h
   )
 
 set(ess_src
@@ -189,6 +191,7 @@ set(ess_src
   src/v20201111/model/FlowCreateApprover.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
+  src/v20201111/model/CancelUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesRequest.cpp
   src/v20201111/model/DescribeIntegrationRolesRequest.cpp
@@ -279,6 +282,7 @@ set(ess_src
   src/v20201111/model/CreateUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.cpp
   src/v20201111/model/RemindFlowRecords.cpp
+  src/v20201111/model/CancelUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
@@ -318,13 +322,13 @@ set(ess_src
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
-  src/v20201111/model/CcInfo.cpp
+  src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/DescribeUserAutoSignStatusRequest.cpp
   src/v20201111/model/ReleasedApprover.cpp
   src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.cpp
-  src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
+  src/v20201111/model/CcInfo.cpp
   )
 
 set(ess_include

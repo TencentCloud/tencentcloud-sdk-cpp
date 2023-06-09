@@ -29,6 +29,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateChannelSubOrganizationModifyQrCodeRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelMultiFlowSignQRCodeResponse> CancelMultiFlowSignQRCodeOutcome;
                 typedef std::future<CancelMultiFlowSignQRCodeOutcome> CancelMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CancelMultiFlowSignQRCodeRequest&, CancelMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelUserAutoSignEnableUrlResponse> CancelUserAutoSignEnableUrlOutcome;
+                typedef std::future<CancelUserAutoSignEnableUrlOutcome> CancelUserAutoSignEnableUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CancelUserAutoSignEnableUrlRequest&, CancelUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelUserAutoSignEnableUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
@@ -320,6 +325,15 @@ namespace TencentCloud
                 CancelMultiFlowSignQRCodeOutcomeCallable CancelMultiFlowSignQRCodeCallable(const Model::CancelMultiFlowSignQRCodeRequest& request);
 
                 /**
+                 *此接口（CancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）
+                 * @param req CancelUserAutoSignEnableUrlRequest
+                 * @return CancelUserAutoSignEnableUrlOutcome
+                 */
+                CancelUserAutoSignEnableUrlOutcome CancelUserAutoSignEnableUrl(const Model::CancelUserAutoSignEnableUrlRequest &request);
+                void CancelUserAutoSignEnableUrlAsync(const Model::CancelUserAutoSignEnableUrlRequest& request, const CancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelUserAutoSignEnableUrlOutcomeCallable CancelUserAutoSignEnableUrlCallable(const Model::CancelUserAutoSignEnableUrlRequest& request);
+
+                /**
                  *注：此接口将会废弃，请使用撤销单个签署流程（CancelFlow）接口。
 指定需要批量撤回的签署流程Id，获取批量撤销链接。
 客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回。
@@ -340,7 +354,7 @@ namespace TencentCloud
                 CreateChannelSubOrganizationModifyQrCodeOutcomeCallable CreateChannelSubOrganizationModifyQrCodeCallable(const Model::CreateChannelSubOrganizationModifyQrCodeRequest& request);
 
                 /**
-                 *上传了word、excel文件后，通过该接口发起文件转换任务，将word、excel文件转换为pdf文件。
+                 *上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。
                  * @param req CreateConvertTaskApiRequest
                  * @return CreateConvertTaskApiOutcome
                  */

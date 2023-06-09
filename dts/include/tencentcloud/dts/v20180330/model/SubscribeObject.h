@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数据数据订阅的对象
+                * 数据订阅的对象
                 */
                 class SubscribeObject : public AbstractModel
                 {

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
-CreateBaseBackupResponse::CreateBaseBackupResponse()
+CreateBaseBackupResponse::CreateBaseBackupResponse() :
+    m_baseBackupIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateBaseBackupResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("BaseBackupId") && !rsp["BaseBackupId"].IsNull())
+    {
+        if (!rsp["BaseBackupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseBackupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseBackupId = string(rsp["BaseBackupId"].GetString());
+        m_baseBackupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateBaseBackupResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_baseBackupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseBackupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseBackupId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateBaseBackupResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateBaseBackupResponse::GetBaseBackupId() const
+{
+    return m_baseBackupId;
+}
+
+bool CreateBaseBackupResponse::BaseBackupIdHasBeenSet() const
+{
+    return m_baseBackupIdHasBeenSet;
+}
 
 

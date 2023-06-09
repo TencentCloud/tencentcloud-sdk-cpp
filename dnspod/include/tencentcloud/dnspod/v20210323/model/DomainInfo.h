@@ -472,6 +472,160 @@ namespace TencentCloud
                      */
                     bool OwnerNickHasBeenSet() const;
 
+                    /**
+                     * 获取是否在付费套餐宽限期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsGracePeriod 是否在付费套餐宽限期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsGracePeriod() const;
+
+                    /**
+                     * 设置是否在付费套餐宽限期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsGracePeriod 是否在付费套餐宽限期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsGracePeriod(const std::string& _isGracePeriod);
+
+                    /**
+                     * 判断参数 IsGracePeriod 是否已赋值
+                     * @return IsGracePeriod 是否已赋值
+                     */
+                    bool IsGracePeriodHasBeenSet() const;
+
+                    /**
+                     * 获取是否在付费套餐缓冲期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipBuffered 是否在付费套餐缓冲期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipBuffered() const;
+
+                    /**
+                     * 设置是否在付费套餐缓冲期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipBuffered 是否在付费套餐缓冲期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipBuffered(const std::string& _vipBuffered);
+
+                    /**
+                     * 判断参数 VipBuffered 是否已赋值
+                     * @return VipBuffered 是否已赋值
+                     */
+                    bool VipBufferedHasBeenSet() const;
+
+                    /**
+                     * 获取VIP套餐有效期开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipStartAt VIP套餐有效期开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipStartAt() const;
+
+                    /**
+                     * 设置VIP套餐有效期开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipStartAt VIP套餐有效期开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipStartAt(const std::string& _vipStartAt);
+
+                    /**
+                     * 判断参数 VipStartAt 是否已赋值
+                     * @return VipStartAt 是否已赋值
+                     */
+                    bool VipStartAtHasBeenSet() const;
+
+                    /**
+                     * 获取VIP套餐有效期结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipEndAt VIP套餐有效期结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipEndAt() const;
+
+                    /**
+                     * 设置VIP套餐有效期结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipEndAt VIP套餐有效期结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipEndAt(const std::string& _vipEndAt);
+
+                    /**
+                     * 判断参数 VipEndAt 是否已赋值
+                     * @return VipEndAt 是否已赋值
+                     */
+                    bool VipEndAtHasBeenSet() const;
+
+                    /**
+                     * 获取VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipAutoRenew VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipAutoRenew() const;
+
+                    /**
+                     * 设置VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipAutoRenew VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipAutoRenew(const std::string& _vipAutoRenew);
+
+                    /**
+                     * 判断参数 VipAutoRenew 是否已赋值
+                     * @return VipAutoRenew 是否已赋值
+                     */
+                    bool VipAutoRenewHasBeenSet() const;
+
+                    /**
+                     * 获取VIP套餐资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipResourceId VIP套餐资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipResourceId() const;
+
+                    /**
+                     * 设置VIP套餐资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipResourceId VIP套餐资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipResourceId(const std::string& _vipResourceId);
+
+                    /**
+                     * 判断参数 VipResourceId 是否已赋值
+                     * @return VipResourceId 是否已赋值
+                     */
+                    bool VipResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否是子域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSubDomain 是否是子域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsSubDomain() const;
+
+                    /**
+                     * 设置是否是子域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSubDomain 是否是子域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSubDomain(const bool& _isSubDomain);
+
+                    /**
+                     * 判断参数 IsSubDomain 是否已赋值
+                     * @return IsSubDomain 是否已赋值
+                     */
+                    bool IsSubDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +768,55 @@ namespace TencentCloud
                      */
                     std::string m_ownerNick;
                     bool m_ownerNickHasBeenSet;
+
+                    /**
+                     * 是否在付费套餐宽限期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isGracePeriod;
+                    bool m_isGracePeriodHasBeenSet;
+
+                    /**
+                     * 是否在付费套餐缓冲期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipBuffered;
+                    bool m_vipBufferedHasBeenSet;
+
+                    /**
+                     * VIP套餐有效期开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipStartAt;
+                    bool m_vipStartAtHasBeenSet;
+
+                    /**
+                     * VIP套餐有效期结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipEndAt;
+                    bool m_vipEndAtHasBeenSet;
+
+                    /**
+                     * VIP套餐自动续费标识。可能的值为：default-默认；no-不自动续费；yes-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipAutoRenew;
+                    bool m_vipAutoRenewHasBeenSet;
+
+                    /**
+                     * VIP套餐资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipResourceId;
+                    bool m_vipResourceIdHasBeenSet;
+
+                    /**
+                     * 是否是子域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSubDomain;
+                    bool m_isSubDomainHasBeenSet;
 
                 };
             }

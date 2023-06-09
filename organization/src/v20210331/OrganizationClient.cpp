@@ -40,6 +40,49 @@ OrganizationClient::OrganizationClient(const Credential &credential, const strin
 }
 
 
+OrganizationClient::AddOrganizationMemberEmailOutcome OrganizationClient::AddOrganizationMemberEmail(const AddOrganizationMemberEmailRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddOrganizationMemberEmail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddOrganizationMemberEmailResponse rsp = AddOrganizationMemberEmailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddOrganizationMemberEmailOutcome(rsp);
+        else
+            return AddOrganizationMemberEmailOutcome(o.GetError());
+    }
+    else
+    {
+        return AddOrganizationMemberEmailOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::AddOrganizationMemberEmailAsync(const AddOrganizationMemberEmailRequest& request, const AddOrganizationMemberEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddOrganizationMemberEmail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::AddOrganizationMemberEmailOutcomeCallable OrganizationClient::AddOrganizationMemberEmailCallable(const AddOrganizationMemberEmailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddOrganizationMemberEmailOutcome()>>(
+        [this, request]()
+        {
+            return this->AddOrganizationMemberEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::AddOrganizationNodeOutcome OrganizationClient::AddOrganizationNode(const AddOrganizationNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "AddOrganizationNode");
@@ -513,6 +556,49 @@ OrganizationClient::DescribeOrganizationMemberAuthIdentitiesOutcomeCallable Orga
     return task->get_future();
 }
 
+OrganizationClient::DescribeOrganizationMemberEmailBindOutcome OrganizationClient::DescribeOrganizationMemberEmailBind(const DescribeOrganizationMemberEmailBindRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationMemberEmailBind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationMemberEmailBindResponse rsp = DescribeOrganizationMemberEmailBindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationMemberEmailBindOutcome(rsp);
+        else
+            return DescribeOrganizationMemberEmailBindOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationMemberEmailBindOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationMemberEmailBindAsync(const DescribeOrganizationMemberEmailBindRequest& request, const DescribeOrganizationMemberEmailBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationMemberEmailBind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationMemberEmailBindOutcomeCallable OrganizationClient::DescribeOrganizationMemberEmailBindCallable(const DescribeOrganizationMemberEmailBindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationMemberEmailBindOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationMemberEmailBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationMemberPoliciesOutcome OrganizationClient::DescribeOrganizationMemberPolicies(const DescribeOrganizationMemberPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationMemberPolicies");
@@ -721,6 +807,49 @@ OrganizationClient::MoveOrganizationNodeMembersOutcomeCallable OrganizationClien
         [this, request]()
         {
             return this->MoveOrganizationNodeMembers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::UpdateOrganizationMemberEmailBindOutcome OrganizationClient::UpdateOrganizationMemberEmailBind(const UpdateOrganizationMemberEmailBindRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOrganizationMemberEmailBind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOrganizationMemberEmailBindResponse rsp = UpdateOrganizationMemberEmailBindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOrganizationMemberEmailBindOutcome(rsp);
+        else
+            return UpdateOrganizationMemberEmailBindOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOrganizationMemberEmailBindOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdateOrganizationMemberEmailBindAsync(const UpdateOrganizationMemberEmailBindRequest& request, const UpdateOrganizationMemberEmailBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOrganizationMemberEmailBind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::UpdateOrganizationMemberEmailBindOutcomeCallable OrganizationClient::UpdateOrganizationMemberEmailBindCallable(const UpdateOrganizationMemberEmailBindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOrganizationMemberEmailBindOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOrganizationMemberEmailBind(request);
         }
     );
 

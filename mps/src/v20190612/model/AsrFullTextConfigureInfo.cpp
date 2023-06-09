@@ -22,7 +22,8 @@ using namespace std;
 
 AsrFullTextConfigureInfo::AsrFullTextConfigureInfo() :
     m_switchHasBeenSet(false),
-    m_subtitleFormatHasBeenSet(false)
+    m_subtitleFormatHasBeenSet(false),
+    m_sourceLanguageHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AsrFullTextConfigureInfo::Deserialize(const rapidjson::Value
         m_subtitleFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceLanguage") && !value["SourceLanguage"].IsNull())
+    {
+        if (!value["SourceLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfo.SourceLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceLanguage = string(value["SourceLanguage"].GetString());
+        m_sourceLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AsrFullTextConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubtitleFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AsrFullTextConfigureInfo::SetSubtitleFormat(const string& _subtitleFormat)
 bool AsrFullTextConfigureInfo::SubtitleFormatHasBeenSet() const
 {
     return m_subtitleFormatHasBeenSet;
+}
+
+string AsrFullTextConfigureInfo::GetSourceLanguage() const
+{
+    return m_sourceLanguage;
+}
+
+void AsrFullTextConfigureInfo::SetSourceLanguage(const string& _sourceLanguage)
+{
+    m_sourceLanguage = _sourceLanguage;
+    m_sourceLanguageHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfo::SourceLanguageHasBeenSet() const
+{
+    return m_sourceLanguageHasBeenSet;
 }
 

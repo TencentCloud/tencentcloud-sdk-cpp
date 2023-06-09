@@ -94,6 +94,24 @@ namespace TencentCloud
                      */
                     bool SubtitleFormatHasBeenSet() const;
 
+                    /**
+                     * 获取视频源语言。
+                     * @return SourceLanguage 视频源语言。
+                     */
+                    std::string GetSourceLanguage() const;
+
+                    /**
+                     * 设置视频源语言。
+                     * @param SourceLanguage 视频源语言。
+                     */
+                    void SetSourceLanguage(const std::string& _sourceLanguage);
+
+                    /**
+                     * 判断参数 SourceLanguage 是否已赋值
+                     * @return SourceLanguage 是否已赋值
+                     */
+                    bool SourceLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -110,6 +128,12 @@ namespace TencentCloud
                      */
                     std::string m_subtitleFormat;
                     bool m_subtitleFormatHasBeenSet;
+
+                    /**
+                     * 视频源语言。
+                     */
+                    std::string m_sourceLanguage;
+                    bool m_sourceLanguageHasBeenSet;
 
                 };
             }

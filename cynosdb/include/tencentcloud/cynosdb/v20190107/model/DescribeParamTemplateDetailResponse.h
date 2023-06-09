@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模版ID
-                     * @return TemplateId 参数模版ID
+                     * 获取参数模板ID
+                     * @return TemplateId 参数模板ID
                      */
                     int64_t GetTemplateId() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取参数模版名称
-                     * @return TemplateName 参数模版名称
+                     * 获取参数模板名称
+                     * @return TemplateName 参数模板名称
                      */
                     std::string GetTemplateName() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取参数模版描述
-                     * @return TemplateDescription 参数模版描述
+                     * 获取参数模板描述
+                     * @return TemplateDescription 参数模板描述
                      */
                     std::string GetTemplateDescription() const;
 
@@ -131,19 +131,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模版ID
+                     * 参数模板ID
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 参数模版名称
+                     * 参数模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 参数模版描述
+                     * 参数模板描述
                      */
                     std::string m_templateDescription;
                     bool m_templateDescriptionHasBeenSet;

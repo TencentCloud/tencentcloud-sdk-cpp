@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailRequest.h>
+#include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationNodeRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationNodeResponse.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthIdentitiesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthIdentitiesResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberEmailBindRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberEmailBindResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeResponse.h>
 
@@ -71,6 +77,9 @@ namespace TencentCloud
                 OrganizationClient(const Credential &credential, const std::string &region);
                 OrganizationClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddOrganizationMemberEmailResponse> AddOrganizationMemberEmailOutcome;
+                typedef std::future<AddOrganizationMemberEmailOutcome> AddOrganizationMemberEmailOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AddOrganizationMemberEmailRequest&, AddOrganizationMemberEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationMemberEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddOrganizationNodeResponse> AddOrganizationNodeOutcome;
                 typedef std::future<AddOrganizationNodeOutcome> AddOrganizationNodeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddOrganizationNodeRequest&, AddOrganizationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationNodeAsyncHandler;
@@ -104,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationMemberAuthIdentitiesResponse> DescribeOrganizationMemberAuthIdentitiesOutcome;
                 typedef std::future<DescribeOrganizationMemberAuthIdentitiesOutcome> DescribeOrganizationMemberAuthIdentitiesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMemberAuthIdentitiesRequest&, DescribeOrganizationMemberAuthIdentitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMemberAuthIdentitiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationMemberEmailBindResponse> DescribeOrganizationMemberEmailBindOutcome;
+                typedef std::future<DescribeOrganizationMemberEmailBindOutcome> DescribeOrganizationMemberEmailBindOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMemberEmailBindRequest&, DescribeOrganizationMemberEmailBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMemberEmailBindAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationMemberPoliciesResponse> DescribeOrganizationMemberPoliciesOutcome;
                 typedef std::future<DescribeOrganizationMemberPoliciesOutcome> DescribeOrganizationMemberPoliciesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationMemberPoliciesRequest&, DescribeOrganizationMemberPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationMemberPoliciesAsyncHandler;
@@ -119,11 +131,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MoveOrganizationNodeMembersResponse> MoveOrganizationNodeMembersOutcome;
                 typedef std::future<MoveOrganizationNodeMembersOutcome> MoveOrganizationNodeMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::MoveOrganizationNodeMembersRequest&, MoveOrganizationNodeMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveOrganizationNodeMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOrganizationMemberEmailBindResponse> UpdateOrganizationMemberEmailBindOutcome;
+                typedef std::future<UpdateOrganizationMemberEmailBindOutcome> UpdateOrganizationMemberEmailBindOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationMemberEmailBindRequest&, UpdateOrganizationMemberEmailBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationMemberEmailBindAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationNodeResponse> UpdateOrganizationNodeOutcome;
                 typedef std::future<UpdateOrganizationNodeOutcome> UpdateOrganizationNodeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationNodeRequest&, UpdateOrganizationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationNodeAsyncHandler;
 
 
+
+                /**
+                 *添加组织成员邮箱
+                 * @param req AddOrganizationMemberEmailRequest
+                 * @return AddOrganizationMemberEmailOutcome
+                 */
+                AddOrganizationMemberEmailOutcome AddOrganizationMemberEmail(const Model::AddOrganizationMemberEmailRequest &request);
+                void AddOrganizationMemberEmailAsync(const Model::AddOrganizationMemberEmailRequest& request, const AddOrganizationMemberEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddOrganizationMemberEmailOutcomeCallable AddOrganizationMemberEmailCallable(const Model::AddOrganizationMemberEmailRequest& request);
 
                 /**
                  *添加企业组织节点
@@ -226,6 +250,15 @@ namespace TencentCloud
                 DescribeOrganizationMemberAuthIdentitiesOutcomeCallable DescribeOrganizationMemberAuthIdentitiesCallable(const Model::DescribeOrganizationMemberAuthIdentitiesRequest& request);
 
                 /**
+                 *查询成员邮箱绑定详细信息
+                 * @param req DescribeOrganizationMemberEmailBindRequest
+                 * @return DescribeOrganizationMemberEmailBindOutcome
+                 */
+                DescribeOrganizationMemberEmailBindOutcome DescribeOrganizationMemberEmailBind(const Model::DescribeOrganizationMemberEmailBindRequest &request);
+                void DescribeOrganizationMemberEmailBindAsync(const Model::DescribeOrganizationMemberEmailBindRequest& request, const DescribeOrganizationMemberEmailBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationMemberEmailBindOutcomeCallable DescribeOrganizationMemberEmailBindCallable(const Model::DescribeOrganizationMemberEmailBindRequest& request);
+
+                /**
                  *获取组织成员的授权策略列表
                  * @param req DescribeOrganizationMemberPoliciesRequest
                  * @return DescribeOrganizationMemberPoliciesOutcome
@@ -269,6 +302,15 @@ namespace TencentCloud
                 MoveOrganizationNodeMembersOutcome MoveOrganizationNodeMembers(const Model::MoveOrganizationNodeMembersRequest &request);
                 void MoveOrganizationNodeMembersAsync(const Model::MoveOrganizationNodeMembersRequest& request, const MoveOrganizationNodeMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MoveOrganizationNodeMembersOutcomeCallable MoveOrganizationNodeMembersCallable(const Model::MoveOrganizationNodeMembersRequest& request);
+
+                /**
+                 *修改绑定成员邮箱
+                 * @param req UpdateOrganizationMemberEmailBindRequest
+                 * @return UpdateOrganizationMemberEmailBindOutcome
+                 */
+                UpdateOrganizationMemberEmailBindOutcome UpdateOrganizationMemberEmailBind(const Model::UpdateOrganizationMemberEmailBindRequest &request);
+                void UpdateOrganizationMemberEmailBindAsync(const Model::UpdateOrganizationMemberEmailBindRequest& request, const UpdateOrganizationMemberEmailBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOrganizationMemberEmailBindOutcomeCallable UpdateOrganizationMemberEmailBindCallable(const Model::UpdateOrganizationMemberEmailBindRequest& request);
 
                 /**
                  *更新企业组织节点

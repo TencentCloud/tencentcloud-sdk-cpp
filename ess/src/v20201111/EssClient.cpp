@@ -169,6 +169,49 @@ EssClient::CancelMultiFlowSignQRCodeOutcomeCallable EssClient::CancelMultiFlowSi
     return task->get_future();
 }
 
+EssClient::CancelUserAutoSignEnableUrlOutcome EssClient::CancelUserAutoSignEnableUrl(const CancelUserAutoSignEnableUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelUserAutoSignEnableUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelUserAutoSignEnableUrlResponse rsp = CancelUserAutoSignEnableUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelUserAutoSignEnableUrlOutcome(rsp);
+        else
+            return CancelUserAutoSignEnableUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelUserAutoSignEnableUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CancelUserAutoSignEnableUrlAsync(const CancelUserAutoSignEnableUrlRequest& request, const CancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelUserAutoSignEnableUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CancelUserAutoSignEnableUrlOutcomeCallable EssClient::CancelUserAutoSignEnableUrlCallable(const CancelUserAutoSignEnableUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelUserAutoSignEnableUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelUserAutoSignEnableUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchCancelFlowUrlOutcome EssClient::CreateBatchCancelFlowUrl(const CreateBatchCancelFlowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchCancelFlowUrl");

@@ -136,6 +136,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceRequest.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBParam.h
   include/tencentcloud/ckafka/v20190819/model/Route.h
@@ -182,7 +183,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/AppIdResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h
-  include/tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h
+  include/tencentcloud/ckafka/v20190819/model/DealInstanceDTO.h
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h
   include/tencentcloud/ckafka/v20190819/model/Group.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoResponse.h
@@ -320,7 +321,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTaskStatusRequest.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResource.h
@@ -455,6 +456,7 @@ set(ckafka_src
   src/v20190819/model/DescribeTopicProduceConnectionRequest.cpp
   src/v20190819/model/CreateAclRequest.cpp
   src/v20190819/model/DescribeTopicSyncReplicaResponse.cpp
+  src/v20190819/model/DescribeUserRequest.cpp
   src/v20190819/model/CreateConnectResourceRequest.cpp
   src/v20190819/model/MariaDBParam.cpp
   src/v20190819/model/Route.cpp
@@ -501,7 +503,7 @@ set(ckafka_src
   src/v20190819/model/DescribeGroupInfoResponse.cpp
   src/v20190819/model/AppIdResponse.cpp
   src/v20190819/model/DescribeTopicRequest.cpp
-  src/v20190819/model/CreateTokenRequest.cpp
+  src/v20190819/model/DealInstanceDTO.cpp
   src/v20190819/model/CreatePartitionRequest.cpp
   src/v20190819/model/Group.cpp
   src/v20190819/model/GroupInfoResponse.cpp
@@ -639,7 +641,7 @@ set(ckafka_src
   src/v20190819/model/CreateDatahubTaskResponse.cpp
   src/v20190819/model/ClickHouseConnectParam.cpp
   src/v20190819/model/DescribeTaskStatusRequest.cpp
-  src/v20190819/model/DescribeUserRequest.cpp
+  src/v20190819/model/CreateTokenRequest.cpp
   src/v20190819/model/DescribeDatahubTopicsResp.cpp
   src/v20190819/model/DescribeTopicSyncReplicaRequest.cpp
   src/v20190819/model/DescribeConnectResource.cpp

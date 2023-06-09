@@ -23,7 +23,8 @@ using namespace std;
 CreateInstancePreData::CreateInstancePreData() :
     m_flowIdHasBeenSet(false),
     m_dealNamesHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_dealNameInstanceIdMappingHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DealNameInstanceIdMapping") && !value["DealNameInstanceIdMapping"].IsNull())
+    {
+        if (!value["DealNameInstanceIdMapping"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateInstancePreData.DealNameInstanceIdMapping` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DealNameInstanceIdMapping"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DealInstanceDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dealNameInstanceIdMapping.push_back(item);
+        }
+        m_dealNameInstanceIdMappingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +120,21 @@ void CreateInstancePreData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNameInstanceIdMappingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealNameInstanceIdMapping";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dealNameInstanceIdMapping.begin(); itr != m_dealNameInstanceIdMapping.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -150,5 +186,21 @@ void CreateInstancePreData::SetInstanceId(const string& _instanceId)
 bool CreateInstancePreData::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<DealInstanceDTO> CreateInstancePreData::GetDealNameInstanceIdMapping() const
+{
+    return m_dealNameInstanceIdMapping;
+}
+
+void CreateInstancePreData::SetDealNameInstanceIdMapping(const vector<DealInstanceDTO>& _dealNameInstanceIdMapping)
+{
+    m_dealNameInstanceIdMapping = _dealNameInstanceIdMapping;
+    m_dealNameInstanceIdMappingHasBeenSet = true;
+}
+
+bool CreateInstancePreData::DealNameInstanceIdMappingHasBeenSet() const
+{
+    return m_dealNameInstanceIdMappingHasBeenSet;
 }
 

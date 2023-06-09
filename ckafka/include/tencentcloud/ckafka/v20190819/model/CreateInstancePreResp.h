@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建预付费实例返回结构
+                * 预付费实例相关接口返回结构
                 */
                 class CreateInstancePreResp : public AbstractModel
                 {
@@ -106,17 +106,17 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取删除是时间
+                     * 获取删除时间。目前该参数字段已废弃，将会在未来被删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeleteRouteTimestamp 删除是时间
+                     * @return DeleteRouteTimestamp 删除时间。目前该参数字段已废弃，将会在未来被删除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDeleteRouteTimestamp() const;
 
                     /**
-                     * 设置删除是时间
+                     * 设置删除时间。目前该参数字段已废弃，将会在未来被删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteRouteTimestamp 删除是时间
+                     * @param DeleteRouteTimestamp 删除时间。目前该参数字段已废弃，将会在未来被删除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeleteRouteTimestamp(const std::string& _deleteRouteTimestamp);
@@ -149,7 +149,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 删除是时间
+                     * 删除时间。目前该参数字段已废弃，将会在未来被删除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deleteRouteTimestamp;

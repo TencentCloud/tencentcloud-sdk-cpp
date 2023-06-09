@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取用户列表，电子签系统的UserId
-                     * @return UserIds 用户列表，电子签系统的UserId
+                     * 获取电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * @return UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置用户列表，电子签系统的UserId
-                     * @param UserIds 用户列表，电子签系统的UserId
+                     * 设置电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
+                     * @param UserIds 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -116,6 +116,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * @return OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     */
+                    std::vector<std::string> GetOpenIds() const;
+
+                    /**
+                     * 设置客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     * @param OpenIds 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     */
+                    void SetOpenIds(const std::vector<std::string>& _openIds);
+
+                    /**
+                     * 判断参数 OpenIds 是否已赋值
+                     * @return OpenIds 是否已赋值
+                     */
+                    bool OpenIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,7 +149,7 @@ namespace TencentCloud
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 用户列表，电子签系统的UserId
+                     * 电子签用户ID列表，与OpenIds参数二选一,优先UserIds参数
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
@@ -141,6 +159,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 客户系统用户ID列表，与UserIds参数二选一,优先UserIds参数
+                     */
+                    std::vector<std::string> m_openIds;
+                    bool m_openIdsHasBeenSet;
 
                 };
             }

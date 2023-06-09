@@ -26,7 +26,8 @@ ChannelDeleteRoleUsersRequest::ChannelDeleteRoleUsersRequest() :
     m_agentHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_openIdsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,19 @@ string ChannelDeleteRoleUsersRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_openIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_openIds.begin(); itr != m_openIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -146,6 +160,22 @@ void ChannelDeleteRoleUsersRequest::SetOperator(const UserInfo& _operator)
 bool ChannelDeleteRoleUsersRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<string> ChannelDeleteRoleUsersRequest::GetOpenIds() const
+{
+    return m_openIds;
+}
+
+void ChannelDeleteRoleUsersRequest::SetOpenIds(const vector<string>& _openIds)
+{
+    m_openIds = _openIds;
+    m_openIdsHasBeenSet = true;
+}
+
+bool ChannelDeleteRoleUsersRequest::OpenIdsHasBeenSet() const
+{
+    return m_openIdsHasBeenSet;
 }
 
 

@@ -513,6 +513,49 @@ CdwchClient::DescribeInstanceStateOutcomeCallable CdwchClient::DescribeInstanceS
     return task->get_future();
 }
 
+CdwchClient::DescribeInstancesNewOutcome CdwchClient::DescribeInstancesNew(const DescribeInstancesNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesNewResponse rsp = DescribeInstancesNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesNewOutcome(rsp);
+        else
+            return DescribeInstancesNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesNewOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeInstancesNewAsync(const DescribeInstancesNewRequest& request, const DescribeInstancesNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeInstancesNewOutcomeCallable CdwchClient::DescribeInstancesNewCallable(const DescribeInstancesNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeSpecOutcome CdwchClient::DescribeSpec(const DescribeSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSpec");

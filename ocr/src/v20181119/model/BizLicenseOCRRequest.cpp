@@ -24,7 +24,8 @@ using namespace std;
 
 BizLicenseOCRRequest::BizLicenseOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_enableCopyWarnHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string BizLicenseOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCopyWarnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCopyWarn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCopyWarn, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void BizLicenseOCRRequest::SetImageUrl(const string& _imageUrl)
 bool BizLicenseOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool BizLicenseOCRRequest::GetEnableCopyWarn() const
+{
+    return m_enableCopyWarn;
+}
+
+void BizLicenseOCRRequest::SetEnableCopyWarn(const bool& _enableCopyWarn)
+{
+    m_enableCopyWarn = _enableCopyWarn;
+    m_enableCopyWarnHasBeenSet = true;
+}
+
+bool BizLicenseOCRRequest::EnableCopyWarnHasBeenSet() const
+{
+    return m_enableCopyWarnHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/DealInstanceDTO.h>
 
 
 namespace TencentCloud
@@ -91,17 +92,17 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
+                     * 获取实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例Id
+                     * @return InstanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
+                     * 设置实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 实例Id
+                     * @param InstanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,6 +112,28 @@ namespace TencentCloud
                      * @return InstanceId 是否已赋值
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取订单和购买实例对应映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealNameInstanceIdMapping 订单和购买实例对应映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DealInstanceDTO> GetDealNameInstanceIdMapping() const;
+
+                    /**
+                     * 设置订单和购买实例对应映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DealNameInstanceIdMapping 订单和购买实例对应映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDealNameInstanceIdMapping(const std::vector<DealInstanceDTO>& _dealNameInstanceIdMapping);
+
+                    /**
+                     * 判断参数 DealNameInstanceIdMapping 是否已赋值
+                     * @return DealNameInstanceIdMapping 是否已赋值
+                     */
+                    bool DealNameInstanceIdMappingHasBeenSet() const;
 
                 private:
 
@@ -129,11 +152,18 @@ namespace TencentCloud
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 实例Id
+                     * 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 订单和购买实例对应映射列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DealInstanceDTO> m_dealNameInstanceIdMapping;
+                    bool m_dealNameInstanceIdMappingHasBeenSet;
 
                 };
             }

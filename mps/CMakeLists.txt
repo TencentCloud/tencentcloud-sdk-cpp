@@ -473,6 +473,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaContentReviewSegmentItem.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusResponse.h
   include/tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfo.h
+  include/tencentcloud/mps/v20190612/model/TranslateConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/FlowMediaAudio.h
   include/tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/SchedulesInfo.h
@@ -519,6 +520,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TerrorismConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/PoliticalAsrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/TranslateConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/SampleSnapshotTemplate.h
   include/tencentcloud/mps/v20190612/model/RTSPPullSourceAddress.h
   include/tencentcloud/mps/v20190612/model/DescribeHLSPullSourceAddress.h
@@ -1002,6 +1004,7 @@ set(mps_src
   src/v20190612/model/MediaContentReviewSegmentItem.cpp
   src/v20190612/model/DescribeStreamLinkFlowRealtimeStatusResponse.cpp
   src/v20190612/model/TerrorismImgReviewTemplateInfo.cpp
+  src/v20190612/model/TranslateConfigureInfo.cpp
   src/v20190612/model/FlowMediaAudio.cpp
   src/v20190612/model/DescribeTranscodeTemplatesRequest.cpp
   src/v20190612/model/SchedulesInfo.cpp
@@ -1048,6 +1051,7 @@ set(mps_src
   src/v20190612/model/TerrorismConfigureInfo.cpp
   src/v20190612/model/PoliticalAsrReviewTemplateInfo.cpp
   src/v20190612/model/CreateAnimatedGraphicsTemplateResponse.cpp
+  src/v20190612/model/TranslateConfigureInfoForUpdate.cpp
   src/v20190612/model/SampleSnapshotTemplate.cpp
   src/v20190612/model/RTSPPullSourceAddress.cpp
   src/v20190612/model/DescribeHLSPullSourceAddress.cpp

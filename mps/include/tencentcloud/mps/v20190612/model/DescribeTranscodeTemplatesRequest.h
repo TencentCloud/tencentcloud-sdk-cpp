@@ -113,20 +113,20 @@ namespace TencentCloud
                     bool ContainerTypeHasBeenSet() const;
 
                     /**
-                     * 获取极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+                     * 获取（建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
 <li>Common：普通转码模板；</li>
 <li>TEHD：极速高清模板。</li>
-                     * @return TEHDType 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+                     * @return TEHDType （建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
 <li>Common：普通转码模板；</li>
 <li>TEHD：极速高清模板。</li>
                      */
                     std::string GetTEHDType() const;
 
                     /**
-                     * 设置极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+                     * 设置（建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
 <li>Common：普通转码模板；</li>
 <li>TEHD：极速高清模板。</li>
-                     * @param TEHDType 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+                     * @param TEHDType （建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
 <li>Common：普通转码模板；</li>
 <li>TEHD：极速高清模板。</li>
                      */
@@ -177,28 +177,40 @@ namespace TencentCloud
                     /**
                      * 获取模板类型（替换旧版本 TEHDType），可选值：
 <li>Common：普通转码模板；</li>
-<li>TEHD：极速高清模板。</li>
+<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>
+<li>TEHD-100：视频极速高清</li>
+<li>TEHD-200：音频极速高清</li>
 <li>Enhance：音视频增强模板。</li>
 默认空，不限制类型。
+
                      * @return TranscodeType 模板类型（替换旧版本 TEHDType），可选值：
 <li>Common：普通转码模板；</li>
-<li>TEHD：极速高清模板。</li>
+<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>
+<li>TEHD-100：视频极速高清</li>
+<li>TEHD-200：音频极速高清</li>
 <li>Enhance：音视频增强模板。</li>
 默认空，不限制类型。
+
                      */
                     std::string GetTranscodeType() const;
 
                     /**
                      * 设置模板类型（替换旧版本 TEHDType），可选值：
 <li>Common：普通转码模板；</li>
-<li>TEHD：极速高清模板。</li>
+<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>
+<li>TEHD-100：视频极速高清</li>
+<li>TEHD-200：音频极速高清</li>
 <li>Enhance：音视频增强模板。</li>
 默认空，不限制类型。
+
                      * @param TranscodeType 模板类型（替换旧版本 TEHDType），可选值：
 <li>Common：普通转码模板；</li>
-<li>TEHD：极速高清模板。</li>
+<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>
+<li>TEHD-100：视频极速高清</li>
+<li>TEHD-200：音频极速高清</li>
 <li>Enhance：音视频增强模板。</li>
 默认空，不限制类型。
+
                      */
                     void SetTranscodeType(const std::string& _transcodeType);
 
@@ -233,7 +245,7 @@ namespace TencentCloud
                     bool m_containerTypeHasBeenSet;
 
                     /**
-                     * 极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
+                     * （建议使用TranscodeType代替）极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：
 <li>Common：普通转码模板；</li>
 <li>TEHD：极速高清模板。</li>
                      */
@@ -255,9 +267,12 @@ namespace TencentCloud
                     /**
                      * 模板类型（替换旧版本 TEHDType），可选值：
 <li>Common：普通转码模板；</li>
-<li>TEHD：极速高清模板。</li>
+<li>TEHD：视频极速高清，老的类型（建议使用 TEHD-100） 。</li>
+<li>TEHD-100：视频极速高清</li>
+<li>TEHD-200：音频极速高清</li>
 <li>Enhance：音视频增强模板。</li>
 默认空，不限制类型。
+
                      */
                     std::string m_transcodeType;
                     bool m_transcodeTypeHasBeenSet;

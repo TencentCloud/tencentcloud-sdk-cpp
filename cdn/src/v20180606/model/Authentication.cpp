@@ -22,6 +22,7 @@ using namespace std;
 
 Authentication::Authentication() :
     m_switchHasBeenSet(false),
+    m_authAlgorithmHasBeenSet(false),
     m_typeAHasBeenSet(false),
     m_typeBHasBeenSet(false),
     m_typeCHasBeenSet(false),
@@ -42,6 +43,16 @@ CoreInternalOutcome Authentication::Deserialize(const rapidjson::Value &value)
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthAlgorithm") && !value["AuthAlgorithm"].IsNull())
+    {
+        if (!value["AuthAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Authentication.AuthAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authAlgorithm = string(value["AuthAlgorithm"].GetString());
+        m_authAlgorithmHasBeenSet = true;
     }
 
     if (value.HasMember("TypeA") && !value["TypeA"].IsNull())
@@ -127,6 +138,14 @@ void Authentication::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_authAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_typeAHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -180,6 +199,22 @@ void Authentication::SetSwitch(const string& _switch)
 bool Authentication::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+string Authentication::GetAuthAlgorithm() const
+{
+    return m_authAlgorithm;
+}
+
+void Authentication::SetAuthAlgorithm(const string& _authAlgorithm)
+{
+    m_authAlgorithm = _authAlgorithm;
+    m_authAlgorithmHasBeenSet = true;
+}
+
+bool Authentication::AuthAlgorithmHasBeenSet() const
+{
+    return m_authAlgorithmHasBeenSet;
 }
 
 AuthenticationTypeA Authentication::GetTypeA() const

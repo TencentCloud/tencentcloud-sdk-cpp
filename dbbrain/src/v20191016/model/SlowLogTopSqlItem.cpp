@@ -44,7 +44,8 @@ SlowLogTopSqlItem::SlowLogTopSqlItem() :
     m_queryTimeAvgHasBeenSet(false),
     m_rowsSentAvgHasBeenSet(false),
     m_lockTimeAvgHasBeenSet(false),
-    m_rowsExaminedAvgHasBeenSet(false)
+    m_rowsExaminedAvgHasBeenSet(false),
+    m_md5HasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome SlowLogTopSqlItem::Deserialize(const rapidjson::Value &value
         m_rowsExaminedAvgHasBeenSet = true;
     }
 
+    if (value.HasMember("Md5") && !value["Md5"].IsNull())
+    {
+        if (!value["Md5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogTopSqlItem.Md5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_md5 = string(value["Md5"].GetString());
+        m_md5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void SlowLogTopSqlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RowsExaminedAvg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowsExaminedAvg, allocator);
+    }
+
+    if (m_md5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Md5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void SlowLogTopSqlItem::SetRowsExaminedAvg(const double& _rowsExaminedAvg)
 bool SlowLogTopSqlItem::RowsExaminedAvgHasBeenSet() const
 {
     return m_rowsExaminedAvgHasBeenSet;
+}
+
+string SlowLogTopSqlItem::GetMd5() const
+{
+    return m_md5;
+}
+
+void SlowLogTopSqlItem::SetMd5(const string& _md5)
+{
+    m_md5 = _md5;
+    m_md5HasBeenSet = true;
+}
+
+bool SlowLogTopSqlItem::Md5HasBeenSet() const
+{
+    return m_md5HasBeenSet;
 }
 

@@ -371,6 +371,24 @@ namespace TencentCloud
                      */
                     bool ZoneIdsHasBeenSet() const;
 
+                    /**
+                     * 获取公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0
+                     * @return PublicNetworkMonthly 公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0
+                     */
+                    int64_t GetPublicNetworkMonthly() const;
+
+                    /**
+                     * 设置公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0
+                     * @param PublicNetworkMonthly 公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0
+                     */
+                    void SetPublicNetworkMonthly(const int64_t& _publicNetworkMonthly);
+
+                    /**
+                     * 判断参数 PublicNetworkMonthly 是否已赋值
+                     * @return PublicNetworkMonthly 是否已赋值
+                     */
+                    bool PublicNetworkMonthlyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +499,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * 公网带宽大小，单位 Mbps。默认是没有加上免费 3Mbps 带宽。例如总共需要 3Mbps 公网带宽，此处传 0；总共需要 4Mbps 公网带宽，此处传 1。默认值为 0
+                     */
+                    int64_t m_publicNetworkMonthly;
+                    bool m_publicNetworkMonthlyHasBeenSet;
 
                 };
             }

@@ -81,6 +81,40 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
+                     * 获取鉴权算法，取值有：
+md5：按MD5算法取hash值
+sha256：按SHA-256算法取hash值
+默认为 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuthAlgorithm 鉴权算法，取值有：
+md5：按MD5算法取hash值
+sha256：按SHA-256算法取hash值
+默认为 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAuthAlgorithm() const;
+
+                    /**
+                     * 设置鉴权算法，取值有：
+md5：按MD5算法取hash值
+sha256：按SHA-256算法取hash值
+默认为 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AuthAlgorithm 鉴权算法，取值有：
+md5：按MD5算法取hash值
+sha256：按SHA-256算法取hash值
+默认为 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAuthAlgorithm(const std::string& _authAlgorithm);
+
+                    /**
+                     * 判断参数 AuthAlgorithm 是否已赋值
+                     * @return AuthAlgorithm 是否已赋值
+                     */
+                    bool AuthAlgorithmHasBeenSet() const;
+
+                    /**
                      * 获取时间戳防盗链模式 A 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeA 时间戳防盗链模式 A 配置
@@ -178,6 +212,16 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 鉴权算法，取值有：
+md5：按MD5算法取hash值
+sha256：按SHA-256算法取hash值
+默认为 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_authAlgorithm;
+                    bool m_authAlgorithmHasBeenSet;
 
                     /**
                      * 时间戳防盗链模式 A 配置

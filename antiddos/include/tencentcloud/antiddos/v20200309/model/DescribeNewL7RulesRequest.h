@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取一页条数，填0表示不分页
-                     * @return Limit 一页条数，填0表示不分页
+                     * 获取一页条数，默认值100，最大值100，超过100最大返回100条
+                     * @return Limit 一页条数，默认值100，最大值100，超过100最大返回100条
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * 设置一页条数，默认值100，最大值100，超过100最大返回100条
+                     * @param Limit 一页条数，默认值100，最大值100，超过100最大返回100条
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 一页条数，填0表示不分页
+                     * 一页条数，默认值100，最大值100，超过100最大返回100条
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

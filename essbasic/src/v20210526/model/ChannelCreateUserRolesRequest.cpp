@@ -24,8 +24,9 @@ using namespace std;
 
 ChannelCreateUserRolesRequest::ChannelCreateUserRolesRequest() :
     m_agentHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
     m_roleIdsHasBeenSet(false),
+    m_userIdsHasBeenSet(false),
+    m_openIdsHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -46,6 +47,19 @@ string ChannelCreateUserRolesRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_roleIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_roleIds.begin(); itr != m_roleIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_userIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -59,14 +73,14 @@ string ChannelCreateUserRolesRequest::ToJsonString() const
         }
     }
 
-    if (m_roleIdsHasBeenSet)
+    if (m_openIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RoleIds";
+        string key = "OpenIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_roleIds.begin(); itr != m_roleIds.end(); ++itr)
+        for (auto itr = m_openIds.begin(); itr != m_openIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -105,6 +119,22 @@ bool ChannelCreateUserRolesRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
+vector<string> ChannelCreateUserRolesRequest::GetRoleIds() const
+{
+    return m_roleIds;
+}
+
+void ChannelCreateUserRolesRequest::SetRoleIds(const vector<string>& _roleIds)
+{
+    m_roleIds = _roleIds;
+    m_roleIdsHasBeenSet = true;
+}
+
+bool ChannelCreateUserRolesRequest::RoleIdsHasBeenSet() const
+{
+    return m_roleIdsHasBeenSet;
+}
+
 vector<string> ChannelCreateUserRolesRequest::GetUserIds() const
 {
     return m_userIds;
@@ -121,20 +151,20 @@ bool ChannelCreateUserRolesRequest::UserIdsHasBeenSet() const
     return m_userIdsHasBeenSet;
 }
 
-vector<string> ChannelCreateUserRolesRequest::GetRoleIds() const
+vector<string> ChannelCreateUserRolesRequest::GetOpenIds() const
 {
-    return m_roleIds;
+    return m_openIds;
 }
 
-void ChannelCreateUserRolesRequest::SetRoleIds(const vector<string>& _roleIds)
+void ChannelCreateUserRolesRequest::SetOpenIds(const vector<string>& _openIds)
 {
-    m_roleIds = _roleIds;
-    m_roleIdsHasBeenSet = true;
+    m_openIds = _openIds;
+    m_openIdsHasBeenSet = true;
 }
 
-bool ChannelCreateUserRolesRequest::RoleIdsHasBeenSet() const
+bool ChannelCreateUserRolesRequest::OpenIdsHasBeenSet() const
 {
-    return m_roleIdsHasBeenSet;
+    return m_openIdsHasBeenSet;
 }
 
 UserInfo ChannelCreateUserRolesRequest::GetOperator() const
