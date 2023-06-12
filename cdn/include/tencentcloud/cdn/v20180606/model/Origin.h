@@ -59,20 +59,20 @@ namespace TencentCloud
 
                     /**
                      * 获取主源站列表
-修改源站时，需要同时填充对应的 OriginType
+<font color=red>修改源站时，需要同时填充对应的 OriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origins 主源站列表
-修改源站时，需要同时填充对应的 OriginType
+<font color=red>修改源站时，需要同时填充对应的 OriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetOrigins() const;
 
                     /**
                      * 设置主源站列表
-修改源站时，需要同时填充对应的 OriginType
+<font color=red>修改源站时，需要同时填充对应的 OriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Origins 主源站列表
-修改源站时，需要同时填充对应的 OriginType
+<font color=red>修改源站时，需要同时填充对应的 OriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrigins(const std::vector<std::string>& _origins);
@@ -85,6 +85,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主源站类型
+<font color=red>当源站列表 Origins 不为空时必填</font>
 入参支持以下几种类型：
 domain：域名类型
 domainv6：域名解析V6类型
@@ -111,6 +112,7 @@ ftp：历史 FTP 托管源源站，现已不维护
 IPv6 功能目前尚未全量，需要先申请试用
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginType 主源站类型
+<font color=red>当源站列表 Origins 不为空时必填</font>
 入参支持以下几种类型：
 domain：域名类型
 domainv6：域名解析V6类型
@@ -141,6 +143,7 @@ IPv6 功能目前尚未全量，需要先申请试用
 
                     /**
                      * 设置主源站类型
+<font color=red>当源站列表 Origins 不为空时必填</font>
 入参支持以下几种类型：
 domain：域名类型
 domainv6：域名解析V6类型
@@ -167,6 +170,7 @@ ftp：历史 FTP 托管源源站，现已不维护
 IPv6 功能目前尚未全量，需要先申请试用
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginType 主源站类型
+<font color=red>当源站列表 Origins 不为空时必填</font>
 入参支持以下几种类型：
 domain：域名类型
 domainv6：域名解析V6类型
@@ -202,24 +206,28 @@ IPv6 功能目前尚未全量，需要先申请试用
                     bool OriginTypeHasBeenSet() const;
 
                     /**
-                     * 获取当源站类型为cos或者第三方存储加速时,ServerName字段必填
-回主源站时 Host 头部，不填充则默认为加速域名
+                     * 获取回主源站时 Host 头部
+<font color=red>当源站类型为cos或者第三方存储加速时,ServerName字段必填</font>
+不填充则默认为加速域名
 若接入的是泛域名，则回源 Host 默认为访问时的子域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServerName 当源站类型为cos或者第三方存储加速时,ServerName字段必填
-回主源站时 Host 头部，不填充则默认为加速域名
+                     * @return ServerName 回主源站时 Host 头部
+<font color=red>当源站类型为cos或者第三方存储加速时,ServerName字段必填</font>
+不填充则默认为加速域名
 若接入的是泛域名，则回源 Host 默认为访问时的子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置当源站类型为cos或者第三方存储加速时,ServerName字段必填
-回主源站时 Host 头部，不填充则默认为加速域名
+                     * 设置回主源站时 Host 头部
+<font color=red>当源站类型为cos或者第三方存储加速时,ServerName字段必填</font>
+不填充则默认为加速域名
 若接入的是泛域名，则回源 Host 默认为访问时的子域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerName 当源站类型为cos或者第三方存储加速时,ServerName字段必填
-回主源站时 Host 头部，不填充则默认为加速域名
+                     * @param ServerName 回主源站时 Host 头部
+<font color=red>当源站类型为cos或者第三方存储加速时,ServerName字段必填</font>
+不填充则默认为加速域名
 若接入的是泛域名，则回源 Host 默认为访问时的子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -293,20 +301,20 @@ https：强制 https 回源，https 回源时仅支持源站 443 端口
 
                     /**
                      * 获取备源站列表
-修改备源站时，需要同时填充对应的 BackupOriginType
+<font color=red>修改备源站时，需要同时填充对应的 BackupOriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupOrigins 备源站列表
-修改备源站时，需要同时填充对应的 BackupOriginType
+<font color=red>修改备源站时，需要同时填充对应的 BackupOriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetBackupOrigins() const;
 
                     /**
                      * 设置备源站列表
-修改备源站时，需要同时填充对应的 BackupOriginType
+<font color=red>修改备源站时，需要同时填充对应的 BackupOriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param BackupOrigins 备源站列表
-修改备源站时，需要同时填充对应的 BackupOriginType
+<font color=red>修改备源站时，需要同时填充对应的 BackupOriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBackupOrigins(const std::vector<std::string>& _backupOrigins);
@@ -318,20 +326,22 @@ https：强制 https 回源，https 回源时仅支持源站 443 端口
                     bool BackupOriginsHasBeenSet() const;
 
                     /**
-                     * 获取备源站类型，支持以下类型：
+                     * 获取备源站类型
+<font color=red>备源站列表BackupOrigins 不为空时必填</font>
+支持以下类型：
 domain：域名类型
 ip：IP 列表作为源站
-修改 BackupOrigins 时需要同时填充对应的 BackupOriginType
 以下备源源站类型尚未全量支持，需要申请试用：
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupOriginType 备源站类型，支持以下类型：
+                     * @return BackupOriginType 备源站类型
+<font color=red>备源站列表BackupOrigins 不为空时必填</font>
+支持以下类型：
 domain：域名类型
 ip：IP 列表作为源站
-修改 BackupOrigins 时需要同时填充对应的 BackupOriginType
 以下备源源站类型尚未全量支持，需要申请试用：
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -342,20 +352,22 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                     std::string GetBackupOriginType() const;
 
                     /**
-                     * 设置备源站类型，支持以下类型：
+                     * 设置备源站类型
+<font color=red>备源站列表BackupOrigins 不为空时必填</font>
+支持以下类型：
 domain：域名类型
 ip：IP 列表作为源站
-修改 BackupOrigins 时需要同时填充对应的 BackupOriginType
 以下备源源站类型尚未全量支持，需要申请试用：
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BackupOriginType 备源站类型，支持以下类型：
+                     * @param BackupOriginType 备源站类型
+<font color=red>备源站列表BackupOrigins 不为空时必填</font>
+支持以下类型：
 domain：域名类型
 ip：IP 列表作为源站
-修改 BackupOrigins 时需要同时填充对应的 BackupOriginType
 以下备源源站类型尚未全量支持，需要申请试用：
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -504,14 +516,18 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                     bool AdvanceHttpsHasBeenSet() const;
 
                     /**
-                     * 获取对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:
+                     * 获取对象存储回源厂商
+<font color=red>当源站类型为第三方存储源站(third_party)时必填</font>
+可选值包括以下:
 aws_s3: AWS S3
 ali_oss: 阿里云 OSS
 hw_obs: 华为 OBS
 qiniu_kodo: 七牛云 kodo
 others: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存储，如腾讯云金融专区COS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginCompany 对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:
+                     * @return OriginCompany 对象存储回源厂商
+<font color=red>当源站类型为第三方存储源站(third_party)时必填</font>
+可选值包括以下:
 aws_s3: AWS S3
 ali_oss: 阿里云 OSS
 hw_obs: 华为 OBS
@@ -522,14 +538,18 @@ others: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存�
                     std::string GetOriginCompany() const;
 
                     /**
-                     * 设置对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:
+                     * 设置对象存储回源厂商
+<font color=red>当源站类型为第三方存储源站(third_party)时必填</font>
+可选值包括以下:
 aws_s3: AWS S3
 ali_oss: 阿里云 OSS
 hw_obs: 华为 OBS
 qiniu_kodo: 七牛云 kodo
 others: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存储，如腾讯云金融专区COS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginCompany 对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:
+                     * @param OriginCompany 对象存储回源厂商
+<font color=red>当源站类型为第三方存储源站(third_party)时必填</font>
+可选值包括以下:
 aws_s3: AWS S3
 ali_oss: 阿里云 OSS
 hw_obs: 华为 OBS
@@ -549,7 +569,7 @@ others: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存�
 
                     /**
                      * 主源站列表
-修改源站时，需要同时填充对应的 OriginType
+<font color=red>修改源站时，需要同时填充对应的 OriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_origins;
@@ -557,6 +577,7 @@ others: 其它厂商对象存储,仅支持兼容以AWS签名算法的对象存�
 
                     /**
                      * 主源站类型
+<font color=red>当源站列表 Origins 不为空时必填</font>
 入参支持以下几种类型：
 domain：域名类型
 domainv6：域名解析V6类型
@@ -587,8 +608,9 @@ IPv6 功能目前尚未全量，需要先申请试用
                     bool m_originTypeHasBeenSet;
 
                     /**
-                     * 当源站类型为cos或者第三方存储加速时,ServerName字段必填
-回主源站时 Host 头部，不填充则默认为加速域名
+                     * 回主源站时 Host 头部
+<font color=red>当源站类型为cos或者第三方存储加速时,ServerName字段必填</font>
+不填充则默认为加速域名
 若接入的是泛域名，则回源 Host 默认为访问时的子域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -615,17 +637,18 @@ https：强制 https 回源，https 回源时仅支持源站 443 端口
 
                     /**
                      * 备源站列表
-修改备源站时，需要同时填充对应的 BackupOriginType
+<font color=red>修改备源站时，需要同时填充对应的 BackupOriginType</font>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_backupOrigins;
                     bool m_backupOriginsHasBeenSet;
 
                     /**
-                     * 备源站类型，支持以下类型：
+                     * 备源站类型
+<font color=red>备源站列表BackupOrigins 不为空时必填</font>
+支持以下类型：
 domain：域名类型
 ip：IP 列表作为源站
-修改 BackupOrigins 时需要同时填充对应的 BackupOriginType
 以下备源源站类型尚未全量支持，需要申请试用：
 ipv6_domain: 源站列表为多个 IPv6 地址以及域名
 ip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址
@@ -679,7 +702,9 @@ ip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名
                     bool m_advanceHttpsHasBeenSet;
 
                     /**
-                     * 对象存储回源厂商，当源站类型为第三方存储源站(third_party)时必填，可选值包括以下:
+                     * 对象存储回源厂商
+<font color=red>当源站类型为第三方存储源站(third_party)时必填</font>
+可选值包括以下:
 aws_s3: AWS S3
 ali_oss: 阿里云 OSS
 hw_obs: 华为 OBS

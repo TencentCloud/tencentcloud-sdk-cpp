@@ -72,6 +72,48 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取异步刷新总数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncTotalNum 异步刷新总数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAsyncTotalNum() const;
+
+                    /**
+                     * 判断参数 AsyncTotalNum 是否已赋值
+                     * @return AsyncTotalNum 是否已赋值
+                     */
+                    bool AsyncTotalNumHasBeenSet() const;
+
+                    /**
+                     * 获取异步刷新当前执行数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncOffset 异步刷新当前执行数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAsyncOffset() const;
+
+                    /**
+                     * 判断参数 AsyncOffset 是否已赋值
+                     * @return AsyncOffset 是否已赋值
+                     */
+                    bool AsyncOffsetHasBeenSet() const;
+
+                    /**
+                     * 获取当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncCacheTime 当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAsyncCacheTime() const;
+
+                    /**
+                     * 判断参数 AsyncCacheTime 是否已赋值
+                     * @return AsyncCacheTime 是否已赋值
+                     */
+                    bool AsyncCacheTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -87,6 +129,27 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 异步刷新总数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_asyncTotalNum;
+                    bool m_asyncTotalNumHasBeenSet;
+
+                    /**
+                     * 异步刷新当前执行数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_asyncOffset;
+                    bool m_asyncOffsetHasBeenSet;
+
+                    /**
+                     * 当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asyncCacheTime;
+                    bool m_asyncCacheTimeHasBeenSet;
 
                 };
             }

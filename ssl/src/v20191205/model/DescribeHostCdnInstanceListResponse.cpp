@@ -25,7 +25,10 @@ using namespace std;
 
 DescribeHostCdnInstanceListResponse::DescribeHostCdnInstanceListResponse() :
     m_instanceListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_asyncTotalNumHasBeenSet(false),
+    m_asyncOffsetHasBeenSet(false),
+    m_asyncCacheTimeHasBeenSet(false)
 {
 }
 
@@ -93,6 +96,36 @@ CoreInternalOutcome DescribeHostCdnInstanceListResponse::Deserialize(const strin
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AsyncTotalNum") && !rsp["AsyncTotalNum"].IsNull())
+    {
+        if (!rsp["AsyncTotalNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncTotalNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncTotalNum = rsp["AsyncTotalNum"].GetInt64();
+        m_asyncTotalNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AsyncOffset") && !rsp["AsyncOffset"].IsNull())
+    {
+        if (!rsp["AsyncOffset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncOffset = rsp["AsyncOffset"].GetInt64();
+        m_asyncOffsetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AsyncCacheTime") && !rsp["AsyncCacheTime"].IsNull())
+    {
+        if (!rsp["AsyncCacheTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncCacheTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncCacheTime = string(rsp["AsyncCacheTime"].GetString());
+        m_asyncCacheTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ string DescribeHostCdnInstanceListResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_asyncTotalNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncTotalNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asyncTotalNum, allocator);
+    }
+
+    if (m_asyncOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asyncOffset, allocator);
+    }
+
+    if (m_asyncCacheTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncCacheTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncCacheTime.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +213,36 @@ uint64_t DescribeHostCdnInstanceListResponse::GetTotalCount() const
 bool DescribeHostCdnInstanceListResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+int64_t DescribeHostCdnInstanceListResponse::GetAsyncTotalNum() const
+{
+    return m_asyncTotalNum;
+}
+
+bool DescribeHostCdnInstanceListResponse::AsyncTotalNumHasBeenSet() const
+{
+    return m_asyncTotalNumHasBeenSet;
+}
+
+int64_t DescribeHostCdnInstanceListResponse::GetAsyncOffset() const
+{
+    return m_asyncOffset;
+}
+
+bool DescribeHostCdnInstanceListResponse::AsyncOffsetHasBeenSet() const
+{
+    return m_asyncOffsetHasBeenSet;
+}
+
+string DescribeHostCdnInstanceListResponse::GetAsyncCacheTime() const
+{
+    return m_asyncCacheTime;
+}
+
+bool DescribeHostCdnInstanceListResponse::AsyncCacheTimeHasBeenSet() const
+{
+    return m_asyncCacheTimeHasBeenSet;
 }
 
 

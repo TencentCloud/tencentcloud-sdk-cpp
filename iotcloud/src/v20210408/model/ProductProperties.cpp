@@ -36,7 +36,9 @@ ProductProperties::ProductProperties() :
     m_registerLimitHasBeenSet(false),
     m_originProductIdHasBeenSet(false),
     m_privateCANameHasBeenSet(false),
-    m_originUserIdHasBeenSet(false)
+    m_originUserIdHasBeenSet(false),
+    m_deviceLimitHasBeenSet(false),
+    m_forbiddenStatusHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome ProductProperties::Deserialize(const rapidjson::Value &value
         m_originUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceLimit") && !value["DeviceLimit"].IsNull())
+    {
+        if (!value["DeviceLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductProperties.DeviceLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceLimit = value["DeviceLimit"].GetUint64();
+        m_deviceLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbiddenStatus") && !value["ForbiddenStatus"].IsNull())
+    {
+        if (!value["ForbiddenStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductProperties.ForbiddenStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbiddenStatus = value["ForbiddenStatus"].GetUint64();
+        m_forbiddenStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void ProductProperties::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "OriginUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originUserId, allocator);
+    }
+
+    if (m_deviceLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceLimit, allocator);
+    }
+
+    if (m_forbiddenStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbiddenStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbiddenStatus, allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void ProductProperties::SetOriginUserId(const uint64_t& _originUserId)
 bool ProductProperties::OriginUserIdHasBeenSet() const
 {
     return m_originUserIdHasBeenSet;
+}
+
+uint64_t ProductProperties::GetDeviceLimit() const
+{
+    return m_deviceLimit;
+}
+
+void ProductProperties::SetDeviceLimit(const uint64_t& _deviceLimit)
+{
+    m_deviceLimit = _deviceLimit;
+    m_deviceLimitHasBeenSet = true;
+}
+
+bool ProductProperties::DeviceLimitHasBeenSet() const
+{
+    return m_deviceLimitHasBeenSet;
+}
+
+uint64_t ProductProperties::GetForbiddenStatus() const
+{
+    return m_forbiddenStatus;
+}
+
+void ProductProperties::SetForbiddenStatus(const uint64_t& _forbiddenStatus)
+{
+    m_forbiddenStatus = _forbiddenStatus;
+    m_forbiddenStatusHasBeenSet = true;
+}
+
+bool ProductProperties::ForbiddenStatusHasBeenSet() const
+{
+    return m_forbiddenStatusHasBeenSet;
 }
 

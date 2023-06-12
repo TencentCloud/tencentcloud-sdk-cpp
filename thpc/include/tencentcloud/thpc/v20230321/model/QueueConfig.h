@@ -296,6 +296,24 @@ namespace TencentCloud
                      */
                     bool ScaleOutNodeThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取每轮扩容最大节点个数。默认值：100。取值范围：1～100。
+                     * @return MaxNodesPerCycle 每轮扩容最大节点个数。默认值：100。取值范围：1～100。
+                     */
+                    int64_t GetMaxNodesPerCycle() const;
+
+                    /**
+                     * 设置每轮扩容最大节点个数。默认值：100。取值范围：1～100。
+                     * @param MaxNodesPerCycle 每轮扩容最大节点个数。默认值：100。取值范围：1～100。
+                     */
+                    void SetMaxNodesPerCycle(const int64_t& _maxNodesPerCycle);
+
+                    /**
+                     * 判断参数 MaxNodesPerCycle 是否已赋值
+                     * @return MaxNodesPerCycle 是否已赋值
+                     */
+                    bool MaxNodesPerCycleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -378,6 +396,12 @@ namespace TencentCloud
                      */
                     int64_t m_scaleOutNodeThreshold;
                     bool m_scaleOutNodeThresholdHasBeenSet;
+
+                    /**
+                     * 每轮扩容最大节点个数。默认值：100。取值范围：1～100。
+                     */
+                    int64_t m_maxNodesPerCycle;
+                    bool m_maxNodesPerCycleHasBeenSet;
 
                 };
             }

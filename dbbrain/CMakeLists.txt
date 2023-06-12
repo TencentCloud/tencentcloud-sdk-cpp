@@ -21,6 +21,7 @@ set(dbbrain_public_header
 
 set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/SchemaSpaceTimeSeries.h
+  include/tencentcloud/dbbrain/v20210527/model/SlowLogUser.h
   include/tencentcloud/dbbrain/v20210527/model/RedisKeySpaceData.h
   include/tencentcloud/dbbrain/v20210527/model/HealthReportTask.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskRequest.h
@@ -159,6 +160,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h
   include/tencentcloud/dbbrain/v20191016/model/SchemaSpaceTimeSeries.h
+  include/tencentcloud/dbbrain/v20191016/model/SlowLogUser.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogUserHostStatsRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.h
   include/tencentcloud/dbbrain/v20191016/model/DescribeTopSpaceSchemasResponse.h
@@ -247,6 +249,7 @@ set(dbbrain_src
   src/v20210527/DbbrainClient.cpp
   src/v20191016/DbbrainClient.cpp
   src/v20210527/model/SchemaSpaceTimeSeries.cpp
+  src/v20210527/model/SlowLogUser.cpp
   src/v20210527/model/RedisKeySpaceData.cpp
   src/v20210527/model/HealthReportTask.cpp
   src/v20210527/model/CreateDBDiagReportTaskRequest.cpp
@@ -385,6 +388,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.cpp
   src/v20210527/model/DescribeProxySessionKillTasksResponse.cpp
   src/v20191016/model/SchemaSpaceTimeSeries.cpp
+  src/v20191016/model/SlowLogUser.cpp
   src/v20191016/model/DescribeSlowLogUserHostStatsRequest.cpp
   src/v20191016/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
   src/v20191016/model/DescribeTopSpaceSchemasResponse.cpp

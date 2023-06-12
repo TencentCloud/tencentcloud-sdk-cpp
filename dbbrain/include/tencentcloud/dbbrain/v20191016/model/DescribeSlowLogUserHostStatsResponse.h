@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dbbrain/v20191016/model/SlowLogHost.h>
+#include <tencentcloud/dbbrain/v20191016/model/SlowLogUser.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,30 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取各来源用户名的慢日志占比详情列表。
+                     * @return UserNameItems 各来源用户名的慢日志占比详情列表。
+                     */
+                    std::vector<SlowLogUser> GetUserNameItems() const;
+
+                    /**
+                     * 判断参数 UserNameItems 是否已赋值
+                     * @return UserNameItems 是否已赋值
+                     */
+                    bool UserNameItemsHasBeenSet() const;
+
+                    /**
+                     * 获取来源用户数目。
+                     * @return UserTotalCount 来源用户数目。
+                     */
+                    int64_t GetUserTotalCount() const;
+
+                    /**
+                     * 判断参数 UserTotalCount 是否已赋值
+                     * @return UserTotalCount 是否已赋值
+                     */
+                    bool UserTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +106,18 @@ namespace TencentCloud
                      */
                     std::vector<SlowLogHost> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 各来源用户名的慢日志占比详情列表。
+                     */
+                    std::vector<SlowLogUser> m_userNameItems;
+                    bool m_userNameItemsHasBeenSet;
+
+                    /**
+                     * 来源用户数目。
+                     */
+                    int64_t m_userTotalCount;
+                    bool m_userTotalCountHasBeenSet;
 
                 };
             }

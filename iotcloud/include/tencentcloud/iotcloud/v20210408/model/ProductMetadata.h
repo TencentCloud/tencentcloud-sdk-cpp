@@ -64,6 +64,42 @@ namespace TencentCloud
                      */
                     bool CreationDateHasBeenSet() const;
 
+                    /**
+                     * 获取创建者 Uin
+                     * @return CreateUserId 创建者 Uin
+                     */
+                    uint64_t GetCreateUserId() const;
+
+                    /**
+                     * 设置创建者 Uin
+                     * @param CreateUserId 创建者 Uin
+                     */
+                    void SetCreateUserId(const uint64_t& _createUserId);
+
+                    /**
+                     * 判断参数 CreateUserId 是否已赋值
+                     * @return CreateUserId 是否已赋值
+                     */
+                    bool CreateUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取账号 Uin
+                     * @return UserId 账号 Uin
+                     */
+                    uint64_t GetUserId() const;
+
+                    /**
+                     * 设置账号 Uin
+                     * @param UserId 账号 Uin
+                     */
+                    void SetUserId(const uint64_t& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +107,18 @@ namespace TencentCloud
                      */
                     uint64_t m_creationDate;
                     bool m_creationDateHasBeenSet;
+
+                    /**
+                     * 创建者 Uin
+                     */
+                    uint64_t m_createUserId;
+                    bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * 账号 Uin
+                     */
+                    uint64_t m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

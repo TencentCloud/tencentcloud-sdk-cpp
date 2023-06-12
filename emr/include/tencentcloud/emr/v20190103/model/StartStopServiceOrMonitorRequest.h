@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/OpScope.h>
+#include <tencentcloud/emr/v20190103/model/StrategyConfig.h>
 
 
 namespace TencentCloud
@@ -67,13 +68,13 @@ namespace TencentCloud
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
-
+<li>RestartService：重启服务</li>
                      * @return OpType 操作类型，当前支持
 <li>StartService：启动服务</li>
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
-
+<li>RestartService：重启服务</li>
                      */
                     std::string GetOpType() const;
 
@@ -83,13 +84,13 @@ namespace TencentCloud
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
-
+<li>RestartService：重启服务</li>
                      * @param OpType 操作类型，当前支持
 <li>StartService：启动服务</li>
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
-
+<li>RestartService：重启服务</li>
                      */
                     void SetOpType(const std::string& _opType);
 
@@ -117,6 +118,24 @@ namespace TencentCloud
                      */
                     bool OpScopeHasBeenSet() const;
 
+                    /**
+                     * 获取操作策略
+                     * @return StrategyConfig 操作策略
+                     */
+                    StrategyConfig GetStrategyConfig() const;
+
+                    /**
+                     * 设置操作策略
+                     * @param StrategyConfig 操作策略
+                     */
+                    void SetStrategyConfig(const StrategyConfig& _strategyConfig);
+
+                    /**
+                     * 判断参数 StrategyConfig 是否已赋值
+                     * @return StrategyConfig 是否已赋值
+                     */
+                    bool StrategyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,7 +150,7 @@ namespace TencentCloud
 <li>StopService：停止服务</li>
 <li>StartMonitor：退出维护</li>
 <li>StopMonitor：进入维护</li>
-
+<li>RestartService：重启服务</li>
                      */
                     std::string m_opType;
                     bool m_opTypeHasBeenSet;
@@ -141,6 +160,12 @@ namespace TencentCloud
                      */
                     OpScope m_opScope;
                     bool m_opScopeHasBeenSet;
+
+                    /**
+                     * 操作策略
+                     */
+                    StrategyConfig m_strategyConfig;
+                    bool m_strategyConfigHasBeenSet;
 
                 };
             }

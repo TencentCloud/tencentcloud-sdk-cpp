@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否异步
+                     * @return AsyncCache 是否异步
+                     */
+                    int64_t GetAsyncCache() const;
+
+                    /**
+                     * 设置是否异步
+                     * @param AsyncCache 是否异步
+                     */
+                    void SetAsyncCache(const int64_t& _asyncCache);
+
+                    /**
+                     * 判断参数 AsyncCache 是否已赋值
+                     * @return AsyncCache 是否已赋值
+                     */
+                    bool AsyncCacheHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否异步
+                     */
+                    int64_t m_asyncCache;
+                    bool m_asyncCacheHasBeenSet;
 
                 };
             }

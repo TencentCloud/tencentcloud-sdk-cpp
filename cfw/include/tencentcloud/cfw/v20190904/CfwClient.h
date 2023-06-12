@@ -67,6 +67,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
@@ -247,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefenseSwitchResponse> DescribeDefenseSwitchOutcome;
                 typedef std::future<DescribeDefenseSwitchOutcome> DescribeDefenseSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeDefenseSwitchRequest&, DescribeDefenseSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefenseSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnterpriseSGRuleProgressResponse> DescribeEnterpriseSGRuleProgressOutcome;
+                typedef std::future<DescribeEnterpriseSGRuleProgressOutcome> DescribeEnterpriseSGRuleProgressOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSGRuleProgressRequest&, DescribeEnterpriseSGRuleProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSGRuleProgressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnterpriseSecurityGroupRuleResponse> DescribeEnterpriseSecurityGroupRuleOutcome;
                 typedef std::future<DescribeEnterpriseSecurityGroupRuleOutcome> DescribeEnterpriseSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSecurityGroupRuleRequest&, DescribeEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSecurityGroupRuleAsyncHandler;
@@ -599,6 +604,15 @@ namespace TencentCloud
                 DescribeDefenseSwitchOutcome DescribeDefenseSwitch(const Model::DescribeDefenseSwitchRequest &request);
                 void DescribeDefenseSwitchAsync(const Model::DescribeDefenseSwitchRequest& request, const DescribeDefenseSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefenseSwitchOutcomeCallable DescribeDefenseSwitchCallable(const Model::DescribeDefenseSwitchRequest& request);
+
+                /**
+                 *查询新版安全组下发进度
+                 * @param req DescribeEnterpriseSGRuleProgressRequest
+                 * @return DescribeEnterpriseSGRuleProgressOutcome
+                 */
+                DescribeEnterpriseSGRuleProgressOutcome DescribeEnterpriseSGRuleProgress(const Model::DescribeEnterpriseSGRuleProgressRequest &request);
+                void DescribeEnterpriseSGRuleProgressAsync(const Model::DescribeEnterpriseSGRuleProgressRequest& request, const DescribeEnterpriseSGRuleProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnterpriseSGRuleProgressOutcomeCallable DescribeEnterpriseSGRuleProgressCallable(const Model::DescribeEnterpriseSGRuleProgressRequest& request);
 
                 /**
                  *查询新企业安全组规则

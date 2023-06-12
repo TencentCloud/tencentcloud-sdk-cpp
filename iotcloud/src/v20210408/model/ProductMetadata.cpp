@@ -21,7 +21,9 @@ using namespace TencentCloud::Iotcloud::V20210408::Model;
 using namespace std;
 
 ProductMetadata::ProductMetadata() :
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_createUserIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome ProductMetadata::Deserialize(const rapidjson::Value &value)
         m_creationDateHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUserId") && !value["CreateUserId"].IsNull())
+    {
+        if (!value["CreateUserId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductMetadata.CreateUserId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserId = value["CreateUserId"].GetUint64();
+        m_createUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductMetadata.UserId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = value["UserId"].GetUint64();
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void ProductMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreationDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationDate, allocator);
+    }
+
+    if (m_createUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createUserId, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userId, allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void ProductMetadata::SetCreationDate(const uint64_t& _creationDate)
 bool ProductMetadata::CreationDateHasBeenSet() const
 {
     return m_creationDateHasBeenSet;
+}
+
+uint64_t ProductMetadata::GetCreateUserId() const
+{
+    return m_createUserId;
+}
+
+void ProductMetadata::SetCreateUserId(const uint64_t& _createUserId)
+{
+    m_createUserId = _createUserId;
+    m_createUserIdHasBeenSet = true;
+}
+
+bool ProductMetadata::CreateUserIdHasBeenSet() const
+{
+    return m_createUserIdHasBeenSet;
+}
+
+uint64_t ProductMetadata::GetUserId() const
+{
+    return m_userId;
+}
+
+void ProductMetadata::SetUserId(const uint64_t& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool ProductMetadata::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

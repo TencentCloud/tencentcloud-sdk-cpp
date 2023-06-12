@@ -986,6 +986,49 @@ CfwClient::DescribeDefenseSwitchOutcomeCallable CfwClient::DescribeDefenseSwitch
     return task->get_future();
 }
 
+CfwClient::DescribeEnterpriseSGRuleProgressOutcome CfwClient::DescribeEnterpriseSGRuleProgress(const DescribeEnterpriseSGRuleProgressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnterpriseSGRuleProgress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnterpriseSGRuleProgressResponse rsp = DescribeEnterpriseSGRuleProgressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnterpriseSGRuleProgressOutcome(rsp);
+        else
+            return DescribeEnterpriseSGRuleProgressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnterpriseSGRuleProgressOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeEnterpriseSGRuleProgressAsync(const DescribeEnterpriseSGRuleProgressRequest& request, const DescribeEnterpriseSGRuleProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnterpriseSGRuleProgress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeEnterpriseSGRuleProgressOutcomeCallable CfwClient::DescribeEnterpriseSGRuleProgressCallable(const DescribeEnterpriseSGRuleProgressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnterpriseSGRuleProgressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnterpriseSGRuleProgress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeEnterpriseSecurityGroupRuleOutcome CfwClient::DescribeEnterpriseSecurityGroupRule(const DescribeEnterpriseSecurityGroupRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnterpriseSecurityGroupRule");

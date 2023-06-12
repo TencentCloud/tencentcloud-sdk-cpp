@@ -33,7 +33,8 @@ QueueConfig::QueueConfig() :
     m_expansionNodeConfigsHasBeenSet(false),
     m_desiredIdleNodeCapacityHasBeenSet(false),
     m_scaleOutRatioHasBeenSet(false),
-    m_scaleOutNodeThresholdHasBeenSet(false)
+    m_scaleOutNodeThresholdHasBeenSet(false),
+    m_maxNodesPerCycleHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,16 @@ CoreInternalOutcome QueueConfig::Deserialize(const rapidjson::Value &value)
         m_scaleOutNodeThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxNodesPerCycle") && !value["MaxNodesPerCycle"].IsNull())
+    {
+        if (!value["MaxNodesPerCycle"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfig.MaxNodesPerCycle` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxNodesPerCycle = value["MaxNodesPerCycle"].GetInt64();
+        m_maxNodesPerCycleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +342,14 @@ void QueueConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ScaleOutNodeThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleOutNodeThreshold, allocator);
+    }
+
+    if (m_maxNodesPerCycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNodesPerCycle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxNodesPerCycle, allocator);
     }
 
 }
@@ -542,5 +561,21 @@ void QueueConfig::SetScaleOutNodeThreshold(const int64_t& _scaleOutNodeThreshold
 bool QueueConfig::ScaleOutNodeThresholdHasBeenSet() const
 {
     return m_scaleOutNodeThresholdHasBeenSet;
+}
+
+int64_t QueueConfig::GetMaxNodesPerCycle() const
+{
+    return m_maxNodesPerCycle;
+}
+
+void QueueConfig::SetMaxNodesPerCycle(const int64_t& _maxNodesPerCycle)
+{
+    m_maxNodesPerCycle = _maxNodesPerCycle;
+    m_maxNodesPerCycleHasBeenSet = true;
+}
+
+bool QueueConfig::MaxNodesPerCycleHasBeenSet() const
+{
+    return m_maxNodesPerCycleHasBeenSet;
 }
 

@@ -65,24 +65,6 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID
-                     * @return ListenerId 监听器ID
-                     */
-                    std::string GetListenerId() const;
-
-                    /**
-                     * 设置监听器ID
-                     * @param ListenerId 监听器ID
-                     */
-                    void SetListenerId(const std::string& _listenerId);
-
-                    /**
-                     * 判断参数 ListenerId 是否已赋值
-                     * @return ListenerId 是否已赋值
-                     */
-                    bool ListenerIdHasBeenSet() const;
-
-                    /**
                      * 获取目标组ID
                      * @return TargetGroupId 目标组ID
                      */
@@ -99,6 +81,24 @@ namespace TencentCloud
                      * @return TargetGroupId 是否已赋值
                      */
                     bool TargetGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取监听器ID
+                     * @return ListenerId 监听器ID
+                     */
+                    std::string GetListenerId() const;
+
+                    /**
+                     * 设置监听器ID
+                     * @param ListenerId 监听器ID
+                     */
+                    void SetListenerId(const std::string& _listenerId);
+
+                    /**
+                     * 判断参数 ListenerId 是否已赋值
+                     * @return ListenerId 是否已赋值
+                     */
+                    bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取转发规则ID
@@ -127,16 +127,16 @@ namespace TencentCloud
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 监听器ID
-                     */
-                    std::string m_listenerId;
-                    bool m_listenerIdHasBeenSet;
-
-                    /**
                      * 目标组ID
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
+
+                    /**
+                     * 监听器ID
+                     */
+                    std::string m_listenerId;
+                    bool m_listenerIdHasBeenSet;
 
                     /**
                      * 转发规则ID

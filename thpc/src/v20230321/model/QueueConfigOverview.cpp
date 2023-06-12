@@ -29,7 +29,8 @@ QueueConfigOverview::QueueConfigOverview() :
     m_expansionNodeConfigsHasBeenSet(false),
     m_desiredIdleNodeCapacityHasBeenSet(false),
     m_scaleOutRatioHasBeenSet(false),
-    m_scaleOutNodeThresholdHasBeenSet(false)
+    m_scaleOutNodeThresholdHasBeenSet(false),
+    m_maxNodesPerCycleHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome QueueConfigOverview::Deserialize(const rapidjson::Value &val
         m_scaleOutNodeThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxNodesPerCycle") && !value["MaxNodesPerCycle"].IsNull())
+    {
+        if (!value["MaxNodesPerCycle"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfigOverview.MaxNodesPerCycle` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxNodesPerCycle = value["MaxNodesPerCycle"].GetInt64();
+        m_maxNodesPerCycleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void QueueConfigOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ScaleOutNodeThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleOutNodeThreshold, allocator);
+    }
+
+    if (m_maxNodesPerCycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNodesPerCycle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxNodesPerCycle, allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void QueueConfigOverview::SetScaleOutNodeThreshold(const int64_t& _scaleOutNodeT
 bool QueueConfigOverview::ScaleOutNodeThresholdHasBeenSet() const
 {
     return m_scaleOutNodeThresholdHasBeenSet;
+}
+
+int64_t QueueConfigOverview::GetMaxNodesPerCycle() const
+{
+    return m_maxNodesPerCycle;
+}
+
+void QueueConfigOverview::SetMaxNodesPerCycle(const int64_t& _maxNodesPerCycle)
+{
+    m_maxNodesPerCycle = _maxNodesPerCycle;
+    m_maxNodesPerCycleHasBeenSet = true;
+}
+
+bool QueueConfigOverview::MaxNodesPerCycleHasBeenSet() const
+{
+    return m_maxNodesPerCycleHasBeenSet;
 }
 

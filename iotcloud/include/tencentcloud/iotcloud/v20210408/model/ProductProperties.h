@@ -249,14 +249,14 @@ namespace TencentCloud
                     bool RegisterTypeHasBeenSet() const;
 
                     /**
-                     * 获取动态注册产品秘钥
-                     * @return ProductSecret 动态注册产品秘钥
+                     * 获取动态注册产品密钥
+                     * @return ProductSecret 动态注册产品密钥
                      */
                     std::string GetProductSecret() const;
 
                     /**
-                     * 设置动态注册产品秘钥
-                     * @param ProductSecret 动态注册产品秘钥
+                     * 设置动态注册产品密钥
+                     * @param ProductSecret 动态注册产品密钥
                      */
                     void SetProductSecret(const std::string& _productSecret);
 
@@ -338,6 +338,42 @@ namespace TencentCloud
                      */
                     bool OriginUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取设备限制
+                     * @return DeviceLimit 设备限制
+                     */
+                    uint64_t GetDeviceLimit() const;
+
+                    /**
+                     * 设置设备限制
+                     * @param DeviceLimit 设备限制
+                     */
+                    void SetDeviceLimit(const uint64_t& _deviceLimit);
+
+                    /**
+                     * 判断参数 DeviceLimit 是否已赋值
+                     * @return DeviceLimit 是否已赋值
+                     */
+                    bool DeviceLimitHasBeenSet() const;
+
+                    /**
+                     * 获取产品禁用状态
+                     * @return ForbiddenStatus 产品禁用状态
+                     */
+                    uint64_t GetForbiddenStatus() const;
+
+                    /**
+                     * 设置产品禁用状态
+                     * @param ForbiddenStatus 产品禁用状态
+                     */
+                    void SetForbiddenStatus(const uint64_t& _forbiddenStatus);
+
+                    /**
+                     * 判断参数 ForbiddenStatus 是否已赋值
+                     * @return ForbiddenStatus 是否已赋值
+                     */
+                    bool ForbiddenStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,7 +444,7 @@ namespace TencentCloud
                     bool m_registerTypeHasBeenSet;
 
                     /**
-                     * 动态注册产品秘钥
+                     * 动态注册产品密钥
                      */
                     std::string m_productSecret;
                     bool m_productSecretHasBeenSet;
@@ -436,6 +472,18 @@ namespace TencentCloud
                      */
                     uint64_t m_originUserId;
                     bool m_originUserIdHasBeenSet;
+
+                    /**
+                     * 设备限制
+                     */
+                    uint64_t m_deviceLimit;
+                    bool m_deviceLimitHasBeenSet;
+
+                    /**
+                     * 产品禁用状态
+                     */
+                    uint64_t m_forbiddenStatus;
+                    bool m_forbiddenStatusHasBeenSet;
 
                 };
             }

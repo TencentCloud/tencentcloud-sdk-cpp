@@ -100,6 +100,20 @@ namespace TencentCloud
                      */
                     bool AsyncOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncCacheTime 当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAsyncCacheTime() const;
+
+                    /**
+                     * 判断参数 AsyncCacheTime 是否已赋值
+                     * @return AsyncCacheTime 是否已赋值
+                     */
+                    bool AsyncCacheTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +143,13 @@ namespace TencentCloud
                      */
                     int64_t m_asyncOffset;
                     bool m_asyncOffsetHasBeenSet;
+
+                    /**
+                     * 当前缓存读取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asyncCacheTime;
+                    bool m_asyncCacheTimeHasBeenSet;
 
                 };
             }

@@ -551,6 +551,112 @@ namespace TencentCloud
                      */
                     bool AuditRunningStatusHasBeenSet() const;
 
+                    /**
+                     * 获取内网vip。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalVip 内网vip。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInternalVip() const;
+
+                    /**
+                     * 设置内网vip。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalVip 内网vip。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalVip(const std::string& _internalVip);
+
+                    /**
+                     * 判断参数 InternalVip 是否已赋值
+                     * @return InternalVip 是否已赋值
+                     */
+                    bool InternalVipHasBeenSet() const;
+
+                    /**
+                     * 获取内网port。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalVport 内网port。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInternalVport() const;
+
+                    /**
+                     * 设置内网port。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalVport 内网port。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalVport(const int64_t& _internalVport);
+
+                    /**
+                     * 判断参数 InternalVport 是否已赋值
+                     * @return InternalVport 是否已赋值
+                     */
+                    bool InternalVportHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间。
+                     * @return CreateTime 创建时间。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间。
+                     * @param CreateTime 创建时间。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterId 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterName 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterName 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +826,40 @@ namespace TencentCloud
                      */
                     std::string m_auditRunningStatus;
                     bool m_auditRunningStatusHasBeenSet;
+
+                    /**
+                     * 内网vip。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internalVip;
+                    bool m_internalVipHasBeenSet;
+
+                    /**
+                     * 内网port。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_internalVport;
+                    bool m_internalVportHasBeenSet;
+
+                    /**
+                     * 创建时间。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ DescribeHostCdnInstanceListRequest::DescribeHostCdnInstanceListRequest() :
     m_filtersHasBeenSet(false),
     m_oldCertificateIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_asyncCacheHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeHostCdnInstanceListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_asyncCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncCache, allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeHostCdnInstanceListRequest::SetLimit(const uint64_t& _limit)
 bool DescribeHostCdnInstanceListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeHostCdnInstanceListRequest::GetAsyncCache() const
+{
+    return m_asyncCache;
+}
+
+void DescribeHostCdnInstanceListRequest::SetAsyncCache(const int64_t& _asyncCache)
+{
+    m_asyncCache = _asyncCache;
+    m_asyncCacheHasBeenSet = true;
+}
+
+bool DescribeHostCdnInstanceListRequest::AsyncCacheHasBeenSet() const
+{
+    return m_asyncCacheHasBeenSet;
 }
 
 

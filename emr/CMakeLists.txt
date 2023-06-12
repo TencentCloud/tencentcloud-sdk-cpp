@@ -144,6 +144,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceSchedulerResponse.h
   include/tencentcloud/emr/v20190103/model/VirtualPrivateCloud.h
+  include/tencentcloud/emr/v20190103/model/StrategyConfig.h
   include/tencentcloud/emr/v20190103/model/SceneSoftwareConfig.h
   include/tencentcloud/emr/v20190103/model/ShortNodeInfo.h
   include/tencentcloud/emr/v20190103/model/EmrPrice.h
@@ -283,6 +284,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceScaleOutInstanceResponse.cpp
   src/v20190103/model/ModifyResourceSchedulerResponse.cpp
   src/v20190103/model/VirtualPrivateCloud.cpp
+  src/v20190103/model/StrategyConfig.cpp
   src/v20190103/model/SceneSoftwareConfig.cpp
   src/v20190103/model/ShortNodeInfo.cpp
   src/v20190103/model/EmrPrice.cpp

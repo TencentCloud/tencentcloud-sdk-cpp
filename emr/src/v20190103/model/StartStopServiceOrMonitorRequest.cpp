@@ -25,7 +25,8 @@ using namespace std;
 StartStopServiceOrMonitorRequest::StartStopServiceOrMonitorRequest() :
     m_instanceIdHasBeenSet(false),
     m_opTypeHasBeenSet(false),
-    m_opScopeHasBeenSet(false)
+    m_opScopeHasBeenSet(false),
+    m_strategyConfigHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,15 @@ string StartStopServiceOrMonitorRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_opScope.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_strategyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrategyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_strategyConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +125,22 @@ void StartStopServiceOrMonitorRequest::SetOpScope(const OpScope& _opScope)
 bool StartStopServiceOrMonitorRequest::OpScopeHasBeenSet() const
 {
     return m_opScopeHasBeenSet;
+}
+
+StrategyConfig StartStopServiceOrMonitorRequest::GetStrategyConfig() const
+{
+    return m_strategyConfig;
+}
+
+void StartStopServiceOrMonitorRequest::SetStrategyConfig(const StrategyConfig& _strategyConfig)
+{
+    m_strategyConfig = _strategyConfig;
+    m_strategyConfigHasBeenSet = true;
+}
+
+bool StartStopServiceOrMonitorRequest::StrategyConfigHasBeenSet() const
+{
+    return m_strategyConfigHasBeenSet;
 }
 
 

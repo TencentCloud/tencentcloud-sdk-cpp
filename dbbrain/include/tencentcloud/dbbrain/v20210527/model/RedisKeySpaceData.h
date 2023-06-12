@@ -172,6 +172,42 @@ namespace TencentCloud
                      */
                     bool MaxElementSizeHasBeenSet() const;
 
+                    /**
+                     * 获取平均元素长度。
+                     * @return AveElementSize 平均元素长度。
+                     */
+                    int64_t GetAveElementSize() const;
+
+                    /**
+                     * 设置平均元素长度。
+                     * @param AveElementSize 平均元素长度。
+                     */
+                    void SetAveElementSize(const int64_t& _aveElementSize);
+
+                    /**
+                     * 判断参数 AveElementSize 是否已赋值
+                     * @return AveElementSize 是否已赋值
+                     */
+                    bool AveElementSizeHasBeenSet() const;
+
+                    /**
+                     * 获取所属分片序号。
+                     * @return ShardId 所属分片序号。
+                     */
+                    std::string GetShardId() const;
+
+                    /**
+                     * 设置所属分片序号。
+                     * @param ShardId 所属分片序号。
+                     */
+                    void SetShardId(const std::string& _shardId);
+
+                    /**
+                     * 判断参数 ShardId 是否已赋值
+                     * @return ShardId 是否已赋值
+                     */
+                    bool ShardIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +251,18 @@ namespace TencentCloud
                      */
                     int64_t m_maxElementSize;
                     bool m_maxElementSizeHasBeenSet;
+
+                    /**
+                     * 平均元素长度。
+                     */
+                    int64_t m_aveElementSize;
+                    bool m_aveElementSizeHasBeenSet;
+
+                    /**
+                     * 所属分片序号。
+                     */
+                    std::string m_shardId;
+                    bool m_shardIdHasBeenSet;
 
                 };
             }

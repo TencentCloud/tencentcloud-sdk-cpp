@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool TopicNumHasBeenSet() const;
 
                     /**
-                     * 获取实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在的子网
-                     * @return ZoneId 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在的子网
+                     * 获取实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id
+                     * @return ZoneId 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在的子网
-                     * @param ZoneId 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在的子网
+                     * 设置实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id
+                     * @param ZoneId 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
@@ -447,7 +447,7 @@ namespace TencentCloud
                     bool m_topicNumHasBeenSet;
 
                     /**
-                     * 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在的子网
+                     * 实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;

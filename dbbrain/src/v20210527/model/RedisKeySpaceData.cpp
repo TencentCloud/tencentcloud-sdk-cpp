@@ -27,7 +27,9 @@ RedisKeySpaceData::RedisKeySpaceData() :
     m_expireTimeHasBeenSet(false),
     m_lengthHasBeenSet(false),
     m_itemCountHasBeenSet(false),
-    m_maxElementSizeHasBeenSet(false)
+    m_maxElementSizeHasBeenSet(false),
+    m_aveElementSizeHasBeenSet(false),
+    m_shardIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome RedisKeySpaceData::Deserialize(const rapidjson::Value &value
         m_maxElementSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("AveElementSize") && !value["AveElementSize"].IsNull())
+    {
+        if (!value["AveElementSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisKeySpaceData.AveElementSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aveElementSize = value["AveElementSize"].GetInt64();
+        m_aveElementSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShardId") && !value["ShardId"].IsNull())
+    {
+        if (!value["ShardId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisKeySpaceData.ShardId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardId = string(value["ShardId"].GetString());
+        m_shardIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void RedisKeySpaceData::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MaxElementSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxElementSize, allocator);
+    }
+
+    if (m_aveElementSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AveElementSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aveElementSize, allocator);
+    }
+
+    if (m_shardIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void RedisKeySpaceData::SetMaxElementSize(const int64_t& _maxElementSize)
 bool RedisKeySpaceData::MaxElementSizeHasBeenSet() const
 {
     return m_maxElementSizeHasBeenSet;
+}
+
+int64_t RedisKeySpaceData::GetAveElementSize() const
+{
+    return m_aveElementSize;
+}
+
+void RedisKeySpaceData::SetAveElementSize(const int64_t& _aveElementSize)
+{
+    m_aveElementSize = _aveElementSize;
+    m_aveElementSizeHasBeenSet = true;
+}
+
+bool RedisKeySpaceData::AveElementSizeHasBeenSet() const
+{
+    return m_aveElementSizeHasBeenSet;
+}
+
+string RedisKeySpaceData::GetShardId() const
+{
+    return m_shardId;
+}
+
+void RedisKeySpaceData::SetShardId(const string& _shardId)
+{
+    m_shardId = _shardId;
+    m_shardIdHasBeenSet = true;
+}
+
+bool RedisKeySpaceData::ShardIdHasBeenSet() const
+{
+    return m_shardIdHasBeenSet;
 }
 

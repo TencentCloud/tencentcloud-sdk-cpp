@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一标识
-                     * @return ResourceIds 资源唯一标识
+                     * 获取资源唯一标识ID的列表，列表容量不超过20
+                     * @return ResourceIds 资源唯一标识ID的列表，列表容量不超过20
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源唯一标识
-                     * @param ResourceIds 资源唯一标识
+                     * 设置资源唯一标识ID的列表，列表容量不超过20
+                     * @param ResourceIds 资源唯一标识ID的列表，列表容量不超过20
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取资源标签键
-                     * @return TagKeys 资源标签键
+                     * 获取资源标签键列表，列表容量不超过20
+                     * @return TagKeys 资源标签键列表，列表容量不超过20
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置资源标签键
-                     * @param TagKeys 资源标签键
+                     * 设置资源标签键列表，列表容量不超过20
+                     * @param TagKeys 资源标签键列表，列表容量不超过20
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
 
@@ -189,13 +189,13 @@ namespace TencentCloud
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 资源唯一标识
+                     * 资源唯一标识ID的列表，列表容量不超过20
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 资源标签键
+                     * 资源标签键列表，列表容量不超过20
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;

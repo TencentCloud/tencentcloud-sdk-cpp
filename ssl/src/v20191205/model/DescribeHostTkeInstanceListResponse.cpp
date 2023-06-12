@@ -27,7 +27,8 @@ DescribeHostTkeInstanceListResponse::DescribeHostTkeInstanceListResponse() :
     m_totalCountHasBeenSet(false),
     m_instanceListHasBeenSet(false),
     m_asyncTotalNumHasBeenSet(false),
-    m_asyncOffsetHasBeenSet(false)
+    m_asyncOffsetHasBeenSet(false),
+    m_asyncCacheTimeHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ CoreInternalOutcome DescribeHostTkeInstanceListResponse::Deserialize(const strin
         m_asyncOffsetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AsyncCacheTime") && !rsp["AsyncCacheTime"].IsNull())
+    {
+        if (!rsp["AsyncCacheTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsyncCacheTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncCacheTime = string(rsp["AsyncCacheTime"].GetString());
+        m_asyncCacheTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string DescribeHostTkeInstanceListResponse::ToJsonString() const
         string key = "AsyncOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asyncOffset, allocator);
+    }
+
+    if (m_asyncCacheTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncCacheTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncCacheTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +233,16 @@ int64_t DescribeHostTkeInstanceListResponse::GetAsyncOffset() const
 bool DescribeHostTkeInstanceListResponse::AsyncOffsetHasBeenSet() const
 {
     return m_asyncOffsetHasBeenSet;
+}
+
+string DescribeHostTkeInstanceListResponse::GetAsyncCacheTime() const
+{
+    return m_asyncCacheTime;
+}
+
+bool DescribeHostTkeInstanceListResponse::AsyncCacheTimeHasBeenSet() const
+{
+    return m_asyncCacheTimeHasBeenSet;
 }
 
 

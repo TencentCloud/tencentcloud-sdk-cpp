@@ -40,6 +40,135 @@ MpsClient::MpsClient(const Credential &credential, const string &region, const C
 }
 
 
+MpsClient::BatchDeleteStreamLinkFlowOutcome MpsClient::BatchDeleteStreamLinkFlow(const BatchDeleteStreamLinkFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteStreamLinkFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteStreamLinkFlowResponse rsp = BatchDeleteStreamLinkFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteStreamLinkFlowOutcome(rsp);
+        else
+            return BatchDeleteStreamLinkFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteStreamLinkFlowOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::BatchDeleteStreamLinkFlowAsync(const BatchDeleteStreamLinkFlowRequest& request, const BatchDeleteStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteStreamLinkFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::BatchDeleteStreamLinkFlowOutcomeCallable MpsClient::BatchDeleteStreamLinkFlowCallable(const BatchDeleteStreamLinkFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteStreamLinkFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteStreamLinkFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::BatchStartStreamLinkFlowOutcome MpsClient::BatchStartStreamLinkFlow(const BatchStartStreamLinkFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchStartStreamLinkFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchStartStreamLinkFlowResponse rsp = BatchStartStreamLinkFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchStartStreamLinkFlowOutcome(rsp);
+        else
+            return BatchStartStreamLinkFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchStartStreamLinkFlowOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::BatchStartStreamLinkFlowAsync(const BatchStartStreamLinkFlowRequest& request, const BatchStartStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchStartStreamLinkFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::BatchStartStreamLinkFlowOutcomeCallable MpsClient::BatchStartStreamLinkFlowCallable(const BatchStartStreamLinkFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchStartStreamLinkFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchStartStreamLinkFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::BatchStopStreamLinkFlowOutcome MpsClient::BatchStopStreamLinkFlow(const BatchStopStreamLinkFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchStopStreamLinkFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchStopStreamLinkFlowResponse rsp = BatchStopStreamLinkFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchStopStreamLinkFlowOutcome(rsp);
+        else
+            return BatchStopStreamLinkFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchStopStreamLinkFlowOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::BatchStopStreamLinkFlowAsync(const BatchStopStreamLinkFlowRequest& request, const BatchStopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchStopStreamLinkFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::BatchStopStreamLinkFlowOutcomeCallable MpsClient::BatchStopStreamLinkFlowCallable(const BatchStopStreamLinkFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchStopStreamLinkFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchStopStreamLinkFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateAIAnalysisTemplateOutcome MpsClient::CreateAIAnalysisTemplate(const CreateAIAnalysisTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAIAnalysisTemplate");
@@ -463,6 +592,49 @@ MpsClient::CreateSnapshotByTimeOffsetTemplateOutcomeCallable MpsClient::CreateSn
         [this, request]()
         {
             return this->CreateSnapshotByTimeOffsetTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateStreamLinkEventOutcome MpsClient::CreateStreamLinkEvent(const CreateStreamLinkEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStreamLinkEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStreamLinkEventResponse rsp = CreateStreamLinkEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStreamLinkEventOutcome(rsp);
+        else
+            return CreateStreamLinkEventOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStreamLinkEventOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateStreamLinkEventAsync(const CreateStreamLinkEventRequest& request, const CreateStreamLinkEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStreamLinkEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateStreamLinkEventOutcomeCallable MpsClient::CreateStreamLinkEventCallable(const CreateStreamLinkEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStreamLinkEventOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStreamLinkEvent(request);
         }
     );
 
@@ -1194,6 +1366,49 @@ MpsClient::DeleteSnapshotByTimeOffsetTemplateOutcomeCallable MpsClient::DeleteSn
         [this, request]()
         {
             return this->DeleteSnapshotByTimeOffsetTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteStreamLinkEventOutcome MpsClient::DeleteStreamLinkEvent(const DeleteStreamLinkEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStreamLinkEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStreamLinkEventResponse rsp = DeleteStreamLinkEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStreamLinkEventOutcome(rsp);
+        else
+            return DeleteStreamLinkEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStreamLinkEventOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteStreamLinkEventAsync(const DeleteStreamLinkEventRequest& request, const DeleteStreamLinkEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteStreamLinkEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteStreamLinkEventOutcomeCallable MpsClient::DeleteStreamLinkEventCallable(const DeleteStreamLinkEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteStreamLinkEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteStreamLinkEvent(request);
         }
     );
 
@@ -1968,6 +2183,135 @@ MpsClient::DescribeStreamLinkActivateStateOutcomeCallable MpsClient::DescribeStr
         [this, request]()
         {
             return this->DescribeStreamLinkActivateState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeStreamLinkEventOutcome MpsClient::DescribeStreamLinkEvent(const DescribeStreamLinkEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamLinkEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamLinkEventResponse rsp = DescribeStreamLinkEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamLinkEventOutcome(rsp);
+        else
+            return DescribeStreamLinkEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamLinkEventOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeStreamLinkEventAsync(const DescribeStreamLinkEventRequest& request, const DescribeStreamLinkEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamLinkEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeStreamLinkEventOutcomeCallable MpsClient::DescribeStreamLinkEventCallable(const DescribeStreamLinkEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamLinkEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamLinkEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeStreamLinkEventAttachedFlowsOutcome MpsClient::DescribeStreamLinkEventAttachedFlows(const DescribeStreamLinkEventAttachedFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamLinkEventAttachedFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamLinkEventAttachedFlowsResponse rsp = DescribeStreamLinkEventAttachedFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamLinkEventAttachedFlowsOutcome(rsp);
+        else
+            return DescribeStreamLinkEventAttachedFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamLinkEventAttachedFlowsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeStreamLinkEventAttachedFlowsAsync(const DescribeStreamLinkEventAttachedFlowsRequest& request, const DescribeStreamLinkEventAttachedFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamLinkEventAttachedFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeStreamLinkEventAttachedFlowsOutcomeCallable MpsClient::DescribeStreamLinkEventAttachedFlowsCallable(const DescribeStreamLinkEventAttachedFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamLinkEventAttachedFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamLinkEventAttachedFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeStreamLinkEventsOutcome MpsClient::DescribeStreamLinkEvents(const DescribeStreamLinkEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamLinkEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamLinkEventsResponse rsp = DescribeStreamLinkEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamLinkEventsOutcome(rsp);
+        else
+            return DescribeStreamLinkEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamLinkEventsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeStreamLinkEventsAsync(const DescribeStreamLinkEventsRequest& request, const DescribeStreamLinkEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamLinkEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeStreamLinkEventsOutcomeCallable MpsClient::DescribeStreamLinkEventsCallable(const DescribeStreamLinkEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamLinkEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamLinkEvents(request);
         }
     );
 
@@ -3301,6 +3645,49 @@ MpsClient::ModifySnapshotByTimeOffsetTemplateOutcomeCallable MpsClient::ModifySn
         [this, request]()
         {
             return this->ModifySnapshotByTimeOffsetTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyStreamLinkEventOutcome MpsClient::ModifyStreamLinkEvent(const ModifyStreamLinkEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStreamLinkEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStreamLinkEventResponse rsp = ModifyStreamLinkEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStreamLinkEventOutcome(rsp);
+        else
+            return ModifyStreamLinkEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStreamLinkEventOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyStreamLinkEventAsync(const ModifyStreamLinkEventRequest& request, const ModifyStreamLinkEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStreamLinkEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyStreamLinkEventOutcomeCallable MpsClient::ModifyStreamLinkEventCallable(const ModifyStreamLinkEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStreamLinkEventOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStreamLinkEvent(request);
         }
     );
 
