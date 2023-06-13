@@ -39,6 +39,7 @@
 #include <tencentcloud/ocr/v20181119/model/AirTransport.h>
 #include <tencentcloud/ocr/v20181119/model/NonTaxIncomeBill.h>
 #include <tencentcloud/ocr/v20181119/model/TrainTicket.h>
+#include <tencentcloud/ocr/v20181119/model/MedicalInvoice.h>
 
 
 namespace TencentCloud
@@ -545,6 +546,50 @@ namespace TencentCloud
                      */
                     bool TrainTicketHasBeenSet() const;
 
+                    /**
+                     * 获取医疗门诊收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedicalOutpatientInvoice 医疗门诊收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalInvoice GetMedicalOutpatientInvoice() const;
+
+                    /**
+                     * 设置医疗门诊收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedicalOutpatientInvoice 医疗门诊收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedicalOutpatientInvoice(const MedicalInvoice& _medicalOutpatientInvoice);
+
+                    /**
+                     * 判断参数 MedicalOutpatientInvoice 是否已赋值
+                     * @return MedicalOutpatientInvoice 是否已赋值
+                     */
+                    bool MedicalOutpatientInvoiceHasBeenSet() const;
+
+                    /**
+                     * 获取医疗住院收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedicalHospitalizedInvoice 医疗住院收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalInvoice GetMedicalHospitalizedInvoice() const;
+
+                    /**
+                     * 设置医疗住院收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedicalHospitalizedInvoice 医疗住院收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedicalHospitalizedInvoice(const MedicalInvoice& _medicalHospitalizedInvoice);
+
+                    /**
+                     * 判断参数 MedicalHospitalizedInvoice 是否已赋值
+                     * @return MedicalHospitalizedInvoice 是否已赋值
+                     */
+                    bool MedicalHospitalizedInvoiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -700,6 +745,20 @@ namespace TencentCloud
                      */
                     TrainTicket m_trainTicket;
                     bool m_trainTicketHasBeenSet;
+
+                    /**
+                     * 医疗门诊收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalInvoice m_medicalOutpatientInvoice;
+                    bool m_medicalOutpatientInvoiceHasBeenSet;
+
+                    /**
+                     * 医疗住院收费票据（电子）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalInvoice m_medicalHospitalizedInvoice;
+                    bool m_medicalHospitalizedInvoiceHasBeenSet;
 
                 };
             }

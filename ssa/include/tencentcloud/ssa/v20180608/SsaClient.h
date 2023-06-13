@@ -43,6 +43,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeComplianceListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeConfigListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeConfigListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeDomainListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeDomainListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeEventDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeEventDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h>
@@ -113,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConfigListResponse> DescribeConfigListOutcome;
                 typedef std::future<DescribeConfigListOutcome> DescribeConfigListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeConfigListRequest&, DescribeConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainListResponse> DescribeDomainListOutcome;
+                typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeDomainListRequest&, DescribeDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventDetailResponse> DescribeEventDetailOutcome;
                 typedef std::future<DescribeEventDetailOutcome> DescribeEventDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeEventDetailRequest&, DescribeEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventDetailAsyncHandler;
@@ -244,6 +249,15 @@ namespace TencentCloud
                 DescribeConfigListOutcome DescribeConfigList(const Model::DescribeConfigListRequest &request);
                 void DescribeConfigListAsync(const Model::DescribeConfigListRequest& request, const DescribeConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConfigListOutcomeCallable DescribeConfigListCallable(const Model::DescribeConfigListRequest& request);
+
+                /**
+                 *域名列表信息啊
+                 * @param req DescribeDomainListRequest
+                 * @return DescribeDomainListOutcome
+                 */
+                DescribeDomainListOutcome DescribeDomainList(const Model::DescribeDomainListRequest &request);
+                void DescribeDomainListAsync(const Model::DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainListOutcomeCallable DescribeDomainListCallable(const Model::DescribeDomainListRequest& request);
 
                 /**
                  *获取安全事件详情

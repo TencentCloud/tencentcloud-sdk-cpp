@@ -22,7 +22,8 @@ using namespace std;
 
 UpdateRecordDetails::UpdateRecordDetails() :
     m_resourceTypeHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome UpdateRecordDetails::Deserialize(const rapidjson::Value &val
         m_listHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetails.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void UpdateRecordDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void UpdateRecordDetails::SetList(const vector<UpdateRecordDetail>& _list)
 bool UpdateRecordDetails::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+int64_t UpdateRecordDetails::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void UpdateRecordDetails::SetTotalCount(const int64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool UpdateRecordDetails::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 

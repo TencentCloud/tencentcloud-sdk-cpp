@@ -692,6 +692,18 @@ namespace TencentCloud
                      */
                     bool ReservedNetResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持物理复制
+                     * @return IsPhysicalReplicationSupported 是否支持物理复制
+                     */
+                    bool GetIsPhysicalReplicationSupported() const;
+
+                    /**
+                     * 判断参数 IsPhysicalReplicationSupported 是否已赋值
+                     * @return IsPhysicalReplicationSupported 是否已赋值
+                     */
+                    bool IsPhysicalReplicationSupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1016,6 +1028,12 @@ namespace TencentCloud
                      */
                     std::vector<ReservedNetResource> m_reservedNetResources;
                     bool m_reservedNetResourcesHasBeenSet;
+
+                    /**
+                     * 是否支持物理复制
+                     */
+                    bool m_isPhysicalReplicationSupported;
+                    bool m_isPhysicalReplicationSupportedHasBeenSet;
 
                 };
             }

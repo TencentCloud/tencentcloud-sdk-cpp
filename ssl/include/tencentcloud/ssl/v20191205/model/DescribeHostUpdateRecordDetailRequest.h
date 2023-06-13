@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool DeployRecordIdHasBeenSet() const;
 
+                    /**
+                     * 获取每页数量，默认10。
+                     * @return Limit 每页数量，默认10。
+                     */
+                    std::string GetLimit() const;
+
+                    /**
+                     * 设置每页数量，默认10。
+                     * @param Limit 每页数量，默认10。
+                     */
+                    void SetLimit(const std::string& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页偏移量，从0开始。
+                     * @return Offset 分页偏移量，从0开始。
+                     */
+                    std::string GetOffset() const;
+
+                    /**
+                     * 设置分页偏移量，从0开始。
+                     * @param Offset 分页偏移量，从0开始。
+                     */
+                    void SetOffset(const std::string& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::string m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
+
+                    /**
+                     * 每页数量，默认10。
+                     */
+                    std::string m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页偏移量，从0开始。
+                     */
+                    std::string m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

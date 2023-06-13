@@ -470,6 +470,49 @@ SsaClient::DescribeConfigListOutcomeCallable SsaClient::DescribeConfigListCallab
     return task->get_future();
 }
 
+SsaClient::DescribeDomainListOutcome SsaClient::DescribeDomainList(const DescribeDomainListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainListResponse rsp = DescribeDomainListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainListOutcome(rsp);
+        else
+            return DescribeDomainListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainListOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeDomainListAsync(const DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeDomainListOutcomeCallable SsaClient::DescribeDomainListCallable(const DescribeDomainListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeEventDetailOutcome SsaClient::DescribeEventDetail(const DescribeEventDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEventDetail");

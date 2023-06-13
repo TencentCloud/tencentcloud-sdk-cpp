@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ValidityPeriodHasBeenSet() const;
 
                     /**
-                     * 获取加密算法，仅支持 RSA。
-                     * @return CsrEncryptAlgo 加密算法，仅支持 RSA。
+                     * 获取加密算法，支持 RSA及ECC。
+                     * @return CsrEncryptAlgo 加密算法，支持 RSA及ECC。
                      */
                     std::string GetCsrEncryptAlgo() const;
 
                     /**
-                     * 设置加密算法，仅支持 RSA。
-                     * @param CsrEncryptAlgo 加密算法，仅支持 RSA。
+                     * 设置加密算法，支持 RSA及ECC。
+                     * @param CsrEncryptAlgo 加密算法，支持 RSA及ECC。
                      */
                     void SetCsrEncryptAlgo(const std::string& _csrEncryptAlgo);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool CsrEncryptAlgoHasBeenSet() const;
 
                     /**
-                     * 获取密钥对参数，仅支持2048。
-                     * @return CsrKeyParameter 密钥对参数，仅支持2048。
+                     * 获取密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
+                     * @return CsrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
                      */
                     std::string GetCsrKeyParameter() const;
 
                     /**
-                     * 设置密钥对参数，仅支持2048。
-                     * @param CsrKeyParameter 密钥对参数，仅支持2048。
+                     * 设置密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
+                     * @param CsrKeyParameter 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
                      */
                     void SetCsrKeyParameter(const std::string& _csrKeyParameter);
 
@@ -339,13 +339,13 @@ namespace TencentCloud
                     bool m_validityPeriodHasBeenSet;
 
                     /**
-                     * 加密算法，仅支持 RSA。
+                     * 加密算法，支持 RSA及ECC。
                      */
                     std::string m_csrEncryptAlgo;
                     bool m_csrEncryptAlgoHasBeenSet;
 
                     /**
-                     * 密钥对参数，仅支持2048。
+                     * 密钥对参数，RSA仅支持2048。ECC仅支持prime256v1
                      */
                     std::string m_csrKeyParameter;
                     bool m_csrKeyParameterHasBeenSet;

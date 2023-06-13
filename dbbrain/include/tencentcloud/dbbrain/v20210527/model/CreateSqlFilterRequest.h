@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @return SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     */
-                    std::string GetSessionToken() const;
-
-                    /**
-                     * 设置通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     * @param SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     */
-                    void SetSessionToken(const std::string& _sessionToken);
-
-                    /**
-                     * 判断参数 SessionToken 是否已赋值
-                     * @return SessionToken 是否已赋值
-                     */
-                    bool SessionTokenHasBeenSet() const;
-
-                    /**
                      * 获取SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
                      * @return SqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
                      */
@@ -151,6 +133,24 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
+                     * 获取通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @return SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     */
+                    std::string GetSessionToken() const;
+
+                    /**
+                     * 设置通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     * @param SessionToken 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     */
+                    void SetSessionToken(const std::string& _sessionToken);
+
+                    /**
+                     * 判断参数 SessionToken 是否已赋值
+                     * @return SessionToken 是否已赋值
+                     */
+                    bool SessionTokenHasBeenSet() const;
+
+                    /**
                      * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
                      * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
                      */
@@ -177,12 +177,6 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
-                     */
-                    std::string m_sessionToken;
-                    bool m_sessionTokenHasBeenSet;
-
-                    /**
                      * SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
                      */
                     std::string m_sqlType;
@@ -205,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。
+                     */
+                    std::string m_sessionToken;
+                    bool m_sessionTokenHasBeenSet;
 
                     /**
                      * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。

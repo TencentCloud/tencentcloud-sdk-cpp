@@ -23,7 +23,8 @@ using namespace std;
 Advice::Advice() :
     m_problemHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_solutionHasBeenSet(false)
+    m_solutionHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome Advice::Deserialize(const rapidjson::Value &value)
         m_solutionHasBeenSet = true;
     }
 
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Advice.Level` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = string(value["Level"].GetString());
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void Advice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Solution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void Advice::SetSolution(const string& _solution)
 bool Advice::SolutionHasBeenSet() const
 {
     return m_solutionHasBeenSet;
+}
+
+string Advice::GetLevel() const
+{
+    return m_level;
+}
+
+void Advice::SetLevel(const string& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool Advice::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

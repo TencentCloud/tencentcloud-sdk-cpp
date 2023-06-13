@@ -24,9 +24,9 @@ using namespace std;
 
 ModifySqlFiltersRequest::ModifySqlFiltersRequest() :
     m_instanceIdHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
     m_filterIdsHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_sessionTokenHasBeenSet(false),
     m_productHasBeenSet(false)
 {
 }
@@ -44,14 +44,6 @@ string ModifySqlFiltersRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sessionTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SessionToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filterIdsHasBeenSet)
@@ -73,6 +65,14 @@ string ModifySqlFiltersRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
@@ -107,22 +107,6 @@ bool ModifySqlFiltersRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string ModifySqlFiltersRequest::GetSessionToken() const
-{
-    return m_sessionToken;
-}
-
-void ModifySqlFiltersRequest::SetSessionToken(const string& _sessionToken)
-{
-    m_sessionToken = _sessionToken;
-    m_sessionTokenHasBeenSet = true;
-}
-
-bool ModifySqlFiltersRequest::SessionTokenHasBeenSet() const
-{
-    return m_sessionTokenHasBeenSet;
-}
-
 vector<int64_t> ModifySqlFiltersRequest::GetFilterIds() const
 {
     return m_filterIds;
@@ -153,6 +137,22 @@ void ModifySqlFiltersRequest::SetStatus(const string& _status)
 bool ModifySqlFiltersRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ModifySqlFiltersRequest::GetSessionToken() const
+{
+    return m_sessionToken;
+}
+
+void ModifySqlFiltersRequest::SetSessionToken(const string& _sessionToken)
+{
+    m_sessionToken = _sessionToken;
+    m_sessionTokenHasBeenSet = true;
+}
+
+bool ModifySqlFiltersRequest::SessionTokenHasBeenSet() const
+{
+    return m_sessionTokenHasBeenSet;
 }
 
 string ModifySqlFiltersRequest::GetProduct() const

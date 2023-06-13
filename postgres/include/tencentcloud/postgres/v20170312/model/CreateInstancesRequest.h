@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
-                     * @return SpecCode 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 获取售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * @return SpecCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
-                     * @param SpecCode 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 设置售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * @param SpecCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
                      */
                     void SetSpecCode(const std::string& _specCode);
 
@@ -225,14 +225,14 @@ namespace TencentCloud
                     bool DBVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -617,7 +617,7 @@ serverCollationName：排序规则名称，可选参数，在初始化后不可�
                 private:
 
                     /**
-                     * 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
@@ -677,7 +677,7 @@ serverCollationName：排序规则名称，可选参数，在初始化后不可�
                     bool m_dBVersionHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;

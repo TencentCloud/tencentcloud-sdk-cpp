@@ -516,7 +516,7 @@ namespace TencentCloud
                 CreateBaseBackupOutcomeCallable CreateBaseBackupCallable(const Model::CreateBaseBackupRequest& request);
 
                 /**
-                 *可对实例进行网络的添加操作。
+                 *本接口（CreateDBInstanceNetworkAccess）用于创建实例网络。
                  * @param req CreateDBInstanceNetworkAccessRequest
                  * @return CreateDBInstanceNetworkAccessOutcome
                  */
@@ -525,7 +525,7 @@ namespace TencentCloud
                 CreateDBInstanceNetworkAccessOutcomeCallable CreateDBInstanceNetworkAccessCallable(const Model::CreateDBInstanceNetworkAccessRequest& request);
 
                 /**
-                 *本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。
+                 *本接口（CreateDBInstances）用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。
                  * @param req CreateDBInstancesRequest
                  * @return CreateDBInstancesOutcome
                  */
@@ -570,7 +570,7 @@ namespace TencentCloud
                 CreateReadOnlyGroupOutcomeCallable CreateReadOnlyGroupCallable(const Model::CreateReadOnlyGroupRequest& request);
 
                 /**
-                 *可对RO组进行网络的添加操作。
+                 *本接口（CreateReadOnlyGroupNetworkAccess）用于创建RO组的网络。
                  * @param req CreateReadOnlyGroupNetworkAccessRequest
                  * @return CreateReadOnlyGroupNetworkAccessOutcome
                  */
@@ -714,7 +714,7 @@ namespace TencentCloud
                 DescribeBackupSummariesOutcomeCallable DescribeBackupSummariesCallable(const Model::DescribeBackupSummariesRequest& request);
 
                 /**
-                 *本接口 (DescribeBaseBackups) 用于查询基础备份列表。
+                 *本接口（DescribeBaseBackups）用于查询基础备份列表。
                  * @param req DescribeBaseBackupsRequest
                  * @return DescribeBaseBackupsOutcome
                  */
@@ -741,7 +741,7 @@ namespace TencentCloud
                 DescribeCloneDBInstanceSpecOutcomeCallable DescribeCloneDBInstanceSpecCallable(const Model::DescribeCloneDBInstanceSpecRequest& request);
 
                 /**
-                 *本接口（DescribeDBBackups）用于查询实例备份列表。
+                 *本接口（DescribeDBBackups）用于查询实例备份列表。本接口已废弃，推荐使用接口[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)替代。
                  * @param req DescribeDBBackupsRequest
                  * @return DescribeDBBackupsOutcome
                  */
@@ -750,7 +750,7 @@ namespace TencentCloud
                 DescribeDBBackupsOutcomeCallable DescribeDBBackupsCallable(const Model::DescribeDBBackupsRequest& request);
 
                 /**
-                 *本接口（DescribeDBErrlogs）用于获取错误日志。
+                 *本接口（DescribeDBErrlogs）用于查询错误日志。
                  * @param req DescribeDBErrlogsRequest
                  * @return DescribeDBErrlogsOutcome
                  */
@@ -795,7 +795,7 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
-                 *本接口（DescribeDBSlowlogs）用于获取慢查询日志。已于2021.09.01日正式废弃，后续此接口将不再返回任何数据，新接口为DescribeSlowQueryList，详细请查看：https://cloud.tencent.com/document/product/409/60540
+                 *本接口（DescribeDBSlowlogs）用于获取慢查询日志。本接口已于2021.09.01日废弃，后续此接口将不再返回任何数据，推荐使用接口[DescribeSlowQueryList](https://cloud.tencent.com/document/api/409/60540)替代。
                  * @param req DescribeDBSlowlogsRequest
                  * @return DescribeDBSlowlogsOutcome
                  */
@@ -813,7 +813,7 @@ namespace TencentCloud
                 DescribeDBVersionsOutcomeCallable DescribeDBVersionsCallable(const Model::DescribeDBVersionsRequest& request);
 
                 /**
-                 *本接口（DescribeDBXlogs）用于获取实例Xlog列表。
+                 *本接口（DescribeDBXlogs）用于获取实例Xlog列表。本接口已废弃，推荐使用接口[DescribeLogBackups](https://cloud.tencent.com/document/api/409/89021)替代。
                  * @param req DescribeDBXlogsRequest
                  * @return DescribeDBXlogsOutcome
                  */
@@ -849,7 +849,7 @@ namespace TencentCloud
                 DescribeEncryptionKeysOutcomeCallable DescribeEncryptionKeysCallable(const Model::DescribeEncryptionKeysRequest& request);
 
                 /**
-                 *本接口 (DescribeLogBackups) 用于查询日志备份列表。
+                 *本接口（DescribeLogBackups）用于查询日志备份列表。
                  * @param req DescribeLogBackupsRequest
                  * @return DescribeLogBackupsOutcome
                  */
@@ -858,7 +858,7 @@ namespace TencentCloud
                 DescribeLogBackupsOutcomeCallable DescribeLogBackupsCallable(const Model::DescribeLogBackupsRequest& request);
 
                 /**
-                 *本接口（DescribeOrders）用于获取订单信息。
+                 *本接口（DescribeOrders）用于查询订单信息。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
                  */
@@ -885,7 +885,7 @@ namespace TencentCloud
                 DescribeParameterTemplatesOutcomeCallable DescribeParameterTemplatesCallable(const Model::DescribeParameterTemplatesRequest& request);
 
                 /**
-                 *获取参数修改事件详情
+                 *本接口 (DescribeParamsEvent) 用于查询参数修改事件详情。
                  * @param req DescribeParamsEventRequest
                  * @return DescribeParamsEventOutcome
                  */
@@ -894,7 +894,7 @@ namespace TencentCloud
                 DescribeParamsEventOutcomeCallable DescribeParamsEventCallable(const Model::DescribeParamsEventRequest& request);
 
                 /**
-                 *本接口 (DescribeProductConfig) 用于查询售卖规格配置。
+                 *本接口（DescribeProductConfig）用于查询售卖规格配置。本接口已废弃，推荐使用新接口[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)。
                  * @param req DescribeProductConfigRequest
                  * @return DescribeProductConfigOutcome
                  */
@@ -975,7 +975,7 @@ namespace TencentCloud
                 DisIsolateDBInstancesOutcomeCallable DisIsolateDBInstancesCallable(const Model::DisIsolateDBInstancesRequest& request);
 
                 /**
-                 *本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。
+                 *本接口（InitDBInstances）用于初始化云数据库PostgreSQL实例。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。
                  * @param req InitDBInstancesRequest
                  * @return InitDBInstancesOutcome
                  */
@@ -1047,7 +1047,7 @@ namespace TencentCloud
                 ModifyBackupPlanOutcomeCallable ModifyBackupPlanCallable(const Model::ModifyBackupPlanRequest& request);
 
                 /**
-                 *本接口（DeleteBaseBackup）用于修改实例指定全量备份的过期时间。
+                 *本接口（ModifyBaseBackupExpireTime）用于修改实例指定全量备份的过期时间。
                  * @param req ModifyBaseBackupExpireTimeRequest
                  * @return ModifyBaseBackupExpireTimeOutcome
                  */
@@ -1227,7 +1227,7 @@ namespace TencentCloud
                 SetAutoRenewFlagOutcomeCallable SetAutoRenewFlagCallable(const Model::SetAutoRenewFlagRequest& request);
 
                 /**
-                 *本接口（UpgradeDBInstance）用于升级实例配置。
+                 *本接口（UpgradeDBInstance）用于升级实例配置。本接口已废弃，推荐使用接口[ModifyDBInstanceSpec](https://cloud.tencent.com/document/api/409/63689)替代。
                  * @param req UpgradeDBInstanceRequest
                  * @return UpgradeDBInstanceOutcome
                  */

@@ -24,11 +24,11 @@ using namespace std;
 
 CreateSqlFilterRequest::CreateSqlFilterRequest() :
     m_instanceIdHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
     m_sqlTypeHasBeenSet(false),
     m_filterKeyHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_durationHasBeenSet(false),
+    m_sessionTokenHasBeenSet(false),
     m_productHasBeenSet(false)
 {
 }
@@ -46,14 +46,6 @@ string CreateSqlFilterRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sessionTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SessionToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sqlTypeHasBeenSet)
@@ -88,6 +80,14 @@ string CreateSqlFilterRequest::ToJsonString() const
         d.AddMember(iKey, m_duration, allocator);
     }
 
+    if (m_sessionTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_productHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,22 +118,6 @@ void CreateSqlFilterRequest::SetInstanceId(const string& _instanceId)
 bool CreateSqlFilterRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
-}
-
-string CreateSqlFilterRequest::GetSessionToken() const
-{
-    return m_sessionToken;
-}
-
-void CreateSqlFilterRequest::SetSessionToken(const string& _sessionToken)
-{
-    m_sessionToken = _sessionToken;
-    m_sessionTokenHasBeenSet = true;
-}
-
-bool CreateSqlFilterRequest::SessionTokenHasBeenSet() const
-{
-    return m_sessionTokenHasBeenSet;
 }
 
 string CreateSqlFilterRequest::GetSqlType() const
@@ -198,6 +182,22 @@ void CreateSqlFilterRequest::SetDuration(const int64_t& _duration)
 bool CreateSqlFilterRequest::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+string CreateSqlFilterRequest::GetSessionToken() const
+{
+    return m_sessionToken;
+}
+
+void CreateSqlFilterRequest::SetSessionToken(const string& _sessionToken)
+{
+    m_sessionToken = _sessionToken;
+    m_sessionTokenHasBeenSet = true;
+}
+
+bool CreateSqlFilterRequest::SessionTokenHasBeenSet() const
+{
+    return m_sessionTokenHasBeenSet;
 }
 
 string CreateSqlFilterRequest::GetProduct() const

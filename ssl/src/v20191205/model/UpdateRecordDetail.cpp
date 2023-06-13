@@ -37,7 +37,10 @@ UpdateRecordDetail::UpdateRecordDetail() :
     m_listenerNameHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_portHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_secretNameHasBeenSet(false)
 {
 }
 
@@ -219,6 +222,36 @@ CoreInternalOutcome UpdateRecordDetail::Deserialize(const rapidjson::Value &valu
         m_bucketHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetInt64();
+        m_portHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretName") && !value["SecretName"].IsNull())
+    {
+        if (!value["SecretName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretName = string(value["SecretName"].GetString());
+        m_secretNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +398,30 @@ void UpdateRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Bucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,5 +697,53 @@ void UpdateRecordDetail::SetBucket(const string& _bucket)
 bool UpdateRecordDetail::BucketHasBeenSet() const
 {
     return m_bucketHasBeenSet;
+}
+
+int64_t UpdateRecordDetail::GetPort() const
+{
+    return m_port;
+}
+
+void UpdateRecordDetail::SetPort(const int64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
+}
+
+string UpdateRecordDetail::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void UpdateRecordDetail::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
+}
+
+string UpdateRecordDetail::GetSecretName() const
+{
+    return m_secretName;
+}
+
+void UpdateRecordDetail::SetSecretName(const string& _secretName)
+{
+    m_secretName = _secretName;
+    m_secretNameHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::SecretNameHasBeenSet() const
+{
+    return m_secretNameHasBeenSet;
 }
 

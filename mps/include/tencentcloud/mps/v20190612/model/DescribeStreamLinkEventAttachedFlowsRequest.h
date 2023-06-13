@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认10。
-                     * @return PageSize 每页大小，默认10。
+                     * 获取每页大小，默认1000。
+                     * @return PageSize 每页大小，默认1000。
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页大小，默认10。
-                     * @param PageSize 每页大小，默认10。
+                     * 设置每页大小，默认1000。
+                     * @param PageSize 每页大小，默认1000。
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页大小，默认10。
+                     * 每页大小，默认1000。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

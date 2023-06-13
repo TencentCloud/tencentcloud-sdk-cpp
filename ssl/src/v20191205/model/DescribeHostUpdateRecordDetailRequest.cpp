@@ -23,7 +23,9 @@ using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
 DescribeHostUpdateRecordDetailRequest::DescribeHostUpdateRecordDetailRequest() :
-    m_deployRecordIdHasBeenSet(false)
+    m_deployRecordIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeHostUpdateRecordDetailRequest::ToJsonString() const
         string key = "DeployRecordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deployRecordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_offset.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeHostUpdateRecordDetailRequest::SetDeployRecordId(const string& _dep
 bool DescribeHostUpdateRecordDetailRequest::DeployRecordIdHasBeenSet() const
 {
     return m_deployRecordIdHasBeenSet;
+}
+
+string DescribeHostUpdateRecordDetailRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeHostUpdateRecordDetailRequest::SetLimit(const string& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeHostUpdateRecordDetailRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeHostUpdateRecordDetailRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeHostUpdateRecordDetailRequest::SetOffset(const string& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeHostUpdateRecordDetailRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

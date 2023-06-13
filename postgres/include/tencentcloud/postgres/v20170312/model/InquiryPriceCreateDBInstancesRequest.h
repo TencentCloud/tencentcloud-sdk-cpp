@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。
-                     * @return SpecCode 规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。
+                     * 获取规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
+                     * @return SpecCode 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。
-                     * @param SpecCode 规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。
+                     * 设置规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
+                     * @param SpecCode 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
                      */
                     void SetSpecCode(const std::string& _specCode);
 
@@ -229,7 +229,7 @@ mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。
+                     * 规格ID。该参数可以通过调用DescribeClasses接口的返回值中的SpecCode字段来获取。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;

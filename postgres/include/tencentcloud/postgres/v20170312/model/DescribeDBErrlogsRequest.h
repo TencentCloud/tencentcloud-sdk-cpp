@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-5bq3wfjd
-                     * @return DBInstanceId 实例ID，形如postgres-5bq3wfjd
+                     * 获取实例ID。	
+                     * @return DBInstanceId 实例ID。	
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-5bq3wfjd
-                     * @param DBInstanceId 实例ID，形如postgres-5bq3wfjd
+                     * 设置实例ID。	
+                     * @param DBInstanceId 实例ID。	
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前
-                     * @return StartTime 查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前
+                     * 获取查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * @return StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前
-                     * @param StartTime 查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前
+                     * 设置查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * @param StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，形如2018-01-01 00:00:00
-                     * @return EndTime 查询结束时间，形如2018-01-01 00:00:00
+                     * 获取查询结束时间，形如2018-01-01 00:00:00。	
+                     * @return EndTime 查询结束时间，形如2018-01-01 00:00:00。	
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，形如2018-01-01 00:00:00
-                     * @param EndTime 查询结束时间，形如2018-01-01 00:00:00
+                     * 设置查询结束时间，形如2018-01-01 00:00:00。	
+                     * @param EndTime 查询结束时间，形如2018-01-01 00:00:00。	
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据库名字
-                     * @return DatabaseName 数据库名字
+                     * 获取数据库名字。
+                     * @return DatabaseName 数据库名字。
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置数据库名字
-                     * @param DatabaseName 数据库名字
+                     * 设置数据库名字。
+                     * @param DatabaseName 数据库名字。
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return SearchKeys 搜索关键字
+                     * 获取搜索关键字。
+                     * @return SearchKeys 搜索关键字。
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param SearchKeys 搜索关键字
+                     * 设置搜索关键字。
+                     * @param SearchKeys 搜索关键字。
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool SearchKeysHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，每页返回的最大数量。取值为1-100
-                     * @return Limit 分页返回，每页返回的最大数量。取值为1-100
+                     * 获取每页显示数量，取值范围为1-100。默认值为50。	
+                     * @return Limit 每页显示数量，取值范围为1-100。默认值为50。	
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回，每页返回的最大数量。取值为1-100
-                     * @param Limit 分页返回，每页返回的最大数量。取值为1-100
+                     * 设置每页显示数量，取值范围为1-100。默认值为50。	
+                     * @param Limit 每页显示数量，取值范围为1-100。默认值为50。	
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，返回第几页的数据，从第0页开始计数
-                     * @return Offset 分页返回，返回第几页的数据，从第0页开始计数
+                     * 获取数据偏移量，从0开始。默认值为0。	
+                     * @return Offset 数据偏移量，从0开始。默认值为0。	
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页返回，返回第几页的数据，从第0页开始计数
-                     * @param Offset 分页返回，返回第几页的数据，从第0页开始计数
+                     * 设置数据偏移量，从0开始。默认值为0。	
+                     * @param Offset 数据偏移量，从0开始。默认值为0。	
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -171,43 +171,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-5bq3wfjd
+                     * 实例ID。	
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前
+                     * 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，形如2018-01-01 00:00:00
+                     * 查询结束时间，形如2018-01-01 00:00:00。	
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 数据库名字
+                     * 数据库名字。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * 搜索关键字。
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;
 
                     /**
-                     * 分页返回，每页返回的最大数量。取值为1-100
+                     * 每页显示数量，取值范围为1-100。默认值为50。	
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页返回，返回第几页的数据，从第0页开始计数
+                     * 数据偏移量，从0开始。默认值为0。	
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

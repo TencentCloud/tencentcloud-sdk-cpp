@@ -79,7 +79,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_replicaStatusHasBeenSet(false),
     m_exclusterTypeHasBeenSet(false),
     m_rsAccessStrategyHasBeenSet(false),
-    m_reservedNetResourcesHasBeenSet(false)
+    m_reservedNetResourcesHasBeenSet(false),
+    m_isPhysicalReplicationSupportedHasBeenSet(false)
 {
 }
 
@@ -724,6 +725,16 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_reservedNetResourcesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsPhysicalReplicationSupported") && !rsp["IsPhysicalReplicationSupported"].IsNull())
+    {
+        if (!rsp["IsPhysicalReplicationSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsPhysicalReplicationSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPhysicalReplicationSupported = rsp["IsPhysicalReplicationSupported"].GetBool();
+        m_isPhysicalReplicationSupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1208,6 +1219,14 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isPhysicalReplicationSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPhysicalReplicationSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPhysicalReplicationSupported, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1780,6 +1799,16 @@ vector<ReservedNetResource> DescribeDBInstanceDetailResponse::GetReservedNetReso
 bool DescribeDBInstanceDetailResponse::ReservedNetResourcesHasBeenSet() const
 {
     return m_reservedNetResourcesHasBeenSet;
+}
+
+bool DescribeDBInstanceDetailResponse::GetIsPhysicalReplicationSupported() const
+{
+    return m_isPhysicalReplicationSupported;
+}
+
+bool DescribeDBInstanceDetailResponse::IsPhysicalReplicationSupportedHasBeenSet() const
+{
+    return m_isPhysicalReplicationSupportedHasBeenSet;
 }
 
 

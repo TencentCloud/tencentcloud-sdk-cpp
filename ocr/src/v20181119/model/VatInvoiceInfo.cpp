@@ -59,7 +59,10 @@ VatInvoiceInfo::VatInvoiceInfo() :
     m_provinceHasBeenSet(false),
     m_vatInvoiceItemInfosHasBeenSet(false),
     m_codeConfirmHasBeenSet(false),
-    m_receiptorHasBeenSet(false)
+    m_receiptorHasBeenSet(false),
+    m_electronicFullMarkHasBeenSet(false),
+    m_electronicFullNumberHasBeenSet(false),
+    m_formNameHasBeenSet(false)
 {
 }
 
@@ -468,6 +471,36 @@ CoreInternalOutcome VatInvoiceInfo::Deserialize(const rapidjson::Value &value)
         m_receiptorHasBeenSet = true;
     }
 
+    if (value.HasMember("ElectronicFullMark") && !value["ElectronicFullMark"].IsNull())
+    {
+        if (!value["ElectronicFullMark"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.ElectronicFullMark` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_electronicFullMark = value["ElectronicFullMark"].GetInt64();
+        m_electronicFullMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElectronicFullNumber") && !value["ElectronicFullNumber"].IsNull())
+    {
+        if (!value["ElectronicFullNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.ElectronicFullNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_electronicFullNumber = string(value["ElectronicFullNumber"].GetString());
+        m_electronicFullNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("FormName") && !value["FormName"].IsNull())
+    {
+        if (!value["FormName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.FormName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formName = string(value["FormName"].GetString());
+        m_formNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -792,6 +825,30 @@ void VatInvoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Receiptor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_receiptor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_electronicFullMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicFullMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_electronicFullMark, allocator);
+    }
+
+    if (m_electronicFullNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicFullNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_electronicFullNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FormName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_formName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1419,5 +1476,53 @@ void VatInvoiceInfo::SetReceiptor(const string& _receiptor)
 bool VatInvoiceInfo::ReceiptorHasBeenSet() const
 {
     return m_receiptorHasBeenSet;
+}
+
+int64_t VatInvoiceInfo::GetElectronicFullMark() const
+{
+    return m_electronicFullMark;
+}
+
+void VatInvoiceInfo::SetElectronicFullMark(const int64_t& _electronicFullMark)
+{
+    m_electronicFullMark = _electronicFullMark;
+    m_electronicFullMarkHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::ElectronicFullMarkHasBeenSet() const
+{
+    return m_electronicFullMarkHasBeenSet;
+}
+
+string VatInvoiceInfo::GetElectronicFullNumber() const
+{
+    return m_electronicFullNumber;
+}
+
+void VatInvoiceInfo::SetElectronicFullNumber(const string& _electronicFullNumber)
+{
+    m_electronicFullNumber = _electronicFullNumber;
+    m_electronicFullNumberHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::ElectronicFullNumberHasBeenSet() const
+{
+    return m_electronicFullNumberHasBeenSet;
+}
+
+string VatInvoiceInfo::GetFormName() const
+{
+    return m_formName;
+}
+
+void VatInvoiceInfo::SetFormName(const string& _formName)
+{
+    m_formName = _formName;
+    m_formNameHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::FormNameHasBeenSet() const
+{
+    return m_formNameHasBeenSet;
 }
 

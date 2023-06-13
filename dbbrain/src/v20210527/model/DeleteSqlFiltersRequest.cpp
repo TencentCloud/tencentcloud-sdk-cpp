@@ -24,8 +24,8 @@ using namespace std;
 
 DeleteSqlFiltersRequest::DeleteSqlFiltersRequest() :
     m_instanceIdHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
     m_filterIdsHasBeenSet(false),
+    m_sessionTokenHasBeenSet(false),
     m_productHasBeenSet(false)
 {
 }
@@ -45,14 +45,6 @@ string DeleteSqlFiltersRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sessionTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SessionToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_filterIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -64,6 +56,14 @@ string DeleteSqlFiltersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_sessionTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
@@ -98,22 +98,6 @@ bool DeleteSqlFiltersRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string DeleteSqlFiltersRequest::GetSessionToken() const
-{
-    return m_sessionToken;
-}
-
-void DeleteSqlFiltersRequest::SetSessionToken(const string& _sessionToken)
-{
-    m_sessionToken = _sessionToken;
-    m_sessionTokenHasBeenSet = true;
-}
-
-bool DeleteSqlFiltersRequest::SessionTokenHasBeenSet() const
-{
-    return m_sessionTokenHasBeenSet;
-}
-
 vector<int64_t> DeleteSqlFiltersRequest::GetFilterIds() const
 {
     return m_filterIds;
@@ -128,6 +112,22 @@ void DeleteSqlFiltersRequest::SetFilterIds(const vector<int64_t>& _filterIds)
 bool DeleteSqlFiltersRequest::FilterIdsHasBeenSet() const
 {
     return m_filterIdsHasBeenSet;
+}
+
+string DeleteSqlFiltersRequest::GetSessionToken() const
+{
+    return m_sessionToken;
+}
+
+void DeleteSqlFiltersRequest::SetSessionToken(const string& _sessionToken)
+{
+    m_sessionToken = _sessionToken;
+    m_sessionTokenHasBeenSet = true;
+}
+
+bool DeleteSqlFiltersRequest::SessionTokenHasBeenSet() const
+{
+    return m_sessionTokenHasBeenSet;
 }
 
 string DeleteSqlFiltersRequest::GetProduct() const

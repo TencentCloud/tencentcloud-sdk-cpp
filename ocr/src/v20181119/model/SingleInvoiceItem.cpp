@@ -42,7 +42,9 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_airTransportHasBeenSet(false),
     m_nonTaxIncomeGeneralBillHasBeenSet(false),
     m_nonTaxIncomeElectronicBillHasBeenSet(false),
-    m_trainTicketHasBeenSet(false)
+    m_trainTicketHasBeenSet(false),
+    m_medicalOutpatientInvoiceHasBeenSet(false),
+    m_medicalHospitalizedInvoiceHasBeenSet(false)
 {
 }
 
@@ -425,6 +427,40 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_trainTicketHasBeenSet = true;
     }
 
+    if (value.HasMember("MedicalOutpatientInvoice") && !value["MedicalOutpatientInvoice"].IsNull())
+    {
+        if (!value["MedicalOutpatientInvoice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.MedicalOutpatientInvoice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_medicalOutpatientInvoice.Deserialize(value["MedicalOutpatientInvoice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_medicalOutpatientInvoiceHasBeenSet = true;
+    }
+
+    if (value.HasMember("MedicalHospitalizedInvoice") && !value["MedicalHospitalizedInvoice"].IsNull())
+    {
+        if (!value["MedicalHospitalizedInvoice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.MedicalHospitalizedInvoice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_medicalHospitalizedInvoice.Deserialize(value["MedicalHospitalizedInvoice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_medicalHospitalizedInvoiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -628,6 +664,24 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trainTicket.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_medicalOutpatientInvoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MedicalOutpatientInvoice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_medicalOutpatientInvoice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_medicalHospitalizedInvoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MedicalHospitalizedInvoice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_medicalHospitalizedInvoice.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -983,5 +1037,37 @@ void SingleInvoiceItem::SetTrainTicket(const TrainTicket& _trainTicket)
 bool SingleInvoiceItem::TrainTicketHasBeenSet() const
 {
     return m_trainTicketHasBeenSet;
+}
+
+MedicalInvoice SingleInvoiceItem::GetMedicalOutpatientInvoice() const
+{
+    return m_medicalOutpatientInvoice;
+}
+
+void SingleInvoiceItem::SetMedicalOutpatientInvoice(const MedicalInvoice& _medicalOutpatientInvoice)
+{
+    m_medicalOutpatientInvoice = _medicalOutpatientInvoice;
+    m_medicalOutpatientInvoiceHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::MedicalOutpatientInvoiceHasBeenSet() const
+{
+    return m_medicalOutpatientInvoiceHasBeenSet;
+}
+
+MedicalInvoice SingleInvoiceItem::GetMedicalHospitalizedInvoice() const
+{
+    return m_medicalHospitalizedInvoice;
+}
+
+void SingleInvoiceItem::SetMedicalHospitalizedInvoice(const MedicalInvoice& _medicalHospitalizedInvoice)
+{
+    m_medicalHospitalizedInvoice = _medicalHospitalizedInvoice;
+    m_medicalHospitalizedInvoiceHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::MedicalHospitalizedInvoiceHasBeenSet() const
+{
+    return m_medicalHospitalizedInvoiceHasBeenSet;
 }
 

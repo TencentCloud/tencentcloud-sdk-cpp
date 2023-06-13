@@ -749,6 +749,60 @@ namespace TencentCloud
                      */
                     bool ReceiptorHasBeenSet() const;
 
+                    /**
+                     * 获取是否有全电纸质票（0：没有，1：有）
+                     * @return ElectronicFullMark 是否有全电纸质票（0：没有，1：有）
+                     */
+                    int64_t GetElectronicFullMark() const;
+
+                    /**
+                     * 设置是否有全电纸质票（0：没有，1：有）
+                     * @param ElectronicFullMark 是否有全电纸质票（0：没有，1：有）
+                     */
+                    void SetElectronicFullMark(const int64_t& _electronicFullMark);
+
+                    /**
+                     * 判断参数 ElectronicFullMark 是否已赋值
+                     * @return ElectronicFullMark 是否已赋值
+                     */
+                    bool ElectronicFullMarkHasBeenSet() const;
+
+                    /**
+                     * 获取全电号码
+                     * @return ElectronicFullNumber 全电号码
+                     */
+                    std::string GetElectronicFullNumber() const;
+
+                    /**
+                     * 设置全电号码
+                     * @param ElectronicFullNumber 全电号码
+                     */
+                    void SetElectronicFullNumber(const std::string& _electronicFullNumber);
+
+                    /**
+                     * 判断参数 ElectronicFullNumber 是否已赋值
+                     * @return ElectronicFullNumber 是否已赋值
+                     */
+                    bool ElectronicFullNumberHasBeenSet() const;
+
+                    /**
+                     * 获取发票联名
+                     * @return FormName 发票联名
+                     */
+                    std::string GetFormName() const;
+
+                    /**
+                     * 设置发票联名
+                     * @param FormName 发票联名
+                     */
+                    void SetFormName(const std::string& _formName);
+
+                    /**
+                     * 判断参数 FormName 是否已赋值
+                     * @return FormName 是否已赋值
+                     */
+                    bool FormNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -984,6 +1038,24 @@ namespace TencentCloud
                      */
                     std::string m_receiptor;
                     bool m_receiptorHasBeenSet;
+
+                    /**
+                     * 是否有全电纸质票（0：没有，1：有）
+                     */
+                    int64_t m_electronicFullMark;
+                    bool m_electronicFullMarkHasBeenSet;
+
+                    /**
+                     * 全电号码
+                     */
+                    std::string m_electronicFullNumber;
+                    bool m_electronicFullNumberHasBeenSet;
+
+                    /**
+                     * 发票联名
+                     */
+                    std::string m_formName;
+                    bool m_formNameHasBeenSet;
 
                 };
             }

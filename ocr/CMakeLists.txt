@@ -239,6 +239,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/MedicalInvoice.h
   include/tencentcloud/ocr/v20181119/model/TextTable.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h
@@ -514,6 +515,7 @@ set(ocr_src
   src/v20181119/model/ShipInvoiceOCRRequest.cpp
   src/v20181119/model/SealOCRRequest.cpp
   src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
+  src/v20181119/model/MedicalInvoice.cpp
   src/v20181119/model/TextTable.cpp
   src/v20181119/model/RecognizeTableAccurateOCRResponse.cpp
   src/v20181119/model/ResidenceBookletOCRRequest.cpp

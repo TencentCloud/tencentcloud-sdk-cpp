@@ -58,9 +58,6 @@ if (MSVC)
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
   # parallel build
   add_compile_options(/MP)
-else ()
-  # enable big source file
-  add_compile_options(-Wa,-mbig-obj)
 endif ()
 
 # both core and service require curl include path

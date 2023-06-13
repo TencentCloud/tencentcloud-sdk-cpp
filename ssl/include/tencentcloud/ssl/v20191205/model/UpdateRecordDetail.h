@@ -283,17 +283,17 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取部署监听器ID
+                     * 获取部署监听器ID（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ListenerId 部署监听器ID
+                     * @return ListenerId 部署监听器ID（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置部署监听器ID
+                     * 设置部署监听器ID（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerId 部署监听器ID
+                     * @param ListenerId 部署监听器ID（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -305,17 +305,17 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取部署监听器名称
+                     * 获取部署监听器名称（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ListenerName 部署监听器名称
+                     * @return ListenerName 部署监听器名称（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置部署监听器名称
+                     * 设置部署监听器名称（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerName 部署监听器名称
+                     * @param ListenerName 部署监听器名称（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -349,17 +349,17 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNI
+                     * 获取是否开启SNI（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SniSwitch 是否开启SNI
+                     * @return SniSwitch 是否开启SNI（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetSniSwitch() const;
 
                     /**
-                     * 设置是否开启SNI
+                     * 设置是否开启SNI（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SniSwitch 是否开启SNI
+                     * @param SniSwitch 是否开启SNI（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSniSwitch(const uint64_t& _sniSwitch);
@@ -371,17 +371,17 @@ namespace TencentCloud
                     bool SniSwitchHasBeenSet() const;
 
                     /**
-                     * 获取bucket名称
+                     * 获取bucket名称（COS专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bucket bucket名称
+                     * @return Bucket bucket名称（COS专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置bucket名称
+                     * 设置bucket名称（COS专用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket bucket名称
+                     * @param Bucket bucket名称（COS专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBucket(const std::string& _bucket);
@@ -391,6 +391,72 @@ namespace TencentCloud
                      * @return Bucket 是否已赋值
                      */
                     bool BucketHasBeenSet() const;
+
+                    /**
+                     * 获取端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Port 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Port 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     */
+                    bool PortHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Namespace 命名空间（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置命名空间（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Namespace 命名空间（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取secret名称（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecretName secret名称（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSecretName() const;
+
+                    /**
+                     * 设置secret名称（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecretName secret名称（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecretName(const std::string& _secretName);
+
+                    /**
+                     * 判断参数 SecretName 是否已赋值
+                     * @return SecretName 是否已赋值
+                     */
+                    bool SecretNameHasBeenSet() const;
 
                 private:
 
@@ -472,14 +538,14 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 部署监听器ID
+                     * 部署监听器ID（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 部署监听器名称
+                     * 部署监听器名称（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerName;
@@ -493,18 +559,39 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 是否开启SNI
+                     * 是否开启SNI（CLB专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
 
                     /**
-                     * bucket名称
+                     * bucket名称（COS专用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
+
+                    /**
+                     * 命名空间（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * secret名称（TKE专用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_secretName;
+                    bool m_secretNameHasBeenSet;
 
                 };
             }

@@ -42,7 +42,8 @@ CreateLivePullStreamTaskRequest::CreateLivePullStreamTaskRequest() :
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
     m_watermarkListHasBeenSet(false),
-    m_vodLocalModeHasBeenSet(false)
+    m_vodLocalModeHasBeenSet(false),
+    m_recordTemplateIdHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,14 @@ string CreateLivePullStreamTaskRequest::ToJsonString() const
         string key = "VodLocalMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vodLocalMode, allocator);
+    }
+
+    if (m_recordTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -556,6 +565,22 @@ void CreateLivePullStreamTaskRequest::SetVodLocalMode(const int64_t& _vodLocalMo
 bool CreateLivePullStreamTaskRequest::VodLocalModeHasBeenSet() const
 {
     return m_vodLocalModeHasBeenSet;
+}
+
+string CreateLivePullStreamTaskRequest::GetRecordTemplateId() const
+{
+    return m_recordTemplateId;
+}
+
+void CreateLivePullStreamTaskRequest::SetRecordTemplateId(const string& _recordTemplateId)
+{
+    m_recordTemplateId = _recordTemplateId;
+    m_recordTemplateIdHasBeenSet = true;
+}
+
+bool CreateLivePullStreamTaskRequest::RecordTemplateIdHasBeenSet() const
+{
+    return m_recordTemplateIdHasBeenSet;
 }
 
 

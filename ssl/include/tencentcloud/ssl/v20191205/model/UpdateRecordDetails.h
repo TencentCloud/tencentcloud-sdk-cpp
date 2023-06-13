@@ -83,6 +83,24 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取该部署资源总数
+                     * @return TotalCount 该部署资源总数
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 设置该部署资源总数
+                     * @param TotalCount 该部署资源总数
+                     */
+                    void SetTotalCount(const int64_t& _totalCount);
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +114,12 @@ namespace TencentCloud
                      */
                     std::vector<UpdateRecordDetail> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * 该部署资源总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

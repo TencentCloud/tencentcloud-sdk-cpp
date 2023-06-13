@@ -74,7 +74,8 @@ DescribeDCDBInstanceDetailResponse::DescribeDCDBInstanceDetailResponse() :
     m_encryptStatusHasBeenSet(false),
     m_exclusterTypeHasBeenSet(false),
     m_rsAccessStrategyHasBeenSet(false),
-    m_reservedNetResourcesHasBeenSet(false)
+    m_reservedNetResourcesHasBeenSet(false),
+    m_isPhysicalReplicationSupportedHasBeenSet(false)
 {
 }
 
@@ -655,6 +656,16 @@ CoreInternalOutcome DescribeDCDBInstanceDetailResponse::Deserialize(const string
         m_reservedNetResourcesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsPhysicalReplicationSupported") && !rsp["IsPhysicalReplicationSupported"].IsNull())
+    {
+        if (!rsp["IsPhysicalReplicationSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsPhysicalReplicationSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPhysicalReplicationSupported = rsp["IsPhysicalReplicationSupported"].GetBool();
+        m_isPhysicalReplicationSupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1097,6 +1108,14 @@ string DescribeDCDBInstanceDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isPhysicalReplicationSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPhysicalReplicationSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPhysicalReplicationSupported, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1619,6 +1638,16 @@ vector<ReservedNetResource> DescribeDCDBInstanceDetailResponse::GetReservedNetRe
 bool DescribeDCDBInstanceDetailResponse::ReservedNetResourcesHasBeenSet() const
 {
     return m_reservedNetResourcesHasBeenSet;
+}
+
+bool DescribeDCDBInstanceDetailResponse::GetIsPhysicalReplicationSupported() const
+{
+    return m_isPhysicalReplicationSupported;
+}
+
+bool DescribeDCDBInstanceDetailResponse::IsPhysicalReplicationSupportedHasBeenSet() const
+{
+    return m_isPhysicalReplicationSupportedHasBeenSet;
 }
 
 

@@ -100,6 +100,32 @@ namespace TencentCloud
                      */
                     bool SolutionHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩建议警告级别。取值范围：<br>
+<li>WARNING：警告级别<br>
+<li>CRITICAL：严重级别<br>
+                     * @return Level 伸缩建议警告级别。取值范围：<br>
+<li>WARNING：警告级别<br>
+<li>CRITICAL：严重级别<br>
+                     */
+                    std::string GetLevel() const;
+
+                    /**
+                     * 设置伸缩建议警告级别。取值范围：<br>
+<li>WARNING：警告级别<br>
+<li>CRITICAL：严重级别<br>
+                     * @param Level 伸缩建议警告级别。取值范围：<br>
+<li>WARNING：警告级别<br>
+<li>CRITICAL：严重级别<br>
+                     */
+                    void SetLevel(const std::string& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     */
+                    bool LevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +145,14 @@ namespace TencentCloud
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
+
+                    /**
+                     * 伸缩建议警告级别。取值范围：<br>
+<li>WARNING：警告级别<br>
+<li>CRITICAL：严重级别<br>
+                     */
+                    std::string m_level;
+                    bool m_levelHasBeenSet;
 
                 };
             }
